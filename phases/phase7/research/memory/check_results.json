@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact fractions; standard library only",
+  "feature_ranks": [
+    {
+      "d": 1,
+      "p": 1,
+      "q": 1,
+      "input_dimension": 2,
+      "full_dimension": 3,
+      "no_intercept_dimension": 2
+    },
+    {
+      "d": 2,
+      "p": 3,
+      "q": 5,
+      "input_dimension": 8,
+      "full_dimension": 11,
+      "no_intercept_dimension": 9
+    },
+    {
+      "d": 3,
+      "p": 6,
+      "q": 15,
+      "input_dimension": 21,
+      "full_dimension": 27,
+      "no_intercept_dimension": 27
+    },
+    {
+      "d": 4,
+      "p": 10,
+      "q": 35,
+      "input_dimension": 45,
+      "full_dimension": 55,
+      "no_intercept_dimension": 55
+    },
+    {
+      "d": 5,
+      "p": 15,
+      "q": 70,
+      "input_dimension": 85,
+      "full_dimension": 100,
+      "no_intercept_dimension": 100
+    }
+  ],
+  "jacobian_checks": [
+    {
+      "d": 1,
+      "n": 2,
+      "input_jacobian_rank": 2,
+      "label_jacobian_rank": 1,
+      "full_jacobian_rank": 3,
+      "deterministic_draws": 1
+    },
+    {
+      "d": 2,
+      "n": 8,
+      "input_jacobian_rank": 8,
+      "label_jacobian_rank": 3,
+      "full_jacobian_rank": 11,
+      "deterministic_draws": 1
+    },
+    {
+      "d": 3,
+      "n": 21,
+      "input_jacobian_rank": 21,
+      "label_jacobian_rank": 6,
+      "full_jacobian_rank": 27,
+      "deterministic_draws": 1
+    },
+    {
+      "d": 4,
+      "n": 45,
+      "input_jacobian_rank": 45,
+      "label_jacobian_rank": 10,
+      "full_jacobian_rank": 55,
+      "deterministic_draws": 1
+    }
+  ],
+  "empirical_query_reconstruction": {
+    "d": 3,
+    "n": 5,
+    "exact_equality": true,
+    "residual_entries": [
+      "-1759/300",
+      "-172/75",
+      "217/60",
+      "-172/75",
+      "1423/300",
+      "339/100",
+      "217/60",
+      "339/100",
+      "-593/150"
+    ]
+  },
+  "fourth_moment_collision": {
+    "A": {
+      "S_y": "0",
+      "M2": "1",
+      "Hbar": "0",
+      "H2": "0",
+      "G_1_0": "0"
+    },
+    "B": {
+      "S_y": "0",
+      "M2": "1",
+      "Hbar": "0",
+      "H2": "1",
+      "G_1_0": "-1/2"
+    }
+  },
+  "phase6_dimensions": {
+    "d": 12,
+    "p": 78,
+    "q": 1365,
+    "input": 1443,
+    "total": 1521
+  },
+  "scope": "Algebraic checks support but do not replace the universal proofs."
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "epsilon": 0.01,
+    "singleton_gain": 9.999000099990002e-05,
+    "pair_gain": 0.9999999999998339,
+    "pair_l1": 99.99999999998339,
+    "pair_l2_sq": 4999.999999998338,
+    "normalized_min_eigenvalue": 0.00019998000199983323,
+    "initial_submodularity_ratio": 0.00019998000199980003
+  },
+  {
+    "epsilon": 0.1,
+    "singleton_gain": 0.009900990099009903,
+    "pair_gain": 0.9999999999999993,
+    "pair_l1": 9.999999999999993,
+    "pair_l2_sq": 49.99999999999993,
+    "normalized_min_eigenvalue": 0.01980198019801982,
+    "initial_submodularity_ratio": 0.019801980198019806
+  },
+  {
+    "epsilon": 0.25,
+    "singleton_gain": 0.058823529411764705,
+    "pair_gain": 0.9999999999999998,
+    "pair_l1": 3.999999999999999,
+    "pair_l2_sq": 7.9999999999999964,
+    "normalized_min_eigenvalue": 0.11764705882352944,
+    "initial_submodularity_ratio": 0.11764705882352941
+  },
+  {
+    "epsilon": 0.8,
+    "singleton_gain": 0.39024390243902446,
+    "pair_gain": 0.9999999999999999,
+    "pair_l1": 1.2499999999999998,
+    "pair_l2_sq": 0.7812499999999998,
+    "normalized_min_eigenvalue": 0.7804878048780489,
+    "initial_submodularity_ratio": 0.7804878048780489
+  }
+]

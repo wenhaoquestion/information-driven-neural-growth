@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "scope": "Hashes, inventories, and saved independent audit error fields; not a new proof or numerical replay",
+  "prior_files_preserved": 1087,
+  "sha256_checks": 1530,
+  "protocol_freezes": 3,
+  "studies": {
+    "confirmation": {
+      "task_seeds": 48,
+      "trajectories": 336,
+      "events": 2352,
+      "paired_checkpoint_branches": 1440
+    },
+    "adaptive_confirmation": {
+      "task_seeds": 48,
+      "trajectories": 240,
+      "events": 1680,
+      "paired_checkpoint_branches": 0
+    },
+    "fullbatch_confirmation": {
+      "task_seeds": 48,
+      "trajectories": 192,
+      "events": 1344,
+      "paired_checkpoint_branches": 0
+    }
+  },
+  "diagnostic_datasets": 128,
+  "diagnostic_stages": 1024,
+  "failures": []
+}

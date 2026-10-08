@@ -1,0 +1,57 @@
+{
+  "source_sha256": "912873c91973f246babd2cfa9d4596f58b4d48051425ee7ddf5d72ca6b925f9e",
+  "files": 128,
+  "stages": 1024,
+  "rows": 1024,
+  "maximum_errors": {
+    "estimates": 1.7763568394002505e-15,
+    "risk": 3.552713678800501e-15,
+    "raw_prediction": 0.0,
+    "fresh_bound": 0.0,
+    "false_birth": 1.4432899320127035e-15
+  },
+  "spectral_edge_cases": [
+    {
+      "eigenvalues": [
+        2,
+        2,
+        -2,
+        -2,
+        0
+      ],
+      "final_error": 0.0
+    },
+    {
+      "eigenvalues": [
+        0,
+        0,
+        0
+      ],
+      "final_error": 0.0
+    },
+    {
+      "eigenvalues": [
+        1,
+        -1
+      ],
+      "final_error": 0.0
+    },
+    {
+      "eigenvalues": [
+        3,
+        1,
+        0
+      ],
+      "final_error": 0.0
+    }
+  ],
+  "threshold_tie_counterexample": {
+    "A": 1,
+    "S": 2,
+    "radius": 1,
+    "strict_rank": 0,
+    "nonstrict_rank": 1,
+    "claimed_rank_upper_bound": 0
+  },
+  "adaptive_counterexample": "d=n=1,A*=1,sigma=0,H=X^2-1,B=H^2/2 implies T(B)=B^2 and same-block C=2B-B^2; fresh conditional formula does not apply"
+}

@@ -1,0 +1,217 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\setlength{\emergencystretch}{2em}
+\setlist{itemsep=3pt,topsep=5pt,leftmargin=*}
+\title{Exact Residual-Query Memory and\\Smooth-Loss Hierarchy Limits}
+\input{author.tex}
+\hypersetup{
+ pdftitle={Exact Residual-Query Memory and Smooth-Loss Hierarchy Limits},
+ pdfauthor={Wenyu Huang}
+}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+This working paper establishes two mathematical boundaries for a project
+on information, retained summaries, and neural growth. First, exact
+universal empirical residual queries for centered quadratic predictors
+are equivalent to a finite collection of label, second-order, and
+fourth-order moments. With $p=\binom{d+1}{2}$,
+$q=\binom{d+3}{4}$, and fixed unweighted sample size $n\ge p+q$,
+the minimum dimension of a continuous real-valued summary is exactly
+$2p+q$, or $p+q$ additional coordinates when the label moment is
+already supplied. At $d=12$ these counts are 1,521 and 1,443.
+The result concerns every dataset and every query; it is not an
+approximate-memory, finite-word, or generalization lower bound.
+Second, a single smooth strictly convex binary generator with finite
+endpoint slopes has unbounded optimal hierarchy price in excess
+Bayes risk, even with four equally likely source states. Along the
+constructed family indexed by $j$, deterministic and stochastic prices
+are asymptotic to $j/2$ and $j/4$, respectively. The corresponding
+total-risk prices tend to one.
+A classical covariance-sketch guarantee gives an explicit approximate
+query baseline. An appendix separates representation information,
+forgetting, Bayes value, and fitted risk, including a zero-output
+neural birth that gains representation information while preserving
+prediction risk. Classical ingredients and prior project results
+are identified; no priority or general learning guarantee is claimed.
+\end{abstract}
+
+\section{Questions, context, and the limits of the claims}
+\label{sec:introduction}
+
+The preceding project studied finite representation hierarchies,
+including logarithmic-loss obstructions and curvature comparisons
+\cite{finiteproject}, and growth in a trainable quadratic network.
+Its Phase~6 experiment asked
+whether a retained historical moment improves final risk under a
+declared work budget, rather than merely supplying a promising birth
+direction~\cite{phase6}. That experiment and the earlier theory notes
+already distinguished population moment formulas from exact empirical
+residuals~\cite{phase5,phase6}. The present paper addresses two
+mathematical questions left separate from those empirical comparisons:
+what must a summary retain to answer every empirical residual query,
+and whether finite endpoint slopes suffice to prevent an unbounded
+excess-risk price of a compatible hierarchy.
+
+For observations $(x_i,y_i)$, put $H_i=x_ix_i^\top-I_d$ and let
+the centered quadratic predictor be
+$q_B(x)+c=\langle B,xx^\top-I_d\rangle+c$.
+Phase~6 proposes directions using $S_y-B$, where
+$S_y=(2n)^{-1}\sum_i y_iH_i$. The exact empirical matrix residual is
+instead
+\begin{equation}
+ G(B,c)=\frac1{2n}\sum_i\{y_i-\langle B,H_i\rangle-c\}H_i
+ =S_y-T(B)-\frac c2\overline H,
+ \qquad T(B)=\frac1{2n}\sum_i\langle B,H_i\rangle H_i.
+ \label{eq:intro-residual}
+\end{equation}
+For standard Gaussian input and fixed sample-independent $B$,
+$\E T(B)=B$ and $\E\overline H=0$. Replacing empirical quantities
+by those population identities does not reproduce a realized query,
+especially after $B$ has been chosen from the same history. The
+memory result characterizes the stronger requirement of exact
+answers for \emph{all} $B,c$ on \emph{all} datasets. It neither
+claims that the implemented population-based proposal ought to be
+exact nor assigns its empirical performance to a missing moment.
+
+The two principal results have different domains and should not be
+combined into an assertion that neural growth must fail or succeed.
+The first is a representation theorem for empirical computations.
+The second is an existence theorem for optimal nested partitions
+under one fixed proper-loss generator. Neither theorem describes
+finite-budget training of neural parameters. Table~\ref{tab:scope}
+records the assumptions needed to read the conclusions.
+
+\begin{table}[t]
+\centering\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.19\linewidth}XX@{}}
+\toprule
+Result & Required scope & Conclusion and boundary\\
+\midrule
+Exact residual memory & Every real-valued size-$n$ dataset;
+$n\ge p+q$; continuous encoder; arbitrary decoder & Exactly
+$2p+q$ real coordinates, with all decoder-accessible state counted.
+No physical-byte or Gaussian average-case claim.\\[4pt]
+Finite-bit packing & Simultaneous error on a specified finite query
+family; a realizable local moment cube & A local high-accuracy bit
+bound. Its radius is not shown dimension independent.\\[4pt]
+Approximate queries & Spectral covariance-sketch error and a bounded
+query norm & Uniform deterministic query error by an existing
+sketch guarantee; no population-risk bound.\\[4pt]
+Smooth-loss hierarchy & One fixed generator; four equally weighted
+source states; deterministic nesting or stochastic degradation &
+Excess prices grow as $j/2$ and $j/4$. The displayed total-risk
+prices tend to one.\\
+\bottomrule
+\end{tabularx}
+\caption{Claim domains. An ideal real coordinate is not a finite-precision
+word. Exact universal queries impose a stronger requirement than
+supporting one prescribed optimization trajectory.}
+\label{tab:scope}
+\end{table}
+
+The main tools have established antecedents. Empirical residuals are
+normal-equation computations, finite polynomial moments are classical
+representations, and invariance of domain gives dimensional
+obstructions~\cite{mit,tchakaloff,tao}. Continuity restrictions and
+pathological single-real encodings already play an explicit role in
+the theory of set representations~\cite{wagstaff}. The finite
+hierarchy problem uses Bregman centroid identities and the established
+proper-score representation~\cite{banerjee2005,telgarsky2012,p7gneiting2007}.
+An upper bound on a generator's first derivative is substantially
+weaker than a uniform positive lower curvature bound or a global
+quadratic comparison~\cite{ackermann2009}. We use those distinctions
+to state a boundary result, not a complete classification or a claim
+of first discovery.
+
+\input{memory.tex}
+\input{sketch.tex}
+\input{finite.tex}
+
+\section{Interpretation and reproducibility}
+\label{sec:discussion}
+
+The exact memory theorem identifies what is lost when a historical
+summary preserves only a label--quadratic cross moment. It also
+identifies the assumptions that make a dimension lower bound valid.
+The encoder must be continuous for the continuous theorem, and every
+data-dependent state available to the decoder counts toward its
+dimension. The linear-measurement version uses arbitrary weighted
+measures or affine decoding; it must not be transferred to arbitrary
+discontinuous additive encoders on equal-weight samples. The local
+finite-bit bound uses a stated error norm and a nonquantified local
+radius. None of these exact or high-accuracy results establishes
+$\Omega(d^4)$ practical storage at a fixed useful tolerance.
+
+The sketch corollary makes the approximation boundary constructive:
+a covariance approximation of lifted quadratic features supplies
+simultaneously valid approximate residuals for bounded query matrices.
+Whether this is useful depends on the lifted matrix's spectral tail,
+the desired accuracy, and the implementation cost. It remains
+separate from estimation of population risk, selection of a birth
+direction, and optimization of the enlarged network. No new training
+experiment or sketch implementation accompanies this theoretical
+increment.
+
+The smooth-generator construction shows that a loss can have bounded
+values, finite slopes, and interior strict convexity while its excess
+hierarchy price is unbounded. The critical qualification is the
+absence of a uniform positive curvature lower bound. Its source
+weights need not become rare: all four remain $1/4$. Instead, the
+generator contains increasingly weak curvature patterns at smaller
+scales. The absolute distortions
+vanish, and the common Bayes baseline dominates the total risk.
+Thus an unbounded excess ratio need not describe a large absolute
+prediction penalty or an unbounded total-risk ratio.
+
+Appendix~\ref{sec:p7-information-boundaries} addresses a third,
+supporting distinction. Even for logarithmic loss, a change of
+representation has a forgetting term unless the representations
+form a refinement. Information gain refers to an unrestricted
+Bayes decoder; an unchanged output function has unchanged realized
+risk. A zero-output birth can nevertheless add informative hidden
+features. Finite optimization, decoder restriction, and population
+estimation require their own analysis. These classical identities
+do not convert either principal result into an autonomous-growth
+principle.
+
+The artifact preserves the research drafts, the imported manuscript
+sections, source citations, independent review notes, and exact or
+high-precision algebraic checks. The memory checks reconstruct
+queries and explicit collisions and verify small-dimensional ranks
+using rational arithmetic. Finite-cost enumeration checks the local
+partition calculations; it does not replace the smooth-gluing proof
+or prove an infinite asymptotic limit numerically. The build script
+compiles only the copied manuscript sources and bibliography using
+the existing local \LaTeX{} installation. Previous project phases
+and the research authors' original files are not edited by the
+manuscript build. Internal project citations identify provenance;
+they are not externally published or independently certified results.
+
+\appendix
+\input{information.tex}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

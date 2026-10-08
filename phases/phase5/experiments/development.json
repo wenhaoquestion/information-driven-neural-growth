@@ -1,0 +1,35 @@
+{
+  "d": 12,
+  "arrivals": 7,
+  "block": 1024,
+  "neval": 32768,
+  "max_width": 7,
+  "base_reservoir": 128,
+  "matched_reservoir": 138,
+  "event_budget": 2000000,
+  "batch": 128,
+  "lr": 0.015,
+  "gradient_clip": 20.0,
+  "probes": 4,
+  "probe_steps": 20,
+  "probe_lr": 0.05,
+  "methods": [
+    "historical_moment",
+    "reservoir_residual",
+    "fresh_residual",
+    "learned_probe",
+    "random_replay128",
+    "random_matched138",
+    "fixed7_replay138"
+  ],
+  "tasks": [
+    "lowrank_noiseless",
+    "nonlinear"
+  ],
+  "seeds": [
+    810000,
+    810001,
+    810002,
+    810003
+  ]
+}

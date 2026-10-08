@@ -1,0 +1,72 @@
+[
+  {
+    "j": 16,
+    "source_mass": "1/4 at every source state",
+    "hierarchies_enumerated": 18,
+    "det_price_exact": "62/9",
+    "det_price_decimal": 6.888888888888889,
+    "stochastic_lower_exact": "549/125",
+    "stochastic_upper_exact": "16/3",
+    "all_rational_assertions_passed": true
+  },
+  {
+    "j": 17,
+    "source_mass": "1/4 at every source state",
+    "hierarchies_enumerated": 18,
+    "det_price_exact": "140/19",
+    "det_price_decimal": 7.368421052631579,
+    "stochastic_lower_exact": "2622/565",
+    "stochastic_upper_exact": "67/12",
+    "all_rational_assertions_passed": true
+  },
+  {
+    "j": 32,
+    "source_mass": "1/4 at every source state",
+    "hierarchies_enumerated": 18,
+    "det_price_exact": "250/17",
+    "det_price_decimal": 14.705882352941176,
+    "stochastic_lower_exact": "4233/505",
+    "stochastic_upper_exact": "28/3",
+    "all_rational_assertions_passed": true
+  },
+  {
+    "j": 64,
+    "source_mass": "1/4 at every source state",
+    "hierarchies_enumerated": 18,
+    "det_price_exact": "1010/33",
+    "det_price_decimal": 30.606060606060606,
+    "stochastic_lower_exact": "33297/2033",
+    "stochastic_upper_exact": "52/3",
+    "all_rational_assertions_passed": true
+  },
+  {
+    "j": 128,
+    "source_mass": "1/4 at every source state",
+    "hierarchies_enumerated": 18,
+    "det_price_exact": "4066/65",
+    "det_price_decimal": 62.55384615384615,
+    "stochastic_lower_exact": "264225/8161",
+    "stochastic_upper_exact": "100/3",
+    "all_rational_assertions_passed": true
+  },
+  {
+    "j": 256,
+    "source_mass": "1/4 at every source state",
+    "hierarchies_enumerated": 18,
+    "det_price_exact": "16322/129",
+    "det_price_decimal": 126.52713178294573,
+    "stochastic_lower_exact": "2105409/32705",
+    "stochastic_upper_exact": "196/3",
+    "all_rational_assertions_passed": true
+  },
+  {
+    "j": 1024,
+    "source_mass": "1/4 at every source state",
+    "hierarchies_enumerated": 18,
+    "det_price_exact": "261890/513",
+    "det_price_decimal": 510.5068226120858,
+    "stochastic_lower_exact": "134349057/524033",
+    "stochastic_upper_exact": "772/3",
+    "all_rational_assertions_passed": true
+  }
+]

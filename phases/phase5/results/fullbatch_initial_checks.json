@@ -1,0 +1,23 @@
+{
+  "rows": [
+    {
+      "n": 1152,
+      "proxy": 1999980,
+      "steps": 128,
+      "remainder": 20,
+      "full_minibatches": 127,
+      "terminal_budget_batch_size": 4,
+      "accesses": 16260
+    },
+    {
+      "n": 1162,
+      "proxy": 1999980,
+      "steps": 128,
+      "remainder": 20,
+      "full_minibatches": 127,
+      "terminal_budget_batch_size": 4,
+      "accesses": 16260
+    }
+  ],
+  "matched_steps_and_accesses": true
+}

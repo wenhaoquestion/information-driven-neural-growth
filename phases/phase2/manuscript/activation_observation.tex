@@ -1,0 +1,265 @@
+% Complete Phase II proofs. Parent manuscript supplies theorem environments.
+\section{What an activation-only controller cannot observe}
+\label{sec:activation-observation}
+
+We now study actual neural parameters. This model has no discrete
+representation-cardinality constraint. Its purpose is to separate an
+information summary from the information needed to realize a structural
+operation. The observation restriction below is explicit: a physical unit
+may also have access to presynaptic inputs, in which case the negative
+result does not apply.
+
+Let $X$ be uniform on $\{e_1,-e_1,e_2,-e_2\}\subset\mathbb R^2$.
+For an unknown task $s\in\{-1,+1\}$ and $0<\eta<1/2$, set
+\[
+ q_s(\pm e_1)=\mathbb P_s(Y=1\mid X=\pm e_1)=\tfrac12+s\eta,
+ \qquad q_s(\pm e_2)=\tfrac12-s\eta.
+\]
+Every source-label pair has positive probability. Write
+$\phi(t)=\tanh t$ and use binary log loss
+$\ell(f,y)=\log(1+e^f)-yf$. A one-hidden-unit network has logit
+$f(x)=c+a\phi(b+w^\top x)$. Fix $b=b_0>0$, $a=1$, $w=0$, and
+$c=-\phi(b_0)$, so that $f_0=0$ and the predicted probability is $1/2$.
+At this point the activation is $A=\phi(b_0)$ and the output residual is
+$R=1/2-Y$. All logs below are natural.
+
+\begin{proposition}[A parameter local minimum with unrepresented task information]
+\label{prop:axis-local-min}
+If
+\begin{equation}
+ 0<\eta<\frac{\phi'(b_0)^2}{4|\phi''(b_0)|},
+ \label{eq:axis-stability}
+\end{equation}
+the stated one-unit parameter vector is a local minimum of population
+log loss on either task. It lies on a manifold of equivalent constant
+predictors. Nevertheless
+\[
+ I_s(X;Y)=\log2-h(\tfrac12+\eta)>0,
+ \qquad I_s(A;Y)=0.
+\]
+The entire laws of $(A,Y,R)$ are identical for the two tasks.
+\end{proposition}
+\begin{proof}
+Introduce the smooth invertible coordinate $r=c+a\phi(b)$, retaining
+$a,b,w$. Then
+$f(x)=r+a\{\phi(b+w^\top x)-\phi(b)\}$.
+For every $a,b$ near $1,b_0$, the risk as a function of $(r,w)$ is
+stationary at $(0,0)$: its $r$ derivative is
+$\mathbb E_s(1/2-Y)=0$, and its $w$ derivative is
+$a\phi'(b)\mathbb E_s[(1/2-Y)X]=0$ by sign symmetry of each axis.
+At this point its Hessian in the $(r,w)$ coordinates is block diagonal,
+with $rr$ entry $1/4$ and $ww$ block
+\begin{equation}
+ \frac{a^2\phi'(b)^2}{8}I_2
+ +a\phi''(b)
+ \begin{pmatrix}-s\eta/2&0\\0&s\eta/2\end{pmatrix}.
+ \label{eq:axis-hessian}
+\end{equation}
+Indeed $\ell_f=1/2-Y$, $\ell_{ff}=1/4$ at zero,
+$\mathbb E XX^\top=I_2/2$, and the mixed $rw$ entries vanish because
+$\mathbb EX=0$. Under \eqref{eq:axis-stability} this Hessian is
+positive definite at $(a,b)=(1,b_0)$. By continuity there is a compact
+neighborhood of $(1,b_0,0,0)$ and $m>0$ on which the $(r,w)$ Hessian is
+bounded below by $mI_3$. Taylor's integral formula along the line from
+$(0,0)$ to $(r,w)$, with $a,b$ fixed, therefore gives
+\[
+ L_s(r,w;a,b)-\log2\ge \frac m2(r^2+\|w\|^2)
+\]
+throughout a smaller neighborhood. At $r=w=0$ the risk remains $\log2$
+for all nearby $a,b$. This proves a local minimum in all original
+parameters, allowing its neutral directions.
+
+The marginal law of $Y$ is Bernoulli$(1/2)$ and every input has
+conditional entropy $h(1/2+\eta)$; the information formula follows.
+Since $A$ is constant, and $R$ is a function of $Y$, the final assertions
+follow as well.
+\end{proof}
+
+Replace the hidden unit by two units of output weight $1/2$, biases
+$b_0$, and incoming weights $+\epsilon v,-\epsilon v$, retaining the
+intercept $-\phi(b_0)$, where $\|v\|=1$. The resulting logit is
+\begin{equation}
+ f_{\epsilon,v}(x)=\frac{\phi(b_0+\epsilon v^\top x)
+ +\phi(b_0-\epsilon v^\top x)}2-\phi(b_0).
+ \label{eq:axis-split}
+\end{equation}
+At $\epsilon=0$ this is a function-preserving duplication; at positive
+$\epsilon$ it is the specified structural perturbation. This familiar
+symmetric split is the operation studied in splitting steepest descent;
+the score derived below is not claimed as new.
+
+For $t\ge0$ put
+\begin{equation}
+ d(t)=\phi(b_0)-\frac{\phi(b_0+t)+\phi(b_0-t)}2
+ =\frac{z(1-z^2)\tanh^2t}{1-z^2\tanh^2t},\qquad z=\tanh b_0.
+ \label{eq:axis-d}
+\end{equation}
+Thus $d(0)=0$ and $0<d(t)<z$ for $t>0$.
+
+\begin{theorem}[Exact observation-channel obstruction and attainable descent]
+\label{thm:axis-observation}
+Let $\Delta_s(\epsilon,v)=L_s(f_{\epsilon,v})-\log2$, and put
+$d_j=d(|\epsilon v_j|)$. Then
+\begin{equation}
+ \Delta_s(\epsilon,v)
+ =\frac12\left\{\log\cosh(d_1/2)+\log\cosh(d_2/2)\right\}
+   +\frac{s\eta}{2}(d_1-d_2).
+ \label{eq:axis-risk}
+\end{equation}
+Consequently:
+\begin{enumerate}
+\item Any possibly randomized controller whose entire task-dependent
+observation consists of the population law of $(A,Y,R)$, or any number
+of independent samples from that law, satisfies
+\[
+ \max_{s\in\{-1,+1\}}\mathbb E_s
+       \Delta_s(\epsilon,v)\ge0.
+\]
+Here it may select both $\epsilon\ge0$ and the unit vector $v$ from
+these observations. Expectations include its observations and randomness;
+risk is evaluated on a fresh population input. The controller may also
+decline to split, which gives zero change.
+\item A controller with the input-residual second moment
+$M_s=\mathbb E_s[(1/2-Y)XX^\top]$ can choose $v=e_2$ for $s=+1$
+and $v=e_1$ for $s=-1$. For either task its exact gain is
+\begin{equation}
+ G(\epsilon,\eta)
+ =\frac{\eta d(\epsilon)}2
+  -\frac12\log\cosh\{d(\epsilon)/2\}
+ \ge\frac{\eta d(\epsilon)}2-\frac{d(\epsilon)^2}{16}>0
+ \label{eq:axis-gain}
+\end{equation}
+whenever $0<d(\epsilon)<8\eta$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+The addition formulas for $\tanh(b_0\pm t)$ give
+\eqref{eq:axis-d}; its denominator is positive. At either point on
+axis $j$, the split logit is $-d_j$. For any posterior $q$,
+\[
+ \mathbb E[\ell(-d,Y)\mid q]-\log2
+ =\log\cosh(d/2)+(q-1/2)d.
+\]
+Averaging the two axes proves \eqref{eq:axis-risk}.
+
+The two tasks give identical laws of all permitted controller
+observations. Consequently its joint distribution of $(\epsilon,v)$
+is the same under both tasks, including when selected from a random
+sample. Pointwise,
+\[
+ \Delta_+(\epsilon,v)+\Delta_-(\epsilon,v)
+ =\log\cosh(d_1/2)+\log\cosh(d_2/2)\ge0.
+\]
+Taking the common expectation proves the first part. Independent
+controller randomization cannot change this calculation.
+
+The matrix is $M_s=\operatorname{diag}(-s\eta/2,s\eta/2)$, so it
+identifies the displayed axis choice. Substituting it in
+\eqref{eq:axis-risk} gives the gain. To verify the inequality used
+in \eqref{eq:axis-gain}, for $u\ge0$ one has $\tanh u\le u$, because
+the derivative of $u-\tanh u$ is $\tanh^2u\ge0$ and the value at zero
+is zero. Integrating gives $\log\cosh u\le u^2/2$; evenness handles
+$u<0$. The strict positivity follows from $d<8\eta$.
+\end{proof}
+
+For orientation, Taylor expansion of \eqref{eq:axis-split} yields
+\[
+ \Delta_s(\epsilon,v)
+ =\frac{\epsilon^2}{2}v^\top S_s v+O(\epsilon^4),
+ \qquad S_s=\phi''(b_0)M_s.
+\]
+This is the established splitting matrix specialized to log loss.
+Theorem~\ref{thm:axis-observation} adds an exact finite-displacement
+statement about which observation channels can select its useful
+direction. It does not require naming $M_s$ an entropy estimator or a
+unique-information decomposition. In particular, even the scalar
+$I_s(X;Y)$ is identical across the tasks and does not specify an axis.
+
+\begin{theorem}[Finite observations: sufficient and necessary sample order]
+\label{thm:axis-samples}
+Suppose the controller receives $n$ independent full pairs $(X_i,Y_i)$.
+Define
+\[
+ U_i=(1/2-Y_i)(X_{i2}^2-X_{i1}^2),\qquad
+ \widehat s=\operatorname{sign}\Big(\sum_{i=1}^n U_i\Big),
+\]
+with any fixed rule for a zero sum. Select the axis prescribed in
+Theorem~\ref{thm:axis-observation} for $\widehat s$, with fixed
+$\epsilon>0$ satisfying $d(\epsilon)<8\eta$. On either task,
+\begin{equation}
+ \mathbb P_s\{\Delta_s=-G(\epsilon,\eta)\}
+ \ge1-\exp(-2n\eta^2).
+ \label{eq:axis-sample-upper}
+\end{equation}
+Conversely, for any randomized procedure selecting a symmetric split
+from $n$ full observations, if its probability of strict population
+descent is at least $1-\delta$ on each task, where $0<\delta<1/4$,
+then
+\begin{equation}
+ n\ge\frac{\log(1/(4\delta))}{-\log(1-4\eta^2)}.
+ \label{eq:axis-sample-lower}
+\end{equation}
+For $0<\eta\le1/4$, the right hand side is at least
+$3\log(1/(4\delta))/(16\eta^2)$.
+\end{theorem}
+\begin{proof}
+For task $s$, $U_i$ takes values $\pm1/2$ and has mean $s\eta$.
+Hoeffding's inequality for independent variables with range length one
+therefore gives
+$\mathbb P_s(s\sum_i U_i\le0)\le e^{-2n\eta^2}$.
+For completeness its exponential bound follows by applying Markov's
+inequality to $e^{-t\sum_i(sU_i-\eta)}$, using the bounded-variable
+moment generating function inequality
+$\mathbb Ee^{t(V-\mathbb EV)}\le e^{t^2/8}$ for an interval of length
+one, and minimizing $e^{-tn\eta+nt^2/8}$ at $t=4\eta$.
+The moment generating function inequality follows from convexity by
+bounding $e^{tV}$ by its endpoint chord and maximizing the centered
+two-point expression (or by twice integrating that expression's
+second logarithmic derivative, which is a Bernoulli variance at most
+$1/4$). Correct identification gives exactly the claimed gain.
+
+Any selected split with $\Delta_s<0$ must, by \eqref{eq:axis-risk},
+satisfy $s(d_2-d_1)>0$. Therefore a procedure that achieves strict
+descent with probability at least $1-\delta$ yields a test for $s$
+with each error probability at most $\delta$: report $+1$ when
+$d_2>d_1$ and $-1$ otherwise. Extra independent randomization cannot
+improve the optimal testing error.
+
+Write $P_+,P_-$ for the two laws of a full pair. Their Hellinger
+affinity is
+\[
+ \rho=\sum_{x,y}\sqrt{P_+(x,y)P_-(x,y)}
+     =\sqrt{1-4\eta^2}.
+\]
+The affinity of product laws is $\rho^n$. For arbitrary finite laws
+$P,Q$ with affinity $a$, Cauchy--Schwarz gives
+\[
+ \|P-Q\|_{\rm TV}
+ =\frac12\sum_z|\sqrt{P(z)}-\sqrt{Q(z)}|
+                 (\sqrt{P(z)}+\sqrt{Q(z)})
+ \le\sqrt{1-a^2}.
+\]
+The sum of type-I and type-II errors of any test is at least
+$1-\|P-Q\|_{\rm TV}$: this follows directly by writing its acceptance
+probability as a function in $[0,1]$ and bounding the difference of
+expectations by total variation. Its equal-prior average error is
+thus at least
+\[
+ \frac{1-\sqrt{1-\rho^{2n}}}{2}\ge\frac{\rho^{2n}}4
+ =\frac{(1-4\eta^2)^n}4,
+\]
+where the inequality uses $1-\sqrt{1-t}=t/(1+\sqrt{1-t})\ge t/2$.
+Both errors at most $\delta$ imply \eqref{eq:axis-sample-lower}.
+Finally $-\log(1-u)=\int_0^u(1-t)^{-1}dt\le u/(1-u)$ and
+$u=4\eta^2\le1/4$ imply
+$-\log(1-4\eta^2)\le16\eta^2/3$.
+\end{proof}
+
+The lower bound applies even to a controller given full inputs; the
+activation-only controller receives no task-identifying information at
+any sample size. The upper bound uses ordinary independent sampling,
+not an oracle population covariance. Neither statement predicts the
+outcome of unrestricted training after the operation. Such training
+observes input coordinates and can learn distinctions unavailable to
+the restricted structural controller.
+

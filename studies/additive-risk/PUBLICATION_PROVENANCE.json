@@ -1,0 +1,542 @@
+{
+  "edition": "Public research edition; original event dates are historical",
+  "scope": "Original-to-public derivative provenance. Refreshed public receipt hashes certify current public-copy consistency only; no historical execution re-attestation. Scientific data and counts were not resampled.",
+  "files": [
+    {
+      "path": "PROTOCOL.json",
+      "original_sha256": "5aa63316adfbe992577bdac4c0aca428b452bb470b76a801c5a0b795ba00175b",
+      "publication_sha256": "5aa63316adfbe992577bdac4c0aca428b452bb470b76a801c5a0b795ba00175b",
+      "original_bytes": 5164,
+      "publication_bytes": 5164,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "qa/protocol_freeze.json",
+      "original_sha256": "4880a98ca470da89a6b2070b80de02d7dc8cac4f7ae98dfea3bbf363f0128a82",
+      "publication_sha256": "4880a98ca470da89a6b2070b80de02d7dc8cac4f7ae98dfea3bbf363f0128a82",
+      "original_bytes": 100,
+      "publication_bytes": 100,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "theory/LOCAL_ORACLE_CERTIFICATE.json",
+      "original_sha256": "f9704327b9c0aa1bb9a9cec04c0acef5f2aca0d888113c705b0844d706b5a756",
+      "publication_sha256": "f9704327b9c0aa1bb9a9cec04c0acef5f2aca0d888113c705b0844d706b5a756",
+      "original_bytes": 18340,
+      "publication_bytes": 18340,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "theory/certify_bounds.py",
+      "original_sha256": "edefc59345cdcdb0e3faf8c1aa183457ee2059dc914791f78d74fbbdc8f204ff",
+      "publication_sha256": "edefc59345cdcdb0e3faf8c1aa183457ee2059dc914791f78d74fbbdc8f204ff",
+      "original_bytes": 5025,
+      "publication_bytes": 5025,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "theory/ideal_check/verify_ideal.py",
+      "original_sha256": "a9856dc47bd413a857cf980861f51b4a7a46b282c51f52f792c1b59373c762b3",
+      "publication_sha256": "a9856dc47bd413a857cf980861f51b4a7a46b282c51f52f792c1b59373c762b3",
+      "original_bytes": 2269,
+      "publication_bytes": 2269,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "theory/local_loss_oracle.py",
+      "original_sha256": "5da8711422b08cd2823c09010c355fda810f49f7748bd59928c0600f36986768",
+      "publication_sha256": "5da8711422b08cd2823c09010c355fda810f49f7748bd59928c0600f36986768",
+      "original_bytes": 6280,
+      "publication_bytes": 6280,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "theory/rational_certificates.json",
+      "original_sha256": "20be4f8ab173557f4bb368f5ebd39b9a1ddb4094d3e053bb15095a44be6978e5",
+      "publication_sha256": "20be4f8ab173557f4bb368f5ebd39b9a1ddb4094d3e053bb15095a44be6978e5",
+      "original_bytes": 47050,
+      "publication_bytes": 47050,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "statistics/CONFIRMATION_REFERENCE.json",
+      "original_sha256": "2c5317d09246222b16ae657e99a73aa2a37d25b00bce9ba2ed411e5cf6d6d661",
+      "publication_sha256": "490da167a2cd9ccc5abe370f08e15e34d32e6b3c83386c9a0edaa363a6d8019b",
+      "original_bytes": 679,
+      "publication_bytes": 719,
+      "transformation": "Removed machine-only metadata; scientific fields retained; removed machine metadata and/or refreshed publication digest bindings as applicable"
+    },
+    {
+      "path": "statistics/EXACT_VERIFICATION.json",
+      "original_sha256": "d3281617d925ee56f80ab0ed9f1d42608a6e73922c378281ef06d96c3618ac53",
+      "publication_sha256": "d3281617d925ee56f80ab0ed9f1d42608a6e73922c378281ef06d96c3618ac53",
+      "original_bytes": 637,
+      "publication_bytes": 637,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "statistics/INTERIOR_2048_POWER_CERTIFICATE.json",
+      "original_sha256": "11d892d7fd510a570ce557000861ad4dd2f30c12abcc3ad94c2f76ea1637cdee",
+      "publication_sha256": "11d892d7fd510a570ce557000861ad4dd2f30c12abcc3ad94c2f76ea1637cdee",
+      "original_bytes": 29875,
+      "publication_bytes": 29875,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "statistics/INTERIOR_2048_POWER_ENVELOPE.json",
+      "original_sha256": "17020cb115b2ae5fdf2967a7ac460ea1aa4eb9dc4b0e87fe8afe6216a841b529",
+      "publication_sha256": "17020cb115b2ae5fdf2967a7ac460ea1aa4eb9dc4b0e87fe8afe6216a841b529",
+      "original_bytes": 3856,
+      "publication_bytes": 3856,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "statistics/PRE_CONFIRMATION_VALIDATION.json",
+      "original_sha256": "7949642cfb0d8df80da78166147cffb1687bb28073793db0145deb51fce8e4ef",
+      "publication_sha256": "daaec9707012641c375e271db62dd3b65afda6ffe774ad06d4550b9db719d75b",
+      "original_bytes": 782,
+      "publication_bytes": 832,
+      "transformation": "Removed machine-only metadata; scientific fields retained; removed machine metadata and/or refreshed publication digest bindings as applicable"
+    },
+    {
+      "path": "statistics/certify_interior2048.py",
+      "original_sha256": "ff33f81fb0262e6cacf0d51d78a0b3251b29ef4675198c26b471106945b442d9",
+      "publication_sha256": "ff33f81fb0262e6cacf0d51d78a0b3251b29ef4675198c26b471106945b442d9",
+      "original_bytes": 1965,
+      "publication_bytes": 1965,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "statistics/confirm_once.py",
+      "original_sha256": "649f85362ae35cf14310074e319af6e486037dd6025a4dc63a0c2b097a98fbf7",
+      "publication_sha256": "4f16ef912f25a1a878444dc56632665a7439cfcb218e897ba04238723ff872f3",
+      "original_bytes": 4481,
+      "publication_bytes": 4492,
+      "transformation": "Neutralized coordination wording only; line layout, RNG code and exclusive lock retained; not executed"
+    },
+    {
+      "path": "statistics/confirmation/COMPLETED.json",
+      "original_sha256": "1bf246270d102a87e58b132790df79cfdc587903512a45ea2959db24a7defcf9",
+      "publication_sha256": "1bf246270d102a87e58b132790df79cfdc587903512a45ea2959db24a7defcf9",
+      "original_bytes": 165,
+      "publication_bytes": 165,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "statistics/confirmation/COUNTS_PUBLIC.json",
+      "original_sha256": "57979346c6df6d9f2bbe4f9c81ce5c592572d122f640cc658a4b91b5d0901af1",
+      "publication_sha256": "57979346c6df6d9f2bbe4f9c81ce5c592572d122f640cc658a4b91b5d0901af1",
+      "original_bytes": 308,
+      "publication_bytes": 308,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "statistics/confirmation/INFERENCE.json",
+      "original_sha256": "89012fa712128d525f11ab2041216dd4062a130c05889587fd52eabd9193da2b",
+      "publication_sha256": "f250e5cb3a39b5e0bbc73d8f51a8dae98a20cb2271d97b171d9946d57acc3d74",
+      "original_bytes": 63017,
+      "publication_bytes": 63066,
+      "transformation": "Removed machine-only metadata; scientific fields retained; removed machine metadata and/or refreshed publication digest bindings as applicable"
+    },
+    {
+      "path": "statistics/confirmation/ONE_SHOT_STARTED.lock",
+      "original_sha256": "7c2fc32baf524e756208d4e0b570883c052746832c8684abbdcfe63ae8c357ad",
+      "publication_sha256": "7c2fc32baf524e756208d4e0b570883c052746832c8684abbdcfe63ae8c357ad",
+      "original_bytes": 91,
+      "publication_bytes": 91,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "statistics/confirmation/RUNTIME.json",
+      "original_sha256": "6470f77f55ab667e6edadd7f25ae3da9a78df162bd07e518d52987d25899ea5d",
+      "publication_sha256": "63919ca85f0e36499102acfbff1b91205709f4f6af47d5f57691b631ebb15031",
+      "original_bytes": 1428,
+      "publication_bytes": 1479,
+      "transformation": "Removed machine-only metadata; scientific fields retained; removed machine metadata and/or refreshed publication digest bindings as applicable"
+    },
+    {
+      "path": "statistics/honest_delta.py",
+      "original_sha256": "5ef373afa13c429509e80f45fe693ae87065ae10ba9727fcc2a15839fe99e9be",
+      "publication_sha256": "5ef373afa13c429509e80f45fe693ae87065ae10ba9727fcc2a15839fe99e9be",
+      "original_bytes": 16548,
+      "publication_bytes": 16548,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "statistics/infer_confirmation.py",
+      "original_sha256": "bf97ae09de154bba5a5f1b9696ec30610d07f405ead7296a473f03eac0066afb",
+      "publication_sha256": "bf97ae09de154bba5a5f1b9696ec30610d07f405ead7296a473f03eac0066afb",
+      "original_bytes": 4309,
+      "publication_bytes": 4309,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "statistics/verify_exact.py",
+      "original_sha256": "28798c60df24c4933dfe6053e1ce6a2cac5049a522a78582260ff687be7fc798",
+      "publication_sha256": "28798c60df24c4933dfe6053e1ce6a2cac5049a522a78582260ff687be7fc798",
+      "original_bytes": 4725,
+      "publication_bytes": 4725,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "computation/cells.csv",
+      "original_sha256": "54034c46f53520f7b3437429023036787e4c14710f5792d88bdd37927bcb2172",
+      "publication_sha256": "54034c46f53520f7b3437429023036787e4c14710f5792d88bdd37927bcb2172",
+      "original_bytes": 13251,
+      "publication_bytes": 13251,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "computation/compute_pilot.py",
+      "original_sha256": "2de9a5229e4c2618d1f8deb626a0f0910e2c36a7ad8322e0f201efb8848dbfa2",
+      "publication_sha256": "9b611f0ce2faf5c7e748d36fcf8741b7080a36702be81a05a734a924544ccebf",
+      "original_bytes": 18812,
+      "publication_bytes": 18832,
+      "transformation": "Public historical-snapshot path adaptation only; numerical arithmetic unchanged"
+    },
+    {
+      "path": "computation/failures_and_corrections.json",
+      "original_sha256": "3719b554b71be60309f865c28071bae921d71a46f581ba0e7f032c7feed9e560",
+      "publication_sha256": "3719b554b71be60309f865c28071bae921d71a46f581ba0e7f032c7feed9e560",
+      "original_bytes": 883,
+      "publication_bytes": 883,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "computation/first_pass.json",
+      "original_sha256": "1d88e7eaddae08a09c2f42d962efa5fa5458d501cf30a13920db7c8b426035c4",
+      "publication_sha256": "fe08dbec16f67141251ea4f34a7c0e7b54a8a66d3854cf48007f1ec8dfc849d7",
+      "original_bytes": 291164,
+      "publication_bytes": 291220,
+      "transformation": "Removed machine-only metadata; scientific fields retained; removed machine metadata and/or refreshed publication digest bindings as applicable"
+    },
+    {
+      "path": "computation/first_pass_freeze.json",
+      "original_sha256": "2f92965fef4820859e4ac224c525297fd1e8b334e06aab61821eee1dd6bbe66b",
+      "publication_sha256": "acdaec1288685b9b53fd6c213235646baf2e4d5a905cf170c0b91d6580ff4f91",
+      "original_bytes": 209,
+      "publication_bytes": 423,
+      "transformation": "Public relative paths, neutral documentation, or metadata digest rebinding; scientific numeric fields unchanged; removed machine metadata and/or refreshed publication digest bindings as applicable"
+    },
+    {
+      "path": "computation/hierarchies.csv",
+      "original_sha256": "b889f9d486b8417588f894ed22b8f61987cd7f3e612e37c5cbc0ca03da86e57d",
+      "publication_sha256": "b889f9d486b8417588f894ed22b8f61987cd7f3e612e37c5cbc0ca03da86e57d",
+      "original_bytes": 75583,
+      "publication_bytes": 75583,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "computation/historical_comparison.csv",
+      "original_sha256": "cae1f1473999a4ebbc33e232e4cbc1d8039d9e221be4dc79aaa7b391d55317e9",
+      "publication_sha256": "cae1f1473999a4ebbc33e232e4cbc1d8039d9e221be4dc79aaa7b391d55317e9",
+      "original_bytes": 5713,
+      "publication_bytes": 5713,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "computation/historical_comparison.json",
+      "original_sha256": "8a74ce016e69f13652f56effa4e3f201e62c2c622ca9fc0607767b4933c003c1",
+      "publication_sha256": "afbf65ba0c116ed91dd1e62f42332bafaa79e3fb561fa6063386a1bd40d523e6",
+      "original_bytes": 10401,
+      "publication_bytes": 10615,
+      "transformation": "Public relative paths, neutral documentation, or metadata digest rebinding; scientific numeric fields unchanged; removed machine metadata and/or refreshed publication digest bindings as applicable"
+    },
+    {
+      "path": "computation/integrity_checks.json",
+      "original_sha256": "b14547f76cba6bc459088add57a32312aa9057243cee29ae93620f594608ae71",
+      "publication_sha256": "b14547f76cba6bc459088add57a32312aa9057243cee29ae93620f594608ae71",
+      "original_bytes": 4601,
+      "publication_bytes": 4601,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "computation/normalization.csv",
+      "original_sha256": "117cf1f1313506c17bed434cf18e9626702e37225b9826cf53c95bd1688cc3f0",
+      "publication_sha256": "117cf1f1313506c17bed434cf18e9626702e37225b9826cf53c95bd1688cc3f0",
+      "original_bytes": 3075,
+      "publication_bytes": 3075,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "computation/partitions.csv",
+      "original_sha256": "8414233b76b4394350136ad85752f97607ded5780e50e5bb7765f739bdcce9cd",
+      "publication_sha256": "8414233b76b4394350136ad85752f97607ded5780e50e5bb7765f739bdcce9cd",
+      "original_bytes": 13313,
+      "publication_bytes": 13313,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "computation/precision_recheck.json",
+      "original_sha256": "8c4622297880cd20f56036d57b87e3fdad42faa55f478c35cebacbc6b5b0f2a9",
+      "publication_sha256": "8c4622297880cd20f56036d57b87e3fdad42faa55f478c35cebacbc6b5b0f2a9",
+      "original_bytes": 45858,
+      "publication_bytes": 45858,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "computation/reproduce_once.py",
+      "original_sha256": "7937619efa952d886bc2aafbf51986449ab25c9b6d638b0e4042e7ae531faf32",
+      "publication_sha256": "7937619efa952d886bc2aafbf51986449ab25c9b6d638b0e4042e7ae531faf32",
+      "original_bytes": 533,
+      "publication_bytes": 533,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "computation/runtime.json",
+      "original_sha256": "76239acd4ede4b79dd22899fab4d7a94d3e00dd54ab3b5e8afcd7d35569d8282",
+      "publication_sha256": "76239acd4ede4b79dd22899fab4d7a94d3e00dd54ab3b5e8afcd7d35569d8282",
+      "original_bytes": 581,
+      "publication_bytes": 581,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "computation/summary.csv",
+      "original_sha256": "205b695fef8b6a453fb2b76dfe33576cb1cdc11c8c6fa051108b9deec0b7d137",
+      "publication_sha256": "205b695fef8b6a453fb2b76dfe33576cb1cdc11c8c6fa051108b9deec0b7d137",
+      "original_bytes": 3490,
+      "publication_bytes": 3490,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "review/candidate_power_review.json",
+      "original_sha256": "7797023449f9374b6cc1b04048e2032e521e4bf7712c41141408ba4ad9527754",
+      "publication_sha256": "574967b9830e79dfa7492a1be2d1a494a8d00b0b90ee912b9eb53bae79ccb52c",
+      "original_bytes": 3502,
+      "publication_bytes": 3835,
+      "transformation": "Public relative paths, neutral documentation, or metadata digest rebinding; scientific numeric fields unchanged; removed machine metadata and/or refreshed publication digest bindings as applicable; added explicit publication_binding_notice distinguishing derivative hash bindings from historical review attestation"
+    },
+    {
+      "path": "review/candidate_power_review.py",
+      "original_sha256": "171af275744add8cc284d8fcb9487d827ff52aafe4cfbb728e10e1927d4afd54",
+      "publication_sha256": "171af275744add8cc284d8fcb9487d827ff52aafe4cfbb728e10e1927d4afd54",
+      "original_bytes": 3975,
+      "publication_bytes": 3975,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "review/independent_exact_checks.json",
+      "original_sha256": "32e7a418e8ce59a6cbc8380fcdb284e116ca459f345513a6a4238b780503aa41",
+      "publication_sha256": "32e7a418e8ce59a6cbc8380fcdb284e116ca459f345513a6a4238b780503aa41",
+      "original_bytes": 5357,
+      "publication_bytes": 5357,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "review/independent_exact_checks.py",
+      "original_sha256": "fac910066c6cba66074dc5cbc1841102025bfc40863d0d2b96e748a888cdddbc",
+      "publication_sha256": "fac910066c6cba66074dc5cbc1841102025bfc40863d0d2b96e748a888cdddbc",
+      "original_bytes": 3703,
+      "publication_bytes": 3703,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "review/independent_scale_diagnostics.json",
+      "original_sha256": "df3136829390a29334533be8458f476f4675211f14d81e8fc9905295ba7bbbb7",
+      "publication_sha256": "1637a7e5a16c408e01bc17eb153fbd6cb6bbe73ca74474d20023f608559bff83",
+      "original_bytes": 1968,
+      "publication_bytes": 1969,
+      "transformation": "Removed machine-only metadata; scientific fields retained; removed machine metadata and/or refreshed publication digest bindings as applicable"
+    },
+    {
+      "path": "review/secondary_review_checks.json",
+      "original_sha256": "b990f6c90e47690bcc56886741054292f4d4a5a177b2e12e58ca5ec44433f42b",
+      "publication_sha256": "abb1d6d85f9b04d1f4a0deb8b180862ede75b9f103053b37c9c711a4ed1cd814",
+      "original_bytes": 4004,
+      "publication_bytes": 4337,
+      "transformation": "Public relative paths, neutral documentation, or metadata digest rebinding; scientific numeric fields unchanged; removed machine metadata and/or refreshed publication digest bindings as applicable; added explicit publication_binding_notice distinguishing derivative hash bindings from historical review attestation"
+    },
+    {
+      "path": "review/secondary_review_checks.py",
+      "original_sha256": "36ae2cb4a658ebe01b2ea923a5e1babb03fb3659bf3708bd1ab3b3f3d03b621c",
+      "publication_sha256": "36ae2cb4a658ebe01b2ea923a5e1babb03fb3659bf3708bd1ab3b3f3d03b621c",
+      "original_bytes": 4919,
+      "publication_bytes": 4919,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "review/statistics_exact_review.json",
+      "original_sha256": "f6174c2aa1ce4011f062e14e44625d582e05121dca696bddb671e2d8bd7bb3c6",
+      "publication_sha256": "f6174c2aa1ce4011f062e14e44625d582e05121dca696bddb671e2d8bd7bb3c6",
+      "original_bytes": 825,
+      "publication_bytes": 825,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "review/statistics_exact_review.py",
+      "original_sha256": "c77906abdb890657219487bb05c17c1a75dfc6823725c288472daaf6823580d2",
+      "publication_sha256": "c77906abdb890657219487bb05c17c1a75dfc6823725c288472daaf6823580d2",
+      "original_bytes": 3988,
+      "publication_bytes": 3988,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "theory/FIRST_PASS_THEORY.md",
+      "original_sha256": "9c36690be50bad62af9abed2943aa50ccecd7d7952cfacbc436bce701b7bfd4d",
+      "publication_sha256": "91e4651b3ceb66d3f2cde1c2a303d9c7c86b7026c1df9bae5bcbf9b153a13b91",
+      "original_bytes": 9552,
+      "publication_bytes": 9110,
+      "transformation": "Technical proof retained; internal coordination language removed and public paths supplied"
+    },
+    {
+      "path": "theory/LOCAL_GRADIENT_SUPPORT.md",
+      "original_sha256": "e3053282ffc6501aaeab20e4542bd6f854fc1d8d62d50f1f2d9381279155685d",
+      "publication_sha256": "ff321fc7641bd79239e002d6351234c4603b56f14d10661c119bff850e3a35c4",
+      "original_bytes": 5535,
+      "publication_bytes": 5537,
+      "transformation": "Technical proof retained; internal coordination language removed and public paths supplied"
+    },
+    {
+      "path": "theory/CERTIFIED_TABLE.md",
+      "original_sha256": "2caad3b3905252cd5d35d559f95f1f65dc235ef6ec7efb5480b83caf5828baf1",
+      "publication_sha256": "2caad3b3905252cd5d35d559f95f1f65dc235ef6ec7efb5480b83caf5828baf1",
+      "original_bytes": 1427,
+      "publication_bytes": 1427,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "theory/ideal_check/IDEAL_EXACT_PROOF_ZH.md",
+      "original_sha256": "21e857d035925d7d55600076d157a887579785497d96ba79879bb45e0a5200e9",
+      "publication_sha256": "c5e83eea5682805aa0999428f90a56cce218b1ad28efa93b8613f0be9b34713d",
+      "original_bytes": 5163,
+      "publication_bytes": 5165,
+      "transformation": "Technical proof retained; internal coordination language removed and public paths supplied"
+    },
+    {
+      "path": "statistics/DERIVATION.md",
+      "original_sha256": "cac6f4dbf95d664f119b7ff9a4eceda93072d1f79dbb98a7820db5074f93a279",
+      "publication_sha256": "a6fbcb81b06c18fea5c26710465a5d28a9080441159d92f0e295f706d1b3a30b",
+      "original_bytes": 10582,
+      "publication_bytes": 10417,
+      "transformation": "Technical proof retained; internal coordination language removed and public paths supplied"
+    },
+    {
+      "path": "computation/CERTIFICATE_COMPARISON.md",
+      "original_sha256": "63b3b56f1b7ef4fcf92f522db6a047292f1af0adc8c0758da8e333e241145ac5",
+      "publication_sha256": "63b3b56f1b7ef4fcf92f522db6a047292f1af0adc8c0758da8e333e241145ac5",
+      "original_bytes": 2093,
+      "publication_bytes": 2093,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "PILOT_RESULT_ZH.md",
+      "original_sha256": "d13b54b3b66dad6a7789623c5b71724a6e5aa0244c7cfe06cd8e9f00946c8a5d",
+      "publication_sha256": "acb1aa42a8d37b09b227f8df33c4013b7d19806c5bd9b9b666370466b1eea900",
+      "original_bytes": 16812,
+      "publication_bytes": 15241,
+      "transformation": "Public technical report; removed private administration and links, kept scientific content"
+    },
+    {
+      "path": "statistics/confirmation_run.log",
+      "original_sha256": "dd75b28ff49928186e45409e05f1d4e90e43c2fb4662e3c3dbbc864d958f5738",
+      "publication_sha256": "24fa07e1264bc8c0b4b290074e35759a977c296fb50d8770069449ad5e71de35",
+      "original_bytes": 293,
+      "publication_bytes": 133,
+      "transformation": "Replaced machine path log with public scientific completion statement"
+    },
+    {
+      "path": "historical_snapshot/phase8_research_work/manuscript/unequal_weights_endpoint.tex",
+      "original_sha256": "9539b1f035d6e297ed9758ea18ee96f097ec8488346666dc26796f276656b989",
+      "publication_sha256": "9539b1f035d6e297ed9758ea18ee96f097ec8488346666dc26796f276656b989",
+      "original_bytes": 13361,
+      "publication_bytes": 13361,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "historical_snapshot/phase8_research_work/manuscript/curvature_hierarchy.tex",
+      "original_sha256": "b89c2e259be87b2dc1889f11e4ebd898b2b56d8dda97105ca6f3f7d8fe0f7b10",
+      "publication_sha256": "b89c2e259be87b2dc1889f11e4ebd898b2b56d8dda97105ca6f3f7d8fe0f7b10",
+      "original_bytes": 69200,
+      "publication_bytes": 69200,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "historical_snapshot/phase8_research_work/research/experiments/code/hierarchy_core.py",
+      "original_sha256": "f30116362fa5ca522295403a74d76c42fbe9c5ecfe2c3f2760c0b6aa507fc582",
+      "publication_sha256": "f30116362fa5ca522295403a74d76c42fbe9c5ecfe2c3f2760c0b6aa507fc582",
+      "original_bytes": 7685,
+      "publication_bytes": 7685,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "historical_snapshot/phase8_research_work/research/experiments/code/run_experiments.py",
+      "original_sha256": "9956efabfa69ee726a91e4c901003bc33dcd1c9c209162ca1a77fbceb8b8de11",
+      "publication_sha256": "9956efabfa69ee726a91e4c901003bc33dcd1c9c209162ca1a77fbceb8b8de11",
+      "original_bytes": 11008,
+      "publication_bytes": 11008,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "historical_snapshot/phase8_research_work/research/experiments/raw/endpoint_polynomial.json",
+      "original_sha256": "69d6a9b90654375ca0c33cbede34507d4f59d8fdc552ae8866426634502358a8",
+      "publication_sha256": "69d6a9b90654375ca0c33cbede34507d4f59d8fdc552ae8866426634502358a8",
+      "original_bytes": 50332,
+      "publication_bytes": 50332,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "historical_snapshot/phase8_research_work/research/experiments/raw/finite_degree.json",
+      "original_sha256": "c2b9725cb067054f0323b9f5a7982e512b7da1c80abc81a4411098faa43ea0f3",
+      "publication_sha256": "c2b9725cb067054f0323b9f5a7982e512b7da1c80abc81a4411098faa43ea0f3",
+      "original_bytes": 99704,
+      "publication_bytes": 99704,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "historical_snapshot/cross_stage_audit_work/reviews/NEXT_QUESTION_RECOMMENDATION.md",
+      "original_sha256": "5c24a8c0006c30bcf2ece736117efdbb4d5ab8cdc6f0e9a9cbc284f9fd4f6c65",
+      "publication_sha256": "c389d78a9f074b78c7eed5858741d59788ca20a74c09898ba9612f85971a3661",
+      "original_bytes": 14904,
+      "publication_bytes": 512,
+      "transformation": "Replaced internal planning narrative with neutral historical technical scope"
+    },
+    {
+      "path": "README.md",
+      "original_sha256": null,
+      "publication_sha256": "9e281304779702d983dcd3603b3d185791618ce836beb4485b35233bc342b5bf",
+      "original_bytes": null,
+      "publication_bytes": 2693,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "REPRODUCE.md",
+      "original_sha256": null,
+      "publication_sha256": "905dd52f08d3bfb9b3bfe6d681c940bf4ee9efeb832174da59f0863ffd2a6ba2",
+      "original_bytes": null,
+      "publication_bytes": 2103,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "SCIENTIFIC_STATUS.md",
+      "original_sha256": null,
+      "publication_sha256": "24b24ad68ed7a1e39fdc603ca786464652097d3a3244ea2a619f6b79bf6b5abc",
+      "original_bytes": null,
+      "publication_bytes": 1421,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "computation/README.md",
+      "original_sha256": null,
+      "publication_sha256": "dc0dfef8a98bf0c5f54717d396282e7e62248c59e519bf5002d0b42360f8e0ea",
+      "original_bytes": null,
+      "publication_bytes": 1316,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "PUBLICATION_PROVENANCE.md",
+      "original_sha256": null,
+      "publication_sha256": "1557cf4d1ae78b770a52ba9285dd2f1efbde8b45b7e03153863866f308c1652d",
+      "original_bytes": null,
+      "publication_bytes": 2842,
+      "transformation": "New public technical documentation; no new scientific result"
+    },
+    {
+      "path": "historical_snapshot/README.md",
+      "original_sha256": null,
+      "publication_sha256": "c76e71be9d399eb93a6818bc88a6d1878752113f06a0c0256fef82ee62c13cdd",
+      "original_bytes": null,
+      "publication_bytes": 692,
+      "transformation": "New public technical documentation; no new scientific result"
+    }
+  ]
+}

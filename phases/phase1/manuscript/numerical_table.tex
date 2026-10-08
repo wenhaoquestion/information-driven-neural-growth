@@ -1,0 +1,16 @@
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrr}
+\toprule
+$L$ & $\log_{10}w$ & $\rho_{\rm det}$ & Stochastic lower & Feasible upper & $B_0/D_3^*$\\
+\midrule
+16 & -6.9 & 2.19133 & 1.75386 & 2.12340 & 2.81549\\
+64 & -27.8 & 4.64119 & 2.95855 & 3.23657 & 0.92962\\
+256 & -111.2 & 9.49943 & 5.34252 & 5.57974 & 0.41840\\
+1024 & -444.7 & 19.14974 & 10.13188 & 10.34765 & 0.21067\\
+2048 & -889.4 & 27.12538 & 14.10659 & 14.31553 & 0.15253\\
+\bottomrule
+\end{tabular}
+\caption{Selected computed values. The deterministic column uses total risk. The stochastic columns are a variational lower bound evaluated numerically and the risk of the explicit encoder, respectively. The underlying values are saved with sixty significant decimal digits.}
+\label{tab:results}
+\end{table}

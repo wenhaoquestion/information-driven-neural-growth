@@ -1,0 +1,72 @@
+\subsection{A valid alternative to the conservative EB gate}
+\label{sec:betting-gate}
+
+The range-dependent term in the empirical Bernstein radius is a
+sufficient-bound cost, which need not be unavoidable. We therefore also
+test a standard bounded-mean betting construction
+\cite[Section 4]{waudby2024}. This changes the evidence mechanism while
+keeping proposals and training fixed; it is not a new information score
+or a new statistical test.
+
+For one comparison with required gain $\tau\in[0,1]$, put $Z_i=D_i-\tau$,
+where $D_i\in[-1,1]$ is the paired Brier difference. Our implemented
+thresholds are $\tau=0$ for continuation and $\tau=0.0005$ for growth.
+Fix
+\[
+ \Lambda_\tau=\{0.05,0.1,0.2,0.5,(1+\tau)^{-1}\},\qquad
+ E_n=\frac15\sum_{\lambda\in\Lambda_\tau}
+          \prod_{i=1}^n(1+\lambda Z_i).
+\]
+For these thresholds every $\lambda\in\Lambda_\tau$ belongs to
+$[0,(1+\tau)^{-1}]$. The gate accepts when $E_n\ge1/\alpha_\mathrm{pair}$.
+It computes each product in logarithms and combines them by log-sum-exp;
+zero factors give a zero product. The average over the five fixed values
+is essential: selecting the best product without its mixture penalty
+would not have this validity statement.
+
+\begin{proposition}[Conditional validity of the implemented betting gate]
+\label{prop:betting-gate}
+For the implemented thresholds $\tau\in\{0,0.0005\}$,
+conditional on an arbitrary training and decision history $H$, suppose
+the compared predictions and $\tau$ are fixed, the audit observations
+are iid, and $\mathbb E[D_i\mid H]\le\tau$. Then
+$\mathbb P(E_n\ge1/\alpha_\mathrm{pair}\mid H)
+\le\alpha_\mathrm{pair}$. The same bound holds for crossing the threshold
+at any audit sample size, provided the prediction pair stays fixed.
+Allocation $\alpha_\mathrm{pair}=0.05/(3\cdot8)$ gives probability at
+most $0.05$ of any false accepted inequality during the eight-opportunity,
+three-comparison implemented controller, with fresh audit data at each
+opportunity.
+\end{proposition}
+\begin{proof}
+Write $M_{\lambda,0}=1$ and
+$M_{\lambda,k}=\prod_{i=1}^k(1+\lambda Z_i)$.
+Since $Z_i\ge-1-\tau$ and
+$0\le\lambda\le(1+\tau)^{-1}$, every factor is nonnegative.
+Conditional on $H$ and the first $k-1$ audit observations,
+\[
+ \mathbb E[M_{\lambda,k}\mid H,Z_1,\ldots,Z_{k-1}]
+ =M_{\lambda,k-1}(1+\lambda\mathbb E[Z_k\mid H])
+ \le M_{\lambda,k-1}.
+\]
+Thus each product and their fixed average form nonnegative
+supermartingales, with initial value one. In particular
+$\mathbb E[E_n\mid H]\le1$, and Markov's inequality proves the
+fixed-size claim. For the threshold-crossing claim, let $T$ be the first
+crossing. For every finite $m$, the stopped average $E_{T\wedge m}$ has
+expectation at most one: this follows by summing its conditional
+nonpositive increments up to the bounded stopping time. On $\{T\le m\}$
+it is at least $1/\alpha_\mathrm{pair}$, so
+$\mathbb P(T\le m\mid H)\le\alpha_\mathrm{pair}$.
+Let $m\to\infty$. Finally integrate the conditional comparison bounds
+over $H$ and sum them over the 24 possible tests. The three comparisons
+may share the current audit sample; their independence is not needed.
+\end{proof}
+
+The proposition guarantees accepted inequalities, not the discovery of
+useful candidates or high power. Products are restarted for each new
+prediction pair. Reusing a product after a feedback-dependent change in
+the prediction pair is outside this implementation and proof. The gate
+adds $15n$ factor evaluations across the three comparisons per opportunity,
+in addition to the branch fitting and prediction evaluations shared with
+the EB procedure. The follow-up reports these extra operations.

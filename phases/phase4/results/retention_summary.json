@@ -1,0 +1,2594 @@
+[
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 128,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": -0.00022187500000000015,
+    "radius": 0.04951156846829462,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 128,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": -0.00022187500000000015,
+    "radius": 0.04951156846829462,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 128,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "mean_estimate": -0.00022187500000000015,
+    "radius": 0.055701305095400076,
+    "unique_labels": 32896
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 512,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": -0.00046640624999999997,
+    "radius": 0.02319550700833794,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 512,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": -0.00046640624999999997,
+    "radius": 0.02319550700833794,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 512,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "mean_estimate": -0.00046640624999999997,
+    "radius": 0.025929361165349028,
+    "unique_labels": 33280
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 2048,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 8,
+    "rate": 0.008,
+    "wilson95": [
+      0.004059195818806103,
+      0.015706334530980144
+    ],
+    "mean_estimate": 3.164062500000006e-05,
+    "radius": 0.011207684197716627,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 2048,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 8,
+    "rate": 0.008,
+    "wilson95": [
+      0.004059195818806103,
+      0.015706334530980144
+    ],
+    "mean_estimate": 3.164062500000006e-05,
+    "radius": 0.011207684197716627,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 2048,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": 3.164062500000006e-05,
+    "radius": 0.012484357737086763,
+    "unique_labels": 34816
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 8192,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": 1.5673828125000056e-05,
+    "radius": 0.005506324772245228,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 8192,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": 1.5673828125000056e-05,
+    "radius": 0.005506324772245228,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 8192,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "mean_estimate": 1.5673828125000056e-05,
+    "radius": 0.006122098157146443,
+    "unique_labels": 40960
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 32768,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 7,
+    "rate": 0.007,
+    "wilson95": [
+      0.0033948684009907646,
+      0.014378315465766588
+    ],
+    "mean_estimate": -2.6660156250000086e-05,
+    "radius": 0.0027287830544693425,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 32768,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 7,
+    "rate": 0.007,
+    "wilson95": [
+      0.0033948684009907646,
+      0.014378315465766588
+    ],
+    "mean_estimate": -2.6660156250000086e-05,
+    "radius": 0.0027287830544693425,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 32768,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "mean_estimate": -2.6660156250000086e-05,
+    "radius": 0.003031028900723987,
+    "unique_labels": 65536
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 131072,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 5,
+    "rate": 0.005,
+    "wilson95": [
+      0.0021375355273244596,
+      0.011650955373375113
+    ],
+    "mean_estimate": -2.2247314453126726e-06,
+    "radius": 0.0013582966943213534,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 131072,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 5,
+    "rate": 0.005,
+    "wilson95": [
+      0.0021375355273244596,
+      0.011650955373375113
+    ],
+    "mean_estimate": -2.2247314453126726e-06,
+    "radius": 0.0013582966943213534,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 131072,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": -2.2247314453126726e-06,
+    "radius": 0.001508009405899685,
+    "unique_labels": 163840
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 128,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "mean_estimate": -6.937103065868155e-05,
+    "radius": 0.051795972874664774,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 128,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": -0.00020468750000000012,
+    "radius": 0.02475578423414731,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 128,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": -0.00020442321002081784,
+    "radius": 0.030683271549643197,
+    "unique_labels": 32896
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 512,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": -9.226466157844171e-05,
+    "radius": 0.023766608109930476,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 512,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": -0.0002316406250000001,
+    "radius": 0.01159775350416897,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 512,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": -0.00023137633502081777,
+    "radius": 0.015797299584617674,
+    "unique_labels": 33280
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 2048,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "mean_estimate": -4.080601992425259e-05,
+    "radius": 0.011350459473114761,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 2048,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 9,
+    "rate": 0.009,
+    "wilson95": [
+      0.004742060667477063,
+      0.01701581616533807
+    ],
+    "mean_estimate": 3.124999999999995e-05,
+    "radius": 0.005603842098858313,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 2048,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 3.1514289979182224e-05,
+    "radius": 0.00907479787048654,
+    "unique_labels": 34816
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 8192,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 8,
+    "rate": 0.008,
+    "wilson95": [
+      0.004059195818806103,
+      0.015706334530980144
+    ],
+    "mean_estimate": -0.00013386798773716436,
+    "radius": 0.005542018591094762,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 8192,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": 2.9907226562500006e-05,
+    "radius": 0.002753162386122614,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 8192,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 3.0171516541682264e-05,
+    "radius": 0.00589366808051638,
+    "unique_labels": 40960
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 32768,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": -4.55843895245326e-05,
+    "radius": 0.0027377065091817258,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 32768,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": 6.512451171875022e-06,
+    "radius": 0.0013643915272346712,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 32768,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 6.776741151057277e-06,
+    "radius": 0.004348133452305152,
+    "unique_labels": 65536
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 131072,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": -1.4436296899838558e-05,
+    "radius": 0.0013605275579994492,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 131072,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": 8.427429199218738e-06,
+    "radius": 0.0006791483471606767,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 131072,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 8.691719178400999e-06,
+    "radius": 0.0035866237048930013,
+    "unique_labels": 163840
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 128,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": -0.0008121848978449089,
+    "radius": 0.0508736645018929,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 128,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "mean_estimate": -0.00020703125000000005,
+    "radius": 0.012377892117073654,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 128,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": -0.00015780341907667888,
+    "radius": 0.017092290595201277,
+    "unique_labels": 32896
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 512,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "mean_estimate": 6.939815746659139e-05,
+    "radius": 0.023536031016737506,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 512,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": 9.51171875e-05,
+    "radius": 0.005798876752084485,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 512,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 0.00014434501842332123,
+    "radius": 0.009649304612688514,
+    "unique_labels": 33280
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 2048,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 7,
+    "rate": 0.007,
+    "wilson95": [
+      0.0033948684009907646,
+      0.014378315465766588
+    ],
+    "mean_estimate": 6.609456252776183e-05,
+    "radius": 0.011292815199816519,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 2048,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 5,
+    "rate": 0.005,
+    "wilson95": [
+      0.0021375355273244596,
+      0.011650955373375113
+    ],
+    "mean_estimate": -4.0185546875e-05,
+    "radius": 0.0028019210494291567,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 2048,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "mean_estimate": 9.042284048321206e-06,
+    "radius": 0.006288053755622947,
+    "unique_labels": 34816
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 8192,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "mean_estimate": -8.22732898094444e-05,
+    "radius": 0.0055276075227702,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 8192,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": -1.669921874999998e-05,
+    "radius": 0.001376581193061307,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 8192,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 3.252861217332123e-05,
+    "radius": 0.004697488860637867,
+    "unique_labels": 40960
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 32768,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 5,
+    "rate": 0.005,
+    "wilson95": [
+      0.0021375355273244596,
+      0.011650955373375113
+    ],
+    "mean_estimate": -1.0417187403067786e-05,
+    "radius": 0.0027341037421005853,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 32768,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 8,
+    "rate": 0.008,
+    "wilson95": [
+      0.004059195818806103,
+      0.015706334530980144
+    ],
+    "mean_estimate": -8.975219726562508e-06,
+    "radius": 0.0006821957636173356,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 32768,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 4.0252611196758684e-05,
+    "radius": 0.003924721546532253,
+    "unique_labels": 65536
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 131072,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "mean_estimate": -1.9101500529185616e-05,
+    "radius": 0.001359626866229164,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 131072,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 5,
+    "rate": 0.005,
+    "wilson95": [
+      0.0021375355273244596,
+      0.011650955373375113
+    ],
+    "mean_estimate": -2.2056579589843587e-06,
+    "radius": 0.00033957417358033835,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 131072,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "mean_estimate": 4.702217296433685e-05,
+    "radius": 0.0035439666728261775,
+    "unique_labels": 163840
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 128,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "mean_estimate": -0.00018336700668872852,
+    "radius": 0.05024275645167587,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 128,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": 4.2968750000000004e-05,
+    "radius": 0.006188946058536827,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 128,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 4.3683316012662424e-05,
+    "radius": 0.010207835884768708,
+    "unique_labels": 32896
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 512,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 7,
+    "rate": 0.007,
+    "wilson95": [
+      0.0033948684009907646,
+      0.014378315465766588
+    ],
+    "mean_estimate": 0.0004579338492244386,
+    "radius": 0.02337830400418325,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 512,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": 4.091796875e-05,
+    "radius": 0.0028994383760422423,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 512,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 4.16325347626624e-05,
+    "radius": 0.006486342893512327,
+    "unique_labels": 33280
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 2048,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "mean_estimate": 0.0001966909632992841,
+    "radius": 0.011253383446677956,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 2048,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": 1.8994140625000016e-05,
+    "radius": 0.0014009605247145784,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 2048,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 1.9708706637662415e-05,
+    "radius": 0.004805717464979544,
+    "unique_labels": 34816
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 8192,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 8,
+    "rate": 0.008,
+    "wilson95": [
+      0.004059195818806103,
+      0.015706334530980144
+    ],
+    "mean_estimate": -6.326173644726197e-05,
+    "radius": 0.0055177495844855595,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 8192,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "mean_estimate": -1.2152099609375e-05,
+    "radius": 0.0006882905965306535,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 8192,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": -1.1437533596712586e-05,
+    "radius": 0.004010435017487004,
+    "unique_labels": 40960
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 32768,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "mean_estimate": 3.136958361207833e-05,
+    "radius": 0.0027316392575294254,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 32768,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 9,
+    "rate": 0.009,
+    "wilson95": [
+      0.004742060667477063,
+      0.01701581616533807
+    ],
+    "mean_estimate": 3.4530639648437725e-06,
+    "radius": 0.0003410978818086678,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 32768,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "mean_estimate": 4.16762997750617e-06,
+    "radius": 0.0036240513604341965,
+    "unique_labels": 65536
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 131072,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 9,
+    "rate": 0.009,
+    "wilson95": [
+      0.004742060667477063,
+      0.01701581616533807
+    ],
+    "mean_estimate": -3.680854799358809e-06,
+    "radius": 0.0013590107450863742,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 131072,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 12,
+    "rate": 0.012,
+    "wilson95": [
+      0.006877647806403522,
+      0.02085726847549828
+    ],
+    "mean_estimate": -2.0217895507837048e-08,
+    "radius": 0.00016978708679016917,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 131072,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "mean_estimate": 6.943481171545647e-07,
+    "radius": 0.003433673923581159,
+    "unique_labels": 163840
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 128,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": 0.0024375,
+    "radius": 0.04951156846829462,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 128,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": 0.0024375,
+    "radius": 0.04951156846829462,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 128,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "mean_estimate": 0.0024375,
+    "radius": 0.055701305095400076,
+    "unique_labels": 32896
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 512,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 10,
+    "rate": 0.01,
+    "wilson95": [
+      0.005440754445529249,
+      0.018309468870314774
+    ],
+    "mean_estimate": 0.0025007812499999995,
+    "radius": 0.02319550700833794,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 512,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 10,
+    "rate": 0.01,
+    "wilson95": [
+      0.005440754445529249,
+      0.018309468870314774
+    ],
+    "mean_estimate": 0.0025007812499999995,
+    "radius": 0.02319550700833794,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 512,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 5,
+    "rate": 0.005,
+    "wilson95": [
+      0.0021375355273244596,
+      0.011650955373375113
+    ],
+    "mean_estimate": 0.0025007812499999995,
+    "radius": 0.025929361165349028,
+    "unique_labels": 33280
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 2048,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 29,
+    "rate": 0.029,
+    "wilson95": [
+      0.02026644815669875,
+      0.04133835833669418
+    ],
+    "mean_estimate": 0.0025162109375,
+    "radius": 0.011207684197716627,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 2048,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 29,
+    "rate": 0.029,
+    "wilson95": [
+      0.02026644815669875,
+      0.04133835833669418
+    ],
+    "mean_estimate": 0.0025162109375,
+    "radius": 0.011207684197716627,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 2048,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 14,
+    "rate": 0.014,
+    "wilson95": [
+      0.00835757513042392,
+      0.02336203411753566
+    ],
+    "mean_estimate": 0.0025162109375,
+    "radius": 0.012484357737086763,
+    "unique_labels": 34816
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 8192,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 119,
+    "rate": 0.119,
+    "wilson95": [
+      0.10037518436701058,
+      0.1405408055989824
+    ],
+    "mean_estimate": 0.0029393554687499996,
+    "radius": 0.005506324772245228,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 8192,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 119,
+    "rate": 0.119,
+    "wilson95": [
+      0.10037518436701058,
+      0.1405408055989824
+    ],
+    "mean_estimate": 0.0029393554687499996,
+    "radius": 0.005506324772245228,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 8192,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 71,
+    "rate": 0.071,
+    "wilson95": [
+      0.056669695350451466,
+      0.08861366343015481
+    ],
+    "mean_estimate": 0.0029393554687499996,
+    "radius": 0.006122098157146443,
+    "unique_labels": 40960
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 32768,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 551,
+    "rate": 0.551,
+    "wilson95": [
+      0.5200351373690727,
+      0.5815745332654009
+    ],
+    "mean_estimate": 0.0029367431640625005,
+    "radius": 0.0027287830544693425,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 32768,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 551,
+    "rate": 0.551,
+    "wilson95": [
+      0.5200351373690727,
+      0.5815745332654009
+    ],
+    "mean_estimate": 0.0029367431640625005,
+    "radius": 0.0027287830544693425,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 32768,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 444,
+    "rate": 0.444,
+    "wilson95": [
+      0.4134777594602898,
+      0.4749508374900924
+    ],
+    "mean_estimate": 0.0029367431640625005,
+    "radius": 0.003031028900723987,
+    "unique_labels": 65536
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 131072,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 998,
+    "rate": 0.998,
+    "wilson95": [
+      0.9927371921365079,
+      0.9994513564118793
+    ],
+    "mean_estimate": 0.0030112457275390625,
+    "radius": 0.0013582966943213534,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 131072,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 998,
+    "rate": 0.998,
+    "wilson95": [
+      0.9927371921365079,
+      0.9994513564118793
+    ],
+    "mean_estimate": 0.0030112457275390625,
+    "radius": 0.0013582966943213534,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 131072,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 995,
+    "rate": 0.995,
+    "wilson95": [
+      0.9883490446266249,
+      0.9978624644726756
+    ],
+    "mean_estimate": 0.0030112457275390625,
+    "radius": 0.001508009405899685,
+    "unique_labels": 163840
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 128,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "mean_estimate": 0.0027856991845724537,
+    "radius": 0.051795972874664774,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 128,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 9,
+    "rate": 0.009,
+    "wilson95": [
+      0.004742060667477063,
+      0.01701581616533807
+    ],
+    "mean_estimate": 0.0030265625,
+    "radius": 0.02475578423414731,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 128,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "mean_estimate": 0.003033254322272895,
+    "radius": 0.030683271549643197,
+    "unique_labels": 32896
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 512,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "mean_estimate": 0.0027346675376383224,
+    "radius": 0.023766608109930476,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 512,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 26,
+    "rate": 0.026,
+    "wilson95": [
+      0.017803938201616326,
+      0.03782382884268993
+    ],
+    "mean_estimate": 0.0029890625,
+    "radius": 0.01159775350416897,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 512,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": 0.0029957543222728948,
+    "radius": 0.015797299584617674,
+    "unique_labels": 33280
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 2048,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 32,
+    "rate": 0.032,
+    "wilson95": [
+      0.022757107858710962,
+      0.04482473808376865
+    ],
+    "mean_estimate": 0.0029583885767468575,
+    "radius": 0.011350459473114761,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 2048,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 112,
+    "rate": 0.112,
+    "wilson95": [
+      0.09391954090888108,
+      0.1330500236759097
+    ],
+    "mean_estimate": 0.0030681640625000004,
+    "radius": 0.005603842098858313,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 2048,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 5,
+    "rate": 0.005,
+    "wilson95": [
+      0.0021375355273244596,
+      0.011650955373375113
+    ],
+    "mean_estimate": 0.003074855884772895,
+    "radius": 0.00907479787048654,
+    "unique_labels": 34816
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 8192,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 119,
+    "rate": 0.119,
+    "wilson95": [
+      0.10037518436701058,
+      0.1405408055989824
+    ],
+    "mean_estimate": 0.002995271505814749,
+    "radius": 0.005542018591094762,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 8192,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 608,
+    "rate": 0.608,
+    "wilson95": [
+      0.5773836453554849,
+      0.6377897748116351
+    ],
+    "mean_estimate": 0.00302783203125,
+    "radius": 0.002753162386122614,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 8192,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 17,
+    "rate": 0.017,
+    "wilson95": [
+      0.010640689856816328,
+      0.027055958840229925
+    ],
+    "mean_estimate": 0.003034523853522895,
+    "radius": 0.00589366808051638,
+    "unique_labels": 40960
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 32768,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 608,
+    "rate": 0.608,
+    "wilson95": [
+      0.5773836453554849,
+      0.6377897748116351
+    ],
+    "mean_estimate": 0.003022072717022663,
+    "radius": 0.0027377065091817258,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 32768,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 997,
+    "rate": 0.997,
+    "wilson95": [
+      0.9912169859464969,
+      0.9989792161188614
+    ],
+    "mean_estimate": 0.003001690673828125,
+    "radius": 0.0013643915272346712,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 32768,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 111,
+    "rate": 0.111,
+    "wilson95": [
+      0.09299921045824965,
+      0.13197800764351225
+    ],
+    "mean_estimate": 0.00300838249610102,
+    "radius": 0.004348133452305152,
+    "unique_labels": 65536
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 131072,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "mean_estimate": 0.0029910608783274427,
+    "radius": 0.0013605275579994492,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 131072,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "mean_estimate": 0.002995574951171875,
+    "radius": 0.0006791483471606767,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 131072,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 279,
+    "rate": 0.279,
+    "wilson95": [
+      0.2520877932829655,
+      0.3076036339676499
+    ],
+    "mean_estimate": 0.00300226677344477,
+    "radius": 0.0035866237048930013,
+    "unique_labels": 163840
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 128,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": 0.0027989966792348955,
+    "radius": 0.0508736645018929,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 128,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 16,
+    "rate": 0.016,
+    "wilson95": [
+      0.009872242002277388,
+      0.02583206021173997
+    ],
+    "mean_estimate": 0.0029351562500000003,
+    "radius": 0.012377892117073654,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 128,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 0.0029276391070306765,
+    "radius": 0.017092290595201277,
+    "unique_labels": 32896
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 512,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 12,
+    "rate": 0.012,
+    "wilson95": [
+      0.006877647806403522,
+      0.02085726847549828
+    ],
+    "mean_estimate": 0.0027246676943167695,
+    "radius": 0.023536031016737506,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 512,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 120,
+    "rate": 0.12,
+    "wilson95": [
+      0.10129926060130913,
+      0.14160907584771276
+    ],
+    "mean_estimate": 0.00302421875,
+    "radius": 0.005798876752084485,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 512,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": 0.0030167016070306767,
+    "radius": 0.009649304612688514,
+    "unique_labels": 33280
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 2048,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 29,
+    "rate": 0.029,
+    "wilson95": [
+      0.02026644815669875,
+      0.04133835833669418
+    ],
+    "mean_estimate": 0.0030340785800542884,
+    "radius": 0.011292815199816519,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 2048,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 560,
+    "rate": 0.56,
+    "wilson95": [
+      0.5290626428712739,
+      0.5904781461104596
+    ],
+    "mean_estimate": 0.0029922851562500003,
+    "radius": 0.0028019210494291567,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 2048,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 21,
+    "rate": 0.021,
+    "wilson95": [
+      0.013775739567924286,
+      0.03189029506123752
+    ],
+    "mean_estimate": 0.0029847680132806765,
+    "radius": 0.006288053755622947,
+    "unique_labels": 34816
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 8192,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 121,
+    "rate": 0.121,
+    "wilson95": [
+      0.10222378228920963,
+      0.14267690064284116
+    ],
+    "mean_estimate": 0.0029624852859700254,
+    "radius": 0.0055276075227702,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 8192,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 998,
+    "rate": 0.998,
+    "wilson95": [
+      0.9927371921365079,
+      0.9994513564118793
+    ],
+    "mean_estimate": 0.0029869750976562505,
+    "radius": 0.001376581193061307,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 8192,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 78,
+    "rate": 0.078,
+    "wilson95": [
+      0.06294716759073615,
+      0.09628261657107237
+    ],
+    "mean_estimate": 0.0029794579546869268,
+    "radius": 0.004697488860637867,
+    "unique_labels": 40960
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 32768,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 596,
+    "rate": 0.596,
+    "wilson95": [
+      0.5652754709915896,
+      0.6259897913791838
+    ],
+    "mean_estimate": 0.002985622449185521,
+    "radius": 0.0027341037421005853,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 32768,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "mean_estimate": 0.00298643798828125,
+    "radius": 0.0006821957636173356,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 32768,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 196,
+    "rate": 0.196,
+    "wilson95": [
+      0.17257900508840987,
+      0.22174766407080768
+    ],
+    "mean_estimate": 0.0029789208453119267,
+    "radius": 0.003924721546532253,
+    "unique_labels": 65536
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 131072,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 997,
+    "rate": 0.997,
+    "wilson95": [
+      0.9912169859464969,
+      0.9989792161188614
+    ],
+    "mean_estimate": 0.003006729402797303,
+    "radius": 0.001359626866229164,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 131072,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "mean_estimate": 0.0029949897766113286,
+    "radius": 0.00033957417358033835,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 131072,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 305,
+    "rate": 0.305,
+    "wilson95": [
+      0.2772552724809733,
+      0.3342371633283932
+    ],
+    "mean_estimate": 0.002987472633642005,
+    "radius": 0.0035439666728261775,
+    "unique_labels": 163840
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 128,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "mean_estimate": 0.0021264186112392764,
+    "radius": 0.05024275645167587,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 128,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 87,
+    "rate": 0.087,
+    "wilson95": [
+      0.071074421452375,
+      0.10608648105669352
+    ],
+    "mean_estimate": 0.0029976562500000003,
+    "radius": 0.006188946058536827,
+    "unique_labels": 128
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 128,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "mean_estimate": 0.0029564778696092855,
+    "radius": 0.010207835884768708,
+    "unique_labels": 32896
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 512,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 11,
+    "rate": 0.011,
+    "wilson95": [
+      0.006153174098086638,
+      0.019589395700786275
+    ],
+    "mean_estimate": 0.0030886029340810076,
+    "radius": 0.02337830400418325,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 512,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 550,
+    "rate": 0.55,
+    "wilson95": [
+      0.5190327082257413,
+      0.5805846159257033
+    ],
+    "mean_estimate": 0.0030304687499999997,
+    "radius": 0.0028994383760422423,
+    "unique_labels": 512
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 512,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 15,
+    "rate": 0.015,
+    "wilson95": [
+      0.009110978804081668,
+      0.024600976926906798
+    ],
+    "mean_estimate": 0.0029892903696092854,
+    "radius": 0.006486342893512327,
+    "unique_labels": 33280
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 2048,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 32,
+    "rate": 0.032,
+    "wilson95": [
+      0.022757107858710962,
+      0.04482473808376865
+    ],
+    "mean_estimate": 0.0029964099854054866,
+    "radius": 0.011253383446677956,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 2048,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 998,
+    "rate": 0.998,
+    "wilson95": [
+      0.9927371921365079,
+      0.9994513564118793
+    ],
+    "mean_estimate": 0.0030086181640625004,
+    "radius": 0.0014009605247145784,
+    "unique_labels": 2048
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 2048,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 65,
+    "rate": 0.065,
+    "wilson95": [
+      0.051323770569062045,
+      0.0820055093133709
+    ],
+    "mean_estimate": 0.0029674397836717856,
+    "radius": 0.004805717464979544,
+    "unique_labels": 34816
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 8192,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 129,
+    "rate": 0.129,
+    "wilson95": [
+      0.10963544529450506,
+      0.1512040095017769
+    ],
+    "mean_estimate": 0.0031154245751493326,
+    "radius": 0.0055177495844855595,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 8192,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "mean_estimate": 0.0029997375488281255,
+    "radius": 0.0006882905965306535,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 8192,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 168,
+    "rate": 0.168,
+    "wilson95": [
+      0.14610794675394784,
+      0.19243302088046083
+    ],
+    "mean_estimate": 0.00295855916843741,
+    "radius": 0.004010435017487004,
+    "unique_labels": 40960
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 32768,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 615,
+    "rate": 0.615,
+    "wilson95": [
+      0.5844555309287507,
+      0.6446643146195716
+    ],
+    "mean_estimate": 0.0030314686992816433,
+    "radius": 0.0027316392575294254,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 32768,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "mean_estimate": 0.002998332214355469,
+    "radius": 0.0003410978818086678,
+    "unique_labels": 32768
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 32768,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 288,
+    "rate": 0.288,
+    "wilson95": [
+      0.2607870341550728,
+      0.3168355114428025
+    ],
+    "mean_estimate": 0.002957153833964754,
+    "radius": 0.0036240513604341965,
+    "unique_labels": 65536
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 131072,
+    "method": "direct",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "mean_estimate": 0.0030261493609534166,
+    "radius": 0.0013590107450863742,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 131072,
+    "method": "oracle_moment",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "mean_estimate": 0.0030028411865234378,
+    "radius": 0.00016978708679016917,
+    "unique_labels": 131072
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 131072,
+    "method": "finite_history",
+    "replicates": 1000,
+    "accepted": 344,
+    "rate": 0.344,
+    "wilson95": [
+      0.3152044922028449,
+      0.37398945644464826
+    ],
+    "mean_estimate": 0.002961662806132723,
+    "radius": 0.003433673923581159,
+    "unique_labels": 163840
+  },
+  {
+    "experiment": "R2",
+    "m": 4,
+    "n": 4096,
+    "method": "naive_reuse",
+    "replicates": 1000,
+    "accepted": 69,
+    "rate": 0.069,
+    "wilson95": [
+      0.054883945585911253,
+      0.08641472022863728
+    ],
+    "mean_estimate": 0.009825781249999999,
+    "radius": 0.015688486998207445,
+    "unique_labels": 4096
+  },
+  {
+    "experiment": "R2",
+    "m": 4,
+    "n": 4096,
+    "method": "uniform_moments",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 0.009825781249999999,
+    "radius": 0.07964902553730513,
+    "unique_labels": 4096
+  },
+  {
+    "experiment": "R2",
+    "m": 4,
+    "n": 4096,
+    "method": "fresh_audit",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "mean_estimate": 9.824218750000004e-05,
+    "radius": 0.015688486998207445,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R2",
+    "m": 16,
+    "n": 4096,
+    "method": "naive_reuse",
+    "replicates": 1000,
+    "accepted": 880,
+    "rate": 0.88,
+    "wilson95": [
+      0.8583909241522872,
+      0.8987007393986909
+    ],
+    "mean_estimate": 0.019990429687500005,
+    "radius": 0.015688486998207445,
+    "unique_labels": 4096
+  },
+  {
+    "experiment": "R2",
+    "m": 16,
+    "n": 4096,
+    "method": "uniform_moments",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 0.019990429687500005,
+    "radius": 0.35948485855050194,
+    "unique_labels": 4096
+  },
+  {
+    "experiment": "R2",
+    "m": 16,
+    "n": 4096,
+    "method": "fresh_audit",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "mean_estimate": 0.00019687500000000003,
+    "radius": 0.015688486998207445,
+    "unique_labels": 8192
+  },
+  {
+    "experiment": "R2",
+    "m": 64,
+    "n": 4096,
+    "method": "naive_reuse",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "mean_estimate": 0.039924414062500004,
+    "radius": 0.015688486998207445,
+    "unique_labels": 4096
+  },
+  {
+    "experiment": "R2",
+    "m": 64,
+    "n": 4096,
+    "method": "uniform_moments",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "mean_estimate": 0.039924414062500004,
+    "radius": 1.5847031305552324,
+    "unique_labels": 4096
+  },
+  {
+    "experiment": "R2",
+    "m": 64,
+    "n": 4096,
+    "method": "fresh_audit",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "mean_estimate": -8.066406250000002e-05,
+    "radius": 0.015688486998207445,
+    "unique_labels": 8192
+  }
+]

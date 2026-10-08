@@ -1,0 +1,98 @@
+{
+  "status": "passed",
+  "directory": "experiments/development_lr03",
+  "config_sha256": "d24901682f60326f9e51a86c880af32994aacfd920ece4707dd2017319fffd96",
+  "code_sha256": {
+    "frontier.py": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0",
+    "phase5_reference.py": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720"
+  },
+  "datasets": 16,
+  "trajectories": 320,
+  "events_checked": 2240,
+  "parameter_risks_recomputed": 5120,
+  "max_risk_absolute_error": 6.661338147750939e-16,
+  "actual_result_hashes_verified": true,
+  "files": [
+    {
+      "path": "results/indefinite_noisy_96010000.json",
+      "sha256": "0ac125cff3529a7abbd628f34035a9f52c61b760c7e4bc8611ca17e8164896a8",
+      "data_sha256": "5d4adfa2d21a725a916126e24b4d7e8659030ee20f622e7b47181350fdfa9ee8"
+    },
+    {
+      "path": "results/indefinite_noisy_96010001.json",
+      "sha256": "f7f86729a05d5d64655629bff837f4fa0bd3e143c7756456dcc4349f2d665e6f",
+      "data_sha256": "abf7b68e7cd7995e47a064ec740f7a229fe73fc196e55d35cd32d09d8f032c00"
+    },
+    {
+      "path": "results/indefinite_noisy_96010002.json",
+      "sha256": "4f56e9c812434b6e6ea4c171b3d71eda42dbd4c1b82be9acb7c0f30f21c39fd6",
+      "data_sha256": "b1967699ea2bb93812fbc9493b5a1f1ff773ea359b302ce21d330349fdc4170f"
+    },
+    {
+      "path": "results/indefinite_noisy_96010003.json",
+      "sha256": "ba998accba78fbe0336e2473cce4aa351c0bd3adf8ebfea67054e4433f4214b0",
+      "data_sha256": "fc2618b0a3024a7b00c85d64c5e01962be9db04208d7b03599e08e739509a6df"
+    },
+    {
+      "path": "results/indefinite_noisy_96010004.json",
+      "sha256": "64d88178e44753cc2d8caf0d82f5f3c2dc2b57b406f3619a32e1ec3894141b71",
+      "data_sha256": "e25c7e53cbd1342a297bd80ee536632f03ba58d02401a0708a9409ee9d08542a"
+    },
+    {
+      "path": "results/indefinite_noisy_96010005.json",
+      "sha256": "553156c7fe08c7d113bd468725cecbce33362e32eb1fa306883c2f9c50ab66bb",
+      "data_sha256": "964c06c3f67f616b27647b9d1ab2cc4ca481608b76ba824fe986034298417674"
+    },
+    {
+      "path": "results/indefinite_noisy_96010006.json",
+      "sha256": "46d8ec340e9e8e0970c59b25522aa3eb381bed7911a528e452c1050f3c2f14b1",
+      "data_sha256": "aacb33fcad434c3e26f2275b3f52b819c8bac2bc6eca8062d05a9c710bc67528"
+    },
+    {
+      "path": "results/indefinite_noisy_96010007.json",
+      "sha256": "b86c1505a7e9b525c166cff77b6cc6625b680738a7f4cf289b845e30274f7a12",
+      "data_sha256": "ad46b3178d92f43849cdd7f49eb4751c089456df90ea4b0bf058dc32470d66f7"
+    },
+    {
+      "path": "results/indefinite_noisy_96010008.json",
+      "sha256": "1b04893ed82116d9ed7aef7a159cb506b453c26f3120959deb705f746067c0de",
+      "data_sha256": "1ccb3b02aacd995ef2d99817767455d8b2d1305b58f8e9689a19cba15eb8cdff"
+    },
+    {
+      "path": "results/indefinite_noisy_96010009.json",
+      "sha256": "0339691c8f4f6b77258f93c310f36a55eea223f68587cacd75fc2dabd39cd395",
+      "data_sha256": "a64227953786319f4d2711f4efb7d186b3a0a19dc3653b8d7d1358e63cad4398"
+    },
+    {
+      "path": "results/indefinite_noisy_96010010.json",
+      "sha256": "2ecc12e868739f8e8f358e298b11b4ed91d98b1e59dd58a3dfb5232fdd6d8f5c",
+      "data_sha256": "fad386bd573a56e039e90fc0e3d597fe56ca367d128520ec6e64c234a059fd4b"
+    },
+    {
+      "path": "results/indefinite_noisy_96010011.json",
+      "sha256": "6ef642fda4368576c8534188c5abeb85b6c3c2e96f7ae8f9fb901314a044dd34",
+      "data_sha256": "887ae774389763f764b5ddc15a1cb4e4e1a1b82851fb5a4356e9f1b2719ca57a"
+    },
+    {
+      "path": "results/indefinite_noisy_96010012.json",
+      "sha256": "b42fe85ec36d37b13a03ed01ab1f32e6194992e0c1f613173c26035c833dcc2e",
+      "data_sha256": "a1d950d0ccf6931835c74ccc3cbfccb1f08251990b3fc1ffe742a4b6eeb5b3e5"
+    },
+    {
+      "path": "results/indefinite_noisy_96010013.json",
+      "sha256": "4484436bdec2388d1e279f26279ff443ff0556f6edf2f0fac7daa58f7ba7e7b7",
+      "data_sha256": "ea8b1a03ce822c17007094c89ffecf70503e2a43585ca0ee16c2d9d39dba0ac5"
+    },
+    {
+      "path": "results/indefinite_noisy_96010014.json",
+      "sha256": "0d1532246212890ef0f4aa902ab3c0f7e32790ba5477a0d6b99b80aa631f169b",
+      "data_sha256": "184315270240e93a3956d861cde5af9f48bc8cfdbb614a54715af3f6821d2d97"
+    },
+    {
+      "path": "results/indefinite_noisy_96010015.json",
+      "sha256": "80df66b4c4bdb1b99699a3398b664fdf777f52bb4bf4caf39b26abc84a8f9020",
+      "data_sha256": "54fea56f9e65cb97b0898fe73385c2f4de1666d7643faf8caf52af9ae2512170"
+    }
+  ],
+  "audit_script_sha256": "e0aad5c7d57cce46d717ca0c56ad26652b6a55852c84825722f165e8d4483033"
+}

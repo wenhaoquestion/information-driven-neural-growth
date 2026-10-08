@@ -1,0 +1,333 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array,longtable,enumitem}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\usepackage{fancyhdr}
+\hypersetup{pdftitle={Sharp Weighted Four-State Hierarchy Prices for Polynomial Curvature},pdfauthor={Wenyu Huang},pdfsubject={Phase 9 follow-up working paper},pdfkeywords={Bregman divergence, hierarchy price, polynomial curvature, positive weights, proper loss}}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Sharp weighted four-state hierarchy prices}
+\fancyhead[R]{\small Phase 9}
+\fancyfoot[C]{\thepage}
+\setlength{\parskip}{0.25em}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.15}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ph}{\varphi}
+\newcommand{\B}{B_{\ph}}
+\newcommand{\D}{D_{\ph}}
+\newcommand{\OPT}{\operatorname{OPT}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\rd}{\,\mathrm d}
+\newcommand{\detp}{\mathrm{det}}
+\newcommand{\stp}{\mathrm{stoch}}
+\title{Sharp Weighted Four-State Hierarchy Prices\\ for Polynomial Curvature}
+\author{Wenyu Huang\\\small University of California San Diego}
+\date{Phase 9 follow-up working paper\\7 October 2026}
+\begin{document}
+\maketitle
+\begin{center}\begin{minipage}{0.92\textwidth}\small
+\textbf{Status.} The mathematical arguments received internal independent
+review. This is not external peer review or formal verification. Historical
+originality has not been established, and no priority claim is made.
+\end{minipage}\end{center}
+
+\begin{abstract}
+We determine the degree order of optimal two-/three-capacity hierarchy
+prices on four weighted source states. For nonnegative polynomial curvature
+of degree at most $r$, with arbitrary positive probabilities and posterior
+locations, the deterministic and stochastic worst-case prices are both
+$\Theta(r^2/(\log r)^2)$. The upper bound is explicitly
+$1936r^2/(\log r)^2$ for $r\ge2$. Its proof selects a weighted triple using
+the two middle masses, compares its exact Jensen kernel with the outer-pair
+kernel, and combines classical Markov and Chebyshev inequalities. A full
+endpoint lower construction from the preceding working paper is reproduced.
+Separately, the classical coordinate $h=\int\sqrt{\varphi''}$ has unavoidable
+two-sided partition-comparison distortion $\Omega(r^2\log r)$ for one
+strictly positive polynomial and one three-state source whose actual
+all-capacity hierarchy price is one. This limits that comparison method,
+not the optimal hierarchy. We also give an exact oracle equivalence for
+restricted indicator-ReLU splitting and show why unrestricted neuron count
+does not inherit it. Classical Jacobi endpoint moments identify sharp
+oriented Bregman asymmetry in an appendix. Arbitrary-source-count degree
+orders, learning guarantees, and nonvanishing absolute-risk separations
+remain outside the conclusions.
+\end{abstract}
+
+\section{The four-state problem and the result}
+Separately optimal finite representations can be incompatible: an optimal
+three-cell partition need not refine an optimal two-cell partition.
+Under a strictly proper binary loss, the excess Bayes risk of a
+representation is a scalar Jensen distortion. Its hierarchy price is the
+smallest simultaneous multiplicative factor when the two-cell
+representation must be obtained by coarsening the three-cell one.
+
+The preceding Phase~8 working paper~\cite{huang8} established a sharp
+$\Theta(r/\log r)$ degree envelope for four equal source masses and an
+$\Omega(r^2/(\log r)^2)$ lower bound when positive masses and posterior gaps
+may vary with degree. Its general two-capacity upper bound was $O(r^2)$.
+The present paper closes this logarithmic gap for exactly four states:
+if $\widehat C_r^{\detp}$ and $\widehat C_r^{\stp}$ denote the
+arbitrary-positive-weight four-state envelopes, then, for an absolute
+$c>0$ and all sufficiently large $r$,
+\begin{equation}
+ c\frac{r^2}{(\log r)^2}
+ \le \widehat C_r^{\stp}\le\widehat C_r^{\detp}
+ \le1936\frac{r^2}{(\log r)^2}.
+ \label{eq:main-envelope}
+\end{equation}
+All logarithms are natural, and $r$ is the degree of the curvature
+$\varphi''$, not of the generator $\varphi$.
+
+The upper proof retains the original source masses in every cell kernel.
+An isolated weighted triple cannot support the required degree inference:
+even constant curvature gives a counterexample to the naive pair of
+three-point cost inequalities. The successful argument chooses between
+the two adjacent triples using their common middle masses. It then replaces
+the selected triple kernel by its outer-pair kernel, with error controlled
+by the two adjacent costs. This permits a nearby polynomial peak to force
+enough curvature mass in the middle-pair interval. The explicit estimate is
+\[
+ R^2\le16r^2e^{20r/\sqrt R}\qquad(R\ge128),
+\]
+where $R$ is the actual deterministic price. No lower bound on a source
+mass or posterior gap appears in the constants.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.31\textwidth}>{\raggedright\arraybackslash}p{0.31\textwidth}@{}}
+\toprule
+Domain & Established degree order or bound & Status in this paper\\
+\midrule
+Four states; arbitrary positive weights; capacities two and three
+& $\Theta(r^2/(\log r)^2)$ in both models
+& Sharp order; full upper and lower proofs\\
+Four states; all capacities
+& Same price as capacities two and three
+& One and four outputs add no cost\\
+Arbitrary finite source count; two prescribed capacities
+& Prior upper $1+128r^2$; lower $\Omega(r^2/(\log r)^2)$ witnessed at $(2,3)$
+& General degree order remains open\\
+Arbitrary finite source count; all capacities
+& Prior upper $256r^2K_r$; same lower, where $K_r=2\log(64r^2)+1/4$
+& General degree order remains open\\
+One source and the coordinate $h=\int\sqrt g$
+& Comparison condition factor $\Omega(r^2\log r)$
+& Method obstruction; example has hierarchy price one\\
+\bottomrule
+\end{tabular}
+\caption{Distinct quantifiers. The general-source upper bounds are prior
+Phase~8 results, not new consequences of the four-state proof. Upper
+statements also bound stochastic prices; lower statements apply to both
+models.}
+\label{tab:scope}
+\end{table}
+
+Two further points prevent overinterpretation. First, a comparison of
+Bregman costs with squared distances may be much worse than the hierarchy
+itself. Section~\ref{sec:coordinate} realizes both sharp comparison losses
+for the same positive polynomial and the same three-state source. Second,
+an exact partition model can be embedded in a restricted indicator-ReLU
+class, but an unrestricted single ReLU already fits every posterior on the
+same one-hot domain. Section~\ref{sec:p9-indicator-bridge} therefore states
+an oracle equivalence with its constraints, rather than a neural-width or
+training theorem.
+
+\paragraph{Relation to classical tools and prior work.}
+Bregman centroids and proper-loss regret identities are classical
+\cite{banerjee,gneiting,reid}. Hierarchical clustering approximation has
+an established literature, including Lin et al.~\cite{lin} and
+Arutyunova--R\"oglin~\cite{arutyunova}. The present four-state upper proof
+does not invoke a general hierarchy-augmentation theorem. Its polynomial
+ingredients are classical Markov and Chebyshev inequalities
+\cite{shadrin,dlmf}. Explicit squared-Chebyshev endpoint needles and
+$\exp(-c r\sqrt d)$ endpoint tails occur in Slot--Laurent
+\cite[Section~4.1]{slot2019}, with earlier attribution there; related
+$O(\log^2 r/r^2)$ approximation bounds appear in~\cite{slot2020}.
+The endpoint lower proof below supplies its own normalization and weighted
+kernel estimates and does not claim the needle construction as new.
+
+The exact Jacobi first-moment calculation in Appendix~\ref{sec:p9-exact-asymmetry}
+is a classical positive-quadrature consequence, with a direct antecedent in
+de Klerk--Laurent~\cite{deklerk} and related spectral formulations in
+Lasserre~\cite{lasserre}. These approximation problems do not establish
+partition incompatibility or the hierarchy order in~\eqref{eq:main-envelope}.
+The focused source check is bounded, not an exhaustive originality review.
+
+\section{Distortion, channels, and hierarchy prices}
+\label{sec:definitions}
+Let a source index $X$ take values in $\{1,\ldots,N\}$ with probabilities
+$p_i>0$, $\sum_i p_i=1$, and posterior locations $x_i\in[0,1]$.
+Unless stated otherwise, $\varphi$ is differentiable and strictly convex.
+For polynomial results it is $C^2$ with nonnegative, nonzero polynomial
+curvature $g=\varphi''$. Such a polynomial vanishes on no nonempty
+interval, so $\varphi$ is strictly convex even when $g$ has isolated zeros.
+The oriented Bregman divergence is
+\[
+ B_\varphi(x,y)=\varphi(x)-\varphi(y)-\varphi'(y)(x-y).
+\]
+For a partition $P$, set
+\begin{equation}
+ D_\varphi(P)=\sum_{C\in P}D_\varphi(C),\qquad
+ D_\varphi(C)=\sum_{i\in C}p_i\varphi(x_i)-p_C\varphi(m_C),
+ \quad p_C=\sum_{i\in C}p_i,
+ \quad m_C=\frac{\sum_{i\in C}p_ix_i}{p_C}.
+ \label{eq:distortion}
+\end{equation}
+Cell costs always use original source probabilities, without conditional
+renormalization. Write $D(AB)$ for the cost of the cell containing states
+$A,B$, and similarly for larger cells. The flat optimum $\OPT_k$ is the
+minimum of $D_\varphi(P)$ over partitions with at most $k$ cells.
+Refinement never increases distortion.
+
+\begin{lemma}[Centroids and curvature kernels]
+\label{lem:identities}
+For every cell $C$ and report $q\in[0,1]$,
+\begin{equation}
+ \sum_{i\in C}p_iB_\varphi(x_i,q)
+ =D_\varphi(C)+p_CB_\varphi(m_C,q).
+ \label{eq:centroid}
+\end{equation}
+For $u<v$ the two orientations are
+\[
+ B_\varphi(v,u)=\int_u^v(v-t)g(t)\,dt,
+ \qquad B_\varphi(u,v)=\int_u^v(t-u)g(t)\,dt.
+\]
+Moreover $D_\varphi(C)=\int_0^1 K_C(t)g(t)\,dt$, where
+\begin{equation}
+ K_C(t)=\sum_{i\in C}p_i(x_i-t)_+-p_C(m_C-t)_+\ge0.
+ \label{eq:kernel}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Expand the Bregman expression and use
+$\sum_{i\in C}p_i(x_i-m_C)=0$ to obtain~\eqref{eq:centroid}.
+Twice integrating $g$ gives the two orientation formulas and the identity
+$\varphi(x)=\varphi(0)+\varphi'(0)x+
+\int_0^1(x-t)_+g(t)\,dt$. Affine terms cancel in a Jensen gap,
+giving~\eqref{eq:kernel}. Its nonnegativity is Jensen's inequality for
+the convex hinge $x\mapsto(x-t)_+$.
+\end{proof}
+
+A deterministic hierarchy at capacities $k<\ell$ is a pair of partitions
+$H_\ell\succeq H_k$, where $\succeq$ denotes refinement and
+$|H_j|\le j$. When both flat denominators are positive, its price is
+$\max_{j\in\{k,\ell\}}D_\varphi(H_j)/\OPT_j$.
+The minimum over all such pairs is $\rho_{\varphi,\detp}$.
+Unless specified otherwise, four-state prices use $k=2,\ell=3$.
+There is no restriction that a hierarchical cell be contiguous in the
+ordered posterior locations.
+
+For a channel $X\to Z$, define
+\[
+ D_\varphi(Z)=\E\varphi(x_X)-
+                \E\varphi\bigl(\E[x_X\mid Z]\bigr).
+\]
+A stochastic hierarchy is a degradation chain
+$X\to Z_\ell\to Z_k$, with $|Z_j|\le j$; its optimal price
+$\rho_{\varphi,\stp}$ is the infimum of the same maximum ratio.
+The predictor is not supplied an additional public random seed.
+
+\begin{lemma}[The stochastic and deterministic flat optima coincide]
+\label{lem:flat}
+The infimum of $D_\varphi(Z)$ over channels with at most $k$ outputs is
+$\OPT_k$.
+\end{lemma}
+\begin{proof}
+Realize any channel by a random function table $U$, independent of $X$:
+for each input draw one output according to that channel row. Conditional
+on $U$, the map is deterministic and has at most $k$ outputs. Conditional
+Jensen implies
+\[
+ \E\varphi(\E[x_X\mid Z])\le
+ \E\varphi(\E[x_X\mid Z,U]).
+\]
+Thus $D_\varphi(Z)\ge\E_U D_\varphi(Z\mid U)\ge\OPT_k$.
+A deterministic minimizer gives the reverse inequality.
+\end{proof}
+
+\input{random_table_rounding}
+
+An all-capacity deterministic hierarchy has $H_{k+1}\succeq H_k$ and
+$|H_k|\le k$ for $1\le k\le N$; the stochastic version is a chain
+$X\to Z_N\to\cdots\to Z_1$. At zero optima we use the cost-inequality
+definition: the price is the smallest factor $c$ for which
+$D_\varphi(H_k)\le c\OPT_k$ at every capacity, and likewise for channels.
+In particular a zero optimum requires zero hierarchical cost. On four
+states, any two-/three-capacity hierarchy extends by a constant output at
+capacity one and the identity at capacity four, so its all-capacity price
+is unchanged, in either model.
+
+For an integer $r\ge0$, define $\widehat C_r^{\detp}$ and
+$\widehat C_r^{\stp}$ as the suprema of these four-state two-/three-capacity
+prices over all positive probability vectors, all locations in $[0,1]$
+with $\OPT_2,\OPT_3>0$, and all generators with nonnegative, nonzero
+polynomial curvature of degree at most $r$. The generator, masses, and
+locations may all vary with $r$. Multiplying $\varphi$ by a positive
+constant scales all distortions equally and preserves every price;
+adding an affine function preserves the distortions themselves.
+
+\input{weighted_four_state_upper}
+\input{weighted_triple_caution}
+\input{coordinate_obstructions}
+\input{finite_indicator_bridge}
+\input{computational_checks}
+
+\section{Remaining questions and interpretation}
+Theorem~\ref{thm:weighted-sharp} and Appendix~\ref{sec:ext-weights} settle
+the arbitrary-positive-weight four-state degree order. They rule out an
+$\Omega(r^2)$ construction in this exact domain, whether based on
+Chebyshev needles, Jacobi kernels, or another nonnegative polynomial.
+They do not rule out that order for more source states or different
+capacity pairs. Both the arbitrary-source-count two-capacity order and
+the arbitrary-source-count all-capacity order in Table~\ref{tab:scope}
+remain unresolved.
+
+The coordinate example has a different implication. Its two-sided
+comparison condition factor is already $\Omega(r^2\log r)$ after choosing
+the best constants for a single generator and source, while the source's
+hierarchy price is exactly one. Thus improving a proof based only on
+that global partition comparison requires extra structure or a different
+coordinate. The example is no lower bound on the price of optimal
+hierarchies and does not prove necessity of the logarithm in the
+general all-capacity upper bound.
+
+The restricted neural model is similarly exact but narrow: it identifies
+population oracle costs when hidden units are indicators of a partition,
+arbitrary subset splits are allowed, and reports are refit exactly.
+Removing those restrictions changes the flat oracle class. No SGD,
+Adam, finite-sample, continuous-domain, computational-efficiency, or
+generalization result is deduced. Finally, the bounded-loss lower witnesses
+have vanishing flat excess risks. Large multiplicative prices therefore
+do not establish a nonvanishing absolute-risk penalty.
+
+\paragraph{Review and provenance.}
+The upper theorem, its weighted kernel inequalities, and all displayed
+constants received an independent internal mathematical review. The
+coordinate obstruction and the two bridge/asymmetry notes also received
+independent internal checks. The source bundle records the exact reviewed
+file hashes and the arithmetic evidence. Classical approximation tools and
+prior Phase~8 arguments are identified explicitly; the appendix lower
+construction is reproduced with attribution. The focused source ledger
+documents access limits: original Kro\'o sources in the needle attribution
+chain were not read in this pass, and the earlier original-Lin access
+limitation remains. These checks establish neither external peer review
+nor historical priority.
+
+\appendix
+\input{endpoint_lower}
+\input{exact_polynomial_asymmetry}
+\input{references}
+\end{document}

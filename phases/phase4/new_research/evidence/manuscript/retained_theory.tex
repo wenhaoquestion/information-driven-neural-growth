@@ -1,0 +1,184 @@
+\section{Model, information access, and prior work}
+Let $X$ have a known law $\mu$ on $\{1,\ldots,m\}$, with $\mu_i>0$. Define
+\[
+ \ip ab=\sum_i\mu_i a_i b_i,\qquad
+ \norm a_p=\Big(\sum_i\mu_i|a_i|^p\Big)^{1/p}.
+\]
+Labels $Y\in\{0,1\}$ have unrestricted conditional signed mean
+$g_i=\E[2Y-1\mid X=i]\in[-1,1]$. A dictionary $B\in\mathbb R^{m\times d}$ is fixed in advance, with columns $b_j$ and span $V$. The exact population-moment interface reveals
+\[
+ m_j(g)=\ip{b_j}g,\qquad j=1,\ldots,d.
+\]
+This specifies information access, not physical storage. A real scalar can encode a finite label vector, and even a fixed empirical linear sketch with rationally independent weights can encode integer count vectors. No memory lower bound follows from the dictionary rank. Moreover, the distribution of an empirical summary can contain information absent from its population expectation; our exact-moment lower bound does not automatically apply to that distribution.
+
+For predictions $p,q\in[0,1]^m$, write $h=q-p$ and $c=\ip h{1-p-q}$. Expanding squares yields
+\begin{equation}
+ \Delta_g(p,q):=\E[(Y-p(X))^2-(Y-q(X))^2]=c+\ip hg.
+ \label{eq:gain}
+\end{equation}
+Only the change $h$ multiplies the unknown label means. The known input law makes $c$ and the approximation geometry computable. Unknown $\mu$ requires additional uncertainty control.
+
+Control-variate confidence intervals already estimate the residual after subtracting a variable with known mean \cite{zhao2020}; projection-based residual concentration and coefficient-error analysis are established \cite[Eq.~(6), Theorem~3.1, Appendix~B]{leluc2021}. Uniform confidence regions accommodate adaptive use \cite[Theorem~3, Corollary~1]{abbasi2011}. In structural learning, Amoukou et al.\ already certify current prediction-risk differences by minimizing over a stationary probability region \cite[Lemma~A.13]{amoukou2026}. Our analysis specializes these tools and a standard testing lower bound \cite[Lemma~1]{kaufmann2016} to retained label moments. Convex duality is used in its standard form \cite{boyd2004}.
+
+\section{Sharp reconstruction from approximate moments}
+Suppose $z\in\mathbb R^d$ is known to satisfy $|z_j-m_j(g)|\le e_j$, where $e_j\ge0$. For fixed $h$, let
+\[
+ \mathcal R(h,B,e)=\inf_T\ \sup_{\substack{g\in[-1,1]^m\\|z-m(g)|\le e}}
+       |T(z)-\ip hg|,
+\]
+where the supremum includes all admissible $(g,z)$ and the infimum allows arbitrary functions $T$, including nonlinear ones.
+
+\begin{theorem}[Exact ambiguity of retained moments]\label{thm:ambiguity}
+One has
+\begin{align}
+ \mathcal R(h,B,e)
+ &=\max_{\substack{\norm u_\infty\le1\\|B^\top\operatorname{diag}(\mu)u|\le e}}\ip hu\label{eq:primal}\\
+ &=\min_{a\in\mathbb R^d}\left\{\norm{h-Ba}_1+\sum_j e_j|a_j|\right\}.
+ \label{eq:dual}
+\end{align}
+In particular, $\mathcal R(h,B,0)=\operatorname{dist}_{L_1(\mu)}(h,V)$, which is zero if and only if $h\in V$.
+\end{theorem}
+\begin{proof}
+For any $a$, the estimator $T(z)=a^\top z$ obeys
+\[
+ |T(z)-\ip hg|
+ \le\norm{h-Ba}_1+\sum_j e_j|a_j|.
+\]
+For a lower bound take $z=0$. Every feasible $u$ in \eqref{eq:primal}, as well as $-u$, is consistent with $z=0$. Their target values are opposite, so one of the two errors of any $T(0)$ is at least $|\ip hu|$. The feasible set is nonempty, symmetric and compact.
+
+It remains to equate \eqref{eq:primal} and \eqref{eq:dual}. Assign nonnegative multipliers $s,t$ to the upper and lower moment constraints in the maximization. Maximizing its Lagrangian over $[-1,1]^m$ yields
+\[
+ \norm{h-B(s-t)}_1+e^\top(s+t).
+\]
+For fixed $a=s-t$, the smallest second term is $\sum_j e_j|a_j|$, attained by the positive and negative parts of $a$. Finite linear-program strong duality applies: the primal is feasible with finite optimum and the dual is feasible, for example at $a=0$. This proves equality and attainment. Finally, finite-dimensional $V$ is closed, so its $L_1$ distance is zero exactly on $V$. Adding the known $c$ in \eqref{eq:gain} does not change any error.
+\end{proof}
+
+\begin{corollary}[No-data decision obstruction]
+Let $\norm h_\infty\le1$ and $h\notin V$. Symmetric predictions
+$p=(1-h)/2$, $q=(1+h)/2$ admit two binary-label laws with identical exact retained moments and strictly opposite gains. No randomized rule based solely on these moments can have type-I error at most $\alpha$ and power at least $1-\beta$ on both laws when $\alpha+\beta<1$.
+\end{corollary}
+\begin{proof}
+With $e=0$, choose a maximizer $u$ of \eqref{eq:primal}. Set $g=\pm u$. Both give zero moments, while $c=0$ and the gains are
+$\pm\operatorname{dist}_{L_1(\mu)}(h,V)$. The acceptance probability is the same under both indistinguishable observations; the two requirements would give $1-\beta\le\alpha$.
+\end{proof}
+
+\section{The additional cost of fresh evidence}
+Let $v$ be the $L_2(\mu)$ projection of fixed $h$ onto $V$, and put
+\[
+ r=h-v,\qquad S=\norm r_2^2,\qquad M=\norm r_\infty.
+\]
+Exact moments determine $A=c+\ip vg$. On $n$ fresh iid full pairs, define
+\[
+ \widehat\Delta=A+\frac1n\sum_{i=1}^n r(X_i)(2Y_i-1).
+\]
+
+\begin{theorem}[Residual upper bound]\label{thm:upper}
+For $u>0$ and $n\ge1$, let
+\[
+ F_n(u)=\sqrt{\frac{2Su}{n}}+\frac{4Mu}{3n}.
+\]
+Then $\PP(|\widehat\Delta-\Delta|>F_n(u))\le2e^{-u}$, with failure probability $e^{-u}$ for either one-sided endpoint. Accepting when $\widehat\Delta>F_n(u)$ has type-I error at most $e^{-u}$ for $\Delta\le0$. For $\Delta\ge\gamma>0$, it has power at least $1-e^{-u}$ whenever
+\begin{equation}
+ n>\max\left\{\frac{32Su}{\gamma^2},\frac{16Mu}{3\gamma}\right\}.
+ \label{eq:upper-n}
+\end{equation}
+If $S=0$, the gain is exactly known and no fresh data are required.
+\end{theorem}
+\begin{proof}
+If $S=0$, positivity of every $\mu_i$ implies $r=0$, so the gain is exactly known. Assume $S>0$, hence $M>0$. Write $W=r(X)(2Y-1)$ and $Z=W-\E W$. Then
+$\E W^2=S$, $\Var(W)\le S$, and $|Z|\le2M$. For $k\ge2$,
+$\E|Z|^k\le(2M)^{k-2}\E Z^2$. The exponential series, $k!\ge2\cdot3^{k-2}$, and $\log(1+x)\le x$ give
+\[
+ \log\E e^{\lambda Z}
+ \le\frac{\lambda^2S}{2(1-2M|\lambda|/3)},
+ \qquad |\lambda|<3/(2M).
+\]
+For $t>0$ choose $\lambda=t/(S+2Mt/3)$ in the exponential Markov bound for the sum of $n$ independent copies, obtaining
+\[
+ \PP\left(\frac1n\sum_i Z_i\ge t\right)
+ \le\exp\left\{-\frac{nt^2}{2(S+2Mt/3)}\right\}.
+\]
+Substitution of $F_n(u)$ makes the exponent at least $u$. Repeat for $-Z$. The strict sample condition \eqref{eq:upper-n} makes both terms of $F_n$ less than $\gamma/4$. On the lower-tail coverage event, $\widehat\Delta\ge\Delta-F_n>F_n$. If $S=0$, positivity of every $\mu_i$ implies $r=0$, proving the final statement.
+\end{proof}
+
+\begin{theorem}[Matching residual lower bound]\label{thm:lower}
+Suppose $\norm h_\infty\le1$, $S>0$, and
+\[
+ 0<\gamma\le \frac{S}{2M},\qquad
+ \alpha,\beta\in(0,1),\quad\alpha+\beta<1.
+\]
+Use symmetric predictions $p=(1-h)/2$, $q=(1+h)/2$. A test receives exact $V$-moments, then observes a fresh iid stream of full $(X,Y)$ pairs, and may randomize and stop sequentially. Suppose it stops almost surely under the laws constructed below, has acceptance probability at most $\alpha$ under every law with $\Delta\le0$, and at least $1-\beta$ under every law with $\Delta\ge\gamma$. There is a law with gain exactly $\gamma$ under which
+\begin{equation}
+ \E N\ge \kl(1-\beta,\alpha)\frac{S}{\gamma^2}.
+ \label{eq:lower-n}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Under $P_0$ set $g=0$; under $P_1$ set $g=\gamma r/S$. The size condition gives $|g_i|\le1/2$, so both laws have conditional Bernoulli means in $[1/4,3/4]$. Orthogonality gives $\ip{b_j}r=0$, so the exact initial moment vector is zero under both laws. Also $c=0$ and
+\[
+ \Delta_0=0,\qquad
+ \Delta_1=\frac\gamma S\ip hr=\gamma,
+\]
+using $\ip hr=\norm r_2^2=S$.
+
+The elementary inequality
+$\kl(a,b)\le(a-b)^2/[b(1-b)]$ follows from applying $\log x\le x-1$ to the two logarithms. Therefore
+\begin{align*}
+ \KL(P_1,P_0)
+ &=\sum_i\mu_i\kl\left(\frac{1+\gamma r_i/S}{2},\frac12\right)\\
+ &\le\sum_i\mu_i\left(\frac{\gamma r_i}{S}\right)^2
+ =\frac{\gamma^2}{S}.
+\end{align*}
+If $\E_1N=\infty$, the claim is immediate. Otherwise, the stopped log-likelihood ratio equals
+\[
+ \sum_{i\ge1}\mathbf1_{\{N\ge i\}}
+       \log\frac{dP_1}{dP_0}(X_i,Y_i).
+\]
+The likelihood increments are bounded, the expectation of $N$ is finite, and $\{N\ge i\}$ is measurable before draw $i$. Absolute integrability and conditional expectation show that the stopped-transcript divergence equals $\E_1N\KL(P_1,P_0)$. The common stopping and randomization rule contributes no additional likelihood factor. By data processing onto the acceptance event and binary-KL monotonicity,
+\[
+ \E_1N\KL(P_1,P_0)
+ \ge\kl(P_1(\mathrm{accept}),P_0(\mathrm{accept}))
+ \ge\kl(1-\beta,\alpha).
+\]
+Combining the inequalities proves \eqref{eq:lower-n}.
+\end{proof}
+
+For $\alpha=\beta=\delta\le1/4$, the binary divergence is
+$(1-2\delta)\log((1-\delta)/\delta)$, of order $\log(1/\delta)$. The small-margin condition gives $M/\gamma\le S/(2\gamma^2)$, absorbing the range term in the upper bound. Thus, for symmetric prediction pairs in this small-margin regime, the minimax additional testing cost for this fixed exact-moment interface has order
+\[
+ S\gamma^{-2}\log(1/\delta).
+\]
+The lower construction is a problem-specific specialization of the standard sequential change-of-measure method, not a new testing principle. It does not allow arbitrary additional informative training histories: their divergence could pay for part of the decision.
+
+\section{Finite historical evidence and adaptive pairs}
+Fix the dictionary before an old iid sample $H$ of size $N_0$, and assume $|b_j|\le B_j$. Retain
+\[
+ z_j=\frac1{N_0}\sum_{i=1}^{N_0}b_j(X_i)(2Y_i-1),\qquad
+ e_j=B_j\sqrt{\frac{2\log(2d/\delta_0)}{N_0}}.
+\]
+Hoeffding's inequality and a union bound give probability at least $1-\delta_0$ for the event $\mathcal E_0$ on which every $|z_j-m_j(g)|\le e_j$. All future fitting and pair selection may depend on $H$.
+
+At event $t$, condition on pre-audit history and select $p_t,q_t,a_t,n_t$. Put $v_t=Ba_t$, $r_t=q_t-p_t-v_t$, $c_t=\ip{q_t-p_t}{1-p_t-q_t}$, and
+\[
+ H_t=\sum_j e_j|a_{tj}|,\quad
+ F_t=\sqrt{\frac{2\norm{r_t}_2^2\log(1/\delta_t)}{n_t}}
+       +\frac{4\norm{r_t}_\infty\log(1/\delta_t)}{3n_t}.
+\]
+Using a new independent audit, define
+\[
+ L_t=c_t+a_t^\top z+\frac1{n_t}\sum_{i=1}^{n_t}
+       r_t(X_{ti})(2Y_{ti}-1)-H_t-F_t.
+\]
+\begin{proposition}[Adaptive transfer with historical uncertainty]
+For a finite or countable sequence of such events,
+\[
+ \PP(\exists t:L_t>\Delta_t)\le\delta_0+\sum_t\delta_t.
+\]
+\end{proposition}
+\begin{proof}
+On $\mathcal E_0$, the deterministic inequality
+$|a^\top(z-m(g))|\le\sum_j e_j|a_j|$ holds for every $a$, hence for adaptive $a_t$. Conditional on each pre-audit history, the residual is fixed and Theorem~\ref{thm:upper} bounds the fresh one-sided failure by $\delta_t$. Integrate and take a union bound together with $\mathcal E_0^c$. Countable unions follow by increasing finite unions.
+\end{proof}
+
+The proposition is a standard simultaneous-region argument, with a direct structural-learning precedent \cite[Lemma~A.13]{amoukou2026}. It transfers estimates together with their uncertainty, not old betting products. New dictionary columns fitted on old labels require a uniform class argument or fresh data. Completed audits may later enter fitting while future audit blocks remain independent. Refreshing the inference region across update times needs simultaneous bounds for those updates. When historical errors are nonzero, the $L_2$ projection need not minimize $H_t+F_t$; shrinking $a_t$, including to zero, can be preferable. If $r_t=0$, residual-only future auditing cannot shrink $H_t$.
+

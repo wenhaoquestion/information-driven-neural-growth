@@ -1,0 +1,20 @@
+{
+  "enumeration": {
+    "partitions": 15,
+    "at_most_2": 8,
+    "at_most_3": 14,
+    "compatible_pairs": 39
+  },
+  "rational_probability_constants": "passed",
+  "exact_binomial_coverage_spot_checks": {
+    "cases": 102,
+    "worst_failure_fraction": "22898512443916366295593787/79228162514264337593543950336",
+    "worst_failure_float": 0.0002890198600755595,
+    "per_state_budget": 0.0125,
+    "scope": "finite deterministic checks; all-theta proof is analytic"
+  },
+  "rectangle_contrast_checks": 162,
+  "unknown_report_error_checks": 2430,
+  "moving_center_power_checks": 16,
+  "status": "all deterministic exact checks passed"
+}

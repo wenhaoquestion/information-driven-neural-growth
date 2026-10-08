@@ -1,0 +1,4 @@
+{
+  "download_error": "URLError(gaierror(8, 'nodename nor servname provided, or not known'))",
+  "web_inspection": "Primary arxiv PDF opened and inspected using web tool"
+}

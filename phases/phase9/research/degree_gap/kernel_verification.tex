@@ -1,0 +1,216 @@
+% Technical verification note for the weighted four-state bound.
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\begin{document}
+\title{Kernel verification for the weighted four-state squared-logarithm upper bound}
+\author{Phase 9 degree-gap audit}
+\date{7 October 2026}
+\maketitle
+
+\paragraph{Status.}
+The following algebraic and analytic estimates yield a uniform four-state bound
+$O(r^2/(\log r)^2)$, matching the already established weight-degenerate
+lower construction. The estimates below are independent of all source
+weights and spacings. No claim about higher-cardinality upper bounds follows.
+
+\paragraph{Exact symmetric kernels.}
+For locations $(0,s,1-s,1)$, $0<s<1/2$, weights $(a,b,b,a)$,
+$a+b=1/2$, and curvature $g$, define $P=D(AB)$, $q=D(BC)$,
+$T=D(ABC)$, $J=D(AD)$. A cell distortion is the integral of its
+kernel against $g$. The pair kernels are
+\[
+ K_{AB}(t)=\min\{at,b(s-t)\}\mathbf1_{[0,s]}(t),
+\]
+\[
+ K_{BC}(t)=b\min\{t-s,1-s-t\}\mathbf1_{[s,1-s]}(t),
+\]
+\[
+ K_{AD}(t)=a\min\{t,1-t\}\mathbf1_{[0,1]}(t).
+\]
+The exact triple kernel is
+\[
+ K_{ABC}(t)=
+ \begin{cases}
+ \min\{at,b(1-2t)\},&0\le t\le s,\\
+ \min\{t/2-bs,b(1-s-t)\},&s\le t\le1-s,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\]
+Its mean is $m=b/(a+2b)=2b/(1+2b)$; the minima switch precisely
+at that mean whenever it belongs to the relevant interval. If $g$ is
+reflection symmetric, then $D(CD)=P$, $D(BCD)=T$, and
+\[
+ T=\int_0^{1/2}H_s(t)g(t)\,dt,
+\]
+\[
+ H_s(t)=
+ \begin{cases}
+ \min\{at,b(1-2t)\},&0\le t\le s,\\
+ \min\{(1/2+b)t-2bs,b(1-2s)\},&s\le t\le1/2.
+ \end{cases}
+\]
+In particular $H_s\le b$, and
+\[
+ \int_0^{1/2}|t-s|H_s(t)g(t)\,dt\le P+q/2.
+\]
+On the left this follows from $H_s\le at,b$ and
+$\min\{at,b(s-t)\}\ge(s-t)H_s$; on the right it follows
+from $H_s\le b$ and the exact expression
+$q=2b\int_s^{1/2}(t-s)g(t)\,dt$.
+
+\paragraph{General triple reduction.}
+Normalize a consecutive triple to locations $(0,c,1)$ with original,
+unnormalized source weights $(u,v,w)$, where $u\le v$ and $0<c<1$.
+Write $K$ for its Jensen kernel, $Q_0$ and $Q_1$ for its left and
+right adjacent-pair kernels, and $H$ for its endpoint-pair kernel.
+Explicitly,
+\[
+ H(t)=\min\{ut,w(1-t)\},
+\]
+\[
+ K(t)=
+ \begin{cases}
+ \min\{ut,v(c-t)+w(1-t)\},&0\le t\le c,\\
+ \min\{ut+v(t-c),w(1-t)\},&c\le t\le1,
+ \end{cases}
+\]
+\[
+ Q_0(t)=\min\{ut,v(c-t)\}\mathbf1_{[0,c]}(t),\quad
+ Q_1(t)=\min\{v(t-c),w(1-t)\}\mathbf1_{[c,1]}(t).
+\]
+Put $L=Q_0+Q_1$. The elementary minimum identities give
+\begin{equation}
+ 0\le K-H\le L.\label{audit:increment}
+\end{equation}
+For $0<\varepsilon\le1/8$ and
+$I=[c(1-\varepsilon),c(1+\varepsilon)]\cap[0,1]$,
+\begin{equation}
+ L(t)\ge\frac{\varepsilon}{1+2\varepsilon}K(t)
+ \quad(t\notin I).\label{audit:localize}
+\end{equation}
+Indeed, when $t<c(1-\varepsilon)$,
+\[
+ \frac{Q_0(t)}{K(t)}\ge
+ \min\!\left\{1,\frac{v(c-t)}{ut}\right\}
+ \ge\min\!\left\{1,\frac{c-t}{t}\right\}
+ \ge\frac{\varepsilon}{1-\varepsilon}.
+\]
+At endpoints interpret this by its direct kernel inequality.
+When $t>c(1+\varepsilon)$, writing $x=t-c$ gives
+\[
+ \frac{Q_1(t)}{K(t)}\ge
+ \frac{vx}{ut+vx}\ge\frac{x}{c+2x}
+ \ge\frac{\varepsilon}{1+2\varepsilon}.
+\]
+
+\begin{proposition}[Quantified polynomial obstruction]
+Let $g\ge0$ be a nonzero polynomial on $[0,1]$ of degree at most
+$r\ge1$. Set
+\[
+ T=\int_0^1Kg,\qquad q=\int_0^1Q_0g,\qquad S=\int_0^1Lg.
+\]
+If $R\ge128$, $S\le2T/R$, and $q\le T/(2R^2)$, then
+\[
+ R^2\le16r^2\exp(20r/\sqrt R).
+\]
+Consequently, if also $R\ge256$,
+\[
+ R(\log R)^2\le1936r^2.
+\]
+\end{proposition}
+\begin{proof}
+Put $\varepsilon=16/R\le1/8$. By \eqref{audit:localize},
+\[
+ \int_{I^c}Kg\le\frac{1+2\varepsilon}{\varepsilon}S
+ \le\frac{5T}{32}.
+\]
+By \eqref{audit:increment} and $S\le2T/R\le T/64$,
+\[
+ \int_IHg\ge T-\frac{5T}{32}-S\ge\frac{53T}{64}
+ \ge\frac{3T}{4}.
+\]
+Since $|I|\le2\varepsilon c$ and
+$H(t)\le ut\le u(1+\varepsilon)c$ on $I$, some $t_0\in I$ satisfies
+\begin{equation}
+ g(t_0)\ge\frac{T}{4\varepsilon u c^2}.\label{audit:peak}
+\end{equation}
+Take $E=[c/4,c(1-2\varepsilon)]$, with length $\ell\ge c/2$.
+The point $t_0$ lies to the right of $E$ at distance at most
+$3\varepsilon c$. Put $M=\max_E g$. Chebyshev's real extrapolation
+inequality, after mapping $E$ onto $[-1,1]$, gives
+\[
+ g(t_0)\le M\,T_r(1+12\varepsilon)
+ \le M\exp(r\sqrt{24\varepsilon})
+ \le M\exp(20r/\sqrt R).
+\]
+Here $\operatorname{arcosh}(1+x)\le\sqrt{2x}$, and
+$T_r(\cosh y)=\cosh(ry)\le e^{ry}$.
+
+The rescaled Markov inequality gives
+$\|g'\|_{L^\infty(E)}\le2r^2M/\ell$.
+From a maximizer, one direction inside $E$ has length at least
+$\ell/2$; on its first $\ell/(4r^2)$, $g\ge M/2$. Therefore
+\[
+ \int_Eg\ge\frac{\ell M}{8r^2}\ge\frac{cM}{16r^2}.
+\]
+For $t\in E$,
+$ut\ge uc/4\ge2u\varepsilon c$ and
+$v(c-t)\ge2v\varepsilon c\ge2u\varepsilon c$.
+Consequently \eqref{audit:peak} implies
+\[
+ q\ge2u\varepsilon c\int_Eg
+ \ge\frac{u\varepsilon c^2M}{8r^2}
+ \ge\frac{T}{32r^2}\exp(-20r/\sqrt R).
+\]
+Comparison with $q\le T/(2R^2)$ proves the first assertion.
+Writing $z=r/\sqrt R$, its logarithm becomes
+\[
+ \log(R/16)\le20z+2\log z\le22z.
+\]
+If $R\ge256$, then $\log(R/16)\ge\tfrac12\log R$;
+the second assertion follows.
+\end{proof}
+
+\paragraph{Verification of the four-state hypotheses.}
+Scalar Bregman flat optima can be chosen contiguous, with original source
+weights retained in every cell. A triple kernel dominates each adjacent
+pair kernel, whose interiors have disjoint supports; hence its distortion
+dominates the sum of those two pair distortions. It follows that a cheapest
+outer fine pair admits a compatible coarse optimum. A cheapest middle fine
+pair likewise does if either triple coarse split is optimal. Thus a price
+$R>1$ requires the sole conflict
+\[
+ q=P_{BC}=\mathrm{OPT}_3,\qquad
+ Q=P_{AB}+P_{CD}=\mathrm{OPT}_2.
+\]
+Keeping the coarse split, or keeping the middle fine pair, supplies
+\[
+ R\le\frac{\min(P_{AB},P_{CD})}{q},\qquad
+ R\le\frac{\min(T_{ABC},T_{BCD})}{Q}.
+\]
+Let $(\alpha,\beta,\gamma,\delta)$ be the positive source weights.
+If $\beta\le\gamma$, choose triple $BCD$ and normalize it to
+$(0,c,1)$ with $(u,v,w)=(\beta,\gamma,\delta)$.
+If $\gamma\le\beta$, reflect and use triple $CBA$ instead.
+In either case, with the chosen triple distortion $T$ and its other
+adjacent pair distortion $p$,
+\[
+ T\ge RQ\ge2R^2q,\qquad
+ S=q+p\le q+Q\le\frac{T}{2R^2}+\frac{T}{R}\le\frac{2T}{R}.
+\]
+These are precisely the hypotheses of the proposition. Affine normalization
+replaces the curvature by a positive constant times an affine composition
+and therefore preserves nonnegativity, degree, and all relevant ratios.
+
+\paragraph{Consequence for the endpoint architecture.}
+The arbitrary-weight theorem includes every symmetric endpoint construction,
+including every choice of tiny $b$, every $s$, and every nonnegative
+polynomial curvature of degree at most $r$. Hence $\Omega(r^2)$ growth is
+impossible in this architecture, while the existing lower family attains
+$\Omega(r^2/(\log r)^2)$. The logarithmic loss cannot be removed merely by
+replacing the Chebyshev needle with a Christoffel or Jacobi construction.
+The stochastic price is at most the deterministic price, and the established
+two-level rounding comparison transfers the matching lower order.
+\end{document}

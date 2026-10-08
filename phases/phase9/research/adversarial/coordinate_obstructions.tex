@@ -1,0 +1,214 @@
+% Phase 9 independent adversarial result. Curvature degree is r.
+% Self-contained insert; requires amsmath, amsthm, and theorem environments.
+% No claim about a hierarchy lower bound follows from this file.
+\section{Sharp separate losses in the classical curvature coordinate}
+
+Let $g\geq0$ be a nonzero polynomial on $[0,1]$, let
+$\varphi''=g$, and put
+\begin{align*}
+ h(x)&=\int_0^x\sqrt{g(t)}\,dt,&
+ A&=h(1)-h(0),\\
+ B_-&=B_\varphi(0,1)=\int_0^1 t g(t)\,dt,&
+ B_+&=B_\varphi(1,0)=\int_0^1(1-t)g(t)\,dt.
+\end{align*}
+The orientation in these definitions is intentional. Define the two
+degree-uniform comparison constants
+\[
+ L_r=\sup_{\substack{g\geq0,\ g\not\equiv0\\\deg g\leq r}}
+       \ \sup_{u\ne v}\frac{|h(u)-h(v)|^2}{B_\varphi(u,v)},
+ \qquad
+ U_r=\sup_{\substack{g\geq0,\ g\not\equiv0\\\deg g\leq r}}
+       \ \sup_{u\ne v}\frac{B_\varphi(u,v)}{|h(u)-h(v)|^2},
+\]
+where $u,v\in[0,1]$ and each occurrence of $h$ and $\varphi$ belongs to
+the same $g$ inside its supremum.
+
+\begin{proposition}[The inverse logarithm cannot be removed]
+For every integer $m\geq2$, there is strictly positive polynomial curvature
+of degree $2m-2$ for which
+\[
+ \frac{A^2}{B_-}=\frac{H_m^2}{2H_m-H_{2m}}\sim\log m,
+ \qquad H_m=\sum_{j=1}^m\frac1j.
+\]
+Consequently $L_r=\Theta(\log(r+2))$ when combined with the Phase 8
+uniform upper estimate. In particular no absolute $C$ can give
+$|h(u)-h(v)|^2\leq C B_\varphi(u,v)$ for all polynomial degrees.
+\end{proposition}
+\begin{proof}
+Set
+\[
+ q_m(t)=\sum_{j=0}^{m-1}(1-t)^j
+       =\frac{1-(1-t)^m}{t},\qquad g_m(t)=q_m(t)^2,
+\]
+with the polynomial continuation $q_m(0)=m$. On $[0,1]$, $q_m\geq1$,
+so $\sqrt{g_m}=q_m$ and $A=H_m$. For every integer $k\geq1$,
+\[
+ \int_0^1\frac{1-(1-t)^k}{t}\,dt
+ =\sum_{j=0}^{k-1}\int_0^1(1-t)^j\,dt=H_k.
+\]
+The identity
+$[1-(1-t)^m]^2=2[1-(1-t)^m]-[1-(1-t)^{2m}]$
+therefore yields $B_-=2H_m-H_{2m}$. Finally
+$H_m=\log m+O(1)$ and $H_{2m}-H_m=\log2+o(1)$, proving the
+asymptotic. Taking $m=\lfloor r/2\rfloor+1$ supplies a witness for every
+degree-at-most-$r$ envelope, rather than only an even subsequence.
+\end{proof}
+
+\begin{proposition}[The forward quadratic loss cannot gain a logarithm]
+For every integer $m\geq2$, there is nonnegative nonzero polynomial
+curvature of degree $4m-4$ such that
+\[
+ \frac{B_+}{A^2}\geq\frac{m^2}{32768}.
+\]
+Consequently $U_r=\Theta((r+1)^2)$ when combined with the Phase 8
+uniform upper estimate. In particular an absolute bound
+$B_\varphi(u,v)\leq C r^2\,|h(u)-h(v)|^2/\log(r+2)$ is false.
+The same asymptotic obstruction holds if curvature is required to be
+strictly positive.
+\end{proposition}
+\begin{proof}
+Let $T_m$ be the Chebyshev polynomial characterized by
+$T_m(\cos\theta)=\cos(m\theta)$. The quotient
+\[
+ F_m(t)=\frac{1-T_m(1-2t)}{2m^2t},\qquad F_m(0)=1,
+\]
+is a polynomial of degree $m-1$. Writing $\theta=\arcsin\sqrt t$
+shows that
+\[
+ F_m(t)=\left(\frac{\sin(m\theta)}{m\sin\theta}\right)^2,
+ \qquad 0\leq F_m(t)\leq
+     \min\left\{1,\frac1{m^2t}\right\}.
+\]
+Here $|\sin(m\theta)|\leq m\sin\theta$ follows from the geometric-sum
+formula for $\sin(m\theta)/\sin\theta$, and the other bound uses
+$|\sin(m\theta)|\leq1$.
+
+Set $g_m=F_m^4$, of degree $4m-4$. Since $F_m\geq0$,
+\[
+ A=\int_0^1F_m(t)^2\,dt
+ \leq\frac1{m^2}+\int_{1/m^2}^1\frac{dt}{m^4t^2}
+ =\frac2{m^2}-\frac1{m^4}\leq\frac2{m^2}.
+\]
+If $0\leq t\leq1/(16m^2)$, then
+$\sqrt t\leq\theta\leq2\sqrt t$ and $m\theta\leq1/2$.
+The elementary estimate $\sin y\geq y/2$ for $0\leq y\leq1/2$
+therefore gives $F_m(t)\geq1/4$. On this same interval $1-t\geq1/2$,
+whence
+\[
+ B_+\geq\int_0^{1/(16m^2)}(1-t)F_m(t)^4\,dt
+ \geq\frac1{8192m^2}.
+\]
+Division by $A^2\leq4/m^4$ proves the claimed bound. Taking
+$m=\lfloor r/4\rfloor+1$ covers every sufficiently large
+degree-at-most-$r$ envelope.
+
+For strict positivity one may use $\widetilde g_m=F_m^4+m^{-8}$,
+without changing the degree. Since $\sqrt{a+b}\leq\sqrt a+\sqrt b$,
+its coordinate length is at most $2/m^2+m^{-4}\leq3/m^2$, whereas its
+$B_+$ is at least $1/(8192m^2)$. Thus its ratio is at least
+$m^2/73728$. Both examples can be rescaled to have curvature at most one;
+positive curvature scaling changes $B$ and $A^2$ by the same factor.
+\end{proof}
+
+\begin{proposition}[Both losses occur for one generator and one source]
+There are strictly positive polynomial curvatures of degree $r=4m-4$
+for which the product of the best two comparison constants in the
+coordinate $h=\int\sqrt g$ is $\Omega(r^2\log r)$. This remains true
+for the best two-sided partition-cost comparison constants chosen for a
+single three-point source. Nevertheless that source has deterministic
+and stochastic all-capacity hierarchy price exactly one.
+\end{proposition}
+\begin{proof}
+Using the two polynomials above, set
+\[
+ G_m(t)=m^4F_m(t)^4+q_m(1-t)^2.
+\]
+It is strictly positive on $[0,1]$ and has degree $4m-4$ for $m\geq2$;
+when $m=2$ both terms have degree four or two, and in every case the
+higher-degree coefficient is positive. Write $h'=\sqrt{G_m}$.
+
+On the left half interval, the inequality
+$\sqrt{a+b}\leq\sqrt a+\sqrt b$ and the preceding estimates imply
+\[
+ A_L:=h(1/2)-h(0)
+ \leq m^2\int_0^1F_m^2+\int_0^{1/2}\frac{dt}{1-t}
+ \leq2+\log2<3.
+\]
+The lower estimate $F_m\geq1/4$ on $[0,1/(16m^2)]$ gives
+\[
+ B_\varphi(1/2,0)
+ =\int_0^{1/2}(1/2-t)G_m(t)\,dt
+ \geq\frac{m^2}{16384},\qquad
+ \frac{B_\varphi(1/2,0)}{A_L^2}\geq\frac{m^2}{147456}.
+\]
+On the right half, change variables $s=1-t$. Then
+\[
+ A_R:=h(1)-h(1/2)
+ \geq\int_0^{1/2}q_m(s)\,ds
+ =H_m-\sum_{j=1}^m\frac{2^{-j}}j\geq H_m-\log2.
+\]
+For $t\geq1/2$ we have $m^4F_m(t)^4\leq16/m^4$, so
+\[
+ \begin{split}
+ B_\varphi(1,1/2)
+ &=\int_{1/2}^1(1-t)G_m(t)\,dt\\
+ &\leq 2H_m-H_{2m}+\frac2{m^4}
+ \leq H_m+\frac2{m^4}.
+ \end{split}
+\]
+Consequently
+\[
+ \frac{A_R^2}{B_\varphi(1,1/2)}
+ \geq\frac{(H_m-\log2)^2}{H_m+2/m^4}\sim\log m.
+\]
+The two ratios for this same generator therefore have product
+$\Omega(m^2\log m)$.
+
+To transfer this obstruction to partition comparisons, consider the
+three locations $0,1/2,1$ with weights proportional to
+$1,\eta,\eta^2$, where $\eta>0$. Let $P_L$ merge the first two
+locations and let $P_R$ merge the last two. The other location is a
+singleton in each partition. In general a two-point cell with locations
+$x,y$ and weights $a,\eta a$ satisfies, as $\eta\downarrow0$,
+\[
+ \frac{D_\varphi(\{x,y\})}{a\eta}\longrightarrow B_\varphi(y,x),
+ \qquad
+ \frac{V_h(\{x,y\})}{a\eta}\longrightarrow
+       |h(y)-h(x)|^2.
+\]
+The first limit follows by differentiating
+$a\varphi(x)+a\eta\varphi(y)-a(1+\eta)
+\varphi((x+\eta y)/(1+\eta))$ at $\eta=0$; the second follows from
+the exact weighted two-point variance. Overall normalization cancels
+from their quotient. It follows that
+\[
+ \frac{D_\varphi(P_L)}{V_h(P_L)}\longrightarrow
+      \frac{B_\varphi(1/2,0)}{A_L^2},\qquad
+ \frac{V_h(P_R)}{D_\varphi(P_R)}\longrightarrow
+      \frac{A_R^2}{B_\varphi(1,1/2)}.
+\]
+For each $m$, choose sufficiently small positive $\eta$ so both ratios
+are at least half their limits. Thus any constants $c,C>0$ valid for
+\emph{every partition of this source},
+$cV_h(P)\leq D_\varphi(P)\leq C V_h(P)$, necessarily satisfy
+$C/c=\Omega(m^2\log m)$. This choice permits $\eta$ to depend on $m$;
+no assertion of a fixed minimum source mass is made.
+
+Finally, for three states the single nontrivial capacity is two. Choose
+its flat optimum and extend by the singleton partition at capacity
+three and the one-cell partition at capacity one. This is a hierarchy
+with price one. Stochastic price is also one because its flat
+denominators coincide with the deterministic ones.
+\end{proof}
+
+\paragraph{Exact scope of the obstruction.}
+The separate orders of the Phase 8 comparison constants are sharp, and
+their product is sharp even when both constants can depend on the
+generator and source. Thus a transfer using a global two-sided
+comparison of all partition costs in this particular coordinate cannot
+improve its $O(r^2\log r)$ distortion factor in general. A method that
+uses additional structure or a different coordinate is not excluded.
+These statements do not give any growing hierarchy lower bound: the
+last construction deliberately has hierarchy price one. Divergence or
+partition-comparison distortion and hierarchy incompatibility are
+distinct claims.

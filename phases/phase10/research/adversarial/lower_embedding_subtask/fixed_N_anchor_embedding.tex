@@ -1,0 +1,245 @@
+% Independent Phase 10 lower-embedding check. New file only.
+% Read-only source: phase9_research_work/manuscript/endpoint_lower.tex
+% and weighted_four_state_upper.tex. No external sources needed.
+\section{Fixed-count embedding of the endpoint quartet}
+
+\paragraph{Conclusion.}
+The Phase 9 endpoint lower witness extends to every fixed number of
+states $N\ge4$ at capacities $(N-2,N-1)$, without increasing curvature
+degree. The deterministic and stochastic lower constants can be the
+original $1/(32d_n)$ and $1/(64d_n)$, respectively; only the threshold
+on $n$ depends on $N$. All posteriors can lie in $[1/4,3/4]$, and the
+loss can be smooth, strictly proper, and bounded in $[0,1/2]$ throughout
+the report interval $[0,1]$. Arbitrarily small-mass padding is not a
+valid substitute for the anchors below.
+
+\subsection{Notation inherited from the quartet}
+For all sufficiently large integers $n$, write
+\[
+ d=(4\log n/n)^2,\quad b=d^2,\quad a=1/2-b,
+ \quad (x_A,x_B,x_C,x_D)=(0,2d,1-2d,1),
+\]
+and let $\varphi_n''=g_n=\kappa_n(t)+\kappa_n(1-t)+d^2$ be exactly
+the polynomial in Phase 9, with
+\[
+ p_n(t)=T_n\!\left(\frac{2t-1-d}{1-d}\right)^2,
+ \quad Z_n=\int_0^1p_n(t)\,dt,
+ \quad\kappa_n=p_n/Z_n.
+\]
+Its curvature has degree exactly $2n$ and is positive on all of
+$\mathbb R$. Let $P=D(AB)=D(CD)$, $q=D(BC)$,
+$T=D(ABC)=D(BCD)$, and $J=D(AD)$, calculated with the original
+quartet masses $(a,b,b,a)$. The already-proved estimates are
+\[
+ \frac{bd}{2}\le P\le4bd,\qquad
+ 0<q\le bd^2,\qquad T\ge b/4,\qquad J\ge b/2.
+\]
+Every quartet pair other than $BC$ has cost at least $P$.
+
+\subsection{Exterior growth supplies expensive anchors}
+For $d\le1/4$, the maximum of $p_n$ on $[0,1]$ is $p_n(0)$:
+on $[d,1]$ its value is at most one, while on $[0,d]$ the exterior
+Chebyshev magnitude decreases towards one. Also
+\[
+ \operatorname{arcosh}\!\left(\frac{1+d}{1-d}\right)
+ \le\sqrt{\frac{4d}{1-d}}\le3\sqrt d.
+\]
+Consequently
+\[
+ Z_n\le p_n(0)\le \exp(6n\sqrt d)=n^{24}.
+\]
+For every $t\le-1/8$, the absolute value of the Chebyshev argument
+is at least $5/4=\cosh(\log2)$. Hence
+\begin{equation}
+ \kappa_n(t)\ge L_n:=\frac{4^n}{4n^{24}}
+ \qquad(t\le-1/8).
+ \tag{A1}
+\end{equation}
+This elementary bound is deliberately loose; its exponential growth is
+the only feature needed.
+
+Fix $N\ge5$, let $m=N-4$, and put $\lambda=1/2$. Give the four
+core states masses $\lambda(a,b,b,a)$. Add $m$ anchors with locations
+and masses
+\[
+ z_j=-\frac12+\frac{j}{4(m+1)},\qquad
+ p_{z_j}=\eta=\frac1{2m},\qquad 1\le j\le m.
+\]
+The augmented masses sum to one, all locations are distinct, and all
+anchors lie strictly between $-1/2$ and $-1/4$.
+Here $x$ is an auxiliary real coordinate, not yet the posterior
+coordinate. All Jensen costs are well defined because $g_n>0$ on
+$\mathbb R$; the affine lift below places the entire source inside the
+legal posterior interval.
+Write $\delta=1/[16(m+1)]$. If $u<v$ is any pair containing at least
+one anchor, its left endpoint $u$ is an anchor, its gap is at least
+$4\delta$, and the interval
+\[
+ E_{uv}=[u+\delta,u+2\delta]
+\]
+is contained in $[u,v]\cap(-\infty,-1/8]$. The pair kernel on this
+interval satisfies
+\[
+ K_{uv}(t)=\min\{p_u(t-u),p_v(v-t)\}
+ \ge\delta\min(p_u,p_v).
+\]
+For all sufficiently large $n$ depending on $m$, every source mass is
+at least $\lambda b$. Combining this with (A1) gives
+\begin{equation}
+ D(uv)\ge\lambda b\delta^2L_n.
+ \tag{A2}
+\end{equation}
+In particular, choose $n$ large enough that
+\begin{equation}
+ D(uv)\ge\lambda b/4
+ \quad\hbox{for every pair containing an anchor}.
+ \tag{A3}
+\end{equation}
+Indeed (A2) actually tends to infinity for each fixed $N$, since $b$
+decays only polynomially in $n$. Thus (A3) remains available despite
+the small masses of the quartet's two interior states.
+
+\subsection{Every deterministic top-capacity hierarchy is expensive}
+The feasible flat partitions retaining all anchors as singletons give
+\begin{equation}
+ 0<\operatorname{OPT}_{N-1}\le\lambda q,
+ \qquad
+ 0<\operatorname{OPT}_{N-2}\le2\lambda P\le8\lambda bd.
+ \tag{A4}
+\end{equation}
+Positivity follows from strict convexity, positive weights, and distinct
+locations: a partition with fewer than $N$ cells merges distinct states.
+
+Any hierarchy using fewer than its allowed cells can be refined to
+exactly $N-1$ fine cells and $N-2$ coarse cells without increasing
+either distortion. To see this, first refine its fine partition within
+the existing coarse cells to $N-1$ cells, and then split coarse cells
+into unions of these fine cells until the coarse count is $N-2$.
+Therefore it suffices to consider exact counts. The fine partition then
+merges exactly one pair.
+
+If its fine pair is not $BC$, its cost is at least $\lambda P$.
+For core pairs this is inherited from the quartet. For pairs touching
+an anchor it follows from (A3), $P\le4bd$, and $d\le1/16$.
+Using (A4), its fine ratio is at least
+\[
+ \frac{\lambda P}{\operatorname{OPT}_{N-1}}
+ \ge\frac Pq\ge\frac1{2d}.
+\]
+
+Otherwise, the fine pair is $BC$. An exact coarse partition merges
+two of the $N-1$ fine blocks. If neither block contains an anchor, the
+three possibilities are the original $ABC$, $BCD$, and $AD$ merges;
+their resulting total distortion is at least $\lambda b/4$.
+If an anchor is involved, the resulting coarse cell contains a pair
+touching an anchor, so its cost is at least $\lambda b/4$ by (A3).
+Here the required monotonicity is unconditional and uses the original
+weights: for any $U\subset S$, the Jensen decomposition of $S$ into
+$U$ and $S\setminus U$ gives $D(S)\ge D(U)$.
+Thus the coarse ratio is at least
+\[
+ \frac{\lambda b/4}{\operatorname{OPT}_{N-2}}
+ \ge\frac1{32d}.
+\]
+No contiguity restriction is used in this enumeration. Therefore
+\begin{equation}
+ \rho_{\varphi_n,\mathrm{det}}^{(N-2,N-1)}\ge\frac1{32d_n}.
+ \tag{A5}
+\end{equation}
+
+The standard two-level random-function-table argument works for every
+source size and every pair of capacities. From a stochastic hierarchy
+of price $R$, sample its two independent channel tables. Conditional
+Jensen bounds each expected deterministic distortion by the corresponding
+stochastic distortion. The expected sum of the two normalized costs is
+at most $2R$, so one sampled deterministic hierarchy has maximum
+normalized cost at most $2R$. Thus
+\begin{equation}
+ \rho_{\varphi_n,\mathrm{stoch}}^{(N-2,N-1)}\ge\frac1{64d_n}.
+ \tag{A6}
+\end{equation}
+For $N=4$, (A5)--(A6) are exactly the original construction.
+
+\subsection{Interior support and globally bounded proper losses}
+Use the common affine change
+\[
+ y=\frac38+\frac x4,
+ \qquad x=4y-\frac32.
+\]
+All augmented source locations belong to $[1/4,5/8]\subset[1/4,3/4]$.
+Define the finite positive number
+\[
+ M_n=\max_{[-3/2,5/2]}g_n,
+ \qquad
+ \widetilde\varphi_n(y)=
+ \frac{\varphi_n(4y-3/2)}{16M_n}.
+\]
+Then $0<\widetilde\varphi_n''\le1$ on all of $[0,1]$, its curvature
+still has degree exactly $2n$, and every augmented-source distortion is
+multiplied by the same positive factor $1/(16M_n)$. Hence both prices
+and (A5)--(A6) are unchanged. Positivity of the original polynomial on
+the whole real line is essential to this step.
+
+For clarity, bounded losses can be defined directly from the normalized
+curvature $\widetilde g=\widetilde\varphi_n''$:
+\[
+ \ell(q,1)=\int_q^1(1-t)\widetilde g(t)\,dt,
+ \qquad
+ \ell(q,0)=\int_0^q t\widetilde g(t)\,dt.
+\]
+These are smooth and lie in $[0,1/2]$ for every report $q\in[0,1]$.
+For true posterior $p$, the derivative of conditional risk in $q$ is
+$(q-p)\widetilde g(q)$, proving strict propriety, and integrating this
+identity proves that excess risk is $B_{\widetilde\varphi_n}(p,q)$.
+This formulation does not require symmetry; in this particular lift
+symmetry about $1/2$ is also preserved.
+
+In degree-at-most-$r$ notation, take $n=\lfloor r/2\rfloor$. For every
+fixed $N\ge4$, there is a threshold $r_0(N)$ such that, for all
+$r\ge r_0(N)$, these witnesses have
+\[
+ \rho_{\mathrm{det}}^{(N-2,N-1)}
+ \ge\rho_{\mathrm{stoch}}^{(N-2,N-1)}
+ \ge\frac1{9216}\frac{r^2}{(\log r)^2}.
+\]
+The coefficient is absolute; the degree threshold depends on $N$.
+As in Phase 9, this is a multiplicative statement. Bounded-loss
+normalization does not assert nonvanishing absolute excess cost.
+
+\subsection{Why sufficiently tiny-mass padding can fail}
+There is already a counterexample to naive padding for $N=5$.
+Fix any one of the strictly convex four-state witnesses above, at a
+fixed degree. Add a fifth, distinct state $z$ of mass $\varepsilon>0$
+and scale all original masses by $1-\varepsilon$. Consider capacities
+$(3,4)$, and let $\varepsilon\downarrow0$.
+
+Every original-core pair retains a strictly positive limiting cost,
+whereas for a pair joining $z$ to a core state $i$,
+\[
+ D_\varepsilon(zi)
+ =\varepsilon B_\varphi(z,x_i)+O(\varepsilon^2).
+\]
+Since $z$ is distinct and the generator strictly convex, the leading
+constants are positive. Consequently the exact fine optimum eventually
+merges $z$ with some core state $i_\varepsilon$, and its price can be
+made exactly one by retaining that pair.
+
+The three-cell flat optimum converges to the original quartet's
+$\operatorname{OPT}_3=q>0$. This follows from continuity of the costs
+and the finite number of partitions: restricting any three-cell partition
+to the positive-mass core leaves at most three cells, and the original
+$BC$ merge is feasible after attaching $z$ to a core cell.
+
+There is always a compatible coarse partition that retains the original
+$BC$ merge: if $i_\varepsilon\notin\{B,C\}$, merge $BC$ separately;
+otherwise merge the fine block $zi_\varepsilon$ with the other middle
+state. Its cost converges to $q$. The resulting hierarchy has fine ratio
+one and coarse ratio tending to one. Hence
+\[
+ \rho_{\mathrm{det}}^{(3,4)}\longrightarrow1,
+ \qquad \rho_{\mathrm{stoch}}^{(3,4)}\longrightarrow1.
+\]
+For each degree one can choose the padding mass small enough to keep
+the new price below two, even though the original quartet price diverges
+with degree. The fixed positive-mass exterior anchors avoid this failure
+through the explicit pair-penalty estimate (A2).

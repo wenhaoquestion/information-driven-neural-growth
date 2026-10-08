@@ -1,0 +1,6 @@
+# Versions actually used in the existing local Python 3.12.14 environment.
+numpy==2.3.5
+scipy==1.18.1
+matplotlib==3.11.2
+mpmath==1.3.0
+Pillow==12.3.0

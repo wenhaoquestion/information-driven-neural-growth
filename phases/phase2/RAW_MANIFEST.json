@@ -1,0 +1,143 @@
+{
+  "description": "Hashes identify historical source bytes, not correctness; local-only files are not downloadable from this repository.",
+  "files": [
+    {
+      "path": "results/audit_controller_witness.json",
+      "bytes": 8503,
+      "sha256": "e7c9656d8a9c653873c877141db3ccc8d3512c1fc6a7a411898894ab930bb26a",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/audit_learning.json",
+      "bytes": 1109,
+      "sha256": "350ebf86bff9d162d602fdd9bdb25f017690430cc29838ea90a9944c6ee1353c",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/audit_quartet.json",
+      "bytes": 27742,
+      "sha256": "6c8419df4ddd271c95df0a146dd08e73c7cdcd02c8dcc7c48b575d40c9c7b635",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/environment.json",
+      "bytes": 484,
+      "sha256": "a8c9ce97cd1ff3cac993a246b329193ab3d71ef49e82e2537c3fa4d3678c096b",
+      "disposition": "historical environment, PDF QA or source-preservation administration omitted; scientific outcomes retained separately"
+    },
+    {
+      "path": "results/high_order_population.csv",
+      "bytes": 36767,
+      "sha256": "a3b8a864e6a9ff9bb7b74ac0da70dbe60396da76c527634695ca224021576c89",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/high_order_population.json",
+      "bytes": 64374,
+      "sha256": "18aee5dd7245850cdfd085fc5c7403e5e0e7bc0466bdf952ab017481a417de33",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/learning_curvature_bridge64.json",
+      "bytes": 16774077,
+      "sha256": "36b86f5f00626da4e00dee272e41ac42b96f7a076ee33aedb9800a02f29905c0",
+      "disposition": "exact-byte gzip in evidence/"
+    },
+    {
+      "path": "results/learning_curvature_bridge64_summary.csv",
+      "bytes": 18837,
+      "sha256": "54862fdd48ffd22955247c44f833a77cf44a52ebb7f6c827dc9f8b5af3823fb3",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/learning_curvature_pilot4.json",
+      "bytes": 525832,
+      "sha256": "6e1ad00438c2ca8765cd0c6adad48b0f914308082a2b99efac9a1a98a7b6015f",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/learning_implementation_checks.json",
+      "bytes": 1029,
+      "sha256": "0c1941711148f87d458f7ad0becb664b44209320000c5a2ce4018bcec8551134",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/learning_neural_aligned32.json",
+      "bytes": 609565,
+      "sha256": "33fcf078fbecf9b3049c47f10442ecddc052d8a6f9b433bbd4917572fe8550f7",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/learning_neural_aligned32_summary.csv",
+      "bytes": 3125,
+      "sha256": "e26be0babe9655d23b1e488970b9590d4d3c2f6f4e526aa0848fd277db91120e",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/learning_neural_exploratory4.json",
+      "bytes": 69944,
+      "sha256": "14cfe44b6447a0f4f27005aae66882623a9d6768d22c093d73edb95738650a52",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/learning_neural_probe32.json",
+      "bytes": 553372,
+      "sha256": "b59a0e07034091b537d6840b2d0870384e4c335317a862e7890f02a99ce0a2df",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/learning_neural_probe32_summary.csv",
+      "bytes": 2780,
+      "sha256": "ff65f8e0371ddc7d943e2347c6c48fee6e601217f7ec80fbe8aef8e705a04617",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/logit_range_check.json",
+      "bytes": 100,
+      "sha256": "706b914ea64586ce009d34eb243f8368f969235a0cb33ab39fa9b08614e7cd2d",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/pdf_qa.json",
+      "bytes": 888,
+      "sha256": "d1bcbfc74de1e61a8320718d6dfd3dfcc6d33be9c1002d3a936abdf67091ce00",
+      "disposition": "historical environment, PDF QA or source-preservation administration omitted; scientific outcomes retained separately"
+    },
+    {
+      "path": "results/phase1_reproduction.json",
+      "bytes": 1500,
+      "sha256": "7f6bc4c9b4c46184837abb52feaff9dc2f31ad0d6c13c7476304e4a375b47129",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/replayed/learning_curvature_bridge64.json",
+      "bytes": 16774078,
+      "sha256": "14dda162282c751eb1d877c6f2a59cbf4bbda50dbe697941693c9d4a62a46dce",
+      "disposition": "omitted duplicate historical replay; retained locally"
+    },
+    {
+      "path": "results/replayed/learning_neural_aligned32.json",
+      "bytes": 609564,
+      "sha256": "55a2388152003a866312f0e505ac35f19c33337f9be9502020da316b307e190c",
+      "disposition": "omitted duplicate historical replay; retained locally"
+    },
+    {
+      "path": "results/replayed/learning_neural_probe32.json",
+      "bytes": 609427,
+      "sha256": "7593096780b524224c369ca205942e21de309679d1c63b5e3851f9ab3affbdab",
+      "disposition": "omitted duplicate historical replay; retained locally"
+    },
+    {
+      "path": "results/reproduction.json",
+      "bytes": 8221,
+      "sha256": "9681726ff0d79ea759f516408084e6d0929d3211ea8209509cd80a9cac90fbed",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/score_sampling.json",
+      "bytes": 1113349,
+      "sha256": "59540a948320bf27689c85ed7aa655102b9e81fd109600988949a3c3253c7cdc",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    }
+  ]
+}

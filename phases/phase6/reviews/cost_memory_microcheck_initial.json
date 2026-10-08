@@ -1,0 +1,78 @@
+{
+  "frontier": "code/frontier.py",
+  "frontier_sha256": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0",
+  "note": "Lower bounds exclude all persistent/model/audit arrays and vendor workspaces.",
+  "pool_transition": [],
+  "cross_epoch_gradient_snapshot": {
+    "known_live_unique_array_bytes": 38048,
+    "buffers": [
+      {
+        "names": [
+          "x"
+        ],
+        "nbytes": 12288
+      },
+      {
+        "names": [
+          "y"
+        ],
+        "nbytes": 1024
+      },
+      {
+        "names": [
+          "z"
+        ],
+        "nbytes": 2048
+      },
+      {
+        "names": [
+          "q"
+        ],
+        "nbytes": 2048
+      },
+      {
+        "names": [
+          "e"
+        ],
+        "nbytes": 1024
+      },
+      {
+        "names": [
+          "order",
+          "piece_1"
+        ],
+        "nbytes": 9296
+      },
+      {
+        "names": [
+          "ix"
+        ],
+        "nbytes": 1024
+      },
+      {
+        "names": [
+          "piece_0"
+        ],
+        "nbytes": 9296
+      }
+    ],
+    "reported_working_fit_array_byte_estimate": 45472,
+    "difference": -7424
+  },
+  "fit_account": {
+    "proxy": 399866,
+    "gradient_adam_proxy": 390570,
+    "permutation_proxy": 9296,
+    "steps": 15,
+    "full_minibatches": 14,
+    "terminal_budget_batch_size": 53,
+    "min_batch_size": 53,
+    "max_batch_size": 128,
+    "total_fit_visits": 1845,
+    "generated_permutations": 2,
+    "clipped_steps": 0,
+    "remainder": 134,
+    "learner_seconds": 0.0022195413475856185,
+    "instrumentation_seconds": 2.2833701223134995e-05
+  }
+}

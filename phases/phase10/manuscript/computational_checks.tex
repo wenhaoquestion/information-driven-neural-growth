@@ -1,0 +1,80 @@
+\section{Exact finite checks and a strict restriction example}
+\label{sec:computation}
+The finite checks use Python's exact rational arithmetic, with no
+floating-point comparisons in the assertions. Their source and result
+files are under \path{research/experiments/}. They test the deterministic
+claim over a bounded grid; they do not prove a universal theorem, optimize
+stochastic chains, establish an asymptotic order numerically, or train a
+neural model.
+
+The main check covers every combination of $N\in\{4,5,6,7,8\}$, three
+location grids, four weight patterns, and five curvature polynomials:
+300 instances. The curvatures are $f^2+1/1000$, where
+\[
+ f\in\{1,\ 1-2t,\ 1-6t+6t^2,\ 1-12t+30t^2-20t^3,
+          \ 1-20t+90t^2-140t^3+70t^4\}.
+\]
+Thus degrees are $0,2,4,6,8$, and positivity is certified algebraically.
+The location grids are uniform, quadratic, and a fixed four-point core
+with additional ordered states. Weights are uniform, alternating $1$
+and $1/100$, or have final four entries $(1,10^{-4},10^{-4},1)$ or
+$(2,10^{-2},10^{-4},1)$ with preceding entries one.
+
+By Lemma~\ref{lem:exact-budgets}, it suffices to cover exact-cardinality
+hierarchies. Each coarse partition has one triple or two disjoint pairs;
+the fine pair lies within one coarse cell. There are
+$\binom N3+3\binom N4$ coarse shapes and
+$3\binom N3+6\binom N4$ compatible coarse/fine candidates per instance,
+including every noncontiguous choice. The code minimizes the fine-pair
+cost within each coarse shape before taking the outer minimum, thereby
+covering all those compatible candidates without explicitly evaluating
+each maximum separately.
+
+\begin{center}\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Recorded check & Count or outcome\\
+\midrule
+Exact rational instances & 300\\
+Compatible hierarchy candidates covered & 67,860\\
+Cheapest-pair/coarse-optimum choices checked & 807\\
+Instances with deterministic price greater than one & 49\\
+Independent set-partition enumeration cross-check & $N=4,5,6$\\
+Maximum observed price & $20000/10001$\\
+Tiny-mass padding values checked & 5\\
+\bottomrule
+\end{tabular}
+\end{center}
+For every optimal-choice combination, the assertions verify either a
+compatible optimum or a consecutive quartet, equality of its two flat
+costs, and domination of the global price. The independent restricted-
+growth-string enumerator checks the specialized coarse-shape enumeration
+for $N=4,5,6$; the analytical deficit classification justifies it for the
+larger tested counts. All checks passed. The separate padding check uses
+$\varepsilon\in\{1/10000,1/100,1/10,1/2,99/100\}$ and confirms the
+formulas in Section~\ref{sec:padding}; its five samples are distinct from
+the proof for the full interval $0<\varepsilon<1$.
+
+\paragraph{Domination can be strict even when the global price exceeds one.}
+The targeted diagnostic uses the independent weighted-variance formula
+for $\varphi(x)=x^2/2$. With one-based indices, take
+\[
+ x=(0,1/36,1/9,1/4,4/9,25/36,1),\qquad
+ p=(1,1,1,2,1/100,1/10000,1).
+\]
+Common probability normalization changes no price. The cheapest pair is
+$\{5,6\}$; a coarse flat optimum uses $\{4,5\}$ and $\{6,7\}$. Thus the
+selected quartet is $S=\{4,5,6,7\}$, with the exact common flat costs
+\[
+ q=\frac1{323200},\qquad Q=\frac{1004419}{5210440992}.
+\]
+Exact enumeration over all hierarchy shapes gives
+\[
+ R_7=\frac{10314341331}{10144631900}\approx1.016729
+ <\frac{2073082097481}{2018982631900}\approx1.026795=R_4(S).
+\]
+The global optimum retains fine pair $\{5,6\}$ and adds pair $\{1,2\}$
+at the coarse level. The quartet optimum instead merges $\{4,5,6\}$.
+This example was found after 32 constant-curvature candidates in the
+recorded search order. It directly rules out replacing the restriction
+inequality by equality for every individual source.

@@ -1,0 +1,23 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\ph}{\varphi}
+\newcommand{\B}{B_{\ph}}
+\newcommand{\D}{D_{\ph}}
+\newcommand{\OPT}{\operatorname{OPT}}
+\newcommand{\rd}{\,\mathrm d}
+\newcommand{\detp}{\mathrm{det}}
+\newcommand{\stp}{\mathrm{stoch}}
+\begin{document}
+\input{unequal_weights_endpoint.tex}
+\begin{thebibliography}{9}
+\bibitem{dlmf} NIST, Digital Library of Mathematical Functions, Section 18.5.1.\url{https://dlmf.nist.gov/18.5.E1}.
+\bibitem{shadrin} A. Shadrin, Twelve Proofs of the Markov Inequality.\url{https://www.damtp.cam.ac.uk/user/na/people/Alexei/papers/markov.pdf}.
+\end{thebibliography}
+\end{document}

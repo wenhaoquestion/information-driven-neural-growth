@@ -1,0 +1,481 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,enumitem,booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\OPT}{\operatorname{OPT}}
+\newcommand{\rhoD}{\rho_{\mathrm{det}}}
+\newcommand{\rhoS}{\rho_{\mathrm{stoch}}}
+\newcommand{\dd}{\,\mathrm dt}
+\title{An Exact Quartet Reduction for the Two Highest Nontrivial Capacities}
+\author{Phase 10 research candidate}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+For an arbitrary number $N\ge3$ of distinct ordered scalar states with
+positive weights, we consider deterministic hierarchy prices at capacities
+$(N-2,N-1)$. We prove that either compatible flat optima exist, or four
+consecutive original states have exactly the two global flat distortion
+values and a hierarchy price at least as large as that of the original
+source. All weights remain their original values. Hierarchical cells are
+allowed to be noncontiguous. Consequently the supremum of these prices
+over all finite $N$ equals the weighted four-state $(2,3)$ supremum, for
+each fixed strictly convex generator. For nonnegative nonzero polynomial
+curvature of degree at most $r$, the inherited Phase~9 analytic bound gives
+$1936r^2/(\log r)^2$ for $r\ge2$, uniformly in $N$. The new part is the
+combinatorial restriction and lifting argument; the weighted quartet
+polynomial estimate is reproduced with its provenance made explicit.
+\end{abstract}
+
+\section{Definitions and elementary facts}
+
+Fix $N\ge3$, locations $x_1<\cdots<x_N$ in an interval $I$, and weights
+$p_i>0$. The weights may sum to any positive number. Let $\varphi$ be
+$C^2$ and strictly convex on $I$, and write $g=\varphi''\ge0$.
+For a nonempty cell $C\subseteq\{1,\ldots,N\}$, set
+\[
+ p_C=\sum_{i\in C}p_i,\qquad
+ m_C=p_C^{-1}\sum_{i\in C}p_ix_i,\qquad
+ D(C)=\sum_{i\in C}p_i\varphi(x_i)-p_C\varphi(m_C).
+\]
+For a partition $P$, set $D(P)=\sum_{C\in P}D(C)$, and let
+$\OPT_k$ be the minimum of $D(P)$ over partitions with at most $k$ cells.
+The deterministic price at the capacities in question is
+\[
+ R_N=\min_{H_{N-1}\succeq H_{N-2}}
+ \max\left\{
+ \frac{D(H_{N-1})}{\OPT_{N-1}},
+ \frac{D(H_{N-2})}{\OPT_{N-2}}\right\},
+ \qquad |H_j|\le j.
+\]
+Refinement is denoted by $\succeq$. No contiguity restriction is imposed
+on either hierarchy partition. Strict convexity, positive weights, and
+distinct locations imply $\OPT_k>0$ for $k<N$, so all displayed ratios
+are well defined. Multiplying every weight by one common positive factor
+multiplies every distortion by that factor and leaves every price unchanged.
+
+\begin{lemma}[Contiguous flat optima and deficit forms]
+\label{lem:flat}
+A contiguous flat optimum exists for every $k\le N$, and every flat
+optimum fills its budget when $k<N$. In particular, a contiguous optimum
+at capacity $N-1$ consists of one adjacent pair and all remaining
+singletons. A contiguous optimum at capacity $N-2$ consists of either
+one consecutive triple or two disjoint adjacent pairs, with all remaining
+states singletons. Therefore
+\[
+ q:=\OPT_{N-1}=\min_{1\le i<N}D(\{i,i+1\}).
+\]
+\end{lemma}
+
+\begin{proof}
+The centroid identity for the Bregman divergence
+$B_\varphi(x,a)=\varphi(x)-\varphi(a)-\varphi'(a)(x-a)$ is
+\[
+ \sum_{i\in C}p_iB_\varphi(x_i,a)
+ =D(C)+p_CB_\varphi(m_C,a).
+\]
+Thus a weighted centroid minimizes the reporting cost of its cell. For
+ordered distinct centers $a<b$, the difference
+$B_\varphi(x,a)-B_\varphi(x,b)$ is affine in $x$ with positive slope
+$\varphi'(b)-\varphi'(a)$. Assigning each source point to a nearest center,
+with ordered tie-breaking, consequently gives contiguous cells. Starting
+with centers of a flat optimum, this reassignment and subsequent centroid
+updates cannot increase its distortion, and use at most $k$ cells.
+Duplicate centers, if any, may first be identified. This proves existence
+of a contiguous optimum.
+
+Splitting a nonsingleton cell into its smallest-location singleton and
+the other states strictly decreases its cost: their means are distinct,
+so the corresponding two-group Jensen gap is strictly positive. Any
+partition with fewer than $k<N$ cells can therefore be improved. Finally,
+the deficit identity
+$N-|P|=\sum_{C\in P}(|C|-1)$ gives the two asserted forms. Every adjacent
+pair supplies a feasible $(N-1)$-cell partition, which proves the formula
+for $q$.
+\end{proof}
+
+\begin{lemma}[Two adjacent costs inside a triple]
+\label{lem:triple}
+For three ordered states $A<B<C$, with their original positive weights,
+\[
+ D(ABC)\ge D(AB)+D(BC).
+\]
+\end{lemma}
+
+\begin{proof}
+For any cell, the Jensen kernel is
+\[
+ K_C(t)=\sum_{i\in C}p_i(x_i-t)_+-p_C(m_C-t)_+,
+ \qquad D(C)=\int_I K_C(t)g(t)\dd.
+\]
+The kernel identity follows by integrating $\varphi''$ twice; affine
+terms cancel. For each fixed $t$, the hinge $x\mapsto(x-t)_+$ is convex.
+The Jensen gap of a union equals the sum of the within-group Jensen gaps
+plus the nonnegative Jensen gap of the group centroids. Applying this to
+$AB$ and $C$ gives $K_{ABC}\ge K_{AB}$; applying it to $A$ and $BC$ gives
+$K_{ABC}\ge K_{BC}$. The two pair kernels have disjoint open supports,
+$(A,B)$ and $(B,C)$, and vanish at the common endpoint. Hence pointwise
+$K_{ABC}\ge K_{AB}+K_{BC}$. Integrate against $g\ge0$.
+\end{proof}
+
+\section{The exact restriction theorem}
+
+\begin{theorem}[Consecutive quartet domination]
+\label{thm:reduction}
+Choose any cheapest adjacent pair $e$ of cost $q=\OPT_{N-1}$ and any
+contiguous flat optimum $P$ at capacity $N-2$, of cost $F=\OPT_{N-2}$.
+One of the following conclusions holds.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item There is a hierarchy with both levels flat optimal, so $R_N=1$.
+\item The only nonsingleton cells of $P$ are two pairs $AB$ and $CD$ on
+four consecutive original states $A<B<C<D$, and $e=BC$. For the source
+restricted to $S=\{A,B,C,D\}$, keeping its original weights, its flat
+values satisfy
+\[
+ \OPT_3(S)=q,\qquad \OPT_2(S)=F=D(AB)+D(CD),
+\]
+and its unrestricted deterministic $(2,3)$ hierarchy price satisfies
+\[
+ R_N\le R_4(S).
+\]
+\end{enumerate}
+In particular, if $R_N>1$, conclusion \textup{(ii)} holds for every such
+choice of $e$ and $P$. When $N=3$, necessarily $R_N=1$.
+\end{theorem}
+
+\begin{proof}
+The partition whose sole nonsingleton cell is $e$ is flat optimal at the
+fine capacity. We first check all possible forms of $P$.
+
+Suppose the sole nonsingleton cell of $P$ is a triple $T=ABC$ of consecutive
+states. If both endpoints of $e$ belong to $T$, the fine partition just
+described refines $P$, proving (i). If $e$ is disjoint from $T$, take
+$f=AB$ and $h=BC$. Then $e$ and $f$ are disjoint, and
+\[
+ D(e)+D(f)\le D(h)+D(f)\le D(T)=F,
+\]
+because $e$ is globally cheapest among adjacent pairs and
+Lemma~\ref{lem:triple} applies. The partition with nonsingleton cells
+$e,f$ has $N-2$ cells and cost at most $F$, hence exactly $F$. It is a
+flat optimum compatible with the chosen fine partition. If $e$ meets
+$T$ in exactly one state, adjacency of $e$ and consecutivity of $T$
+force that intersection to be an endpoint of $T$. If the endpoint is
+$A$, take $f=BC$ and $h=AB$; if it is $C$, take $f=AB$ and $h=BC$.
+Again $e$ is disjoint from $f$, and the same inequality proves (i).
+These cases exhaust the triple form.
+
+Suppose instead that the only nonsingleton cells of $P$ are disjoint
+adjacent pairs $f$ and $h$, with $F=D(f)+D(h)$. If $e$ equals either of
+them, the chosen fine partition refines $P$. If $e$ is disjoint from at
+least one of them, say $f$, then the partition with nonsingleton cells
+$e,f$ is feasible at capacity $N-2$, and
+\[
+ D(e)+D(f)\le D(h)+D(f)=F.
+\]
+It is therefore a compatible flat optimum. Notice that this argument
+allows $e$ to meet $h$, or to be disjoint from both $f$ and $h$.
+
+The sole case remaining is that $e$ meets both $f$ and $h$. Write the two
+coarse pairs in order as $AB$ and $CD$. An adjacent pair meeting both
+must be $BC$. Thus $A,B,C,D$ are four consecutive original states,
+and $P$ and $e$ have the form in (ii).
+
+It remains to prove the exact flat-value identities and the price
+comparison. The restricted quartet has a three-cell partition with pair
+$BC$, of cost $q$, and the two-cell partition $AB\mid CD$, of cost $F$.
+Conversely, any partition of $S$ with at most three (respectively two)
+cells extends to a partition of the entire source with at most $N-1$
+(respectively $N-2$) cells by making every state outside $S$ a singleton.
+Its distortion is unchanged because every outside singleton has zero
+cost. This rules out restricted values smaller than $q$ or $F$ and proves
+the two identities. This step applies to arbitrary restricted partitions,
+including noncontiguous ones.
+
+Finally, apply the same singleton extension simultaneously to both levels
+of any restricted hierarchy. Refinement is preserved, distortion is
+unchanged, and the denominators are precisely the same. The full-source
+optimum can only be better than this feasible hierarchy, proving
+$R_N\le R_4(S)$. Restricted optimal hierarchies exist because their
+partition set is finite; equivalently one can take the infimum of the
+same comparison over all of them. For $N=3$ the coarse capacity is one,
+whose single cell is compatible with every fine partition.
+\end{proof}
+
+\begin{corollary}[Equality of the all-size and quartet envelopes]
+\label{cor:envelope}
+For a fixed $C^2$ strictly convex generator $\varphi$ on $I$, let
+$\mathcal C_N(\varphi)$ be the supremum of $R_N$ over $N$ distinct
+locations in $I$ and positive weights. Then
+\[
+ \mathcal C_N(\varphi)\le\mathcal C_4(\varphi)\quad(N\ge3),
+ \qquad
+ \sup_{N\ge3}\mathcal C_N(\varphi)=\mathcal C_4(\varphi).
+\]
+The same equality holds after taking a supremum over any class of such
+generators, in particular nonnegative nonzero polynomial curvatures of
+degree at most $r$ on $[0,1]$.
+\end{corollary}
+
+\begin{proof}
+Every hierarchy price is at least one, and the quartet envelope is at
+least one. Apply Theorem~\ref{thm:reduction} pointwise. Taking the
+supremum over $N$ includes $N=4$, so the reverse inequality for the last
+display is automatic. If probabilities summing to one are required,
+divide every weight in the restricted quartet by the same total mass;
+the price is unchanged by this common scaling. No individual cell is
+conditionally renormalized.
+\end{proof}
+
+\begin{remark}[Meaning and limits of ``exact'']
+The reduction has no multiplicative loss and preserves both flat
+denominators exactly before any common weight normalization. It asserts
+domination by a restriction, not equality of an individual source price
+with the selected quartet price. The lifted quartet hierarchies form
+only a subset of the global feasible hierarchies. The corollary asserts
+equality of the supremum over all finite source counts with the quartet
+supremum; it does not prove equality separately for every fixed $N>4$.
+\end{remark}
+
+\section{The polynomial consequence}
+
+\begin{theorem}[Uniform degree bound at the top two capacities]
+\label{thm:degree}
+Let $N\ge3$, let $x_1<\cdots<x_N$ lie in $[0,1]$ with arbitrary positive
+weights, and suppose $g=\varphi''$ is a nonzero polynomial of degree at
+most $r$, nonnegative on $[0,1]$. For the deterministic price $R_N$ at
+capacities $(N-2,N-1)$:
+\begin{align*}
+ R_N\ge128,\ r\ge1
+ &\quad\Longrightarrow\quad
+ R_N^2\le16r^2\exp\left(\frac{20r}{\sqrt{R_N}}\right),\\
+ R_N\ge256,\ r\ge1
+ &\quad\Longrightarrow\quad
+ R_N(\log R_N)^2\le1936r^2.
+\end{align*}
+For every integer $r\ge2$,
+\[
+ \boxed{\displaystyle R_N\le1936\frac{r^2}{(\log r)^2}.}
+\]
+The constant is independent of the source count, all positive weights,
+and all positive posterior gaps. The inherited Phase~9 matching quartet
+lower construction makes the supremum over all $N\ge3$ have sharp order
+$\Theta(r^2/(\log r)^2)$.
+\end{theorem}
+
+\begin{proof}
+A nonzero nonnegative polynomial vanishes on no interval, so its
+twice-antiderivative is strictly convex. Apply
+Theorem~\ref{thm:reduction}. There is nothing to prove if $R_N=1$;
+otherwise $R_N\le R_4(S)$ for the specified quartet. The weighted quartet
+bound, proved in Phase~9 and reproduced in
+Proposition~\ref{prop:inherited}, gives the final displayed estimate.
+For the implicit inequality, the quartet estimate can be written
+\[
+ R_4(S)^2\exp\left(-\frac{20r}{\sqrt{R_4(S)}}\right)\le16r^2.
+\]
+The function $s\mapsto s^2\exp(-20r/\sqrt{s})$ is strictly increasing
+for $s>0$, so this inequality transfers to $R_N$ whenever $R_N\ge128$.
+Likewise $s\mapsto s(\log s)^2$ is increasing for $s\ge1$, which gives
+the second implication. The assertion about the envelope's lower order
+uses the stated, inherited quartet witnesses and the fact that the
+all-size supremum includes $N=4$; no padding argument is used.
+\end{proof}
+
+\begin{remark}[Stochastic upper bound only]
+Every deterministic hierarchy is an admissible stochastic hierarchy,
+with the same flat denominators. Thus the same uniform upper bound
+holds for the stochastic hierarchy price. The restriction proof itself
+is a deterministic argument: it does not establish an equality between
+the all-size stochastic envelope and the stochastic quartet envelope.
+The inherited stochastic quartet lower witnesses still establish the
+matching all-size stochastic degree order.
+\end{remark}
+
+\section{Inherited weighted quartet analytic input}
+
+The following proposition, including its constants and proof strategy,
+is the finalized Phase~9 weighted quartet theorem. It is reproduced here
+so the upper-bound argument can be read without another file. It is not
+a new Phase~10 analytic estimate. The source is
+\path{phase9_research_work/research/degree_gap/weighted_four_state_upper.tex},
+also included in the Phase~9
+working paper \emph{Sharp Weighted Four-State Hierarchy Prices for
+Polynomial Curvature}.
+
+\begin{proposition}[Phase 9 weighted quartet estimate]
+\label{prop:inherited}
+For four distinct weighted states and nonnegative nonzero polynomial
+curvature of degree at most $r\ge1$, let $R$ be the unrestricted
+deterministic hierarchy price at capacities $(2,3)$. If $R\ge128$, then
+\[
+ R^2\le16r^2e^{20r/\sqrt R}.
+\]
+If $R\ge256$, then $R(\log R)^2\le1936r^2$. In particular, for $r\ge2$,
+$R\le1936r^2/(\log r)^2$.
+\end{proposition}
+
+\begin{proof}
+We record two classical polynomial estimates. If $f\ge0$ has degree at
+most $r$ on an interval $E$ of length $L$, and $M_E=\max_Ef$, the Markov
+inequality $\|f'\|_\infty\le2r^2M_E/L$ implies
+\begin{equation}
+ \int_E f\ge\frac{LM_E}{8r^2}.
+ \label{eq:markov}
+\end{equation}
+Indeed a one-sided segment of length $L/(4r^2)$ is available from a
+maximizer, and $f\ge M_E/2$ there. If $t_0$ lies at distance $d>0$ to
+the right of $E$, Chebyshev extremality gives
+\begin{equation}
+ |f(t_0)|\le M_E T_r(1+2d/L)
+ \le M_Ee^{2r\sqrt{d/L}}.
+ \label{eq:cheb}
+\end{equation}
+For completeness, after rescaling $E$ to $[-1,1]$, any violation of the
+first inequality would yield $\lambda\in(0,1)$ such that
+$T_r-\lambda f/M_E$ has $r$ roots between the alternating extrema of
+$T_r$ and an additional root at the external point. This contradicts
+its degree. The exponential bound follows from
+$T_r(\cosh s)=\cosh(rs)$ and
+$\operatorname{arcosh}(1+x)\le\sqrt{2x}$.
+
+Since $R>1$, the argument of Theorem~\ref{thm:reduction}, specialized to
+four states, permits the notation
+\[
+ A<B<C<D,\quad q=D(BC)=\OPT_3,\quad
+ Q=D(AB)+D(CD)=\OPT_2.
+\]
+Write $p_L=D(AB)$, $p_R=D(CD)$, $T_L=D(ABC)$, and $T_R=D(BCD)$.
+Three feasible deterministic hierarchies give
+\begin{equation}
+ R\le\frac{\min(p_L,p_R)}q,\qquad
+ R\le\frac{T_L}Q,\qquad R\le\frac{T_R}Q.
+ \label{eq:candidates}
+\end{equation}
+For the first retain $AB\mid CD$ and merge the cheaper outer pair at
+the fine level. For the others retain fine pair $BC$ and merge the
+corresponding adjacent triple at the coarse level. All right sides
+are at least one by the defining flat optimality. No enumeration of
+noncontiguous optimal hierarchies is needed.
+
+Reflect the source if needed so that the source weights satisfy
+$p_B\le p_C$. Normalize only the coordinate of the triple $BCD$ to
+\[
+ B=0,\qquad C=c\in(0,1),\qquad D=1,
+ \qquad (p_B,p_C,p_D)=(u,v,w),\quad 0<u\le v.
+\]
+The transformed curvature is $L_0^2g(B+L_0t)$, where $L_0$ is the
+original triple hull length; its degree and nonnegativity are preserved.
+Weights are unchanged. Denote that curvature again by $g$. The triple,
+adjacent-pair, and outer-pair kernels are
+\begin{align*}
+ K(t)&=\min\{ut+v(t-c)_+,\ w(1-t)+v(c-t)_+\},\\
+ k_q(t)&=\min\{ut,v(c-t)\}\mathbf1_{[0,c]}(t),\\
+ k_p(t)&=\min\{v(t-c),w(1-t)\}\mathbf1_{[c,1]}(t),\\
+ H(t)&=\min\{ut,w(1-t)\}.
+\end{align*}
+Put $T=T_R=\int Kg$ and $S=p_R+q=\int(k_q+k_p)g$. From
+\eqref{eq:candidates},
+\begin{equation}
+ q\le\frac{Q}{2R}\le\frac{T}{2R^2},\qquad
+ S\le Q+q\le\frac{2T}{R}.
+ \label{eq:small}
+\end{equation}
+Two pointwise kernel comparisons control degenerating weights:
+\begin{equation}
+ 0\le K-H\le k_q+k_p,
+ \label{eq:H}
+\end{equation}
+and, in their respective open intervals,
+\begin{equation}
+ \frac{k_q(t)}{K(t)}\ge\min\{1,(c-t)/t\}\quad(t<c),
+ \qquad
+ \frac{k_p(t)}{K(t)}\ge\frac{t-c}{c+2(t-c)}\quad(t>c).
+ \label{eq:ratios}
+\end{equation}
+For $t<c$, subtracting $H$ from $K$ amounts to adding $v(c-t)$ to one
+entry of a minimum, so the increment is between zero and
+$\min\{ut,v(c-t)\}=k_q$. For $t>c$, adding $v(t-c)$ to the other entry
+gives the bound by $k_p$. For the first ratio, use $K\le ut$ and
+$v\ge u$. For the second, write $\Delta=t-c>0$ and use
+\[
+ \frac{\min\{B,C\}}{\min\{A+B,C\}}\ge\frac{B}{A+B},
+ \quad A=ut,\ B=v\Delta,\ C=w(1-t),
+\]
+followed by $v\ge u$. Endpoint claims follow by continuity.
+
+Assume $R\ge128$ and set
+$\varepsilon=16/R\le1/8$ and
+$J=\{t\in[0,1]:|t-c|\le\varepsilon c\}$. Outside $J$,
+\eqref{eq:ratios} yields
+$k_q+k_p\ge\varepsilon K/(1+2\varepsilon)$. Consequently,
+\[
+ \int_{[0,1]\setminus J}Kg
+ \le\frac{1+2\varepsilon}{\varepsilon}S
+ \le\frac{5T}{32},\qquad
+ \int_JHg\ge T-\frac{5T}{32}-S\ge\frac{3T}{4}.
+\]
+Here $S\le2T/R\le T/64$. Since
+$H(t)\le u(1+\varepsilon)c$ on $J$ and $|J|\le2\varepsilon c$,
+there is $t_0\in J$ such that
+\[
+ g(t_0)\ge\frac{T}{4\varepsilon u c^2}.
+\]
+Consider $E=[c/4,c(1-2\varepsilon)]$. It has length at least $c/2$;
+$t_0$ is to its right at distance at most $3\varepsilon c$; and
+$k_q\ge2u\varepsilon c$ on $E$. Using \eqref{eq:cheb},
+\[
+ M_E\ge\frac{T}{4\varepsilon u c^2}
+ e^{-\sqrt{24}\,r\sqrt\varepsilon}
+ \ge\frac{T}{4\varepsilon u c^2}e^{-20r/\sqrt R}.
+\]
+Equation~\eqref{eq:markov} now implies
+\[
+ q\ge2u\varepsilon c\int_Eg
+ \ge\frac{u\varepsilon c^2M_E}{8r^2}
+ \ge\frac{T}{32r^2}e^{-20r/\sqrt R}.
+\]
+Together with \eqref{eq:small}, this proves the implicit inequality.
+
+Set $z=r/\sqrt R$. The inequality implies
+\[
+ \log(R/16)\le20z+2\log z\le22z.
+\]
+For $R\ge256$, the left side is at least $\tfrac12\log R$, yielding
+$\sqrt R\log R\le44r$, hence $R(\log R)^2\le1936r^2$.
+For $r\ge2$ and $R\ge256$ with $R>r$, use $\log R\ge\log r$.
+If $R\le r$, use $(\log r)^2\le r$; if $R<256$, use
+$(\log r)^2\le r^2$ and $256<1936$. These cases give the explicit bound.
+\end{proof}
+
+\section{Provenance and scope}
+
+The centroid identity, nearest-center contiguity for scalar Bregman
+costs, Jensen kernels, Markov's inequality, and Chebyshev extremality
+are classical ingredients. The positive-weight adjacent triple kernel
+comparison and the complete weighted quartet analytic argument above
+were already present in Phase~9. The proposed additional result here is
+Theorem~\ref{thm:reduction}: the deficit-two classification and cheapest
+pair exchange reduce arbitrary source counts at these capacities to a
+four-state restriction with both denominators preserved. The exact
+envelope identity and uniform degree corollary then follow.
+
+These statements concern only capacities $(N-2,N-1)$. They do not improve
+the degree bound for arbitrary prescribed capacities, for one hierarchy
+covering all capacities, or for neural training algorithms. No optimal
+leading constant or historical priority is claimed. Distinct states and
+positive weights are used to ensure nonzero denominators; repeated states,
+zero weights, and identically zero curvature would require a separate
+convention for zero-denominator ratios and are outside the stated theorem.
+
+\end{document}

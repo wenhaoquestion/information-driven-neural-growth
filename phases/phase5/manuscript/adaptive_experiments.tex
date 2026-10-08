@@ -1,0 +1,128 @@
+\section{A separate attempt at adaptive width}
+\label{sec:adaptive-extension}
+
+The controlled-direction study fixes width growth. To make a serious attempt
+at actual structural adaptation, we separately implemented and froze a
+fresh-seed extension that can grow, continue fitting, or hold. This extension
+was designed after the main study and is exploratory; its outcomes do not
+retroactively confirm a preselected main-study algorithmic claim.
+
+\subsection{A deployable but heuristic controller}
+The task laws, model, seven 1,024-label arrivals, arithmetic budget and optimizer
+remain as above. Each arm retains 138 examples. Split each incoming block into
+768 fitting/proposal labels and 256 validation labels. All candidate parameters
+are finalized before the current validation labels are inspected. After the
+action is committed, release the entire block into the reservoir, so completed
+validation labels can support future fitting. Warmup on the initial 768 labels
+is ungated. Future arrivals remain inaccessible.
+
+Five arms compare fresh-residual growth, random growth, fixed width two with
+validation, fixed width seven with validation, and fixed width seven without
+validation. Growing learners begin at width one and can reach seven. At each
+later opportunity, fit both a continuation and a zero-output-unit growth branch
+from cloned incumbent optimizer states, splitting the remaining event budget
+equally after charging proposals and validation predictions. Fixed arms spend
+their remaining budget on continuation. Every rejected branch is charged.
+
+For a candidate adding $r\in\{0,1\}$ units, let $\bar D$ and
+$\widehat{\mathrm{se}}(D)$ be the mean and sample standard error of old-minus-new
+squared losses on the 256 validation points. Qualify it when
+\[
+ \bar D>2\widehat{\mathrm{se}}(D)+.002+.001r.
+\]
+Install the qualifying candidate with largest mean gain minus $.002+.001r$,
+or hold the exact incumbent if neither qualifies. This familiar holdout
+pattern and the standard-error heuristic are not novel. Unbounded losses,
+finite samples and unadjusted selection mean that we claim no population
+safety guarantee. A rejection does not certify that the current representation
+is adequate. This is deliberately separated from the earlier project's valid
+bounded-loss audit theorem.
+
+The protocol and source were frozen at 05:43:47 UTC on 20 September 2026,
+before seeds 840000--840011. The 48 new paired configurations contain 240
+complete trajectories and 1,680 events; all completed in 13.38 seconds on two
+CPU workers. Source hashes, validation statistics, rejected branch parameters,
+optimizer states, retained sample identities and all data access counts are
+saved. A preflight perturbation of current validation labels leaves current
+branch parameters unchanged and leaves earlier committed histories unchanged.
+Descriptive intervals again use the twelve independent seeds, without a
+multiple-comparison correction.
+
+\subsection{Actual adaptive outcomes and retained failures}
+\begin{table}[tb]
+\centering\scriptsize
+\input{adaptive_table.tex}
+\caption{Separate adaptive extension: mean final MSE, followed by mean
+committed width in parentheses. All results use new seeds; they are not paired
+with the main study's seeds. Full marginal and paired intervals are saved.}
+\label{tab:adaptive-results}
+\end{table}
+
+Fresh-residual growth learns mean final widths $1.08$, $2.00$, $4.08$ and
+$2.00$ on null, rank-two, indefinite and nonlinear tasks. The respective
+accepted additions across twelve runs are $1$, $12$, $37$ and $12$.
+On the indefinite task, the method therefore makes repeated learned changes
+within one lifetime, rather than restarting from a specially chosen point.
+Random growth reaches widths $1.17$, $2.08$, $4.17$ and $2.00$, with
+$2$, $13$, $38$ and $12$ accepted additions. All intermediate holds and
+continuations are retained in the raw trajectories.
+
+The fresh-minus-random final-risk difference on the indefinite task is
+$-.004664$, with interval $[-.008976,-.000352]$. This favorable descriptive result is
+limited to one task among several comparisons. Their differences on null,
+rank-two and nonlinear tasks have intervals containing zero. In particular,
+information-guided proposal learning has not earned a general claim to
+superiority over random structural additions.
+
+The wide fixed baselines limit the adaptive claim further. On indefinite
+data, fresh-minus-fixed-seven gated is
+$-.002269\;[-.005805,.001266]$ and fresh-minus-fixed-seven ungated is
+$-.001418\;[-.006792,.003955]$: no resolved final-risk advantage, though
+adaptation retains fewer units. On rank-two data the ungated fixed-seven
+learner instead reaches mean error $2.15\times10^{-5}$ versus
+$1.44\times10^{-4}$ for fresh growth, with paired adaptive-minus-fixed
+interval $[.00000771,.00023663]$. Thus conservative commitments can stop
+useful further fitting. The fixed-two gated arm is especially variable or
+underfits; it is not used as the sole comparator.
+
+Null outcomes distinguish restraint from learning adequacy. Fresh growth
+holds at 67 of the 72 post-warmup opportunities and usually remains at width
+one, but its mean risk $.253656$ still exceeds the Bayes risk $.25$.
+Its rare accepted addition is not evidence that a true structural signal
+exists. Good rejection behavior alone does not remove warmup or optimization
+error. The nonlinear task similarly remains constrained by the chosen model
+family, even when the controller stops adding units.
+
+No accepted fresh-growth or random-growth step increased the evaluator risk
+in these runs, but this observation is not a coverage guarantee. The same
+heuristic did accept one evaluator-risk increase in the fixed-two rank-two
+runs and one in its nonlinear runs; the latter evaluator is Monte Carlo.
+All are retained. Ungated fixed-seven training has 33, 8, 28 and 36
+risk-increasing steps across the four tasks. These numbers describe sampled
+optimization histories and do not establish the statistical validity of the
+heuristic gate.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{adaptive_trajectories.pdf}
+\caption{Separate fresh-seed adaptive histories. The upper row shows risk;
+the lower row shows actually committed widths. Bands are one standard error.
+The opportunity schedule is precommitted, while directions and accepted widths
+are chosen from observed data.}
+\end{figure}
+
+\subsection{Cost and interpretation}
+All arms consume approximately fourteen million charged arithmetic-proxy
+units. For fresh growth, rejected branches alone consume mean totals of
+10.62, 9.83, 7.79 and 9.83 million across the four tasks. These costs are not
+hidden behind the smaller deployed width. Fixed wide learners have greater
+persistent optimizer storage from the start, while adaptive candidates require
+additional simultaneous branch storage; the separate ledgers expose both.
+No equal-width or equal-proxy statement is promoted to equal physical memory
+or equal wall-clock computation.
+
+This extension realizes data-dependent architecture selection with learned
+hidden vectors, ordinary starts, label release and strong online controls.
+It does not establish a novel growth principle, a valid universal gate,
+optimal rank discovery, or publication readiness. Its favorable indefinite
+comparison, negative fixed-capacity comparison, false-risk-decrease episodes,
+and substantial rejected computation are all part of the result.

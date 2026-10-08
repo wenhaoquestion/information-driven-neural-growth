@@ -1,0 +1,26 @@
+[
+  {
+    "n": 256,
+    "epsilon": 0.0625,
+    "order1": 514,
+    "order2": 771,
+    "max_cell_relative_error": 6.115673744523919e-14,
+    "rho_det_difference": 1.545430450278218e-13
+  },
+  {
+    "n": 2048,
+    "epsilon": 0.0595673358293703,
+    "order1": 4098,
+    "order2": 6147,
+    "max_cell_relative_error": 5.76646266589657e-13,
+    "rho_det_difference": -8.881784197001252e-15
+  },
+  {
+    "n": 8192,
+    "epsilon": 0.01759944013140486,
+    "order1": 16386,
+    "order2": 24579,
+    "max_cell_relative_error": 4.271109678990139e-12,
+    "rho_det_difference": 6.302514066192089e-12
+  }
+]

@@ -1,0 +1,61 @@
+\section{Exact approximation floor for the nonlinear stress task}
+\label{app:nonlinear}
+This analytic diagnostic was developed after the primary protocol was
+frozen. It does not change training, tuning, or the original Monte Carlo
+endpoint. Let $Z_1,Z_2,Z_3$ be independent standard normal coordinates after
+an orthogonal rotation, and let
+\[
+ f_*(Z)=.8\tanh(1.5Z_1)\tanh(1.5Z_2)+.4\sin Z_3.
+\]
+Define
+\[
+ a=\mathbb E[Z\tanh(1.5Z)],\quad
+ b=\mathbb E[\tanh^2(1.5Z)],\quad c=.8a^2.
+\]
+\begin{proposition}[A width-independent approximation obstruction]
+The orthogonal projection of $f_*$ onto the class of all centered quadratic
+forms plus constants is $cZ_1Z_2$. If $u_1,u_2$ are the corresponding
+orthonormal directions and
+$A_0=\frac c2(u_1u_2^\top+u_2u_1^\top)$, then every quadratic network,
+of arbitrary width, with matrix $B$ and intercept $c_0$ satisfies
+\[
+ \mathbb E[(f_*(X)-q_B(X)-c_0)^2]
+ =F_0+2\|B-A_0\|_F^2+c_0^2,
+\]
+where
+\[
+ F_0=.64b^2+.08(1-e^{-2})-.64a^4.
+\]
+The best predictor is realizable by two signed quadratic neurons.
+\end{proposition}
+\begin{proof}
+A centered quadratic form is a linear combination of $Z_i^2-1$ and
+$Z_iZ_j$, $i<j$. Independence and oddness imply that $f_*$ has zero
+mean and zero inner product with every diagonal term. The product of two
+odd hyperbolic tangents has zero correlation with every cross term except
+$Z_1Z_2$; for that term the correlation is $.8a^2=c$, while
+$\mathbb E[Z_1^2Z_2^2]=1$. The sine term is odd under $Z\mapsto-Z$ and
+is orthogonal to every quadratic form and to constants. These facts identify
+the projection.
+
+The two components of $f_*$ are orthogonal, with squared norms $.64b^2$
+and $.16\mathbb E\sin^2 Z=.08(1-e^{-2})$, respectively; the latter follows
+from $\sin^2 z=(1-\cos2z)/2$ and the Gaussian characteristic function.
+Subtracting the projection's squared norm $c^2$ yields $F_0$. The
+Pythagorean identity and Theorem~\ref{thm:quadratic-geometry} give the risk
+formula. Finally, $A_0$ has eigenvectors $(u_1+u_2)/\sqrt2$ and
+$(u_1-u_2)/\sqrt2$, eigenvalues $c/2$ and $-c/2$, so two signed neurons
+suffice.
+\end{proof}
+One-dimensional numerical quadrature gives
+$a\approx.689027429$, $b\approx.540648381$, $c\approx.379807038$ and
+$F_0\approx.111992221$. The added observation-noise variance $.04$ makes
+the best total squared risk approximately $.151992221$. These values are
+numerical evaluations of the displayed expectations, not additional
+statistical estimates. The script \texttt{code/nonlinear\_projection.py}
+reproduces the quadrature and evaluates saved final parameters using this
+identity. Those post-hoc analytic evaluations are stored separately; all
+original Monte Carlo primary outcomes remain unchanged. The sine component alone contributes an irreducible
+$.069173177$ for this architecture. More width cannot remove this
+misspecification. Information-guided adaptation would need to change the
+function family, not merely discover additional quadratic directions.

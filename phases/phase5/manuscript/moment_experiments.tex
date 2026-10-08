@@ -1,0 +1,88 @@
+\section{Reproducible diagnostics of the exact mechanism}
+\label{sec:moment-experiments}
+The estimator study was specified in
+\texttt{research/MOMENT\_DIAGNOSTIC\_PROTOCOL.md} before execution. It has
+64 paired independent seeds, two noise levels, dimension eight, and eight
+fresh batches of 512 observations. For each seed the unknown teacher is a
+random rotation of $\operatorname{diag}(1,.3,0,\ldots,0)$. The four
+estimators see the same chronological observations: pooled raw moment;
+fresh-residual full-matrix correction; rank-two-truncated correction; and
+lifted least squares. The rank-two arm is explicitly privileged by knowing
+the teacher rank. Lifted least squares retains the normal-equation Gram and
+right-hand side in 36-dimensional symmetric coordinates. It is a competent
+larger-state control, not an equal-storage comparator.
+
+The raw archive contains all 128 input/label arrays and every stage's four
+matrix estimates, yielding 1,024 stage records. An independent reconstruction
+recomputed all four estimators, risks, moment expectations and false-birth
+increases; maximum estimate discrepancy was $1.78\times10^{-15}$ and
+maximum risk discrepancy $3.56\times10^{-15}$. Separate five-point tensor
+Gauss--Hermite integration verifies the polynomial identities for 20 matrices
+in dimensions one through four. At five nodes per coordinate it integrates
+these degree-eight polynomials exactly in ideal arithmetic; floating-point
+agreement is a check rather than the proof. Tied signs, all-zero spectra,
+strict-threshold equality and the invalid same-block conditioning example
+were also checked.
+
+\begin{table}[t]
+\centering\small
+\input{moment_table.tex}
+\caption{Mean excess squared prediction risk after 4,096 labels over 64
+independent seeds. These are estimator diagnostics, not trained-factor
+neural trajectories. Full intervals and raw outcomes are in
+\texttt{results/moments/findings.json}. The last two rows have explicitly
+different prior information or retained-state requirements.}
+\label{tab:moments}
+\end{table}
+
+The noiseless fresh correction removes much of the raw estimator's
+signal-induced error. This supports the mechanism, but not a novel
+statistical advantage: ordinary lifted least squares solves this small
+well-specified regression essentially to machine precision. Under noise it
+also has lower risk. Beating the raw moment alone therefore would be a weak
+algorithmic comparison.
+
+At the exact noiseless teacher, every tested stale-summary birth increases
+true risk; the smallest recorded increase is $.004771$. This evaluates the
+oracle checkpoint in the negative theorem, not an implemented learner
+secretly receiving the teacher. Its purpose is to falsify the claim that
+$S_n-B$ equals finite-sample residual correlation. A valid uncertainty gate
+could reject these proposals. Safe rejection, however, would not prove that
+a useful next feature had been discovered.
+
+The exact expected final raw risk is $.041567$ without label noise, whereas
+the 64-run mean is $.037405$ with descriptive $t$ interval
+$[.034092,.040718]$. The expectation lies outside this particular interval.
+We preserve that discrepancy: the statistic has a heavy-tailed polynomial
+Gaussian distribution, and a nominal finite-replicate $t$ interval is not an
+exact confidence procedure for its mean. Independent exact quadrature and
+raw reconstruction support the identity; simulations neither replace its
+proof nor guarantee nominal interval coverage. The analogous noisy mean
+uses paired inputs and is not an independent replication of this
+fluctuation. No additional seeds were selected to improve the agreement.
+
+The conditional width theorem is also not automatically a useful
+finite-sample selector. Here $V=85.13$ without noise. At $n=4096$ and
+$\delta=.05$, the crude valid radius is $b=\sqrt{V/(n\delta)}\approx.645$;
+its threshold $2b$ exceeds the largest teacher eigenvalue one. A conservative
+bound can reject nearly all growth despite an easy learnable problem. This
+separates an existence/validity calculation from useful selection power.
+
+\begin{figure}[t]
+\centering\includegraphics[width=\linewidth]{moment_diagnostics.pdf}
+\caption{Saved estimator diagnostics. Shading is a descriptive 95\%
+$t$ interval across 64 runs. Left and center compare chronological estimators;
+the essentially zero noiseless lifted-LS endpoint is annotated instead of
+stretching the log axis. Right evaluates the \emph{privileged exact-fit}
+checkpoint and compares the harmful stale-birth increase with its proved
+expectation lower bound. It is not a trained-method trajectory.}
+\end{figure}
+
+The simulator retains the entire generated archive for auditing, including
+all arms and teacher matrices. Named array sizes are not total persistent
+or peak memory measurements. An independent reviewer caught an ambiguous
+metadata field; the originally executed source and metadata are preserved,
+and \texttt{ACCOUNTING\_CORRECTION.md} states the correction. The numerical
+code and outputs did not change. No memory superiority is inferred from
+this diagnostic. The separate neural studies count learner arrays and
+sample accesses under their own explicit interfaces.

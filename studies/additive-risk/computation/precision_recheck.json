@@ -1,0 +1,1602 @@
+[
+  {
+    "candidate_id": "interior_v1_n2048",
+    "order1": 64,
+    "order2": 128,
+    "max_cell_relative_difference": 1.1459552806633066e-16,
+    "cell_relative_differences": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "AB": 0.0,
+      "AC": 1.1459552806633066e-16,
+      "AD": 0.0,
+      "BC": 0.0,
+      "BD": 0.0,
+      "CD": 0.0,
+      "ABC": 1.1459552806633066e-16,
+      "ABD": 0.0,
+      "ACD": 0.0,
+      "BCD": 0.0,
+      "ABCD": 0.0
+    },
+    "A_relative_difference": 2.220446049250313e-16,
+    "rho_relative_difference": 0.0,
+    "delta_relative_difference": 2.220446049250313e-16,
+    "check_summary": {
+      "candidate_id": "interior_v1_n2048",
+      "family": "interior_v1",
+      "n": 2048,
+      "opt2": 0.007885316459474085,
+      "opt3": 0.0004197057830101638,
+      "rho": 7.266445768627272,
+      "delta": 0.003522952446726877,
+      "rho_hierarchy_id": 16,
+      "delta_hierarchy_id": 19,
+      "rho_coarse": "A|BCD",
+      "rho_fine": "A|BC|D",
+      "delta_coarse": "AB|CD",
+      "delta_fine": "A|B|CD",
+      "delta_rho_optimizer": 0.049412907961758366,
+      "rho_delta_optimizer": 9.393862056081232,
+      "flat2": "AB|CD",
+      "flat3": "A|BC|D",
+      "A": 4.227089119859776,
+      "cost_scale": 0.2365694149436747,
+      "D1": 0.11543586040848525,
+      "delta_over_1e_minus3": 3.522952446726877,
+      "rho_optimal_ids": [
+        16,
+        22
+      ],
+      "delta_optimal_ids": [
+        19,
+        20
+      ],
+      "elapsed_seconds": 0.0070424169971374795
+    },
+    "check_normalization": {
+      "A_unscaled_composed_generator": 4.227089119859776,
+      "loss0_max_unscaled": 4.227089119859776,
+      "loss1_max_unscaled": 4.227089119859775,
+      "loss0_max_normalized": 1.0,
+      "loss1_max_normalized": 0.9999999999999998,
+      "cost_scale_from_raw_generator": 0.2365694149436747,
+      "full_raw_curvature_integral": 2.1135445599298874,
+      "symmetry_relative_error": 2.1011584911405619e-16,
+      "canonical_report_domain": [
+        0.0,
+        1.0
+      ],
+      "raw_full_report_domain": [
+        -1.5,
+        2.5
+      ],
+      "affine_raw_coordinate_slope": 4.0,
+      "affine_raw_coordinate_shift": -1.5,
+      "raw_curvature_constant": 0.028386139982471862,
+      "scaled_kernel_normalizer": 0.01600660617409033,
+      "log_kernel_normalizer": 80.74007440427678,
+      "log_kernel_peak": 84.87482816035241,
+      "pointwise_oscillatory_tail_density_upper": 8.610556439825841e-36
+    },
+    "check_cells": {
+      "A": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "B": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "C": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "D": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "AB": {
+        "total": 0.016665967706247068,
+        "needles": 0.014891833957342575,
+        "constant": 0.0017741337489044914
+      },
+      "AC": {
+        "total": 0.2422047010382754,
+        "needles": 0.23510816604265744,
+        "constant": 0.0070965349956179655
+      },
+      "AD": {
+        "total": 0.4861835358254553,
+        "needles": 0.4702163320853149,
+        "constant": 0.015967203740140424
+      },
+      "BC": {
+        "total": 0.0017741337489044914,
+        "needles": 5.198205186348843e-37,
+        "constant": 0.0017741337489044914
+      },
+      "BD": {
+        "total": 0.2422047010382754,
+        "needles": 0.23510816604265744,
+        "constant": 0.0070965349956179655
+      },
+      "CD": {
+        "total": 0.01666596770624705,
+        "needles": 0.01489183395734256,
+        "constant": 0.0017741337489044914
+      },
+      "ABC": {
+        "total": 0.2422047010382754,
+        "needles": 0.23510816604265744,
+        "constant": 0.0070965349956179655
+      },
+      "ABD": {
+        "total": 0.4867749137417568,
+        "needles": 0.4702163320853149,
+        "constant": 0.01655858165644192
+      },
+      "ACD": {
+        "total": 0.4867749137417568,
+        "needles": 0.4702163320853149,
+        "constant": 0.016558581656441917
+      },
+      "BCD": {
+        "total": 0.2422047010382754,
+        "needles": 0.23510816604265744,
+        "constant": 0.0070965349956179655
+      },
+      "ABCD": {
+        "total": 0.4879576695743598,
+        "needles": 0.4702163320853149,
+        "constant": 0.017741337489044915
+      }
+    }
+  },
+  {
+    "candidate_id": "interior_v1_n4096",
+    "order1": 64,
+    "order2": 128,
+    "max_cell_relative_difference": 2.0053076671205766e-16,
+    "cell_relative_differences": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "AB": 0.0,
+      "AC": 0.0,
+      "AD": 0.0,
+      "BC": 0.0,
+      "BD": 1.1375769857699964e-16,
+      "CD": 2.0053076671205766e-16,
+      "ABC": 0.0,
+      "ABD": 0.0,
+      "ACD": 0.0,
+      "BCD": 1.1375769857699964e-16,
+      "ABCD": 0.0
+    },
+    "A_relative_difference": 0.0,
+    "rho_relative_difference": 1.1102230246251565e-16,
+    "delta_relative_difference": 0.0,
+    "check_summary": {
+      "candidate_id": "interior_v1_n4096",
+      "family": "interior_v1",
+      "n": 4096,
+      "opt2": 0.004253484687816098,
+      "opt3": 0.0001297684521315646,
+      "rho": 14.102308272442686,
+      "delta": 0.0019969738917764816,
+      "rho_hierarchy_id": 16,
+      "delta_hierarchy_id": 20,
+      "rho_coarse": "A|BCD",
+      "rho_fine": "A|BC|D",
+      "delta_coarse": "AB|CD",
+      "delta_fine": "AB|C|D",
+      "delta_rho_optimizer": 0.05573046761188116,
+      "rho_delta_optimizer": 16.388747102815614,
+      "flat2": "AB|CD",
+      "flat3": "A|BC|D",
+      "A": 4.067563705082247,
+      "cost_scale": 0.24584740953178996,
+      "D1": 0.12022744150365766,
+      "delta_over_1e_minus3": 1.9969738917764817,
+      "rho_optimal_ids": [
+        16,
+        22
+      ],
+      "delta_optimal_ids": [
+        19,
+        20
+      ],
+      "elapsed_seconds": 0.006538915997225558
+    },
+    "check_normalization": {
+      "A_unscaled_composed_generator": 4.067563705082247,
+      "loss0_max_unscaled": 4.067563705082247,
+      "loss1_max_unscaled": 4.067563705082247,
+      "loss0_max_normalized": 1.0,
+      "loss1_max_normalized": 1.0,
+      "cost_scale_from_raw_generator": 0.24584740953178996,
+      "full_raw_curvature_integral": 2.0337818525411238,
+      "symmetry_relative_error": 0.0,
+      "canonical_report_domain": [
+        0.0,
+        1.0
+      ],
+      "raw_full_report_domain": [
+        -1.5,
+        2.5
+      ],
+      "affine_raw_coordinate_slope": 4.0,
+      "affine_raw_coordinate_shift": -1.5,
+      "raw_curvature_constant": 0.008445463135280882,
+      "scaled_kernel_normalizer": 0.008362081898156456,
+      "log_kernel_normalizer": 87.9339221466574,
+      "log_kernel_peak": 92.717969998666,
+      "pointwise_oscillatory_tail_density_upper": 6.468191057164003e-39
+    },
+    "check_cells": {
+      "A": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "B": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "C": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "D": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "AB": {
+        "total": 0.008650659968141914,
+        "needles": 0.008122818522186858,
+        "constant": 0.0005278414459550551
+      },
+      "AC": {
+        "total": 0.24398854726163333,
+        "needles": 0.24187718147781312,
+        "constant": 0.0021113657838202206
+      },
+      "AD": {
+        "total": 0.48850493596922173,
+        "needles": 0.48375436295562624,
+        "constant": 0.004750573013595496
+      },
+      "BC": {
+        "total": 0.0005278414459550551,
+        "needles": 4.20398099413871e-40,
+        "constant": 0.0005278414459550551
+      },
+      "BD": {
+        "total": 0.24398854726163333,
+        "needles": 0.24187718147781312,
+        "constant": 0.0021113657838202206
+      },
+      "CD": {
+        "total": 0.008650659968141938,
+        "needles": 0.008122818522186883,
+        "constant": 0.0005278414459550551
+      },
+      "ABC": {
+        "total": 0.24398854726163333,
+        "needles": 0.24187718147781312,
+        "constant": 0.0021113657838202206
+      },
+      "ABD": {
+        "total": 0.48868088311787344,
+        "needles": 0.48375436295562624,
+        "constant": 0.004926520162247182
+      },
+      "ACD": {
+        "total": 0.48868088311787344,
+        "needles": 0.48375436295562624,
+        "constant": 0.00492652016224718
+      },
+      "BCD": {
+        "total": 0.24398854726163333,
+        "needles": 0.24187718147781312,
+        "constant": 0.0021113657838202206
+      },
+      "ABCD": {
+        "total": 0.4890327774151768,
+        "needles": 0.48375436295562624,
+        "constant": 0.005278414459550552
+      }
+    }
+  },
+  {
+    "candidate_id": "interior_v1_n8192",
+    "order1": 64,
+    "order2": 128,
+    "max_cell_relative_difference": 2.2538292668627e-16,
+    "cell_relative_differences": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "AB": 1.904309813842298e-16,
+      "AC": 1.127269043518463e-16,
+      "AD": 2.2538292668627e-16,
+      "BC": 0.0,
+      "BD": 1.127269043518463e-16,
+      "CD": 1.9043098138423044e-16,
+      "ABC": 1.127269043518463e-16,
+      "ABD": 2.2535930925057963e-16,
+      "ACD": 2.2535930925057963e-16,
+      "BCD": 1.127269043518463e-16,
+      "ABCD": 2.253120892250367e-16
+    },
+    "A_relative_difference": 0.0,
+    "rho_relative_difference": 0.0,
+    "delta_relative_difference": 2.220446049250313e-16,
+    "check_summary": {
+      "candidate_id": "interior_v1_n8192",
+      "family": "interior_v1",
+      "n": 8192,
+      "opt2": 0.0022661344791417965,
+      "opt3": 3.852660474791403e-05,
+      "rho": 27.029001813423598,
+      "delta": 0.0010945406348229823,
+      "rho_hierarchy_id": 16,
+      "delta_hierarchy_id": 19,
+      "rho_coarse": "A|BCD",
+      "rho_fine": "A|BC|D",
+      "delta_coarse": "AB|CD",
+      "delta_fine": "A|B|CD",
+      "delta_rho_optimizer": 0.05898521846704356,
+      "rho_delta_optimizer": 29.409994651351795,
+      "flat2": "AB|CD",
+      "flat3": "A|BC|D",
+      "A": 4.0198233787480895,
+      "cost_scale": 0.24876714864806676,
+      "D1": 0.12257975910186657,
+      "delta_over_1e_minus3": 1.0945406348229823,
+      "rho_optimal_ids": [
+        16,
+        22
+      ],
+      "delta_optimal_ids": [
+        19,
+        20
+      ],
+      "elapsed_seconds": 0.006621374999667751
+    },
+    "check_normalization": {
+      "A_unscaled_composed_generator": 4.0198233787480895,
+      "loss0_max_unscaled": 4.0198233787480895,
+      "loss1_max_unscaled": 4.0198233787480895,
+      "loss0_max_normalized": 1.0,
+      "loss1_max_normalized": 1.0,
+      "cost_scale_from_raw_generator": 0.24876714864806676,
+      "full_raw_curvature_integral": 2.0099116893740447,
+      "symmetry_relative_error": 0.0,
+      "canonical_report_domain": [
+        0.0,
+        1.0
+      ],
+      "raw_full_report_domain": [
+        -1.5,
+        2.5
+      ],
+      "affine_raw_coordinate_slope": 4.0,
+      "affine_raw_coordinate_shift": -1.5,
+      "raw_curvature_constant": 0.002477922343511231,
+      "scaled_kernel_normalizer": 0.004353088624212641,
+      "log_kernel_normalizer": 95.12351843926497,
+      "log_kernel_peak": 100.56038809654291,
+      "pointwise_oscillatory_tail_density_upper": 4.8795620231602997e-42
+    },
+    "check_cells": {
+      "A": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "B": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "C": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "D": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "AB": {
+        "total": 0.004554730179320667,
+        "needles": 0.004399860032851215,
+        "constant": 0.00015487014646945195
+      },
+      "AC": {
+        "total": 0.24621962055302657,
+        "needles": 0.24560013996714877,
+        "constant": 0.0006194805858778078
+      },
+      "AD": {
+        "total": 0.49259411125252267,
+        "needles": 0.4912002799342976,
+        "constant": 0.0013938313182250675
+      },
+      "BC": {
+        "total": 0.00015487014646945195,
+        "needles": 3.0698985384514226e-43,
+        "constant": 0.00015487014646945195
+      },
+      "BD": {
+        "total": 0.2462196205530266,
+        "needles": 0.2456001399671488,
+        "constant": 0.0006194805858778078
+      },
+      "CD": {
+        "total": 0.004554730179320651,
+        "needles": 0.004399860032851199,
+        "constant": 0.00015487014646945195
+      },
+      "ABC": {
+        "total": 0.24621962055302657,
+        "needles": 0.24560013996714877,
+        "constant": 0.0006194805858778078
+      },
+      "ABD": {
+        "total": 0.49264573463467914,
+        "needles": 0.4912002799342976,
+        "constant": 0.0014454547003815517
+      },
+      "ACD": {
+        "total": 0.49264573463467914,
+        "needles": 0.4912002799342976,
+        "constant": 0.0014454547003815512
+      },
+      "BCD": {
+        "total": 0.2462196205530266,
+        "needles": 0.2456001399671488,
+        "constant": 0.0006194805858778078
+      },
+      "ABCD": {
+        "total": 0.49274898139899215,
+        "needles": 0.4912002799342976,
+        "constant": 0.0015487014646945194
+      }
+    }
+  },
+  {
+    "candidate_id": "endpoint_n128",
+    "order1": 64,
+    "order2": 128,
+    "max_cell_relative_difference": 4.7271357776682444e-15,
+    "cell_relative_differences": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "AB": 1.472103737627309e-16,
+      "AC": 6.803134404683403e-16,
+      "AD": 4.7271357776682444e-15,
+      "BC": 0.0,
+      "BD": 2.154325894816415e-15,
+      "CD": 8.832622425763856e-16,
+      "ABC": 1.4501729606109831e-15,
+      "ABD": 4.726923948786259e-15,
+      "ACD": 4.726923948786259e-15,
+      "BCD": 4.127415349431266e-15,
+      "ABCD": 4.72671191475279e-15
+    },
+    "A_relative_difference": 2.220446049250313e-16,
+    "rho_relative_difference": 2.4424906541753444e-15,
+    "delta_relative_difference": 1.1102230246251565e-16,
+    "check_summary": {
+      "candidate_id": "endpoint_n128",
+      "family": "endpoint",
+      "n": 128,
+      "opt2": 4.601899341690841e-05,
+      "opt3": 5.7573383770874926e-08,
+      "rho": 5.278638923481815,
+      "delta": 2.295192332468333e-05,
+      "rho_hierarchy_id": 16,
+      "delta_hierarchy_id": 19,
+      "rho_coarse": "A|BCD",
+      "rho_fine": "A|BC|D",
+      "delta_coarse": "AB|CD",
+      "delta_fine": "A|B|CD",
+      "delta_rho_optimizer": 0.00019689865645303775,
+      "rho_delta_optimizer": 399.65510451887303,
+      "flat2": "AB|CD",
+      "flat3": "A|BC|D",
+      "A": 1.0002642798765649,
+      "cost_scale": 0.9997357899488348,
+      "D1": 0.000642087789098109,
+      "delta_over_1e_minus3": 0.02295192332468333,
+      "rho_optimal_ids": [
+        16,
+        22
+      ],
+      "delta_optimal_ids": [
+        19,
+        20
+      ],
+      "elapsed_seconds": 0.005376125001930632
+    },
+    "check_normalization": {
+      "A_unscaled_composed_generator": 1.0002642798765649,
+      "loss0_max_unscaled": 1.0002642798765649,
+      "loss1_max_unscaled": 1.0002642798765649,
+      "loss0_max_normalized": 1.0,
+      "loss1_max_normalized": 1.0,
+      "cost_scale_from_raw_generator": 0.9997357899488348,
+      "full_raw_curvature_integral": 2.0005285597531297,
+      "symmetry_relative_error": 0.0,
+      "canonical_report_domain": [
+        0.0,
+        1.0
+      ],
+      "raw_full_report_domain": [
+        0.0,
+        1.0
+      ],
+      "affine_raw_coordinate_slope": 1.0,
+      "affine_raw_coordinate_shift": 0.0,
+      "raw_curvature_constant": 0.000528559753129943,
+      "scaled_kernel_normalizer": 0.0005844929716585754,
+      "log_kernel_normalizer": 69.40470263003547,
+      "log_kernel_peak": 76.84946843169615,
+      "pointwise_oscillatory_tail_density_upper": 7.209757037786757e-31
+    },
+    "check_cells": {
+      "A": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "B": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "C": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "D": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "AB": {
+        "total": 2.301557765540414e-05,
+        "needles": 2.3015282634408366e-05,
+        "constant": 2.950209957745685e-10
+      },
+      "AC": {
+        "total": 0.00023905205483059098,
+        "needles": 0.0002389250521105031,
+        "constant": 1.2700272008787507e-07
+      },
+      "AD": {
+        "total": 0.0006421998913804979,
+        "needles": 0.0005761997660924123,
+        "constant": 6.600012528808568e-05
+      },
+      "BC": {
+        "total": 5.758859925763131e-08,
+        "needles": 7.855574071012223e-35,
+        "constant": 5.758859925763131e-08
+      },
+      "BD": {
+        "total": 0.00023905205483059052,
+        "needles": 0.00023892505211050265,
+        "constant": 1.2700272008787507e-07
+      },
+      "CD": {
+        "total": 2.3015577655404137e-05,
+        "needles": 2.3015282634408362e-05,
+        "constant": 2.950209957745685e-10
+      },
+      "ABC": {
+        "total": 0.00024298184811646957,
+        "needles": 0.00024285456317471748,
+        "constant": 1.272849417520972e-07
+      },
+      "ABD": {
+        "total": 0.0006422286704525702,
+        "needles": 0.0005761997660924123,
+        "constant": 6.602890436015794e-05
+      },
+      "ACD": {
+        "total": 0.0006422286704525702,
+        "needles": 0.0005761997660924123,
+        "constant": 6.602890436015793e-05
+      },
+      "BCD": {
+        "total": 0.0002429818481164692,
+        "needles": 0.0002428545631747171,
+        "constant": 1.272849417520972e-07
+      },
+      "ABCD": {
+        "total": 0.0006422574799797556,
+        "needles": 0.0005761997660924123,
+        "constant": 6.605771388734332e-05
+      }
+    }
+  },
+  {
+    "candidate_id": "endpoint_n256",
+    "order1": 64,
+    "order2": 128,
+    "max_cell_relative_difference": 1.1003548432591764e-14,
+    "cell_relative_differences": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "AB": 2.543475150112448e-16,
+      "AC": 3.343433196798805e-16,
+      "AD": 1.1003548432591764e-14,
+      "BC": 0.0,
+      "BD": 2.006059918079285e-15,
+      "CD": 1.271737575056226e-16,
+      "ABC": 3.308779672091901e-16,
+      "ABD": 1.1003524598220543e-14,
+      "ACD": 1.1003524598220543e-14,
+      "BCD": 9.926339016275666e-16,
+      "ABCD": 1.100350076126586e-14
+    },
+    "A_relative_difference": 0.0,
+    "rho_relative_difference": 1.1102230246251565e-16,
+    "delta_relative_difference": 1.1102230246251565e-16,
+    "check_summary": {
+      "candidate_id": "endpoint_n256",
+      "family": "endpoint",
+      "n": 256,
+      "opt2": 1.6650626213108528e-06,
+      "opt3": 7.470156124366585e-10,
+      "rho": 24.598556830512884,
+      "delta": 8.317842950429892e-07,
+      "rho_hierarchy_id": 22,
+      "delta_hierarchy_id": 19,
+      "rho_coarse": "ABC|D",
+      "rho_fine": "A|BC|D",
+      "delta_coarse": "AB|CD",
+      "delta_fine": "A|B|CD",
+      "delta_rho_optimizer": 3.929307489536691e-05,
+      "rho_delta_optimizer": 1114.476453764905,
+      "flat2": "AB|CD",
+      "flat3": "A|BC|D",
+      "A": 1.00002817811262,
+      "cost_scale": 0.9999718226813638,
+      "D1": 0.0001724269739850251,
+      "delta_over_1e_minus3": 0.0008317842950429892,
+      "rho_optimal_ids": [
+        16,
+        22
+      ],
+      "delta_optimal_ids": [
+        19,
+        20
+      ],
+      "elapsed_seconds": 0.00543604199992842
+    },
+    "check_normalization": {
+      "A_unscaled_composed_generator": 1.00002817811262,
+      "loss0_max_unscaled": 1.00002817811262,
+      "loss1_max_unscaled": 1.00002817811262,
+      "loss0_max_normalized": 1.0,
+      "loss1_max_normalized": 1.0,
+      "cost_scale_from_raw_generator": 0.9999718226813638,
+      "full_raw_curvature_integral": 2.00005635622524,
+      "symmetry_relative_error": 0.0,
+      "canonical_report_domain": [
+        0.0,
+        1.0
+      ],
+      "raw_full_report_domain": [
+        0.0,
+        1.0
+      ],
+      "affine_raw_coordinate_slope": 1.0,
+      "affine_raw_coordinate_shift": 0.0,
+      "raw_curvature_constant": 5.6356225240010597e-05,
+      "scaled_kernel_normalizer": 0.00016730435684593828,
+      "log_kernel_normalizer": 78.8638706876707,
+      "log_kernel_peak": 87.55956659586569,
+      "pointwise_oscillatory_tail_density_upper": 5.62155078999415e-35
+    },
+    "check_cells": {
+      "A": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "B": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "C": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "D": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "AB": {
+        "total": 8.325547698164582e-07,
+        "needles": 8.32554411879345e-07,
+        "constant": 3.5793711320419327e-13
+      },
+      "AC": {
+        "total": 4.053476279724917e-05,
+        "needles": 4.053322228618823e-05,
+        "constant": 1.5405110609410179e-09
+      },
+      "AD": {
+        "total": 0.00017243108561505483,
+        "needles": 0.00016538735146608434,
+        "constant": 7.043734148970499e-06
+      },
+      "BC": {
+        "total": 7.470366619267145e-10,
+        "needles": 8.009426179843474e-40,
+        "constant": 7.470366619267145e-10
+      },
+      "BD": {
+        "total": 4.053476279724912e-05,
+        "needles": 4.053322228618818e-05,
+        "constant": 1.5405110609410179e-09
+      },
+      "CD": {
+        "total": 8.32554769816457e-07,
+        "needles": 8.325544118793437e-07,
+        "constant": 3.579371132041921e-13
+      },
+      "ABC": {
+        "total": 4.095929163968941e-05,
+        "needles": 4.0957750775965215e-05,
+        "constant": 1.5408637241935408e-09
+      },
+      "ABD": {
+        "total": 0.00017243145911233454,
+        "needles": 0.00016538735146608434,
+        "constant": 7.044107646250193e-06
+      },
+      "ACD": {
+        "total": 0.00017243145911233454,
+        "needles": 0.00016538735146608434,
+        "constant": 7.044107646250192e-06
+      },
+      "BCD": {
+        "total": 4.0959291639689556e-05,
+        "needles": 4.0957750775965364e-05,
+        "constant": 1.5408637241935406e-09
+      },
+      "ABCD": {
+        "total": 0.00017243183265171677,
+        "needles": 0.00016538735146608434,
+        "constant": 7.044481185632426e-06
+      }
+    }
+  },
+  {
+    "candidate_id": "endpoint_n512",
+    "order1": 64,
+    "order2": 128,
+    "max_cell_relative_difference": 5.352499445510042e-14,
+    "cell_relative_differences": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "AB": 0.0,
+      "AC": 1.0173677863982524e-15,
+      "AD": 5.352499445510042e-14,
+      "BC": 0.0,
+      "BD": 6.44332931385563e-15,
+      "CD": 1.6216621180611032e-15,
+      "ABC": 1.1819971263032292e-15,
+      "ABD": 5.352499004213161e-14,
+      "ACD": 5.352499004213161e-14,
+      "BCD": 2.2289088667432167e-14,
+      "ABCD": 5.352498562911373e-14
+    },
+    "A_relative_difference": 0.0,
+    "rho_relative_difference": 1.4765966227514582e-14,
+    "delta_relative_difference": 1.6653345369377348e-15,
+    "check_summary": {
+      "candidate_id": "endpoint_n512",
+      "family": "endpoint",
+      "n": 512,
+      "opt2": 5.304837553219817e-08,
+      "opt3": 7.80747756594538e-12,
+      "rho": 94.56024927567533,
+      "delta": 2.6516380288533134e-08,
+      "rho_hierarchy_id": 22,
+      "delta_hierarchy_id": 19,
+      "rho_coarse": "ABC|D",
+      "rho_fine": "A|BC|D",
+      "delta_coarse": "AB|CD",
+      "delta_fine": "A|B|CD",
+      "delta_rho_optimizer": 4.963219238462096e-06,
+      "rho_delta_optimizer": 3397.280048781973,
+      "flat2": "AB|CD",
+      "flat3": "A|BC|D",
+      "A": 1.000002820992995,
+      "cost_scale": 0.999997179014963,
+      "D1": 4.7348269207573776e-05,
+      "delta_over_1e_minus3": 2.6516380288533135e-05,
+      "rho_optimal_ids": [
+        16,
+        22
+      ],
+      "delta_optimal_ids": [
+        19,
+        20
+      ],
+      "elapsed_seconds": 0.005241249997197883
+    },
+    "check_normalization": {
+      "A_unscaled_composed_generator": 1.000002820992995,
+      "loss0_max_unscaled": 1.000002820992995,
+      "loss1_max_unscaled": 1.000002820992995,
+      "loss0_max_normalized": 1.0,
+      "loss1_max_normalized": 1.0,
+      "cost_scale_from_raw_generator": 0.999997179014963,
+      "full_raw_curvature_integral": 2.00000564198599,
+      "symmetry_relative_error": 0.0,
+      "canonical_report_domain": [
+        0.0,
+        1.0
+      ],
+      "raw_full_report_domain": [
+        0.0,
+        1.0
+      ],
+      "affine_raw_coordinate_slope": 1.0,
+      "affine_raw_coordinate_shift": 0.0,
+      "raw_curvature_constant": 5.641985989375451e-06,
+      "scaled_kernel_normalizer": 4.7116714929368304e-05,
+      "log_kernel_normalizer": 88.54315803268442,
+      "log_kernel_peak": 98.50604077085438,
+      "pointwise_oscillatory_tail_density_upper": 3.517183734959532e-39
+    },
+    "check_cells": {
+      "A": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "B": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "C": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "D": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "AB": {
+        "total": 2.652426259064698e-08,
+        "needles": 2.6524262231459572e-08,
+        "constant": 3.591874095452552e-16
+      },
+      "AC": {
+        "total": 4.99543798365988e-06,
+        "needles": 4.995422218695898e-06,
+        "constant": 1.5764963981980308e-11
+      },
+      "AD": {
+        "total": 4.734839496920994e-05,
+        "needles": 4.664315467853949e-05,
+        "constant": 7.052402906704552e-07
+      },
+      "BC": {
+        "total": 7.807499590784902e-12,
+        "needles": 4.6322237748794434e-45,
+        "constant": 7.807499590784902e-12
+      },
+      "BD": {
+        "total": 4.995437983659856e-06,
+        "needles": 4.995422218695874e-06,
+        "constant": 1.5764963981980308e-11
+      },
+      "CD": {
+        "total": 2.6524262590646964e-08,
+        "needles": 2.6524262231459555e-08,
+        "constant": 3.5918740954525467e-16
+      },
+      "ABC": {
+        "total": 5.016281764850094e-06,
+        "needles": 5.016265999528621e-06,
+        "constant": 1.5765321473157325e-11
+      },
+      "ABD": {
+        "total": 4.734839887293771e-05,
+        "needles": 4.664315467853949e-05,
+        "constant": 7.052441943982255e-07
+      },
+      "ACD": {
+        "total": 4.734839887293771e-05,
+        "needles": 4.664315467853949e-05,
+        "constant": 7.052441943982256e-07
+      },
+      "BCD": {
+        "total": 5.016281764850129e-06,
+        "needles": 5.016265999528656e-06,
+        "constant": 1.5765321473157328e-11
+      },
+      "ABCD": {
+        "total": 4.7348402776709535e-05,
+        "needles": 4.664315467853949e-05,
+        "constant": 7.05248098170046e-07
+      }
+    }
+  },
+  {
+    "candidate_id": "endpoint_n1024",
+    "order1": 64,
+    "order2": 128,
+    "max_cell_relative_difference": 1.4356927139193694e-13,
+    "cell_relative_differences": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "AB": 1.9858559860910923e-15,
+      "AC": 1.232920841535591e-15,
+      "AD": 1.4356927139193694e-13,
+      "BC": 0.0,
+      "BD": 1.253469522227849e-14,
+      "CD": 1.5886847888728915e-15,
+      "ABC": 1.026002291281827e-15,
+      "ABD": 1.43569270997043e-13,
+      "ACD": 1.43569270997043e-13,
+      "BCD": 9.43922107979283e-15,
+      "ABCD": 1.4356927060214864e-13
+    },
+    "A_relative_difference": 2.220446049250313e-16,
+    "rho_relative_difference": 1.5543122344752192e-15,
+    "delta_relative_difference": 1.3322676295501878e-15,
+    "check_summary": {
+      "candidate_id": "endpoint_n1024",
+      "family": "endpoint",
+      "n": 1024,
+      "opt2": 1.5620097757475777e-09,
+      "opt3": 7.179149876518016e-14,
+      "rho": 330.33008259931677,
+      "delta": 7.809330963750194e-10,
+      "rho_hierarchy_id": 16,
+      "delta_hierarchy_id": 19,
+      "rho_coarse": "A|BCD",
+      "rho_fine": "A|BC|D",
+      "delta_coarse": "AB|CD",
+      "delta_fine": "A|B|CD",
+      "delta_rho_optimizer": 5.144168084678901e-07,
+      "rho_delta_optimizer": 10878.793468685493,
+      "flat2": "AB|CD",
+      "flat3": "A|BC|D",
+      "A": 1.000000268727423,
+      "cost_scale": 0.9999997312726492,
+      "D1": 1.3050399768493335e-05,
+      "delta_over_1e_minus3": 7.809330963750194e-07,
+      "rho_optimal_ids": [
+        16,
+        22
+      ],
+      "delta_optimal_ids": [
+        19,
+        20
+      ],
+      "elapsed_seconds": 0.005404708001151448
+    },
+    "check_normalization": {
+      "A_unscaled_composed_generator": 1.000000268727423,
+      "loss0_max_unscaled": 1.000000268727423,
+      "loss1_max_unscaled": 1.000000268727423,
+      "loss0_max_normalized": 1.0,
+      "loss1_max_normalized": 1.0,
+      "cost_scale_from_raw_generator": 0.9999997312726492,
+      "full_raw_curvature_integral": 2.0000005374548464,
+      "symmetry_relative_error": 0.0,
+      "canonical_report_domain": [
+        0.0,
+        1.0
+      ],
+      "raw_full_report_domain": [
+        0.0,
+        1.0
+      ],
+      "affine_raw_coordinate_slope": 1.0,
+      "affine_raw_coordinate_shift": 0.0,
+      "raw_curvature_constant": 5.374548458100377e-07,
+      "scaled_kernel_normalizer": 1.3101439711970196e-05,
+      "log_kernel_normalizer": 98.3015796392876,
+      "log_kernel_peak": 109.5443680714064,
+      "pointwise_oscillatory_tail_density_upper": 2.0331358593783932e-43
+    },
+    "check_cells": {
+      "A": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "B": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "C": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "D": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "AB": {
+        "total": 7.810050977512241e-10,
+        "needles": 7.810050974407285e-10,
+        "constant": 3.1049561960399874e-19
+      },
+      "AC": {
+        "total": 5.152599331920586e-07,
+        "needles": 5.15259789186578e-07,
+        "constant": 1.4400548058969099e-13
+      },
+      "AD": {
+        "total": 1.3050403203702116e-05,
+        "needles": 1.298322142019029e-05,
+        "constant": 6.718178351182689e-08
+      },
+      "BC": {
+        "total": 7.179151805752462e-14,
+        "needles": 2.7290924630638476e-50,
+        "constant": 7.179151805752462e-14
+      },
+      "BD": {
+        "total": 5.152599331920593e-07,
+        "needles": 5.152597891865787e-07,
+        "constant": 1.4400548058969099e-13
+      },
+      "CD": {
+        "total": 7.810050977512154e-10,
+        "needles": 7.810050974407198e-10,
+        "constant": 3.104956196039908e-19
+      },
+      "ABC": {
+        "total": 5.159789569012969e-07,
+        "needles": 5.159788128955062e-07,
+        "constant": 1.4400579063088768e-13
+      },
+      "ABD": {
+        "total": 1.3050403239597856e-05,
+        "needles": 1.298322142019029e-05,
+        "constant": 6.718181940756664e-08
+      },
+      "ACD": {
+        "total": 1.3050403239597856e-05,
+        "needles": 1.298322142019029e-05,
+        "constant": 6.718181940756662e-08
+      },
+      "BCD": {
+        "total": 5.159789569012958e-07,
+        "needles": 5.159788128955052e-07,
+        "constant": 1.4400579063088766e-13
+      },
+      "ABCD": {
+        "total": 1.3050403275493634e-05,
+        "needles": 1.298322142019029e-05,
+        "constant": 6.718185530334495e-08
+      }
+    }
+  },
+  {
+    "candidate_id": "endpoint_n2048",
+    "order1": 64,
+    "order2": 128,
+    "max_cell_relative_difference": 3.882307385600549e-13,
+    "cell_relative_differences": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "AB": 1.344009881033225e-15,
+      "AC": 8.18748919396812e-16,
+      "AD": 3.882307385600549e-13,
+      "BC": 0.0,
+      "BD": 4.093744596984077e-16,
+      "CD": 3.882695211873603e-15,
+      "ABC": 1.3639894506166348e-16,
+      "ABD": 3.8823073852734865e-13,
+      "ACD": 3.8823073852734865e-13,
+      "BCD": 1.2003107165426274e-14,
+      "ABCD": 3.8823073849464235e-13
+    },
+    "A_relative_difference": 0.0,
+    "rho_relative_difference": 5.10702591327572e-15,
+    "delta_relative_difference": 1.3322676295501878e-15,
+    "check_summary": {
+      "candidate_id": "endpoint_n2048",
+      "family": "endpoint",
+      "n": 2048,
+      "opt2": 4.327433615683511e-11,
+      "opt3": 6.036075194568438e-16,
+      "rho": 1121.111732251309,
+      "delta": 2.1636564470897657e-11,
+      "rho_hierarchy_id": 22,
+      "delta_hierarchy_id": 20,
+      "rho_coarse": "ABC|D",
+      "rho_fine": "A|BC|D",
+      "delta_coarse": "AB|CD",
+      "delta_fine": "AB|C|D",
+      "delta_rho_optimizer": 4.847209163465803e-08,
+      "rho_delta_optimizer": 35846.41904045085,
+      "flat2": "AB|CD",
+      "flat3": "A|BC|D",
+      "A": 1.0000000245902387,
+      "cost_scale": 0.9999999754097618,
+      "D1": 3.5824779629343043e-06,
+      "delta_over_1e_minus3": 2.1636564470897657e-08,
+      "rho_optimal_ids": [
+        16,
+        22
+      ],
+      "delta_optimal_ids": [
+        19,
+        20
+      ],
+      "elapsed_seconds": 0.005458708001242485
+    },
+    "check_normalization": {
+      "A_unscaled_composed_generator": 1.0000000245902387,
+      "loss0_max_unscaled": 1.0000000245902387,
+      "loss1_max_unscaled": 1.0000000245902387,
+      "loss0_max_normalized": 1.0,
+      "loss1_max_normalized": 1.0,
+      "cost_scale_from_raw_generator": 0.9999999754097618,
+      "full_raw_curvature_integral": 2.0000000491804775,
+      "symmetry_relative_error": 0.0,
+      "canonical_report_domain": [
+        0.0,
+        1.0
+      ],
+      "raw_full_report_domain": [
+        0.0,
+        1.0
+      ],
+      "affine_raw_coordinate_slope": 1.0,
+      "affine_raw_coordinate_shift": 0.0,
+      "raw_curvature_constant": 4.9180477484404766e-08,
+      "scaled_kernel_normalizer": 3.605892933118886e-06,
+      "log_kernel_normalizer": 108.0836875552028,
+      "log_kernel_peak": 120.61662868014153,
+      "pointwise_oscillatory_tail_density_upper": 1.1477595394147335e-47
+    },
+    "check_cells": {
+      "A": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "B": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "C": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "D": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "AB": {
+        "total": 2.1637168610480242e-11,
+        "needles": 2.1637168610242334e-11,
+        "constant": 2.3790752320056983e-22
+      },
+      "AC": {
+        "total": 4.8494316709201296e-08,
+        "needles": 4.8494315500914276e-08,
+        "constant": 1.2082870189423845e-15
+      },
+      "AD": {
+        "total": 3.582478050424685e-06,
+        "needles": 3.5763304913438146e-06,
+        "constant": 6.147559080870754e-09
+      },
+      "BC": {
+        "total": 6.036075342996968e-16,
+        "needles": 1.3816988232688504e-55,
+        "constant": 6.036075342996968e-16
+      },
+      "BD": {
+        "total": 4.84943167092011e-08,
+        "needles": 4.849431550091408e-08,
+        "constant": 1.2082870189423847e-15
+      },
+      "CD": {
+        "total": 2.1637168610481124e-11,
+        "needles": 2.1637168610243216e-11,
+        "constant": 2.379075232005884e-22
+      },
+      "ABC": {
+        "total": 4.85153671638193e-08,
+        "needles": 4.851536595553204e-08,
+        "constant": 1.2082872567444462e-15
+      },
+      "ABD": {
+        "total": 3.582478050726489e-06,
+        "needles": 3.5763304913438146e-06,
+        "constant": 6.147559382674508e-09
+      },
+      "ACD": {
+        "total": 3.582478050726489e-06,
+        "needles": 3.5763304913438146e-06,
+        "constant": 6.147559382674507e-09
+      },
+      "BCD": {
+        "total": 4.8515367163819755e-08,
+        "needles": 4.8515365955532496e-08,
+        "constant": 1.2082872567444462e-15
+      },
+      "ABCD": {
+        "total": 3.5824780510282927e-06,
+        "needles": 3.5763304913438146e-06,
+        "constant": 6.147559684478289e-09
+      }
+    }
+  },
+  {
+    "candidate_id": "endpoint_n4096",
+    "order1": 64,
+    "order2": 128,
+    "max_cell_relative_difference": 8.97084659839162e-14,
+    "cell_relative_differences": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "AB": 0.0,
+      "AC": 2.290508420537049e-15,
+      "AD": 8.97084659839162e-14,
+      "BC": 0.0,
+      "BD": 2.863135525671342e-15,
+      "CD": 3.435328648989771e-14,
+      "ABC": 7.634032485402825e-16,
+      "ABD": 8.970846598369885e-14,
+      "ACD": 8.970846598369885e-14,
+      "BCD": 6.107225988322299e-15,
+      "ABCD": 8.970846598348152e-14
+    },
+    "A_relative_difference": 2.220446049250313e-16,
+    "rho_relative_difference": 2.3314683517128287e-14,
+    "delta_relative_difference": 4.440892098500626e-16,
+    "check_summary": {
+      "candidate_id": "endpoint_n4096",
+      "family": "endpoint",
+      "n": 4096,
+      "opt2": 1.1404436639021085e-12,
+      "opt3": 4.735488022301529e-18,
+      "rho": 3800.427892829699,
+      "delta": 5.702170964630297e-13,
+      "rho_hierarchy_id": 16,
+      "delta_hierarchy_id": 20,
+      "rho_coarse": "A|BCD",
+      "rho_fine": "A|BC|D",
+      "delta_coarse": "AB|CD",
+      "delta_fine": "AB|C|D",
+      "delta_rho_optimizer": 4.33303346683057e-09,
+      "rho_delta_optimizer": 120414.58647252884,
+      "flat2": "AB|CD",
+      "flat3": "A|BC|D",
+      "A": 1.0000000021766922,
+      "cost_scale": 0.9999999978233078,
+      "D1": 9.77253471998248e-07,
+      "delta_over_1e_minus3": 5.702170964630297e-10,
+      "rho_optimal_ids": [
+        16,
+        22
+      ],
+      "delta_optimal_ids": [
+        19,
+        20
+      ],
+      "elapsed_seconds": 0.005465082998853177
+    },
+    "check_normalization": {
+      "A_unscaled_composed_generator": 1.0000000021766922,
+      "loss0_max_unscaled": 1.000000002176692,
+      "loss1_max_unscaled": 1.0000000021766922,
+      "loss0_max_normalized": 0.9999999999999998,
+      "loss1_max_normalized": 1.0,
+      "cost_scale_from_raw_generator": 0.9999999978233078,
+      "full_raw_curvature_integral": 2.000000004353384,
+      "symmetry_relative_error": 2.2204460444170856e-16,
+      "canonical_report_domain": [
+        0.0,
+        1.0
+      ],
+      "raw_full_report_domain": [
+        0.0,
+        1.0
+      ],
+      "affine_raw_coordinate_slope": 1.0,
+      "affine_raw_coordinate_shift": 0.0,
+      "raw_curvature_constant": 4.353384251061303e-09,
+      "scaled_kernel_normalizer": 9.841039378608508e-07,
+      "log_kernel_normalizer": 117.86935707918377,
+      "log_kernel_peak": 131.7008913967488,
+      "pointwise_oscillatory_tail_density_upper": 6.456373332473434e-52
+    },
+    "check_cells": {
+      "A": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "B": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "C": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "D": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "AB": {
+        "total": 5.702218331922495e-13,
+        "needles": 5.702218331920845e-13,
+        "constant": 1.6501027851241136e-25
+      },
+      "AC": {
+        "total": 4.333608757617652e-09,
+        "needles": 4.333608748144176e-09,
+        "constant": 9.473476394462727e-18
+      },
+      "AD": {
+        "total": 9.772534741206926e-07,
+        "needles": 9.767093010940478e-07,
+        "constant": 5.441730266446742e-10
+      },
+      "BC": {
+        "total": 4.7354880326092284e-18,
+        "needles": 7.315417176772874e-61,
+        "constant": 4.7354880326092284e-18
+      },
+      "BD": {
+        "total": 4.333608757617606e-09,
+        "needles": 4.33360874814413e-09,
+        "constant": 9.473476394462727e-18
+      },
+      "CD": {
+        "total": 5.702218331922539e-13,
+        "needles": 5.702218331920889e-13,
+        "constant": 1.6501027851242658e-25
+      },
+      "ABC": {
+        "total": 4.334173919928662e-09,
+        "needles": 4.334173910455186e-09,
+        "constant": 9.473476559451235e-18
+      },
+      "ABD": {
+        "total": 9.772534741230603e-07,
+        "needles": 9.767093010940478e-07,
+        "constant": 5.441730290124182e-10
+      },
+      "ACD": {
+        "total": 9.772534741230603e-07,
+        "needles": 9.767093010940478e-07,
+        "constant": 5.441730290124182e-10
+      },
+      "BCD": {
+        "total": 4.334173919928634e-09,
+        "needles": 4.334173910455158e-09,
+        "constant": 9.473476559451235e-18
+      },
+      "ABCD": {
+        "total": 9.77253474125428e-07,
+        "needles": 9.767093010940478e-07,
+        "constant": 5.441730313801623e-10
+      }
+    }
+  },
+  {
+    "candidate_id": "endpoint_n8192",
+    "order1": 64,
+    "order2": 128,
+    "max_cell_relative_difference": 1.435928109686009e-11,
+    "cell_relative_differences": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.0,
+      "D": 0.0,
+      "AB": 2.1896673010312654e-16,
+      "AC": 9.670524468106842e-16,
+      "AD": 1.435928109686009e-11,
+      "BC": 0.0,
+      "BD": 4.18595559119487e-14,
+      "CD": 3.858193784419304e-13,
+      "ABC": 1.1051603588109878e-15,
+      "ABD": 1.4359281096859137e-11,
+      "ACD": 1.4359281096859137e-11,
+      "BCD": 3.3569245898882893e-14,
+      "ABCD": 1.4359281096858187e-11
+    },
+    "A_relative_difference": 2.220446049250313e-16,
+    "rho_relative_difference": 2.0117241206207837e-13,
+    "delta_relative_difference": 3.856914787547794e-13,
+    "check_summary": {
+      "candidate_id": "endpoint_n8192",
+      "family": "endpoint",
+      "n": 8192,
+      "opt2": 2.882121515725933e-14,
+      "opt3": 3.5106184838995407e-20,
+      "rho": 12984.725256958744,
+      "delta": 1.4410572472440693e-14,
+      "rho_hierarchy_id": 22,
+      "delta_hierarchy_id": 19,
+      "rho_coarse": "ABC|D",
+      "rho_fine": "A|BC|D",
+      "delta_coarse": "AB|CD",
+      "delta_fine": "A|B|CD",
+      "delta_rho_optimizer": 3.742067391735502e-10,
+      "rho_delta_optimizer": 410486.2902282236,
+      "flat2": "AB|CD",
+      "flat3": "A|BC|D",
+      "A": 1.0000000001873808,
+      "cost_scale": 0.9999999998126192,
+      "D1": 2.648806402046501e-07,
+      "delta_over_1e_minus3": 1.4410572472440692e-11,
+      "rho_optimal_ids": [
+        16,
+        22
+      ],
+      "delta_optimal_ids": [
+        19,
+        20
+      ],
+      "elapsed_seconds": 0.005264625000563683
+    },
+    "check_normalization": {
+      "A_unscaled_composed_generator": 1.0000000001873808,
+      "loss0_max_unscaled": 1.0000000001873808,
+      "loss1_max_unscaled": 1.0000000001873808,
+      "loss0_max_normalized": 1.0,
+      "loss1_max_normalized": 1.0,
+      "cost_scale_from_raw_generator": 0.9999999998126192,
+      "full_raw_curvature_integral": 2.0000000003747616,
+      "symmetry_relative_error": 0.0,
+      "canonical_report_domain": [
+        0.0,
+        1.0
+      ],
+      "raw_full_report_domain": [
+        0.0,
+        1.0
+      ],
+      "affine_raw_coordinate_slope": 1.0,
+      "affine_raw_coordinate_shift": 0.0,
+      "raw_curvature_constant": 3.747619104292109e-10,
+      "scaled_kernel_normalizer": 2.666834643689235e-07,
+      "log_kernel_normalizer": 127.65204614525473,
+      "log_kernel_peak": 142.78924955380174,
+      "pointwise_oscillatory_tail_density_upper": 3.6426777704477195e-56
+    },
+    "check_cells": {
+      "A": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "B": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "C": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "D": {
+        "total": 0.0,
+        "needles": 0.0,
+        "constant": 0.0
+      },
+      "AB": {
+        "total": 1.4410607581334074e-14,
+        "needles": 1.441060758133397e-14,
+        "constant": 1.0526798936370123e-28
+      },
+      "AC": {
+        "total": 3.7422119057291993e-10,
+        "needles": 3.742211905027021e-10,
+        "constant": 7.021780706481371e-20
+      },
+      "AD": {
+        "total": 2.6488064025424855e-07,
+        "needles": 2.6483379501548003e-07,
+        "constant": 4.6845238768539746e-11
+      },
+      "BC": {
+        "total": 3.510618484557363e-20,
+        "needles": 3.353143539373025e-66,
+        "constant": 3.510618484557363e-20
+      },
+      "BD": {
+        "total": 3.7422119057291543e-10,
+        "needles": 3.742211905026976e-10,
+        "constant": 7.021780706481371e-20
+      },
+      "CD": {
+        "total": 1.4410607581325804e-14,
+        "needles": 1.44106075813257e-14,
+        "constant": 1.0526798936350882e-28
+      },
+      "ABC": {
+        "total": 3.74235560458832e-10,
+        "needles": 3.7423556038861417e-10,
+        "constant": 7.021780717007762e-20
+      },
+      "ABD": {
+        "total": 2.6488064025426613e-07,
+        "needles": 2.6483379501548003e-07,
+        "constant": 4.6845238786092835e-11
+      },
+      "ACD": {
+        "total": 2.6488064025426613e-07,
+        "needles": 2.6483379501548003e-07,
+        "constant": 4.6845238786092835e-11
+      },
+      "BCD": {
+        "total": 3.7423556045884155e-10,
+        "needles": 3.7423556038862373e-10,
+        "constant": 7.021780717007762e-20
+      },
+      "ABCD": {
+        "total": 2.6488064025428365e-07,
+        "needles": 2.6483379501548003e-07,
+        "constant": 4.684523880364593e-11
+      }
+    }
+  }
+]

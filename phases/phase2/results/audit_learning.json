@@ -1,0 +1,44 @@
+{
+  "gradient_check": "single Adam update reconstructed from independently finite-differenced direct logistic risk",
+  "maximum_parameter_errors": {
+    "w": 0.0,
+    "b": 2.7755575615628914e-17,
+    "v": 0.0,
+    "c": 1.3877787807814457e-17
+  },
+  "random_nonstationary_split_check": {
+    "radius": 0.0003,
+    "direct_loss_change": -7.225946174749254e-09,
+    "spectral_quadratic_prediction": -7.225946682839861e-09
+  },
+  "zero_split_function_preservation": true,
+  "saved_run_reproduction": [
+    {
+      "regime": "four_state",
+      "seed": 27100,
+      "maximum_reproduction_difference": 0.0
+    },
+    {
+      "regime": "rotated_nuisance",
+      "seed": 27100,
+      "maximum_reproduction_difference": 0.0
+    },
+    {
+      "regime": "sample_pretrained",
+      "seed": 27100,
+      "maximum_reproduction_difference": 0.0
+    },
+    {
+      "regime": "random_start",
+      "seed": 27100,
+      "maximum_reproduction_difference": 0.0
+    },
+    {
+      "regime": "no_signal",
+      "seed": 27100,
+      "maximum_reproduction_difference": 0.0
+    }
+  ],
+  "assertions": "all passed",
+  "seed": 372012
+}

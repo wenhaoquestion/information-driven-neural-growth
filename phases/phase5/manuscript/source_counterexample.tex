@@ -1,0 +1,118 @@
+\section{A literal-assumption caveat in a current spectral theorem}
+\label{app:source}
+
+We checked Defilippis et al.~\cite{defilippis}, arXiv:2602.05846v1,
+on 20 September 2026 UTC: Definitions 2.1--2.7 and 3.3,
+Assumptions 2.3--3.4, Theorem 3.6, and Appendix A.2. The current record
+listed only v1, dated 5 February 2026. The spectral estimator uses
+\[
+ M=\sum_{i=1}^n\mathcal T(Y_i)X_iX_i^\top,
+ \qquad X_i\sim N(0,I_d/d),
+\]
+with eigenvalue-gap selection and eigenvector norm $\sqrt d$.
+The preprocessing conditions are boundedness, positive essential
+supremum, and a nonzero value with positive probability. We test only
+the literal universal preprocessing scope of the rate claim, not other
+results or a qualified theorem. This is not our main originality claim.
+
+\begin{proposition}[Constant preprocessing fails the literal universal claim]
+\label{prop:source-constant-preprocessing}
+Take orthogonal target directions $w_k^*$ with $\|w_k^*\|_2^2=d$,
+$1\leq k\leq m_*\leq d$, and normalized weights
+\[
+ a_k=\frac{k^{-\gamma}}{\left(\sum_{j=1}^{m_*}j^{-2\gamma}\right)^{1/2}},
+ \qquad \gamma>\frac12.
+\]
+Let $g_k(z)=(z^2-1)/\sqrt2$ and
+\[
+ Y=\sum_{k=1}^{m_*}a_kg_k(\langle w_k^*,X\rangle)
+          +\sqrt\Delta\,\xi,
+ \qquad \Delta>0,\quad \xi\sim N(0,1),
+\]
+with $X$ and $\xi$ independent. Choose $\mathcal T(y)=1$.
+For $n\geq d\geq2$, select any number $r\leq m_*$ of the ordered
+eigenvectors of $M$ by a rule depending only on its eigenvalues,
+normalize them to $\sqrt d$, and pad the remaining output rows by zero.
+The resulting weighted matrix reconstruction error satisfies
+\begin{equation}
+ \sum_{k=1}^{m_*}\frac{a_k^2}{d^2}
+ \mathbb E\left[
+ \|\widehat w_k\widehat w_k^\top-w_k^*w_k^{*\top}\|_F^2
+ \right]\geq1.
+ \label{eq:source-lower-error}
+\end{equation}
+The expectation is over the input sample; the assertion also holds for
+random orthogonal teachers independent of those inputs.
+\end{proposition}
+\begin{proof}
+The links are even polynomials with
+$\mathbb E[g_k(Z)^2]=1$ and
+$\mathbb E[g_k''(Z)]=\sqrt2$ for $Z\sim N(0,1)$.
+They have a uniform polynomial envelope and satisfy the displayed
+nondegeneracy conditions on the target. The weights are strictly
+decreasing, have sum of squares one, and satisfy the required power-law
+scaling with constants independent of $m_*$, because $\gamma>1/2$.
+The preprocessing is bounded, is never zero, and has the specified
+positive essential supremum:
+\[
+ \inf\{c:\mathbb P(\mathcal T(Y)<c)=1\}
+ =\inf(1,\infty)=1.
+\]
+Thus it meets the literal preprocessing conditions.
+
+With this choice, $M=\sum_iX_iX_i^\top$ depends only on isotropic
+Gaussian inputs. It is a rotationally invariant Wishart matrix,
+independent of any information about target directions in the labels.
+For $n\geq d$ its eigenvalues are distinct almost surely. Conditional on
+the ordered eigenvalues, every normalized rank-one eigenprojector is
+uniformly oriented. In particular, for an eigenvector $v$ normalized by
+$\|v\|_2^2=d$,
+\[
+ \mathbb E[vv^\top\mid\operatorname{spec}(M)]=I_d,
+ \qquad
+ \mathbb E[(v^\top w_k^*)^2\mid\operatorname{spec}(M)]=d.
+\]
+These statements concern projectors and hence do not depend on how the
+sign of an eigenvector is chosen. Selection of $r$ through eigenvalues
+also leaves them unchanged. Consequently every selected row has
+conditional normalized error
+\[
+ \frac{\mathbb E[\|vv^\top-w_k^*w_k^{*\top}\|_F^2
+              \mid\operatorname{spec}(M)]}{d^2}
+ =\frac{d^2+d^2-2d}{d^2}=2-\frac2d.
+\]
+A zero-padded row has normalized error one. If $p_k$ is the probability
+that row $k$ is selected, the left side of
+\eqref{eq:source-lower-error} is therefore
+\[
+ \sum_{k=1}^{m_*}a_k^2
+       \left\{p_k\left(2-\frac2d\right)+(1-p_k)\right\}
+ =1+\left(1-\frac2d\right)\sum_{k=1}^{m_*}a_k^2p_k\geq1.
+\]
+Conditioning first on a random teacher gives the same conclusion when
+the teacher is independent of the inputs.
+\end{proof}
+
+The literal rate assertion combines Theorem 3.6 with the displayed
+large-sample regime $\alpha=n/d\gg m_*^{2\gamma}$, in which the claimed
+weighted optimal rate is of order $m_*/\alpha$. That rate can tend to
+zero, whereas \eqref{eq:source-lower-error} cannot. For example, in the
+subsequent large-$\alpha,m_*$ comparison, taking
+$\alpha=m_*^{2\gamma+1}$ gives $m_*/\alpha=m_*^{-2\gamma}$.
+The disagreement persists after the proportional high-dimensional limit,
+since the lower bound holds at every finite $d\geq\max(m_*,2)$.
+Likewise, normalized squared overlap of any selected row with a fixed
+target direction is $1/d$, so no fixed finite $\alpha$ yields weak
+recovery from this input-only estimator.
+
+The source proof's transition from its equations (66) to (70) has a
+leading coefficient containing
+$\int\mathcal T(y)\mathsf Z'(y)\,\mathrm dy$.
+For the constant preprocessing this is zero: $\mathsf Z$ is a Gaussian
+convolution density, tends to zero at both ends, and has an integrable
+derivative, so its derivative integrates to zero. Boundedness and
+nonzero preprocessing do not imply a nonzero appropriately signed
+coupling to the target. An added coupling condition, or a specified
+valid preprocessing family, would be a substantive qualification to
+check in a corrected theorem. This observation does not supply a new
+learning mechanism for our project.

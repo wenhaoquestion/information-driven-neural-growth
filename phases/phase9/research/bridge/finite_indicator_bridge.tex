@@ -1,0 +1,181 @@
+% Include-ready research insert. Requires amsmath, amssymb, amsthm.
+% Uses theorem/proposition/proof environments; all notation defined locally.
+% Internal independent formulation audit: phase9_prior_bridge/bridge_check.
+\section{An exact finite indicator-growth bridge and its limits}
+\label{sec:p9-indicator-bridge}
+
+This section provides a deliberately restricted population model in which
+function-preserving growth and the deterministic partition hierarchy problem
+coincide. It is a specialization of proper-loss regret and the Bregman
+centroid identity, not a general neural-training result or a priority claim.
+
+Fix an integer $N\ge2$, masses $p_i>0$ with $\sum_{i=1}^N p_i=1$, and
+posterior values $x_i\in[0,1]$. The admissible inputs are the standard basis
+vectors $e_1,\ldots,e_N\in\mathbb R^N$, and the population law is
+\[
+ \Pr(X=e_i)=p_i,\qquad
+ \Pr(Y=1\mid X=e_i)=x_i.
+\]
+Let $\varphi\in C^1([0,1])$ be strictly convex. For definiteness use the
+proper loss
+\[
+ \ell_\varphi(q,y)=-\varphi(q)-\varphi'(q)(y-q),
+ \quad q\in[0,1],\quad y\in\{0,1\}.
+\]
+Adding a constant depending only on $y$ changes none of the excess risks.
+Define $B_\varphi(u,v)=\varphi(u)-\varphi(v)-\varphi'(v)(u-v)$.
+The conditional regret of report $q$ at posterior $x$ is exactly
+$B_\varphi(x,q)$, so strict convexity makes the loss strictly proper.
+
+For a partition $P$ of $\{1,\ldots,N\}$, let $w_C\in\{0,1\}^N$ be
+the indicator of $C\in P$, and use the restricted ReLU network
+\[
+ f_{P,q}(z)=\sum_{C\in P}q_C\operatorname{ReLU}(w_C^\top z),
+ \qquad q_C\in[0,1].
+\]
+On every admissible input $e_i$, this equals the report $q_C$ of its
+unique cell. Capacity counts the active leaf units $|P|$; there are no
+additional depth, split-search, sample, parameter-storage, or training-cost
+constraints. Hidden weights are constrained to these disjoint indicator
+vectors. Their ambient dimension $N$ is not charged by the leaf count.
+For $C\in P$, put $p_C=\sum_{i\in C}p_i$ and
+$m_C=p_C^{-1}\sum_{i\in C}p_ix_i$, and define
+\[
+ D_\varphi(P)=\sum_{C\in P}\sum_{i\in C}
+ p_i\bigl(\varphi(x_i)-\varphi(m_C)\bigr),\qquad
+ \operatorname{OPT}_k=\min_{|P|\le k}D_\varphi(P).
+\]
+Write $R(P,q)=\mathbb E\ell_\varphi(f_{P,q}(X),Y)$ and
+$R^*=\mathbb E\ell_\varphi(x_X,Y)$, with $x_{e_i}=x_i$.
+
+\begin{theorem}[Exact oracle equivalence for indicator splitting]
+\label{thm:p9-bridge}
+For every finite population just specified, the following statements hold.
+For every partition $P$ and every report vector $q$,
+\begin{equation}
+ R(P,q)-R^*=D_\varphi(P)+
+       \sum_{C\in P}p_CB_\varphi(m_C,q_C).
+ \label{eq:p9-risk-decomposition}
+\end{equation}
+Thus the unique population-optimal reports are $q_C=m_C$, and the resulting
+excess risk is $D_\varphi(P)$.
+
+Splitting a cell $C=C_0\sqcup C_1$ into two nonempty children and copying
+its report into both children preserves the current predictor on every
+admissible input. If arbitrary such subset splits are permitted, and exact
+population report minimization follows each birth, the smallest simultaneous
+risk factor of a one-leaf-to-$N$-leaf growth path is exactly
+\begin{equation}
+ \rho_{\rm ind}
+ =\min_{\substack{H_{k+1}\text{ refines }H_k\\|H_k|\le k}}
+ \inf\{c\ge0:D_\varphi(H_k)\le c\operatorname{OPT}_k
+                       \text{ for every }1\le k\le N\}.
+ \label{eq:p9-price-equivalence}
+\end{equation}
+Here the growth-path factor uses $R_k-R^*$ in place of $D_\varphi(H_k)$.
+The cost-inequality convention includes capacities with zero flat optimum.
+The minimum is over complete schedules selected with knowledge of the
+population; it does not assert a greedy or sample-based selection rule.
+\end{theorem}
+\begin{proof}
+For each cell, expand and add the Bregman divergences:
+\[
+ \sum_{i\in C}p_iB_\varphi(x_i,q_C)
+ =\sum_{i\in C}p_i\bigl(\varphi(x_i)-\varphi(m_C)\bigr)
+  +p_CB_\varphi(m_C,q_C).
+\]
+The linear term involving $x_i-m_C$ cancels. Summing proves
+\eqref{eq:p9-risk-decomposition}; strict convexity proves uniqueness.
+The same identity holds conditional on any realized learned partition and
+reports, provided evaluation uses a fresh independent draw from the fixed
+population law above.
+
+At a split, for all $i$ we have
+$\mathbf1_C(i)=\mathbf1_{C_0}(i)+\mathbf1_{C_1}(i)$. Equal copied
+reports therefore preserve $f(e_i)$, and the old restricted function class
+is contained in the new one. In this implementation the same equality
+also holds on the nonnegative orthant; no claim of preservation on all of
+$\mathbb R^N$ is needed. Exact population refitting then attains
+$D_\varphi(P')$ for the refined partition $P'$.
+
+Every binary split path is an admissible hierarchy, giving one inequality
+in \eqref{eq:p9-price-equivalence}. For the converse, take any admissible
+hierarchy $(H_k)$, which may have fewer than $k$ cells. Let $Q_N$ be the
+singleton partition. Induct backwards. If $Q_{k+1}$ has $k+1$ cells and
+refines $H_{k+1}$, it also refines $H_k$. Since $|H_k|\le k$, two of its
+cells lie inside the same $H_k$ cell. Merge these two to form $Q_k$.
+Then $Q_k$ has exactly $k$ cells and refines $H_k$. Refinement and
+convexity give $D_\varphi(Q_k)\le D_\varphi(H_k)$. Reversing this
+construction yields an admissible binary split path with no larger cost
+at any capacity. Oracle refitting realizes all its costs. This proves the
+reverse inequality, including zero optima.
+\end{proof}
+
+If the reports before and after a split are population optimal, its gain is
+\[
+ D_\varphi(P)-D_\varphi(P')
+ =\sum_{j=0}^1p_{C_j}B_\varphi(m_{C_j},m_C)\ge0.
+\]
+The gain is zero when the two child means coincide. A realized empirical
+refit instead retains the explicit nonnegative report-error term in
+\eqref{eq:p9-risk-decomposition}. The theorem is an equivalence of
+population oracle problems, not a convergence or generalization theorem.
+
+\begin{proposition}[Neuron count and birth alone do not transfer the result]
+\label{prop:p9-nontransfer}
+On the same finite input domain and population law, removing the indicator
+constraint on hidden weights allows the Bayes predictor to be represented
+by a single ReLU unit. Also, even in the restricted indicator model,
+function-preserving birth alone need not achieve any finite factor relative
+to the flat optimum at the new capacity.
+\end{proposition}
+\begin{proof}
+Set $w=(x_1,\ldots,x_N)$ and $f(z)=\operatorname{ReLU}(w^\top z)$.
+Then $f(e_i)=x_i$ because $x_i\ge0$, so its population excess risk is zero.
+This uses one hidden unit with output coefficient one. Therefore replacing
+leaf count by the width of this unrestricted ReLU class changes the flat
+oracle problem completely. In particular, high indicator-hierarchy prices
+cannot imply a width lower bound for this larger network class.
+
+For the second claim take $N=2$, equal masses, $x_1=1/4$, $x_2=3/4$, and
+squared loss $(y-q)^2$. The optimal one-leaf report is $1/2$ and its excess
+risk is $1/16$. After a singleton split that copies report $1/2$, the
+function and excess risk are unchanged, whereas $\operatorname{OPT}_2=0$.
+Thus this birth, without a refit guarantee, violates every finite
+multiplicative cost inequality at capacity two.
+\end{proof}
+
+There is an additional direct boundary in the Phase~6 quadratic model.
+With $d=1$, $A_*=1$, $B=0$, $c=0$, the predictor
+$a(w^2X^2-w^2)$ has excess risk $2(aw^2-1)^2$.
+Birth at $(a,w)=(0,1)$ preserves excess risk $2$. Its population gradients
+are $\partial_aR=-4$ and $\partial_wR=0$; one simultaneous ordinary
+gradient step of size $3/4$ gives $(a,w)=(3,1)$ and excess risk $8$.
+An exact scalar refit would choose $a=1$ and obtain zero. This example
+does not analyze Adam; it disproves any claim that function-preserving
+birth alone guarantees subsequent descent for an unspecified optimizer.
+
+\paragraph{Absolute normalization and the prior empirical interface.}
+For every $\lambda>0$, replacing the loss and generator by
+$\lambda\ell$ and $\lambda\varphi$ scales every excess risk and every
+$\operatorname{OPT}_k$ by $\lambda$, preserving all hierarchy prices.
+If a loss already lies in $[0,1/2]$, every $0<\lambda\le1$ retains that
+same bounded-loss requirement. Given any finite instance and any
+$\epsilon>0$, taking $\lambda$ sufficiently small makes all its
+population excess risks below $\epsilon$ without changing its price.
+Consequently, a divergent normalized relative price alone cannot imply
+a nonvanishing absolute-risk separation under this upper-bound
+normalization. An exact fixed-scale normalization would need its own
+analysis.
+
+The Phase~8 endpoint experiment reports, at curvature degree $16384$,
+normalized flat costs approximately $3.84307\times10^{-21}$ and
+$4.68112\times10^{-27}$. Those numbers concern its source hull $[0,1]$;
+they are not the normalization for the affinely moved interior-posterior
+construction. The current bridge does not change those distinctions.
+The Phase~7 exact historical-query memory results concern the recovery of
+quadratic empirical residual queries. They neither provide the
+population posterior oracle assumed here nor certify its training cost.
+Finally, a stochastic degradation chain is a different representation
+class: the deterministic indicator theorem does not identify its price
+with that of physical randomized neuron growth.

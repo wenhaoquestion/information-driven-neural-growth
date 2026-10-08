@@ -1,0 +1,9 @@
+# Historical mathematical audit summary
+
+This is a publication summary of the historical internal technical check. It removes private workflow/role descriptions and does not reproduce an internal conversation. It is not external peer review or a claim of personal author review. The publication pass did not rerun the scientific calculations. Original review hashes are retained in the private curation provenance; public numerical evidence and complete manuscript proofs remain available.
+
+The final mathematical statements retain the needed qualifications: symmetric signed quadratic forms and Gaussian inputs; centering and independent zero-mean finite-variance noise; genuinely fresh independent batches and square-integrable past-adapted matrices for conditional variance/contraction; and a strict spectral threshold for the stated rank bound. Equality at the threshold can invalidate the strict rank count. Same-sample adaptive conditioning is not justified by an unconditional population inverse.
+
+The false-growth result concerns a nonzero noiseless oracle-fit checkpoint and an unthresholded stale-moment update. An uncertainty threshold or independent audit can reject it; it is not a lower bound for all retained-state algorithms. The known-rank projection is privileged, and the O(d²) sufficient batch bound is conservative. None of these matrix results proves convergence of hidden-weight factor Adam.
+
+Complete final proofs are in `../manuscript/theory.tex`, `source_counterexample.tex`, and `nonlinear_projection.tex`. Historical numerical audit results are in `theory_numerical_audit.json`. The external spectral-source caveat is limited to the exact historical version and literal preprocessing assumptions stated in the appendix. Standard rotational invariance, not a new learner, gives the counterexample.

@@ -1,0 +1,10 @@
+{
+  "timestamp_utc": "2026-09-20T05:43:47.540865+00:00",
+  "status": "frozen_before_adaptive_seeds",
+  "files": {
+    "phase5/code/adaptive_quadratic.py": "1f20d35524bab744153de58916103f27be1a7fb14725f8f643f4c1494dba2d6e",
+    "phase5/code/quadratic_experiment.py": "0ea28d3a245c51534968e6b2d26ae7bd9ce3790693a86ae3bbff01852435c4e2",
+    "phase5/experiments/adaptive_confirmation.json": "581051a8ee74fb9091775c34b2ab886eb9f197d7e796727581c0f6f90a6df083",
+    "phase5/experiments/ADAPTIVE_PROTOCOL.md": "63ff1653d5ea490c7056930ae497febff3f285bb88bb7b89f42b7801fc78b22d"
+  }
+}

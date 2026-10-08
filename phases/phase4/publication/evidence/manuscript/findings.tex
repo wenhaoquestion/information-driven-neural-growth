@@ -1,0 +1,227 @@
+The main confirmation contains 192 task--seed--protocol runs, representing
+832 controller trajectories and 6,656 structural opportunities. The original
+research record reports reconstruction checks of all completed histories for
+actions, parameters, resource counts, and terminal risks. The archived research preparation separately replayed a representative
+complete trajectory, as detailed in the historical reproducibility record. Figures~\ref{fig:learning} and
+\ref{fig:decisions} display the full opportunity sequence, including holds.
+Table~\ref{tab:main-results} reports every main proposal rule, rather than
+selecting the best-performing rule per task.
+
+\begin{table}[tb]
+\centering\small
+\input{results_table}
+\caption{Mean final Brier risk over 16 new seeds per task. Width and fraction
+with at least two accepted growth events refer to the 16,384-label audit.
+Both columns fit on the same 2,048 examples and use eight fresh audit blocks.
+Uncertainty for the primary paired comparisons is in
+Table~\ref{tab:paired-results}; complete marginal intervals are in the CSV.}
+\label{tab:main-results}
+\end{table}
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{learning_trajectories.pdf}
+\caption{Measured ordinary-start trajectories at 16,384 audit labels per
+opportunity. Curves are mean retained risk and width; shaded bands are
+pointwise 95\% Student-$t$ intervals across 16 independent seeds. Risk
+integrates conditional label noise over 16,384 independent evaluation inputs.
+All methods coincide on null and linear tasks. The same predictor persists
+through a hold, while trial branches still consume computation.}
+\label{fig:learning}
+\end{figure}
+
+\paragraph{Repeated growth and genuine no-growth.}
+At the larger audit budget, the residual method accepts 20 additions across
+16 additive-task runs and 58 across 16 interaction-task runs. Nine of 16
+additive runs and all 16 interaction runs accept at least two additions.
+Mean final widths are 3.25 and 5.625; final risks are
+$0.13948\pm0.00280$ and $0.15067\pm0.00291$, where uncertainty denotes a
+95\% interval half-width. Growth and holding occur within the same histories;
+these are not restarts at independently constructed checkpoints. On both
+null and linear tasks every primary finite-bound trajectory retains width
+two and its warmup parameters. This prevents further overfitting but does
+not recover Bayes risk automatically: null risk is 0.25325, above the known
+0.25 Bayes risk because warmup itself was ungated.
+
+At 4,096 audit labels, no residual additive run grows and each interaction
+run grows exactly once, to width three. The interaction risk is 0.17538,
+compared with 0.15067 at the larger audit budget. Fitting data and proposal
+rules are fixed across this comparison, so the difference concerns the
+evidence protocol and its induced history, not extra fitting samples.
+It nevertheless costs four times as many audit labels. It is not a free
+improvement in training efficiency.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{decision_histories.pdf}
+\caption{Every primary residual trajectory at the larger audit budget.
+Green means accepted growth; amber means accepted continuation; light gray
+means the incumbent parameters are held. Rows are the 16 prespecified seeds,
+columns the eight decision opportunities. An external opportunity schedule
+exists, but actions and accepted final capacity are data-dependent.}
+\label{fig:decisions}
+\end{figure}
+
+\paragraph{Proposal information is not a general advantage.}
+Residual minus shuffled risk on the larger-audit additive task is
+$-0.003268\pm0.002547$. This is a favorable comparison at equal candidate
+optimization workload, with the caveat of descriptive multiple comparisons.
+It does not survive the stronger interpretation of beating random proposal
+addition: residual minus random is $+0.001813\pm0.002433$ on additive data
+and $+0.003168\pm0.002128$ on interaction data. The latter descriptive paired interval excludes zero in random's favor while spending less on
+candidate optimization. At the smaller audit budget, interaction residual
+minus random is also adverse, $+0.001528\pm0.000854$.
+The covariance rule is not reliably separated from the residual rule.
+SSD is much worse on this interaction task, but its failure cannot establish
+superiority over all growth principles: it perturbs a different restricted
+action family and nearly fails to grow. These observations favor retaining
+proposal alternatives instead of calling the selected residual proxy a
+validated information principle.
+
+\begin{table}[tb]
+\centering\scriptsize
+\input{paired_table}
+\caption{Residual minus comparator Brier risk at the larger audit budget:
+paired mean $\pm$ 95\% Student-$t$ half-width over 16 runs. Negative favors
+residual growth. ``Fixed matched tail'' compares both predictors after 600
+additional updates; other rows use final retained checkpoints. ``Large pool''
+is width ten trained offline from the full label pool at matched training/probe
+update proxy, with different minibatch optimization. Intervals are descriptive,
+not multiplicity-adjusted discoveries.}
+\label{tab:paired-results}
+\end{table}
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{attribution.pdf}
+\caption{Selected paired comparisons from Table~\ref{tab:paired-results}.
+Bars are 95\% intervals across seeds. The full-label-pool comparator changes
+data allocation and optimizer schedule. The two tail curves continue training
+without the gate and have no risk-monotonicity guarantee.}
+\label{fig:attribution}
+\end{figure}
+
+\paragraph{Capacity and optimization controls limit the attribution.}
+Compared with ungated width-two training, residual growth improves mean
+larger-audit risk by 0.00655 on additive data and 0.05952 on interaction data.
+Thus the implemented repeated process does realize useful new capacity on
+these tasks. At retrospectively matched final capacity and training/probe
+work, however, paired differences are
+$-0.000794\pm0.001643$ and $-0.000496\pm0.002836$: no resolved final-checkpoint
+advantage. After the 600-step tail the interaction comparison is modestly
+favorable, $-0.002268\pm0.002154$, while the additive interval spans zero.
+This isolated tail effect does not establish a general efficiency result.
+Full-batch training on 2,048 noisy labels can overfit both larger fixed
+networks and grown ones. The deployed checkpoint and ungated tail therefore
+must not be conflated.
+
+At a matched training/probe update proxy, an offline width-ten learner given
+the full fitting-plus-audit label pool beats the residual controller on all
+four tasks. On additive and interaction data, residual minus this comparator
+is $+0.007953\pm0.002875$ and $+0.010387\pm0.002514$ respectively. The
+corresponding fixed-pool risks are 0.13152 and 0.14028. These models use a
+different minibatch schedule and receive future audit labels at the outset;
+the result is an alternative end-of-lifetime resource allocation, not a
+causal estimate of the effect of labels alone. It prevents claiming a
+predictive-risk advantage at this total label and training budget. The fixed
+comparator deploys ten units, however, whereas the adaptive models average
+3.25 and 5.625; it does not dominate them simultaneously in inference capacity.
+
+An additional, explicitly post-hoc diagnostic addresses this capacity mismatch.
+For the 64 larger-audit residual runs, a fixed learner uses the same final
+width and initialization as the existing matched-width comparator, but trains
+from the whole label pool with the already specified minibatch schedule and
+adaptive training/probe budget. It actually consumes all 133,120 distinct
+labels in every run. Residual minus this same-width pool comparator is
+$+0.003111\pm0.000767$ on null data, $+0.001266\pm0.000415$ on linear data,
+$+0.003491\pm0.000860$ on additive data, and
+$+0.002246\pm0.001887$ on interaction data. This removes the deployed-width
+mismatch and reinforces the resource-allocation limitation. The comparator
+still receives labels offline, uses a different optimizer schedule, and
+knows final width retrospectively. It is a diagnostic added after review,
+not a preregistered primary finding or an online dominance theorem.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{resource_trajectories.pdf}
+\caption{Measured risk versus cumulative training and candidate-probe
+parameter--example updates at the larger audit budget. Points summarize
+16 trajectories. The fixed width-ten star uses the full label pool at the
+residual controller's terminal update proxy. The horizontal axis omits audit
+prediction work, matrix arithmetic, optimizer constants, and memory; these
+are separately recorded and this plot is not a matched-FLOP comparison.}
+\label{fig:resources}
+\end{figure}
+
+\paragraph{Rejection is partly a property of the chosen certificate.}
+For the primary residual method, 253 small-audit proposals improve on both
+incumbent and continuation by more than $\tau$ according to the independent
+input evaluator; 237 are declined. At the larger audit size, 168 proposals
+meet this evaluator criterion and 90 are declined. These counts are
+diagnostic estimates, not exact population facts. The final histories differ,
+so the two sets are not the same fixed proposal pool.
+
+The smaller-audit additive task contains 125 evaluator-positive proposals,
+all declined. Of these, 124 also have positive empirical cost-adjusted gains
+against both comparators; 116 would fail even a bound consisting only of
+the empirical-Bernstein linear term. The theoretical linear floor is
+$14\log(960)/(3(n_A-1))$, approximately 0.007825 at $n_A=4096$ and
+0.001956 at $n_A=16384$, before accounting for variance and the growth margin.
+Consequently these failures cannot be presented as empirical confirmation
+of a minimax information lower bound. They demonstrate conservatism of this
+valid sufficient bound in the realized training regime.
+
+Prediction movement and evaluator gain are separately logged for every
+pair. On positive nonlinear proposals their ratios are often moderately
+above the Bayes-refit identity $S=\Delta$, rather than uniformly exhibiting
+extreme cancellation. Figure~\ref{fig:evidence} displays the full spread
+including rejected positive proposals. A small gain alone does not diagnose
+whether the proposal is weak, the empirical evidence is noisy, or the
+implemented bound is unnecessarily loose.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{evidence_diagnostics.pdf}
+\caption{Measured evidence diagnostics. Left: the finite-bound radius versus
+evaluator gain over continuation for nonlinear residual proposals; the
+mean-gate radius is diagnostic only. Middle: audit prediction movement versus
+positive evaluator gain at the larger finite-bound audit; the dashed line is
+the Bayes-refit identity, not a fitted neural law. Right: final risk under
+small-audit finite bounds (blue), large-audit finite bounds (green), and the
+large-audit empirical-mean heuristic (red). All input-population quantities
+are Monte Carlo estimates; decisions use sampled audit labels.}
+\label{fig:evidence}
+\end{figure}
+
+The heuristic mean gate accepts 97 residual growth events and reaches
+mean widths 4.0625 and 6 on additive and interaction data, with risks
+0.13629 and 0.14713. It provides an attainable but uncertified reference.
+Twenty of its retained steps have a positive evaluator risk change, all
+smaller than 0.001. No residual finite-bound retained step has an evaluator
+risk increase. Neither observation replaces the population guarantee or
+constitutes an exact test of its coverage; the evaluator still samples inputs.
+
+\paragraph{The supplied-module evidence experiment.}
+Separate from hidden-parameter training, 16,000 exact-distribution Monte
+Carlo repetitions implement the tests in Theorems~\ref{thm:reset-cost} and
+\ref{thm:shared-evidence}, with $K\in\{2,4,8,16\}$, $\varepsilon=0.2$,
+and family error target 0.05. Signal, mixed, no-signal, and risk-neutral
+boundary laws are retained. Negative-binomial waiting counts, multinomial
+input counts, and binomial label counts are sufficient-statistic simulations
+of ordinary iid sampling; they do not supply exact label expectations to
+the tests. Module knots and amplitudes are nevertheless given, as stipulated
+by the theorem, and no hidden parameters are trained.
+
+At $K=16$ on the signal law, the reset procedure uses a mean 295,409 labels
+versus the shared procedure's fixed 41,354, a factor 7.14 with these
+conservative constants. Family correctness is 0.998 versus 1.000 over 1,000
+repetitions; zero observed errors do not imply zero error probability.
+At $K=2$ the shared sufficient bound costs more, 3,506 versus mean 2,952,
+which is retained in the plot. Direct ReLU, Brier-risk, variance, and KL
+identity checks agree to $5.6\cdot10^{-17}$. These validate the finite
+realization and simulation; the lower-bound proof supplies the scaling claim.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{evidence_diagnostic.pdf}
+\caption{Supplied-module audit experiment, not ordinary neural training.
+Theoretical expected costs and lower bounds are distinguished from 1,000-run
+Monte Carlo means. Error intervals retain uncertainty at zero observed
+failures. The shared batch is valid because every compared local action is
+precommitted, whereas the reset interface withholds off-action observations.}
+\label{fig:module-evidence}
+\end{figure}

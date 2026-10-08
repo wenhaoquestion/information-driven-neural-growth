@@ -1,0 +1,120 @@
+{
+  "status": "complete",
+  "scope": "finite numerical constructions and implementation checks; no neural training; no interval certificate",
+  "row_counts": {
+    "endpoint_polynomial": 7,
+    "interior_degree_width": 28,
+    "weighted_hinge": 72,
+    "spacing_weight": 24
+  },
+  "highest_endpoint_instance": {
+    "n": "8192",
+    "curvature_degree": "16384",
+    "delta": "1.9358768308681494e-05",
+    "inner_weight": "3.747619104292109e-10",
+    "rho_det": "12984.725258329005",
+    "rho_times_delta": "0.2513682878278757",
+    "stochastic_lower": "12586.639175396713",
+    "stoch_lower_times_delta": "0.24366183158147886",
+    "explicit_channel_upper": "205243.8174453091",
+    "feasible_upper": "12984.725258329005",
+    "opt2": "2.882121515961903e-14",
+    "opt3": "3.510618484557363e-20",
+    "opt2_normalized": "3.843070752997366e-21",
+    "opt3_normalized": "4.6811194976390694e-27",
+    "rho_over_r_logr": "7.690707998302465",
+    "quadrature_relative_crosscheck": "2.0248812808102778e-11",
+    "log_normalizer": "127.65204614524242",
+    "flat2": "((0, 1), (2, 3))",
+    "flat3": "((0,), (1, 2), (3,))"
+  },
+  "v1_sequence_rows": [
+    {
+      "n": "2048",
+      "curvature_degree": "8192",
+      "epsilon": "0.0595673358293703",
+      "epsilon_fraction_of_v1": "1.0",
+      "v1_sequence": "True",
+      "rho_det": "7.266445768627746",
+      "stochastic_lower": "4.587897470687682",
+      "stochastic_feasible_upper": "5.53026436137385",
+      "explicit_channel_upper": "5.53026436137385",
+      "hinge_rho_det": "7.266445768627272",
+      "leading_n_over_32logn": "8.393862056081241",
+      "opt2_normalized": "1.6669061923481373e-05",
+      "opt3_normalized": "8.872315680157252e-07",
+      "hier2_normalized": "0.0001211248344808751",
+      "hier3_normalized": "8.872315680157252e-07",
+      "normalization_curvature_upper": "124.97679670541815",
+      "quadrature_order": "4098",
+      "log_normalizer": "80.74007440427704"
+    },
+    {
+      "n": "4096",
+      "curvature_degree": "16384",
+      "epsilon": "0.032491274088747434",
+      "epsilon_fraction_of_v1": "1.0",
+      "v1_sequence": "True",
+      "rho_det": "14.10230827243995",
+      "stochastic_lower": "8.076891530063257",
+      "stochastic_feasible_upper": "9.02770688474074",
+      "explicit_channel_upper": "9.02770688474074",
+      "hinge_rho_det": "14.102308272442686",
+      "leading_n_over_32logn": "15.38874710281561",
+      "opt2_normalized": "4.520935807442955e-06",
+      "opt3_normalized": "1.3792804840664602e-07",
+      "hier2_normalized": "6.375563043647278e-05",
+      "hier3_normalized": "1.3792804840664602e-07",
+      "normalization_curvature_upper": "239.18333329076034",
+      "quadrature_order": "8194",
+      "log_normalizer": "87.9339221466589"
+    },
+    {
+      "n": "8192",
+      "curvature_degree": "32768",
+      "epsilon": "0.01759944013140486",
+      "epsilon_fraction_of_v1": "1.0",
+      "v1_sequence": "True",
+      "rho_det": "27.029001813407078",
+      "stochastic_lower": "14.583714805940438",
+      "stochastic_feasible_upper": "15.538330659007316",
+      "explicit_channel_upper": "15.538330659007316",
+      "hinge_rho_det": "27.029001813423598",
+      "leading_n_over_32logn": "28.409994651351898",
+      "opt2_normalized": "1.239189824791062e-06",
+      "opt3_normalized": "2.1067494902353365e-08",
+      "hier2_normalized": "3.3494064021433217e-05",
+      "hier3_normalized": "2.1067494902353365e-08",
+      "normalization_curvature_upper": "459.44637457866406",
+      "quadrature_order": "16386",
+      "log_normalizer": "95.1235184392657"
+    }
+  ],
+  "completed_stage_seconds": {
+    "correctness": 0.39443970799948147,
+    "weighted": 0.04354287500063947,
+    "polynomial": 21.09433879199969,
+    "endpoint": 9.588162209000075,
+    "endpoint_mp": 0.4269116249997751
+  },
+  "normalization_endpoint": "On original [0,1]: divide by M_bound=2*P_n(0)/Z_n+delta^2, an analytic global curvature upper bound. Do not reuse absolute costs for an affine-interior construction requiring global bounds outside the original hull.",
+  "proof_threshold_caveat": "The finite endpoint n<=8192 points do not satisfy every coarse sufficient inequality used in the asymptotic proof; n>=65536 is an audited conservative analytic threshold. Costs here computed directly.",
+  "checks": {
+    "correctness": "pass",
+    "endpoint_mp_max_relative_error": 1.3200247978652275e-14,
+    "endpoint_two_order_max_relative_error": 2.0248812808102778e-11,
+    "interior_two_order_max_relative_error": 4.271109678990139e-12
+  },
+  "deliverables": {
+    "report": "results/EXPERIMENT_REPORT.md",
+    "figures": [
+      "figures/endpoint_construction.pdf",
+      "figures/equal_mass_degree_width.pdf"
+    ],
+    "reproduce": "code/reproduce.sh",
+    "configuration": "configs/run_config.json"
+  },
+  "retained_initial_failures": [
+    "../../../TECHNICAL_NOTES.md#implementation-failures"
+  ]
+}

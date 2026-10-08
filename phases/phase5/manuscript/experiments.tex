@@ -1,0 +1,194 @@
+\section{A controlled learner with discovered quadratic directions}
+\label{sec:experiments}
+
+We next ask whether the distinction between raw target moments and residual
+moments improves an actual trained learner. This study implements the
+mechanisms as conventional ingredients; it is not a new spectral algorithm.
+No candidate receives a teacher direction. The principal negative result is
+that a better initial direction need not retain its advantage after fully
+trainable refitting, and an apparent final-risk benefit is sensitive to a
+simple replay control.
+
+\subsection{Frozen populations, data access and optimization}
+All inputs have distribution $N(0,I_{12})$. Two quadratic conditional means
+are $q_A(x)=x^\top A x-\operatorname{tr}(A)$, with nonzero eigenvalues
+$(.8,.45)$ and $(.65,-.5,.3,-.2)$, respectively. The first has no observation
+noise; the second has independent Gaussian noise with standard deviation
+$.3$. A null task has mean zero and noise standard deviation $.5$.
+The nonlinear task uses a hidden orthogonal rotation $z=U^\top x$ and mean
+$.8\tanh(1.5z_1)\tanh(1.5z_2)+.4\sin z_3$, with noise standard deviation
+$.2$. Task rotations are fixed independently of run seeds and hidden from
+all learners. All labels, teacher parameters and evaluator inputs are saved.
+
+The learned model is
+\[
+ f_{W,a,c}(x)=c+\sum_{j=1}^k a_j\{(w_j^\top x)^2-\|w_j\|^2\}.
+\]
+Every hidden vector, output coefficient and intercept trains. Initial
+vectors are normalized Gaussian draws and initial coefficients have standard
+deviation $.01$. Seven arrivals each reveal 1,024 labels. The current block
+and an old reservoir form the fitting pool; the block enters the reservoir
+only after fitting. Thus all 7,168 labels arrive at the same times, with no
+future data granted to the fixed comparator. Growing arms start at width
+one and receive six scheduled additions, ending at seven. This design isolates
+discovered directions; it does not claim autonomous width selection or safe
+rejection. New coefficients start at zero, preserving the current prediction
+before ordinary, potentially risk-increasing training.
+
+Seven arms compare: historical-moment eigenbirth, old-reservoir residual
+ eigenbirth, fresh-block residual eigenbirth, four learned residual probes,
+random growth with reservoirs of 128 and 138 examples, and a fixed width-seven
+online learner with 138-example replay. The historical arm stores 128 examples
+and $S_n=n^{-1}\sum_i y_i(x_ix_i^\top-I)/2$, and selects the eigenvector of
+largest absolute eigenvalue of $S_n-B$, where $B=\sum_j a_jw_jw_j^\top$.
+Residual eigenbirth instead forms
+$\{\overline{(y-f)x x^\top}-\overline{(y-f)}I\}/2$ on its permitted
+old reservoir or current block. It therefore includes the current intercept
+term. The zero-intercept theoretical variance formulas are not claimed as
+exact variance identities for every fitted checkpoint.
+
+Learned probes maximize squared empirical residual covariance divided by
+candidate second moment plus $.001$, with twenty steps and four random
+starts. This is an established residual-feature objective. Directions are
+selected from observations and then all network parameters are refitted.
+Random additions use the same type of ordinary initial direction. The fixed
+learner knows the prescribed capacity cap, not the teacher rank.
+
+Each arrival permits two million arithmetic-proxy units, including moment
+accumulation, candidate passes, eigendecomposition and fitting. Saved search
+work becomes additional training. Full-gradient work is charged at
+$3dk+4k+3$ per example; matrix and probe calculations have separate explicit
+charges in the runner. This is not matched hardware FLOPs. Persistent Adam
+uses learning rate $.015$, minibatches of at most 128, coefficients
+$(.9,.999)$, denominator constant $10^{-8}$, and gradient clipping at norm
+20. New-unit optimizer moments are zero; existing optimizer state persists.
+No hyperparameter was changed using development evaluator outcomes.
+
+Four development seeds on two tasks checked execution. The source,
+confirmation configuration and protocol were frozen at 05:40:48 UTC on
+20 September 2026, before seeds 820000--820011. The resulting 48 paired
+configurations comprise 336 trajectories and 2,352 primary events, completed
+in 21.47 seconds using two CPU workers. Quadratic-task risks are evaluated
+exactly as $2\|B-A\|_F^2+c^2+\sigma^2$; nonlinear-task risk uses 32,768
+independent evaluator inputs per seed and integrates label noise. Every
+trajectory is finalized before its evaluation. All reported intervals are
+descriptive 95\% Student-$t$ intervals across twelve independent seeds,
+without multiplicity adjustment.
+
+\subsection{Final risks and a failed attribution}
+\begin{table}[tb]
+\centering\small
+\input{quadratic_table.tex}
+\caption{Mean final population MSE, generated from the frozen raw results.
+All methods finish at width seven. The rank-two task is noiseless; the other
+quadratic noise floors are $.25$ and $.09$. Nonlinear risks here use the
+prespecified Monte Carlo evaluator. Full intervals and every paired contrast
+are supplied as CSV.}
+\label{tab:quadratic-results}
+\end{table}
+
+On the indefinite task, historical moments appear favorable against fresh
+residuals: their paired final-risk difference is $-.005366$, with interval
+$[-.008879,-.001853]$. Their difference from the 138-example random-growth
+arm is $-.005141\;[-.008227,-.002055]$. Those comparisons alone would support
+an overly strong interpretation. The 128-example random-growth arm also
+beats the 138-example arm by $-.005038\;[-.007834,-.002243]$, while its mean
+risk is $.097090$, almost the same as historical moments at $.096987$.
+Their exploratory paired historical-minus-random-128 difference is
+$-.000103\;[-.001961,.001756]$.
+The near memory-matched contrast therefore does not isolate useful historical
+information. Independent code review found a concrete batching confound:
+the 128-example reservoir creates a 1,152-row fitting pool, divisible by the
+128-row minibatch size; the 138-example reservoir creates 1,162 rows and an
+additional ten-row tail batch every epoch. The two random arms therefore
+perform 975 versus 1,034 Adam updates despite the same 124,285 fit-example
+accesses. Changes in update count, gradient noise and replay sample accompany
+the storage change. These results must not be interpreted as evidence that
+more memory harms learning. A separately frozen full-minibatch follow-up
+below tests this identified confound.
+
+On the noiseless rank-two task, every method reaches a small mean error,
+ranging from $1.25\times10^{-5}$ to $8.73\times10^{-5}$. The historical
+comparison with random 138 has interval
+$[-2.335,1.608]\times10^{-5}$; no final advantage is resolved. On the null
+task, all methods retain excess error above $.25$, illustrating that the
+scheduled-width study does not itself prevent needless capacity or
+optimization error. On the nonlinear task, historical moments versus random
+138 has difference $-.001038\;[-.006336,.004260]$, again unresolved.
+Intervals containing zero are not equivalence statements.
+
+The fixed width-seven learner has competitive mean risk on three tasks and
+a worse, variable mean on the indefinite task. The historical-minus-fixed
+indefinite interval, $[-.039426,.000845]$, includes zero. This is a competent
+online baseline under the specified optimizer and budget, not proof that
+fixed models are optimal or that growing models uniformly dominate them.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{quadratic_trajectories.pdf}
+\caption{Complete trained histories from saved outcomes. Bands are one
+standard error across independent runs. All growing arms have the same
+scheduled widths; improvements here concern direction and fitting mechanisms.
+The rank-two panel uses a logarithmic risk axis.}
+\end{figure}
+
+\subsection{Same-checkpoint directions and finite-time refitting}
+Lifetime histories diverge, so their final comparison cannot diagnose the
+quality of identical candidate sets. We therefore froze a separate,
+evaluator-only diagnostic. At every pre-growth checkpoint of the random-138
+trajectory, all five direction mechanisms see the same current predictor,
+optimizer state, retained rows and available data prefix. Each direction is
+then followed by identical fitting work and minibatch randomness. Candidate
+work is additional and logged, rather than claimed equal. Reconstructing a
+historical moment from the archive explicitly charges all prefix rereads;
+it does not purchase those labels again or retroactively give that storage
+to the primary random learner. This adds 1,440 trained diagnostic branches.
+
+For a quadratic task, the best possible output coefficient along a unit
+vector $w$ yields gain $2\{w^\top(A-B)w\}^2$. This is computed from teacher
+parameters only after training and never enters selection. Averaged first
+within each seed over six checkpoints, historical directions exceed random
+directions in this potential gain by $.08041\;[.04305,.11777]$ on rank-two
+data and $.13116\;[.11530,.14702]$ on indefinite data. These are strong
+initial direction differences.
+
+After identical fully trainable refitting, the corresponding
+historical-minus-random risk differences are
+$2.713\times10^{-5}$, with interval $[-1.111,6.536]\times10^{-5}$, and
+$-.002687\;[-.006656,.001282]$, respectively.
+Neither interval resolves a refitted advantage. Better direction alignment
+therefore does not by itself establish better learned models at the available
+training budget. This directly limits the proposed mechanism, rather than
+hiding a negative result behind a successful population direction formula.
+The trained hidden vectors may move substantially; this diagnostic does not
+claim that every source of erasure has been isolated.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{quadratic_checkpoint.pdf}
+\caption{Same-checkpoint diagnostics. Top: evaluator-only best gain along
+the supplied-to-refitting, data-discovered direction. Bottom: actual risk after
+identical nonlinear refitting. These are different objects, and the large
+initial direction gap need not remain a final learning advantage.}
+\end{figure}
+
+\subsection{Memory, computation and scientific limits}
+Every primary arm spends approximately fourteen million arithmetic-proxy
+units over its lifetime. Raw label accesses for fitting, proposals and moments
+are saved by sample ID. Historical retention uses
+$128(12+2)+144=1936$ eight-byte-word equivalents, including example labels and
+identities; random 138 uses 1932. At final width seven, both additionally use
+276 model/Adam words and six controller-state words. This comparison is nearly
+matched in persistent algorithmic storage, not peak process memory. Current
+blocks, duplicated fitting pools, candidate matrices, hidden optimizer state
+and branch workspaces are separately reported. Python, BLAS/eigensolver
+internals and evaluator/archive storage are excluded from the array ledger.
+
+Numerical differentiation checks the model gradient to maximum absolute
+error $3.52\times10^{-10}$ and a zero-output birth preserves predictions to
+$3.47\times10^{-17}$. Raw archives contain observations, teacher/evaluator
+information in separate fields, all parameters and optimizer snapshots,
+source/configuration hashes and resource logs. Full result reconstruction
+and external novelty review are separate from these implementation checks.
+The main experiment neither establishes a new theorem nor a general neural
+advantage. Its contribution to the investigation is a reproducible attempt
+to learn structural directions, a failed attribution control, and direct
+separation of population opportunity from finite-sample nonlinear learning.

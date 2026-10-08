@@ -1,0 +1,98 @@
+[
+  {
+    "id": "phase1",
+    "title": "The Price of Irreversible Representation Growth",
+    "tex": "phases/phase1/manuscript/main.tex",
+    "pdf": "phases/phase1/manuscript/main.pdf",
+    "bibliography": "bibtex",
+    "kind": "Working paper"
+  },
+  {
+    "id": "phase2",
+    "title": "From Represented Information to Realizable Neural Growth",
+    "tex": "phases/phase2/manuscript/main.tex",
+    "pdf": "phases/phase2/manuscript/main.pdf",
+    "bibliography": "bibtex",
+    "kind": "Working paper"
+  },
+  {
+    "id": "phase3",
+    "title": "The Cost of Evidence in Repeated Neural Growth",
+    "tex": "phases/phase3/manuscript/main.tex",
+    "pdf": "phases/phase3/manuscript/main.pdf",
+    "bibliography": "bibtex",
+    "kind": "Working paper"
+  },
+  {
+    "id": "phase4-finite",
+    "title": "Irreversible Representation Growth under Logarithmic Loss: Sharp Four-State Constants and Source-Mass Order",
+    "tex": "phases/phase4/publication/finite/manuscript/main.tex",
+    "pdf": "phases/phase4/publication/finite/manuscript/main.pdf",
+    "bibliography": "bibtex",
+    "kind": "Working paper"
+  },
+  {
+    "id": "phase4-evidence",
+    "title": "Evidence Interfaces in Repeated Neural Growth",
+    "tex": "phases/phase4/publication/evidence/manuscript/main.tex",
+    "pdf": "phases/phase4/publication/evidence/manuscript/main.pdf",
+    "bibliography": "bibtex",
+    "kind": "Working paper"
+  },
+  {
+    "id": "phase4-retained",
+    "title": "Retained Evidence for Changing Predictions: Exact Moment Ambiguity and Fresh-Audit Learning Diagnostics",
+    "tex": "phases/phase4/new_research/evidence/manuscript/main.tex",
+    "pdf": "phases/phase4/new_research/evidence/manuscript/main.pdf",
+    "bibliography": "embedded",
+    "kind": "Research report"
+  },
+  {
+    "id": "phase5",
+    "title": "Retained Moments and Discovered Neural Directions: Exact Failure Diagnostics and Online Learning Experiments",
+    "tex": "phases/phase5/manuscript/main.tex",
+    "pdf": "phases/phase5/output/pdf/retained_moments_and_discovered_directions.pdf",
+    "bibliography": "bibtex",
+    "kind": "Research report"
+  },
+  {
+    "id": "phase6",
+    "title": "Do Historical Moments Improve the Risk–Work Frontier? A Controlled Study of Scheduled Quadratic Network Growth",
+    "tex": "phases/phase6/manuscript/main.tex",
+    "pdf": "phases/phase6/output/pdf/phase6_working_paper.pdf",
+    "bibliography": "bibtex",
+    "kind": "Working paper"
+  },
+  {
+    "id": "phase7",
+    "title": "Exact Residual-Query Memory and Smooth-Loss Hierarchy Limits",
+    "tex": "phases/phase7/manuscript/main.tex",
+    "pdf": "phases/phase7/output/pdf/phase7_working_paper.pdf",
+    "bibliography": "bibtex",
+    "kind": "Working paper"
+  },
+  {
+    "id": "phase8",
+    "title": "Polynomial Curvature and Weight Dependence in Optimal Cardinality Hierarchies",
+    "tex": "phases/phase8/manuscript/curvature_hierarchy.tex",
+    "pdf": "phases/phase8/manuscript/curvature_hierarchy.pdf",
+    "bibliography": "embedded",
+    "kind": "Working paper"
+  },
+  {
+    "id": "phase9",
+    "title": "Sharp Weighted Four-State Hierarchy Prices for Polynomial Curvature",
+    "tex": "phases/phase9/manuscript/phase9_weighted_quartet.tex",
+    "pdf": "phases/phase9/manuscript/phase9_weighted_quartet.pdf",
+    "bibliography": "embedded",
+    "kind": "Working paper"
+  },
+  {
+    "id": "phase10",
+    "title": "Quartet Reduction and Sharp Degree Bounds at the Last Two Capacities",
+    "tex": "phases/phase10/manuscript/phase10_last_two_capacities.tex",
+    "pdf": "phases/phase10/manuscript/phase10_last_two_capacities.pdf",
+    "bibliography": "embedded",
+    "kind": "Working paper"
+  }
+]

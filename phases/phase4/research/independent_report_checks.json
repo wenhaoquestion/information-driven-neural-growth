@@ -1,0 +1,783 @@
+{
+  "scope": "Arithmetic from archived raw run JSON and CSV summaries; no neural retraining, no independent reconstruction of all candidate predictions or e-values.",
+  "status": "passed",
+  "run_rows": 336,
+  "raw_events": 8064,
+  "paired_contrasts": 128,
+  "maximum_raw_risk_discrepancy": 0.0,
+  "maximum_contrast_discrepancy": 0.0,
+  "sources": {
+    "run_summary.csv": "fd068626aa7ad7ce8c92b84b2d1d777165c9d5f0b3a722d8d7f3f6a5eda70293",
+    "paired_contrasts.csv": "d57a0ce319bd9e8e999df4d67dc73551120e2cdab5b20a6375f99a69222bb2f8"
+  },
+  "checks": [
+    {
+      "task": "null",
+      "metric": "final_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "tail_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "tail_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "tail_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "tail_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "tail_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "mean_event_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "mean_event_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "mean_event_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "mean_event_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "mean_event_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_width",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_width",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_width",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_width",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "null",
+      "metric": "final_width",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "tail_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "tail_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "tail_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "tail_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "tail_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "mean_event_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "mean_event_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "mean_event_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "mean_event_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "mean_event_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_width",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_width",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_width",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_width",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "additive",
+      "metric": "final_width",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "tail_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "tail_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "tail_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "tail_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "tail_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "mean_event_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "mean_event_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "mean_event_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "mean_event_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "mean_event_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_width",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_width",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_width",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_width",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "interaction",
+      "metric": "final_width",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "tail_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "tail_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "tail_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "tail_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "tail_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "tail_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "mean_event_risk",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "mean_event_risk",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "mean_event_risk",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "mean_event_risk",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "mean_event_risk",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "mean_event_risk",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_width",
+      "contrast": "release_residual",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_width",
+      "contrast": "release_random",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_width",
+      "contrast": "residual_minus_random_released",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed2",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed26",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_width",
+      "contrast": "released_residual_minus_fixed26_gated",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_width",
+      "contrast": "fixed26_gated_minus_online",
+      "maximum_discrepancy": 0.0
+    },
+    {
+      "task": "radial",
+      "metric": "final_width",
+      "contrast": "release_by_proposal_interaction",
+      "maximum_discrepancy": 0.0
+    }
+  ]
+}

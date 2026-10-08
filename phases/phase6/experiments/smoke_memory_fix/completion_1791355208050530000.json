@@ -1,0 +1,28 @@
+{
+  "complete": true,
+  "completed": 2,
+  "elapsed_seconds": 2.756023042020388,
+  "planned": 2,
+  "runs": [
+    {
+      "complete_seed_seconds": 1.335572624928318,
+      "data_sha256": "b43e95e50dfcbcf061de244228d83123651ee7461b3953439f464e54e50e9581",
+      "learner_seconds": 1.2723704882664606,
+      "result_file": "results/indefinite_noisy_96000000.json",
+      "result_sha256": "68a836352b110a5fb7e8392e0313ef5a406b3640058bcf7307c1e69c5439b3ff",
+      "seed": 96000000,
+      "status": "completed",
+      "task": "indefinite_noisy"
+    },
+    {
+      "complete_seed_seconds": 1.321576791931875,
+      "data_sha256": "0bf0fb92f0acfc5dbffd54e2a7efbb1c76119d5546e939ade75b3c57c1bff750",
+      "learner_seconds": 1.2688743859762326,
+      "result_file": "results/indefinite_noisy_96000001.json",
+      "result_sha256": "19a2335f93c7e80e274af7ae14ae6ab3d49a02ce08ff35203a22c727270465d2",
+      "seed": 96000001,
+      "status": "completed",
+      "task": "indefinite_noisy"
+    }
+  ]
+}

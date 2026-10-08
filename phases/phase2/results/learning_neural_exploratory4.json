@@ -1,0 +1,2067 @@
+{
+  "kind": "exploratory",
+  "config": {
+    "seeds": 4,
+    "presteps": 250,
+    "poststeps": 150,
+    "ntrain": 512,
+    "nscore": 512,
+    "ntest": 8192,
+    "width_initial": 2,
+    "width_final": 3,
+    "directions_per_unit": 4,
+    "lr": 0.025,
+    "perturbation_delta": 0.25,
+    "selection_information": "512 disjoint labelled score samples; no population probabilities",
+    "evaluation": "Monte Carlo X; exact conditional Bernoulli log loss using held-out teacher probabilities; not finite noisy test-label loss",
+    "compute_control": "parameter-compute approximation n*d*width*steps; candidate score overhead separate; oracle fits all candidates",
+    "rng_seeds": "17000 + repetition index; same independent data for paired methods within each regime"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "runs": [
+    {
+      "seed": 17000,
+      "regime": "teacher",
+      "pre_risk": 0.3956364564393919,
+      "continued_width2": 0.3968816113211664,
+      "fixed_width3_steps": 0.40071222461258454,
+      "fixed_width3_parameter_compute": 0.39656409107542356,
+      "selected": {
+        "conditional_information": {
+          "index": 0,
+          "risk": 0.39977806413677175
+        },
+        "activation_entropy": {
+          "index": 2,
+          "risk": 0.3998053841367687
+        },
+        "random": {
+          "index": 2,
+          "risk": 0.3998053841367687
+        },
+        "trained_validation": {
+          "index": 5,
+          "risk": 0.39821672329181806
+        },
+        "population_oracle": {
+          "index": 7,
+          "risk": 0.3976794374930863
+        }
+      },
+      "info_gain_correlation": 0.25718857287165614,
+      "entropy_gain_correlation": 0.019063004054389477,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.6020239271372694,
+            -0.3962873745907914,
+            -0.6931980293495918
+          ],
+          "information_nats": 0.014163754009474939,
+          "activation_entropy_nats": 0.9114371227227117,
+          "immediate_risk": 0.3955374267883668,
+          "post_risk": 0.39977806413677175,
+          "fit_score_risk": 0.38631736267456596,
+          "gain": -0.004141607697379868,
+          "prediction_change": 0.023897445162444485,
+          "parameter_displacement": 6.531500598619841
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            -0.5295383290634513,
+            -0.6390560408575129,
+            0.5578499213016067
+          ],
+          "information_nats": 0.006916077884895359,
+          "activation_entropy_nats": 0.9346000406547728,
+          "immediate_risk": 0.3953878363079955,
+          "post_risk": 0.40031545095475685,
+          "fit_score_risk": 0.38690805084979,
+          "gain": -0.004678994515364965,
+          "prediction_change": 0.025187901156758202,
+          "parameter_displacement": 6.897156598060938
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            -0.700579552656124,
+            0.037774856787446104,
+            -0.7125737509864035
+          ],
+          "information_nats": 0.007872968806683743,
+          "activation_entropy_nats": 0.9515037020584103,
+          "immediate_risk": 0.3958116574179352,
+          "post_risk": 0.3998053841367687,
+          "fit_score_risk": 0.3863232514479097,
+          "gain": -0.004168927697376812,
+          "prediction_change": 0.023924763396823485,
+          "parameter_displacement": 6.425035297023045
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            0.6143018788290199,
+            -0.783120027575033,
+            -0.09672757661606116
+          ],
+          "information_nats": 0.01188851120007446,
+          "activation_entropy_nats": 0.6562440396388887,
+          "immediate_risk": 0.3955845145705831,
+          "post_risk": 0.3997851519594279,
+          "fit_score_risk": 0.3862484238036118,
+          "gain": -0.004148695520035994,
+          "prediction_change": 0.023944998771155433,
+          "parameter_displacement": 6.497762752483464
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            0.239026824308387,
+            -0.8302405360867198,
+            -0.5035541971818758
+          ],
+          "information_nats": 0.003051518666057537,
+          "activation_entropy_nats": 0.6987622927877973,
+          "immediate_risk": 0.3955405914408966,
+          "post_risk": 0.408861658334916,
+          "fit_score_risk": 0.40211040772805584,
+          "gain": -0.013225201895524119,
+          "prediction_change": 0.03493396619178541,
+          "parameter_displacement": 5.955878897554309
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            -0.4083477743477834,
+            0.6261099723983354,
+            0.6642577795167831
+          ],
+          "information_nats": 0.003798629710538199,
+          "activation_entropy_nats": 0.697964967611062,
+          "immediate_risk": 0.39551799582895,
+          "post_risk": 0.39821672329181806,
+          "fit_score_risk": 0.3838420112135788,
+          "gain": -0.002580266852426183,
+          "prediction_change": 0.016696302287767542,
+          "parameter_displacement": 5.8230055402857825
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            -0.4570054949901529,
+            -0.6562284130571854,
+            0.6004250556441274
+          ],
+          "information_nats": 0.007717322234802933,
+          "activation_entropy_nats": 0.6690802240440424,
+          "immediate_risk": 0.39553716194433797,
+          "post_risk": 0.3976946015501185,
+          "fit_score_risk": 0.38400039107964334,
+          "gain": -0.0020581451107266058,
+          "prediction_change": 0.0160174643777504,
+          "parameter_displacement": 5.860841688302323
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            0.58710411502482,
+            0.5702889411816551,
+            -0.5745252663606969
+          ],
+          "information_nats": 0.0034623382443366548,
+          "activation_entropy_nats": 0.680560068313016,
+          "immediate_risk": 0.3955115670761258,
+          "post_risk": 0.3976794374930863,
+          "fit_score_risk": 0.38401180826217185,
+          "gain": -0.002042981053694437,
+          "prediction_change": 0.01600231917581916,
+          "parameter_displacement": 5.847729616090761
+        }
+      ]
+    },
+    {
+      "seed": 17001,
+      "regime": "teacher",
+      "pre_risk": 0.4024492560285436,
+      "continued_width2": 0.40465421666839774,
+      "fixed_width3_steps": 0.403190869566442,
+      "fixed_width3_parameter_compute": 0.4022180356924845,
+      "selected": {
+        "conditional_information": {
+          "index": 2,
+          "risk": 0.39785005091714104
+        },
+        "activation_entropy": {
+          "index": 6,
+          "risk": 0.40586266263741366
+        },
+        "random": {
+          "index": 1,
+          "risk": 0.40449133321593245
+        },
+        "trained_validation": {
+          "index": 2,
+          "risk": 0.39785005091714104
+        },
+        "population_oracle": {
+          "index": 2,
+          "risk": 0.39785005091714104
+        }
+      },
+      "info_gain_correlation": 0.8782387962155735,
+      "entropy_gain_correlation": -0.9314312892433747,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.22656100011373861,
+            0.1443594739617545,
+            -0.963239562883994
+          ],
+          "information_nats": 0.0050338351783479575,
+          "activation_entropy_nats": 0.9237102959671051,
+          "immediate_risk": 0.40142027246503215,
+          "post_risk": 0.4064668751628654,
+          "fit_score_risk": 0.3993782086254172,
+          "gain": -0.004017619134321804,
+          "prediction_change": 0.022948237646654965,
+          "parameter_displacement": 6.283234282146273
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            0.7207452730625659,
+            -0.13405930817519682,
+            0.6801134855666036
+          ],
+          "information_nats": 0.0035385589743481506,
+          "activation_entropy_nats": 0.8700440719230667,
+          "immediate_risk": 0.40225731942652776,
+          "post_risk": 0.40449133321593245,
+          "fit_score_risk": 0.39790660314776094,
+          "gain": -0.0020420771873888577,
+          "prediction_change": 0.027040336458249256,
+          "parameter_displacement": 5.089737726314586
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            0.7284181755787805,
+            -0.6797023509615536,
+            -0.08609108887578334
+          ],
+          "information_nats": 0.020038777912486577,
+          "activation_entropy_nats": 0.7136452588210309,
+          "immediate_risk": 0.40218124157113866,
+          "post_risk": 0.39785005091714104,
+          "fit_score_risk": 0.3949790790741219,
+          "gain": 0.004599205111402549,
+          "prediction_change": 0.030916533793912248,
+          "parameter_displacement": 5.49913797255451
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            -0.049482003335483825,
+            0.5617279743611978,
+            0.8258409133519435
+          ],
+          "information_nats": 0.0050567498238152635,
+          "activation_entropy_nats": 0.8746718368833344,
+          "immediate_risk": 0.40167144511483044,
+          "post_risk": 0.4048272448763628,
+          "fit_score_risk": 0.39811872502461065,
+          "gain": -0.0023779888478192013,
+          "prediction_change": 0.02791088586620276,
+          "parameter_displacement": 5.149240226549329
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            -0.8861315740407338,
+            -0.3753787114925674,
+            0.2717750107097251
+          ],
+          "information_nats": 0.005702087815923735,
+          "activation_entropy_nats": 0.9519041019623464,
+          "immediate_risk": 0.402317807824342,
+          "post_risk": 0.40507687372955914,
+          "fit_score_risk": 0.3981498340857107,
+          "gain": -0.00262761770101555,
+          "prediction_change": 0.025926676214316234,
+          "parameter_displacement": 5.013438922514833
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            0.13527065919318512,
+            0.9796625982483591,
+            0.1481993331790516
+          ],
+          "information_nats": 0.0044703610357437595,
+          "activation_entropy_nats": 0.963465575138077,
+          "immediate_risk": 0.4024407176227359,
+          "post_risk": 0.4056414560578505,
+          "fit_score_risk": 0.403051554349095,
+          "gain": -0.003192200029306924,
+          "prediction_change": 0.025176782196267428,
+          "parameter_displacement": 5.500442774649839
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            -0.3465732521458747,
+            -0.8588016547026815,
+            0.37728861469300684
+          ],
+          "information_nats": 0.010063427720333666,
+          "activation_entropy_nats": 0.964848517727991,
+          "immediate_risk": 0.4023914255123575,
+          "post_risk": 0.40586266263741366,
+          "fit_score_risk": 0.40328941948905084,
+          "gain": -0.003413406608870073,
+          "prediction_change": 0.02582671687615974,
+          "parameter_displacement": 5.732337102275291
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            -0.7151550050710391,
+            -0.3660752882739932,
+            -0.5954344649387998
+          ],
+          "information_nats": 0.0034335344211995377,
+          "activation_entropy_nats": 0.9644058143467751,
+          "immediate_risk": 0.40244244215952985,
+          "post_risk": 0.40567135359224893,
+          "fit_score_risk": 0.4030298608681383,
+          "gain": -0.0032220975637053395,
+          "prediction_change": 0.025093950209907012,
+          "parameter_displacement": 5.580012420932106
+        }
+      ]
+    },
+    {
+      "seed": 17002,
+      "regime": "teacher",
+      "pre_risk": 0.3924180573575981,
+      "continued_width2": 0.39304336686578556,
+      "fixed_width3_steps": 0.3999433547235592,
+      "fixed_width3_parameter_compute": 0.4063286619968953,
+      "selected": {
+        "conditional_information": {
+          "index": 7,
+          "risk": 0.39618148512671636
+        },
+        "activation_entropy": {
+          "index": 3,
+          "risk": 0.397045766017449
+        },
+        "random": {
+          "index": 3,
+          "risk": 0.397045766017449
+        },
+        "trained_validation": {
+          "index": 6,
+          "risk": 0.3961673454288631
+        },
+        "population_oracle": {
+          "index": 6,
+          "risk": 0.3961673454288631
+        }
+      },
+      "info_gain_correlation": 0.17057411271829634,
+      "entropy_gain_correlation": -0.6875728447891007,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.623265798018478,
+            0.7627875230366991,
+            0.17232219740917637
+          ],
+          "information_nats": 0.010328445737633385,
+          "activation_entropy_nats": 0.947609865233084,
+          "immediate_risk": 0.39225660024666975,
+          "post_risk": 0.39673211195010794,
+          "fit_score_risk": 0.3524888218849066,
+          "gain": -0.004314054592509831,
+          "prediction_change": 0.028457532689346466,
+          "parameter_displacement": 5.415555029824182
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            0.27283339511763477,
+            0.8780675350432361,
+            0.3931403596830017
+          ],
+          "information_nats": 0.01051372658639593,
+          "activation_entropy_nats": 0.9268499684353024,
+          "immediate_risk": 0.392367256261796,
+          "post_risk": 0.39691006615164226,
+          "fit_score_risk": 0.3525502658442171,
+          "gain": -0.0044920087940441555,
+          "prediction_change": 0.029120007137728735,
+          "parameter_displacement": 5.6762009271602745
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            -0.21929429764059977,
+            0.9117286327697298,
+            -0.34736279479839993
+          ],
+          "information_nats": 0.00867184741654443,
+          "activation_entropy_nats": 0.8927022666312785,
+          "immediate_risk": 0.3923417092960121,
+          "post_risk": 0.39729907754928406,
+          "fit_score_risk": 0.35271528623919235,
+          "gain": -0.004881020191685959,
+          "prediction_change": 0.030034035692976215,
+          "parameter_displacement": 6.136103549689748
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            0.32715109383156976,
+            0.7784615464332745,
+            -0.535695606225702
+          ],
+          "information_nats": 0.004107044099901503,
+          "activation_entropy_nats": 0.9692292596996992,
+          "immediate_risk": 0.3921291523219965,
+          "post_risk": 0.397045766017449,
+          "fit_score_risk": 0.3525616458324952,
+          "gain": -0.004627708659850904,
+          "prediction_change": 0.02923118416704109,
+          "parameter_displacement": 5.864066770361262
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            0.5221531936046526,
+            0.38933736610926195,
+            0.7587967170194957
+          ],
+          "information_nats": 0.010849612368446029,
+          "activation_entropy_nats": 0.8036661595735242,
+          "immediate_risk": 0.39251760117575163,
+          "post_risk": 0.39627581772121545,
+          "fit_score_risk": 0.35067626444512545,
+          "gain": -0.0038577603636173463,
+          "prediction_change": 0.016957057665946212,
+          "parameter_displacement": 5.074923011001836
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            -0.8055560865769252,
+            0.3779300308340006,
+            -0.456342287293957
+          ],
+          "information_nats": 0.005884436252904543,
+          "activation_entropy_nats": 0.7048776316167898,
+          "immediate_risk": 0.3924810632120571,
+          "post_risk": 0.39645276485234787,
+          "fit_score_risk": 0.3508861251740302,
+          "gain": -0.004034707494749767,
+          "prediction_change": 0.017446004022120508,
+          "parameter_displacement": 5.601651339386614
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            0.6845346093531068,
+            0.4322443947115274,
+            0.5870069436031016
+          ],
+          "information_nats": 0.006148739613889806,
+          "activation_entropy_nats": 0.8196044495243695,
+          "immediate_risk": 0.39256306109338046,
+          "post_risk": 0.3961673454288631,
+          "fit_score_risk": 0.35064711729311504,
+          "gain": -0.003749288071265011,
+          "prediction_change": 0.01670202980828614,
+          "parameter_displacement": 5.006819923324215
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            0.722059183554931,
+            0.030565293096370388,
+            -0.6911557699259404
+          ],
+          "information_nats": 0.011040179733057315,
+          "activation_entropy_nats": 0.8047686597065533,
+          "immediate_risk": 0.3922520945287449,
+          "post_risk": 0.39618148512671636,
+          "fit_score_risk": 0.3507118251598952,
+          "gain": -0.003763427769118255,
+          "prediction_change": 0.01690850887625878,
+          "parameter_displacement": 5.2316051204876866
+        }
+      ]
+    },
+    {
+      "seed": 17003,
+      "regime": "teacher",
+      "pre_risk": 0.40312805386420814,
+      "continued_width2": 0.4100563471020243,
+      "fixed_width3_steps": 0.4055128742040329,
+      "fixed_width3_parameter_compute": 0.40246541503402633,
+      "selected": {
+        "conditional_information": {
+          "index": 1,
+          "risk": 0.4131230301017356
+        },
+        "activation_entropy": {
+          "index": 3,
+          "risk": 0.4125353862720652
+        },
+        "random": {
+          "index": 5,
+          "risk": 0.4101987111609007
+        },
+        "trained_validation": {
+          "index": 6,
+          "risk": 0.41021206792601717
+        },
+        "population_oracle": {
+          "index": 7,
+          "risk": 0.4100180050588813
+        }
+      },
+      "info_gain_correlation": -0.37241599993489344,
+      "entropy_gain_correlation": -0.9648883743995131,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.6854945427104296,
+            -0.45433147190967904,
+            0.5689289459559986
+          ],
+          "information_nats": 0.008679411784470981,
+          "activation_entropy_nats": 0.9364135903437603,
+          "immediate_risk": 0.4029041796746996,
+          "post_risk": 0.413063595231821,
+          "fit_score_risk": 0.4709227936300016,
+          "gain": -0.009935541367612877,
+          "prediction_change": 0.029922056488400264,
+          "parameter_displacement": 4.704177858839764
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            0.12569909358243264,
+            -0.48799285621447075,
+            0.8637492171667641
+          ],
+          "information_nats": 0.01851072778638874,
+          "activation_entropy_nats": 0.9206654608711866,
+          "immediate_risk": 0.40288708106672744,
+          "post_risk": 0.4131230301017356,
+          "fit_score_risk": 0.4710830076281645,
+          "gain": -0.009994976237527486,
+          "prediction_change": 0.02982217215834024,
+          "parameter_displacement": 4.71045036099421
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            0.5493264032278127,
+            -0.8226928687394051,
+            0.14634529866764626
+          ],
+          "information_nats": 0.017453319365990445,
+          "activation_entropy_nats": 0.9302565575867657,
+          "immediate_risk": 0.4030208315771005,
+          "post_risk": 0.41270723629648765,
+          "fit_score_risk": 0.47015125886570575,
+          "gain": -0.00957918243227951,
+          "prediction_change": 0.029857728547889387,
+          "parameter_displacement": 4.765289422387015
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            0.49479150818406725,
+            0.6894212655897813,
+            -0.5290365601558369
+          ],
+          "information_nats": 0.009946963856261083,
+          "activation_entropy_nats": 0.979144285504072,
+          "immediate_risk": 0.4033627484042389,
+          "post_risk": 0.4125353862720652,
+          "fit_score_risk": 0.4704254838883034,
+          "gain": -0.009407332407857072,
+          "prediction_change": 0.029592956438890157,
+          "parameter_displacement": 4.8305613502299005
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            0.3502245415413292,
+            0.9153771012463233,
+            -0.19856367496610242
+          ],
+          "information_nats": 0.011475438370157458,
+          "activation_entropy_nats": 0.6845486730940646,
+          "immediate_risk": 0.40254210112458033,
+          "post_risk": 0.41018304622042234,
+          "fit_score_risk": 0.46057366670795913,
+          "gain": -0.007054992356214207,
+          "prediction_change": 0.027328619870614426,
+          "parameter_displacement": 6.2720894407835175
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            0.3319283210767346,
+            0.2659827777483354,
+            0.9050285915972268
+          ],
+          "information_nats": 0.012148978154458919,
+          "activation_entropy_nats": 0.724648300104533,
+          "immediate_risk": 0.4029078548130858,
+          "post_risk": 0.4101987111609007,
+          "fit_score_risk": 0.4606940394411679,
+          "gain": -0.00707065729669254,
+          "prediction_change": 0.027140723220961907,
+          "parameter_displacement": 6.263247009226113
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            -0.2878436911999824,
+            -0.8554464090556199,
+            0.43053159079237635
+          ],
+          "information_nats": 0.011954343363532087,
+          "activation_entropy_nats": 0.6807675502606148,
+          "immediate_risk": 0.4024835752945538,
+          "post_risk": 0.41021206792601717,
+          "fit_score_risk": 0.4605286554423778,
+          "gain": -0.00708401406180903,
+          "prediction_change": 0.027297691438300575,
+          "parameter_displacement": 6.312833367365953
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            0.8533782127974371,
+            0.2864287272648611,
+            -0.4355504679369361
+          ],
+          "information_nats": 0.0097573918985203,
+          "activation_entropy_nats": 0.7014200983167215,
+          "immediate_risk": 0.40243214692121637,
+          "post_risk": 0.4100180050588813,
+          "fit_score_risk": 0.4609020355977588,
+          "gain": -0.006889951194673172,
+          "prediction_change": 0.02616247314583687,
+          "parameter_displacement": 6.169732156703533
+        }
+      ]
+    },
+    {
+      "seed": 17000,
+      "regime": "localized",
+      "pre_risk": 0.5822690968105512,
+      "continued_width2": 0.5962609943443207,
+      "fixed_width3_steps": 0.4950264365611641,
+      "fixed_width3_parameter_compute": 0.5067239206778416,
+      "selected": {
+        "conditional_information": {
+          "index": 5,
+          "risk": 0.5565653768542452
+        },
+        "activation_entropy": {
+          "index": 3,
+          "risk": 0.5807221899816412
+        },
+        "random": {
+          "index": 2,
+          "risk": 0.5935658721764119
+        },
+        "trained_validation": {
+          "index": 6,
+          "risk": 0.5460185246548886
+        },
+        "population_oracle": {
+          "index": 6,
+          "risk": 0.5460185246548886
+        }
+      },
+      "info_gain_correlation": 0.005674383702907845,
+      "entropy_gain_correlation": -0.9696040240047582,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.6020239271372694,
+            -0.3962873745907914,
+            -0.6931980293495918
+          ],
+          "information_nats": 0.01607219765362521,
+          "activation_entropy_nats": 0.8196044495243695,
+          "immediate_risk": 0.5819928836396696,
+          "post_risk": 0.5791684953240136,
+          "fit_score_risk": 0.5898755602518952,
+          "gain": 0.0031006014865375686,
+          "prediction_change": 0.06087512104028179,
+          "parameter_displacement": 6.142420166651646
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            -0.5295383290634513,
+            -0.6390560408575129,
+            0.5578499213016067
+          ],
+          "information_nats": 0.001899971692712242,
+          "activation_entropy_nats": 0.8305141715402777,
+          "immediate_risk": 0.5820135766754417,
+          "post_risk": 0.5818698417975005,
+          "fit_score_risk": 0.59033652278736,
+          "gain": 0.0003992550130507144,
+          "prediction_change": 0.0474507100030483,
+          "parameter_displacement": 6.179560058270159
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            -0.700579552656124,
+            0.037774856787446104,
+            -0.7125737509864035
+          ],
+          "information_nats": 0.009050542113994024,
+          "activation_entropy_nats": 0.8893531860193997,
+          "immediate_risk": 0.5818075473039803,
+          "post_risk": 0.5935658721764119,
+          "fit_score_risk": 0.6092804330099659,
+          "gain": -0.011296775365860712,
+          "prediction_change": 0.02982306685329899,
+          "parameter_displacement": 5.564667647230979
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            0.6143018788290199,
+            -0.783120027575033,
+            -0.09672757661606116
+          ],
+          "information_nats": 0.023314122978951857,
+          "activation_entropy_nats": 0.8920713795717969,
+          "immediate_risk": 0.5817101766394013,
+          "post_risk": 0.5807221899816412,
+          "fit_score_risk": 0.5915153253103288,
+          "gain": 0.0015469068289100107,
+          "prediction_change": 0.06113882109747629,
+          "parameter_displacement": 5.96182324814133
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            0.239026824308387,
+            -0.8302405360867198,
+            -0.5035541971818758
+          ],
+          "information_nats": 0.023394172734036336,
+          "activation_entropy_nats": 0.6638082408546171,
+          "immediate_risk": 0.5816507826017427,
+          "post_risk": 0.5540546578921332,
+          "fit_score_risk": 0.5734540146683356,
+          "gain": 0.028214438918418017,
+          "prediction_change": 0.1109477846847613,
+          "parameter_displacement": 6.3534561479109515
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            -0.4083477743477834,
+            0.6261099723983354,
+            0.6642577795167831
+          ],
+          "information_nats": 0.023937108312869174,
+          "activation_entropy_nats": 0.6741099206121993,
+          "immediate_risk": 0.5816270703824737,
+          "post_risk": 0.5565653768542452,
+          "fit_score_risk": 0.5750824759655139,
+          "gain": 0.025703719956305937,
+          "prediction_change": 0.11060661570873717,
+          "parameter_displacement": 6.361891493057178
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            -0.4570054949901529,
+            -0.6562284130571854,
+            0.6004250556441274
+          ],
+          "information_nats": 0.005156370587760525,
+          "activation_entropy_nats": 0.5325344838630166,
+          "immediate_risk": 0.5820800963380849,
+          "post_risk": 0.5460185246548886,
+          "fit_score_risk": 0.5625822773656719,
+          "gain": 0.03625057215566252,
+          "prediction_change": 0.11845606584372653,
+          "parameter_displacement": 6.586039434712443
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            0.58710411502482,
+            0.5702889411816551,
+            -0.5745252663606969
+          ],
+          "information_nats": 0.004601849318082012,
+          "activation_entropy_nats": 0.5863611488411086,
+          "immediate_risk": 0.5819945315867854,
+          "post_risk": 0.5468170829223574,
+          "fit_score_risk": 0.5642773662390779,
+          "gain": 0.035452013888193745,
+          "prediction_change": 0.1180366054813582,
+          "parameter_displacement": 6.542957265665831
+        }
+      ]
+    },
+    {
+      "seed": 17001,
+      "regime": "localized",
+      "pre_risk": 0.552568357136461,
+      "continued_width2": 0.5548670459174116,
+      "fixed_width3_steps": 0.48970736191391145,
+      "fixed_width3_parameter_compute": 0.48866854754539824,
+      "selected": {
+        "conditional_information": {
+          "index": 3,
+          "risk": 0.47265235093850166
+        },
+        "activation_entropy": {
+          "index": 2,
+          "risk": 0.4729847067327519
+        },
+        "random": {
+          "index": 1,
+          "risk": 0.47367690685529695
+        },
+        "trained_validation": {
+          "index": 2,
+          "risk": 0.4729847067327519
+        },
+        "population_oracle": {
+          "index": 3,
+          "risk": 0.47265235093850166
+        }
+      },
+      "info_gain_correlation": 0.8565022440397099,
+      "entropy_gain_correlation": 0.9922557216594504,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.22656100011373861,
+            0.1443594739617545,
+            -0.963239562883994
+          ],
+          "information_nats": 0.01371381415628867,
+          "activation_entropy_nats": 1.052765677386352,
+          "immediate_risk": 0.5517056198843451,
+          "post_risk": 0.4731835910461525,
+          "fit_score_risk": 0.45696009653067904,
+          "gain": 0.07938476609030853,
+          "prediction_change": 0.1640549918554552,
+          "parameter_displacement": 5.451868344376401
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            0.7207452730625659,
+            -0.13405930817519682,
+            0.6801134855666036
+          ],
+          "information_nats": 0.02060534350768027,
+          "activation_entropy_nats": 1.0644009126523373,
+          "immediate_risk": 0.5523471199450056,
+          "post_risk": 0.47367690685529695,
+          "fit_score_risk": 0.45752058487266034,
+          "gain": 0.07889145028116407,
+          "prediction_change": 0.16402424489992556,
+          "parameter_displacement": 5.416831133802829
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            0.7284181755787805,
+            -0.6797023509615536,
+            -0.08609108887578334
+          ],
+          "information_nats": 0.02551295417169711,
+          "activation_entropy_nats": 1.0724652778040307,
+          "immediate_risk": 0.5525054619760297,
+          "post_risk": 0.4729847067327519,
+          "fit_score_risk": 0.4566149378385359,
+          "gain": 0.07958365040370913,
+          "prediction_change": 0.16382993533120627,
+          "parameter_displacement": 5.363259233843734
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            -0.049482003335483825,
+            0.5617279743611978,
+            0.8258409133519435
+          ],
+          "information_nats": 0.038196132508047945,
+          "activation_entropy_nats": 1.0719716601679161,
+          "immediate_risk": 0.5511677715369325,
+          "post_risk": 0.47265235093850166,
+          "fit_score_risk": 0.45666330176043257,
+          "gain": 0.07991600619795936,
+          "prediction_change": 0.163879685438018,
+          "parameter_displacement": 5.384446916817653
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            -0.8861315740407338,
+            -0.3753787114925674,
+            0.2717750107097251
+          ],
+          "information_nats": 0.0026736101061618106,
+          "activation_entropy_nats": 0.5320230756141011,
+          "immediate_risk": 0.552096047928762,
+          "post_risk": 0.5646917264613565,
+          "fit_score_risk": 0.551669273490198,
+          "gain": -0.012123369324895439,
+          "prediction_change": 0.03172824580171234,
+          "parameter_displacement": 3.9616526172970685
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            0.13527065919318512,
+            0.9796625982483591,
+            0.1481993331790516
+          ],
+          "information_nats": 0.00316476201705567,
+          "activation_entropy_nats": 0.5438694260504592,
+          "immediate_risk": 0.5530047452041628,
+          "post_risk": 0.5647110442380382,
+          "fit_score_risk": 0.5511162809684931,
+          "gain": -0.012142687101577176,
+          "prediction_change": 0.03196757181111465,
+          "parameter_displacement": 4.0329857594575245
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            -0.3465732521458747,
+            -0.8588016547026815,
+            0.37728861469300684
+          ],
+          "information_nats": 0.0013226838085584787,
+          "activation_entropy_nats": 0.5445089017353929,
+          "immediate_risk": 0.551506179463698,
+          "post_risk": 0.5666100029196403,
+          "fit_score_risk": 0.5521896106670452,
+          "gain": -0.014041645783179235,
+          "prediction_change": 0.03283096109459865,
+          "parameter_displacement": 4.216889685592658
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            -0.7151550050710391,
+            -0.3660752882739932,
+            -0.5954344649387998
+          ],
+          "information_nats": 0.006225230421109914,
+          "activation_entropy_nats": 0.6417233972980023,
+          "immediate_risk": 0.5530105165037849,
+          "post_risk": 0.5648736422790779,
+          "fit_score_risk": 0.551178908726147,
+          "gain": -0.012305285142616862,
+          "prediction_change": 0.032031847428036844,
+          "parameter_displacement": 3.9758020860688608
+        }
+      ]
+    },
+    {
+      "seed": 17002,
+      "regime": "localized",
+      "pre_risk": 0.533059229667485,
+      "continued_width2": 0.5354041731118088,
+      "fixed_width3_steps": 0.4599865149874749,
+      "fixed_width3_parameter_compute": 0.46293692909468553,
+      "selected": {
+        "conditional_information": {
+          "index": 7,
+          "risk": 0.4598801351707513
+        },
+        "activation_entropy": {
+          "index": 7,
+          "risk": 0.4598801351707513
+        },
+        "random": {
+          "index": 3,
+          "risk": 0.537683351185396
+        },
+        "trained_validation": {
+          "index": 5,
+          "risk": 0.46018390058449876
+        },
+        "population_oracle": {
+          "index": 7,
+          "risk": 0.4598801351707513
+        }
+      },
+      "info_gain_correlation": 0.359092553139672,
+      "entropy_gain_correlation": 0.9587659981825294,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.623265798018478,
+            0.7627875230366991,
+            0.17232219740917637
+          ],
+          "information_nats": 0.015838717417431522,
+          "activation_entropy_nats": 0.521048805576923,
+          "immediate_risk": 0.5324858205361844,
+          "post_risk": 0.5383787645490039,
+          "fit_score_risk": 0.5317954863143848,
+          "gain": -0.005319534881518928,
+          "prediction_change": 0.09601359249463201,
+          "parameter_displacement": 5.819797536724329
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            0.27283339511763477,
+            0.8780675350432361,
+            0.3931403596830017
+          ],
+          "information_nats": 0.007382425068761145,
+          "activation_entropy_nats": 0.539842117324011,
+          "immediate_risk": 0.5325354581849308,
+          "post_risk": 0.5359002132571942,
+          "fit_score_risk": 0.5261098898512495,
+          "gain": -0.0028409835897091895,
+          "prediction_change": 0.04561606766176789,
+          "parameter_displacement": 4.012606038193819
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            -0.21929429764059977,
+            0.9117286327697298,
+            -0.34736279479839993
+          ],
+          "information_nats": 0.009500070882781854,
+          "activation_entropy_nats": 0.6769371821303177,
+          "immediate_risk": 0.5327033910750816,
+          "post_risk": 0.5358654567716394,
+          "fit_score_risk": 0.5261643730411774,
+          "gain": -0.0028062271041544573,
+          "prediction_change": 0.04606809275626225,
+          "parameter_displacement": 4.039077671815502
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            0.32715109383156976,
+            0.7784615464332745,
+            -0.535695606225702
+          ],
+          "information_nats": 0.025198514008738238,
+          "activation_entropy_nats": 0.673288666411606,
+          "immediate_risk": 0.5327264997296095,
+          "post_risk": 0.537683351185396,
+          "fit_score_risk": 0.5311559604234888,
+          "gain": -0.0046241215179110284,
+          "prediction_change": 0.09537709775160956,
+          "parameter_displacement": 5.61868802676945
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            0.5221531936046526,
+            0.38933736610926195,
+            0.7587967170194957
+          ],
+          "information_nats": 0.015700161167791837,
+          "activation_entropy_nats": 0.991336131185174,
+          "immediate_risk": 0.5336852197343833,
+          "post_risk": 0.4600785217235602,
+          "fit_score_risk": 0.45859891506626227,
+          "gain": 0.0729807079439248,
+          "prediction_change": 0.12896200495984284,
+          "parameter_displacement": 5.476783187803743
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            -0.8055560865769252,
+            0.3779300308340006,
+            -0.456342287293957
+          ],
+          "information_nats": 0.015391679724128492,
+          "activation_entropy_nats": 0.9230161787100133,
+          "immediate_risk": 0.5330279430146894,
+          "post_risk": 0.46018390058449876,
+          "fit_score_risk": 0.4570702025161191,
+          "gain": 0.07287532908298622,
+          "prediction_change": 0.13021942649958737,
+          "parameter_displacement": 5.640271477737586
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            0.6845346093531068,
+            0.4322443947115274,
+            0.5870069436031016
+          ],
+          "information_nats": 0.018395965882839812,
+          "activation_entropy_nats": 0.9810106692525564,
+          "immediate_risk": 0.5334886364332103,
+          "post_risk": 0.46001568926282316,
+          "fit_score_risk": 0.45808161923886515,
+          "gain": 0.07304354040466182,
+          "prediction_change": 0.12927137421202886,
+          "parameter_displacement": 5.508093869312858
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            0.722059183554931,
+            0.030565293096370388,
+            -0.6911557699259404
+          ],
+          "information_nats": 0.027560614296410362,
+          "activation_entropy_nats": 1.0110398319193161,
+          "immediate_risk": 0.5328577605736683,
+          "post_risk": 0.4598801351707513,
+          "fit_score_risk": 0.4570704769331666,
+          "gain": 0.07317909449673365,
+          "prediction_change": 0.13032500419510348,
+          "parameter_displacement": 5.6197307275496975
+        }
+      ]
+    },
+    {
+      "seed": 17003,
+      "regime": "localized",
+      "pre_risk": 0.5603828260859698,
+      "continued_width2": 0.5621690497453555,
+      "fixed_width3_steps": 0.4743378599982727,
+      "fixed_width3_parameter_compute": 0.4766540711546212,
+      "selected": {
+        "conditional_information": {
+          "index": 5,
+          "risk": 0.5614975114809493
+        },
+        "activation_entropy": {
+          "index": 3,
+          "risk": 0.5647837339501851
+        },
+        "random": {
+          "index": 5,
+          "risk": 0.5614975114809493
+        },
+        "trained_validation": {
+          "index": 2,
+          "risk": 0.5649130928733355
+        },
+        "population_oracle": {
+          "index": 6,
+          "risk": 0.5604185142407843
+        }
+      },
+      "info_gain_correlation": 0.2899231490384196,
+      "entropy_gain_correlation": -0.9726936575690742,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.6854945427104296,
+            -0.45433147190967904,
+            0.5689289459559986
+          ],
+          "information_nats": 0.0028796176148986477,
+          "activation_entropy_nats": 0.9256819080958929,
+          "immediate_risk": 0.5600724149130538,
+          "post_risk": 0.5651753122068803,
+          "fit_score_risk": 0.5567773507036093,
+          "gain": -0.004792486120910544,
+          "prediction_change": 0.06233818576947814,
+          "parameter_displacement": 4.55400783869571
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            0.12569909358243264,
+            -0.48799285621447075,
+            0.8637492171667641
+          ],
+          "information_nats": 0.0190522573997439,
+          "activation_entropy_nats": 0.8404513380763226,
+          "immediate_risk": 0.5599502410269366,
+          "post_risk": 0.5649115052596847,
+          "fit_score_risk": 0.5569042045777064,
+          "gain": -0.004528679173714911,
+          "prediction_change": 0.06252517137072959,
+          "parameter_displacement": 4.477942572590664
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            0.5493264032278127,
+            -0.8226928687394051,
+            0.14634529866764626
+          ],
+          "information_nats": 0.009464216925506981,
+          "activation_entropy_nats": 0.9173024859117497,
+          "immediate_risk": 0.5595969960389318,
+          "post_risk": 0.5649130928733355,
+          "fit_score_risk": 0.5566321286824023,
+          "gain": -0.004530266787365678,
+          "prediction_change": 0.06216822956891532,
+          "parameter_displacement": 4.351034113919684
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            0.49479150818406725,
+            0.6894212655897813,
+            -0.5290365601558369
+          ],
+          "information_nats": 0.015862795660009893,
+          "activation_entropy_nats": 0.9549102586590466,
+          "immediate_risk": 0.5596152468099387,
+          "post_risk": 0.5647837339501851,
+          "fit_score_risk": 0.5566437389396632,
+          "gain": -0.00440090786421532,
+          "prediction_change": 0.0622896923623596,
+          "parameter_displacement": 4.4220311620435675
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            0.3502245415413292,
+            0.9153771012463233,
+            -0.19856367496610242
+          ],
+          "information_nats": 0.013435630047947516,
+          "activation_entropy_nats": 0.4882556288024058,
+          "immediate_risk": 0.5598907206651671,
+          "post_risk": 0.5605565688194447,
+          "fit_score_risk": 0.5594151807168009,
+          "gain": -0.0001737427334749242,
+          "prediction_change": 0.016753110813345413,
+          "parameter_displacement": 3.881761416785605
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            0.3319283210767346,
+            0.2659827777483354,
+            0.9050285915972268
+          ],
+          "information_nats": 0.025066111601761386,
+          "activation_entropy_nats": 0.5444990520498872,
+          "immediate_risk": 0.5602922150357011,
+          "post_risk": 0.5614975114809493,
+          "fit_score_risk": 0.5567980029628498,
+          "gain": -0.0011146853949794977,
+          "prediction_change": 0.007662563097951632,
+          "parameter_displacement": 2.261377579440761
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            -0.2878436911999824,
+            -0.8554464090556199,
+            0.43053159079237635
+          ],
+          "information_nats": 0.011682079029941488,
+          "activation_entropy_nats": 0.5099966430586824,
+          "immediate_risk": 0.5598013253162939,
+          "post_risk": 0.5604185142407843,
+          "fit_score_risk": 0.5591267781343578,
+          "gain": -3.568815481447274e-05,
+          "prediction_change": 0.017514993365400897,
+          "parameter_displacement": 3.7134488689722573
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            0.8533782127974371,
+            0.2864287272648611,
+            -0.4355504679369361
+          ],
+          "information_nats": 0.01359905821964709,
+          "activation_entropy_nats": 0.48973840740794994,
+          "immediate_risk": 0.5600192264627507,
+          "post_risk": 0.5615352462564805,
+          "fit_score_risk": 0.5567792933548518,
+          "gain": -0.0011524201705107595,
+          "prediction_change": 0.007707908150998516,
+          "parameter_displacement": 2.096639315899168
+        }
+      ]
+    },
+    {
+      "seed": 17000,
+      "regime": "linear_null",
+      "pre_risk": 0.5299069444443028,
+      "continued_width2": 0.5417183589999192,
+      "fixed_width3_steps": 0.5206068270708331,
+      "fixed_width3_parameter_compute": 0.5320928233052205,
+      "selected": {
+        "conditional_information": {
+          "index": 1,
+          "risk": 0.5458038734182823
+        },
+        "activation_entropy": {
+          "index": 1,
+          "risk": 0.5458038734182823
+        },
+        "random": {
+          "index": 2,
+          "risk": 0.5326572292835092
+        },
+        "trained_validation": {
+          "index": 3,
+          "risk": 0.5325369263428812
+        },
+        "population_oracle": {
+          "index": 3,
+          "risk": 0.5325369263428812
+        }
+      },
+      "info_gain_correlation": -0.46818164671150214,
+      "entropy_gain_correlation": -0.06023052450909732,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.6020239271372694,
+            -0.3962873745907914,
+            -0.6931980293495918
+          ],
+          "information_nats": 0.012408500322346956,
+          "activation_entropy_nats": 0.9953924014437437,
+          "immediate_risk": 0.5293993949864549,
+          "post_risk": 0.5331703041798892,
+          "fit_score_risk": 0.5133850832393172,
+          "gain": -0.0032633597355864463,
+          "prediction_change": 0.03307133267297123,
+          "parameter_displacement": 6.018271824783115
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            -0.5295383290634513,
+            -0.6390560408575129,
+            0.5578499213016067
+          ],
+          "information_nats": 0.020653523104650996,
+          "activation_entropy_nats": 1.012615696088507,
+          "immediate_risk": 0.5291854966508047,
+          "post_risk": 0.5458038734182823,
+          "fit_score_risk": 0.5212980057377747,
+          "gain": -0.01589692897397954,
+          "prediction_change": 0.045360940340344935,
+          "parameter_displacement": 6.544326201513001
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            -0.700579552656124,
+            0.037774856787446104,
+            -0.7125737509864035
+          ],
+          "information_nats": 0.0050807215570051415,
+          "activation_entropy_nats": 0.960990987760417,
+          "immediate_risk": 0.5293884803777856,
+          "post_risk": 0.5326572292835092,
+          "fit_score_risk": 0.5128859628108351,
+          "gain": -0.002750284839206474,
+          "prediction_change": 0.032837771235749755,
+          "parameter_displacement": 5.823843458363438
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            0.6143018788290199,
+            -0.783120027575033,
+            -0.09672757661606116
+          ],
+          "information_nats": 0.015859843589833333,
+          "activation_entropy_nats": 0.9769671101415329,
+          "immediate_risk": 0.5294206229773775,
+          "post_risk": 0.5325369263428812,
+          "fit_score_risk": 0.5125165253499748,
+          "gain": -0.0026299818985784373,
+          "prediction_change": 0.03311733944713708,
+          "parameter_displacement": 6.034035246833886
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            0.239026824308387,
+            -0.8302405360867198,
+            -0.5035541971818758
+          ],
+          "information_nats": 0.009154716219408356,
+          "activation_entropy_nats": 0.8454539672687487,
+          "immediate_risk": 0.5296876452427173,
+          "post_risk": 0.536455246112353,
+          "fit_score_risk": 0.5128787598203131,
+          "gain": -0.006548301668050205,
+          "prediction_change": 0.038520714779275836,
+          "parameter_displacement": 5.885770794534859
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            -0.4083477743477834,
+            0.6261099723983354,
+            0.6642577795167831
+          ],
+          "information_nats": 0.002979629852293098,
+          "activation_entropy_nats": 0.8254986490354568,
+          "immediate_risk": 0.5296905570936716,
+          "post_risk": 0.5364434767102666,
+          "fit_score_risk": 0.5128967136493484,
+          "gain": -0.006536532265963846,
+          "prediction_change": 0.038513797794291676,
+          "parameter_displacement": 5.833244764214611
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            -0.4570054949901529,
+            -0.6562284130571854,
+            0.6004250556441274
+          ],
+          "information_nats": 0.005444617450578237,
+          "activation_entropy_nats": 0.7790937898370434,
+          "immediate_risk": 0.5298293570724458,
+          "post_risk": 0.5363693683126446,
+          "fit_score_risk": 0.5128068258423162,
+          "gain": -0.006462423868341838,
+          "prediction_change": 0.03814949239888372,
+          "parameter_displacement": 5.814718410863355
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            0.58710411502482,
+            0.5702889411816551,
+            -0.5745252663606969
+          ],
+          "information_nats": 0.004921433226998546,
+          "activation_entropy_nats": 0.7061505255690711,
+          "immediate_risk": 0.5298447224325369,
+          "post_risk": 0.5364051974892946,
+          "fit_score_risk": 0.5128051724767648,
+          "gain": -0.006498253044991853,
+          "prediction_change": 0.038250054928713785,
+          "parameter_displacement": 5.857182561129048
+        }
+      ]
+    },
+    {
+      "seed": 17001,
+      "regime": "linear_null",
+      "pre_risk": 0.5387407020279997,
+      "continued_width2": 0.5378761283332196,
+      "fixed_width3_steps": 0.5406459329041466,
+      "fixed_width3_parameter_compute": 0.5454254395853384,
+      "selected": {
+        "conditional_information": {
+          "index": 5,
+          "risk": 0.5499477869071211
+        },
+        "activation_entropy": {
+          "index": 7,
+          "risk": 0.5502515314722118
+        },
+        "random": {
+          "index": 1,
+          "risk": 0.540425826339013
+        },
+        "trained_validation": {
+          "index": 1,
+          "risk": 0.540425826339013
+        },
+        "population_oracle": {
+          "index": 1,
+          "risk": 0.540425826339013
+        }
+      },
+      "info_gain_correlation": -0.23669999482949303,
+      "entropy_gain_correlation": -0.9728749291589281,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.22656100011373861,
+            0.1443594739617545,
+            -0.963239562883994
+          ],
+          "information_nats": 0.013973783067844515,
+          "activation_entropy_nats": 0.8241469011128478,
+          "immediate_risk": 0.5386772046896562,
+          "post_risk": 0.5409580064664683,
+          "fit_score_risk": 0.523116766353523,
+          "gain": -0.0022173044384685703,
+          "prediction_change": 0.042413527995364575,
+          "parameter_displacement": 6.416976308900081
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            0.7207452730625659,
+            -0.13405930817519682,
+            0.6801134855666036
+          ],
+          "information_nats": 0.0016910150785000107,
+          "activation_entropy_nats": 0.7638020641675216,
+          "immediate_risk": 0.5387257273159185,
+          "post_risk": 0.540425826339013,
+          "fit_score_risk": 0.5222907001832404,
+          "gain": -0.0016851243110133085,
+          "prediction_change": 0.040670430302186505,
+          "parameter_displacement": 6.138235966224671
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            0.7284181755787805,
+            -0.6797023509615536,
+            -0.08609108887578334
+          ],
+          "information_nats": 0.009953709351142483,
+          "activation_entropy_nats": 0.8500921609342245,
+          "immediate_risk": 0.5387903705606529,
+          "post_risk": 0.5428899868421013,
+          "fit_score_risk": 0.5239592955300431,
+          "gain": -0.004149284814101595,
+          "prediction_change": 0.0440988873259824,
+          "parameter_displacement": 6.276244627941114
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            -0.049482003335483825,
+            0.5617279743611978,
+            0.8258409133519435
+          ],
+          "information_nats": 0.005540375882566402,
+          "activation_entropy_nats": 0.8834359314084191,
+          "immediate_risk": 0.5386811962541012,
+          "post_risk": 0.5407271227672212,
+          "fit_score_risk": 0.5225782874669211,
+          "gain": -0.001986420739221506,
+          "prediction_change": 0.04164945623597465,
+          "parameter_displacement": 6.311033975150396
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            -0.8861315740407338,
+            -0.3753787114925674,
+            0.2717750107097251
+          ],
+          "information_nats": 0.0017767843261246566,
+          "activation_entropy_nats": 1.0722094356522556,
+          "immediate_risk": 0.5384273001151317,
+          "post_risk": 0.549925085360301,
+          "fit_score_risk": 0.5292298686056999,
+          "gain": -0.011184383332301318,
+          "prediction_change": 0.04710662887398078,
+          "parameter_displacement": 3.5351527605216964
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            0.13527065919318512,
+            0.9796625982483591,
+            0.1481993331790516
+          ],
+          "information_nats": 0.019343109015820655,
+          "activation_entropy_nats": 1.0925479967701344,
+          "immediate_risk": 0.536454207985,
+          "post_risk": 0.5499477869071211,
+          "fit_score_risk": 0.5287822074756413,
+          "gain": -0.011207084879121365,
+          "prediction_change": 0.046485485085752565,
+          "parameter_displacement": 3.455992368058755
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            -0.3465732521458747,
+            -0.8588016547026815,
+            0.37728861469300684
+          ],
+          "information_nats": 0.017679164507097653,
+          "activation_entropy_nats": 1.0925833342025764,
+          "immediate_risk": 0.5365543075168691,
+          "post_risk": 0.549956545376127,
+          "fit_score_risk": 0.5291995750861909,
+          "gain": -0.011215843348127308,
+          "prediction_change": 0.04711379457680265,
+          "parameter_displacement": 3.5883529438262163
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            -0.7151550050710391,
+            -0.3660752882739932,
+            -0.5954344649387998
+          ],
+          "information_nats": 0.0037042660601738667,
+          "activation_entropy_nats": 1.0946140972676333,
+          "immediate_risk": 0.5379207827285841,
+          "post_risk": 0.5502515314722118,
+          "fit_score_risk": 0.5290651001828567,
+          "gain": -0.011510829444212112,
+          "prediction_change": 0.047284586701348566,
+          "parameter_displacement": 3.653355899859302
+        }
+      ]
+    },
+    {
+      "seed": 17002,
+      "regime": "linear_null",
+      "pre_risk": 0.5291515554981248,
+      "continued_width2": 0.5406191124423179,
+      "fixed_width3_steps": 0.5414450602686621,
+      "fixed_width3_parameter_compute": 0.5276208144355117,
+      "selected": {
+        "conditional_information": {
+          "index": 5,
+          "risk": 0.5389191019305228
+        },
+        "activation_entropy": {
+          "index": 3,
+          "risk": 0.5387474841210688
+        },
+        "random": {
+          "index": 3,
+          "risk": 0.5387474841210688
+        },
+        "trained_validation": {
+          "index": 3,
+          "risk": 0.5387474841210688
+        },
+        "population_oracle": {
+          "index": 3,
+          "risk": 0.5387474841210688
+        }
+      },
+      "info_gain_correlation": -0.2442930849633518,
+      "entropy_gain_correlation": 0.2477352377391654,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.623265798018478,
+            0.7627875230366991,
+            0.17232219740917637
+          ],
+          "information_nats": 0.004650083268809606,
+          "activation_entropy_nats": 1.0122991056094062,
+          "immediate_risk": 0.5292172807795725,
+          "post_risk": 0.5389414035467466,
+          "fit_score_risk": 0.48803820746914867,
+          "gain": -0.009789848048621819,
+          "prediction_change": 0.03580034709577073,
+          "parameter_displacement": 5.846976267300426
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            0.27283339511763477,
+            0.8780675350432361,
+            0.3931403596830017
+          ],
+          "information_nats": 0.008652769646988183,
+          "activation_entropy_nats": 1.007818661934992,
+          "immediate_risk": 0.5294267407067295,
+          "post_risk": 0.5388710729081022,
+          "fit_score_risk": 0.4878738536508147,
+          "gain": -0.009719517409977452,
+          "prediction_change": 0.03518866559712018,
+          "parameter_displacement": 5.735870036598327
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            -0.21929429764059977,
+            0.9117286327697298,
+            -0.34736279479839993
+          ],
+          "information_nats": 0.010785099953419277,
+          "activation_entropy_nats": 0.9947663092995277,
+          "immediate_risk": 0.5291843435223456,
+          "post_risk": 0.5389179727120259,
+          "fit_score_risk": 0.48791448183221875,
+          "gain": -0.009766417213901146,
+          "prediction_change": 0.03531222815880304,
+          "parameter_displacement": 5.819455325420982
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            0.32715109383156976,
+            0.7784615464332745,
+            -0.535695606225702
+          ],
+          "information_nats": 0.007126694187549362,
+          "activation_entropy_nats": 1.0298663403509056,
+          "immediate_risk": 0.5291613301113913,
+          "post_risk": 0.5387474841210688,
+          "fit_score_risk": 0.4878242310961389,
+          "gain": -0.009595928622944006,
+          "prediction_change": 0.03516968210169848,
+          "parameter_displacement": 5.684527267041175
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            0.5221531936046526,
+            0.38933736610926195,
+            0.7587967170194957
+          ],
+          "information_nats": 0.014680769624080527,
+          "activation_entropy_nats": 0.778347551878971,
+          "immediate_risk": 0.528729517930049,
+          "post_risk": 0.5395135788977441,
+          "fit_score_risk": 0.49081427303269687,
+          "gain": -0.010362023399619336,
+          "prediction_change": 0.028446436274963564,
+          "parameter_displacement": 5.147116347650893
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            -0.8055560865769252,
+            0.3779300308340006,
+            -0.456342287293957
+          ],
+          "information_nats": 0.022132138964503605,
+          "activation_entropy_nats": 0.7202254101170116,
+          "immediate_risk": 0.528852900996775,
+          "post_risk": 0.5389191019305228,
+          "fit_score_risk": 0.490867605833498,
+          "gain": -0.009767546432398078,
+          "prediction_change": 0.026195221750450783,
+          "parameter_displacement": 5.596395133347235
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            0.6845346093531068,
+            0.4322443947115274,
+            0.5870069436031016
+          ],
+          "information_nats": 0.016042296650770727,
+          "activation_entropy_nats": 0.7140422838024238,
+          "immediate_risk": 0.5288175774926545,
+          "post_risk": 0.5388128264197316,
+          "fit_score_risk": 0.49104589306887453,
+          "gain": -0.009661270921606846,
+          "prediction_change": 0.026220191038860932,
+          "parameter_displacement": 5.645264961845587
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            0.722059183554931,
+            0.030565293096370388,
+            -0.6911557699259404
+          ],
+          "information_nats": 0.006326225758558247,
+          "activation_entropy_nats": 0.7023760412639102,
+          "immediate_risk": 0.5288313914610792,
+          "post_risk": 0.5388814559094962,
+          "fit_score_risk": 0.49108021473912555,
+          "gain": -0.00972990041137145,
+          "prediction_change": 0.026324934814304837,
+          "parameter_displacement": 5.69060577920808
+        }
+      ]
+    },
+    {
+      "seed": 17003,
+      "regime": "linear_null",
+      "pre_risk": 0.528048861110813,
+      "continued_width2": 0.5301379154958368,
+      "fixed_width3_steps": 0.535540079865221,
+      "fixed_width3_parameter_compute": 0.5315124920667287,
+      "selected": {
+        "conditional_information": {
+          "index": 0,
+          "risk": 0.5489044520146713
+        },
+        "activation_entropy": {
+          "index": 1,
+          "risk": 0.5487966981935981
+        },
+        "random": {
+          "index": 5,
+          "risk": 0.5343318033667888
+        },
+        "trained_validation": {
+          "index": 6,
+          "risk": 0.5343901500327528
+        },
+        "population_oracle": {
+          "index": 5,
+          "risk": 0.5343318033667888
+        }
+      },
+      "info_gain_correlation": -0.5699832865379251,
+      "entropy_gain_correlation": -0.9922509256173003,
+      "candidates": [
+        {
+          "unit": 0,
+          "direction_index": 0,
+          "direction": [
+            0.6854945427104296,
+            -0.45433147190967904,
+            0.5689289459559986
+          ],
+          "information_nats": 0.01961640078656235,
+          "activation_entropy_nats": 1.0849724232154745,
+          "immediate_risk": 0.5280802670137268,
+          "post_risk": 0.5489044520146713,
+          "fit_score_risk": 0.5315528324009533,
+          "gain": -0.020855590903858356,
+          "prediction_change": 0.0670136552201146,
+          "parameter_displacement": 5.069586861913644
+        },
+        {
+          "unit": 0,
+          "direction_index": 1,
+          "direction": [
+            0.12569909358243264,
+            -0.48799285621447075,
+            0.8637492171667641
+          ],
+          "information_nats": 0.014375393824806454,
+          "activation_entropy_nats": 1.0963535305259215,
+          "immediate_risk": 0.5278190112514534,
+          "post_risk": 0.5487966981935981,
+          "fit_score_risk": 0.5316609896672144,
+          "gain": -0.02074783708278516,
+          "prediction_change": 0.06639892972905859,
+          "parameter_displacement": 4.840088203987656
+        },
+        {
+          "unit": 0,
+          "direction_index": 2,
+          "direction": [
+            0.5493264032278127,
+            -0.8226928687394051,
+            0.14634529866764626
+          ],
+          "information_nats": 0.016044278300125392,
+          "activation_entropy_nats": 1.0722262715038844,
+          "immediate_risk": 0.5280341393919517,
+          "post_risk": 0.5480068454101109,
+          "fit_score_risk": 0.5312340178170036,
+          "gain": -0.01995798429929796,
+          "prediction_change": 0.06872574942389423,
+          "parameter_displacement": 4.919473817407131
+        },
+        {
+          "unit": 0,
+          "direction_index": 3,
+          "direction": [
+            0.49479150818406725,
+            0.6894212655897813,
+            -0.5290365601558369
+          ],
+          "information_nats": 0.01087515127817006,
+          "activation_entropy_nats": 1.0922000146203588,
+          "immediate_risk": 0.5278224206917563,
+          "post_risk": 0.5486413024337652,
+          "fit_score_risk": 0.5319838150482818,
+          "gain": -0.020592441322952237,
+          "prediction_change": 0.06626187908889211,
+          "parameter_displacement": 4.800459954027572
+        },
+        {
+          "unit": 1,
+          "direction_index": 0,
+          "direction": [
+            0.3502245415413292,
+            0.9153771012463233,
+            -0.19856367496610242
+          ],
+          "information_nats": 0.005579075183015626,
+          "activation_entropy_nats": 0.7189517739097061,
+          "immediate_risk": 0.5278099791129309,
+          "post_risk": 0.5345280238556114,
+          "fit_score_risk": 0.5292482929135531,
+          "gain": -0.006479162744798428,
+          "prediction_change": 0.04726650739445323,
+          "parameter_displacement": 4.9754933237737955
+        },
+        {
+          "unit": 1,
+          "direction_index": 1,
+          "direction": [
+            0.3319283210767346,
+            0.2659827777483354,
+            0.9050285915972268
+          ],
+          "information_nats": 0.018896200291194695,
+          "activation_entropy_nats": 0.748005632016004,
+          "immediate_risk": 0.5278439037202102,
+          "post_risk": 0.5343318033667888,
+          "fit_score_risk": 0.5292614595116198,
+          "gain": -0.00628294225597581,
+          "prediction_change": 0.046850543347949546,
+          "parameter_displacement": 5.053514870995575
+        },
+        {
+          "unit": 1,
+          "direction_index": 2,
+          "direction": [
+            -0.2878436911999824,
+            -0.8554464090556199,
+            0.43053159079237635
+          ],
+          "information_nats": 0.005491340945639545,
+          "activation_entropy_nats": 0.7246474520526516,
+          "immediate_risk": 0.5277991703741839,
+          "post_risk": 0.5343901500327528,
+          "fit_score_risk": 0.5291847069541533,
+          "gain": -0.006341288921939858,
+          "prediction_change": 0.04702148963536971,
+          "parameter_displacement": 4.836949497099345
+        },
+        {
+          "unit": 1,
+          "direction_index": 3,
+          "direction": [
+            0.8533782127974371,
+            0.2864287272648611,
+            -0.4355504679369361
+          ],
+          "information_nats": 0.004094311872975158,
+          "activation_entropy_nats": 0.6621325437438643,
+          "immediate_risk": 0.5279422433558348,
+          "post_risk": 0.5344504039881984,
+          "fit_score_risk": 0.5292130912028852,
+          "gain": -0.00640154287738548,
+          "prediction_change": 0.047124218364093404,
+          "parameter_displacement": 5.0245452565307245
+        }
+      ]
+    }
+  ],
+  "wall_seconds": 1.9786829948425293
+}

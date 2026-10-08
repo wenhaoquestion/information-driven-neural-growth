@@ -1,0 +1,648 @@
+{
+  "complete": true,
+  "completed": 64,
+  "elapsed_seconds": 54.55373166699428,
+  "planned": 64,
+  "runs": [
+    {
+      "complete_seed_seconds": 1.6302684169495478,
+      "data_sha256": "3177006d45ec9d2c22ca663a54b8c2d995acdb8c5d8183b02ab1506b56f7b52a",
+      "learner_seconds": 1.5539774799253792,
+      "result_file": "results/null_96200001.json",
+      "result_sha256": "6c903d10bac1e4c8d11b5cf12e0e80448a54d798b6cc341fa6788f7f08ad9c13",
+      "seed": 96200001,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6310858340002596,
+      "data_sha256": "2e4b0c622baf03e383df711884c028917ad6f2a2b2bafc1ec83979d4d46394aa",
+      "learner_seconds": 1.5537797850556672,
+      "result_file": "results/null_96200000.json",
+      "result_sha256": "a54e93f948e1e64cb9bd3818975bc0ecdb7d74b9b16cbff21d5eff771204fb02",
+      "seed": 96200000,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6367002920014784,
+      "data_sha256": "f3eaded0eeb3ae29f9c7123f19f21d74278f4cf90d6a3e32f3ae67447069eeca",
+      "learner_seconds": 1.5707230591215193,
+      "result_file": "results/null_96200003.json",
+      "result_sha256": "36db24859dd75cfa2e11a192c8049278d812fcdd8a4ea4e6b1a1f50fe3226dfe",
+      "seed": 96200003,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6379852499812841,
+      "data_sha256": "4d6221874e1e80fc61cf2ecb53112b3065245c27e9fbd09f8d6211757dadb216",
+      "learner_seconds": 1.571533266105689,
+      "result_file": "results/null_96200002.json",
+      "result_sha256": "f118d7cba5eb8bf66e20ef8ff35af10a918cd1b5202e2cdefc55e3681b63cf5d",
+      "seed": 96200002,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.62591695797164,
+      "data_sha256": "b50a1454f22769584e6cbe7e57e9fcb9581c0a38106e7ed0a1a4410b6a1cf094",
+      "learner_seconds": 1.5563335594488308,
+      "result_file": "results/null_96200005.json",
+      "result_sha256": "dcba603d5570409db1452657f71f6ff7322d67903b8e7a37b03cf2a5cd9f3dbe",
+      "seed": 96200005,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6285056249471381,
+      "data_sha256": "52971db0fd245fd0eb918055a46eccd508c6a4232332bce65a1a851f06328b5c",
+      "learner_seconds": 1.5633448094595224,
+      "result_file": "results/null_96200004.json",
+      "result_sha256": "15eb3f6938b8f8e07df70b67a6e09fd3d8d9845823a30bb235416e4436e80ce1",
+      "seed": 96200004,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6196592090418562,
+      "data_sha256": "b68dd591d919bf50d78aa612bf45003c4c8edab845608ef5c83c15fd4337842d",
+      "learner_seconds": 1.5545032381778583,
+      "result_file": "results/null_96200006.json",
+      "result_sha256": "fee7209c5c2b496fadc03cd518e9211e187ba8c6430bebdd0d35723a269e1419",
+      "seed": 96200006,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6196645409800112,
+      "data_sha256": "d67587beb2b6d0165abc610ebf5290d2dc6db5a244aa88721061af07512ba88e",
+      "learner_seconds": 1.554098965949379,
+      "result_file": "results/null_96200007.json",
+      "result_sha256": "ed3c195df3a3207dac34d9094a757ca01b635abb86a169bbeae3a6675f7074e4",
+      "seed": 96200007,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6216405420564115,
+      "data_sha256": "a83c32fddc3a95dafe235a1beddfcb9fb92c3c7afa341fc254070d422125b59d",
+      "learner_seconds": 1.5570168362464756,
+      "result_file": "results/null_96200008.json",
+      "result_sha256": "a23f4894ee19100686879557650550527a2f377cfe61465c3213ec765ed12325",
+      "seed": 96200008,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.624801249941811,
+      "data_sha256": "876ad7252281e0eba98a7826b0d0352f4b798fe756576ce662aefc48686df319",
+      "learner_seconds": 1.5590791059657931,
+      "result_file": "results/null_96200009.json",
+      "result_sha256": "daa35e5b7c5d4f6d9524e47ab80521834c4f4b8b8d982111d659762307401e53",
+      "seed": 96200009,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6293360840063542,
+      "data_sha256": "ca603f4e4ebbe3d309bb57f0442eb666d1efa424404e1e224f6d5b03be998b0a",
+      "learner_seconds": 1.5652870194753632,
+      "result_file": "results/null_96200011.json",
+      "result_sha256": "16585d30b6e6983dfbc01daccd8e16c7ff4b766fd969bbed0bbc977a26204416",
+      "seed": 96200011,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6316112920176238,
+      "data_sha256": "a6a0e6f4c093bdccb5c1bb371983e014d9df216a577cd4d251b8b6a25153df0e",
+      "learner_seconds": 1.5658629647223279,
+      "result_file": "results/null_96200010.json",
+      "result_sha256": "5b7dcd80bb3806ea6a6a1c7e47fd3e27a28a4c18770235a7ab97a6fb0bfd4d0d",
+      "seed": 96200010,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6281110829440877,
+      "data_sha256": "af8a689674ec3115e97128d50d902a4f070d707ae976063844ef0007109f7e15",
+      "learner_seconds": 1.5569039769470692,
+      "result_file": "results/null_96200012.json",
+      "result_sha256": "9f15299eda3d2d8ce74ec018e3b3d13c2f0809fa2091fd361ca6a6c3003cc34b",
+      "seed": 96200012,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.628942749928683,
+      "data_sha256": "2f2576ad1ac8c47c1f10a764aeca4d51486c4bb6c88b05da1ef63af1744b31f6",
+      "learner_seconds": 1.5592666524462402,
+      "result_file": "results/null_96200013.json",
+      "result_sha256": "3c2958d9bd940b09b1c1159e58ac06859641e66b4faefdffca5d355e0c707ed3",
+      "seed": 96200013,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.622272833948955,
+      "data_sha256": "ae48c5073310a53f271b2e049e20cb2e13db765339ab0e77dccb38129040c181",
+      "learner_seconds": 1.557479688199237,
+      "result_file": "results/null_96200015.json",
+      "result_sha256": "ee558069ea70bcd191e7cc227a97935df6c7984e11d890a3380bb6daaf182de4",
+      "seed": 96200015,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6251407919917256,
+      "data_sha256": "5e11161b76892e5a215d71ec3130f7fbaf00fa5b6484a19ae3375cc8f030acc2",
+      "learner_seconds": 1.5599380028434098,
+      "result_file": "results/null_96200014.json",
+      "result_sha256": "a3faefbd715529077408d90f0dc9a8bd90f88df7b3b583db80fc5cdd473c62e6",
+      "seed": 96200014,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6199750829255208,
+      "data_sha256": "57e4ca313c6002ad73fd38ac3215f30e42e8bca9712638e1d6717b13fb75ab51",
+      "learner_seconds": 1.5540770682273433,
+      "result_file": "results/null_96200016.json",
+      "result_sha256": "3e080e5c55e41d34cd1659b93c84d59880e75b06ec7cff2d084e1caab38a89e3",
+      "seed": 96200016,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6206258749589324,
+      "data_sha256": "7017f88712bf4e00194959973ce71b422a0d4550b151a0dea7e306ad0c41835f",
+      "learner_seconds": 1.5549399320734665,
+      "result_file": "results/null_96200017.json",
+      "result_sha256": "6799ad82fb0be8d506edc444384e810026a19449b105e9116264873d60532fad",
+      "seed": 96200017,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.619805125053972,
+      "data_sha256": "317c3b3550b07024dbaefa692ac2643d82a4f91ac60f06c906ec3772417d365d",
+      "learner_seconds": 1.5542289115255699,
+      "result_file": "results/null_96200018.json",
+      "result_sha256": "65860a4b069da7a041dcc6dbedff5b0f4204000813ff5b9152ed30e1a08510f3",
+      "seed": 96200018,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6235095839947462,
+      "data_sha256": "1be114a80cee40576a1c1b79397ab20d6b469a691c3120edd42dd92a15d47ef3",
+      "learner_seconds": 1.5581420051166788,
+      "result_file": "results/null_96200019.json",
+      "result_sha256": "1726a9b81192769f21d2d52c8aec18b5920e15c180e8327eba7dab0611c31999",
+      "seed": 96200019,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6245568330632523,
+      "data_sha256": "150a79d3ff058060ad8412681e8bbcd8b6a2fe0a25dd95ac0ad8f5d3f2a5a873",
+      "learner_seconds": 1.5592726095346734,
+      "result_file": "results/null_96200020.json",
+      "result_sha256": "45b6c21609977c08b68f89f4bb36bd2a7057e3e3574bea9e678362c478ecefbf",
+      "seed": 96200020,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6245750410016626,
+      "data_sha256": "aa4a6d533f8b30671b9ecab19747de7913026fdbe4f6519671292f41ebdcc7ae",
+      "learner_seconds": 1.5586513738380745,
+      "result_file": "results/null_96200021.json",
+      "result_sha256": "1e9cc55dbd4955632cd5dd6366d3a4f0a3868ee3756e97b427b89acdff5fbc9e",
+      "seed": 96200021,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.632228041999042,
+      "data_sha256": "3c6922214a59c70b996fbb07685dd67c8f8075342df05188a7b28e72ee857a97",
+      "learner_seconds": 1.562757653184235,
+      "result_file": "results/null_96200022.json",
+      "result_sha256": "71f2009d352b757c52c4b9256c95cd42d2389b2bb0f57c0c24254f13b200a43d",
+      "seed": 96200022,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6312478750478476,
+      "data_sha256": "ab1de45413764a08e3232d60469a7b2864edddbe4bd0b3775eb1e02c11b41ed3",
+      "learner_seconds": 1.563757025753148,
+      "result_file": "results/null_96200023.json",
+      "result_sha256": "1befe5d6c00dcb35a876a23fa317d10ded14ea403440099e4604b3716db61e84",
+      "seed": 96200023,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6176913749659434,
+      "data_sha256": "97871c7c89d057551b48bd9ea676d44fb76aa2930cead63be3e24901128cfb83",
+      "learner_seconds": 1.5529963503358886,
+      "result_file": "results/null_96200024.json",
+      "result_sha256": "f6eefcb7af666c09d9838dd12f17cd15396667f3feed12603a05bb45fbc694b6",
+      "seed": 96200024,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6214462500065565,
+      "data_sha256": "c21629762426d1f1078814b52ff11a09c1cc2fc2ecdeef2f334e16a853e95592",
+      "learner_seconds": 1.5563198244199157,
+      "result_file": "results/null_96200025.json",
+      "result_sha256": "64199a9846fe3a1693b71cd948ac6c5b07211ceb1a1e14361d253deca23b5500",
+      "seed": 96200025,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6272977909538895,
+      "data_sha256": "ca153d0c135a4f9fc45b1a3e881b155194687d9fae8a9962185b17b587625e82",
+      "learner_seconds": 1.560540915117599,
+      "result_file": "results/null_96200026.json",
+      "result_sha256": "dacbf1dce14c7758b798dfc0b155fbeeea937ca78a95d6984170b6ca5d4a3225",
+      "seed": 96200026,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6307817499618977,
+      "data_sha256": "254ca7ce1385b676403743f9826031db1ac0caf50c7f179f03793ff12d142874",
+      "learner_seconds": 1.5654034833423793,
+      "result_file": "results/null_96200027.json",
+      "result_sha256": "5715006d6e046ec271455b670d90993d41e2771ba7881a81b1f067784c903f7e",
+      "seed": 96200027,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6341285409871489,
+      "data_sha256": "f08e40d268cce1a30107bec5f11d1728b84df2f656ebe54363b546c75f56fe86",
+      "learner_seconds": 1.5692367061274126,
+      "result_file": "results/null_96200028.json",
+      "result_sha256": "7645da8f5b66be55b4f2a49fbdc0677a8a114ec3f0f218d5d1c4d8d213a0c66e",
+      "seed": 96200028,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6361157909268513,
+      "data_sha256": "f5053448aa80d8d5e03547aa85a19e58d3e601d9356433f8f911ec79938de524",
+      "learner_seconds": 1.5701956008560956,
+      "result_file": "results/null_96200029.json",
+      "result_sha256": "cf530130708941aeb4f636f609dcecfb5f3088903d750842f1115c01b710ea03",
+      "seed": 96200029,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6431447910144925,
+      "data_sha256": "9cc8dd25a1f412ddf63ab9a7a3d3f885e9a2560f813261e846593ccd222bc25e",
+      "learner_seconds": 1.5713282456854358,
+      "result_file": "results/null_96200030.json",
+      "result_sha256": "b29e45c84dd725ab3a29d5871159314d4c6d3b7ffc99aab91c360552eb256e34",
+      "seed": 96200030,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6418296250049025,
+      "data_sha256": "1d2b011ab48494e4b0d404641d5e475c28ba3bffb764557d517312a264480606",
+      "learner_seconds": 1.5704255932942033,
+      "result_file": "results/null_96200031.json",
+      "result_sha256": "d21e764e0234625bdc0c180d5c14dcb5de21f32834c6fa6c68fc9b8187d0f433",
+      "seed": 96200031,
+      "status": "completed",
+      "task": "null"
+    },
+    {
+      "complete_seed_seconds": 1.6415588340023533,
+      "data_sha256": "21d94f31053176bbeabe2a30fd66d56702f6cb154cacdd72c21509daf09f1f45",
+      "learner_seconds": 1.574440626311116,
+      "result_file": "results/lowrank_noiseless_96200000.json",
+      "result_sha256": "8fcb0e90029e8fd09c6e452f4f5f753df9f0a5acf09b903302a5a018fa622179",
+      "seed": 96200000,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6388167499098927,
+      "data_sha256": "f460faaef5f7c83566b7303bec4905227cfd20b91144a186895e5902698ab466",
+      "learner_seconds": 1.5739846385549754,
+      "result_file": "results/lowrank_noiseless_96200001.json",
+      "result_sha256": "013eae546294538186348a2a66a8588f7e2a2319a53df89a4f90ba54a50b2ae1",
+      "seed": 96200001,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6534695000154898,
+      "data_sha256": "61c0e3f9afd2815980678fdb78cebb233bac07eadb696a94c605d9f979929a04",
+      "learner_seconds": 1.5828573652543128,
+      "result_file": "results/lowrank_noiseless_96200002.json",
+      "result_sha256": "da9b4482d58c27436ce2b420eae1345c5847cb767ea40e89d7d78ffde5b5d069",
+      "seed": 96200002,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6523865000344813,
+      "data_sha256": "ddf4460888f3b11aafa328219e98918c5c05508177f4f923cd152df2f2391b0c",
+      "learner_seconds": 1.5841118262615055,
+      "result_file": "results/lowrank_noiseless_96200003.json",
+      "result_sha256": "594053c423c746029f57b67745d05c44dc33ddbcb404d459652155bc337e8636",
+      "seed": 96200003,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6433244589716196,
+      "data_sha256": "50af9a5abef0f992fd1a1c37303e0e109b61910e753d6aa7c4e435cfda1d0fa4",
+      "learner_seconds": 1.5762826916761696,
+      "result_file": "results/lowrank_noiseless_96200005.json",
+      "result_sha256": "b8f76aa53878c54269d69b03f5ba6406d13ce4611c32732451ee180e6678189d",
+      "seed": 96200005,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6441189580364153,
+      "data_sha256": "b52d03c507a9384f387b04cee387763276a7f83bdad20c1f243d23ae3ac9d205",
+      "learner_seconds": 1.5770472049480304,
+      "result_file": "results/lowrank_noiseless_96200004.json",
+      "result_sha256": "644682cb84ff4f492d354dbf4ea56aeb79922af6c85052f011f922eb93394d8b",
+      "seed": 96200004,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6413314170204103,
+      "data_sha256": "274a022432aeb7ecf3d51b4d6964d8fae3ec48df2e9b28a280e4a12a495e4ea4",
+      "learner_seconds": 1.5695980546297505,
+      "result_file": "results/lowrank_noiseless_96200007.json",
+      "result_sha256": "a4ba932d83d4071943561e8be28f63a1e7daa00425e453d1392463eeb83d87b9",
+      "seed": 96200007,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6423789999680594,
+      "data_sha256": "c1f97aef316776e727cca6d7885ff50a043363f1fd788fc89955995dc3408378",
+      "learner_seconds": 1.5702075491426513,
+      "result_file": "results/lowrank_noiseless_96200006.json",
+      "result_sha256": "87209e5553573d376c2a5766c1c1a0a6d2157a5f83810eb41bb0b34cc03be97b",
+      "seed": 96200006,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.63760841707699,
+      "data_sha256": "bdc0db2d969b8794110ec15fdcc6f757cb2e64126256fea3626ee729ce8c3725",
+      "learner_seconds": 1.5719550085486844,
+      "result_file": "results/lowrank_noiseless_96200008.json",
+      "result_sha256": "cd5035ede85d32282da5f678453c00d4ed32b00e6d78b16a643271aab99adfff",
+      "seed": 96200008,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6400847090408206,
+      "data_sha256": "cbac7b96c3d21a839771fafd42e4c635f214b7b04e997f621c0e95fdc46db52f",
+      "learner_seconds": 1.5727849977556616,
+      "result_file": "results/lowrank_noiseless_96200009.json",
+      "result_sha256": "8f9be16fdde7259981c0539ef95de9b782f6eb0f45d465c13e78a0a95c6681ce",
+      "seed": 96200009,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6748854579636827,
+      "data_sha256": "e5de5aa1f23537eb4510b75fd8e82eb710e4ee1d9f5b97cf488d7ee8a839facb",
+      "learner_seconds": 1.5998730428982526,
+      "result_file": "results/lowrank_noiseless_96200011.json",
+      "result_sha256": "21927b369064177ae76fcee516057e2809366faf8075fa8efded64588dd66bfd",
+      "seed": 96200011,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6780685420380905,
+      "data_sha256": "77ac88f89aab17a2f8838c248442500c5d85438d336813017f7383850bf1fef3",
+      "learner_seconds": 1.6044856942025945,
+      "result_file": "results/lowrank_noiseless_96200010.json",
+      "result_sha256": "187e41fe3201d568ed2e283a0091ae983ff409152d4281bc860bbaa77e03cf99",
+      "seed": 96200010,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.639857625006698,
+      "data_sha256": "d6b6b13249bcaefce8f8b9bae1b4f6cf1cc524929bd2ebaf171bbe6ac046f906",
+      "learner_seconds": 1.574738611932844,
+      "result_file": "results/lowrank_noiseless_96200013.json",
+      "result_sha256": "0ae3b459cdeabc9575116d6118e1c81c48275b6e6d41f40a17a64f4c2f414a1b",
+      "seed": 96200013,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6472629170166329,
+      "data_sha256": "603f4fe59197b15cec70eb1df9e8ac9e4dde0899608af9b919c42aa7066c702f",
+      "learner_seconds": 1.5802546640625224,
+      "result_file": "results/lowrank_noiseless_96200012.json",
+      "result_sha256": "b2e42d09c4e776a78dc37e0fc27bce725d8ddbc501f417a1e3cfcccc2abbd387",
+      "seed": 96200012,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6627299580723047,
+      "data_sha256": "3aed025e444310dcb50c585ff458cfa8db94d09601dd6be9fd3c39eeec2c171a",
+      "learner_seconds": 1.5941980299539864,
+      "result_file": "results/lowrank_noiseless_96200014.json",
+      "result_sha256": "600ee7ba85ab2cf1eef296bd609dc09e0e98e65c2777462884f689259c480d34",
+      "seed": 96200014,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6623672080459073,
+      "data_sha256": "3020a4ac91886781e9967e95fbbe0362a86e16c8e95add0f3dfede92e6c1a19d",
+      "learner_seconds": 1.5951043636305258,
+      "result_file": "results/lowrank_noiseless_96200015.json",
+      "result_sha256": "fa78ddcf60b1cbc4002f38c98f42eacdf55628af392b298dfcde73f01b117831",
+      "seed": 96200015,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.646201084018685,
+      "data_sha256": "08a87adca3c70d18de54e691f6507c097aeec4390ffc1ab2a9a6c4c087f9e93a",
+      "learner_seconds": 1.5762767571723089,
+      "result_file": "results/lowrank_noiseless_96200016.json",
+      "result_sha256": "c8876f7b8a40ed9b7066fa553864a4fa629fd103e1057a4cb2b7f6d6e3ec2e74",
+      "seed": 96200016,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6422182500828058,
+      "data_sha256": "5be9ef09b5fc9e248993ba7e81843cb501020dfc31336093049a9b374ed6937f",
+      "learner_seconds": 1.5729601717321202,
+      "result_file": "results/lowrank_noiseless_96200017.json",
+      "result_sha256": "9be9d3849f3c89255f63bfa07e78500136ce3258b9aff7f40ac949316a377eee",
+      "seed": 96200017,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.632284542080015,
+      "data_sha256": "1cce22b57097cfe2aa37ce8ebbe2d06c150c17a8af6477232e1e75aa90196842",
+      "learner_seconds": 1.5666311534587294,
+      "result_file": "results/lowrank_noiseless_96200018.json",
+      "result_sha256": "98e8bdb44f4058e2f91bf63547cf7b9bca0c2b8d7adcedce000f9c2c94f09db8",
+      "seed": 96200018,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6381181250326335,
+      "data_sha256": "3016e036ec667a893bb285b6a566ad4005dee5001e569279416dba715095b50a",
+      "learner_seconds": 1.5718774335691705,
+      "result_file": "results/lowrank_noiseless_96200019.json",
+      "result_sha256": "e0d3e5828f09167dbb2f34d62675679fb84912748271ba8d018c080e8428625e",
+      "seed": 96200019,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.650895332917571,
+      "data_sha256": "87f43416823c5f5c602a686ade1c1b00d79876c53aa48c57f48bc3f18ebbd42a",
+      "learner_seconds": 1.5841275803977624,
+      "result_file": "results/lowrank_noiseless_96200020.json",
+      "result_sha256": "555357726cf4f30acb981e124ff5fd0d76e6baa768859cec8fa18b8f0b400ad4",
+      "seed": 96200020,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6538539580069482,
+      "data_sha256": "5ccbcc77dd08ba7d1c1b39b956a0163ae9118a866b93ad49716d8388ee1a0885",
+      "learner_seconds": 1.58696918329224,
+      "result_file": "results/lowrank_noiseless_96200021.json",
+      "result_sha256": "d9de8c952909d7754c7c3a9c7c3e90c560f4a71cadf5454033bf37e256eed0e2",
+      "seed": 96200021,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6351658750791103,
+      "data_sha256": "a4bfc8df06a35ca1606f3213c321e0850e649aea46e8d8316c000d0efc80142a",
+      "learner_seconds": 1.5694141571875662,
+      "result_file": "results/lowrank_noiseless_96200022.json",
+      "result_sha256": "a03dfb737cd422dca3f45a9da093cf04872b19de2a519f8b77ddc14437b9197b",
+      "seed": 96200022,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.638737833010964,
+      "data_sha256": "181087be0de1ceb4e7cec22bcb436c47b61178fe6b9f474e87351c818cd043df",
+      "learner_seconds": 1.5723670903826132,
+      "result_file": "results/lowrank_noiseless_96200023.json",
+      "result_sha256": "a36434e9e4afe021c8e0b6946fd1333641874a6f88c3292a67cdd24ec8302ddf",
+      "seed": 96200023,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6393617079593241,
+      "data_sha256": "c6808552864f121319259ff68adab1c9a21ca2d1e1ee3cd4bb2017e58aac46bd",
+      "learner_seconds": 1.5734139096457511,
+      "result_file": "results/lowrank_noiseless_96200024.json",
+      "result_sha256": "0693cb903a11a527820875c2647f4bfbfb9a239e4010b805439e5337a8de24ab",
+      "seed": 96200024,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.644776999950409,
+      "data_sha256": "dfcdaa64b03dc478f505ebf1bfcb14dcb23dfea9b38a2f1e82630b14fed61cfb",
+      "learner_seconds": 1.5757967655081302,
+      "result_file": "results/lowrank_noiseless_96200025.json",
+      "result_sha256": "00b0db94a443d763a2133615b4cb9ad079634d0be1ed9c787a825fdf4c45e8de",
+      "seed": 96200025,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6358734170207754,
+      "data_sha256": "d52f2358fd3d3059a1dad4eb5ddc4d19a5fc20e41757c545b97bdc2449448a9a",
+      "learner_seconds": 1.5706383436918259,
+      "result_file": "results/lowrank_noiseless_96200026.json",
+      "result_sha256": "4b6f1fcc700c8156b99f2eb31ccaee21886fed89fbfd0fd77a8d0c27cd6aeedd",
+      "seed": 96200026,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6382803339511156,
+      "data_sha256": "d9c2120574392f074b1e4541a6ede1e717415d52277fffc9956a8335cdf9ce39",
+      "learner_seconds": 1.571053659892641,
+      "result_file": "results/lowrank_noiseless_96200027.json",
+      "result_sha256": "c44b444a9740f40583b646e4def34d760558ad142568775868fbec18ca59870b",
+      "seed": 96200027,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.631922374945134,
+      "data_sha256": "2ccc5eba88310ed4bb6ca478bf4f17eb4e9d1f45394cf59bc3233a7ef7f0eccb",
+      "learner_seconds": 1.5660821093479171,
+      "result_file": "results/lowrank_noiseless_96200028.json",
+      "result_sha256": "ca777144f1ea7a54334e6f68c182f4411f8eaab8f7375ab9e0fab63135eeeea6",
+      "seed": 96200028,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.635033291997388,
+      "data_sha256": "e03113200a665e5fd61e237815987077ad8e8e279207c9f1a7850599e355d9a2",
+      "learner_seconds": 1.5689892779337242,
+      "result_file": "results/lowrank_noiseless_96200029.json",
+      "result_sha256": "64ca7a57da36b94abf87d16604c7bd8846bbd61d034dda48388467847b09c7e0",
+      "seed": 96200029,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.621103624929674,
+      "data_sha256": "6efd4dc990f0e33e79496761c9346295dc3f7f5a73d8330156af3e13959f9027",
+      "learner_seconds": 1.5556322548072785,
+      "result_file": "results/lowrank_noiseless_96200030.json",
+      "result_sha256": "8f37eec0057c99cec2dad6a5b349fe27755a97934e6f3729510ed52d8363d803",
+      "seed": 96200030,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    },
+    {
+      "complete_seed_seconds": 1.6262339999666438,
+      "data_sha256": "205c8cc84330d309c2ad86aceb7adf1c28ddd1cc94de331559e255f8af1850ac",
+      "learner_seconds": 1.5600037537515163,
+      "result_file": "results/lowrank_noiseless_96200031.json",
+      "result_sha256": "38111b35159babe00ab33e2faee93bfd26122743da6c29b746416c2e22303560",
+      "seed": 96200031,
+      "status": "completed",
+      "task": "lowrank_noiseless"
+    }
+  ]
+}

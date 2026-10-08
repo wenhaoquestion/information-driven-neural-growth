@@ -1,0 +1,215 @@
+% Includable research insert. No preamble and no changes to the imported v1.
+% Requires amsmath/amssymb/amsthm and lemma/theorem/proof environments.
+% Bibliography keys shadrin, grosswendt, lin, gomes, gzyl are present in v1.
+% The only hierarchy ingredient used below is the established weighted
+% factor-32 squared-distance hierarchy theorem (v1, Lemma lem:hilbert).
+% All logarithms are natural. Constants have not been optimized.
+
+\subsection{A uniform polynomial curvature-coordinate bound}
+\label{sec:poly-allcap-new}
+
+Let $\varphi\in C^2([0,1])$ have nonnegative, nonzero polynomial curvature
+$g=\varphi''$ of degree at most an integer $r\ge1$, and write
+\[
+ B_\varphi(x,y)=\varphi(x)-\varphi(y)-\varphi'(y)(x-y),
+ \qquad h(x)=\int_0^x\sqrt{g(t)}\,\mathrm dt,
+ \qquad K_r=2\log(64r^2)+\frac14.
+\]
+The degree parameter counts curvature degree, not generator degree.
+Since a nonzero polynomial cannot vanish on any interval, $h$ is continuous
+and strictly increasing, and $\varphi$ is strictly convex.
+
+\begin{lemma}[Polynomial curvature-coordinate comparison]
+\label{lem:poly-h-new}
+For every $x,y\in[0,1]$ and both orders of the arguments,
+\begin{equation}
+ \frac{1}{K_r}|h(x)-h(y)|^2
+ \le B_\varphi(x,y)
+ \le 8r^2|h(x)-h(y)|^2.
+ \label{eq:poly-h-new}
+\end{equation}
+The constants are uniform over the polynomial coefficients and over the
+location and length of the interval between $x$ and $y$.
+\end{lemma}
+
+\begin{proof}
+The assertion is immediate for $x=y$. Fix $u<v$, and put
+$L=v-u$, $\mu=\int_u^v g(t)\,\mathrm dt$, and
+$M=\max_{[u,v]}g$. Both $\mu$ and $M$ are positive.
+The Markov mass estimates used here are
+\begin{equation}
+ M\le\frac{8r^2\mu}{L},\qquad
+ \int_u^v|t-a|g(t)\,\mathrm dt\ge\frac{L\mu}{64r^2}
+ \quad (a\in[u,v]).
+ \label{eq:poly-markov-new}
+\end{equation}
+For completeness, Markov's classical polynomial inequality
+\cite{shadrin}, rescaled to $[u,v]$, gives
+$\|g'\|_\infty\le2r^2M/L$. From a maximizer there is an available
+one-sided segment of length $L/(4r^2)$, on which $g\ge M/2$.
+Integration gives the first estimate. For any $a\in[u,v]$, the mass in
+$\{t\in[u,v]:|t-a|<L/(32r^2)\}$ is at most
+$LM/(16r^2)\le\mu/2$. The complementary mass gives the second estimate.
+
+The two divergence orientations are
+\[
+ B_\varphi(v,u)=\int_u^v(v-t)g(t)\,\mathrm dt,
+ \qquad
+ B_\varphi(u,v)=\int_u^v(t-u)g(t)\,\mathrm dt.
+\]
+Fix either of these values and denote it by $B$. Measure the coordinate
+$s\in[0,L]$ from the endpoint where its linear kernel vanishes, and denote
+the resulting curvature by $\widetilde g(s)$. Explicitly,
+$\widetilde g(s)=g(v-s)$ for $B_\varphi(v,u)$, and
+$\widetilde g(s)=g(u+s)$ for $B_\varphi(u,v)$. Then
+\[
+ B=\int_0^L s\widetilde g(s)\,\mathrm ds,
+ \qquad A:=h(v)-h(u)=\int_0^L\sqrt{\widetilde g(s)}\,\mathrm ds.
+\]
+Taking $a$ to be the zero-kernel endpoint in
+\eqref{eq:poly-markov-new} gives
+\begin{equation}
+ \frac{L\mu}{64r^2}\le B\le L\mu,
+ \qquad
+ M\le\frac{512r^4B}{L^2}.
+ \label{eq:poly-BM-new}
+\end{equation}
+
+Set $\delta=L/(64r^2)\in(0,L)$ and split $A=A_0+A_1$ at
+$s=\delta$. The short endpoint contribution satisfies
+\[
+ A_0^2=\left(\int_0^\delta\sqrt{\widetilde g(s)}\,\mathrm ds\right)^2
+ \le\delta^2M\le\frac{B}{8}.
+\]
+Weighted Cauchy--Schwarz gives
+\[
+ A_1^2
+ =\left(\int_\delta^L
+       \sqrt{s\widetilde g(s)}\,s^{-1/2}\,\mathrm ds\right)^2
+ \le\left(\int_\delta^L s\widetilde g(s)\,\mathrm ds\right)
+       \left(\int_\delta^L\frac{\mathrm ds}{s}\right)
+ \le B\log(64r^2).
+\]
+Therefore $A^2\le2A_0^2+2A_1^2\le K_rB$, which proves the
+left inequality in \eqref{eq:poly-h-new}.
+
+For the other direction, $\sqrt{g(t)}\ge g(t)/\sqrt M$ implies
+\[
+ A^2\ge\frac{\mu^2}{M}\ge\frac{L\mu}{8r^2}.
+\]
+Together with $B\le L\mu$, this proves $B\le8r^2A^2$.
+Every estimate applies to either orientation, completing the proof.
+\end{proof}
+
+\begin{theorem}[Polynomial all-capacity hierarchy bound]
+\label{thm:poly-allcap-new}
+Let $x_1,\ldots,x_N\in[0,1]$ have arbitrary positive weights
+$p_1,\ldots,p_N$, and let $\varphi$ satisfy the preceding assumptions.
+For a partition $P$ of $\{1,\ldots,N\}$ define
+\[
+ p_C=\sum_{i\in C}p_i,\qquad
+ m_C=\frac{1}{p_C}\sum_{i\in C}p_ix_i,\qquad
+ D_\varphi(P)=\sum_{C\in P}\sum_{i\in C}
+          p_i\bigl(\varphi(x_i)-\varphi(m_C)\bigr).
+\]
+Let $\operatorname{OPT}_{\varphi,k}$ be the minimum of this cost over
+partitions with at most $k$ cells. There is one deterministic hierarchy
+$(H_k)_{k=1}^N$, with $H_{k+1}$ refining $H_k$ and $|H_k|\le k$, such that
+\begin{equation}
+ D_\varphi(H_k)
+ \le 256r^2\left(2\log(64r^2)+\frac14\right)
+           \operatorname{OPT}_{\varphi,k}
+ \quad\text{for every }k\in\{1,\ldots,N\}.
+ \label{eq:poly-allcap-new}
+\end{equation}
+In particular the all-capacity factor is
+$O(r^2\log(r+2))$, uniformly in source size, positive weights, and posterior
+locations. The statement includes capacities with zero flat optimum.
+For normalized weights and the usual channel interpretation of distortion,
+the same bound holds for stochastic all-capacity hierarchy price.
+
+If $r=0$, positive constant curvature gives an all-capacity factor at most
+$32$.
+\end{theorem}
+
+\begin{proof}
+Put $y_i=h(x_i)$. For each cell $C$, the Bregman centroid identity gives
+\begin{equation}
+ D_\varphi(C)=\min_{q\in[0,1]}\sum_{i\in C}p_iB_\varphi(x_i,q),
+ \label{eq:poly-centroid-new}
+\end{equation}
+because the expression on the right before minimization equals
+$D_\varphi(C)+p_CB_\varphi(m_C,q)$. Define the transformed squared-distance
+cost
+\[
+ V_h(P)=\sum_{C\in P}\sum_{i\in C}p_i(y_i-\overline y_C)^2,
+ \qquad \overline y_C=\frac{1}{p_C}\sum_{i\in C}p_iy_i.
+\]
+The image $h([0,1])$ is an interval. It contains every
+$\overline y_C$, so
+\[
+ \min_{q\in[0,1]}\sum_{i\in C}p_i|h(x_i)-h(q)|^2
+ =\sum_{i\in C}p_i(y_i-\overline y_C)^2.
+\]
+Sum \eqref{eq:poly-h-new} with weights $p_i$, minimize over $q$ in each
+cell, and use \eqref{eq:poly-centroid-new}. This gives for every partition
+\begin{equation}
+ \frac{1}{K_r}V_h(P)\le D_\varphi(P)\le8r^2V_h(P).
+ \label{eq:poly-partition-new}
+\end{equation}
+This step does not require, and does not assert,
+$h(m_C)=\overline y_C$.
+
+Write $\operatorname{OPT}_{h,k}=\min_{|P|\le k}V_h(P)$.
+The established weighted squared-distance hierarchy theorem supplies one
+hierarchy with
+$V_h(H_k)\le32\operatorname{OPT}_{h,k}$ at every capacity.
+This is the positive-real-weight Hilbert-space transfer stated earlier;
+its unweighted squared-Euclidean ingredient is recorded in
+\cite[Lemma 2.13 and Theorem 1.2]{grosswendt} within the classical
+hierarchy framework \cite{lin}.
+From \eqref{eq:poly-partition-new},
+$\operatorname{OPT}_{h,k}\le K_r\operatorname{OPT}_{\varphi,k}$.
+Consequently
+\[
+ D_\varphi(H_k)
+ \le8r^2V_h(H_k)
+ \le256r^2\operatorname{OPT}_{h,k}
+ \le256r^2K_r\operatorname{OPT}_{\varphi,k},
+\]
+as required. These are cost inequalities, so a zero optimum also forces
+zero hierarchical cost; no division by an optimum is used.
+
+For completeness, the stochastic flat optimum with output budget $k$
+equals the deterministic flat optimum. Indeed, realize a channel by a
+random deterministic function table $U$ independent of the input. Given
+$U$, there are at most $k$ outputs. Conditional Jensen gives
+\[
+ \mathbb E\varphi(\mathbb E[x_X\mid Z])
+ \le\mathbb E\varphi(\mathbb E[x_X\mid Z,U]),
+\]
+so the channel distortion is at least the average deterministic distortion
+conditioned on $U$, and hence at least $\operatorname{OPT}_{\varphi,k}$.
+Conversely any deterministic flat partition is a channel. The constructed
+deterministic hierarchy is itself a stochastic degradation chain at all
+capacities, giving the stochastic upper bound with the same denominators.
+
+Finally, if $g\equiv a>0$ then
+$B_\varphi(x,y)=a(x-y)^2/2$, so every partition cost is exactly
+$a/2$ times ordinary squared-distance cost. The factor-$32$ theorem applies
+directly, with no division by $r$.
+\end{proof}
+
+\paragraph{Scope and provenance.}
+The comparison is a uniform quantitative specialization of the classical
+curvature coordinate $h=\int\sqrt{\varphi''}$, which has antecedents in
+separable Bregman geometry \cite{gomes,gzyl}. Its proof combines Markov's
+inequality, an endpoint cutoff, and weighted Cauchy--Schwarz with an
+established hierarchy transfer. No historical-priority claim is made.
+The result improves the previously stated $O(r^4)$ all-capacity upper bound
+for arbitrary finite sources and positive weights. It does not improve the
+separate $O(r^2)$ bound for two prescribed capacities, prove a matching
+all-capacity lower bound, or show that the logarithmic factor or the
+quadratic degree factor is necessary. It makes no higher-dimensional
+curvature assertion and gives an existence guarantee rather than a new
+efficient optimization algorithm.

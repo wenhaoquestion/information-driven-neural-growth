@@ -1,0 +1,313 @@
+{
+  "status": "passed",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "rational_kernel_checks": 20000,
+  "source_instances": 29,
+  "hierarchy_candidates": 125972,
+  "nontrivial_instances": 4,
+  "conflict_choices_checked": 4,
+  "records": [
+    {
+      "n": 3,
+      "flat_fine": "24752715031481878334860448707/10983081121175286752335390149579260550",
+      "flat_coarse": "513727755824281565374832979704410968289/3022915039901269803816936353167492840000000",
+      "price": "1",
+      "at_most_hierarchies": 4,
+      "conflict_choices_checked": 0,
+      "partitions": 5,
+      "label": "random_3_0"
+    },
+    {
+      "n": 3,
+      "flat_fine": "8180243602418000/4050202503645028350081",
+      "flat_coarse": "306799586927825473/25314525060750810004050",
+      "price": "1",
+      "at_most_hierarchies": 4,
+      "conflict_choices_checked": 0,
+      "partitions": 5,
+      "label": "random_3_1"
+    },
+    {
+      "n": 3,
+      "flat_fine": "482219277929975241765581907303726125/441632777200621775938340340502078476809291337408",
+      "flat_coarse": "37353719744164177033291575252139320527308476875/248832223948883980816796161889568113374082834352",
+      "price": "1",
+      "at_most_hierarchies": 4,
+      "conflict_choices_checked": 0,
+      "partitions": 5,
+      "label": "random_3_2"
+    },
+    {
+      "n": 3,
+      "flat_fine": "17000170/2754000315000009",
+      "flat_coarse": "51000517000070/972000108000003",
+      "price": "1",
+      "at_most_hierarchies": 4,
+      "conflict_choices_checked": 0,
+      "partitions": 5,
+      "label": "random_3_3"
+    },
+    {
+      "n": 3,
+      "flat_fine": "3000003/9018024030019008004",
+      "flat_coarse": "9000015006009006003/9018033048040032016000000",
+      "price": "1",
+      "at_most_hierarchies": 4,
+      "conflict_choices_checked": 0,
+      "partitions": 5,
+      "label": "random_3_4"
+    },
+    {
+      "n": 4,
+      "flat_fine": "136365/642194223521669819",
+      "flat_coarse": "38636772021483849/42813190841403782800000",
+      "price": "1",
+      "at_most_hierarchies": 39,
+      "conflict_choices_checked": 0,
+      "partitions": 15,
+      "label": "random_4_0"
+    },
+    {
+      "n": 4,
+      "flat_fine": "52877409379833499385159040787446224469401120587815/2407050619564270605737645070323755531756209641567629657929156608",
+      "flat_coarse": "83351918141042603330635461664741411707812481298371234174765/896156968420863730726515404916131451061063778934487638186989880832",
+      "price": "1",
+      "at_most_hierarchies": 39,
+      "conflict_choices_checked": 0,
+      "partitions": 15,
+      "label": "random_4_1"
+    },
+    {
+      "n": 4,
+      "flat_fine": "510051/2737049265250",
+      "flat_coarse": "73317331/13277600691000",
+      "price": "1",
+      "at_most_hierarchies": 39,
+      "conflict_choices_checked": 0,
+      "partitions": 15,
+      "label": "random_4_2"
+    },
+    {
+      "n": 4,
+      "flat_fine": "3000003/76800304000160",
+      "flat_coarse": "3000003/128000080",
+      "price": "1",
+      "at_most_hierarchies": 39,
+      "conflict_choices_checked": 0,
+      "partitions": 15,
+      "label": "random_4_3"
+    },
+    {
+      "n": 4,
+      "flat_fine": "1600/553641981819",
+      "flat_coarse": "1196803044800/1053570338400027",
+      "price": "1",
+      "at_most_hierarchies": 39,
+      "conflict_choices_checked": 0,
+      "partitions": 15,
+      "label": "random_4_4"
+    },
+    {
+      "n": 5,
+      "flat_fine": "187/23040829440",
+      "flat_coarse": "254100187/384036864829440",
+      "price": "1",
+      "at_most_hierarchies": 296,
+      "conflict_choices_checked": 0,
+      "partitions": 52,
+      "label": "random_5_0"
+    },
+    {
+      "n": 5,
+      "flat_fine": "12211791410787557538233/76769047311133361552786414801059200",
+      "flat_coarse": "46230686590065943457316027286286035889262345798965770393801538233/599766578783158897573121828255662322815463424047959879819565390122001059200",
+      "price": "1",
+      "at_most_hierarchies": 296,
+      "conflict_choices_checked": 0,
+      "partitions": 52,
+      "label": "random_5_1"
+    },
+    {
+      "n": 5,
+      "flat_fine": "901778129252079893415824601181041837004061/1404782897902061666988096107422023218903153548795980989",
+      "flat_coarse": "385580111358553076512663774665620347833162685100463287086648905252793/140485313845175371587272548520555318200276764978947527152839851656504392904809890",
+      "price": "1",
+      "at_most_hierarchies": 296,
+      "conflict_choices_checked": 0,
+      "partitions": 52,
+      "label": "random_5_2"
+    },
+    {
+      "n": 5,
+      "flat_fine": "6951371404097/535175201937336972000",
+      "flat_coarse": "139120243160147147137/284414044492780297736652000",
+      "price": "1",
+      "at_most_hierarchies": 296,
+      "conflict_choices_checked": 0,
+      "partitions": 52,
+      "label": "random_5_3"
+    },
+    {
+      "n": 5,
+      "flat_fine": "25/1751767617601001",
+      "flat_coarse": "7500175/7007070470404004",
+      "price": "1",
+      "at_most_hierarchies": 296,
+      "conflict_choices_checked": 0,
+      "partitions": 52,
+      "label": "random_5_4"
+    },
+    {
+      "n": 6,
+      "flat_fine": "60600/453299203620962993",
+      "flat_coarse": "5151061509/453299203620962993",
+      "price": "1",
+      "at_most_hierarchies": 2253,
+      "conflict_choices_checked": 0,
+      "partitions": 203,
+      "label": "random_6_0"
+    },
+    {
+      "n": 6,
+      "flat_fine": "1575886168517460070896446011280605007247711/1555386249048655922785099585488113090905798034817003520",
+      "flat_coarse": "827502015631477583532411671726883655742199414565137636091600549914157/155670877694339587738837701549710422770369452292834474860588332851726631268966400",
+      "price": "1",
+      "at_most_hierarchies": 2253,
+      "conflict_choices_checked": 0,
+      "partitions": 203,
+      "label": "random_6_1"
+    },
+    {
+      "n": 6,
+      "flat_fine": "204056313216885295726/229598235932183613576932179017825",
+      "flat_coarse": "374396187968300152484726177/28702362110109037426233290025000000",
+      "price": "1",
+      "at_most_hierarchies": 2253,
+      "conflict_choices_checked": 0,
+      "partitions": 203,
+      "label": "random_6_2"
+    },
+    {
+      "n": 6,
+      "flat_fine": "586281083841897462423425134591/49382409344047950376163254303733126400000000",
+      "flat_coarse": "88228641997437480039171671995772742037/708583599113675043488181552821616383532844800000000",
+      "price": "1",
+      "at_most_hierarchies": 2253,
+      "conflict_choices_checked": 0,
+      "partitions": 203,
+      "label": "random_6_3"
+    },
+    {
+      "n": 6,
+      "flat_fine": "27814010850781868432500/1233104211240544450457049110290713",
+      "flat_coarse": "13215533172828451387747668689/129479826380838304452623414124799680",
+      "price": "1",
+      "at_most_hierarchies": 2253,
+      "conflict_choices_checked": 0,
+      "partitions": 203,
+      "label": "random_6_4"
+    },
+    {
+      "n": 7,
+      "flat_fine": "3504268771713475812152891386368177216764327074/79458860049833740584344216760987729112159215262713350920809",
+      "flat_coarse": "210959862627531405421027859906662558739796482210108663/254268352159467969869901493635160733158909488840682722946588800000",
+      "price": "1",
+      "at_most_hierarchies": 18404,
+      "conflict_choices_checked": 0,
+      "partitions": 877,
+      "label": "random_7_0"
+    },
+    {
+      "n": 7,
+      "flat_fine": "8961913697627822776501147675027346517590805288125/2412812392226796673402239525284395801133964542108753152966656",
+      "flat_coarse": "280215228863125250207582416425300822530163927961615251875/298620117182354672419179240020473056730144365577728428141482868736",
+      "price": "1",
+      "at_most_hierarchies": 18404,
+      "conflict_choices_checked": 0,
+      "partitions": 877,
+      "label": "random_7_1"
+    },
+    {
+      "n": 7,
+      "flat_fine": "27273/640559095193600000",
+      "flat_coarse": "13063767/560489208294400000",
+      "price": "1",
+      "at_most_hierarchies": 18404,
+      "conflict_choices_checked": 0,
+      "partitions": 877,
+      "label": "random_7_2"
+    },
+    {
+      "n": 7,
+      "flat_fine": "10535459590399292860246875/165669343654642000410256301078253066368",
+      "flat_coarse": "524524670354840498171470662206381189375/248947128151243588934642920409260277294918164032256",
+      "price": "1",
+      "at_most_hierarchies": 18404,
+      "conflict_choices_checked": 0,
+      "partitions": 877,
+      "label": "random_7_3"
+    },
+    {
+      "n": 7,
+      "flat_fine": "102860285/1984407598166703894",
+      "flat_coarse": "15413791225/7937630392666815576",
+      "price": "1",
+      "at_most_hierarchies": 18404,
+      "conflict_choices_checked": 0,
+      "partitions": 877,
+      "label": "random_7_4"
+    },
+    {
+      "n": 4,
+      "flat_fine": "1995343854239601/22517998136852480000000000",
+      "flat_coarse": "791215134245242002043240876580313537112403999/10995116277760000000000000000000000000000000000000000",
+      "price": "760484465045029377814236732045620555761985441767591308593750000000000000000000/219850739944753722799306861649785278594299000573065807432877010867335509650549",
+      "at_most_hierarchies": 39,
+      "conflict_choices_checked": 1,
+      "partitions": 15,
+      "label": "designed_conflict_core"
+    },
+    {
+      "n": 5,
+      "flat_fine": "1995343854239601/45035996273704960000000000",
+      "flat_coarse": "791215134245242002043240876580313537112403999/21990232555520000000000000000000000000000000000000000",
+      "price": "760484465045029377814236732045620555761985441767591308593750000000000000000000/219850739944753722799306861649785278594299000573065807432877010867335509650549",
+      "at_most_hierarchies": 296,
+      "conflict_choices_checked": 1,
+      "partitions": 52,
+      "label": "far_anchor_1"
+    },
+    {
+      "n": 6,
+      "flat_fine": "1995343854239601/45035996273704960000000000",
+      "flat_coarse": "791215134245242002043240876580313537112403999/21990232555520000000000000000000000000000000000000000",
+      "price": "760484465045029377814236732045620555761985441767591308593750000000000000000000/219850739944753722799306861649785278594299000573065807432877010867335509650549",
+      "at_most_hierarchies": 2253,
+      "conflict_choices_checked": 1,
+      "partitions": 203,
+      "label": "far_anchor_2"
+    },
+    {
+      "n": 7,
+      "flat_fine": "1995343854239601/45035996273704960000000000",
+      "flat_coarse": "791215134245242002043240876580313537112403999/21990232555520000000000000000000000000000000000000000",
+      "price": "760484465045029377814236732045620555761985441767591308593750000000000000000000/219850739944753722799306861649785278594299000573065807432877010867335509650549",
+      "at_most_hierarchies": 18404,
+      "conflict_choices_checked": 1,
+      "partitions": 877,
+      "label": "far_anchor_3"
+    }
+  ],
+  "source_sha256": {
+    "phases/phase8/manuscript/unequal_weights_endpoint.tex": "9539b1f035d6e297ed9758ea18ee96f097ec8488346666dc26796f276656b989",
+    "phases/phase9/manuscript/weighted_four_state_upper.tex": "2134888dc05d0cab59b1e8ef02621f3ad807230b18f7948f4a95889d997691ad",
+    "phases/phase9/manuscript/endpoint_lower.tex": "ef280b347a092c7e5f7f3481d406ea519a317bb6f4748ad2da7fe28c97fcca89",
+    "phases/phase10/manuscript/model.tex": "2918c29f6a6735f47d74b26d8f1043a52c3528541475c2864a419613a4b41324",
+    "phases/phase10/manuscript/quartet_reduction.tex": "53f3eeb95297c67e186b34030dd61e895b6cccd0139445b192ee3bb56030e7be",
+    "phases/phase10/manuscript/degree_upper.tex": "f1e4db0d8b81b496e5ef1ffa2a718249cdae041ca947f727597d87199514d636",
+    "phases/phase10/manuscript/anchor_embedding.tex": "eb1515d2a9b4f43018ed691288a40a3f4548184cbeced0023f30a59812089f5e",
+    "phases/phase10/manuscript/endpoint_lower.tex": "b5bcc593991a5c0bf8e08d249f5915e8da2aa06103cc31ad81fda844bad7458c",
+    "phases/phase10/manuscript/quartet_analytic_upper.tex": "5b2156a30bf9f7163c71276c61ae5f8a888f976a21cd7df94c5f6b0f441a8194"
+  },
+  "publication_binding_notice": "Publication copy: source digests bind current public files after documented metadata/path edits; historical event timestamps are retained and are not a new execution attestation."
+}

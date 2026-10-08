@@ -1,0 +1,45 @@
+{
+  "tasks": [
+    "null",
+    "additive",
+    "interaction",
+    "radial"
+  ],
+  "seeds": [
+    750000,
+    750001,
+    750002,
+    750003,
+    750004,
+    750005,
+    750006,
+    750007,
+    750008,
+    750009,
+    750010,
+    750011
+  ],
+  "methods": [
+    "withheld_residual",
+    "released_residual",
+    "withheld_random",
+    "released_random",
+    "fixed2_online",
+    "fixed26_online",
+    "fixed26_gated"
+  ],
+  "ntrain": 2048,
+  "naudit": 4096,
+  "ntest": 32768,
+  "events": 24,
+  "pre_budget": 6000000,
+  "event_budget": 8000000,
+  "tail_budget": 32000000,
+  "batch": 256,
+  "lr": 0.01,
+  "probe_lr": 0.04,
+  "probe_steps": 40,
+  "candidates": 4,
+  "alpha": 0.05,
+  "tau": 0.0005
+}

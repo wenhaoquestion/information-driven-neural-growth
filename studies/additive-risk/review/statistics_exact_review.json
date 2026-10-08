@@ -1,0 +1,17 @@
+{
+  "binomial_grid_checks": 420,
+  "binomial_max_noncoverage_exact": "43364334975937/250000000000000000",
+  "binomial_worst_grid_case": [
+    18,
+    "1/10"
+  ],
+  "contrast_grid_points": 81,
+  "contrasts_checked_per_point": 225,
+  "moving_center_extremal_integer_count_cases": 16,
+  "artificial_oracle_uniform_width": "1/100000000",
+  "synthetic_power_certificate_lower": "44609301984693404075336159743556532317061308082357548314725381144882687/9252268848142259815784370813295531412429626009856151633107353600000000000",
+  "minimum_checked_inference_lower": "19808633860176001187400627161584469278729237/4056481920730334084789450257203200000000000000",
+  "scope": "Finite exact implementation checks; not candidate power certification; no labels sampled.",
+  "all_assertions_passed": true,
+  "seconds": 0.4592352910003683
+}

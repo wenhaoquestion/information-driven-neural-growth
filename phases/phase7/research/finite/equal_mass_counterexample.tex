@@ -1,0 +1,359 @@
+% Phase 7 research result. Author: Wenyu Huang, UCSD.
+% Self-contained strengthened replacement for the Shannon-copy candidate.
+\section{Equal source masses do not control hierarchy price for smooth losses}
+\label{sec:equal-mass-generator}
+
+For a convex generator $\phi$ and a finite source with binary posteriors
+$\eta_x$, define
+\[
+ D_\phi(\mathcal P)=\sum_xp_x\phi(\eta_x)
+  -\sum_{C\in\mathcal P}p_C\phi(\bar\eta_C),\qquad
+ \bar\eta_C=p_C^{-1}\sum_{x\in C}p_x\eta_x.
+\]
+Let $D_{\phi,k}^*$ be its flat $k$-cell minimum.  A deterministic
+four-state hierarchy is a nested pair $(\mathcal H_2,\mathcal H_3)$
+with exactly two and three cells; the one-cell and singleton levels can
+always be appended.  Its minimax excess price is
+\[
+ \rho_{\phi,\mathrm{det}}
+ =\min_{\mathcal H}\max_{k=2,3}
+     D_\phi(\mathcal H_k)/D_{\phi,k}^*.
+\]
+For a channel $X\to Z$, set
+$D_\phi(Z)=\mathbb E\phi(\eta_X)
+ -\mathbb E\phi(\mathbb E[\eta_X\mid Z])$.
+The stochastic price takes the infimum of the same maximum over
+$Y-X-Z_3-Z_2$ with output budgets three and two.  No public randomization
+variable is supplied to the predictor.  All denominators below are positive.
+
+\begin{theorem}[A fixed smooth generator with an equal-mass obstruction]
+\label{thm:equal-mass-smooth}
+There exists a single symmetric function $\phi\in C^\infty([0,1])$
+with $0\leq\phi''\leq1$, $\phi''>0$ on $(0,1)$, and finite endpoint
+derivatives, for which the following holds.  For every integer $j\geq16$
+there is a full-support four-state binary-target law with
+$p_A=p_C=p_D=p_B=1/4$ such that
+\[
+ \rho_{\phi,\mathrm{det},j}
+   =\frac{j^2-j+8}{2j+4}
+   =\frac j2-\frac32+\frac7{j+2},\qquad
+ \rho_{\phi,\mathrm{stoch},j}\sim\frac j4.
+ \tag{8}\label{eq:equal-mass-prices}
+\]
+The generator is strictly convex, while all its derivatives of order at
+least two vanish at zero and one.  Its associated strictly proper binary
+losses can be smooth and bounded in $[0,1]$.
+\end{theorem}
+
+Thus a positive source-mass bound does not by itself control the excess
+hierarchy price uniformly across fixed smooth bounded-slope generators.
+The logarithmic source-mass bound relies on properties of logarithmic
+loss.  The theorem does not assert an unbounded total-risk price.
+
+\subsection{A smooth four-point gadget with exact costs}
+
+Fix an even nonnegative $C^\infty$ density $\kappa$ supported in
+$[-1,1]$, with integral one, and write
+$\kappa_\eta(u)=\eta^{-1}\kappa(u/\eta)$.  Define a smoothed hinge
+\[
+ H_\eta(s)=\int_{\mathbb R}(s-u)_+\kappa_\eta(u)\,du.
+\]
+It is convex and smooth, with $H_\eta''=\kappa_\eta$.
+Symmetry gives zero mean for the kernel, so
+$H_\eta(s)=0$ for $s\leq-\eta$ and $H_\eta(s)=s$ for $s\geq\eta$.
+For $0<\varepsilon\leq1/16$, take $\eta=\varepsilon/4$ and put
+\[
+ F_\varepsilon(z)
+ =H_\eta(-z-\varepsilon)
+  +H_\eta(z-1-\varepsilon)
+  +4\varepsilon^2(z-1/2)^2.
+ \tag{9}\label{eq:hinge-gadget}
+\]
+It is symmetric about $1/2$ and has $F_\varepsilon''\geq8\varepsilon^2$.
+For this intermediate calculation use the four real locations
+\[
+ (z_A,z_C,z_D,z_B)=(-1,0,1,2),\qquad p_x=1/4.
+\]
+These locations will later be transformed to valid binary posteriors.
+
+\begin{lemma}[Exact gadget costs and deterministic optimum]
+\label{lem:equal-mass-costs}
+Let $a,b,r,q,t,u$ denote, respectively, a near pair $AC$ or $DB$, a
+far pair $AD$ or $CB$, the middle pair $CD$, the outer pair $AB$, a
+triple with one outer point, and a triple with both outer points.
+Their Jensen costs for (9) are
+\[
+\begin{array}{lll}
+ a=\varepsilon/4+\varepsilon^2/2,&
+ r=\varepsilon^2/2,&
+ b=t=(1-\varepsilon)/4+2\varepsilon^2,\\[2pt]
+ q=(1-\varepsilon)/2+9\varepsilon^2/2,&
+ u=(1-\varepsilon)/2+14\varepsilon^2/3.&
+\end{array}
+\tag{10}\label{eq:gadget-six-costs}
+\]
+The unique flat optima are $AC\mid DB$ and $A\mid CD\mid B$, with
+costs $2a$ and $r$.  The deterministic price is
+\[
+ \min\{\alpha,\beta\}=\beta,
+ \quad \alpha=\frac ar=\frac1{2\varepsilon}+1,\quad
+ \beta=\frac t{2a}
+       =\frac{1-\varepsilon+8\varepsilon^2}
+              {2\varepsilon+4\varepsilon^2}.
+ \tag{11}\label{eq:gadget-price}
+\]
+Every deterministic risk-ratio vector is coordinatewise at least one
+of $(1,\alpha)$ and $(\beta,1)$, and both vectors are attained.
+\end{lemma}
+
+\begin{proof}
+The possible means of nonempty subsets of the four equally weighted
+locations belong to
+\[
+ \{-1,-1/2,0,1/3,1/2,2/3,1,3/2,2\}.
+\]
+Each lies outside the smoothing bands of width $\eta$ around
+$-\varepsilon$ and $1+\varepsilon$.  At all points used in any
+partition cost, the hinge part of (9) consequently agrees exactly with
+\[
+ V_\varepsilon(z)=(-z-\varepsilon)_+
+                         +(z-1-\varepsilon)_+.
+\]
+Its values at the four inputs are $(1-\varepsilon,0,0,1-\varepsilon)$.
+The near-pair mean is $-1/2$ or $3/2$, and its hinge cost is
+$(1-\varepsilon)/4-(1/2)(1/2-\varepsilon)=\varepsilon/4$.
+The middle-pair mean is $1/2$ and its hinge cost is zero.
+The far-pair and one-outer-point triple means are zero or one; their
+hinge costs are $(1-\varepsilon)/4$.  The outer-pair mean is $1/2$,
+and the two-outer-point triple mean is $1/3$ or $2/3$; their hinge costs
+are $(1-\varepsilon)/2$.
+
+The Jensen cost of $(z-1/2)^2$ equals weighted within-cell variance.
+For these six cell types its values are respectively
+$1/8,1/2,1/8,9/8,1/2,7/6$, in the order $a,b,r,q,t,u$.
+Multiplication by $4\varepsilon^2$ proves (10).
+
+There are seven two-cell partitions, with costs
+$2a,2b,q+r,t,t,u,u$, and six three-cell partitions, with costs
+$a,a,b,b,r,q$.  For $\varepsilon\leq1/16$ one has
+$r<a<b$, $q>a$, $2a<t$, and $t<q+r,u$.
+These strict inequalities identify the unique flat minima.
+
+If the fine partition merges $CD$, its possible coarse costs are
+$t,t,q+r$, so $(\beta,1)$ is its best ratio vector.  If the fine
+partition merges a near pair, the coarse optimum $AC\mid DB$ is
+available, attaining $(1,\alpha)$.  Any other fine pair has cost
+at least $a$, so its vector is dominated by $(1,\alpha)$.
+This proves the Pareto assertion and the minimum formula.  Finally
+\[
+ \alpha-\beta
+ =\frac{5\varepsilon-4\varepsilon^2}
+          {2\varepsilon+4\varepsilon^2}>0,
+\]
+proving the exact value $\beta$.
+\end{proof}
+
+\subsection{Stochastic refinement of the gadget}
+
+\begin{lemma}[A sharp leading stochastic price]
+\label{lem:equal-mass-stochastic}
+For the gadget (9), under the same two output budgets,
+\[
+ 1+\frac{(\alpha-1)(\beta-1)}{\alpha+\beta-2}
+ \leq\rho_{\varepsilon,\mathrm{stoch}}
+ \leq\frac1{4\varepsilon}+\frac43.
+ \tag{12}\label{eq:gadget-stochastic-bracket}
+\]
+In particular $\rho_{\varepsilon,\mathrm{stoch}}
+\sim1/(4\varepsilon)$.
+\end{lemma}
+
+\begin{proof}
+For any distribution on deterministic hierarchies, the Pareto assertion
+reduces minimization of the maximum expected ratio to a mixture of
+$(1,\alpha)$ and $(\beta,1)$.  Equalizing its two coordinates gives
+the left side of (12).
+
+To apply this to arbitrary stochastic chains, represent the fine
+encoder and its coarsener by independent random function tables,
+independent of the source.  Conditional on the tables $U$, the two
+representations are deterministic and nested.  Convexity gives
+\[
+ D_{F_\varepsilon}(Z_k)
+ \geq\mathbb E_U D_{F_\varepsilon}(Z_k\mid U).
+\]
+Indeed, revealing $U$ makes the conditional mean more variable, so
+Jensen's inequality increases the expectation of $F_\varepsilon$ being
+subtracted from the fixed full-information term.  For each fixed table,
+any partitions with fewer than the respective budgets can be refined
+to exactly three and two cells while retaining nesting: first split the
+fine cells to three, keeping each inside its original coarse cell.
+Retain the coarse partition if it already has two cells; if it has only
+one, group the three fine cells into two nonempty coarse cells.
+Refinement decreases Jensen cost.  Hence a distribution
+on exact deterministic hierarchies has expected coordinate costs no
+greater than those of the stochastic chain.  This proves the lower
+bound without giving the predictor a free randomization label.
+
+For the upper bound, use fine outputs $0,m,1$ with
+\[
+ A\mapsto0,\qquad C\mapsto m,\qquad
+ D\mapsto\tfrac12 m+\tfrac12 1,\qquad B\mapsto1,
+\]
+and coarsen $0,m$ to one output.  Here the displayed mixture for $D$
+means an independent random choice between the two indicated outputs.
+At the fine level, the middle cell has mass $3/8$ and location mean
+$1/3$; the right cell has mass $3/8$ and mean $5/3$.
+At the coarse level, the left cell has mass $5/8$ and mean $-1/5$.
+All these means are outside the smoothing bands when
+$\varepsilon\leq1/16$.  Direct evaluation gives
+\[
+ D_{F_\varepsilon}(Z_3)
+   =\varepsilon/8+(2/3)\varepsilon^2,\qquad
+ D_{F_\varepsilon}(Z_2)
+   =1/8+\varepsilon/2+(26/15)\varepsilon^2.
+ \tag{13}\label{eq:gadget-stochastic-costs}
+\]
+For detail, the fine hinge cost is $\varepsilon/8$, and the sum of
+fine weighted variances is $1/12+1/12=1/6$.
+The coarse hinge cost is
+$(1/8+3\varepsilon/8)+\varepsilon/8$; its sum of variances is
+$7/20+1/12=13/30$.  Multiplying variances by $4\varepsilon^2$
+proves (13).  The fine ratio equals $1/(4\varepsilon)+4/3$.
+The coarse cost minus this ratio times $2a$ is
+$-5\varepsilon/12+2\varepsilon^2/5<0$.
+This proves the upper bound.  Since both $\alpha$ and $\beta$ are
+asymptotic to $1/(2\varepsilon)$, the lower bound has the same
+leading coefficient, completing the proof.
+\end{proof}
+
+\subsection{Embedding all gadgets into one smooth generator}
+
+\begin{proof}[Proof of Theorem~\ref{thm:equal-mass-smooth}]
+For each integer $j\geq16$, let
+\[
+ a_j=2^{-j-2},\quad l_j=2^{-j-3},\quad
+ I_j=(a_j,a_j+l_j),\quad\lambda_j=e^{-j^2}.
+\]
+These intervals are pairwise disjoint and accumulate only at zero.
+Choose a fixed smooth cutoff $\chi:\mathbb R\to[0,1]$ equal to one
+on $[1/8,7/8]$ and zero outside $(1/16,15/16)$.
+Use the symmetric positive baseline
+\[
+ b(x)=e^{-1/[x(1-x)]}\quad(0<x<1),\qquad b(0)=b(1)=0.
+\]
+For $x\in I_j$, put $t=(x-a_j)/l_j$ and define
+\[
+ g(x)=(1-\chi(t))b(x)
+    +\chi(t)\frac{16\lambda_j}{l_j^2}
+       F_{1/j}''(4t-3/2).
+ \tag{14}\label{eq:equal-mass-gluing}
+\]
+On the reflected intervals set $g(x)=g(1-x)$, and elsewhere let $g=b$.
+Every component is positive at interior points, because
+$F_{1/j}''\geq8/j^2$ and $b>0$.  The cutoff vanishes on neighborhoods
+of interval boundaries, so the definitions match smoothly there.
+
+For each fixed derivative order $m$, the derivatives of the kernel
+give $\|F_{1/j}^{(m+2)}\|_\infty\leq C_m j^{m+1}+8/j^2$.
+The constant second derivative term need only be included for $m=0$;
+the displayed larger bound is valid in every case.  Consequently
+the $m$th derivative of the second summand in (14) is bounded by
+\[
+ C_m\lambda_j l_j^{-m-2}(1+j^{m+1})
+ \leq C_m e^{-j^2+C_mj}.
+ \tag{15}\label{eq:equal-target-flatness}
+\]
+The baseline and cutoff term has corresponding bound
+$C_me^{-c2^j+C_mj}$: derivatives of $b$ are $b$ times rational
+functions with poles at the endpoints, while derivatives of the
+rescaled fixed cutoff contribute only powers of $l_j^{-1}$.
+Both estimates vanish faster than $a_j^N$ for every fixed $m,N$.
+Away from the patches, the baseline has the same flatness at zero.
+Thus each derivative of $g$ tends to zero faster than any power of
+$x$ as $x\downarrow0$.  Defining all endpoint derivatives to be zero
+is consistent with differentiation, since $g^{(m)}(x)/x\to0$;
+induction proves $g\in C^\infty([0,1])$.  Reflection gives the same
+conclusion at one.
+
+Set $M=\max_{[0,1]}g>0$ and define
+\[
+ \phi''=g/M,\qquad\phi(1/2)=\phi'(1/2)=0.
+\]
+This function is symmetric, smooth on the closed interval, and strictly
+convex because its second derivative is strictly positive in the
+interior.  It has finite endpoint slopes and all derivatives of order
+at least two vanish at the endpoints.  By normalization
+$0\leq\phi''\leq1$.
+
+On $J_j=[a_j+l_j/8,a_j+7l_j/8]$, (14) implies that
+\[
+ \phi(x)=\frac{\lambda_j}{M}
+  F_{1/j}\left(4\frac{x-a_j}{l_j}-\frac32\right)+A_jx+B_j
+ \tag{16}\label{eq:equal-local-identity}
+\]
+for suitable affine constants.  Now put equal source masses $1/4$
+at the four binary posteriors
+\[
+ (\eta_A,\eta_C,\eta_D,\eta_B)
+ =a_j+l_j(1/8,3/8,5/8,7/8).
+ \tag{17}\label{eq:equal-posteriors}
+\]
+They are distinct, strictly between zero and one, and yield a full-support
+joint law.  Under the coordinate transformation in (16) they correspond
+to $(-1,0,1,2)$.  Every deterministic cell mean and every stochastic
+encoded posterior stays in $J_j$.  Affine cancellation therefore proves
+the exact identities
+\[
+ D_\phi(\mathcal P)=\frac{\lambda_j}{M}D_{F_{1/j}}(\mathcal P),
+ \qquad D_\phi(Z)=\frac{\lambda_j}{M}D_{F_{1/j}}(Z)
+ \tag{18}\label{eq:equal-all-encoder-identity}
+\]
+for all partitions and all encoders.  In particular the flat denominators
+are $(\lambda_j/M)2a>0$ and $(\lambda_j/M)r>0$.
+Lemma~\ref{lem:equal-mass-costs} with $\varepsilon=1/j$ gives the
+exact deterministic expression (8), and
+Lemma~\ref{lem:equal-mass-stochastic} gives the stochastic asymptotic.
+
+To obtain the stated bounded proper loss, write
+$h(q)=\phi(0)-\phi(q)$ and set
+\[
+ \ell(q,1)=h(q)+(1-q)h'(q),\qquad
+ \ell(q,0)=h(q)-qh'(q).
+\]
+Their expected regret is the Bregman divergence generated by $\phi$,
+so strict convexity proves strict propriety.  Endpoint supporting lines
+make the losses nonnegative.  They are smooth, with derivatives
+$\ell(q,1)'=-(1-q)\phi''(q)$ and
+$\ell(q,0)'=q\phi''(q)$.  Their largest values equal
+$-\phi'(0)=\phi'(1)=\int_0^{1/2}\phi''(t)dt\leq1/2$.
+They hence lie in $[0,1]$.
+\end{proof}
+
+\paragraph{Total-risk limitation.}
+The construction deliberately establishes an excess-risk boundary.
+For the displayed proper loss let $c=-\phi'(0)>0$.  Since
+$h(q)=cq+o(q)$ as $q\downarrow0$ and all posteriors (17) lie between
+$a_j$ and $3a_j/2$, their full-information Bayes risk $B_j$ is at least
+$ca_j/2$ eventually.  On $[-1,2]$, the convex nonnegative gadget
+$F_{1/j}$ is bounded above by its equal endpoint values
+$1-1/j+9/j^2<2$.  Equation (18) therefore gives
+$D_\phi(Z)\leq2\lambda_j/M$ for every encoder.  All total-risk ratios
+to the respective flat total-risk optima are at most
+\[
+ 1+\frac{4\lambda_j}{Mca_j}=1+o(1).
+\]
+Thus total-risk hierarchy prices for these very instances tend to one.
+The result does not show large absolute excess loss: the flat distortions
+and all copied costs are extremely small.
+
+\paragraph{Scope and attribution.}
+Smooth cutoffs, proper-score representations, and Jensen/Bregman
+centroid identities are classical.  The ingredients new to this research
+candidate are the exact equal-mass hinge-gadget Pareto costs, its
+stochastic leading coefficient, and its embedding into one fixed smooth
+generator.  Priority is not asserted; the accompanying primary-source
+audit distinguishes this statement from greedy Bregman clustering and
+from uniform curvature comparisons.  This argument does not determine
+the universal sharp logarithmic-loss coefficient, the all-capacity
+price for larger sources, or a classification of all generators.

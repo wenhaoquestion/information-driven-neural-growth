@@ -1,0 +1,112 @@
+\section{Why a rejected singleton need not mean sufficient structure}
+\label{app:complementarity}
+This auxiliary investigation was developed independently of the main
+controller. It isolates an action-horizon boundary with full observations
+and exact convex refitting. The mechanism is a specialization of known
+weak-submodularity and covariance-conditioning results
+\cite{das2011submodular,elenberg2018restricted}; it is not claimed as a new
+general impossibility theorem.
+
+Let $U,V,E$ be independent standard Gaussians, $Y=V+\sigma E$, and let the
+available frozen features be $h_+=U+\epsilon V$ and $h_-=U-\epsilon V$,
+where $0<\epsilon<1$. A structural action adds features and exactly refits
+an affine least-squares decoder. Let $F(S)$ be its population mean-squared
+risk reduction relative to the intercept-only optimum.
+\begin{proposition}[Complementary actions under a per-feature charge]
+One has
+\[
+ F(\{+\})=F(\{-\})=\frac{\epsilon^2}{1+\epsilon^2},\qquad
+ F(\{+,-\})=1.
+\]
+For $\epsilon^2/(1+\epsilon^2)<\lambda<1/2$, every rule that requires each
+singleton addition to decrease risk plus $\lambda$ times width stays at
+width zero, however many times the same opportunities recur. A two-feature
+addition decreases that objective by $1-2\lambda>0$.
+\end{proposition}
+\begin{proof}
+The feature variances equal $1+\epsilon^2$, while their covariances with
+$Y$ are $\epsilon$ and $-\epsilon$. Minimizing the quadratic
+$\E(Y-bh)^2$ gives $b=\E[Yh]/\E[h^2]$ and reduction
+$(\E[Yh])^2/\E[h^2]$. This proves the singleton formulas. The pair can
+represent $V=(h_+-h_-)/(2\epsilon)$, leaving only independent noise with
+risk $\sigma^2$. The initial risk is $1+\sigma^2$, so the joint reduction
+is one. Subtracting the specified feature charges proves the claims.
+\end{proof}
+The singleton gains are positive. This is a cost-threshold obstruction,
+not a claim that a population gate with zero threshold must reject them.
+The standardized feature correlation is
+$(1-\epsilon^2)/(1+\epsilon^2)$, so its smallest covariance eigenvalue is
+$2\epsilon^2/(1+\epsilon^2)$, exactly the sum of singleton gains divided
+by their joint gain. This is the established submodularity-ratio mechanism.
+If a candidate dictionary has ratio at least $\gamma>0$, all singleton
+gains at most $\tau$ imply a block of at most $k$ features has gain at most
+$k\tau/\gamma$: sum the singleton bounds and apply the ratio definition.
+Without such conditioning the conclusion degenerates.
+
+The pair decoder pays a further resource: its outgoing coefficients are
+$(1/(2\epsilon),-1/(2\epsilon))$, with $\ell_1$ norm $1/\epsilon$ and
+squared $\ell_2$ norm $1/(2\epsilon^2)$. Adding a penalty $\rho\|b\|_2^2$
+changes the optimal penalized gain to $2\epsilon^2/(2\epsilon^2+\rho)$.
+Indeed, antisymmetric coefficients $(a,-a)$ minimize
+$(1-2\epsilon a)^2+2\rho a^2$ at
+$a=\epsilon/(2\epsilon^2+\rho)$. Substitution proves the formula.
+Thus large cancellation and poor conditioning are not free.
+
+In a separate binary-label prediction problem, an information decomposition
+also cautions against promoting a representation score into realized learning
+benefit. Under logarithmic
+loss, for current observations $H$, candidate observation $Z$, and fitted
+predictions $q(H),q'(H,Z)$,
+\[
+ R(q)-R(q')=I(Y;Z\mid H)+A-A',
+\]
+where $A=\E D_{\rm KL}(P(Y\mid H)\Vert q(H))$ and
+$A'=\E D_{\rm KL}(P(Y\mid H,Z)\Vert q'(H,Z))$. This is the standard
+conditional cross-entropy identity: condition each risk on its available
+observations, obtain conditional entropy plus KL approximation error, and
+subtract. CMI equals realized improvement only when those decoder errors
+cancel, in particular for two exact Bayes refits. The neural experiment
+uses Brier loss; this identity is an interpretative result, not its score.
+
+\subsection{Executed finite-sample action-horizon diagnostic}
+The separate diagnostic offers twelve fixed features: four independent
+complementary pairs and four independent nuisances. Signal targets combine
+four independent $V$ coordinates with coefficients $(1,0.8,0.6,0.4)$ plus
+Gaussian noise of standard deviation $0.5$; a null condition uses noise only.
+For each of 32 paired seeds, $\epsilon\in\{0.1,0.25\}$, and singleton or
+up-to-pair actions, 1,024 labels fit the readout. Ten opportunities each
+receive 512 fresh validation labels. All singleton or singleton-and-pair
+candidates are fitted, then the best positive empirical validation gain
+minus $0.03$ per added feature is selected. The controller receives no
+latent pairing identifiers or population risk. This gate is heuristic:
+it maximizes uncorrected validation scores and Gaussian squared losses are
+unbounded. Proposition~\ref{prop:gate} does not apply.
+
+There are 256 executed configurations. At $\epsilon=0.1$ on the signal
+task, mean exact-population MSE is 1.6916 for singleton actions and 0.2520
+for pair actions; final widths average 1.81 and 8. At $\epsilon=0.25$,
+mean MSEs are 0.4405 and 0.2520. Bayes risk is 0.25. Both policies remain
+at width zero in all null configurations. Every fitted readout and candidate
+score is saved. These deliberately complementary frozen features demonstrate
+an available-action boundary, not general neural proposal learnability.
+
+The pair policy pays substantially more. At $\epsilon=0.1$ signal, mean
+readout fits are 251 versus 111.1, and the $n(k+1)^2$ least-squares proxy is
+12.23 million versus 1.06 million. On null data the pair policy fits 781
+readouts versus 121, including the initial intercept fit, while rejecting all
+growth. Coefficient norms are recorded.
+An exact-population singleton cost gate would reject all first moves at
+$\epsilon=0.1$, yet its empirical counterpart grows in 27 of 32 signal runs:
+noise sometimes allows a weak first step whose complement later helps.
+This is not a recommendation to accept false positives. It shows why a
+strict per-step objective and an inadequate action horizon may conflict.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{complementarity_diagnostic.png}
+\caption{Auxiliary frozen-feature/readout experiment, separate from neural
+hidden-parameter training. Analytic one-component quantities and measured
+repeated trajectories are labelled separately. Bands are pointwise 95\%
+Student-$t$ intervals over 32 independent runs; the exact population evaluator
+does not enter selection. Pair enumeration
+uses more candidate fits and may require large cancelling output coefficients.}
+\end{figure}

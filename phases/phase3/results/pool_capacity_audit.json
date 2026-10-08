@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "runs": 64,
+  "max_independent_risk_error": 2.7755575615628914e-17,
+  "same_fixed_initializer": true,
+  "same_final_parameter_count": true,
+  "all_pool_labels_consumed": true,
+  "source_hash_matched": true,
+  "budget_exact_up_to_one_parameter_vector_example": true
+}

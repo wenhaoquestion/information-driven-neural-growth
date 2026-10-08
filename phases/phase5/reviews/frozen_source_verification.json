@@ -1,0 +1,76 @@
+{
+  "timestamp_utc": "2026-09-20T05:50:58.320620+00:00",
+  "all_match": true,
+  "checks": [
+    {
+      "freeze_file": "phase5/experiments/frozen.json",
+      "path": "phase5/code/quadratic_experiment.py",
+      "expected": "0ea28d3a245c51534968e6b2d26ae7bd9ce3790693a86ae3bbff01852435c4e2",
+      "actual": "0ea28d3a245c51534968e6b2d26ae7bd9ce3790693a86ae3bbff01852435c4e2",
+      "matches": true
+    },
+    {
+      "freeze_file": "phase5/experiments/frozen.json",
+      "path": "phase5/experiments/confirmation.json",
+      "expected": "37821cb3f3b89782f856de37853abf001733794941381deaef5fa9ee7b130205",
+      "actual": "37821cb3f3b89782f856de37853abf001733794941381deaef5fa9ee7b130205",
+      "matches": true
+    },
+    {
+      "freeze_file": "phase5/experiments/frozen.json",
+      "path": "phase5/experiments/PROTOCOL.md",
+      "expected": "580ca7ec4f7ebd540fc114abd3c20376f8e4ba55043bd7250078a665bd4972dc",
+      "actual": "580ca7ec4f7ebd540fc114abd3c20376f8e4ba55043bd7250078a665bd4972dc",
+      "matches": true
+    },
+    {
+      "freeze_file": "phase5/experiments/adaptive_frozen.json",
+      "path": "phase5/code/adaptive_quadratic.py",
+      "expected": "1f20d35524bab744153de58916103f27be1a7fb14725f8f643f4c1494dba2d6e",
+      "actual": "1f20d35524bab744153de58916103f27be1a7fb14725f8f643f4c1494dba2d6e",
+      "matches": true
+    },
+    {
+      "freeze_file": "phase5/experiments/adaptive_frozen.json",
+      "path": "phase5/code/quadratic_experiment.py",
+      "expected": "0ea28d3a245c51534968e6b2d26ae7bd9ce3790693a86ae3bbff01852435c4e2",
+      "actual": "0ea28d3a245c51534968e6b2d26ae7bd9ce3790693a86ae3bbff01852435c4e2",
+      "matches": true
+    },
+    {
+      "freeze_file": "phase5/experiments/adaptive_frozen.json",
+      "path": "phase5/experiments/adaptive_confirmation.json",
+      "expected": "581051a8ee74fb9091775c34b2ab886eb9f197d7e796727581c0f6f90a6df083",
+      "actual": "581051a8ee74fb9091775c34b2ab886eb9f197d7e796727581c0f6f90a6df083",
+      "matches": true
+    },
+    {
+      "freeze_file": "phase5/experiments/adaptive_frozen.json",
+      "path": "phase5/experiments/ADAPTIVE_PROTOCOL.md",
+      "expected": "63ff1653d5ea490c7056930ae497febff3f285bb88bb7b89f42b7801fc78b22d",
+      "actual": "63ff1653d5ea490c7056930ae497febff3f285bb88bb7b89f42b7801fc78b22d",
+      "matches": true
+    },
+    {
+      "freeze_file": "phase5/experiments/fullbatch_frozen.json",
+      "path": "phase5/code/quadratic_fullbatch.py",
+      "expected": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720",
+      "actual": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720",
+      "matches": true
+    },
+    {
+      "freeze_file": "phase5/experiments/fullbatch_frozen.json",
+      "path": "phase5/experiments/fullbatch_confirmation.json",
+      "expected": "03eba4e3d268fe6dc5017539b0528508ba3c9f320f8104f35740512207bf7b96",
+      "actual": "03eba4e3d268fe6dc5017539b0528508ba3c9f320f8104f35740512207bf7b96",
+      "matches": true
+    },
+    {
+      "freeze_file": "phase5/experiments/fullbatch_frozen.json",
+      "path": "phase5/experiments/FULLBATCH_PROTOCOL.md",
+      "expected": "e9c6d520981a9d91157577e338ff424584da2cce03c17afd28d1a8a4dd435703",
+      "actual": "e9c6d520981a9d91157577e338ff424584da2cce03c17afd28d1a8a4dd435703",
+      "matches": true
+    }
+  ]
+}

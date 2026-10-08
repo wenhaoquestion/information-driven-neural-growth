@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "arithmetic": "fractions.Fraction",
+  "scope": "New bounded adversarial checks, not rerun of archived experiments or proof by enumeration",
+  "at_most_four_capacity_schedules": 127,
+  "sources_per_schedule": 3,
+  "non_oracle_partition_decompositions": 15,
+  "lossless_partition_with_nonzero_reporting_excess": "121/3072",
+  "negative_input_copy_birth_outputs": [
+    "0",
+    "1/2"
+  ],
+  "copied_squared_excess": "1/16",
+  "gradient_after_parameters": [
+    "3",
+    "1"
+  ],
+  "gradient_after_excess": "8",
+  "affine_full_report_grid_pairs": 441,
+  "script_sha256": "927a993b966bb5fa8d56d9ccca27c258bae890b2c3706892bb14d3ea7a292430"
+}

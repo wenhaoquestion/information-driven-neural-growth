@@ -1,0 +1,74 @@
+\subsection{Fresh-seed comparison at the smaller audit budget}
+After the original confirmation exposed the empirical-Bernstein linear floor,
+we froze a separate protocol before running seeds 63000--63015. Both the
+betting and original EB gates use the same ordinary starts, fitting data,
+fresh 4,096-label audit blocks, residual/random candidate proposals, and
+branch training. This adds 128 task--seed--gate configurations, 256 controller
+trajectories, and 2,048 opportunities. It is a new-seed follow-up motivated by
+an earlier finding, not a retroactive change to the original confirmation.
+The first experiment runner and all original results remain unchanged.
+
+\begin{table}[tb]
+\centering\scriptsize
+\resizebox{\linewidth}{!}{\input{betting_followup_table}}
+\caption{New-seed gate comparison, 16 paired repetitions per task and proposal.
+Both gates use 4,096 fresh audit labels per opportunity. Paired difference is
+betting minus EB Brier risk, with a descriptive 95\% Student-$t$ interval.
+Width is the mean final hidden-unit count. The betting gate's extra products
+are not included in training parameter--example matching.}
+\label{tab:betting}
+\end{table}
+
+The alternative gate provides a substantial constructive improvement for
+both proposal mechanisms. For the residual method, additive risk decreases
+from 0.14698 under EB to 0.13836 under betting, a paired change of
+$-0.00861$ with interval $[-0.01078,-0.00644]$. Interaction risk decreases
+from 0.17558 to 0.15209, a paired change of $-0.02349$ with interval
+$[-0.02628,-0.02070]$. Mean widths increase from 2 to 3.4375 on additive
+data and from 3 to 5.3125 on interaction data. Null and linear networks
+remain at width two with identical predictions under both gates.
+These are repeated trained histories with a finite-sample commitment
+guarantee, rather than forced-growth examples.
+
+The improvement is at the same audit-label budget, not the same final
+training effort. Accepted wider models require more later branch training:
+residual training/probe parameter--example work rises by factors 1.206 and
+1.224 on additive and interaction data. The betting calculations add
+$15\cdot4096\cdot8=491{,}520$ factor evaluations per trajectory, including
+rejected comparisons. Current research instrumentation also computes EB
+statistics in both arms. Both consume 32,768 audit labels plus 2,048 fitting
+labels; no evidence-sharing gain from Theorem~\ref{thm:shared-evidence} is
+claimed for this restarted testing procedure.
+
+The follow-up also sharpens the adverse selector evidence. Under the betting
+gate, residual minus random is $-0.000789$ with interval
+$[-0.003284,0.001705]$ on additive data and $+0.002542$ with interval
+$[0.000242,0.004841]$ on interaction data. Random thus retains a favorable
+interaction result while avoiding candidate optimization. Comparisons of
+the residual method with its retrospectively matched fixed capacity and
+training/probe budget remain unresolved on both nonlinear tasks. The random
+betting method has a modest favorable additive comparison against its own
+matched fixed model, $-0.00194$ with interval $[-0.00353,-0.00035]$; that
+positive control result is retained. Larger full-label-pool networks still
+have lower mean risks, with the capacity and offline-optimization caveats
+described earlier.
+
+Independent checks reconstruct all 1,024 betting-arm opportunities and
+3,072 product tests from saved parameters and regenerated audit examples;
+maximum log-e discrepancy is $4.0\cdot10^{-13}$. Finite-binomial null
+calculations check the expectation and tail bound directly. No betting-arm
+retained step increases evaluator risk in this follow-up, but that finite
+observation is not the proof of validity. The proof is
+Proposition~\ref{prop:betting-gate}, and evaluation remains Monte Carlo in
+the input distribution.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{betting_followup.pdf}
+\caption{Measured, fresh-seed gate follow-up at the same smaller audit budget.
+Paired intervals and trajectories show that a less conservative established
+test can enable repeated growth. Extra accepted capacity raises subsequent
+training work. Both informative and random proposals benefit, so the result
+attributes progress to the evidence mechanism rather than validating the
+residual proposal score.}
+\label{fig:betting}
+\end{figure}

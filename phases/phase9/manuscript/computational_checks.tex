@@ -1,0 +1,49 @@
+\section{Finite computational checks}
+\label{sec:computations}
+The computations check finite identities and examples; the theorems are
+proved analytically. They do not certify a global stochastic optimum,
+verify asymptotics from a finite range, or simulate neural training.
+
+\paragraph{Exact rational weighted reduction.}
+The script \texttt{check\_weighted\_reduction.py} enumerates all seven exact
+two-cell partitions, six exact three-cell partitions, and eighteen exact
+three-to-two hierarchies of a four-state source, including noncontiguous
+partitions. It tests 378 rational source/curvature instances with Python's
+\texttt{fractions.Fraction}. All flat-contiguity, optimizer-conflict,
+candidate-hierarchy, and selected-triple kernel checks passed; the recorded
+number of kernel checks is 12,993. The largest deterministic price in this
+finite test set was approximately $2.8153017180$. The number is a property
+of the test set, not an estimate of the degree envelope. The JSON receipt
+records the exact rational value and the code hash.
+
+\paragraph{Classical extremizer consistency.}
+The companion script \texttt{check\_exact\_asymmetry.py} evaluates the
+explicit even- and odd-degree endpoint-moment extremizers of
+Appendix~\ref{sec:p9-exact-asymmetry} for degrees zero through 33,
+using a higher-order Gauss--Legendre rule. All 34 checks passed, with
+largest observed relative discrepancy about $5.44\times10^{-14}$ from
+the predicted shifted Jacobi zero. These are floating-point consistency
+checks, not interval certificates or a replacement for the quadrature
+proof.
+
+\input{coordinate_experiment}
+
+\paragraph{Exact finite indicator-oracle checks.}
+The script \texttt{check\_indicator\_bridge.py} uses exact rational
+arithmetic for 27 finite populations. All 108 population-oracle states,
+81 birth/refit transitions, and 27 unrestricted one-unit Bayes fits pass
+their identity checks. The birth-only example retains excess risk $1/16$
+after copying the old report, while the new flat optimum is zero, exactly
+as in Proposition~\ref{prop:p9-nontransfer}. These computations evaluate
+known population posteriors and algebraic refits; they are not training
+or generalization experiments.
+
+\paragraph{Reproducibility and evidence boundary.}
+The source bundle includes the scripts, JSON results, execution logs,
+environment details, and input hashes under
+\texttt{research/experiments} and \texttt{research/prior\_art}.
+Every experiment uses finite calculations on the stated examples.
+The explicit lower proof and the upper proof do not depend on the
+computational checks. No external training run, package installation,
+or modification of an earlier research phase is needed to read or build
+this paper.

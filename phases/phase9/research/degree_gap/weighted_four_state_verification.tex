@@ -1,0 +1,37 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\title{Sharp Four-State Hierarchy Prices\protect\\for Arbitrary Positive Weights}
+\author{Phase 9 research verification copy}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+\noindent\textbf{Status.} Internal mathematical review, not external peer
+review or a claim of historical priority. The included theorem concerns
+exactly four states and output budgets two and three.
+
+\section{Previously established lower bound}
+\begin{theorem}[Phase 8 endpoint lower bound]
+\label{thm:ext-weightdegenerate}
+There are absolute $c_*>0$ and $r_*>0$ such that, for every integer
+$r\ge r_*$, four-state sources with positive weights and nonnegative
+polynomial curvature of degree at most $r$ have both deterministic and
+stochastic two-/three-output hierarchy prices at least
+$c_*r^2/(\log r)^2$. The posteriors may lie in $[1/4,3/4]$, and the
+generators may induce smooth strictly proper losses in $[0,1/2]$.
+\end{theorem}
+\noindent This is an imported statement only. Its complete proof and
+normalization are in the immutable Phase 8 manuscript file
+\texttt{unequal\_weights\_endpoint.tex}; its full independent review is
+\texttt{unequal\_weights\_independent\_review.md}. All new upper-bound
+calculations are given below.
+
+\input{weighted_four_state_upper.tex}
+\end{document}

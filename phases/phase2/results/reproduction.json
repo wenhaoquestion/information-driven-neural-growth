@@ -1,0 +1,178 @@
+{
+  "status": "passed",
+  "full_neural_replay": true,
+  "neural_comparison_tolerance": {
+    "relative": 1e-09,
+    "absolute": 1e-11
+  },
+  "baseline_files_checked": 63,
+  "phase1_changed_files": [],
+  "latex_issues": [],
+  "commands": [
+    {
+      "command": [
+        "python",
+        "phase2/code/learning_neural_probe.py",
+        "--seeds",
+        "32",
+        "--seed-base",
+        "17000",
+        "--output",
+        "replayed/learning_neural_probe32.json"
+      ],
+      "returncode": 0,
+      "seconds": 18.51350975036621,
+      "log": "results/reproduction_logs/00.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/code/learning_neural_probe.py",
+        "--seeds",
+        "32",
+        "--seed-base",
+        "41000",
+        "--output",
+        "replayed/learning_neural_aligned32.json"
+      ],
+      "returncode": 0,
+      "seconds": 16.171143054962158,
+      "log": "results/reproduction_logs/01.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/code/learning_curvature_bridge.py",
+        "--seeds",
+        "64",
+        "--output",
+        "replayed/learning_curvature_bridge64.json"
+      ],
+      "returncode": 0,
+      "seconds": 101.85658526420593,
+      "log": "results/reproduction_logs/02.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/code/audit_quartet.py"
+      ],
+      "returncode": 0,
+      "seconds": 2.0374181270599365,
+      "log": "results/reproduction_logs/03.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/code/audit_controller_witness.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.25823187828063965,
+      "log": "results/reproduction_logs/04.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/code/learning_check.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.0773921012878418,
+      "log": "results/reproduction_logs/05.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/code/audit_learning.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.2601048946380615,
+      "log": "results/reproduction_logs/06.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/research/theory_checks.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.03468203544616699,
+      "log": "results/reproduction_logs/07.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/code/high_order.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.35532689094543457,
+      "log": "results/reproduction_logs/08.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/research/high_order_independent.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.9438109397888184,
+      "log": "results/reproduction_logs/09.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/code/score_sampling.py"
+      ],
+      "returncode": 0,
+      "seconds": 1.0791218280792236,
+      "log": "results/reproduction_logs/10.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/research/score_sampling_checks.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.43842196464538574,
+      "log": "results/reproduction_logs/11.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/code/learning_summarize.py"
+      ],
+      "returncode": 0,
+      "seconds": 2.6823129653930664,
+      "log": "results/reproduction_logs/12.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/code/plot_learning.py"
+      ],
+      "returncode": 0,
+      "seconds": 2.914536952972412,
+      "log": "results/reproduction_logs/13.log"
+    },
+    {
+      "command": [
+        "python",
+        "phase2/code/plot_theory.py"
+      ],
+      "returncode": 0,
+      "seconds": 1.8824427127838135,
+      "log": "results/reproduction_logs/14.log"
+    },
+    {
+      "command": [
+        "latexmk",
+        "-cd",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "phase2/manuscript/main.tex"
+      ],
+      "returncode": 0,
+      "seconds": 3.9570560455322266,
+      "log": "results/reproduction_logs/15.log"
+    }
+  ],
+  "wall_seconds": 153.97474312782288
+}

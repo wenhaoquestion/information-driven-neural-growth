@@ -1,0 +1,3034 @@
+{
+  "status": "all assertions passed",
+  "arithmetic": "Python fractions.Fraction; no floating-point calculations",
+  "coefficient_order": [
+    "constant",
+    "epsilon",
+    "epsilon_squared"
+  ],
+  "source_labels": [
+    "A",
+    "C",
+    "D",
+    "B"
+  ],
+  "locations": [
+    "-1",
+    "0",
+    "1",
+    "2"
+  ],
+  "weights": [
+    "1/4",
+    "1/4",
+    "1/4",
+    "1/4"
+  ],
+  "whole_interval": [
+    "0",
+    "1/16"
+  ],
+  "ratio_domain": "0 < epsilon <= 1/16",
+  "minimum_method": "exact endpoints plus interior vertex for convex quadratics",
+  "set_partition_count": 15,
+  "at_most_2_partition_count": 8,
+  "at_most_3_partition_count": 14,
+  "at_most_2_3_hierarchy_count": 39,
+  "cell_costs": {
+    "a": [
+      "0",
+      "1/4",
+      "1/2"
+    ],
+    "b": [
+      "1/4",
+      "-1/4",
+      "2"
+    ],
+    "s": [
+      "0",
+      "0",
+      "1/2"
+    ],
+    "q": [
+      "1/2",
+      "-1/2",
+      "9/2"
+    ],
+    "t": [
+      "1/4",
+      "-1/4",
+      "2"
+    ],
+    "u": [
+      "1/2",
+      "-1/2",
+      "14/3"
+    ]
+  },
+  "flat_optima": {
+    "opt2": [
+      "0",
+      "1/2",
+      "1"
+    ],
+    "opt3": [
+      "0",
+      "0",
+      "1/2"
+    ]
+  },
+  "both_pareto_cost_corners_attained": true,
+  "every_hierarchy_dominated_by_a_corner_on_whole_interval": true,
+  "explicit_channel": {
+    "fine_cost": [
+      "0",
+      "1/8",
+      "2/3"
+    ],
+    "coarse_cost": [
+      "1/8",
+      "1/2",
+      "26/15"
+    ]
+  },
+  "examples": [
+    {
+      "epsilon": "1/16",
+      "opt2": "9/256",
+      "opt3": "1/512",
+      "deterministic_price": "62/9",
+      "equals_t_over_2a": true
+    },
+    {
+      "epsilon": "1/64",
+      "opt2": "33/4096",
+      "opt3": "1/8192",
+      "deterministic_price": "1010/33",
+      "equals_t_over_2a": true
+    },
+    {
+      "epsilon": "1/1024",
+      "opt2": "513/1048576",
+      "opt3": "1/2097152",
+      "deterministic_price": "261890/513",
+      "equals_t_over_2a": true
+    }
+  ],
+  "hierarchies": [
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "fine_cost": [
+        "0",
+        "1/4",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-3/4",
+              "1"
+            ],
+            "minimum": "53/256",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "1/4",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-3/4",
+              "1"
+            ],
+            "minimum": "53/256",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "fine_cost": [
+        "0",
+        "0",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-3/4",
+              "1"
+            ],
+            "minimum": "53/256",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "9/2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "4"
+            ],
+            "minimum": "15/32",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "4"
+            ],
+            "minimum": "31/64",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "0",
+        "0",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "9/2"
+            ],
+            "minimum": "241/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "9/2"
+            ],
+            "minimum": "35/72",
+            "minimizer": "1/18"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "4"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "3"
+            ],
+            "minimum": "115/256",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "2"
+            ],
+            "minimum": "31/128",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "4"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "3"
+            ],
+            "minimum": "115/256",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "2"
+            ],
+            "minimum": "31/128",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "4"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "4"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "3"
+            ],
+            "minimum": "115/256",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "7/2"
+            ],
+            "minimum": "239/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "2"
+            ],
+            "minimum": "31/128",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "7/2"
+            ],
+            "minimum": "247/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "fine_cost": [
+        "0",
+        "1/4",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "11/3"
+            ],
+            "minimum": "347/768",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "8/3"
+            ],
+            "minimum": "125/512",
+            "minimizer": "3/64"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "1/4",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "9/2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "11/3"
+            ],
+            "minimum": "347/768",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "4"
+            ],
+            "minimum": "15/32",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "8/3"
+            ],
+            "minimum": "125/512",
+            "minimizer": "3/64"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "4"
+            ],
+            "minimum": "31/64",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "11/3"
+            ],
+            "minimum": "347/768",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "8/3"
+            ],
+            "minimum": "125/512",
+            "minimizer": "3/64"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "11/3"
+            ],
+            "minimum": "347/768",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "25/6"
+            ],
+            "minimum": "721/1536",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "8/3"
+            ],
+            "minimum": "125/512",
+            "minimizer": "3/64"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "25/6"
+            ],
+            "minimum": "97/200",
+            "minimizer": "3/50"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "fine_cost": [
+        "0",
+        "1/4",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(2a,a)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "fine_cost": [
+        "0",
+        "1/4",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(2a,a)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "fine_cost": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "dominated_by": [
+        "(2a,a)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "1/4",
+              "1/2"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "11/3"
+            ],
+            "minimum": "347/768",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "8/3"
+            ],
+            "minimum": "125/512",
+            "minimizer": "3/64"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "9/2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "11/3"
+            ],
+            "minimum": "347/768",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "4"
+            ],
+            "minimum": "15/32",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "8/3"
+            ],
+            "minimum": "125/512",
+            "minimizer": "3/64"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "4"
+            ],
+            "minimum": "31/64",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "fine_cost": [
+        "0",
+        "1/4",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "11/3"
+            ],
+            "minimum": "347/768",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "8/3"
+            ],
+            "minimum": "125/512",
+            "minimizer": "3/64"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "1/4",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "11/3"
+            ],
+            "minimum": "347/768",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "25/6"
+            ],
+            "minimum": "721/1536",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "8/3"
+            ],
+            "minimum": "125/512",
+            "minimizer": "3/64"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "25/6"
+            ],
+            "minimum": "97/200",
+            "minimizer": "3/50"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "fine_cost": [
+        "0",
+        "0",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-3/4",
+              "1"
+            ],
+            "minimum": "53/256",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "fine_cost": [
+        "0",
+        "1/4",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-3/4",
+              "1"
+            ],
+            "minimum": "53/256",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "1/4",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-3/4",
+              "1"
+            ],
+            "minimum": "53/256",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "0",
+        "1/4",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "1/4",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "9/2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "4"
+            ],
+            "minimum": "15/32",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "4"
+            ],
+            "minimum": "31/64",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "0",
+        "0",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "9/2"
+            ],
+            "minimum": "241/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "9/2"
+            ],
+            "minimum": "35/72",
+            "minimizer": "1/18"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "4"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "7/2"
+            ],
+            "minimum": "239/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "7/2"
+            ],
+            "minimum": "247/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          2
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "25/6"
+            ],
+            "minimum": "721/1536",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "25/6"
+            ],
+            "minimum": "97/200",
+            "minimizer": "3/50"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "0",
+        "1/4",
+        "1/2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "0",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "1/4",
+              "0"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "1/4",
+              "1/2"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "0",
+              "1/2",
+              "1/2"
+            ],
+            "minimum": "0",
+            "minimizer": "0"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          1
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "14/3"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "25/6"
+            ],
+            "minimum": "721/1536",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "25/6"
+            ],
+            "minimum": "97/200",
+            "minimizer": "3/50"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/4",
+        "-1/4",
+        "2"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/2",
+              "3/2"
+            ],
+            "minimum": "115/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3/2"
+            ],
+            "minimum": "123/512",
+            "minimizer": "1/16"
+          }
+        ]
+      }
+    },
+    {
+      "coarse": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "fine": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "coarse_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "fine_cost": [
+        "1/2",
+        "-1/2",
+        "5"
+      ],
+      "dominated_by": [
+        "(2a,a)",
+        "(t,s)"
+      ],
+      "whole_interval_certificates": {
+        "(2a,a)": [
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1",
+              "4"
+            ],
+            "minimum": "29/64",
+            "minimizer": "1/16"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-3/4",
+              "9/2"
+            ],
+            "minimum": "241/512",
+            "minimizer": "1/16"
+          }
+        ],
+        "(t,s)": [
+          {
+            "difference_coefficients": [
+              "1/4",
+              "-1/4",
+              "3"
+            ],
+            "minimum": "47/192",
+            "minimizer": "1/24"
+          },
+          {
+            "difference_coefficients": [
+              "1/2",
+              "-1/2",
+              "9/2"
+            ],
+            "minimum": "35/72",
+            "minimizer": "1/18"
+          }
+        ]
+      }
+    }
+  ],
+  "scope_limit": "Reference hinge costs and explicit channel only; not numerical polynomial kernel integration or global stochastic optimization."
+}

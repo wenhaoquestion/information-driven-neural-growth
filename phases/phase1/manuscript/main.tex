@@ -1,0 +1,853 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{graphicx,booktabs,array,enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{xurl}
+\setcounter{tocdepth}{1}
+\hypersetup{pdftitle={The Price of Irreversible Representation Growth},pdfauthor={Wenyu Huang}}
+\graphicspath{{../figures/}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\KL}{D_{\mathrm{KL}}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\Ropt}{R^*}
+\DeclareMathOperator{\He}{He}
+\title{The Price of Irreversible Representation Growth\\[4pt]
+\large Sharp Four-State Obstructions under Logarithmic Loss}
+\author{Wenyu Huang\\University of California San Diego}
+\date{Research manuscript \;|\; September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Can increasingly informative representations be obtained by refining their
+existing structure while remaining competitive at every capacity? We study
+this question through the best prediction loss attainable with a bounded
+number of representation states. A full-support family with four source
+states and a binary target has minimum simultaneous log-loss ratio
+$\sqrt{L}/(2\sqrt{\log 2})(1+o(1))$ over all deterministic hierarchies,
+where the least source probability is $e^{-L}$. Allowing arbitrary stochastic
+Markov refinements improves the sharp constant by a factor of two, but the
+ratio remains unbounded. The conclusions concern total Bayes logarithmic
+loss, hold with complete knowledge of the distribution, and use the smallest
+possible nontrivial source and target cardinalities. We prove the deterministic
+formula by enumerating all partitions and obtain the stochastic converse
+through a finite random-function representation. We also prove a
+$10(2+\log(1/\gamma))$ upper bound for arbitrary four-state sources whose
+masses are at least $\gamma$, and an excess-loss extension for convex
+generators with divergent endpoint slope. The qualitative four-point
+merge conflict is known; the contribution is its sharp, unbounded
+all-hierarchy and stochastic quantification, together with explicit
+regularity and reassignment boundaries. Reproducible high-precision
+calculations evaluate every deterministic hierarchy and bracket the
+stochastic optimum.
+\end{abstract}
+\tableofcontents
+
+\section{Motivation and contribution}
+Information can describe what a representation preserves without determining
+whether a sequence of structural changes can realize the best representation
+at each capacity. A system that only divides existing states has a particular
+constraint: every later state must belong to one earlier state. Even an
+oracle that knows the full task distribution cannot reverse an incompatible
+earlier grouping through division alone. This distinction suggests studying
+the \emph{price of irreversible growth}, rather than postulating that high
+activation entropy should trigger neuron splitting.
+
+We make the question precise for finite representations of a source $X$
+used to predict a target $Y$. A representation with at most $k$ states incurs
+Bayes logarithmic loss $H(Y\mid Z)$. The flat optimum $R_k^*$ can redesign
+its encoder independently for every $k$. An irreversible growth path must
+instead make its representations compatible: the coarser representation is
+a function, or a stochastic degradation, of the finer one. This is an
+abstraction of changes in representational organization. It does not
+identify a representation state with a biological neuron, impose a specific
+neural parameterization, or analyze gradient descent.
+
+The principal result is stronger than the familiar observation that
+capacity-specific optima need not be nested. For an explicit four-state
+family, \emph{every} deterministic hierarchy has an arbitrarily large
+multiplicative loss at either two or three states. Optimally chosen stochastic
+encoders and stochastic coarsening do not remove this obstruction. Their
+optimal asymptotic price is exactly half the deterministic price. These are
+population statements about the admissible representations, with no
+restriction on computation, sample size, or the information available to the
+structural controller.
+
+The constructive mechanism involves two common nearly deterministic inputs
+and two rare intermediate inputs. At two states, the rare inputs join their
+respective nearby anchors. At three states, the optimal representation
+separates the anchors and groups the rare inputs together. The input weights,
+posterior probabilities, and noise scale are chosen so that \emph{both}
+possible ways to preserve a hierarchy become arbitrarily expensive relative
+to the appropriate flat optimum. Irreducible label noise is smaller than the
+relevant optimal risks, so the result applies to total prediction loss.
+
+The conclusions also have precise boundaries. A lower bound on source
+probabilities gives a uniform upper bound in the four-state problem,
+without a lower bound on label probabilities. Permitting reassignment of
+one rare input, of mass $e^{-L}$, connects the two exact optima. A general
+convex-generator theorem extends the excess-loss obstruction beyond Shannon
+entropy. We give full proofs, including the elementary comparison inequalities
+used in the positive result.
+
+\section{Closest prior work and the novelty boundary}
+Agglomerative information bottleneck (AIB) already optimizes task information
+under hard partition cardinality and chooses merges by their information loss
+\cite{slonim1999}. The extended report explicitly discusses the failure of
+optimal partitions to form a hierarchy \cite[Section 3.1]{slonimreport}.
+The objective and that qualitative observation are therefore established
+starting points, not contributions of this manuscript.
+
+The closest concrete precursor is Kartowsky and Tal
+\cite[Section III-A, Example 1]{kartowsky2019}. Their binary-input,
+four-output channel corresponds, after reversing the probabilistic roles,
+to four equally weighted posterior points $0,1/3,2/3,1$. A middle-pair
+merge conflicts with the best subsequent two-cell partition. Their main
+result gives an additive worst-case power law for greedy degradation as the
+output budget grows. Our question instead compares \emph{every} compatible
+path with the flat optimum on the \emph{same instance} at two fixed budgets.
+The rare-mass construction proves an unbounded multiplicative ratio, extends
+it to total log-loss with full support, and resolves its stochastic
+asymptotic constant. The underlying four-point pattern itself is not new.
+
+The simultaneous approximation criterion is the price-of-hierarchy criterion
+from hierarchical clustering; see Arutyunova and R\"oglin
+\cite[Introduction and Section 2]{arutyunova2022}. Their sharp results
+concern radius and diameter in metric spaces. KL centroid clustering belongs
+to the established Bregman framework \cite[Sections 2--3]{banerjee2005}.
+Chaudhuri and McGregor \cite[Theorem 8 and Lemmas 12 and 18]{chaudhuri2008}
+compare KL clustering with Hellinger geometry and obtain logarithmic
+approximation bounds for flat clustering. Their cluster-cost and bounded
+likelihood-ratio comparisons motivate our source-mass argument; we prove
+the required weighted inequalities and four-point hierarchy bound explicitly.
+
+Charvin, Catenacci Volpi, and Polani
+\cite[Definition 5, Proposition 4, and Sections 2.3 and 3.2]{charvin2023} study exact and soft
+successive refinement of the stochastic information bottleneck under
+information-rate constraints. Their compatibility conditions and examples
+make nonnesting a known issue in that setting as well. A rate constraint
+$I(X;Z)\le R$ and a cardinality constraint $|\mathcal Z|\le k$ are
+different resources. Our result uses the latter and quantifies the best
+possible simultaneous multiplicative loss under hard alphabet budgets,
+a different resource from their mutual-information tradeoff.
+
+The novelty assessment is limited to the primary sources and targeted
+searches recorded with this project. No equivalent sharp all-hierarchy
+four-state log-loss theorem, or its stochastic constant, was found in that
+search. The present claim of contribution is the precise theorem package
+below, not a claim to have discovered KL clustering, successive refinement,
+or the original merge conflict.
+
+\section{Statistical setting and admissible structural changes}
+Let $X$ have a finite alphabet $\mathcal X$, positive masses $p_x$, and a
+finite target alphabet $\mathcal Y$. Write $P_x=P(Y=\cdot\mid X=x)$.
+All logarithms are natural, $0\log0=0$, and all entropies are finite.
+A deterministic representation is a partition $\cP$ of $\mathcal X$;
+its output identifies the cell containing $X$. For a cell $C$, put
+\[
+ p_C=\sum_{x\in C}p_x,\qquad
+ P_C=p_C^{-1}\sum_{x\in C}p_xP_x.
+\]
+Predicting $P_C$ minimizes expected logarithmic loss conditional on $C$:
+for any prediction $q$, its conditional expected loss equals
+$H(P_C)+\KL(P_C\Vert q)$. Thus
+\begin{align}
+ R(\cP)&=H(Y\mid\cP(X))=\sum_C p_C H(P_C),\label{eq:risk}\\
+ D(\cP)&=R(\cP)-B_0
+   =\sum_C\sum_{x\in C}p_x\KL(P_x\Vert P_C),
+ \quad B_0=H(Y\mid X).\label{eq:distortion}
+\end{align}
+The second identity follows by expanding the logarithms and using the
+cell-mean formula. It also gives
+$D(\cP)=I(X;Y)-I(\cP(X);Y)$. Hence minimizing total or excess
+log-loss selects the same flat partitions, but their approximation ratios
+are different when $B_0>0$.
+
+Let $R_k^*$ and $D_k^*$ be the minimum risks over partitions into $k$
+nonempty cells, for $1\le k\le |\mathcal X|$. Allowing at most $k$
+cells gives the same value, since splitting a cell cannot increase
+conditional entropy. A deterministic hierarchy $(\cH_k)_{k=1}^n$
+has exactly $k$ cells at level $k$ and $\cH_{k+1}$ refines $\cH_k$.
+Each step is a binary split in the growth direction. For $n=4$ define
+\begin{equation}
+ \rho_{\rm det}
+ =\min_{\cH}\max_{k\in\{2,3\}}\frac{R(\cH_k)}{R_k^*}.
+ \label{eq:det-price}
+\end{equation}
+Our full-support examples have positive denominators. Levels one and four
+have fixed representations and ratio one, so omitting them changes nothing.
+
+A stochastic refinement consists of channels $K_3:X\to Z_3$ and
+$G:Z_3\to Z_2$, with at most three and two output states respectively.
+The joint law is
+\begin{equation}
+ p(x,y,z_3,z_2)=p(x,y)K_3(z_3\mid x)G(z_2\mid z_3),
+ \label{eq:markov}
+\end{equation}
+so $Y-X-Z_3-Z_2$ is a Markov chain. Define
+\begin{equation}
+ \rho_{\rm stoch}
+ =\inf_{K_3,G}\max\left\{
+ \frac{H(Y\mid Z_2)}{R_2^*},
+ \frac{H(Y\mid Z_3)}{R_3^*}\right\}.
+ \label{eq:stoch-price}
+\end{equation}
+This includes all deterministic hierarchies. No external random variable is
+provided to the predictor for free in \eqref{eq:stoch-price}.
+
+\begin{lemma}[Flat stochastic encoders do not improve the benchmark]
+\label{lem:flat}
+For finite $X,Y$ and a fixed output budget $k$, the minimum of
+$H(Y\mid Z)$ over all channels $X\to Z$ with at most $k$ states is
+$R_k^*$.
+\end{lemma}
+\begin{proof}
+Every channel is a mixture of deterministic function tables: independently
+sample the output assigned to each input according to its channel row.
+Call the entire table $U$, independent of $(X,Y)$, and set $Z=f_U(X)$.
+Its marginal channel is the desired one. Conditioning reduces entropy, so
+$H(Y\mid Z)\ge H(Y\mid Z,U)=\E_U R(f_U)\ge R_k^*$.
+A deterministic optimum attains equality in the minimum. If a function uses
+fewer than $k$ cells, refine it to $k$ cells without increasing risk.
+\end{proof}
+
+\section{A sharp four-state obstruction}
+For $L$ sufficiently large, set
+\begin{equation}
+ w=e^{-L},\qquad \varepsilon=w^2,\qquad
+ \delta=\sqrt{\frac{\log2}{L}},\qquad c=\frac{1-2w}{2}.
+ \label{eq:parameters}
+\end{equation}
+The source and binary-label posteriors are
+\begin{center}
+\begin{tabular}{lcccc}\toprule
+Input & $A$ & $C$ & $D$ & $B$\\\midrule
+Probability & $c$ & $w$ & $w$ & $c$\\
+$\Prob(Y=1\mid X)$ & $\varepsilon$ & $\delta$ & $1-\delta$ & $1-\varepsilon$\\\bottomrule
+\end{tabular}
+\end{center}
+Every entry of the joint distribution is positive. Symmetry gives
+$\Prob(Y=1)=1/2$. Let $\rho_{{\rm det},L}$ and
+$\rho_{{\rm stoch},L}$ denote \eqref{eq:det-price} and
+\eqref{eq:stoch-price} for this law.
+
+\begin{theorem}[Sharp deterministic and stochastic growth prices]
+\label{thm:main}
+The family \eqref{eq:parameters} satisfies
+\begin{equation}
+ \rho_{{\rm det},L}\sim\frac{\sqrt L}{2\sqrt{\log2}},
+ \qquad
+ \rho_{{\rm stoch},L}\sim\frac{\sqrt L}{4\sqrt{\log2}}.
+ \label{eq:main}
+\end{equation}
+For all sufficiently large $L$, the unique flat optimal partitions, up to
+cell labels, are
+\[
+ \cP_2^*=\{AC,DB\},\qquad \cP_3^*=\{A,CD,B\}.
+\]
+The deterministic formula also holds when every total risk in
+\eqref{eq:det-price} is replaced by excess risk $D$.
+\end{theorem}
+
+We prove the deterministic assertion first; Section~\ref{sec:stochastic}
+proves the stochastic assertion. The theorem excludes a universal constant
+simultaneous guarantee even for an oracle structural controller. It is not
+a computational hardness theorem.
+
+\begin{figure}[t]
+\centering\includegraphics[width=.9\linewidth]{crossing_partitions_schematic.pdf}
+\caption{Schematic of the incompatible flat optima. At two states the rare
+inputs $C,D$ join their neighboring common anchors. At three states they
+join each other. Splitting a cell of $\{AC,DB\}$ cannot produce
+$\{A,CD,B\}$. Reassigning one rare input after a split can do so.
+This illustration is schematic, not numerical evidence.}
+\label{fig:schematic}
+\end{figure}
+
+\subsection{Exact reduction to six cluster costs}
+Write $h(t)=-t\log t-(1-t)\log(1-t)$ and define
+\[
+ J(\alpha,\beta;s,t)
+ =(\alpha+\beta)h\left(\frac{\alpha s+\beta t}{\alpha+\beta}\right)
+       -\alpha h(s)-\beta h(t).
+\]
+This is the excess loss from merging two pure source states or two
+already formed cells with masses $\alpha,\beta$ and posterior means $s,t$.
+The cost of a triple is the cost of its first pair plus the cost of merging
+that pair's mean with the third point; substitution in $J$ cancels the
+intermediate entropy exactly. Define
+\begin{align}
+ a&=J(c,w;\varepsilon,\delta),&
+ b&=J(c,w;\varepsilon,1-\delta),\nonumber\\
+ r&=2w\{\log2-h(\delta)\},&
+ q&=2c\{\log2-h(\varepsilon)\},\label{eq:six}\\
+ t&=r+J(c,2w;\varepsilon,1/2),&
+ u&=q+J(2c,w;1/2,\delta).\nonumber
+\end{align}
+Here $a$ is a near rare-anchor pair, $b$ a far pair, $r$ the rare pair,
+$q$ the anchor pair, and $t,u$ are triples with one and two anchors.
+
+\begin{lemma}[Complete partition enumeration]
+\label{lem:enumeration}
+The seven two-cell partition costs are $2a,2b,q+r,t,t,u,u$.
+The six three-cell partition costs are $a,a,b,b,r,q$.
+\end{lemma}
+\begin{proof}
+A two-cell partition has sizes $2+2$ or $1+3$. The three $2+2$ choices are
+$AC|DB$, $AD|CB$, and $AB|CD$, with costs $2a,2b,q+r$.
+The four $1+3$ choices isolate one of the two anchors (cost $t$) or one of
+the rare inputs (cost $u$). A three-cell partition merges precisely one
+pair; the six possible pairs have the listed costs. This covers every
+partition, independently of posterior ordering or any clustering algorithm.
+\end{proof}
+
+\subsection{Asymptotic estimates with explicit noise scaling}
+\begin{lemma}[The six costs and irreducible risk]
+\label{lem:asymptotics}
+Under \eqref{eq:parameters},
+\begin{equation}
+ a\sim w\delta L,\quad b\sim wL,\quad r\sim2w\log2,
+ \quad t\sim wL,\quad q\to\log2,\quad u\to\log2,
+ \label{eq:cost-asymptotics}
+\end{equation}
+and $B_0=2c h(w^2)+2w h(\delta)=o(w)$.
+\end{lemma}
+\begin{proof}
+For $0<x\le1/2$ the Taylor expansion of $-\log(1-x)$, or its geometric
+series integrated once, gives
+\begin{equation}
+ h(x)=x\log(1/x)+x+O(x^2),
+ \label{eq:small-entropy}
+\end{equation}
+with an absolute remainder constant. We have $\delta\to0$,
+$\delta L\to\infty$, and $\log(1/\delta)=O(\log L)=o(L)$.
+
+Since $c+w=1/2$, the mean of the near pair is
+$m=2w\delta+(1-2w)w^2$. On the interval between $2w\delta$ and $m$,
+$h'(x)=\log((1-x)/x)=O(L)$. Thus
+$h(m)=h(2w\delta)+O(w^2L)$. Using
+$c h(w^2)=O(w^2L)$ and \eqref{eq:small-entropy},
+\begin{align*}
+ a&=w\delta\{L-\log(2\delta)+1\}-w h(\delta)+O(w^2L)\\
+  &=w\delta(L-\log2)+O(w\delta^2+w^2L)
+   \sim w\delta L.
+\end{align*}
+For the far pair, replace $\delta$ in the mean by $1-\delta$ and retain
+$h(1-\delta)=h(\delta)$. This gives
+\[
+ b=w(1-\delta)\{L-\log(2(1-\delta))+1\}
+        -w h(\delta)+O(w^2L)\sim wL.
+\]
+The formula for $r$ in \eqref{eq:six} gives its limit directly, as
+$h(\delta)\to0$. The formula for $q$ gives $q\to\log2$.
+
+The triple defining $t$ has mass $M=c+2w=(1+2w)/2$ and total positive-label
+mass $z=cw^2+w=w+O(w^2)$. Equation~\eqref{eq:small-entropy} yields
+\[
+ M h(z/M)=z\{\log(M/z)+1\}+O(z^2/M)
+         =w\{L-\log2+1\}+O(w^2L).
+\]
+Subtracting $c h(w^2)+2w h(\delta)$ proves
+$t=wL+w\{1-\log2-2h(\delta)\}+O(w^2L)\sim wL$.
+
+Finally $u\ge q$. Predicting $1/2$ after adding a rare state to the
+anchor pair bounds its extra Jensen cost by
+$w\KL(\operatorname{Ber}(\delta)\Vert\operatorname{Ber}(1/2))
+\le w\log2$. Hence $u-q\in[0,w\log2]$ and $u\to\log2$.
+The baseline statement follows because $h(w^2)=O(w^2L)$ and
+$h(\delta)\to0$.
+\end{proof}
+
+The noise scale is substantive: $\varepsilon=w^2$ makes the baseline
+$o(w)$. If one instead sets $w=\varepsilon^2$, a related excess-loss
+example exists, but its baseline dominates the relevant distortion. Such
+an example alone would not establish a total-risk ratio.
+
+\subsection{The optimal deterministic hierarchy}
+Define the total-risk ratios
+\begin{equation}
+ \alpha_L=\frac{B_0+a}{B_0+r},\qquad
+ \beta_L=\frac{B_0+t}{B_0+2a}.
+ \label{eq:alpha-beta}
+\end{equation}
+\begin{proposition}[Exact eventual formula and Pareto frontier]
+\label{prop:pareto}
+For all sufficiently large $L$, $D_2^*=2a$, $D_3^*=r$ and
+\begin{equation}
+ \rho_{{\rm det},L}=\min\{\alpha_L,\beta_L\}.
+ \label{eq:exact-det}
+\end{equation}
+Every deterministic hierarchy's vector of total-risk ratios at levels two
+and three is coordinatewise at least one of
+$(1,\alpha_L)$ and $(\beta_L,1)$, and both vectors are attainable.
+\end{proposition}
+\begin{proof}
+Lemma~\ref{lem:asymptotics} implies, eventually,
+$b>a>r$, $q>a$, $t>2a$, and $t<q+r$, while $u$ and $q+r$ are bounded
+away from zero. Thus the enumeration gives strict flat minima $2a$ and $r$.
+
+If the three-cell partition merges $CD$, its possible two-cell costs are
+$t,t,q+r$. Its best vector is $(\beta_L,1)$. If it merges a near pair,
+such as $AC$, it can reach $AC|DB$ at level two and attains
+$(1,\alpha_L)$. Any other three-cell merge has cost at least $a$, so its
+level-three ratio is at least $\alpha_L$; its level-two ratio is at least
+one by optimality of the benchmark. Both $\alpha_L$ and $\beta_L$ exceed
+one eventually. These facts prove the Pareto statement and
+\eqref{eq:exact-det}.
+\end{proof}
+
+As $B_0=o(w)$,
+\[
+ \alpha_L\sim\frac{\delta L}{2\log2},\qquad
+ \beta_L\sim\frac1{2\delta}.
+\]
+Our choice of $\delta$ makes both asymptotic to
+$\sqrt L/(2\sqrt{\log2})$. This proves the deterministic part of
+Theorem~\ref{thm:main}. Setting $B_0=0$ in the ratio calculation proves
+the excess-loss assertion. More generally, if $\delta\to0$ and
+$\log(1/\delta)=o(L)$, the same estimates give
+\[
+ \rho_{{\rm det},L}=(1+o(1))
+ \min\left\{\frac{\delta L}{2\log2},\frac1{2\delta}\right\}
+\]
+whenever $\delta L\to\infty$. Balancing these two terms explains the
+selected family. This is sharp \emph{within that family}; no matching
+worst-case upper rate for all four-state laws is asserted.
+
+\section{Randomized hierarchies and stochastic refinements}
+\label{sec:stochastic}
+A random choice of a deterministic hierarchy is distinct from a stochastic
+encoder used on each input. We first solve the former problem exactly and
+then use it for a converse that covers the latter.
+
+\begin{proposition}[Randomized hierarchy value]
+\label{prop:randomized}
+For sufficiently large $L$, the infimum over distributions on deterministic
+hierarchies of
+$\max_{k=2,3}\E R(\cH_k)/R_k^*$ equals
+\begin{equation}
+ \rho_{{\rm mix},L}
+ =1+\frac{(\alpha_L-1)(\beta_L-1)}{\alpha_L+\beta_L-2}
+ \sim\frac{\sqrt L}{4\sqrt{\log2}}.
+ \label{eq:mix}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Proposition~\ref{prop:pareto} permits replacing each hierarchy by one of
+the two attainable Pareto vectors without increasing either expected
+coordinate. Put probability $\lambda$ on $(1,\alpha_L)$ and
+$1-\lambda$ on $(\beta_L,1)$. The coordinates are
+$1+(1-\lambda)(\beta_L-1)$ and $1+\lambda(\alpha_L-1)$.
+Their maximum is minimized at equality,
+$\lambda=(\beta_L-1)/(\alpha_L+\beta_L-2)$, giving
+\eqref{eq:mix}. The asymptotic follows from
+$\alpha_L\sim\beta_L\sim\sqrt L/(2\sqrt{\log2})$.
+\end{proof}
+
+If instead the criterion is $\E\max_k R(\cH_k)/R_k^*$, randomizing
+cannot improve the best deterministic value. Equation~\eqref{eq:mix}
+uses the maximum of expected risks, which is the stronger lower-bound
+setting needed next.
+
+\begin{lemma}[Random-function converse for stochastic refinement]
+\label{lem:stoch-lower}
+Every pair of channels in \eqref{eq:markov} satisfies
+\[
+ \max_{k=2,3}\frac{H(Y\mid Z_k)}{R_k^*}\ge\rho_{{\rm mix},L}.
+\]
+\end{lemma}
+\begin{proof}
+Independently of $(X,Y)$, draw a table $F$ assigning a $Z_3$ value to
+each $x$ according to $K_3(\cdot\mid x)$, with independent entries.
+Draw a second table $G_0$ assigning a $Z_2$ value to each $z_3$ according
+to $G(\cdot\mid z_3)$, also independently. The finite random variable
+$U=(F,G_0)$ satisfies $Z_3=F(X)$ and $Z_2=G_0(F(X))$ and reproduces
+the prescribed joint law. For each fixed $U$ these functions form nested
+partitions with at most three and two cells.
+
+These partitions can be refined to exactly three and two cells while
+remaining nested and without increasing either risk. To see this, first
+split fine cells until there are three. Each is still contained in an
+original coarse cell. If there were two coarse cells, retain them; if
+there was one, divide the three fine cells into two nonempty groups.
+The resulting partitions extend to a complete four-state hierarchy by
+adding the singleton and one-cell levels. Call this hierarchy $\cH^U$.
+For each $k$, conditioning and refinement therefore give
+\[
+ H(Y\mid Z_k)\ge H(Y\mid Z_k,U)
+   \ge\E_U R(\cH_k^U).
+\]
+Apply the definition of $\rho_{{\rm mix},L}$ to the distribution of
+$\cH^U$. The random table is used only in a converse by revealing more
+information; it is not assumed to be free information available to the
+original encoder's predictor.
+\end{proof}
+
+\begin{proposition}[Matching stochastic construction]
+\label{prop:stoch-upper}
+A three-state encoder and deterministic two-state coarsening attain
+\[
+ \max_{k=2,3}\frac{H(Y\mid Z_k)}{R_k^*}
+ \sim\frac{\sqrt L}{4\sqrt{\log2}}.
+\]
+\end{proposition}
+\begin{proof}
+For a fixed $\theta\in(0,1)$, use three outputs $0,m,1$ and the channel
+\begin{center}
+\begin{tabular}{c|ccc}
+ & $0$ & $m$ & $1$\\\hline
+$A$ & $1$ & $0$ & $0$\\
+$C$ & $0$ & $1$ & $0$\\
+$D$ & $0$ & $\theta$ & $1-\theta$\\
+$B$ & $0$ & $0$ & $1$
+\end{tabular}
+\end{center}
+Coarsen $0,m$ to one output and retain $1$ as the other. This directly
+satisfies the output budgets; it does not use a public mixing label.
+
+We calculate the leading entropies. The three-state middle output has mass
+$w(1+\theta)$ and posterior
+$[\delta+\theta(1-\delta)]/(1+\theta)$, so its risk contribution is
+$O(w)$. Output $0$ contributes $c h(w^2)=O(w^2L)$. Output $1$ has mass
+$c+(1-\theta)w\to1/2$ and failure-label mass
+$c w^2+(1-\theta)w\delta\sim(1-\theta)w\delta$.
+Equation~\eqref{eq:small-entropy}, together with
+$\log(1/\delta)=o(L)$, shows that this contribution is
+$(1+o(1))(1-\theta)w\delta L$. As $w=o(w\delta L)$,
+\[
+ H(Y\mid Z_3)\sim(1-\theta)w\delta L.
+\]
+At level two, the merged low output has mass
+$c+w(1+\theta)\to1/2$ and positive-label mass
+$c w^2+w\delta+\theta w(1-\delta)\sim\theta w$.
+Its entropy contribution is $(1+o(1))\theta wL$; the other output
+contributes only $O(w\delta L)$. Hence
+$H(Y\mid Z_2)\sim\theta wL$.
+By Lemma~\ref{lem:asymptotics}, $R_2^*\sim2w\delta L$ and
+$R_3^*\sim2w\log2$. The two ratios are consequently asymptotic to
+\[
+ \theta\frac{\sqrt L}{2\sqrt{\log2}}
+ \quad\text{and}\quad
+ (1-\theta)\frac{\sqrt L}{2\sqrt{\log2}}.
+\]
+Choose $\theta=1/2$. Combining this feasible upper bound with
+Lemma~\ref{lem:stoch-lower} and \eqref{eq:mix} proves both the proposition
+and the stochastic part of Theorem~\ref{thm:main}.
+\end{proof}
+
+\section{Regularity, robustness, and the cost of reassignment}
+\subsection{A finite bound when source states cannot be arbitrarily rare}
+The next bound helps identify which assumptions drive the counterexample.
+It allows any finite target alphabet and even zero target probabilities.
+Its constant is not claimed to be optimal.
+
+\begin{theorem}[Four-state source-mass bound]
+\label{thm:mass-bound}
+If $|\mathcal X|=4$ and $p_x\ge\gamma>0$, there is a deterministic
+hierarchy satisfying, simultaneously for $k=2,3$,
+\begin{equation}
+ D(\cH_k)\le10\{2+\log(1/\gamma)\}D_k^*,\qquad
+ R(\cH_k)\le10\{2+\log(1/\gamma)\}R_k^*.
+ \label{eq:mass-bound}
+\end{equation}
+The inequalities include zero-optimum cases without division.
+\end{theorem}
+\begin{proof}
+We prove the divergence comparison and hierarchy construction explicitly.
+For probability vectors $P,Q$ with $P_j\le M Q_j$ for every coordinate,
+where $M\ge1$, define
+$\He^2(P,Q)=\sum_j(\sqrt{P_j}-\sqrt{Q_j})^2$. Then
+\begin{equation}
+ \He^2(P,Q)\le\KL(P\Vert Q)
+       \le(2+\log M)\He^2(P,Q).
+ \label{eq:kl-he}
+\end{equation}
+For completeness, put $f(t)=t\log t-t+1$ and $z=\sqrt t$.
+The lower bound follows from
+$f(z^2)-(z-1)^2=2z(z\log z-z+1)\ge0$, interpreted continuously at zero.
+For the upper bound let $g(z)=f(z^2)$. We have $g(1)=g'(1)=0$ and
+$g''(z)=4+4\log z$. On $[1,\sqrt M]$ this is at most
+$4+2\log M$, and on $(0,1]$ it is at most $4$. Integrating the second
+ derivative from one, in the appropriate direction, gives
+$g(z)\le(2+\log M)(z-1)^2$; continuity handles zero.
+Multiply by $Q_j$ and sum, using $\sum_jQ_j f(P_j/Q_j)=\KL(P\Vert Q)$.
+Coordinates with $Q_j=0$ also have $P_j=0$ and contribute zero.
+
+Let $v_x=(\sqrt{P_x(y)})_y$ and let $V(\cP)$ be the weighted Euclidean
+within-cell sum of squares of the $v_x$. In a cell of mass $p_C$, its
+normalized weights $a_x=p_x/p_C$ satisfy $a_x\ge\gamma$.
+The mixture $P_C$ obeys $P_x(y)/P_C(y)\le1/a_x\le1/\gamma$.
+Let $\bar v=\sum_{x\in C}a_xv_x$ and $s=\sqrt{P_C}$ coordinatewise.
+Concavity of the square root gives $s\ge\bar v$ coordinatewise; also
+$\|v_x\|=\|s\|=1$. Therefore
+\[
+ \sum_xa_x\|v_x-s\|^2
+  =2-2\langle\bar v,s\rangle
+  \le2(1-\|\bar v\|^2)
+  =2\sum_xa_x\|v_x-\bar v\|^2.
+\]
+The reverse inequality without the factor two holds because $\bar v$
+minimizes Euclidean squared error. Combining this with \eqref{eq:kl-he}
+cell by cell proves
+\begin{equation}
+ V(\cP)\le D(\cP)\le2\{2+\log(1/\gamma)\}V(\cP).
+ \label{eq:DV}
+\end{equation}
+
+It remains to construct a five-approximate Euclidean hierarchy on four
+weighted points; their dimension is immaterial. Choose a pair $(i,j)$ of
+minimum pair cost
+\[
+ s_* = \min_{i<j}\frac{p_i p_j}{p_i+p_j}\|v_i-v_j\|^2,
+\]
+and merge it at level three, which is optimal for $V_3^*$.
+For a cluster $C$ of $m$ points and total mass $W$, its squared error is
+\[
+ V(C)=\frac1W\sum_{i<j\in C}p_i p_j\|v_i-v_j\|^2
+ \ge\frac{s_*}{W}\sum_{i<j\in C}(p_i+p_j)=(m-1)s_*.
+\]
+Consequently $V_2^*\ge2s_*$. If an optimal two-cell partition contains
+the chosen pair in one cell, it already coarsens the three-cell partition.
+Otherwise move the lighter point of the pair, say $p_i\le p_j$, into
+$j$'s optimal cell. Using that cell's old centroid $b$ as a candidate
+centroid bounds the new cost by
+\begin{align*}
+ V_2^*+p_i\|v_i-b\|^2
+ &\le V_2^*+2p_i\|v_i-v_j\|^2+2p_i\|v_j-b\|^2\\
+ &\le3V_2^*+4s_*\le5V_2^*.
+\end{align*}
+The term removed from $i$'s old cell was nonnegative and was dropped.
+We used $p_i\le2p_ip_j/(p_i+p_j)$ and
+$p_i\|v_j-b\|^2\le p_j\|v_j-b\|^2\le V_2^*$.
+Reoptimizing centroids can only decrease the cost. The resulting cells are
+unions of the three chosen cells. If moving $i$ emptied its old cell,
+there is one cell; split it into two unions of the three cells, which
+again cannot increase squared error. This proves the simultaneous factors
+five and one for $V$.
+
+Let $C_\gamma=2+\log(1/\gamma)$. Since $V_k^*\le D_k^*$,
+\eqref{eq:DV} gives
+$D(\cH_k)\le2C_\gamma\cdot5V_k^*\le10C_\gamma D_k^*$.
+Adding the nonnegative common baseline $B_0$ preserves the same factor
+for total risks, proving \eqref{eq:mass-bound}.
+\end{proof}
+
+In the constructed family $\gamma=w=e^{-L}$, so the lower price is of
+order $\sqrt{\log(1/\gamma)}$, whereas Theorem~\ref{thm:mass-bound}
+is of order $\log(1/\gamma)$. Closing this gap for the worst four-state
+instance is open here. The upper bound nevertheless proves that, with
+four inputs, arbitrarily rare source states are necessary for unbounded
+price; extreme conditional label probabilities alone are insufficient.
+
+\subsection{Minimal cardinalities and perturbation robustness}
+\begin{proposition}[Minimality and open-set robustness]
+\label{prop:robust}
+Four is the smallest source cardinality at which the deterministic
+all-capacity hierarchy factor can exceed one. Two is the smallest
+nontrivial target cardinality. For every finite $M$, a nonempty open set
+of full-support four-by-two joint laws has both deterministic and
+stochastic hierarchy price greater than $M$.
+\end{proposition}
+\begin{proof}
+For at most three source states, only the two-cell level can be nontrivial;
+any optimum there extends to the singleton and one-cell partitions. A
+one-state target has zero prediction risk at every representation.
+For robustness choose $L$ large enough that the mixed-hierarchy value in
+\eqref{eq:mix} exceeds $2M$. There are finitely many deterministic
+hierarchies. All their risk coordinates and positive flat benchmarks are
+continuous functions of the full-support joint law. Their normalized
+coordinate vectors therefore vary uniformly continuously locally. The
+minimum over mixtures of the maximum of two expected coordinates changes
+by at most the largest change in any coordinate. Thus it remains above
+$M$ on some open neighborhood. The random-function converse applies to
+every law on the same finite alphabets and bounds the stochastic and
+deterministic prices below by this mixture value.
+\end{proof}
+
+\subsection{A vanishing amount of reassignment restores both flat optima}
+Let $Z_2^*$ and $Z_3^*$ identify $\{AC,DB\}$ and $\{A,CD,B\}$.
+A label-invariant measure of incompatibility is the minimum error in
+recovering the old coarse label from the new fine label:
+\begin{equation}
+ \operatorname{rec}(Z_2^*\mid Z_3^*)
+   =\min_g\Prob\{g(Z_3^*)\ne Z_2^*\}.
+ \label{eq:recourse}
+\end{equation}
+\begin{proposition}[Exact reassignment cost]
+\label{prop:recourse}
+For the family \eqref{eq:parameters},
+\[
+ \operatorname{rec}(Z_2^*\mid Z_3^*)=w,
+ \qquad H(Z_2^*\mid Z_3^*)=2w\log2.
+\]
+Splitting one cell and reassigning one input of mass $w$ connects the
+optimal two- and three-cell partitions.
+\end{proposition}
+\begin{proof}
+The singleton fine cells $A,B$ determine the old label exactly. In the fine
+cell $CD$, of mass $2w$, the two old labels occur with equal conditional
+probability. Any deterministic recovery map errs on at least one mass-$w$
+input; assigning the cell to either old label attains that error. Its
+conditional entropy is $\log2$, giving the entropy formula. To realize
+the change, split $AC$ into $A$ and $C$, leaving $DB$ as the third cell;
+then move $D$ from $DB$ into $C$. The result is $A|CD|B$ and the moved
+source mass is exactly $w$.
+\end{proof}
+
+This is a statement about reassignment in the finite representation model.
+It does not prescribe the parameter cost of moving a neuron's activation
+region. It shows why measuring only state count or retained information
+misses a separate resource: the ability to reorganize earlier assignments.
+
+\input{general_losses}
+
+\section{Reproducible computational investigations}
+\label{sec:computations}
+The experiments evaluate the mathematical objects directly. No neural
+training run is needed to test a theorem about finite encoding channels,
+and no empirical neural-network performance is inferred from these
+calculations. An exploratory random search suggested the rare-anchor
+pattern; its original script, seed, and rerun result are preserved separately.
+The following calculations were specified after choosing the analytic family.
+
+\subsection{Exhaustive evaluation and precision}
+The program \texttt{code/quartet\_experiment.py} generates all fifteen set
+partitions of four inputs, all seven two-cell partitions, all six
+three-cell partitions, and all eighteen compatible three-to-two chains.
+It evaluates their entropies with arbitrary precision, takes the exact
+finite minimum numerically, and checks the formula in
+Proposition~\ref{prop:pareto}. These are exhaustive finite comparisons,
+not local optimization over selected starting points.
+
+The scaling investigation uses fifteen values:
+\[
+ L\in\{16,24,32,48,64,96,128,192,256,384,512,768,1024,1536,2048\}.
+\]
+Decimal precision is $\lceil2L/\log10\rceil+90$, with a minimum of eighty,
+so the small posterior $e^{-2L}$ is represented before subtracting
+entropies. The parameters, baseline, partition costs, hierarchy scores,
+and stochastic construction risks are saved as sixty-digit decimal strings.
+Four representative cases,
+including $L=2048$, are recalculated with seventy additional digits; the
+saved deterministic prices, mixture values, stochastic bounds, and
+construction risks agree to all sixty stored digits. Formula comparisons
+use relative tolerance $10^{-40}$. This is numerical validation, not a
+formal arithmetic certificate or a replacement for the proofs.
+
+For random hierarchies, the program constructs the risk vectors of all
+eighteen chains and checks the diagonal intersections of every pair of
+vectors, as well as all vertices. The minimum of the maximum coordinate
+on a convex polygon occurs at a vertex or a boundary intersection with
+the diagonal, so this finite calculation recovers the mixture value. It
+agrees with \eqref{eq:mix}. The explicitly specified stochastic encoder
+with $\theta=1/2$ supplies an upper bound on $\rho_{\rm stoch}$; the
+mixture value supplies a lower bound. We do not label the feasible
+stochastic value as a finite-$L$ global optimum.
+
+\begin{figure}[t]
+\centering\includegraphics[width=\linewidth]{hierarchy_scaling.pdf}
+\caption{Computed hierarchy prices and stochastic bounds from exhaustive
+high-precision evaluation. Left: the best deterministic total-risk ratio,
+the stochastic lower bound from random hierarchies, and the feasible
+three-state stochastic encoder. Right: division by the respective predicted
+asymptotic expressions; both stochastic bounds converge toward the same
+constant. The stochastic upper curve is a feasible construction, not a
+numerically certified global optimum.}
+\label{fig:scaling}
+\end{figure}
+
+\subsection{Scale sensitivity and an unfavorable loss comparison}
+At $L=256$ we vary
+$\delta/\sqrt{\log(2)/L}\in\{0.35,0.5,0.65,0.8,1,1.2,1.5,2,2.5,3\}$.
+The two competing excess-loss ratios move in opposite directions; their
+minimum displays the predicted tradeoff. The finite-$L$ maximizing
+multiplier need not equal the asymptotic choice one, since $h(\delta)$
+corrections decay slowly.
+
+The same distribution family is also evaluated under squared prediction
+loss. Its excess Bayes risk is weighted posterior squared error. Every
+sampled $L$ has an exactly compatible pair of flat optimal partitions and
+computed hierarchy factor one. This control shows that the construction
+is not a loss-independent impossibility; it reflects logarithmic loss's
+sensitivity near the probability boundary. The bounded-curvature comparison
+in Proposition~\ref{prop:gen-curvature} makes this distinction mathematical.
+
+\begin{figure}[t]
+\centering\includegraphics[width=\linewidth]{sensitivity_and_loss.pdf}
+\caption{Computed sensitivity and loss comparison. Left: changing the
+intermediate posterior scale at $L=256$ trades the cost of near-pair and
+rare-pair hierarchies; the dashed line is the best excess-loss ratio.
+Right: the same source family has growing total-log-loss hierarchy price,
+while its squared-loss excess hierarchy price equals one on all evaluated
+cases. The two curves use the explicitly indicated loss criteria.}
+\label{fig:sensitivity}
+\end{figure}
+
+\input{numerical_table}
+
+The absolute losses approach zero as $L$ grows, while their ratios diverge.
+This is a failure of a uniform multiplicative guarantee near a highly
+predictable target, not a lower bound on fixed-scale absolute damage.
+The source masses become extremely small: at $L=2048$, the rare mass is
+about $10^{-889}$. Ordinary random sampling would not expose such states
+at practical sample sizes. The computation uses a known finite population
+law to make the theorem inspectable; it does not establish practical
+learnability of the rare states.
+
+\section{Interpretation and remaining questions}
+The original question concerned information and self-organizing neural
+structure. The result suggests that one must specify \emph{which structural
+operations information is allowed to guide}. In this finite model, the
+controller can know the exact task distribution, evaluate every partition,
+and use arbitrary computation. A restriction to nested refinements still
+prevents a uniform approximation guarantee. The obstruction is therefore
+not repaired by a more accurate entropy estimator or a more sophisticated
+split score alone.
+
+The conclusions also separate two resources often grouped under capacity.
+A third state makes the independently optimal representation better, but
+reaching it may require moving information across an old boundary.
+Stochastic routing reduces the asymptotic price by exactly two in the
+constructed family. Full reassignment of a mass-$w$ input restores both
+flat optima. State count, stochasticity, and reassignment are distinct
+resources in this analysis.
+
+Several limitations delimit the result. The model counts discrete
+representation states, not parameters, real-valued feature coordinates,
+neurons, or energy. It permits Bayes-optimal decoding and assumes a known
+joint law. It concerns the two specific intermediate budgets, so a process
+that skips a budget is outside the simultaneous guarantee. It does not
+exclude effective growth rules for restricted distributions, finite-sample
+objectives, additive accuracy criteria, or architectures that naturally
+reorganize representations. The full-support and open-neighborhood results
+remove exact zeros and exact symmetry as requirements for a given finite
+gap, but the size of that neighborhood need not be uniform in $L$.
+
+The source-mass upper bound leaves a concrete quantitative problem: is the
+worst four-state price of order $\sqrt{\log(1/\gamma)}$, of order
+$\log(1/\gamma)$, or intermediate? The endpoint-slope theorem gives a
+sufficient condition for excess-loss obstruction, but no necessary and
+sufficient classification of scoring rules. A broader research direction
+is to characterize how a limited reassignment budget controls the price
+of structural growth. These questions are not needed for the established
+theorems and remain unresolved in this work.
+
+\clearpage
+\begingroup
+\small\raggedright
+\bibliographystyle{plainnat}
+\bibliography{references}
+\endgroup
+\end{document}

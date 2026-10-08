@@ -1,0 +1,316 @@
+% Classical information/risk toolbox and explicit boundary examples.
+% This is a section body, not a new-novelty claim.
+% Parent requirements: amsmath, amssymb, amsthm; proposition and remark environments.
+% Bibliography entries are supplied in information_references.bib.
+\section{What information gained by a representation does and does not buy}
+\label{sec:p7-information-boundaries}
+
+All logarithms are natural. Representations and the target are random
+variables on standard Borel spaces; conditional laws exist. The target is
+finite except where real regression is stated explicitly. Population risks
+are evaluated on a fresh example. For learned encoders, all statements can
+be applied conditional on a fixed training history, provided the fresh
+example has the stipulated conditional law. Conditioning does not assert
+that the encoder is independent of its training examples.
+
+Write $B_\ell(Z)=\inf_g\mathbb E\ell(Y,g(Z))$, where the infimum
+runs over all measurable decoders with the appropriate action space.
+A deterministic refinement has $Z=\pi(Z')$ almost surely. More generally,
+the conclusions stated for refinements hold when $Y-Z'-Z$ is a Markov
+chain under the specified coupling. Appending a feature is a refinement;
+retraining and replacing an entire hidden layer need not be one.
+The results in this section are classical identities, elementary
+consequences, and explicit counterexamples. Proper-loss information and
+Bregman interpretations are established in
+\cite[Theorems 8 and 10]{p7reid2011} and
+\cite[Theorem 1 and Section 2.2]{p7gneiting2007}.
+
+\begin{proposition}[Information gain includes a possible forgetting term]
+\label{prop:p7-log-forgetting}
+For finite $Y$, logarithmic loss gives $B_{\log}(Z)=H(Y\mid Z)$.
+For any pair of representations on a common probability space,
+\[
+ B_{\log}(Z)-B_{\log}(Z')
+ =I(Y;Z'\mid Z)-I(Y;Z\mid Z').
+\]
+For a refinement, the second term vanishes, and the Bayes improvement is
+exactly $I(Y;Z'\mid Z)$.
+\end{proposition}
+\begin{proof}
+Conditional expected log loss at $Z=z$ equals the entropy of the true
+conditional distribution plus its KL divergence to the prediction.
+The divergence is nonnegative and is zero at the true distribution.
+Next expand both conditional mutual informations, using
+$H(Y\mid Z,Z')$ as their common subtracted term. Finally the Markov
+condition makes $I(Y;Z\mid Z')=0$.
+\end{proof}
+
+Thus positive conditional mutual information concerns an optimal
+unrestricted decoder; it is not a decrease promised for a trained decoder.
+Nor does adding and then reoptimizing neurons automatically preserve the
+information-refinement condition.
+
+\begin{proposition}[Squared and classification risk under refinement]
+\label{prop:p7-basic-bounds}
+Suppose $Y-Z'-Z$ is Markov. If $Y$ is real with
+$\mathbb E Y^2<\infty$, put $m=\mathbb E[Y\mid Z]$ and
+$m'=\mathbb E[Y\mid Z']$. Then
+\[
+ \Delta_{\mathrm{sq}}:=B_{\mathrm{sq}}(Z)-B_{\mathrm{sq}}(Z')
+ =\mathbb E(m'-m)^2.
+\]
+If additionally $Y\in[a,b]$ almost surely and
+$J=I(Y;Z'\mid Z)$, then
+\[
+ 0\le\Delta_{\mathrm{sq}}\le\tfrac12(b-a)^2 J.
+\]
+For finite-label classification with zero--one loss,
+\[
+ 0\le\Delta_{01}:=B_{01}(Z)-B_{01}(Z')\le\sqrt{J/2}.
+\]
+For $Y\in\{0,1\}$, both constants are asymptotically sharp among
+refinements. Here the Brier loss means $(Y-p)^2$, not the sum over both
+class coordinates. If the binary coarse posterior satisfies
+$m\in[\alpha,1-\alpha]$ almost surely, $0<\alpha\le1/2$, then also
+\[
+ J\le\frac{\Delta_{\mathrm{sq}}}{\alpha(1-\alpha)}.
+\]
+The last bound is a convenient reverse bound, not a sharp constant claim.
+\end{proposition}
+\begin{proof}
+Conditional expectation minimizes squared loss. The tower identity and
+the Markov condition give $\mathbb E[m'\mid Z]=m$, hence
+$\mathbb E[m'm]=\mathbb E m^2$. Subtracting the two Bayes risks gives
+$\mathbb E(m')^2-\mathbb E m^2=\mathbb E(m'-m)^2$.
+
+Write $P'=P_{Y\mid Z'}$ and $P=P_{Y\mid Z}$. Under the Markov
+condition, $J=\mathbb E\mathrm{KL}(P'\Vert P)$.
+The mean difference for a variable in $[a,b]$ is at most
+$(b-a)\mathrm{TV}(P',P)$. Pinsker's inequality, in nats, states
+$\mathrm{TV}(P',P)^2\le\mathrm{KL}(P'\Vert P)/2$.
+Integration proves the squared-risk bound.
+The conditional best classification accuracy is $\max_y P(y)$.
+Since $\max_y P'(y)-\max_y P(y)\le\mathrm{TV}(P',P)$,
+integration, Cauchy--Schwarz, and Pinsker give the upper bound.
+The nonnegative sign follows from conditional Jensen, since
+$P=\mathbb E[P'\mid Z]$ and the maximum is convex.
+
+For sharpness let $Z$ be constant and let $m'=1/2\pm\epsilon$ with
+equal probabilities. Then $\Delta_{\mathrm{sq}}=\epsilon^2$,
+$\Delta_{01}=\epsilon$, and
+$J=\log2-h(1/2+\epsilon)=2\epsilon^2+O(\epsilon^4)$, where
+$h(p)=-p\log p-(1-p)\log(1-p)$.
+Finally $\log u\le u-1$ gives
+$\operatorname{kl}(q,p)\le(q-p)^2/[p(1-p)]$ for $0<p<1$.
+Apply this conditionally and integrate.
+\end{proof}
+
+The bounded-response implication is an instance of the classical
+information-to-conditional-mean inequality; see the earlier absolute-mean
+version in \cite[Lemma 4.4]{p7tao2006} and the explicit sharp squared-mean formulation in
+\cite[Corollary 7.11]{p7polyanskiy2024}. Pinsker and reverse-divergence
+comparisons are established tools \cite[Eq.~(1), Section VI]{p7sason2016}.
+These statements are not new neuron-growth guarantees.
+
+\begin{proposition}[Function preservation and representation preservation differ]
+\label{prop:p7-birth}
+If $Z'=F(Z)$ and $Z=G(Z')$ almost surely for measurable $F,G$, then
+the two representations generate the same sigma field and
+$I(Y;Z')=I(Y;Z)$, $I(Y;Z'\mid Z)=0$.
+Exact neuron duplication before symmetry-breaking perturbations has
+this property for the complete hidden representation.
+
+Nevertheless, a function-preserving neural birth can have strictly
+positive representation information gain. Fix $0<\delta<1/2$,
+let $X$ be uniform on $\{-1,1\}$, and set
+\[
+ \mathbb P(Y=1\mid X=1)=1-\delta,\qquad
+ \mathbb P(Y=1\mid X=-1)=\delta.
+\]
+Start with constant representation $Z=1$ and prediction $f=1/2$.
+Append the ReLU feature $r(X)=\max\{X,0\}$ with output coefficient
+zero. The new representation is $Z'=(1,r(X))$, while the new prediction
+is still $f'=1/2+0r(X)=1/2$. Then
+\[
+ I(Y;Z'\mid Z)=\log2-h(\delta)>0,
+ \qquad \Delta_{\mathrm{sq}}=(1/2-\delta)^2.
+\]
+The actual prediction risk at birth is unchanged for every loss for
+which it is defined. In particular its squared risk is $1/4$, its log
+risk is $\log2$, and its classification error under the same fixed
+tie rule is $1/2$, both before and after birth.
+\end{proposition}
+\begin{proof}
+Mutual measurability gives equality of sigma fields, hence equality of
+all conditional laws. In the neural example $r(X)$ determines $X$.
+The marginal label is balanced, with entropy $\log2$, and its
+conditional entropy given $X$ is $h(\delta)$. Its conditional mean is
+$\delta+(1-2\delta)r(X)$, at distance $1/2-\delta$ from $1/2$.
+Propositions~\ref{prop:p7-log-forgetting}--\ref{prop:p7-basic-bounds}
+give the asserted Bayes gains. The realized predictions coincide
+pointwise, which proves equality of their realized risks directly.
+\end{proof}
+
+Function-preserving duplication is established in Net2Net
+\cite[Section 2.3]{p7chen2016}; the distinction here is between the
+unchanged output function and what an unrestricted decoder could recover
+from the enlarged hidden vector. In the displayed example even an affine
+decoder can express the new Bayes predictor, but the birth operation has
+not fitted its coefficients.
+
+\begin{proposition}[Four explicit failures of information-only criteria]
+\label{prop:p7-counterexamples}
+The following claims hold, each under a deterministic refinement.
+\begin{enumerate}
+\item Activation entropy can be arbitrarily large while task information
+and every Bayes-risk improvement are zero. Let $U$ be uniform on
+$\{1,\ldots,M\}$, independent of $Y\sim\mathrm{Ber}(1/2)$.
+Take $Z=1$ and $Z'=\mathrm{ReLU}(U)=U$. Then
+$H(Z')=\log M$, $I(Y;Z'\mid Z)=0$, and the conditional target law
+is unchanged.
+\item Positive label information need not improve classification. Let
+$Z=1$, and let $Z'$ be equiprobable with binary label posteriors
+$1/10$ and $3/10$. Strict concavity gives
+$J=h(1/5)-\{h(1/10)+h(3/10)\}/2>0$, but both Bayes classification
+errors are $1/5$, since the Bayes action stays zero. This rules out
+a universally positive classification-gain lower bound at every
+positive information level; it does not rule out all bounds at larger
+information levels.
+\item Without restricting the response or the decision loss, even a
+fixed positive information gain need not reduce squared Bayes risk.
+Let $U\sim\mathrm{Ber}(1/2)$ and independent $S$ be uniform on
+$\{-1,1\}$. Set $Y=S(1+U)$, $Z=1$, and $Z'=U$.
+Then $U=|Y|-1$, so $J=\log2$, but both conditional means are zero
+and both squared Bayes risks equal $\mathbb E Y^2=5/2$.
+\item Fixed structural information cost does not imply useful risk
+reduction. For independent equiprobable $S\in\{-1,1\}$ and uniform
+$U\in\{1,\ldots,M\}$, let $X=(S,U)$, $Z=1$, $Z'=X$, and
+$Y\mid X\sim\mathrm{Ber}(1/2+\epsilon S)$ with
+$0<\epsilon<1/2$. Then
+\[
+ I(X;Z'\mid Z)=\log(2M),\quad
+ J=\log2-h(1/2+\epsilon),\quad
+ \Delta_{\mathrm{sq}}=\epsilon^2,\quad\Delta_{01}=\epsilon.
+\]
+All three Bayes gains tend to zero as $\epsilon\downarrow0$ while
+the structural information cost is fixed and can be arbitrarily large.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Independence proves the first item. The second follows by averaging the
+two conditional errors and entropies. The third follows from independence
+and the zero mean of $S$. In the fourth, $Z'$ reveals $X$, so its input
+information is $H(X)=\log(2M)$. The label is balanced, the conditional
+entropy is $h(1/2+\epsilon)$, the posterior mean is $1/2+\epsilon S$,
+and the fine classification error is $1/2-\epsilon$. These observations
+give all displayed formulas.
+\end{proof}
+
+Even for binary labels there is no distribution-free positive constant
+$c$ with $\Delta_{\mathrm{sq}}\ge cJ$ for all refinements.
+Indeed let $X=Y\sim\mathrm{Ber}(p)$, $Z=1$, $Z'=X$. Then
+$\Delta_{\mathrm{sq}}=p(1-p)$ and $J=h(p)$, whose ratio tends to
+zero as $p\downarrow0$. This is only a failure of a uniform linear
+comparison; it is not a claim that no nonlinear comparison exists.
+
+\begin{proposition}[The exact gap between Bayes value and fitted risk]
+\label{prop:p7-fitting-gaps}
+For $t\in\{0,1\}$, fix representation $Z_t$, an admissible decoder
+class $\mathcal G_t$, and its fitted member $g_t$. Assume all risks and
+infima below are finite. Let $R_t(g)=\mathbb E\ell(Y,g(Z_t))$,
+$B_t=B_\ell(Z_t)$, and define
+\[
+ A_t=\inf_{g\in\mathcal G_t}R_t(g)-B_t\ge0,\qquad
+ F_t=R_t(g_t)-\inf_{g\in\mathcal G_t}R_t(g)\ge0.
+\]
+Then
+\[
+ R_0(g_0)-R_1(g_1)
+ =(B_0-B_1)+(A_0-A_1)+(F_0-F_1).
+\]
+If $\widehat R_t$ is an empirical criterion, an exact further split is
+\[
+ F_t=O_t+E_t,
+ \quad O_t=\widehat R_t(g_t)-\inf_{g\in\mathcal G_t}\widehat R_t(g)\ge0,
+\]
+\[
+ E_t=R_t(g_t)-\widehat R_t(g_t)
+       +\inf_{g\in\mathcal G_t}\widehat R_t(g)
+       -\inf_{g\in\mathcal G_t}R_t(g).
+\]
+Here $E_t$ can have either sign. If
+$U_t=\sup_{g\in\mathcal G_t}|R_t(g)-\widehat R_t(g)|<\infty$,
+then $|E_t|\le2U_t$.
+\end{proposition}
+\begin{proof}
+Add and subtract each infimum to obtain the identities. Uniform
+deviation bounds both the fitted function's risk difference and the
+difference of the two infima by $U_t$ in absolute value.
+\end{proof}
+
+$A_t$ is representation-decoder approximation error; $F_t$ is the
+realized population fitting gap, not a pure optimization error.
+Only $O_t$ is the empirical optimization residual in the displayed split.
+The algebra holds for data-dependent encoders and classes after they are
+fixed, but obtaining a small probabilistic bound for $U_t$ then requires
+appropriate uniform control or fresh data. The identities do not supply
+one. A larger realizable function class can lower its infimum while
+finite optimization fails to lower the fitted risk.
+
+\begin{proposition}[A total information budget requires nested retention]
+\label{prop:p7-chain-budget}
+Let $Z_0,\ldots,Z_T$ be deterministic successive refinements of $X$.
+Then
+\[
+ \sum_{t=1}^T I(Y;Z_t\mid Z_{t-1})
+ = I(Y;Z_T\mid Z_0)
+ = B_{\log}(Z_0)-B_{\log}(Z_T)
+ \le I(Y;X\mid Z_0).
+\]
+If all information quantities are finite and
+$C=\sum_{t=1}^T I(X;Z_t\mid Z_{t-1})$, then also
+\[
+ C=I(X;Z_T\mid Z_0),\qquad
+ B_{\log}(Z_0)-B_{\log}(Z_T)\le C.
+\]
+Write $M=\min\{I(Y;X\mid Z_0),C\}$. For bounded real
+$Y\in[a,b]$, the endpoint squared Bayes improvement is at most
+$(b-a)^2M/2$. The corresponding finite-label classification bound is
+$\sqrt{M/2}$.
+\end{proposition}
+\begin{proof}
+Each earlier representation is a function of every later one. Apply the
+mutual-information chain rule and telescope the conditional entropies
+of the finite target. Apply the same chain rule to $X$ (via mutual
+information, without requiring finite differential entropies).
+Conditional data processing gives
+$I(Y;Z_T\mid Z_0)\le I(Y;X\mid Z_0)$ and
+$I(Y;Z_T\mid Z_0)\le I(X;Z_T\mid Z_0)$.
+Proposition~\ref{prop:p7-basic-bounds} applied once to the endpoint pair
+proves the remaining bounds.
+\end{proof}
+
+The same chain-rule conclusions hold for an explicitly specified joint
+Markov degradation chain $Y-X-Z_T-\cdots-Z_0$. They need not hold for
+arbitrary successive fitted representations. For example, take a balanced
+binary $Y=X$ and alternate $Z_t=X$ at odd $t$ and a constant at even $t$,
+starting with constant $Z_0$. Every odd transition contributes $\log2$
+to $I(Y;Z_t\mid Z_{t-1})$; every even transition contributes zero.
+Their sum grows without bound as the number of cycles grows, although
+the final representation after any full cycle has no label information.
+The omitted reverse conditional information accounts exactly for each
+forgetting step. A cumulative transcript restores nesting, but describes
+the information of that retained transcript, not automatically that of
+the deployed network. None of these chain-rule facts controls optimizer
+descent or charges finite-precision storage, feature-search computation,
+or parameter updates.
+
+For a learned sequence, a valid conditional version fixes one common
+training history $H$ containing the randomness that specifies every
+encoder, and uses a fresh evaluation sample independent of $H$.
+Apply the preceding propositions under each conditional law given $H$,
+then average. Conditioning separately on a growing $H_t$ at each stage
+without accounting for the newly learned information is not the same
+argument. In particular the randomness specifying the next encoder
+must be conditioned on, or represented explicitly as part of the
+observation, before applying a fixed-encoder Bayes comparison.

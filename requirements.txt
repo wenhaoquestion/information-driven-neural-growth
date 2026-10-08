@@ -1,0 +1,5 @@
+# Versions recorded in the research environment. Install only in your own environment.
+numpy==2.3.5
+mpmath==1.3.0
+scipy==1.18.1
+matplotlib==3.11.2

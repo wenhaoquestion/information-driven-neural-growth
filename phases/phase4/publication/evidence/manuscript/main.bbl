@@ -1,0 +1,100 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Amoukou et~al.(2026)Amoukou, Mishra, and Veloso]{amoukou2026}
+Salim~I. Amoukou, Saumitra Mishra, and Manuela Veloso.
+\newblock Correcting split selection in online decision trees via anytime-valid
+  inference, 2026.
+\newblock URL \url{https://arxiv.org/abs/2605.31239v1}.
+\newblock Inspected version 1, 29 May 2026.
+
+\bibitem[Blum and Hardt(2015)]{blum2015}
+Avrim Blum and Moritz Hardt.
+\newblock The ladder: A reliable leaderboard for machine learning competitions.
+\newblock In \emph{Proceedings of the 32nd International Conference on Machine
+  Learning}, volume~37 of \emph{Proceedings of Machine Learning Research},
+  pages 1006--1014, 2015.
+\newblock URL \url{https://proceedings.mlr.press/v37/blum15.html}.
+
+\bibitem[Cortes et~al.(2017)Cortes, Gonzalvo, Kuznetsov, Mohri, and
+  Yang]{cortes2017adanet}
+Corinna Cortes, Xavier Gonzalvo, Vitaly Kuznetsov, Mehryar Mohri, and Scott
+  Yang.
+\newblock {AdaNet}: Adaptive structural learning of artificial neural networks.
+\newblock In \emph{Proceedings of the 34th International Conference on Machine
+  Learning}, volume~70 of \emph{Proceedings of Machine Learning Research},
+  pages 874--883, 2017.
+\newblock URL \url{https://proceedings.mlr.press/v70/cortes17a.html}.
+
+\bibitem[Fahlman and Lebiere(1990)]{fahlman1990}
+Scott~E. Fahlman and Christian Lebiere.
+\newblock The cascade-correlation learning architecture.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~2, pages 524--532, 1990.
+\newblock URL
+  \url{https://papers.nips.cc/paper/1989/file/69adc1e107f7f7d035d7baf04342e1ca-Paper.pdf}.
+\newblock NIPS 1989 conference; proceedings published 1990.
+
+\bibitem[Huang(2026)]{huang2026selfcertification}
+Zijie Huang.
+\newblock Self-certification of representation adequacy: Sequential
+  certification at minimum task loss, 2026.
+\newblock URL \url{https://arxiv.org/abs/2608.02267v2}.
+\newblock Inspected version 2, revised 12 September 2026; first submitted 3
+  August 2026; preprint.
+
+\bibitem[Kaufmann et~al.(2016)Kaufmann, Capp{\'e}, and Garivier]{kaufmann2016}
+Emilie Kaufmann, Olivier Capp{\'e}, and Aur{\'e}lien Garivier.
+\newblock On the complexity of best-arm identification in multi-armed bandit
+  models.
+\newblock \emph{Journal of Machine Learning Research}, 17\penalty0
+  (1):\penalty0 1--42, 2016.
+\newblock URL \url{https://jmlr.org/papers/volume17/kaufman16a/kaufman16a.pdf}.
+
+\bibitem[Maurer and Pontil(2009)]{maurer2009}
+Andreas Maurer and Massimiliano Pontil.
+\newblock Empirical bernstein bounds and sample variance penalization.
+\newblock In \emph{Proceedings of the 22nd Annual Conference on Learning
+  Theory}, 2009.
+\newblock URL \url{https://www.cs.mcgill.ca/~colt2009/papers/012.pdf}.
+
+\bibitem[Nakatani and Hashimoto(2026)]{nakatani2026}
+Eiji Nakatani and Hiroya Hashimoto.
+\newblock {Brier-UDAM} for paired prediction-rule comparisons: Latent-risk
+  interpretation, observable contrasts, and inference, 2026.
+\newblock URL \url{https://arxiv.org/abs/2609.06945v1}.
+\newblock Inspected version 1, 7 September 2026.
+
+\bibitem[Verbockhaven et~al.(2024)Verbockhaven, Rudkiewicz, Chevallier, and
+  Charpiat]{verbockhaven2024growing}
+Manon Verbockhaven, Th{\'e}o Rudkiewicz, Sylvain Chevallier, and Guillaume
+  Charpiat.
+\newblock Growing tiny networks: Spotting expressivity bottlenecks and fixing
+  them optimally.
+\newblock \emph{Transactions on Machine Learning Research}, 2024.
+\newblock URL \url{https://openreview.net/forum?id=hbtG6s6e7r}.
+\newblock Inspected arXiv:2405.19816v2, 12 December 2024; author order follows
+  that PDF.
+
+\bibitem[Waudby-Smith and Ramdas(2024)]{waudby2024}
+Ian Waudby-Smith and Aaditya Ramdas.
+\newblock Estimating means of bounded random variables by betting.
+\newblock \emph{Journal of the Royal Statistical Society Series B: Statistical
+  Methodology}, 86\penalty0 (1):\penalty0 1--27, 2024.
+\newblock \doi{10.1093/jrsssb/qkad009}.
+\newblock URL \url{https://doi.org/10.1093/jrsssb/qkad009}.
+\newblock Published online2023; inspected arXiv:2010.09686v7, Section4.
+
+\bibitem[Wu et~al.(2019)Wu, Wang, and Liu]{ssd2019}
+Lemeng Wu, Dilin Wang, and Qiang Liu.
+\newblock Splitting steepest descent for growing neural architectures.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~32, 2019.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2019/file/3a01fc0853ebeba94fde4d1cc6fb842a-Paper.pdf}.
+
+\end{thebibliography}

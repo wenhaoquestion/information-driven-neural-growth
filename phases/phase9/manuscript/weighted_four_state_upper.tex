@@ -1,0 +1,287 @@
+% Phase 9 research candidate; include-ready for curvature_hierarchy.tex.
+% All Phase 8 source files are immutable and were only read.
+% Independently checked algebraically by endpoint_obstruction and
+% phase9_adversarial on 7 October 2026. Internal review only.
+\section{The sharp degree order for four arbitrary positive weights}
+\label{sec:weighted-sharp}
+
+The four-state arbitrary-weight degree envelope has the sharp order
+announced in the introduction. The proof uses the original source weights
+in every Jensen kernel. Choosing the appropriate one of the two adjacent
+triples is essential: a corresponding assertion for an arbitrary weighted
+triple would be false.
+
+\begin{theorem}[Weighted four-state degree bound]
+\label{thm:weighted-sharp}
+Let $g=\varphi''$ be a nonzero polynomial of degree at most $r$, nonnegative
+on $[0,1]$. Let four source states have arbitrary positive probabilities
+and posterior locations in $[0,1]$, and suppose that both flat distortions
+$\operatorname{OPT}_2$ and $\operatorname{OPT}_3$ are positive. Write
+$R=\rho_{\varphi,\mathrm{det}}$ for the optimal deterministic hierarchy
+price at output budgets two and three.
+If $r\ge1$ and $R\ge128$, then
+\begin{equation}
+ R^2\le16r^2\exp\left(\frac{20r}{\sqrt R}\right).
+ \label{eq:weighted-implicit}
+\end{equation}
+In particular, if $R\ge256$ then
+\begin{equation}
+ R(\log R)^2\le1936r^2.
+ \label{eq:weighted-Rlog}
+\end{equation}
+For every integer $r\ge2$ this gives the explicit uniform bound
+\begin{equation}
+ \rho_{\varphi,\mathrm{stoch}}
+ \le\rho_{\varphi,\mathrm{det}}
+ \le1936\frac{r^2}{(\log r)^2}.
+ \label{eq:weighted-sharp-upper}
+\end{equation}
+Consequently, in the four-state degree envelopes permitting all positive
+weights and all posterior locations, both prices have sharp order
+\[
+ \widehat C_r^{\mathrm{det}}
+ =\Theta\!\left(\frac{r^2}{(\log r)^2}\right),\qquad
+ \widehat C_r^{\mathrm{stoch}}
+ =\Theta\!\left(\frac{r^2}{(\log r)^2}\right).
+\]
+The matching lower bounds follow from the endpoint construction, reproduced in
+Theorem~\ref{thm:ext-weightdegenerate}.
+\end{theorem}
+
+\begin{proof}
+We first record the two elementary polynomial estimates used below. If
+$f\ge0$ is a polynomial of degree at most $r\ge1$ on an interval $E$ of
+length $L>0$, and $M_E=\max_E f$, then the rescaled Markov inequality~\cite{shadrin} gives
+\begin{equation}
+ \int_E f(t)\,\mathrm dt\ge\frac{L M_E}{8r^2}.
+ \label{eq:weighted-markov-mass}
+\end{equation}
+Indeed, $\|f'\|_\infty\le2r^2M_E/L$. From a maximizer there is an
+available one-sided segment of length $L/(4r^2)$, and on this segment
+$f\ge M_E/2$.
+
+If $t_0$ lies to the right of $E$, at distance $d$ from its right endpoint,
+the classical Chebyshev extremal inequality gives
+\begin{equation}
+ |f(t_0)|\le M_E T_r(1+2d/L)
+ \le M_E\exp\left(2r\sqrt{d/L}\right).
+ \label{eq:weighted-cheb-extrapolation}
+\end{equation}
+Here the second estimate follows from
+$T_r(\cosh s)=\cosh(rs)$ and
+$\operatorname{arcosh}(1+x)\le\sqrt{2x}$. To see the first estimate
+directly, rescale $E$ to $[-1,1]$ and divide by $M_E$. If a degree-at-most-$r$
+polynomial $F$ bounded by one there had
+$|F(z)|>T_r(z)$ at $z>1$, change its sign if necessary and set
+$\lambda=T_r(z)/F(z)\in(0,1)$. At the $r+1$ alternating extrema of $T_r$,
+the polynomial $T_r-\lambda F$ has the same strict alternating signs as
+$T_r$, giving $r$ roots in $[-1,1]$, as well as its root at $z$.
+This contradicts its degree. These estimates are classical polynomial
+tools, not new approximation results.
+
+\emph{The sole optimizer conflict is still the middle pair.}
+Positive $\operatorname{OPT}_3$ implies that the four posteriors are
+distinct; label them $A<B<C<D$. For a cell or pair, retain its original
+source weights without conditional renormalization. Put
+\[
+ p_L=D(AB),\quad q=D(BC),\quad p_R=D(CD),\quad
+ Q=p_L+p_R,\quad T_L=D(ABC),\quad T_R=D(BCD).
+\]
+Contiguous flat optimizers exist for arbitrary positive weights: for fixed
+centers $a<b$, the difference $B_\varphi(x,a)-B_\varphi(x,b)$ is affine
+in $x$ with positive slope, so nearest-center assignments are contiguous,
+and updating to weighted centroids cannot increase distortion. Strict
+convexity and distinct posteriors ensure that the optimum fills its budget.
+
+For every weighted triple, its kernel dominates the two constituent
+adjacent-pair kernels on their respective disjoint interiors. One way to
+see the domination is to merge a pair first and then merge its weighted
+centroid with the remaining state; the additional Jensen gap is
+nonnegative, including for each hinge generator. Thus
+\[
+ T_L\ge p_L+q,\qquad T_R\ge q+p_R.
+\]
+If $AB$ is a cheapest adjacent pair, the only incompatible contiguous
+coarse candidate is $A\mid BCD$; its cost obeys
+$T_R\ge q+p_R\ge p_L+p_R=Q$, so a compatible flat-optimal coarse
+partition can be chosen. The case of $CD$ is its reflection. If $BC$ is
+cheapest and either triple split is flat optimal, it too has compatible
+flat optima. Hence either $R=1$, or we may work with the sole conflict
+\[
+ \operatorname{OPT}_3=q,\qquad \operatorname{OPT}_2=Q,
+\]
+where the optimal fine pair is $BC$ and the optimal coarse split is
+$AB\mid CD$.
+
+The hierarchy retaining that coarse split and its cheaper outer fine pair,
+and the two hierarchies retaining the fine pair $BC$ and an adjacent triple,
+give the admissible-candidate inequalities
+\begin{equation}
+ R\le\frac{\min(p_L,p_R)}q,\qquad
+ R\le\frac{T_L}Q,\qquad R\le\frac{T_R}Q.
+ \label{eq:weighted-candidates}
+\end{equation}
+They use feasible deterministic hierarchies only. They do not require an
+exhaustion of optimal noncontiguous hierarchies.
+
+\emph{Choose the triple by the middle masses.}
+Reflect the ordered configuration if necessary so that $p_B\le p_C$.
+Use the triple $BCD$, and affinely normalize its own hull to $[0,1]$:
+\[
+ B=0,\quad C=c\in(0,1),\quad D=1,\qquad
+ (p_B,p_C,p_D)=(u,v,w),\quad 0<u\le v,\quad w>0.
+\]
+The fourth point is not used in the polynomial estimates. If the original
+triple hull has length $L_0$, the transformed curvature is
+$L_0^2g(B+L_0t)$, preserving the curvature degree, nonnegativity, and all
+the costs under discussion. Denote it again by $g$.
+
+Let $K$ be the triple kernel, let $k_q$ and $k_p$ be its two adjacent-pair
+kernels, and let $H$ be the kernel of its two outer states with their
+original weights:
+\begin{align*}
+ K(t)&=\min\{ut+v(t-c)_+,\ w(1-t)+v(c-t)_+\},\\
+ k_q(t)&=\min\{ut,v(c-t)\}\,\mathbf1_{[0,c]}(t),\\
+ k_p(t)&=\min\{v(t-c),w(1-t)\}\,\mathbf1_{[c,1]}(t),\\
+ H(t)&=\min\{ut,w(1-t)\}.
+\end{align*}
+In particular $T:=T_R=\int_0^1Kg$, $q=\int_0^1k_qg$, and
+$p_R=\int_0^1k_pg$. Write $S=p_R+q$.
+By \eqref{eq:weighted-candidates},
+\begin{equation}
+ q\le\frac{Q}{2R}\le\frac{T}{2R^2},\qquad
+ S\le Q+q\le\frac{T}{R}+\frac{T}{2R^2}\le\frac{2T}{R}.
+ \label{eq:weighted-two-small-costs}
+\end{equation}
+
+Two pointwise facts make these estimates uniform in the weights. First,
+\begin{equation}
+ 0\le K-H\le k_q+k_p.
+ \label{eq:weighted-H-comparison}
+\end{equation}
+For $t<c$, the difference is
+$\min\{ut,w(1-t)+v(c-t)\}-\min\{ut,w(1-t)\}$,
+which lies between zero and $\min\{ut,v(c-t)\}=k_q(t)$.
+For $t>c$, interchange the two sides to obtain the bound by $k_p(t)$.
+Second, for $t<c$, $K(t)\le ut$ gives
+\[
+ \frac{k_q(t)}{K(t)}
+ \ge\min\left\{1,\frac{v(c-t)}{ut}\right\}
+ \ge\min\left\{1,\frac{c-t}{t}\right\}.
+\]
+For $t>c$, put $\Delta=t-c$. The elementary inequality
+$\min\{B,C\}/\min\{A+B,C\}\ge B/(A+B)$, for positive
+$A,B,C$, gives
+\[
+ \frac{k_p(t)}{K(t)}
+ \ge\frac{v\Delta}{ut+v\Delta}
+ \ge\frac{\Delta}{c+2\Delta}.
+\]
+Endpoint values follow by continuity; ratios need only be used inside
+$(0,1)$, where $K>0$.
+
+\emph{A large peak and a nearby interval with small curvature cost.}
+Assume $R\ge128$ and put
+\[
+ \varepsilon=\frac{16}{R}\le\frac18,
+ \qquad I=\{t\in[0,1]:|t-c|\le\varepsilon c\}.
+\]
+The preceding pointwise inequalities imply, outside $I$,
+\[
+ k_q+k_p\ge\frac{\varepsilon}{1+2\varepsilon}K.
+\]
+Consequently
+\[
+ \int_{[0,1]\setminus I}Kg
+ \le\frac{1+2\varepsilon}{\varepsilon}S
+ \le\frac{5T}{32}.
+\]
+By \eqref{eq:weighted-H-comparison} and
+\eqref{eq:weighted-two-small-costs},
+\[
+ \int_I Hg\ge T-\frac{5T}{32}-S
+ \ge\frac{53T}{64}\ge\frac{3T}{4}.
+\]
+On $I$, $H(t)\le ut\le u(1+\varepsilon)c$, and $|I|\le2\varepsilon c$.
+Thus there exists $t_0\in I$ such that
+\begin{equation}
+ g(t_0)\ge\frac{T}{4\varepsilon u c^2}.
+ \label{eq:weighted-peak}
+\end{equation}
+This estimate uses $H\le ut$, rather than dividing by $H(c)$, which could
+be arbitrarily small as weights or gaps degenerate.
+
+Consider the interval
+\[
+ E=[c/4,c(1-2\varepsilon)].
+\]
+Its length is at least $c/2$. The point $t_0$ lies to its right at distance
+at most $3\varepsilon c$. On all of $E$, both terms in
+$k_q(t)=\min\{ut,v(c-t)\}$ are at least $2u\varepsilon c$:
+indeed $t\ge c/4\ge2\varepsilon c$, $c-t\ge2\varepsilon c$, and
+$v\ge u$. With $M_E=\max_Eg$, the extrapolation estimate
+\eqref{eq:weighted-cheb-extrapolation} and \eqref{eq:weighted-peak} give
+\[
+ M_E\ge g(t_0)\exp(-\sqrt{24}\,r\sqrt\varepsilon)
+ \ge\frac{T}{4\varepsilon u c^2}
+       \exp\left(-\frac{20r}{\sqrt R}\right),
+\]
+where $4\sqrt{24}<20$. The mass estimate
+\eqref{eq:weighted-markov-mass} now yields
+\begin{align*}
+ q&\ge2u\varepsilon c\int_Eg(t)\,\mathrm dt\\
+  &\ge2u\varepsilon c\frac{cM_E}{16r^2}
+   \ge\frac{T}{32r^2}
+       \exp\left(-\frac{20r}{\sqrt R}\right).
+\end{align*}
+Combining this with $q\le T/(2R^2)$ proves
+\eqref{eq:weighted-implicit}.
+
+\emph{Extract the degree order.}
+Set $z=r/\sqrt R>0$. Equation~\eqref{eq:weighted-implicit} implies
+\[
+ \log(R/16)\le20z+2\log z\le22z.
+\]
+For $R\ge256$, $\log(R/16)\ge\tfrac12\log R$, so
+$\sqrt R\log R\le44r$, proving \eqref{eq:weighted-Rlog}.
+For $r\ge2$, if $R\ge256$ and $R>r$, substitute
+$\log R\ge\log r$ to obtain \eqref{eq:weighted-sharp-upper}.
+If $R\le r$, use $(\log r)^2\le r$; if $R<256$, use
+$(\log r)^2\le r^2$ and $256<1936$.
+Every deterministic hierarchy is stochastic admissible, with the same flat
+denominators, so the stochastic upper bound follows. The endpoint lower construction in Appendix~\ref{sec:ext-weights} gives the two matching lower orders.
+\end{proof}
+
+\paragraph{Quantifiers, normalization, and boundaries.}
+The constant is independent of all positive source probabilities and all
+four distinct posterior locations. The proof does not impose a lower bound
+on a posterior gap or a source mass. All cell kernels use the original
+source weights; the selected triple is never conditionally renormalized.
+Only its posterior coordinate is rescaled, with the corresponding squared
+length factor in the curvature.
+
+The matching lower witnesses can be placed in $[1/4,3/4]$ and represented
+by strictly proper losses in $[0,1/2]$, exactly as in
+Theorem~\ref{thm:ext-weightdegenerate}. For its notation
+$d=(4\log n/n)^2$, $b=d^2$, and
+$M_n=\max_{[-1/2,3/2]}g_n$, the bounded-loss affine lift multiplies every
+distortion by $1/(4M_n)$. The explicit feasible flat bounds therefore are
+\[
+ 0<\widetilde{\operatorname{OPT}}_3
+ \le\frac{d^4}{4M_n},\qquad
+ 0<\widetilde{\operatorname{OPT}}_2
+ \le\frac{2d^3}{M_n}.
+\]
+Since $M_n\ge\int_0^1g_n=2+d^2$, both upper bounds tend to zero.
+The sharp hierarchy-price statement is multiplicative in excess risk;
+it does not supply nonvanishing absolute excess costs after bounded-loss
+normalization. No loss normalization is needed for the upper bound.
+
+This theorem closes the gap only for four source states and budgets two
+and three. On four states the all-capacity problem has the same optimum,
+because the one-output and four-output levels are respectively the constant
+representation and the identity. The proof does not improve the existing
+$O(r^2)$ theorem for arbitrary finite source counts and two prescribed
+capacities, nor the $O(r^2\log(r+2))$ theorem for one hierarchy covering all
+capacities on arbitrary finite sources. It makes no claim of optimal
+leading constants or historical priority.

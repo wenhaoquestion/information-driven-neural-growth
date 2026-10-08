@@ -1,0 +1,14 @@
+\begin{table}[tb]
+\centering\footnotesize\setlength{\tabcolsep}{5pt}
+\caption{Fresh-seed operation-aligned information-score ablation. Risks integrate the teacher label probability on 8192 held-out Gaussian inputs, and are averaged across 32 seeds. The last column gives aligned-CMI minus random-growth risk with a paired 95\% Student-$t$ interval half-width. Fixed width 3 uses the leading-width compute proxy; its initialization differs from the grown model.}
+\label{tab:aligned-probe}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Task & Aligned CMI & Random & Entropy & Fixed 3 & Difference $\pm$ half-width\\
+\midrule
+teacher & 0.40350 & 0.40250 & 0.40364 & 0.40093 & $+0.00100 \pm 0.00159$ \\
+localized & 0.51857 & 0.51594 & 0.49348 & 0.48874 & $+0.00263 \pm 0.00991$ \\
+linear null & 0.53534 & 0.53601 & 0.53724 & 0.53359 & $-0.00067 \pm 0.00235$ \\
+\bottomrule
+\end{tabular}
+\end{table}

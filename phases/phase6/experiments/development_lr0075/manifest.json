@@ -1,0 +1,114 @@
+{
+  "accounting": {
+    "P": "(d+1)*k+1; all floating arrays float64 and ID/age arrays int64",
+    "arrival_id_construction": "n",
+    "budget_policy": "reserve all named non-fit costs before fitting; choose largest affordable batch <= batch; only the final budget-limited batch may be small",
+    "eigendecomposition": "10*d**3",
+    "event_control": "64 per event for counters, bounds and loop control",
+    "excluded": "data generation, post-trajectory evaluator, file I/O, audit snapshots and access-counter bookkeeping",
+    "fit_explanation": "row term covers forward, gradient and gathers; fixed term covers clipping, Adam, age updates, finite checks and batch control; conservative fixed coefficients",
+    "fit_gradient_adam": "n*(6*d*k+12*k+2*d+12) + 30*P+4*d*k+4*k+32 per actual minibatch",
+    "fit_pool_copy": "fit_pool_rows*(d+2)",
+    "historical_direction": "4*d",
+    "historical_residual_matrix": "d*k+d*d*(2*k-1)+2*d*d (k before birth)",
+    "memory": "explicit NumPy array byte inventory and conservative working-array estimate; excludes Python objects, BLAS/eigh internals, audit archives and data owner; not OS peak memory",
+    "model_birth": "4*P_after+5*(d+1), including parameter/moment/variance/age copies and appended entries",
+    "model_initialization": "8*d*k+k+5*P",
+    "moment_update": "2*n*d*d+n*d+n+4*d*d",
+    "permutation": "4*fit_pool_rows per generated permutation, including any carried epoch tails",
+    "random_direction": "8*d (normal draw, norm and normalization)",
+    "reservoir_update": "n*(d+2+8), conservatively charging every incoming row a write plus Algorithm R scalar/RNG work even when discarded",
+    "retention_allocation": "capacity*(d+2) plus d*d for historical moment initialization",
+    "retention_comparison": "historical128:128*14+144=1936 8-byte words; replay138:138*14=1932 words at d12, a four-word difference; random128 isolates proposal direction at equal replay rows",
+    "rng_namespaces": [
+      "teacher_rotation",
+      "data_inputs",
+      "data_noise",
+      "init",
+      "fit",
+      "proposal",
+      "reservoir",
+      "execution_order"
+    ],
+    "unit": "declared algorithmic work proxy; not measured or exact hardware FLOPs",
+    "version": "declared_algorithmic_work_v1",
+    "wall_clock": "sum measured learner algorithm blocks; audit instrumentation excluded; timer overhead included; process contention may affect wall times"
+  },
+  "code_sha256": {
+    "frontier.py": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0",
+    "phase5_reference.py": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720"
+  },
+  "config": {
+    "age_modes": [
+      "global"
+    ],
+    "arrivals": 7,
+    "batch": 128,
+    "block": 1024,
+    "budgets": [
+      3200000,
+      5000000,
+      6400000,
+      8000000,
+      10000000
+    ],
+    "d": 12,
+    "gradient_clip": 20.0,
+    "hard_wall_seconds": 240,
+    "historical_capacity": 128,
+    "lr": 0.0075,
+    "methods": [
+      "historical_moment",
+      "random_growth128",
+      "random_growth138",
+      "fixed7"
+    ],
+    "randomize_order": true,
+    "replay_capacity": 138,
+    "schema_version": 1,
+    "seeds": [
+      96010000,
+      96010001,
+      96010002,
+      96010003,
+      96010004,
+      96010005,
+      96010006,
+      96010007,
+      96010008,
+      96010009,
+      96010010,
+      96010011,
+      96010012,
+      96010013,
+      96010014,
+      96010015
+    ],
+    "tasks": [
+      "indefinite_noisy"
+    ]
+  },
+  "config_sha256": "e7564f56be48fa71f52dee1a7832a89265f56028984eb0ff4fcc025c6ac9d032",
+  "environment": {
+    "command": [
+      "code/frontier.py",
+      "--config",
+      "configs/development_lr0075.json",
+      "--output-dir",
+      "experiments/development_lr0075",
+      "--workers",
+      "2"
+    ],
+    "numpy": "2.3.5",
+    "platform": "macOS-27.2-arm64-arm-64bit",
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "threads": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "wall_time_interpretation": "process-contended",
+    "workers": 2
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "date_utc": "2026-10-08",
+  "validation_environment": {
+    "python": "3.14.6",
+    "pdftex": "TeX Live 2025 / pdfTeX 1.40.27"
+  },
+  "saved_evidence_checks": {
+    "checks": [
+      {
+        "check": "phase1",
+        "command": [
+          "python3",
+          "-B",
+          "phases/phase1/code/verify_saved.py"
+        ],
+        "returncode": 0,
+        "passed": true
+      },
+      {
+        "check": "phase2",
+        "command": [
+          "python3",
+          "-B",
+          "phases/phase2/code/verify_saved.py"
+        ],
+        "returncode": 0,
+        "passed": true
+      },
+      {
+        "check": "phase3",
+        "command": [
+          "python3",
+          "-B",
+          "phases/phase3/code/verify_saved.py"
+        ],
+        "returncode": 0,
+        "passed": true
+      },
+      {
+        "check": "phase4",
+        "command": [
+          "python3",
+          "-B",
+          "phases/phase4/code/verify_publication.py"
+        ],
+        "returncode": 0,
+        "passed": true
+      },
+      {
+        "check": "phase5",
+        "command": [
+          "python3",
+          "-B",
+          "phases/phase5/code/verify_public.py"
+        ],
+        "returncode": 0,
+        "passed": true
+      },
+      {
+        "check": "phase6",
+        "command": [
+          "python3",
+          "-B",
+          "phases/phase6/code/verify_public.py"
+        ],
+        "returncode": 0,
+        "passed": true
+      },
+      {
+        "check": "phase7_equal_mass",
+        "command": [
+          "python3",
+          "-B",
+          "phases/phase7/research/finite/check_equal_mass_costs.py"
+        ],
+        "returncode": 0,
+        "passed": true
+      },
+      {
+        "check": "phase7_transfer",
+        "command": [
+          "python3",
+          "-B",
+          "phases/phase7/research/finite/check_four_state_transfer.py"
+        ],
+        "returncode": 0,
+        "passed": true
+      },
+      {
+        "check": "closure_theory",
+        "command": [
+          "python3",
+          "-B",
+          "reviews/statistical-closure/theory/independent_verify.py"
+        ],
+        "returncode": 0,
+        "passed": true
+      },
+      {
+        "check": "closure_code",
+        "command": [
+          "python3",
+          "-B",
+          "reviews/statistical-closure/code/independent_code_check.py"
+        ],
+        "returncode": 0,
+        "passed": true
+      }
+    ],
+    "source_parse": {
+      "python": 146,
+      "json": 230,
+      "json_gzip": 8,
+      "errors": []
+    },
+    "passed": true
+  },
+  "paper_builds": {
+    "papers": [
+      {
+        "id": "phase1",
+        "passes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      },
+      {
+        "id": "phase2",
+        "passes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      },
+      {
+        "id": "phase3",
+        "passes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      },
+      {
+        "id": "phase4-finite",
+        "passes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      },
+      {
+        "id": "phase4-evidence",
+        "passes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      },
+      {
+        "id": "phase4-retained",
+        "passes": [
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      },
+      {
+        "id": "phase5",
+        "passes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      },
+      {
+        "id": "phase6",
+        "passes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      },
+      {
+        "id": "phase7",
+        "passes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      },
+      {
+        "id": "phase8",
+        "passes": [
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      },
+      {
+        "id": "phase9",
+        "passes": [
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      },
+      {
+        "id": "phase10",
+        "passes": [
+          0,
+          0,
+          0
+        ],
+        "unresolved": [],
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "scope": "Fresh private git checkouts of the sanitized publication tree; no new training, RNG, bootstrap or dependency installation. See VALIDATION.md for exclusions."
+}

@@ -1,0 +1,11 @@
+# Historical empirical audit summary
+
+This is a publication summary of the historical internal technical check. It removes private workflow/role descriptions and does not reproduce an internal conversation. It is not external peer review or a claim of personal author review. The publication pass did not rerun the scientific calculations. Original review hashes are retained in the private curation provenance; public numerical evidence and complete manuscript proofs remain available.
+
+The original main audit records 86,812 reconstruction checks on 336 trajectories / 2,352 events, plus separately recorded replay/intervention checks. The adaptive audit records 64,993 checks on 240 trajectories / 1,680 events and a validation-label perturbation check. The targeted fullbatch audit records 15,797 checks on 192 trajectories / 1,344 events. Their saved error lists are empty. These are prior execution results, not checks newly rerun for publication.
+
+The main implementation discovers directions from allowed samples and trains all hidden/output parameters. Same-checkpoint branches compare five directions after identical fitting work; stronger oracle direction potential did not establish an enduring trained-risk benefit. Main-study widths are scheduled. The separate adaptive extension chooses grow/continue/hold with a heuristic gate and charges rejected branches. It has no finite-sample safety guarantee.
+
+An identified confound changed optimizer dynamics with replay capacity: original R128/R138 had the same 124,285 fitting accesses but 975/1,034 Adam steps because of ten-row epoch tails. A separately frozen fresh-seed follow-up carried tails across permutations; both random arms then had 975 steps and 124,285 accesses. All 16 targeted paired final-risk intervals include zero. This is not equivalence and not a paired causal estimate of the old/new batch rule.
+
+See the `*_audit.json`, `*_check.json` and optimizer-count files here; `../results/published_seed_endpoints.csv` and `published_checkpoint_branches.csv` preserve complete compact outcomes. Original NPZ, full parameter trajectories and duplicate intervention/replay files are local-only, individually hashed in `../EXCLUDED_ARTIFACTS.csv`. The audit scripts require those data and may execute stochastic fixtures or training.

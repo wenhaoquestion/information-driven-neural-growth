@@ -1,0 +1,661 @@
+\documentclass[10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{placeins}
+\newtheorem{proposition}{Proposition}
+\newcommand{\Hmethod}{Historical moment}
+\newcommand{\Rsmall}{Random R128}
+\newcommand{\Rlarge}{Random R138}
+\newcommand{\Fmethod}{Fixed width 7}
+\newcommand{\analysisdir}{../analysis/confirmation}
+\newcommand{\artifact}[1]{\texttt{\detokenize{#1}}}
+\setlist{nosep,leftmargin=*}
+\setlength{\emergencystretch}{2em}
+\title{Do Historical Moments Improve the Risk--Work Frontier?\\
+\large A Controlled Study of Scheduled Quadratic Network Growth}
+\input{author.tex}
+\hypersetup{
+  pdftitle={Do Historical Moments Improve the Risk–Work Frontier? A Controlled Study of Scheduled Quadratic Network Growth},
+  pdfauthor={Wenyu Huang}
+}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Choosing a promising direction for a new neural unit does not establish an
+advantage after finite optimization and charged proposal costs. We study
+this distinction in a centered quadratic network whose hidden vectors,
+signed output coefficients, and intercept are all trained. A historical
+Gaussian moment proposes spectral directions while retaining 128 examples;
+the comparators use random growth with 128 or 138 examples, or a fixed
+width of seven with 138 examples. Growth from one to seven units follows
+a fixed schedule. A locally locked protocol specifies five work budgets,
+balanced learning-rate selection on separate development problems, and
+256 independent confirmation teachers and streams. Exact population
+excess risk is evaluated only after each training trajectory is fixed.
+The primary endpoint averages terminal excess risk over a fixed
+log-budget grid and requires superiority to all three comparators.
+The prespecified conjunction is met ($p=0.00312$): mean integrated
+excess risk is $0.00536$, compared with $0.00594$, $0.00579$, and
+$0.01498$ for the three controls. The fixed-width mean is driven by
+large-error runs; historical moments win on only 118/256 paired seeds.
+The effect is modest against random growth, and both random controls already meet the fixed risk target
+on every seed at the smallest evaluated budget. Fixed width is faster
+in the observed learner timings. Secondary tasks do not show a
+uniform historical-moment advantage.
+The analytical identities and empirical comparison concern this synthetic
+model and optimizer; they supply neither autonomous growth nor a general
+risk or runtime guarantee.
+\end{abstract}
+
+\section{Question and relation to earlier work}
+\label{sec:introduction}
+
+A network can be enlarged without changing its current output. It can
+also receive a direction that would reduce risk under an ideal coefficient
+refit. The practical question is whether this information improves the
+predictor that training actually reaches under a common resource rule.
+Direction estimation, replay maintenance, optimizer state, and fitting
+all consume resources. An initially better direction can fail to repay
+these costs, and a competent fixed-width model may reach the same risk
+without any growth mechanism.
+
+This paper studies one narrowly specified version of that question:
+does retaining a historical quadratic moment reduce final population
+excess risk over a prespecified training-work grid, compared with two
+random-growth controls and a fixed-width control? Earlier internal
+Phase~5 experiments did not establish that stronger birth directions
+produced lower final risk. Phase~6 therefore evaluates a complete budget
+frontier using independently rotated teachers, balanced development
+selection, and broader paired replication. Its intended contribution
+is a controlled empirical finding and an inspectable resource ledger.
+The historical-moment mechanism is carried forward as a candidate to
+test, not introduced as a new algorithmic principle.
+
+The relevant prior work already separates several ingredients of this
+construction. Net2Net develops function-preserving transformations for
+transferring a trained network into wider or deeper networks
+\cite{net2net}. GradMax chooses initializations for added neurons by
+maximizing new-weight gradients and uses a singular-value decomposition
+\cite{gradmax}. Growing Tiny Networks formalizes expressivity
+bottlenecks relative to functional gradients and uses this information
+to add neurons during training \cite{tiny}. In the matrix formulation,
+GECO is a greedy method for convex optimization under a low-rank
+constraint, using leading singular directions and corrective optimization
+\cite{geco}. These are close precedents for function preservation,
+gradient-informed expansion, and spectral rank-one search. We do not
+claim that these ingredients are new.
+
+The present factorized quadratic model permits exact population
+evaluation and transparent small-scale accounting. It is not a
+reproduction of those prior algorithms, and the four experimental
+comparators do not establish superiority over them. In particular,
+finite clipped Adam updates of a nonlinear parameterization differ
+from an analytical rank-one coefficient fit or a fully corrective
+matrix optimization step. Section~\ref{sec:p6-theory} gives the exact
+risk identity and states this separation. The earlier project also
+considered a fresh-block matrix recurrence; the discussion there is
+included solely to explain why its contraction analysis does not
+transfer to this implementation.
+
+\input{theory.tex}
+
+\section{Experimental protocol}
+\label{sec:methods}
+
+\subsection{Data stream and learner information}
+
+Each primary replicate uses $d=12$ and seven successive arrivals of
+1,024 independent observations, for 7,168 observations in total.
+The teacher is $A_*=Q\Lambda Q^\top$, where $Q$ is obtained from an
+independent Gaussian QR draw and
+\[
+\operatorname{diag}(\Lambda)
+=(0.65,-0.50,0.30,-0.20,0,\ldots,0).
+\]
+Inputs are independent $N(0,I_{12})$, the teacher intercept is zero,
+and additive Gaussian noise has standard deviation $0.3$. Each
+replicate has its own teacher rotation, observations, noise, and
+optimization random streams. Methods and budgets are paired within
+the same replicate. At each arrival, a method accesses only the current
+block and its permitted retained state; it never accesses future
+observations and never receives the teacher matrix or a population
+score while training.
+
+At an arrival, the fitting pool consists of the fresh 1,024 observations
+and the reservoir retained from previous arrivals. A reservoir update
+then processes the fresh block using Algorithm~R. The fresh observations
+are not duplicated in that arrival's fitting pool merely because some
+of them enter the updated reservoir. Independent random namespaces
+separate data generation, initialization, proposal directions, fitting
+permutations, reservoir selection, and execution order. Within a seed,
+all trajectories are completed before a separate evaluator adds their
+exact population risks. The evaluator's access to $A_*$ is an
+evaluation permission, not a learner input.
+
+\subsection{Four complete algorithms}
+
+The prediction function implemented in all four methods is
+\begin{equation}
+ f_\theta(x)=c+\sum_{j=1}^k a_j\bigl((w_j^\top x)^2-\|w_j\|_2^2\bigr).
+ \label{eq:factor-predictor}
+\end{equation}
+All $w_j$, $a_j$, and $c$ are trainable; the comparison is not a
+fixed-feature regression. At initialization, hidden vectors are
+independent Gaussian draws normalized to unit length, output
+coefficients are drawn from $N(0,0.01^2)$, and $c=0$.
+The three growing methods start at width one. Before fitting arrivals
+two through seven, each appends exactly one hidden unit. Its output
+coefficient and Adam moments are zero, while existing parameters and
+states are preserved. The fixed-width method initializes seven units
+and optimizes all of them from the first arrival.
+
+\Hmethod\ retains a full $12\times12$ matrix sum and a reservoir of
+128 examples. After incorporating the fresh block, let $N_t$ denote
+the number of observations received and define
+\begin{equation}
+ S_t=\frac{1}{2N_t}\sum_{i\le N_t}Y_i(X_iX_i^\top-I_d),\qquad
+ M_t=S_t-B_{t^-}.
+ \label{eq:moment-proposal}
+\end{equation}
+The stored sum is updated once per observation; no historical raw
+data beyond the reservoir are retained by the learner. The new
+direction is a unit eigenvector of $M_t$ associated with its largest
+absolute eigenvalue. Both signs of teacher eigenvalues matter because
+the output coefficients are signed. The Gaussian population identity
+$\mathbb E S_t=A_*$ motivates this proxy, but $M_t$ is not the exact
+empirical residual matrix of the fitted predictor with intercept.
+
+\Rsmall\ and \Rlarge\ use normalized independent Gaussian birth
+directions and retain 128 and 138 examples, respectively. The former
+controls for the number of replay examples; the latter spends
+approximately the historical matrix's storage on additional examples.
+\Fmethod\ retains 138 examples. No method uses a gate, a validation
+controller, an accepted/rejected proposal branch, or an autonomous
+choice of birth timing or width.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lclrr}
+\toprule
+Method & Width & Birth direction & Replay rows & Retained bytes\\
+\midrule
+\Hmethod & $1\to7$ & Historical spectral & 128 & 15,488\\
+\Rsmall & $1\to7$ & Random & 128 & 14,336\\
+\Rlarge & $1\to7$ & Random & 138 & 15,456\\
+\Fmethod & 7 & No births & 138 & 15,456\\
+\bottomrule
+\end{tabular}
+\caption{Persistent observation-dependent arrays after filling the
+reservoir. Every stored row has 12 float64 inputs, a float64 label,
+and an int64 observation identifier. The historical matrix adds
+144 float64 words. Its 32-byte difference from the 138-row controls
+is disclosed; storage is close but not exactly matched. Model,
+optimizer, working arrays, and control state are separate.}
+\label{tab:methods}
+\end{table}
+
+\subsection{Fitting and optimizer-age sensitivity}
+
+The empirical squared-error gradients update all parameters using
+Adam with $(\beta_1,\beta_2)=(0.9,0.999)$, numerical stabilizer
+$10^{-8}$, and global gradient-norm clipping at 20. The batch size is
+128. Random permutations are traversed with tails carried into the
+next permutation, so an epoch boundary alone does not create a short
+optimizer batch. If the remaining budget cannot fund 128 examples,
+the largest affordable positive final batch is used and recorded.
+Training stops when no positive batch fits the remaining declared
+work. There is no validation-based early stopping or rollback.
+
+The primary optimizer uses the global Adam update count for bias
+correction, with zero moment states for newborn coordinates. This
+choice gives new and old coordinates different histories despite a
+shared global count. A separately specified sensitivity uses each
+coordinate's local age for bias correction; newborn ages start at
+zero and existing ages continue. The sensitivity repeats the first
+32 primary seeds with frozen learning rates. Its results are paired
+with those same seeds' primary runs and are not 32 additional
+independent primary replicates.
+
+\subsection{Allocated budgets and charged operations}
+\label{sec:accounting}
+
+Each method runs independently at each of the five per-arrival caps
+$10^6(3.2,5,6.4,8,10)$. Thus the full-stream allocated totals are
+$10^6(22.4,35,44.8,56,70)$. A higher-budget run does not continue a
+lower-budget run. Before fitting each arrival, the implementation
+reserves declared costs for initialization when applicable,
+observation identifiers, retention allocation and maintenance,
+fitting-pool copies, historical-moment maintenance, residual-matrix
+construction, eigendecomposition, direction construction, births,
+and event control. The remaining allocation funds fitting and
+permutation operations.
+
+Work is a deterministic scalar-operation proxy defined by explicit
+formulas in the runner. It is not measured hardware FLOPs.
+For a batch of $n$ examples at width $k$, let $P=(d+1)k+1$.
+The fitting charge is
+\begin{equation}
+ C_{\mathrm{fit}}(n,d,k)
+ =n(6dk+12k+2d+12)+30P+4dk+4k+32.
+ \label{eq:work-fit}
+\end{equation}
+Each newly generated permutation of a fitting pool of size $L$
+costs $4L$. A moment update costs
+$2nd^2+nd+n+4d^2$, and an eigendecomposition costs the declared
+surrogate $10d^3$. Additional formulas and the separation of
+measurement categories are given in Appendix~\ref{sec:repro}.
+All methods pay their own charges under the same definitions, so
+equal allocated work need not yield equal optimizer steps. Every
+arrival records actual charged work and its integer remainder.
+
+Learner timings sum algorithm blocks covering initialization, proposal,
+retention, optimization, and cleanup. Data generation, post-trajectory
+evaluation, archive serialization, and major audit-counter updates
+are excluded from those blocks; minor control, allocation, and
+instrumentation overhead remains. The code inventories retained arrays,
+parameter and optimizer arrays, and estimated explicit working
+arrays. These are neither operating-system peak resident memory nor
+a measurement of NumPy/BLAS internal allocations. Wall times depend
+on the implementation, process contention, memory allocation, and
+the host; a declared-work advantage is not automatically a
+wall-clock advantage.
+
+\subsection{Separate development selection and primary inference}
+
+Before confirmation, every method receives the same selection rule:
+16 development seeds, all five budgets, and three learning rates,
+$\{0.0075,0.015,0.03\}$. The method-specific rate minimizing mean
+development AUC is selected, with the smaller rate breaking an exact
+tie. This entails 960 complete development trajectories. Development
+uses independently generated teachers and streams, and its exact
+population scores are an explicitly disclosed selection oracle.
+The selected rates are frozen for confirmation, secondary tasks,
+and the local-age sensitivity. Development work is a one-time
+experimental selection cost, disclosed separately from a single
+trained instance's work.
+
+The primary confirmation sample comprises exactly 256 seeds. For each
+comparator we compute the seedwise difference in the AUC defined in
+Equation~\eqref{eq:p6-auc}. The primary decision requires all three
+one-sided paired-$t$ upper 95\% confidence bounds to lie below zero.
+This is the intersection--union test of
+Equation~\eqref{eq:p6-iut}. We report its maximum component $p$-value,
+each paired standard deviation and interval, and 10,000-resample
+paired bootstrap intervals as a sensitivity check. The $t$
+approximation is not a finite-sample guarantee for unbounded
+squared loss. A conservative planning calculation at $N=256$
+requires roughly a $0.20$ standardized effect in the weakest
+contrast for 80\% joint power. This is a planning approximation,
+not retrospective evidence of power or equivalence.
+
+The protocol was locally locked before new smoke or development
+outcomes, with a subsequent code freeze following correctness review.
+It was not externally registered or timestamp-certified. The seeds,
+budgets, primary statistic, learning-rate candidates, and sample size
+were fixed prospectively. Smoke runs serve correctness and timing
+checks only. Necessary implementation corrections and their source
+snapshots are preserved. Poor-performing seeds remain in the sample;
+nonfinite or incomplete runs require an explicit investigation
+instead of silent exclusion. Confirmation results do not authorize
+an additional seed, budget, task, or optimizer search.
+
+\subsection{Secondary questions}
+
+The fixed target for the primary noisy task is excess risk
+$\epsilon=0.01$. We report attainment at every budget and the first
+successful evaluated final-budget point, retaining failures as
+nonattainment. This is a discrete five-point grid summary. It does
+not assume a monotone risk curve, interpolate an unmeasured crossing,
+or estimate the earliest training-time crossing.
+
+Two predeclared compression comparisons place the historical method
+at 80\% of the comparator's allocated work: per-arrival 6.4 versus
+8 million units and 8 versus 10 million units. We report paired
+terminal-risk differences and target attainment. These exploratory
+comparisons do not establish a unique 20\% savings, because a
+comparator might also reach the target at a lower budget.
+
+Two descriptive controls each use 32 independent seeds and all four
+methods at all five budgets. The null teacher has $A_*=0$ and noise
+standard deviation $0.5$; it probes scheduled expansion when no
+quadratic signal is present. The noiseless rank-two teacher has
+eigenvalues $0.8$ and $0.45$ with independent rotation; it probes
+dependence on label noise and spectrum. Neither control supplies
+additional primary-test replications.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Frozen selection and primary frontier}
+\input{\analysisdir/results_text.tex}
+\input{\analysisdir/primary_table.tex}
+\IfFileExists{\analysisdir/figures/indefinite_noisy_global_frontier.pdf}{
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{\analysisdir/figures/indefinite_noisy_global_frontier.pdf}
+\caption{Primary final-risk frontier and seed-paired differences after
+seven arrivals. Each budget setting is trained independently for every
+seed; plotted points are means over 256 seeds. Lines connect evaluated
+budget settings. Error bars are descriptive
+95\% intervals across the 256 paired problems, not simultaneous
+confidence bands. Only the allocated-work axis is logarithmic.}
+\label{fig:primary-frontier}
+\end{figure}}{}
+
+Mean primary AUC is $0.0053573$ for historical moments, $0.0059388$
+for R128, $0.0057884$ for R138, and $0.014979$ for fixed width seven.
+The historical reductions relative to the two random controls are
+about 9.8\% and 7.4\% of their \emph{excess-risk areas}. They are not
+reductions of total risk, allocated work, or elapsed time. The paired
+standard deviations are $0.0006434$, $0.0009075$, and $0.05582$,
+respectively. The fixed-width contrast is therefore much more variable
+and tail-sensitive than the random-growth contrasts. A descriptive
+audit of its distribution shows median AUC $0.005112$, slightly below
+the historical median $0.005237$, and maximum AUC $0.60066$.
+Historical moments have lower paired AUC on 118/256 problems and
+higher AUC on 138; the median paired difference is $+0.00008489$.
+The five problems most favorable to historical moments account for
+68.34\% of the net mean difference. Thus this contrast concerns
+\emph{expected mean risk and large-error outcomes}, not a typical-seed
+or majority-seed advantage. These post-analysis distribution
+diagnostics do not alter the primary endpoint or exclude any seed.
+The paired bootstrap interval remains negative, but it resamples
+only the observed tail. Neither that interval nor the $t$
+approximation supplies distribution-free finite-sample coverage or
+resolves uncertainty about unobserved large errors.
+
+The average-area result does not imply pointwise dominance. At the
+smallest cap, historical moments have mean excess risk $0.005514$,
+versus $0.005284$ and $0.005126$ for R128 and R138. The historical
+method has a lower mean than both random controls at the other four
+caps. Its mean risk is lowest at the 5-million per-arrival cap and
+then rises, reaching $0.005940$ at 10 million. The observed curves
+are not monotone training-efficiency frontiers. They describe terminal
+performance under fixed-rate fitting and a fixed arrival schedule;
+there is no selected best-checkpoint envelope.
+
+Figure~\ref{fig:distribution-diagnostic} makes the fixed-width upper
+tail and the smallest-budget reversal against random growth visible
+using all 256 primary seeds. This descriptive post-analysis
+visualization adds no hypothesis test and excludes no observation.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{\analysisdir/figures/primary_distribution_diagnostic.pdf}
+\caption{Descriptive post-analysis visualization of all 256 primary
+seeds. Left: empirical cumulative distributions of seed-level AUC,
+including every large fixed-width value. The logarithmic display
+axis does not change the raw-excess-risk primary endpoint. Right:
+historical minus random-growth terminal-risk differences at each
+allocated budget, with ordinary paired 95\% $t$ intervals. Positive
+differences at the smallest budget favor the random controls; these
+pointwise intervals are not simultaneous confidence bands.}
+\label{fig:distribution-diagnostic}
+\end{figure}
+
+All methods selected $0.0075$, the smallest candidate learning rate.
+Thus balanced selection was completed as planned, but the development
+grid does not establish globally optimized controls or rule out
+improvement from lower rates. The locked confirmation was completed
+without extending that grid after observing the result.
+
+\subsection{Target attainment, charged resources, and sensitivity}
+At the smallest evaluated cap, the $0.01$ target is attained by
+255/256 historical runs, 256/256 R128 runs, 256/256 R138 runs, and
+237/256 fixed-width runs. Across the complete evaluated grid, the
+corresponding counts are 256, 256, 256, and 248; eight fixed-width
+problems never attain it. First attainment is already left-censored
+by the grid for nearly all growing runs, so the target cannot identify
+a historical-moment work saving. After their first successful grid
+point, 3 historical, 16 R128, and 19 R138 problems fail at a later
+point. This supports reporting every evaluated outcome instead of
+assuming monotonicity.
+
+The 6.4-versus-8-million compression comparison favors historical
+moments in mean excess risk against R128, R138, and fixed width:
+the differences are $-0.000791$, $-0.000747$, and $-0.008663$,
+with descriptive 95\% paired intervals
+$[-0.000948,-0.000634]$, $[-0.000929,-0.000566]$, and
+$[-0.015640,-0.001687]$. In the 8-versus-10-million comparison,
+the differences are $-0.000740$, $-0.000539$, and $-0.004498$;
+the fixed-width interval $[-0.009526,0.000529]$ crosses zero.
+These comparisons use approximately 0.8000 times the charged work,
+but do not demonstrate 20\% minimum-cost savings. In particular,
+both random controls already reach the target at the lowest cap.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Task / age ($N$) & Historical & R128 & R138 & Fixed 7\\
+\midrule
+Primary / global (256) & 0.005357 & 0.005939 & 0.005788 & 0.014979\\
+Null / global (32) & 0.008164 & 0.009189 & 0.008923 & 0.007243\\
+Rank two / global (32) & $1.142\!\times\!10^{-6}$ & $7.639\!\times\!10^{-7}$ & $8.701\!\times\!10^{-7}$ & $1.091\!\times\!10^{-4}$\\
+Primary / local (32) & 0.004689 & 0.005483 & 0.005675 & 0.024995\\
+\bottomrule
+\end{tabular}
+\caption{Mean normalized terminal excess-risk areas. Only the first row
+belongs to the primary inference. The local-age row reuses the first
+32 primary problems; it is not a comparison with all 256 global-age
+runs. Full intervals and paired contrasts are retained in the
+analysis CSVs and generated detailed table.}
+\label{tab:groupmeans}
+\end{table}
+
+On the same 32 primary problems, replacing global by local ages
+reduces the historical method's mean AUC by $0.0006833$
+(descriptive 95\% paired interval $[-0.0008481,-0.0005184]$).
+Fixed-width trajectories are unchanged. Under local age, historical
+minus R128, R138, and fixed-width mean differences remain negative,
+at $-0.0007941$, $-0.0009863$, and $-0.02031$; their ordinary
+two-sided $t$ intervals cross zero for R138 and fixed width. The
+direction of the means survives this sensitivity, but its smaller
+sample does not establish the same three-way precision. It is not
+used to replace or improve the prespecified primary decision.
+
+The task controls show the scope of the result. With the null teacher,
+historical minus fixed-width AUC is $0.0009212$
+($[-0.0001335,0.001976]$). With the noiseless rank-two teacher,
+historical AUC exceeds R128 by $3.783\times10^{-7}$
+($[1.569\times10^{-8},7.409\times10^{-7}]$), while all growing
+methods reach very small absolute errors. Thus the positive primary
+result is not a uniform ranking across even these two nearby
+synthetic tasks. These intervals are descriptive.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{lrrr}
+\toprule
+Method & Mean charged work ($10^6$) & Mean Adam steps & Mean seconds\\
+\midrule
+Historical moment & 45.63859 & 1,144.0 & 0.08494\\
+Random R128 & 45.63651 & 1,203.2 & 0.08840\\
+Random R138 & 45.63806 & 1,203.4 & 0.08840\\
+Fixed width 7 & 45.63838 & 547.4 & 0.04790\\
+\bottomrule
+\end{tabular}
+\caption{Primary-run resources, averaged equally over 256 seeds and
+five independent budget settings per method. Mean allocated work
+is 45.64 million units. Seconds sum timed learner blocks for one
+complete trajectory; they are implementation observations under
+concurrent execution, not a controlled hardware benchmark.}
+\label{tab:resources}
+\end{table}
+
+The primary study charges $2.33666\times10^{11}$ work units across
+5,120 trajectories, against $2.336768\times10^{11}$ allocated.
+Total unused work per trajectory ranges from 413 to 7,269 units;
+every arrival respects its cap. The historical method performs fewer
+Adam steps than random growth because its summary and proposal
+charges leave less work for fitting. The comparison therefore
+concerns complete algorithms, not an isolated intervention on the
+birth direction. Summed primary learner time is 396.35 seconds,
+while elapsed invocation time is 215.19 seconds under concurrent
+execution. Fixed width is faster in these observed timings despite
+its higher primary mean risk, so the result does not establish
+wall-clock dominance. Secondary and age-sensitivity invocations add
+54.55 and 29.55 elapsed seconds, respectively, with their costs
+retained separately.
+
+\section{Discussion and limits}
+\label{sec:discussion}
+
+The locked study detects a narrow positive finding: historical-moment
+growth has lower mean terminal excess-risk area than all three
+specified controls on the indefinite noisy task. Its modest advantage
+over random growth remains after charging moment maintenance and
+search. The local-age means point in the same direction, with wider
+uncertainty. The work-target evidence and wall times do not establish
+a minimum-cost or general runtime advantage. These qualifications
+are part of the finding, rather than secondary exceptions to a broad
+efficiency claim.
+
+The comparison with fixed width is specifically an expected-mean
+statement: fixed width has the lower paired AUC on a majority of
+primary seeds, while a few severe fixed-width errors dominate the
+mean difference. A reader valuing typical-case performance may
+therefore draw a different practical conclusion from the same
+complete records.
+
+The experimental question concerns final predictors after all seven
+arrivals. A favorable newborn direction, a function-preserving birth,
+and a final-risk improvement are different statements. The first can
+be measured at a particular state; the second is an algebraic
+property; the third depends on the subsequent optimization and
+resource allocation. An analytical best-coefficient gain cannot
+replace the third measurement.
+
+The two random controls also answer different questions. R128 holds
+the replay capacity fixed while changing direction information and
+the work needed to obtain it. R138 instead provides additional raw
+examples for approximately the same persistent data-summary storage.
+Neither comparison alone isolates every mechanism. Fixed width seven
+tests whether this scheduled growth procedure is useful relative to
+a full-width model trained from the start with a separately selected
+learning rate. Because earlier growing stages are narrower, their
+per-batch charges and optimizer update counts differ from fixed width.
+Those differences are part of the specified algorithms, rather than
+an unmeasured free benefit.
+
+The primary endpoint is an average over a selected allocation grid.
+The positive finding supports lower mean integrated terminal
+excess risk against the three tested comparators under this protocol.
+It does not establish pointwise dominance, generalization
+to other spectra or input distributions, or a hardware-independent
+efficiency theorem. The local-age control helps expose sensitivity
+to the treatment of newborn coordinates, but it is smaller and uses
+rates selected under the global-age primary optimizer.
+
+The known Gaussian input law is a substantial modeling advantage:
+it gives both the population operator behind the proposal and the
+exact risk evaluator. Non-Gaussian inputs, distribution drift,
+unmodeled nonlinear targets, and large-dimensional networks may
+change both. Memory scales quadratically with dimension for the
+historical matrix, whereas a retained row scales linearly. At $d=12$
+the full eigendecomposition is inexpensive enough to study locally;
+the declared $10d^3$ charge is not evidence about a large-scale
+spectral implementation. The three real neural-growth papers and
+GECO cited above were not reimplemented as resource-matched
+baselines. A general comparative claim would require that additional
+work and an appropriate benchmark.
+
+The bounded experiment is complete. Although the primary conjunction
+passes, the left-censored target comparison, faster fixed-width
+timings, nonmonotone budget curves, and task dependence do not justify
+promoting this finding to a broad efficiency claim. A detectable AUC
+difference alone does not establish a new learning principle. No
+additional search was undertaken to make the secondary outcomes
+more favorable, and intervals containing zero remain inconclusive
+for superiority rather than evidence of equivalence.
+
+\section{Reproducibility and artifact scope}
+
+The accompanying local artifact contains the prospectively specified
+protocol, frozen code, configuration and seed lists, generated teacher
+and observation arrays, per-arrival parameters and optimizer states,
+proposal records, data-access ledgers, raw results, independent audit
+reports, analysis tables, and vector figures. The paper's numerical
+tables are generated from saved results rather than transcribed from
+plots. Code and configuration hashes connect each run to its
+implementation. The host is an Apple M1 Pro with eight logical CPUs
+and 16~GiB of memory; experiments use the existing NumPy CPU
+environment with BLAS thread counts pinned to one. Reproduction
+commands and exact environment metadata are provided with the
+artifact. The files constitute a local research record, not an
+external certification of execution or an already published study.
+
+Independent saved-artifact checks passed for all 7,040 primary,
+secondary, and age-sensitivity trajectories: 49,280 arrival records
+and 112,640 saved parameter-risk evaluations were inspected, with
+maximum risk-reconstruction discrepancy $1.11\times10^{-15}$.
+Separate checks cover analytical gradients, exact Gaussian quadrature,
+future-data isolation, unchanged non-timing trajectories under
+execution-order reversal, budget boundaries, optimizer ages, and
+deliberate artifact-corruption fixtures. Audits establish consistency
+of these saved records and implementation checks; they do not
+validate an untested statistical generalization. Earlier project
+files were protected by a 1,936-file SHA-256 baseline and remained
+unchanged.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\appendix
+\section{Resource formulas and audit map}
+\label{sec:repro}
+
+Table~\ref{tab:costs} gives the nonfitting charges used with
+Equation~\eqref{eq:work-fit}. Here $n=1{,}024$, $r$ is the previously
+retained count, $C$ is reservoir capacity, and $k^-,k$ are widths
+before and after birth. Each arrival's charges respect its cap;
+unused remainders are recorded separately.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+Operation & Declared scalar-work charge\\
+\midrule
+Moment update & $2nd^2+nd+n+4d^2$\\
+Historical residual matrix & $dk^-+d^2(2k^- -1)+2d^2$\\
+Eigendecomposition & $10d^3$\\
+Historical / random direction & $4d$ / $8d$\\
+Reservoir maintenance & $n(d+10)$\\
+Fitting-pool copy & $(r+n)(d+2)$\\
+Arrival identifiers & $n$\\
+Model initialization & $8dk+k+5P$\\
+Retention allocation & $C(d+2)$, plus $d^2$ for a historical matrix\\
+Birth and state copies & $4P+5(d+1)$\\
+Event control & 64\\
+New fitting permutation & $4(r+n)$\\
+\bottomrule
+\end{tabularx}
+\caption{Accounting formulas charged when the corresponding operation
+occurs. Initialization and retention allocation occur only once;
+birth-related charges occur only at scheduled births. Reservoir
+maintenance conservatively charges each incoming observation,
+including those not retained.}
+\label{tab:costs}
+\end{table}
+
+The $P=(d+1)k+1$ parameters, Adam first and second moments, and
+coordinate ages occupy $32P$ bytes: 92 parameters and 2,944 bytes
+at width seven. Retained-data bytes appear in Table~\ref{tab:methods}.
+Working arrays are estimated separately. Python and control state,
+vendor-internal allocations, data-owner arrays, and audit archives
+are excluded; this inventory does not establish peak-memory matching.
+
+\end{document}

@@ -1,0 +1,27 @@
+\begin{lemma}[Two-level deterministic comparison]
+\label{lem:ext-rounding}
+For any finite source, strictly convex generator, and two output capacities
+with positive flat distortions,
+\[
+ \tfrac12\rho_{\ph,\detp}\le\rho_{\ph,\stp}
+ \le\rho_{\ph,\detp}.
+\]
+\end{lemma}
+\begin{proof}
+For a stochastic degradation chain, sample independent deterministic function
+tables for its encoder and coarsener, independently of the source, and call
+the pair of tables $U$. Conditional on $U$ the two representations form an
+admissible deterministic hierarchy. Revealing $U$ can only reduce Jensen
+distortion, so at each of the two levels $k$,
+\[
+ D(Z_k)\ge\mathbb E_U D(Z_k\mid U).
+\]
+Let $R$ be the price of this particular stochastic chain. The expected sum of
+the two deterministic conditional ratios is at most $2R$. At least one table
+therefore has sum at most $2R$, and its maximum ratio is no larger than its
+sum. Consequently $\rho_{\ph,\detp}\le2R$; take the infimum over chains.
+Deterministic chains are themselves admissible stochastic chains, proving the
+other direction. No public random seed is available to the actual predictor;
+revealing the tables is used only in this proof.
+\end{proof}
+

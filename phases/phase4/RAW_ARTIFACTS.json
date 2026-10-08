@@ -1,0 +1,1111 @@
+{
+  "scope": "Historical scientific raw outputs; hashes identify original bytes. No new simulations or training during repository preparation.",
+  "files": [
+    {
+      "path": "experiments/development/data/interaction_740001.npz",
+      "bytes": 885904,
+      "sha256": "5405c207793f9684db0cebd48dce3895bc6e39d1ddf62d4ee68ad3c273cbc287",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/development/data/interaction_740001_fit_access_counts.npz",
+      "bytes": 59719,
+      "sha256": "6a565a40003dc0ed5aa7854ea0a0ab20e3acf9e490ceed3e81445f9baeda1f52",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/development/retry_results/interaction_740001.json",
+      "bytes": 341679,
+      "sha256": "180da06160ac33f15d5bc9b6ae1b4759f1da083f50c4ac44e923bbfc6446fff3",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/replay/data/interaction_750000.npz",
+      "bytes": 6416441,
+      "sha256": "84be0bb58332424b8021e66f31849f918489974f6af24d54bc3671878ff91abd",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/replay/data/interaction_750000_fit_access_counts.npz",
+      "bytes": 652434,
+      "sha256": "7b3bf38abf164857b35d588fa9ddf6f1add8e0ba4ceb06d9acf22872c52f61ba",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/replay/results/interaction_750000.json",
+      "bytes": 2452286,
+      "sha256": "be36ca2677d4bedf516a0a13cecf7921b636082e46ee977958532e728b428b68",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750000.json",
+      "bytes": 2285666,
+      "sha256": "cfc1c8afd9b37c1c61280505605291979b128a936d27f443879175b13979b0b9",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750001.json",
+      "bytes": 2316047,
+      "sha256": "7fc665665485a57ab2ae0ca56b96e536985f6dd29f7ea8841840b008f6ee880e",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750002.json",
+      "bytes": 2317292,
+      "sha256": "68db93ac014c9de8c96a4f73bca928b5ebbf864b98ed966f20dddffb9c5150c2",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750003.json",
+      "bytes": 2277316,
+      "sha256": "5b87da2c413e01ff45e9db2325709afce3d490d28b16cb01563551b5c5f68d3d",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750004.json",
+      "bytes": 2302051,
+      "sha256": "384ec49a4879a91ac20b90767de8d34259f4de71c3516d550b7162f342c2a63c",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750005.json",
+      "bytes": 2276569,
+      "sha256": "5e9dd3d9320dcd20a0985c85015dc092e06cb3f605e2f08a53b4009c2a037439",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750006.json",
+      "bytes": 2329314,
+      "sha256": "c6f19fcdb61d131485747b2486d2c6d5fbf61044a647200cce450fde1688a732",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750007.json",
+      "bytes": 2341719,
+      "sha256": "d4fc44a9d50033ebcc97fc2e71f75c539d4bef0e5708a75d13f518d3baaf35a4",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750008.json",
+      "bytes": 2319094,
+      "sha256": "f6548af64cb4d397b5034d575661f6e8beaa1f0123e957ee91f998e431ba884b",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750009.json",
+      "bytes": 2287144,
+      "sha256": "2289fc29c409242a7a218fe001b21ac2c5e4545c37b50d8a975c2f16bacf4ce8",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750010.json",
+      "bytes": 2295630,
+      "sha256": "1a502c5ffb923275de4684f8639b781586a453d7f529b3dbd13be5f3f2871e6c",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/additive_750011.json",
+      "bytes": 2336958,
+      "sha256": "48ad63d5e619d011d959827ce006460d2426477cb24d38a22b51e2aa3269d460",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750000.json",
+      "bytes": 2452317,
+      "sha256": "05207275ca2b53015552a540a6ac374bc3eb9569903f9c9ed150721cb1fb672b",
+      "included": true,
+      "status": "included"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750001.json",
+      "bytes": 2492397,
+      "sha256": "ce1cb41ac876d2912c9aadd976dc2b8c84380e128b3ede94dc19dcdb9714813b",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750002.json",
+      "bytes": 2493234,
+      "sha256": "c9566da2df3fcb974e097e5d80d3229e9fc16ecfd99783da943a7c291c98dae7",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750003.json",
+      "bytes": 2491969,
+      "sha256": "7d53eada1da1d56f6202fc00c17b6505f955f73d17f2f188ca3df494709730d6",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750004.json",
+      "bytes": 2490515,
+      "sha256": "bb1fd021be065fc66f5910e591c2372901eebc76400f333845d55d940d68e477",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750005.json",
+      "bytes": 2492357,
+      "sha256": "bfc9d64b68424d1073e1dca945c5c163b3ba847057bf3d9c5d3aec6d992a5046",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750006.json",
+      "bytes": 2492233,
+      "sha256": "871e12b653b4374e71722280d15edc9221c17aa0234af2b3ed29fb311185a7cd",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750007.json",
+      "bytes": 2481907,
+      "sha256": "9bc66d8c784a8e0d0537fbcf5fb9022ee8ef4485e5a05a461322f0718440273d",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750008.json",
+      "bytes": 2486853,
+      "sha256": "2322db84319ff6e3e179ea6c6fb61e198367cade2193bedbd0828a72ef68992b",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750009.json",
+      "bytes": 2495603,
+      "sha256": "f174ed918e87b09061268af91eb53caada0f4719d663fe3d796b02345f6545f4",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750010.json",
+      "bytes": 2484122,
+      "sha256": "b4251b49a677bdf9bcd2ee86fbf5b14b0763f636b1ce2a0b531b2cc50926f956",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/interaction_750011.json",
+      "bytes": 2467824,
+      "sha256": "a2fc48a1a7ea8b6c2223626a99f9a5cb78344356675f946ef99884ee0cb869de",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750000.json",
+      "bytes": 2169394,
+      "sha256": "cedd83e80c3cd8f08fb54b6507d19b55d3b8f8185ce20188b77a0cfbd6a70d16",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750001.json",
+      "bytes": 2172135,
+      "sha256": "b67ebbf058fa5d4e3d004fddeb6b597e254a51b99ee8d47ccadc064940653b80",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750002.json",
+      "bytes": 2170937,
+      "sha256": "02db58bb6bdb26d9fc976364cce60f636a20e40d2cf6b9c572272c008f79779f",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750003.json",
+      "bytes": 2172631,
+      "sha256": "fbad2321801f26361b00242b1adb2845283b68a81aa970c2c9a9782e788f580a",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750004.json",
+      "bytes": 2170849,
+      "sha256": "88cfabba261caeefdfd57c0c8dd39a53875120c730a4d56df5a3258e3eeafde5",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750005.json",
+      "bytes": 2171634,
+      "sha256": "36fa9f2c6c75789e3a75ab270f37fe9177a12c9f9dacbe03ffd0686b90e7f6e2",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750006.json",
+      "bytes": 2171958,
+      "sha256": "d7369c3a616a6c657775ffb1acda7a5ac0e89b614fbc731db4efdec3507d773f",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750007.json",
+      "bytes": 2169539,
+      "sha256": "ac2ea32d8d2c8a7f07a901e80fc8f6869d0d5d6265b7a6961385b0f25f95adc5",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750008.json",
+      "bytes": 2168859,
+      "sha256": "72c14c0436124fd11f297f5aa5449082570de654208cc22be3bc16c9b77c5496",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750009.json",
+      "bytes": 2172070,
+      "sha256": "8c99e70486e01547798e0d28b2c0056b238f9064ef283e00aeee0f1eb5cdd5e7",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750010.json",
+      "bytes": 2172285,
+      "sha256": "90ddff8cf439085618bea88cba8a3d41dca247485f510b615e4321d89fbf4b44",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/null_750011.json",
+      "bytes": 2168746,
+      "sha256": "b61b83e60628d9a33e46eb539d1e5024bc5e7c6b8c0b2426f2db9b2b5b1ba03d",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750000.json",
+      "bytes": 2262653,
+      "sha256": "2e5bdd43833598c325453cb32ae9fae2675e2f3b739eaf577fce3ea5a1cc1e3c",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750001.json",
+      "bytes": 2264201,
+      "sha256": "563805223e98d6b5d05014f1c1540f50a3ef70d12d53503408340dc422e5a137",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750002.json",
+      "bytes": 2261540,
+      "sha256": "82450a8f77bbcfdef19990ee276ab8a7c4601838d53e2b1391ce9429a9bf94d4",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750003.json",
+      "bytes": 2262183,
+      "sha256": "c6b22dbec1d1b692663e174f38b3c38984632354bbf6e066767335d122c07fe8",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750004.json",
+      "bytes": 2262859,
+      "sha256": "246eae7735f0c0e52552331029c7e1c026570f08c97a4dea78c479667c4ea4ac",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750005.json",
+      "bytes": 2259324,
+      "sha256": "1bfcc75880ba972ab953d055a39e744332100e7421ad53016fe013fb26dd6036",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750006.json",
+      "bytes": 2261076,
+      "sha256": "069ec244452b7cc98f3e0cad392a6c477d7061f05c696ae1d6a009cd308fcaad",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750007.json",
+      "bytes": 2260139,
+      "sha256": "eb7304e40fb144402b00241ba0c7e81a0d5e231c984e181bcb569cfea98ac36f",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750008.json",
+      "bytes": 2261359,
+      "sha256": "387b1e94b11aae34744b9b14203d1f48ff5db75e07ccd6949f42e6d6f10396bf",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750009.json",
+      "bytes": 2261902,
+      "sha256": "33dc3061a4b0b408612f4ca23b7dd0f8e963e7e750202de87408e8438c854364",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750010.json",
+      "bytes": 2262995,
+      "sha256": "1656b16bcaaace11cf0f657cfa6cf39574956e1a8082aedc03bc60e5ff4a7694",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/confirmation/radial_750011.json",
+      "bytes": 2261566,
+      "sha256": "8ddb2eb143ec3ae4cea6be3bbdd56e3fa7c2bc21045185c3aad908f8bb1861e1",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750000.npz",
+      "bytes": 6415408,
+      "sha256": "f447a1e64a3e1f565c3a9887f0a4fc6b87a9d0381fa84843cfe16a22bf215fc4",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750000_fit_access_counts.npz",
+      "bytes": 659425,
+      "sha256": "356378e3737cca45d3c122fc50f90af947f43ed6441ccb47e79c25887bf356eb",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750001.npz",
+      "bytes": 6414908,
+      "sha256": "3e08e62b4aae1a1303fa4948d18c037df6b1670bcc3d25d67fa65d8501288ead",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750001_fit_access_counts.npz",
+      "bytes": 659766,
+      "sha256": "1d3f0593e1e74dc3e4e6c78bf031a4da2c3adf0eac460318ba27ec66eed45e46",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750002.npz",
+      "bytes": 6415198,
+      "sha256": "d1314e703e7babcc24ce2f0a57794c9921efba6d16ce0861d6c3dc091c803edd",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750002_fit_access_counts.npz",
+      "bytes": 659808,
+      "sha256": "ea99143df6576e703e23d33758f0ec90ace7c26f6b1cdac9b05ca651d5e525ee",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750003.npz",
+      "bytes": 6415499,
+      "sha256": "a9ee466b4f2ec335a7ace281ef2ced93ddc38d70998dbe7ce7b868477dce9fc0",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750003_fit_access_counts.npz",
+      "bytes": 659417,
+      "sha256": "7f5bc2a233a8d3a11e7c6be747c9bd1697c392ab78d939ba95c4ee19cf760208",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750004.npz",
+      "bytes": 6415408,
+      "sha256": "ccb0d680decc862694527f10e0f2b0e5c22141a7306d4de74fdfe17de946a28e",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750004_fit_access_counts.npz",
+      "bytes": 660136,
+      "sha256": "a39f1ca19c97f1d7fdc29a9de1a7459e51c200e2d92c90d2fe65882dc36da534",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750005.npz",
+      "bytes": 6415876,
+      "sha256": "70431d717b8ea05f78b4a4c1fa0671aaff2e5577f59991b53097300f0dd174ad",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750005_fit_access_counts.npz",
+      "bytes": 659892,
+      "sha256": "d1491ed07348c97c0b379539489d499d9d18da890452e4f9584db18f74d2d358",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750006.npz",
+      "bytes": 6415775,
+      "sha256": "55e740a676f2ec133215d5e5a631142e9441619a669309acb8017ccaad86e377",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750006_fit_access_counts.npz",
+      "bytes": 660352,
+      "sha256": "fac0c62bfe61d375471ae3449620ce35f49ce1049e47a8114ad2584865342f17",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750007.npz",
+      "bytes": 6415625,
+      "sha256": "58cbc5dec084ab21844592689ed6d3c765a634c1dfb9cd738681c1f6379f222b",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750007_fit_access_counts.npz",
+      "bytes": 660733,
+      "sha256": "a52261db3c0347b81258c02fc85759c686754ebc379f18fa87054265ad136541",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750008.npz",
+      "bytes": 6415794,
+      "sha256": "b72e67dfb379de3033c4f756646a2a7cb610c790b33d86d8dabfaa716fc72cf4",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750008_fit_access_counts.npz",
+      "bytes": 660231,
+      "sha256": "c0bb3d7227e303c67eea4f6df06f5387b7a195e29a2b7b17b28a0c4ad3f921b1",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750009.npz",
+      "bytes": 6415390,
+      "sha256": "b924dca7ad84b4e8f1ee0ea3aa43875bd2ba593989b3cb00a312fc2435f2426e",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750009_fit_access_counts.npz",
+      "bytes": 660054,
+      "sha256": "29b3de960204016e98a280f422f27aede8402f99aa350705eed5f59d84a9acde",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750010.npz",
+      "bytes": 6415788,
+      "sha256": "a85c19de41ded84d57d57c1854204721128577b4e6ac8ca01b8dc7241d48722d",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750010_fit_access_counts.npz",
+      "bytes": 659371,
+      "sha256": "488fcd06bd4b08c3e74e726bc5b9cd382ea11553c7e02b986c3ba413a5bf5a0b",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750011.npz",
+      "bytes": 6415447,
+      "sha256": "f0c570b3e26abe06b54192821838b818f7cd75ffd7879e682b782ad4d2e6e649",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/additive_750011_fit_access_counts.npz",
+      "bytes": 659974,
+      "sha256": "09a0ed25f702660aa34fe053bd6c0dcc4cc5905836ea232921fdf455a01402ef",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750000.npz",
+      "bytes": 6416441,
+      "sha256": "84be0bb58332424b8021e66f31849f918489974f6af24d54bc3671878ff91abd",
+      "included": true,
+      "status": "included"
+    },
+    {
+      "path": "experiments/results/data/interaction_750000_fit_access_counts.npz",
+      "bytes": 652434,
+      "sha256": "7b3bf38abf164857b35d588fa9ddf6f1add8e0ba4ceb06d9acf22872c52f61ba",
+      "included": true,
+      "status": "included"
+    },
+    {
+      "path": "experiments/results/data/interaction_750001.npz",
+      "bytes": 6416578,
+      "sha256": "be521559fa4b75f2a8c542f8858145a35f3d7451ca5e2092617d99cc446ab093",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750001_fit_access_counts.npz",
+      "bytes": 651898,
+      "sha256": "0ab77bee0b243b080decf57e886a4b946c21ae24eaeb9213b9ef19da399a5458",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750002.npz",
+      "bytes": 6416294,
+      "sha256": "c11582ea5571a2d3e25d63fec48067920b2fe99fd1bfb65acf707efb791d226d",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750002_fit_access_counts.npz",
+      "bytes": 651567,
+      "sha256": "b37a1aa50def7ddbbe99983b0e9ebb3eee487743668d94ff910d536bb999160d",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750003.npz",
+      "bytes": 6416404,
+      "sha256": "dc14aa461316cd0550c8cce273b727934f8cf659943c0fa555f762ad4fed7e8b",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750003_fit_access_counts.npz",
+      "bytes": 651866,
+      "sha256": "21b438637e7d6573254b1b864adc14f7884c15fe957fac22c1fb99e4478ec686",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750004.npz",
+      "bytes": 6416698,
+      "sha256": "92e9c910355b873014181c89f3a2bc01741c146324ee9e9de5c5be035372eb6b",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750004_fit_access_counts.npz",
+      "bytes": 652684,
+      "sha256": "3ea34eeeb14c8a3dd3cede1c0dc13f4fb4c02bd991edf16d4d473ee391af6ee9",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750005.npz",
+      "bytes": 6416621,
+      "sha256": "949c54c221ae6553284037cd85afa55da911b346ae3c93ede6cffaf025f152f9",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750005_fit_access_counts.npz",
+      "bytes": 652175,
+      "sha256": "becdcb2fe64ae66d3bdafc0042bfba2562827f20a3ae68c6f058598f4b02851c",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750006.npz",
+      "bytes": 6416573,
+      "sha256": "7a9c970a3f68a8a7fe4ad3ee95e16028ea42dada81e21baab90e4c910a230f7b",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750006_fit_access_counts.npz",
+      "bytes": 652703,
+      "sha256": "dd608e3b42ac8418987e83ff633c3c3409be198c25e2dcc61c48a228f86c6494",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750007.npz",
+      "bytes": 6416628,
+      "sha256": "50468c655d2c6e98ca209d3f3166a5106375927dc36b0df33fd94ea8778d1cd5",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750007_fit_access_counts.npz",
+      "bytes": 652745,
+      "sha256": "08f6e0b0d43d3672278bcf40c0a1608c7aaeff8c9c4e606bde6be3f3f557cacc",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750008.npz",
+      "bytes": 6416673,
+      "sha256": "a66a3157290fcd7384300c0cb601d1b50d6562b3d23b8aa71fce760086d30b4b",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750008_fit_access_counts.npz",
+      "bytes": 651961,
+      "sha256": "f7fc4e7d9a7523ae092b8c70a88ec45c4f18237711b560ea5029d85ee2aa8c20",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750009.npz",
+      "bytes": 6416298,
+      "sha256": "23236f31ea6b52838e1e8ee70c6ab3f53e5838ae1d7884ef330a009993ca5f9e",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750009_fit_access_counts.npz",
+      "bytes": 651952,
+      "sha256": "c33d9dd65a7da9f1f6b8f86de41741e03714329cf5833db0594c9522d226da44",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750010.npz",
+      "bytes": 6416931,
+      "sha256": "e072c9f72605cd9cbc42a247aaf7631b0c009a2300a7c0a75b777e4c4689a800",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750010_fit_access_counts.npz",
+      "bytes": 652404,
+      "sha256": "1840039c7641ea67ae5a65b5a99e034c390d6629bce98d1a78b2945039ead57f",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750011.npz",
+      "bytes": 6416672,
+      "sha256": "0009b4ae26df101dfe4a7abdbbcb8a71b22c635e9b42ba44119a6b58a7ef66b2",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/interaction_750011_fit_access_counts.npz",
+      "bytes": 652048,
+      "sha256": "b59a5d11d298ba5fdf528c062f4b3df5b6547a3661abe88b2cf83e0d80b7abd1",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750000.npz",
+      "bytes": 6169945,
+      "sha256": "3089b107f91aec0807fadac0599d0728c60cb7055151a5e74e4774037be75a59",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750000_fit_access_counts.npz",
+      "bytes": 664863,
+      "sha256": "6f6cae828fc93f71e2fc554eb35f9b07e6ff21b500c2f6d97808ae9f29d60562",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750001.npz",
+      "bytes": 6169690,
+      "sha256": "d8d7c74e0f0e0d8df5c08fe1f9e03e8d9510d33b197d35b910cf2706c6745bf3",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750001_fit_access_counts.npz",
+      "bytes": 664291,
+      "sha256": "afc07d3090cec60ee8fb4b3dcbe4b61c3ec289adcbcd8cfce360880323bd3443",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750002.npz",
+      "bytes": 6170002,
+      "sha256": "a7bcae391a7b2c7a18d7e9a18aa43b63467f562c0ebfc3d8032522bcdce8262a",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750002_fit_access_counts.npz",
+      "bytes": 663951,
+      "sha256": "d0016d951e59d199ed8ffc30a08b67db1762855c9f918046540bfd1b677457af",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750003.npz",
+      "bytes": 6170209,
+      "sha256": "e678c4968c4a004df406b883ad74d1999e49b67dfc717a3073ac840663c5c0f3",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750003_fit_access_counts.npz",
+      "bytes": 664656,
+      "sha256": "a2e441b2c5184ef0074ee7896ed551415a0e84c37eb1b4c7160660d0870d8361",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750004.npz",
+      "bytes": 6169889,
+      "sha256": "7662e85447daab5eab673ab56c83fe4ed5464a55c1a298f921e433d044a5a4bd",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750004_fit_access_counts.npz",
+      "bytes": 663988,
+      "sha256": "0ce2caefa7607c01eef07de5741ec0d4caa2ae4f49058c2a0f05d29fad8df40f",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750005.npz",
+      "bytes": 6170145,
+      "sha256": "121546ae5a0a4ecc32f539a0d45fcde28488a670ef80d1f3278061f534af9ece",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750005_fit_access_counts.npz",
+      "bytes": 663783,
+      "sha256": "498dcad7764e4e9945fe9b7eb6514cb708664227a5f0456b87860946e217912c",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750006.npz",
+      "bytes": 6170301,
+      "sha256": "a20b68c85fb937b7e96fee39de5339388f1aa6d43efd0f85c3fdea432c872254",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750006_fit_access_counts.npz",
+      "bytes": 664310,
+      "sha256": "da4d1fedafc82b1cb64e348b81db8176a6304440213d7636e459945fa744edf8",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750007.npz",
+      "bytes": 6169910,
+      "sha256": "db8c17b0c3b09f63af45cd272398aeb3cfe761c33b21b80dcac8a42bc679720f",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750007_fit_access_counts.npz",
+      "bytes": 663866,
+      "sha256": "8a5371fe0ccee47da1f2974b9f6c3867f1fe633808e14c5a545643ebfa079603",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750008.npz",
+      "bytes": 6169700,
+      "sha256": "460d8a4b363a948163562adbd137e3c35f0a3b86f03310de77cb65b581007013",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750008_fit_access_counts.npz",
+      "bytes": 663948,
+      "sha256": "eea095ab68d6f85ad4fae2ae58e54f3aa0dd137cb5a8f6146ae87484ccc0ff95",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750009.npz",
+      "bytes": 6170487,
+      "sha256": "018376e7bf6da658d1a748a0468675e366d70b73a0546bb1c7e97ccf4f255469",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750009_fit_access_counts.npz",
+      "bytes": 664797,
+      "sha256": "1e9e7a28e6bda8a25aaeb2c26623901d97efca991592764c8d184857e8739943",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750010.npz",
+      "bytes": 6170041,
+      "sha256": "23651cc82e93a876b53b1f48fe65d794690f4c3bfec11abbdc2ab6e6613f4444",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750010_fit_access_counts.npz",
+      "bytes": 663395,
+      "sha256": "3940e89e551e4c6eee4316d3b1c41e1a0da015a8b6824e2713efb951e2b9dab0",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750011.npz",
+      "bytes": 6169811,
+      "sha256": "0048d5437b678bc9ef515e62f93ef6fe350cef9f3d8673d5ece062526a76f324",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/null_750011_fit_access_counts.npz",
+      "bytes": 664271,
+      "sha256": "49137a8e7dc5a9f5cbee005a8364ebafc005ce89701695bdd7ed465c317b57eb",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750000.npz",
+      "bytes": 6412750,
+      "sha256": "14a87a2bdd895a185babea8a737254cbfed9fa7ec984254c1630e62dd4400c3f",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750000_fit_access_counts.npz",
+      "bytes": 664622,
+      "sha256": "01afde0e82a7bce3eae3daa51e6dca6b53408f837a94c3fb35caac65dc143040",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750001.npz",
+      "bytes": 6413095,
+      "sha256": "78d3b0983f7b7e8a78682df04f6b4ddd20798716c5f7fa57afd0181173935221",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750001_fit_access_counts.npz",
+      "bytes": 664867,
+      "sha256": "b194759b98d6fc008ed36d7b82c5a0adfb36685ed58b0e5fb3bfc6fa09d8dcf5",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750002.npz",
+      "bytes": 6412729,
+      "sha256": "b45f641bf8d7769a2c2b976060fee57dfc529065fc66ed967bac83f69979d34a",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750002_fit_access_counts.npz",
+      "bytes": 664557,
+      "sha256": "20de2243062bdac74e1da58cdc82a6642beb9954c74b5261cac17c9de238b2a7",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750003.npz",
+      "bytes": 6413058,
+      "sha256": "e4f923d5eecb0c71deb40acd905eb68263e0cecd7bf0f265a59918357ab92306",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750003_fit_access_counts.npz",
+      "bytes": 664844,
+      "sha256": "3fdfdcaca0e5cfb93ac9fb61c85dea95ae8d6bf3c368f1f30bc6fa6f873babff",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750004.npz",
+      "bytes": 6412910,
+      "sha256": "40b3a22f66c4a4591aee6960fe8bbc61d0fabe078c77e8d0c0ab87481a593be9",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750004_fit_access_counts.npz",
+      "bytes": 665797,
+      "sha256": "c7f5d936f901d7c55e6f1d5b9367c52a50a11a6eda76604d96512ba5d7ecd9cf",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750005.npz",
+      "bytes": 6412862,
+      "sha256": "3abe0d2eb47a5a267834b70249e713c6b9a085227cdcabad30610d375f48646c",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750005_fit_access_counts.npz",
+      "bytes": 665395,
+      "sha256": "c8f002b3d5cb0049ba0759592e0fc0531f771923f86b2c5292e594103d5c55e3",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750006.npz",
+      "bytes": 6413002,
+      "sha256": "dead0143f37b581ae200facaa7cb003327ff7a02678f0fdf9e717472826f845c",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750006_fit_access_counts.npz",
+      "bytes": 664944,
+      "sha256": "257a1c412ffee93bb2039ea89fe1c4c5c4de3f74a17dedb34690744b923c9545",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750007.npz",
+      "bytes": 6412972,
+      "sha256": "c07dfc6afc56331f37ab048d6819e1873a2f80f5901e14c842d661b37c1ebd91",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750007_fit_access_counts.npz",
+      "bytes": 664515,
+      "sha256": "bab0201a79548c2212ebf9627bd7d5593c294e361b26ed59035b7aca83c4d454",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750008.npz",
+      "bytes": 6412761,
+      "sha256": "ab8764cd3293d94b4550a24d7fa3ad0dd11b925dce45cbca82d28308c0dec9c0",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750008_fit_access_counts.npz",
+      "bytes": 665865,
+      "sha256": "c15620a33ae0186fa08a58502b2e15c75eca29a3ecd4e13acae9cbf2381c285a",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750009.npz",
+      "bytes": 6412820,
+      "sha256": "f48e84d2079d0835021a881fca693e7885cd293c5e2906c0f1a4ffeed7200cbd",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750009_fit_access_counts.npz",
+      "bytes": 665151,
+      "sha256": "f65aec2c457897224c0639d92ff2410a7c2ab5b7ef165b1e38e5489b9abf0225",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750010.npz",
+      "bytes": 6412840,
+      "sha256": "edadd0eb39dacd2ec4867e27bed264d0088680c0891d767f04ee4d2eab168c65",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750010_fit_access_counts.npz",
+      "bytes": 665327,
+      "sha256": "4a0480cd8ed5c1ba36b5be10146023127de040adf1c8523bd30aced12f277715",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750011.npz",
+      "bytes": 6412968,
+      "sha256": "1eb074970f0ec38781eee0a2b6c904d562455c2a178900a3a79f3a351c6c5516",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "experiments/results/data/radial_750011_fit_access_counts.npz",
+      "bytes": 665257,
+      "sha256": "d6849201214e36f4204b11510823ce014590c224ead98716ed5aa9f8d0da5609",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "publication/finite/research/entropy_lipschitz_raw.jsonl",
+      "bytes": 2772722,
+      "sha256": "5ecfc8630a43cbcbf72919190664c4f5584b5f6aad05f6a3d4c4514b27fd93e3",
+      "included": true,
+      "status": "included"
+    },
+    {
+      "path": "publication/finite/research/sharp_rate_raw.jsonl",
+      "bytes": 900921,
+      "sha256": "8193b208c707cf8ab68de50593a3689b310422e3be98403aed69f0fb0d424ec4",
+      "included": true,
+      "status": "included"
+    },
+    {
+      "path": "replays/retention/results/retention_counts.npz",
+      "bytes": 1019344,
+      "sha256": "d85ca50ac7a8458b00ff938a52558dd32c2ae6b8280e9ddf313be4005ee48391",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "replays/retention/results/retention_raw.jsonl",
+      "bytes": 38642059,
+      "sha256": "a04a04b49e9410a3b7812ebb21ce2aecb6f56405c44866864bc6c040b5ce2472",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "replays/retention/results/retention_supplement_raw.jsonl",
+      "bytes": 20814323,
+      "sha256": "0281c1fcc3ad0f6620335774ad103a9de6e751d43998aed64a0aa9ec825665a2",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "results/retention_counts.npz",
+      "bytes": 1019344,
+      "sha256": "d85ca50ac7a8458b00ff938a52558dd32c2ae6b8280e9ddf313be4005ee48391",
+      "included": true,
+      "status": "included"
+    },
+    {
+      "path": "results/retention_raw.jsonl",
+      "bytes": 38642059,
+      "sha256": "a04a04b49e9410a3b7812ebb21ce2aecb6f56405c44866864bc6c040b5ce2472",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    },
+    {
+      "path": "results/retention_supplement_raw.jsonl",
+      "bytes": 20814323,
+      "sha256": "0281c1fcc3ad0f6620335774ad103a9de6e751d43998aed64a0aa9ec825665a2",
+      "included": false,
+      "status": "local archive only; omitted from Git distribution to limit raw-data volume"
+    }
+  ]
+}

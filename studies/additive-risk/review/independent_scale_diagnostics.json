@@ -1,0 +1,64 @@
+{
+  "weighted_bound_diagnostics": [
+    {
+      "n": 128,
+      "d": 0.02299042742382018,
+      "b": 0.000528559753129943,
+      "rare_mass": 0.001057119506259886,
+      "expected_rare_labels": 1057.119506259886,
+      "delta_upper": 4.860725857394507e-05
+    },
+    {
+      "n": 256,
+      "d": 0.007507078342471897,
+      "b": 5.6356225240010597e-05,
+      "rare_mass": 0.00011271245048002119,
+      "expected_rare_labels": 112.7124504800212,
+      "delta_upper": 1.6922823918510066e-06
+    },
+    {
+      "n": 512,
+      "d": 0.0023752865067977486,
+      "b": 5.641985989375451e-06,
+      "rare_mass": 1.1283971978750902e-05,
+      "expected_rare_labels": 11.283971978750902,
+      "delta_upper": 5.360533276842182e-08
+    },
+    {
+      "n": 1024,
+      "d": 0.0007331131193820212,
+      "b": 5.374548458100377e-07,
+      "rare_mass": 1.0749096916200753e-06,
+      "expected_rare_labels": 1.0749096916200753,
+      "delta_upper": 1.5760607941551195e-09
+    },
+    {
+      "n": 2048,
+      "d": 0.00022176671861306142,
+      "b": 4.9180477484404766e-08,
+      "rare_mass": 9.836095496880953e-08,
+      "expected_rare_labels": 0.09836095496880952,
+      "delta_upper": 4.3626372446159976e-11
+    },
+    {
+      "n": 4096,
+      "d": 6.598018074438189e-05,
+      "b": 4.353384251061303e-09,
+      "rare_mass": 8.706768502122605e-09,
+      "expected_rare_labels": 0.008706768502122608,
+      "delta_upper": 1.1489483189390816e-12
+    },
+    {
+      "n": 8192,
+      "d": 1.9358768308681494e-05,
+      "b": 3.747619104292109e-10,
+      "rare_mass": 7.495238208584218e-10,
+      "expected_rare_labels": 0.0007495238208584219,
+      "delta_upper": 2.901971597967177e-14
+    }
+  ],
+  "generic_alpha_radius_m1e6": 0.003396563261826216,
+  "generic_beta_radius_m1e6": 0.0029604143746015965,
+  "sufficient_m_at_delta_epsilon": 161644659,
+  "note": "Floating diagnostics only. The bound proof and simple rational enclosure for n=128 are in INDEPENDENT_SCALE_CHECK_FROZEN.md."
+}

@@ -1,0 +1,64 @@
+{
+  "status": "all assertions passed",
+  "limitations": "Finite arithmetic/geometry checks support, but do not prove, universal or asymptotic claims.",
+  "counts": {
+    "two_cell_partitions": 7,
+    "three_cell_partitions": 6,
+    "nested_pairs": 18
+  },
+  "reference_hinge": [
+    {
+      "epsilon": "1/16",
+      "deterministic_price": "62/9",
+      "stochastic_convexification_lower": "549/125",
+      "explicit_channel_price": "16/3"
+    },
+    {
+      "epsilon": "1/20",
+      "deterministic_price": "97/11",
+      "stochastic_convexification_lower": "264/49",
+      "explicit_channel_price": "19/3"
+    },
+    {
+      "epsilon": "1/100",
+      "deterministic_price": "2477/51",
+      "stochastic_convexification_lower": "31569/1244",
+      "explicit_channel_price": "79/3"
+    },
+    {
+      "epsilon": "1/10000",
+      "deterministic_price": "24997502/5001",
+      "stochastic_convexification_lower": "125012502501/49997501",
+      "explicit_channel_price": "7504/3"
+    }
+  ],
+  "polynomial_enumeration": {
+    "instances": 95,
+    "conflicts": 1,
+    "max_exact_price": "7/6",
+    "curvatures": 19,
+    "quartets": 5
+  },
+  "endpoint_poisson_geometry": {
+    "arc_point_checks": 156,
+    "minimum_arc_mass": 0.007401221410386874,
+    "claimed_arc_mass_lower": 0.0031830988618379067,
+    "minimum_left_distance_over_eps_wb": 3.997396341912333,
+    "minimum_right_distance_over_eps_wb": 54.390625
+  },
+  "parameter_thresholds": {
+    "first_n_ge_2_with_eps_le_1_16": 1938,
+    "curvature_degree_at_threshold": 7752,
+    "logK": 1963.9863643566014,
+    "log10K": 852.9484405733012
+  },
+  "source_sha256": {
+    "curvature_hierarchy.tex": "f4226f6e1d33599308e7b034780cd6de470c611d95feae19c80a2862b1edee6f",
+    "fixed_quartet.tex": "da05b46bec298c4738473b04416ed2db247c4f0587cfc6f4f13abc4d38e9c8dd",
+    "uniform_log_upper.tex": "b558e0e636c592432a5926dbbb2e3fdc46174bb5501fb44c579bd6688728c372",
+    "TECHNICAL_REVIEW_V1.md": "8273dc3144795c4322408e41abf61aef06d6a7ad655ce195f550da348d97b3cc",
+    "SECOND_REVIEW_V1.md": "50a020cb533f879c6c6cc7beb3738bbeccdf7370e3d9ddb3da43ebbcfad90554",
+    "FINAL_ASSEMBLY_REVIEW_V1.md": "50f04a250aa69e4d1c7d6ca5e18db9f10b5ebaf1b97fe9dfefda6b54c73f7705",
+    "UNIFORM_LOG_BOUND_PROOF.md": "f660d2ecd55e5e77eca9c8cbcfe5ff2f0dd54611246be32db996818624343644"
+  }
+}

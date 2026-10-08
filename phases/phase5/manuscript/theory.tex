@@ -1,0 +1,491 @@
+% Self-contained body; main.tex supplies amsmath, amssymb, amsthm and
+% theorem/proposition/corollary/remark environments. No bespoke macros.
+\section{An exact quadratic diagnostic and its limits}
+\label{sec:quadratic-theory}
+
+The results in this section are specializations of classical Gaussian
+moment identities, spectral approximation, and stochastic approximation.
+Their purpose is to distinguish population inversion, finite-sample
+estimation, and actual empirical optimization. They do not establish a
+substantially original learning algorithm or an advantage of autonomous
+neural growth. All probability and expectation statements below are exact
+under the stated model; the numerical checks in the experiments are
+separate evidence.
+
+Fix integers $d,n\geq1$. Matrices are real and symmetric unless indicated
+otherwise, with inner product $\langle A,B\rangle=\operatorname{tr}(AB)$.
+Write $\|\cdot\|_F$, $\|\cdot\|_{\mathrm{op}}$, and $\|\cdot\|_*$ for
+Frobenius, operator, and nuclear norms. Set
+\[
+ X\sim N(0,I_d),\qquad H(X)=XX^\top-I_d,\qquad
+ q_A(X)=\langle A,H(X)\rangle.
+\]
+The unknown fixed teacher is $A_*$. Labels obey
+\begin{equation}
+ Y=q_{A_*}(X)+\xi,\qquad
+ \mathbb E\xi=0,\quad \mathbb E\xi^2=\sigma^2<\infty,
+ \quad \xi\ \hbox{independent of }X.
+ \label{eq:quadratic-model}
+\end{equation}
+Distinct examples have independent copies of $(X,\xi)$. Define population
+squared risk $R(B)=\mathbb E[(Y-q_B(X))^2]$.
+
+A signed centered quadratic network
+\[
+ f(x)=\sum_{j=1}^k a_j\{(w_j^\top x)^2-\|w_j\|_2^2\}
+\]
+represents $B=\sum_{j=1}^k a_jw_jw_j^\top$. Its minimum width is
+$\operatorname{rank}(B)$: any such sum has rank at most $k$, while an
+eigendecomposition represents $B$ with exactly its number of nonzero
+eigenvalues. The zero predictor has width zero. A constant output can
+implement the centering. Negative $a_j$ are allowed throughout; restricting
+all outputs to be nonnegative changes the operation class to positive
+semidefinite matrices and does not preserve every result below.
+
+\subsection{Population geometry}
+
+\begin{theorem}[T1: Gaussian quadratic geometry]
+\label{thm:quadratic-geometry}
+For symmetric $A,B$,
+\begin{equation}
+ \mathbb E[q_A(X)q_B(X)]=2\operatorname{tr}(AB).
+ \label{eq:quadratic-isometry}
+\end{equation}
+Consequently, under \eqref{eq:quadratic-model},
+\begin{equation}
+ R(B)-R(A_*)=2\|B-A_*\|_F^2,
+ \qquad \frac12\mathbb E[YH(X)]=A_*.
+ \label{eq:quadratic-risk-moment}
+\end{equation}
+\end{theorem}
+\begin{proof}
+For standard Gaussian coordinates, second and fourth moments are
+\[
+ \mathbb E[X_iX_j]=\delta_{ij},\qquad
+ \mathbb E[X_iX_jX_kX_l]
+ =\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}
+  +\delta_{il}\delta_{jk}.
+\]
+Subtracting the product of second moments yields
+$\mathbb E[H_{ij}H_{kl}]=\delta_{ik}\delta_{jl}
++\delta_{il}\delta_{jk}$. Multiply by $A_{ij}B_{kl}$ and sum all indices.
+The symmetry of $A,B$ gives \eqref{eq:quadratic-isometry}. Taking one
+matrix to be an arbitrary symmetric test matrix gives
+$\mathbb E[q_A(X)H(X)]=2A$.
+
+Let $E=A_*-B$. Independence and zero mean of $\xi$ give
+$\mathbb E[\xi q_E(X)]=0$ and $\mathbb E[\xi H(X)]=0$.
+Thus $R(B)=\mathbb E[q_E(X)^2]+\sigma^2
+=2\|E\|_F^2+\sigma^2$, while $R(A_*)=\sigma^2$.
+The second identity follows by taking the moment of $Y$.
+\end{proof}
+
+Without centering, the corresponding quadratic prediction difference has
+second moment $2\|A-B\|_F^2+\operatorname{tr}(A-B)^2$.
+Thus centering is part of the model, not an inconsequential convention.
+
+\subsection{What repeated growth from a fixed summary computes}
+
+\begin{theorem}[T2: fixed-summary spectral growth]
+\label{thm:spectral-collapse}
+Fix a symmetric matrix $S$ and set $B_0=0$. At each nonterminal step,
+select a unit eigenvector $v_t$ of $S-B_t$ whose eigenvalue $\lambda_t$
+has maximum absolute value, and set
+\[
+ B_{t+1}=B_t+\lambda_tv_tv_t^\top.
+\]
+For a fixed $\tau\geq0$, terminate before this update if
+$|\lambda_t|\leq\tau$. Every nonzero update selects a previously
+unselected eigencomponent of $S$, in nonincreasing absolute-eigenvalue
+order. In at most $d$ updates the terminal result is
+\begin{equation}
+ B_{\rm stop}=\sum_{j:\,|s_j|>\tau}s_ju_ju_j^\top,
+ \qquad S=\sum_{j=1}^d s_ju_ju_j^\top.
+ \label{eq:hard-truncation}
+\end{equation}
+Intermediate truncations can be nonunique at ties.
+The final strict-threshold result is invariant to these choices.
+\end{theorem}
+\begin{proof}
+We maintain an orthonormal set of selected eigenvectors of $S$ such that
+$B_t$ is the sum of their original eigencomponents. This holds at $t=0$.
+The residual $S-B_t$ is zero on their span and equals $S$ on its
+orthogonal complement. If a nonzero residual eigenvalue remains, every
+unit eigenvector with that nonzero eigenvalue is orthogonal to the
+selected span. It is an eigenvector of $S$ with the same eigenvalue.
+The update therefore extends the orthonormal selected set and removes
+exactly that one component from the residual. Selecting maximum absolute
+value establishes the order. At most $d$ nonzero components can be
+removed. The stopping rule removes all and only components with
+absolute eigenvalue strictly greater than $\tau$, proving
+\eqref{eq:hard-truncation}.
+
+Within an eigenspace with the same signed eigenvalue, any orthonormal
+basis is permissible. If $s$ and $-s$ are tied in absolute value, one
+may choose either eigenspace, but arbitrary mixtures across them need
+not be eigenvectors and are not allowed by the algorithm. When the
+residual is zero, the rule terminates, including when $\tau=0$.
+\end{proof}
+
+The directions in this construction can be learned from labels through
+$S$. Nevertheless, after $S$ has been formed the trajectory is precisely
+an eigendecomposition procedure. A one-shot estimator with the same
+$S$, threshold and eigensolver produces the same predictor. This statement
+does not identify the trajectory of a method that subsequently refits
+neurons using empirical loss.
+
+For an observed dataset, define
+\begin{equation}
+ S_n=\frac1{2n}\sum_{i=1}^nY_iH_i,
+ \qquad
+ T_n(B)=\frac1{2n}\sum_{i=1}^n\langle B,H_i\rangle H_i,
+ \quad H_i=H(X_i).
+ \label{eq:empirical-moment-operator}
+\end{equation}
+The actual residual moment satisfies the algebraic identity
+\begin{equation}
+ G_n(B):=\frac1{2n}\sum_{i=1}^n
+       \{Y_i-q_B(X_i)\}H_i=S_n-T_n(B).
+ \label{eq:actual-residual}
+\end{equation}
+It is the negative Euclidean matrix gradient of
+$L_n(B)=(4n)^{-1}\sum_i\{Y_i-q_B(X_i)\}^2$.
+The surrogate $S_n-B$ replaces the empirical operator $T_n$ by its
+population mean. For fixed $B$ independent of the sample,
+$\mathbb E[T_n(B)\mid B]=B$; equality on the realized sample does not
+follow. If $B$ uses the same sample, even this conditional identity can
+fail.
+
+\begin{remark}[An explicit adaptive-reuse counterexample]
+\label{rem:adaptive-counterexample}
+Take $d=n=1$, $A_*=1$, $\sigma=0$, and $H=X^2-1$. Then $Y=H$.
+Choose $B=S_1=H^2/2$, which is a legitimate data-dependent estimate.
+Equation~\eqref{eq:empirical-moment-operator} gives $T_1(B)=B^2$.
+Thus $\mathbb E[T_1(B)\mid B]=B^2$, generally different from $B$.
+A same-sample residual correction is $C=B+G_1(B)=2B-B^2$, so
+$|C-1|^2=(B-1)^4$. The fresh-block conditional variance in the next
+theorem would instead be $14(B-1)^2$ and does not apply here.
+\end{remark}
+
+For exact empirical residual evaluation at arbitrary $B$, one must apply
+$T_n$, using replay, its stored operator, or an equivalent representation.
+In orthonormal symmetric coordinates, $T_n$ is one half the empirical
+Gram operator of the $d(d+1)/2$ centered quadratic features. Its entries
+include fourth-order input moments. This is the ordinary regression
+normal equation; it is not a lower bound on physical memory, and no
+minimum-bit claim follows from it.
+
+\subsection{Exact sampling variance and fresh corrections}
+
+\begin{theorem}[T3: variance of a fresh residual correction]
+\label{thm:residual-variance}
+Define
+\[
+ c_d=\frac{d^2+9d+14}{2}.
+\]
+For any fixed symmetric $E$ and $Z_E=\tfrac12q_E(X)H(X)$,
+\begin{equation}
+ \mathbb E Z_E=E,\qquad
+ \mathbb E\|Z_E-E\|_F^2
+ =c_d\|E\|_F^2+2\operatorname{tr}(E)^2.
+ \label{eq:exact-design-variance}
+\end{equation}
+Let $\mathcal F$ contain the complete history before a new block, and
+let $B$ be a square-integrable symmetric $\mathcal F$-measurable matrix.
+Conditional
+on $\mathcal F$, the new $n$ observations are independent copies of
+\eqref{eq:quadratic-model} and independent of $\mathcal F$. Set
+\[
+ E=A_*-B,\qquad
+ C=B+\frac1{2n}\sum_{i=1}^n
+             \{Y_i-q_B(X_i)\}H_i.
+\]
+Then
+\begin{align}
+ \mathbb E[C\mid\mathcal F]&=A_*,\\
+ \mathbb E[\|C-A_*\|_F^2\mid\mathcal F]
+ &=\frac{c_d\|E\|_F^2+2\operatorname{tr}(E)^2
+                +\sigma^2d(d+1)/4}{n}.
+ \label{eq:fresh-conditional-variance}
+\end{align}
+\end{theorem}
+\begin{proof}
+Write $s=\|X\|_2^2$ and $U=X/\|X\|_2$, with any definition at
+$X=0$, a null event. The radius $s\sim\chi_d^2$ is independent of the
+uniform direction $U$ on the unit sphere. Put
+$\theta=\operatorname{tr}(E)$ and $v=\|E\|_F^2$.
+Rotational symmetry, or the Gaussian fourth-moment identity applied
+before dividing out the radius, gives
+\[
+ \mathbb E[U^\top EU]=\frac{\theta}{d},\qquad
+ \mathbb E[(U^\top EU)^2]=\frac{\theta^2+2v}{d(d+2)}.
+\]
+Indeed, the second formula follows from
+$\mathbb E[(X^\top EX)^2]=\theta^2+2v$ and
+$\mathbb E[s^2]=d(d+2)$ by radial independence.
+Since $q_E=sU^\top EU-\theta$,
+\begin{equation}
+ \mathbb E[q_E^2\mid s]
+ =\frac{(\theta^2+2v)s^2}{d(d+2)}
+       -\frac{2\theta^2s}{d}+\theta^2.
+ \label{eq:conditional-radial-moment}
+\end{equation}
+The chi-square moments are
+\[
+ \mathbb E[s^j]=\prod_{l=0}^{j-1}(d+2l),\qquad j=1,2,3,4.
+\]
+Substitute these into \eqref{eq:conditional-radial-moment}, after
+multiplying respectively by $1,s,s^2$, to obtain
+\begin{align*}
+ \mathbb E[q_E^2]&=2v,\\
+ \mathbb E[q_E^2s]&=2(d+4)v,\\
+ \mathbb E[q_E^2s^2]&=8\theta^2+2(d+4)(d+6)v.
+\end{align*}
+Also $\|H\|_F^2=s^2-2s+d$. Hence
+\begin{align*}
+ \mathbb E[q_E^2\|H\|_F^2]
+ &=8\theta^2+2\{(d+4)(d+6)-2(d+4)+d\}v\\
+ &=8\theta^2+2(d^2+9d+16)v.
+\end{align*}
+By Theorem~\ref{thm:quadratic-geometry}, $\mathbb E Z_E=E$.
+The identity
+$\mathbb E\|Z_E-E\|_F^2=\mathbb E\|Z_E\|_F^2-\|E\|_F^2$
+now proves \eqref{eq:exact-design-variance}.
+
+For the noisy single-example correction, let
+$W=Z_E+\tfrac12\xi H$. Conditional on the past, $E$ is fixed.
+Independence and zero mean of $\xi$ eliminate all cross terms between
+$Z_E-E$ and $\xi H$. Furthermore,
+\[
+ \mathbb E\|H\|_F^2=d(d+2)-2d+d=d(d+1).
+\]
+Consequently $\mathbb E[W\mid\mathcal F]=E$ and
+\[
+ \mathbb E[\|W-E\|_F^2\mid\mathcal F]
+ =c_d\|E\|_F^2+2\theta^2+\frac{\sigma^2d(d+1)}4.
+\]
+The $n$ conditionally independent centered matrices $W_i-E$ have zero
+expected pairwise Frobenius inner products. Their average therefore
+has exactly $1/n$ times this variance. Since
+$C-A_*=n^{-1}\sum_i(W_i-E)$, both claims follow.
+\end{proof}
+
+\begin{corollary}[Contraction with genuinely fresh blocks]
+\label{cor:fresh-contraction}
+Initialize a deterministic finite $B_0$ and repeat the unprojected update
+in Theorem~\ref{thm:residual-variance}, with block size $n$ and fresh
+independent blocks. Set
+\[
+ \kappa=\frac{c_d+2d}{n},\qquad
+ \nu=\frac{\sigma^2d(d+1)}{4n}.
+\]
+For all integers $T\geq0$,
+\begin{equation}
+ \mathbb E\|B_T-A_*\|_F^2
+ \leq\kappa^T\|B_0-A_*\|_F^2
+       +\nu\sum_{j=0}^{T-1}\kappa^j.
+ \label{eq:contraction-sum}
+\end{equation}
+If $n>c_d+2d$, the sum equals
+$(1-\kappa^T)/(1-\kappa)$ and $\kappa<1$.
+If instead every update is replaced by a best symmetric rank-at-most-$r$
+Frobenius approximation, with known $r\geq\operatorname{rank}(A_*)$,
+the same statement holds with $\kappa$ replaced by $4\kappa$ and $\nu$
+by $4\nu$. That sufficient contraction condition is
+$n>4(c_d+2d)$.
+\end{corollary}
+\begin{proof}
+Cauchy--Schwarz on the eigenvalues gives
+$\operatorname{tr}(E)^2\leq d\|E\|_F^2$.
+Apply this inequality in \eqref{eq:fresh-conditional-variance}, then
+take expectations. The resulting recurrence is
+$e_{t+1}\leq\kappa e_t+\nu$, where
+$e_t=\mathbb E\|B_t-A_*\|_F^2$. The right side is finite by induction;
+iterating the recurrence proves \eqref{eq:contraction-sum}.
+For rank truncation, the feasibility of $A_*$ and best-approximation
+property give
+\[
+ \|P_r(C)-A_*\|_F
+ \leq\|P_r(C)-C\|_F+\|C-A_*\|_F
+ \leq2\|C-A_*\|_F.
+\]
+Square and condition on the past to obtain the stated factors of four.
+A fixed measurable tie convention suffices to define the projection.
+\end{proof}
+
+This result has an $O(d^2)$ sufficient block size and an unconstrained
+output that can require $d$ signed neurons. A supplied rank is privileged
+information. These facts do not establish an optimal $O(dr)$ sample
+bound, selected width, or a computational advantage over fixed-width
+training. The matrix update is stochastic gradient descent for the
+matrix-coordinate loss in \eqref{eq:actual-residual}; it is not the same
+update as gradient descent in neuron factors. The exact variance formula
+also quantifies the familiar control-variate effect of subtracting a
+previously fitted predictor before estimating a residual.
+
+\subsection{A wrong surrogate can propose harmful growth at an exact fit}
+
+\begin{theorem}[T4: false growth at the optimum]
+\label{thm:false-growth}
+Assume $\sigma=0$ and $A_*\ne0$. From any $n\geq1$ fresh observations
+form $S_n$ in \eqref{eq:empirical-moment-operator}, and consider the exact
+fit $B=A_*$. Put $D=S_n-A_*$ and let $(\lambda,v)$ be a top-absolute-value
+unit eigenpair of $D$. Consider the signed neuron update
+$B'=A_*+\lambda vv^\top$. Its true risk increase and its improvement in
+the surrogate $\widetilde R_{S_n}(B)=2\|B-S_n\|_F^2$ coincide:
+\begin{equation}
+ R(B')-R(A_*)
+ =\widetilde R_{S_n}(A_*)-\widetilde R_{S_n}(B')
+ =2\lambda^2.
+ \label{eq:false-growth-gain}
+\end{equation}
+This quantity is strictly positive almost surely. With
+$V=c_d\|A_*\|_F^2+2\operatorname{tr}(A_*)^2$,
+\begin{equation}
+ \frac{2V}{dn}
+ \leq\mathbb E[R(B')-R(A_*)]
+ \leq\frac{2V}{n}.
+ \label{eq:false-growth-expectation}
+\end{equation}
+In contrast, the actual empirical residual moment at $A_*$ is exactly
+zero on every sample.
+\end{theorem}
+\begin{proof}
+Since $Y_i=q_{A_*}(X_i)$, every actual residual at $A_*$ is zero, proving
+the last assertion. The population risk identity and
+$\|vv^\top\|_F=1$ yield $R(B')-R(A_*)=2\lambda^2$.
+Also $\langle D,vv^\top\rangle=v^\top Dv=\lambda$, so
+\[
+ \|D-\lambda vv^\top\|_F^2
+ =\|D\|_F^2-2\lambda^2+\lambda^2
+ =\|D\|_F^2-\lambda^2.
+\]
+This proves the surrogate identity.
+
+Apply Theorem~\ref{thm:residual-variance} with $B=0$ and $\sigma=0$
+to obtain $\mathbb E\|D\|_F^2=V/n>0$. At least one entry of $D$
+therefore has positive second moment. Every entry is a polynomial in
+the $nd$ independent Gaussian coordinates. At least one is a nonzero
+polynomial; its zero set has Lebesgue measure zero. For completeness,
+this property follows by induction on the number of variables: view a
+nonzero multivariate polynomial as a polynomial in its last variable;
+outside the common zero set of its nonzero coefficient polynomials,
+it has finitely many roots, and Fubini's theorem finishes the induction.
+The joint Gaussian law has a density, so $\mathbb P(D=0)=0$.
+Thus $|\lambda|=\|D\|_{\mathrm{op}}>0$ almost surely.
+Finally,
+$\|D\|_F^2/d\leq\|D\|_{\mathrm{op}}^2\leq\|D\|_F^2$;
+expectations give \eqref{eq:false-growth-expectation}.
+\end{proof}
+
+The exact fit is an oracle diagnostic checkpoint, not a checkpoint claimed
+to be learned by the experimental controller. The theorem concerns the
+unrestricted positive-score surrogate rule, with signed additions and
+without a nonzero uncertainty threshold. It does not assert that a
+thresholded or independently audited rule must accept. Any such accepted
+nonzero update at the exact fit is harmful, but its acceptance probability
+and expected accepted loss require a separate analysis. The theorem is
+not a lower bound for every algorithm using $S_n$.
+
+\subsection{A conditional width and risk certificate}
+
+\begin{theorem}[Hard-threshold oracle inequality]
+\label{thm:threshold-oracle}
+Let $A_*,S$ be arbitrary symmetric matrices and let $b\geq0$ satisfy
+$\|S-A_*\|_{\mathrm{op}}\leq b$. Let $s_1(A_*)\geq\cdots\geq s_d(A_*)$
+denote the singular values of $A_*$, and let $\widehat A$ retain exactly
+the eigencomponents of $S$ with absolute eigenvalue strictly greater
+than $2b$. Then
+\begin{align}
+ \operatorname{rank}(\widehat A)
+ &\leq\#\{j:s_j(A_*)>b\},
+ \label{eq:threshold-rank}\\
+ \|\widehat A-A_*\|_F^2
+ &\leq\min_{0\leq r\leq d}
+ \left\{3\sum_{j>r}s_j(A_*)^2+16b^2r\right\}.
+ \label{eq:threshold-risk}
+\end{align}
+The corresponding excess prediction risk under
+\eqref{eq:quadratic-model} is twice the bound in
+\eqref{eq:threshold-risk}.
+\end{theorem}
+\begin{proof}
+The singular-value perturbation bound
+$|s_j(S)-s_j(A_*)|\leq\|S-A_*\|_{\mathrm{op}}$ implies that
+$s_j(S)>2b$ entails $s_j(A_*)>b$, proving
+\eqref{eq:threshold-rank}. One way to see this perturbation bound is to
+apply the variational characterization
+$s_j(M)=\min_{\dim W=d-j+1}\max_{u\in W,\|u\|=1}\|Mu\|$
+and the triangle inequality, then interchange $S$ and $A_*$.
+
+Hard thresholding at $2b$ minimizes, over symmetric $B$,
+\[
+ \|S-B\|_F^2+4b^2\operatorname{rank}(B).
+\]
+To justify this without a separate approximation theorem, let $B$ have
+rank at most $r$ and let $P$ be the orthogonal projector onto its column
+space. Then
+\[
+ \|S-B\|_F^2\geq\|(I-P)S\|_F^2
+ =\operatorname{tr}(S^2)-\operatorname{tr}(PS^2).
+\]
+In an eigenbasis of $S^2$ ordered by decreasing eigenvalue, write
+$p_j=u_j^\top Pu_j$. Since $0\leq p_j\leq1$ and
+$\sum_jp_j=\operatorname{rank}(P)\leq r$,
+$\operatorname{tr}(PS^2)\leq\sum_{j=1}^r s_j(S)^2$.
+Retaining the largest $r$ singular components attains this bound and is
+realizable as a symmetric eigencomponent sum. For each component,
+retaining its value costs $4b^2$, whereas omitting it costs its squared
+eigenvalue. At equality both choices minimize the objective, and the
+theorem specifies omission.
+
+Fix $r\in\{0,\ldots,d\}$ and let $A_{*,r}$ be a best symmetric
+rank-at-most-$r$ approximation to $A_*$. Put
+$k=\operatorname{rank}(\widehat A)$,
+$e=\|\widehat A-A_*\|_F$, and
+$a=\|A_{*,r}-A_*\|_F$. Comparing penalized objectives and expanding
+around $A_*$ gives
+\[
+ e^2\leq a^2+2\langle S-A_*,\widehat A-A_{*,r}\rangle
+                  +4b^2(r-k).
+\]
+The use of $r$ rather than the possibly smaller rank of $A_{*,r}$ can
+only enlarge the right side. Operator/nuclear duality, the inequality
+$\|M\|_*\leq\sqrt{\operatorname{rank}(M)}\|M\|_F$, and the triangle
+inequality imply
+\[
+ e^2\leq a^2+2b\sqrt{k+r}(e+a)+4b^2(r-k).
+\]
+Apply $2b\sqrt{k+r}e\leq e^2/2+2b^2(k+r)$ and
+$2b\sqrt{k+r}a\leq a^2/2+2b^2(k+r)$. Rearranging yields
+$e^2\leq3a^2+16b^2r$. Finally,
+$a^2=\sum_{j>r}s_j(A_*)^2$, and $r$ was arbitrary.
+The prediction statement follows from
+Theorem~\ref{thm:quadratic-geometry}. These arguments also cover $b=0$;
+in that case $S=A_*$ and $\widehat A=A_*$ directly.
+\end{proof}
+
+The strict inequality in the threshold is necessary for the stated
+width bound: for $d=1$, $b=1$, $A_*=1$, and $S=2$, retaining the component
+at equality gives rank one, while the right side of
+\eqref{eq:threshold-rank} is zero. The risk bound alone allows either
+choice at equality because both minimize the penalized objective.
+
+An explicit, conservative finite-sample radius follows without assuming
+an optimal concentration theorem. For the raw moment $S_n$, let
+\[
+ V_* = c_d\|A_*\|_F^2+2\operatorname{tr}(A_*)^2
+                +\frac{\sigma^2d(d+1)}4.
+\]
+Theorem~\ref{thm:residual-variance} gives
+$\mathbb E\|S_n-A_*\|_F^2=V_*/n$. For any deterministic known
+$\overline V\geq V_*$ and $\delta\in(0,1)$, take
+$b=\sqrt{\overline V/(n\delta)}$. Markov's inequality and
+$\|M\|_{\mathrm{op}}\leq\|M\|_F$ show that the assumptions of
+Theorem~\ref{thm:threshold-oracle} hold with probability at least
+$1-\delta$. If $\overline V=0$, the moment is exact almost surely.
+Unknown teacher norms cannot simply be substituted by same-sample point
+estimates without additional uncertainty control. This radius is
+conservative and signal dependent; it does not establish the optimal
+noisy low-rank rate. The oracle inequality is standard hard-threshold
+reasoning and is included to make that limitation explicit.

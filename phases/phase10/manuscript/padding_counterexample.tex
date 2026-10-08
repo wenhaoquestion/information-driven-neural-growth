@@ -1,0 +1,67 @@
+\section{Why tiny-mass padding is insufficient}
+\label{sec:padding}
+
+Take $\varphi(x)=x^2$, initially with four locations
+\[
+ (A,B,C,D)=(0,2,3,5)
+\]
+and equal, unnormalized masses $1$.  Normalizing all masses multiplies
+every cost by the same factor and changes no price.  Here
+\[
+ q=D(BC)=\tfrac12,\qquad
+ Q=D(AB)+D(CD)=4,\qquad
+ D(ABC)=D(BCD)=\tfrac{14}{3}.
+\]
+The four-state deterministic price is exactly $7/6$.  If the fine pair is
+$BC$, its two triple coarsenings have cost $14/3$, and its remaining
+coarsening $AD\mid BC$ has cost $13$.  Any other fine pair has cost at
+least $2$, giving a fine-level ratio at least $4$.  This covers all exact
+hierarchies, including noncontiguous ones; hierarchies with unused capacity
+can be refined to exact capacities without increasing cost.
+
+Now add $E=-1$ with mass $\varepsilon\in(0,1)$, keeping the four original
+masses equal to $1$, and normalize by $4+\varepsilon$.  At capacities three
+and four, both flat optima are attained by a single hierarchy:
+\[
+ H_4=EA\mid B\mid C\mid D,
+ \qquad H_3=EA\mid BC\mid D.
+\]
+Its unnormalized costs are
+\[
+ q_5=\frac{\varepsilon}{1+\varepsilon}<\frac12,
+ \qquad
+ Q_5=\frac{\varepsilon}{1+\varepsilon}+\frac12<1.
+\]
+The pair $EA$ is strictly cheapest: other pairs touching $E$ have the same
+mass coefficient and strictly larger squared distance, while all core
+pairs cost at least $1/2$.
+
+It remains to check the coarse optimum.  A three-cell partition of five
+states has one triple or two pairs.  Every core triple costs at least
+$14/3$.  A triple touching $E$ and a core pair other than $BC$ dominates
+that core pair and therefore costs at least $2$.  The remaining triple is
+$EBC$, of cost
+\[
+ D(EBC)=\frac{25\varepsilon+1}{\varepsilon+2},\qquad
+ D(EBC)-Q_5
+ =\frac{\varepsilon(47\varepsilon+45)}
+ {2(\varepsilon+1)(\varepsilon+2)}>0.
+\]
+For two-pair partitions, if one pair is $BC$, the cheapest disjoint pair
+is $EA$.  If neither pair is $BC$, at least one pair is a core pair of cost
+at least $2$: two disjoint pairs cannot both touch $E$.  These candidates
+also cost more than $Q_5$.  Thus the claimed coarse partition is optimal,
+and
+\[
+ \rho_{5,\mathrm{det}}=\rho_{5,\mathrm{stoch}}=1
+ \quad\hbox{for every }0<\varepsilon<1.
+\]
+All five locations can be moved into $[1/4,3/4]$ by
+$y=(x+4)/12$.  Positive scaling makes the quadratic curvature at most one,
+and the usual curvature-integral construction gives strictly proper losses
+in $[0,1/2]$.  Thus neither distinctness, interior support, bounded loss,
+nor arbitrarily small padding mass rescues this failed embedding method.
+
+
+This refutes preservation under naive tiny-mass padding. It does not
+contradict the carefully separated anchors in Theorem~\ref{thm:embedding}.

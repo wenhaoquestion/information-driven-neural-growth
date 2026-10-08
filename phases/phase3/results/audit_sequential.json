@@ -1,0 +1,137 @@
+{
+  "status": "all assertions passed",
+  "code_sha256": "952def48385a00ae9a6f59500b57dabf922f35ef10bc9703d167d51c6c856f3f",
+  "brier_gradient_max_errors": {
+    "w": 6.122514821516045e-12,
+    "b": 2.3086702905308898e-12,
+    "a": 3.0548341634073495e-12,
+    "c": 9.824710489603206e-13
+  },
+  "function_preservation_max_errors": {
+    "dormant_addition": 0.0,
+    "zero_radius_split": 1.1102230246251565e-16
+  },
+  "persistent_pool_checks": {
+    "full_batch_vs_train_max_parameter_error": 2.7755575615628914e-17,
+    "full_batch_account": {
+      "parameter_examples": 1887,
+      "unique_labels": 37,
+      "available_labels": 37,
+      "steps": 3,
+      "batch": 37,
+      "lr": 0.015
+    },
+    "partial_budget_account": {
+      "parameter_examples": 1275,
+      "unique_labels": 37,
+      "available_labels": 37,
+      "steps": 13,
+      "batch": 7,
+      "lr": 0.015
+    }
+  },
+  "probe_single_step_checks": [
+    {
+      "kind": "residual",
+      "independent_objective_before": 0.040867442060578935,
+      "independent_objective_after": 0.05121985545896841,
+      "finite_difference_one_step_parameter_max_error": 1.609823385706477e-15
+    },
+    {
+      "kind": "covariance",
+      "independent_objective_before": 0.012684538782766751,
+      "independent_objective_after": 0.016150120943598974,
+      "finite_difference_one_step_parameter_max_error": 5.717648576819556e-15
+    },
+    {
+      "kind": "shuffled",
+      "independent_objective_before": 0.012002091271773997,
+      "independent_objective_after": 0.018062811858669234,
+      "finite_difference_one_step_parameter_max_error": 3.83026943495679e-15
+    }
+  ],
+  "ssd_nonstationary_Taylor_check": {
+    "epsilon": 0.0001,
+    "actual_loss_change": 1.6868062502339853e-11,
+    "quadratic_prediction": 1.6868025910374044e-11
+  },
+  "empirical_Bernstein_direct_radius": 0.47925997738286125,
+  "sequence_checks": [
+    {
+      "method": "residual",
+      "actions": [
+        "hold",
+        "hold",
+        "hold"
+      ],
+      "evaluation_input_count_change_has_no_effect_on_actions_or_parameters": true,
+      "fresh_audit_direct_reconstruction": "all match",
+      "final_parameter_count": 17
+    },
+    {
+      "method": "shuffled",
+      "actions": [
+        "hold",
+        "hold",
+        "hold"
+      ],
+      "evaluation_input_count_change_has_no_effect_on_actions_or_parameters": true,
+      "fresh_audit_direct_reconstruction": "all match",
+      "final_parameter_count": 17
+    },
+    {
+      "method": "random",
+      "actions": [
+        "hold",
+        "hold",
+        "hold"
+      ],
+      "evaluation_input_count_change_has_no_effect_on_actions_or_parameters": true,
+      "fresh_audit_direct_reconstruction": "all match",
+      "final_parameter_count": 17
+    },
+    {
+      "method": "covariance",
+      "actions": [
+        "hold",
+        "hold",
+        "hold"
+      ],
+      "evaluation_input_count_change_has_no_effect_on_actions_or_parameters": true,
+      "fresh_audit_direct_reconstruction": "all match",
+      "final_parameter_count": 17
+    },
+    {
+      "method": "ssd",
+      "actions": [
+        "hold",
+        "hold",
+        "hold"
+      ],
+      "evaluation_input_count_change_has_no_effect_on_actions_or_parameters": true,
+      "fresh_audit_direct_reconstruction": "all match",
+      "final_parameter_count": 17
+    },
+    {
+      "method": "residual",
+      "gate": "forced_diagnostic",
+      "widths": [
+        3,
+        4,
+        5
+      ],
+      "evaluation_input_count_change_has_no_effect_on_growing_history": true
+    },
+    {
+      "method": "ssd",
+      "gate": "forced_diagnostic",
+      "widths": [
+        3,
+        4,
+        5
+      ],
+      "evaluation_input_count_change_has_no_effect_on_growing_history": true
+    }
+  ],
+  "scope": "implementation checks, not a proof of concentration or a practical performance claim"
+}

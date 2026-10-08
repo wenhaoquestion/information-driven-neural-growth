@@ -1,0 +1,14 @@
+{
+  "computational_failures": [],
+  "omitted_candidates": [],
+  "first_pass_repeated": false,
+  "precision_recheck": "Exactly one additional quadrature order, 128 versus initial 64, over the same ten candidates.",
+  "logging_observations": [
+    {
+      "issue": "The elapsed_seconds key in candidate events is overwritten by the per-candidate summary duration; in other log events it is cumulative process duration.",
+      "effect": "No effect on parameters, integrals, optima, frozen hash, or runtime.json totals.",
+      "correction": "Semantics documented in README and this file. Original frozen code and results retained without a numerical rerun. Use runtime.json for total elapsed time."
+    }
+  ],
+  "scope": "No old file writes, no old science-script executions, no sessions access, no new dependency installation, no external service access, no sampling, no training."
+}

@@ -1,0 +1,5 @@
+# Post-execution comparator addendum
+
+After viewing the frozen R1 results, a necessary resource comparator was identified: because R1 pairs were fixed before all labels, a direct paired bound may use the entire old+fresh pool. This supplementary analysis reuses exactly the archived counts; it does not replace, tune, or rerun the frozen study. It is explicitly post hoc. The pooled comparator sees more information than the scalar-history method, with identical unique-label totals. Its purpose is to prevent attributing oracle-moment power to a demonstrated resource-efficient procedure.
+
+Also add a noise-aware retained coefficient a between 0 and the full projection. Choose a BEFORE inspecting any sampled values by minimizing the analytic radius (historical Hoeffding penalty plus fresh residual Bernstein bound). This uses known support geometry and sample sizes only, so the original confidence argument remains valid. It illustrates the already established bias/variance and control-variate tradeoff; it is not a new optimizer or a confirmatory method comparison. Save all supplementary outputs separately.

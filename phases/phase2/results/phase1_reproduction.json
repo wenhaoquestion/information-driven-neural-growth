@@ -1,0 +1,62 @@
+{
+  "source": "Original code imported unmodified; no Phase I output overwritten",
+  "seconds": 1.480233792011859,
+  "records": [
+    {
+      "L": 16,
+      "saved_60_digit_matches": {
+        "opt2": true,
+        "opt3": true,
+        "price": true,
+        "total_price": true,
+        "randomized_total_price": true,
+        "stochastic_upper": true,
+        "stochastic_r2": true,
+        "stochastic_r3": true
+      },
+      "total_price": 2.191327199650388
+    },
+    {
+      "L": 64,
+      "saved_60_digit_matches": {
+        "opt2": true,
+        "opt3": true,
+        "price": true,
+        "total_price": true,
+        "randomized_total_price": true,
+        "stochastic_upper": true,
+        "stochastic_r2": true,
+        "stochastic_r3": true
+      },
+      "total_price": 4.64118510681726
+    },
+    {
+      "L": 256,
+      "saved_60_digit_matches": {
+        "opt2": true,
+        "opt3": true,
+        "price": true,
+        "total_price": true,
+        "randomized_total_price": true,
+        "stochastic_upper": true,
+        "stochastic_r2": true,
+        "stochastic_r3": true
+      },
+      "total_price": 9.499427625168657
+    },
+    {
+      "L": 2048,
+      "saved_60_digit_matches": {
+        "opt2": true,
+        "opt3": true,
+        "price": true,
+        "total_price": true,
+        "randomized_total_price": true,
+        "stochastic_upper": true,
+        "stochastic_r2": true,
+        "stochastic_r3": true
+      },
+      "total_price": 27.125384997700568
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+% Include-ready section for curvature_hierarchy.tex.
+% Uses its theorem environments and macros \ph, \B, \D, \OPT, \rd,
+% \detp, \stp. References classical bibliography keys dlmf and shadrin.
+% Status: independent internal proof audit passed 7 October 2026; not external peer review.
+\section{A weight-degenerate obstruction to the four-state logarithmic bound}
+\label{sec:ext-weights}
+The equal-mass hypothesis in the sharp four-state degree theorem cannot be
+removed with an absolute constant. This section constructs four-state sources
+with vanishing inner masses and shows that their deterministic and stochastic
+prices grow at least as $r^2/(\log r)^2$. The construction also permits all
+posteriors to lie in $[1/4,3/4]$. It does not determine the optimal degree order
+when weights are unrestricted.
+
+\subsection{Fixed weights: a routine comparison consequence}
+For clarity, write $D_p$ for distortion with source probabilities $p$, keeping
+the locations and generator fixed. If $p,q$ are positive probability vectors
+and $\ell q_i\le p_i\le u q_i$ for every $i$, then, for every fixed partition
+or channel $W$,
+\begin{equation}
+ \ell D_q(W)\le D_p(W)\le uD_q(W).
+ \label{eq:ext-weightcomparison}
+\end{equation}
+Indeed, the centroid identity represents channel distortion as
+\[
+ D_p(W)=\min_{(c_z)}\sum_{i,z}p_iW(z\mid i)B_\ph(x_i,c_z).
+\]
+The summands are nonnegative, so compare the weights before minimizing over
+centers. The same proof covers deterministic partitions. Comparing flat
+minima and then infima over admissible hierarchies gives, in either the
+deterministic or stochastic model,
+\[
+ \frac{\ell}{u}\rho_q\le\rho_p\le\frac{u}{\ell}\rho_q.
+\]
+In particular, relative to four equal masses, $\ell=4\min_i p_i$ and
+$u=4\max_i p_i$. Thus every \emph{fixed} positive four-state probability vector
+has degree envelope $\Theta_p(r/\log r)$, directly from the equal-mass theorem
+and its lower family. This is a variational comparison consequence, not a
+separate localization theorem. It says nothing uniform when the smallest
+mass tends to zero with degree.
+
+\subsection{Two-level random-table rounding}
+We record the elementary rounding observation used below, without claiming
+it as a new randomization principle.
+\begin{lemma}[Two-level deterministic comparison]
+\label{lem:ext-rounding}
+For any finite source, strictly convex generator, and two output capacities
+with positive flat distortions,
+\[
+ \tfrac12\rho_{\ph,\detp}\le\rho_{\ph,\stp}
+ \le\rho_{\ph,\detp}.
+\]
+\end{lemma}
+\begin{proof}
+For a stochastic degradation chain, sample independent deterministic function
+tables for its encoder and coarsener, independently of the source, and call
+the pair of tables $U$. Conditional on $U$ the two representations form an
+admissible deterministic hierarchy. Revealing $U$ can only reduce Jensen
+distortion, so at each of the two levels $k$,
+\[
+ D(Z_k)\ge\mathbb E_U D(Z_k\mid U).
+\]
+Let $R$ be the price of this particular stochastic chain. The expected sum of
+the two deterministic conditional ratios is at most $2R$. At least one table
+therefore has sum at most $2R$, and its maximum ratio is no larger than its
+sum. Consequently $\rho_{\ph,\detp}\le2R$; take the infimum over chains.
+Deterministic chains are themselves admissible stochastic chains, proving the
+other direction. No public random seed is available to the actual predictor;
+revealing the tables is used only in this proof.
+\end{proof}
+
+\subsection{An endpoint-localized polynomial curvature}
+The only approximation ingredient needed is elementary external growth of
+Chebyshev polynomials. It is a classical polynomial localization mechanism;
+the identity $T_n(\cosh v)=\cosh(nv)$ is recorded in
+\cite[Eq.~18.5.1]{dlmf}. None of that polynomial technology is claimed as
+original here.
+
+For an integer $n$ sufficiently large, put
+\begin{equation}
+ d=d_n=\left(\frac{4\log n}{n}\right)^2,\qquad
+ p_n(t)=T_n\!\left(\frac{2t-1-d}{1-d}\right)^2,\qquad
+ Z_n=\int_0^1p_n(t)\rd t,\qquad
+ \kappa_n(t)=\frac{p_n(t)}{Z_n}.
+ \label{eq:ext-endpointneedle}
+\end{equation}
+Here $\kappa_n$ denotes its polynomial on the whole real line, although its
+normalization and probability-mass estimates refer only to $[0,1]$.
+Its degree is $2n$ and it is nonnegative everywhere. For $t\in[d,1]$ the
+argument of $T_n$ belongs to $[-1,1]$, so $p_n(t)\le1$. On $[0,d/2]$ the
+absolute value of that argument is at least $1+d/(1-d)\ge1+d$.
+For $0\le v\le1$, $\operatorname{arcosh}(1+v)\ge\sqrt v$: for example,
+$\cosh(\sqrt v)\le1+v$ follows by its power series. Using the parity of
+$T_n$ and the hyperbolic identity therefore gives, for $d\le1/4$,
+\[
+ p_n(t)\ge\tfrac14e^{2n\sqrt d}\quad(0\le t\le d/2),\qquad
+ Z_n\ge\frac d8 e^{2n\sqrt d}.
+\]
+Consequently
+\begin{equation}
+ \int_d^1\kappa_n(t)\rd t\le\tau_n,
+ \qquad
+ \tau_n:=8d^{-1}e^{-2n\sqrt d}
+       =\frac{1}{2n^6(\log n)^2}=o(d^3).
+ \label{eq:ext-tail}
+\end{equation}
+The normalized maximum also satisfies
+\begin{equation}
+ \max_{[0,1]}\kappa_n\le32n^2.
+ \label{eq:ext-max}
+\end{equation}
+For completeness, the rescaled classical Markov inequality
+\cite{shadrin} gives $\|\kappa_n'\|_\infty\le2(2n)^2M$ when
+$M=\|\kappa_n\|_\infty$. From a maximizer, one direction remains in $[0,1]$
+for length $1/(4(2n)^2)$, throughout which $\kappa_n\ge M/2$.
+Integrating and using $\int_0^1\kappa_n=1$ yields $M\le8(2n)^2$.
+
+Define
+\begin{equation}
+ g_n(t)=\kappa_n(t)+\kappa_n(1-t)+d^2,
+ \qquad \ph_n''=g_n,
+ \qquad \ph_n'(1/2)=\ph_n(1/2)=0.
+ \label{eq:ext-curvature}
+\end{equation}
+This curvature is strictly positive on the whole real line and symmetric
+about $1/2$. Its degree is exactly $r=2n$: both squared-polynomial terms
+have positive leading coefficient of the same even degree. The generator
+is a symmetric strictly convex polynomial of degree $2n+2$.
+
+\subsection{All deterministic hierarchies are expensive}
+Take the sorted source locations and probabilities
+\begin{equation}
+ (x_A,x_B,x_C,x_D)=(0,2d,1-2d,1),\qquad
+ (p_A,p_B,p_C,p_D)=(a,b,b,a),\qquad
+ b=d^2,\quad a=\tfrac12-b.
+ \label{eq:ext-source}
+\end{equation}
+For all sufficiently large $n$, these are distinct and all weights are
+positive. Every distortion and flat denominator below uses these original
+weights, with no conditional renormalization of a cell.
+
+For a pair $u<v$ of respective weights $p_u,p_v$, its exact Jensen curvature
+kernel is
+\begin{equation}
+ K_{uv}(t)=\min\{p_u(t-u),p_v(v-t)\}\,
+           \mathbf1_{[u,v]}(t).
+ \label{eq:ext-pairkernel}
+\end{equation}
+For an arbitrary cell $S$, the kernel is
+\[
+ K_S(t)=\sum_{i\in S}p_i(x_i-t)_+-p_S(m_S-t)_+,
+ \qquad D(S)=\int K_S(t)g_n(t)\rd t.
+\]
+These formulas follow by writing a twice differentiable convex generator,
+up to an affine term, as an integral of $(x-t)_+$ against its curvature.
+
+Set
+\[
+ P=D(AB)=D(CD),\quad q=D(BC),\quad
+ T=D(ABC)=D(BCD),\quad J=D(AD).
+\]
+The equalities use reflection symmetry. Since
+$128n^2b=128n^2d^2\to0$, equations
+\eqref{eq:ext-tail}--\eqref{eq:ext-max} imply, eventually,
+\begin{equation}
+ I=[4b,d]\ne\varnothing,\qquad
+ \int_I\kappa_n(t)\rd t
+ \ge1-\tau_n-128n^2b\ge\tfrac12.
+ \label{eq:ext-core}
+\end{equation}
+We may also assume $d\le1/16$ and $\tau_n\le d^2/2$.
+
+The pair $AB$ has mean $4bd$. Thus on $I$, which lies above that mean,
+$K_{AB}(t)=b(2d-t)\ge bd$. Conversely $K_{AB}\le2bd$ everywhere.
+On $[0,2d]$, the reflected needle contributes at most $\tau_n$ to the
+integrated curvature, since $1-2d\ge d$. Hence
+\[
+ \int_0^{2d}g_n\le1+\tau_n+2d^3\le2.
+\]
+Together with \eqref{eq:ext-core}, this proves
+\begin{equation}
+ \frac{bd}{2}\le P\le4bd.
+ \label{eq:ext-nearpair}
+\end{equation}
+For the middle pair, $K_{BC}\le b/2$. The two needles contribute at most
+$2\tau_n$ on $[2d,1-2d]$, and the constant curvature contributes at most
+$d^2$. Therefore
+\begin{equation}
+ 0<q\le\frac b2(2\tau_n+d^2)\le bd^2.
+ \label{eq:ext-middlepair}
+\end{equation}
+The triple $ABC$ has mean $b/(1/2+b)\le2b$. For $t\in I$ this mean lies
+below $t$, while both inner locations lie above $t$, so
+\[
+ K_{ABC}(t)=b(2d-t)+b(1-2d-t)=b(1-2t)\ge b/2.
+\]
+The outer pair has kernel $K_{AD}(t)=a\min(t,1-t)$. On $I$ this is at
+least $4ab\ge b$, because $a\ge1/4$. Thus
+\begin{equation}
+ T\ge b/4,\qquad J\ge b/2.
+ \label{eq:ext-coarse}
+\end{equation}
+
+We now cover all deterministic hierarchy choices, including noncontiguous
+ones. A hierarchy with fewer than the allowed numbers of cells can be
+refined to exactly three fine cells and two coarse cells without increasing
+either cost: split fine cells within their current coarse cells, then split
+the coarse level if necessary by grouping the three fine cells. Every exact
+three-cell partition of four states merges one pair. Besides $BC$, each
+pair has cost at least $P$. This is immediate for $AB,CD$; the pair $AC$
+has the same endpoint weights as $AB$ and a more distant right endpoint,
+so its kernel dominates $K_{AB}$ pointwise, and $BD$ is its reflection.
+Finally, $J\ge b/2\ge P$ by \eqref{eq:ext-nearpair} and $d\le1/16$.
+
+If the fine pair is not $BC$, then $\OPT_3\le q$ gives fine-level ratio
+at least $P/q\ge1/(2d)$. If the fine pair is $BC$, its exact two-cell
+coarsenings are $ABC\mid D$, $A\mid BCD$, and $AD\mid BC$. By
+\eqref{eq:ext-coarse} each costs at least $b/4$. Since the available
+coarse split $AB\mid CD$ gives $\OPT_2\le2P\le8bd$, this hierarchy has
+coarse-level ratio at least $1/(32d)$. These two cases prove
+\begin{equation}
+ \rho_{\ph_n,\detp}\ge\frac1{32d_n},\qquad
+ \rho_{\ph_n,\stp}\ge\frac1{64d_n},
+ \label{eq:ext-lower}
+\end{equation}
+the second inequality following from Lemma~\ref{lem:ext-rounding}.
+Notice that this proof needs neither exact flat optimizer identification nor
+an assertion that contiguous deterministic hierarchies exhaust the optimum.
+
+\begin{theorem}[Failure of a weight-uniform four-state logarithmic bound]
+\label{thm:ext-weightdegenerate}
+Let $\widehat C_r^{\detp}$ and $\widehat C_r^{\stp}$ denote the two/three-output
+four-state degree envelopes in which all positive source weights are allowed.
+There is an absolute $c>0$ such that, for all sufficiently large $r$,
+\[
+ \widehat C_r^{\detp}\ge\widehat C_r^{\stp}
+ \ge c\frac{r^2}{(\log r)^2}.
+\]
+Consequently no absolute-constant $O(r/\log r)$ bound holds in this weighted
+four-state setting. The witnesses can have all posteriors in $[1/4,3/4]$
+and polynomial generators inducing smooth strictly proper losses bounded
+in $[0,1/2]$.
+\end{theorem}
+\begin{proof}
+Equations \eqref{eq:ext-endpointneedle} and \eqref{eq:ext-lower} give the
+claim at degrees $r=2n$, since $1/d_n=n^2/(16(\log n)^2)$.
+For a degree-at-most-$r$ envelope take $n=\lfloor r/2\rfloor$.
+
+To put all posteriors in the stated interior interval, use
+$y=1/4+x/2$. The four locations become
+$(1/4,1/4+d,3/4-d,3/4)$.
+Let $M_n=\max_{t\in[-1/2,3/2]}g_n(t)$ and set
+\[
+ \widetilde\ph_n(y)=\frac{\ph_n(2y-1/2)}{4M_n}.
+\]
+The fact that $g_n$ is a sum of squares plus $d^2$ on the \emph{whole real
+line} ensures $0<\widetilde\ph_n''\le1$ on $[0,1]$. This affine coordinate
+change and positive rescaling preserve every price and curvature degree.
+The generator remains symmetric about $1/2$. Put
+$h(y)=\widetilde\ph_n(0)-\widetilde\ph_n(y)$ and define
+\[
+ \ell(y,1)=h(y)+(1-y)h'(y),\qquad
+ \ell(y,0)=h(y)-yh'(y).
+\]
+Expected regret is $B_{\widetilde\ph_n}$, so the loss is strictly proper.
+Symmetry and the supporting-line inequalities make both losses nonnegative;
+their derivatives are $-(1-y)\widetilde\ph_n''(y)$ and
+$y\widetilde\ph_n''(y)$, respectively. Their common maximum is
+$\widetilde\ph_n'(1)=-\widetilde\ph_n'(0)
+=\int_{1/2}^1\widetilde\ph_n''\le1/2$.
+\end{proof}
+
+\paragraph{What is and is not settled.}
+Combining this lower bound with the existing arbitrary-weight two-level
+upper theorem leaves
+\[
+ c\frac{r^2}{(\log r)^2}
+ \le\widehat C_r^{\stp}\le\widehat C_r^{\detp}
+ \le1+128r^2.
+\]
+The squared-logarithm gap is unresolved here. In the witnesses,
+$\min_i p_i=d_n^2=256(\log n)^4/n^4$, so this result does not contradict
+fixed-weight $\Theta_p(r/\log r)$ behavior and does not give a sharp joint
+minimum-mass/degree envelope. The generators, weights, and posterior gaps
+all vary with $n$. The construction supplies an excess-risk ratio lower
+bound; normalization does not preserve a nonvanishing absolute excess loss.
+The elementary external-Chebyshev localization and Markov inequality are
+classical. The weighted hierarchy obstruction is the quantitative assertion proved
+here; the polynomial technique is classical, and no historical-priority
+claim follows from this derivation.
+
+\begin{corollary}[Embedding the weighted obstruction at all capacities]
+\label{cor:ext-allcap}
+The worst-case all-capacity deterministic and stochastic degree envelopes
+over arbitrary finite sources and positive weights are both
+$\Omega(r^2/(\log r)^2)$.
+\end{corollary}
+\begin{proof}
+A full hierarchy on four states restricts to a two-/three-output hierarchy,
+so its price is at least the corresponding two-level optimum. Conversely,
+any two-level deterministic hierarchy or stochastic degradation chain
+extends by $Z_4=X$ and a constant $Z_1$. The one-output cost equals its flat
+optimum, while the four-output cost and optimum are both zero. These added
+levels increase no price. Thus the four-state all-capacity and two-level
+optimal prices coincide. Theorem~\ref{thm:ext-weightdegenerate} supplies the
+witnesses, and the envelope over arbitrary finite sources includes them.
+\end{proof}

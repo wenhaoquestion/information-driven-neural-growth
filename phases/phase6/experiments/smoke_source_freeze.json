@@ -1,0 +1,11 @@
+{
+  "timestamp_utc": "2026-10-07T06:36:42.456208+00:00",
+  "stage": "smoke_source_snapshot_before_execution",
+  "files": {
+    "code/frontier.py": "2a71570ba5c4aac153f986fd2a81a4c655d5367d1baf06d18d7aaeec00a08fcc",
+    "code/phase5_reference.py": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720",
+    "code/test_frontier.py": "e3631e6c72dbce01b0d0584db447cbdaedf2e9f23bed16731797ba3abac7c403",
+    "experiments/PROTOCOL.md": "9da881b65e9c178695edf319b9a7d2ff14c7915713923c5425f8d6a2c8168815",
+    "configs/smoke.json": "3128d9110e106f9773441335421a1246258ca1389a90fe654e2bf338b0c960a6"
+  }
+}

@@ -1,0 +1,233 @@
+% Self-contained experimental section. Requires amsmath, amssymb, graphicx,
+% booktabs, hyperref. Define \experimentroot if this file is included elsewhere.
+\providecommand{\experimentroot}{.}
+\section{Completed audits as future fitting data}
+\label{sec:audit-release-diagnostic}
+
+The following new-seed diagnostic asks whether permanently excluding completed
+audits from later fitting creates avoidable limitations in a trained adaptive
+learner. It does not claim a new testing theorem, and it does not implement
+transfer of historical certification evidence to a changed prediction pair.
+The broad motivation is useful structural adaptation under explicit data and
+computation costs; success of the residual proposal is not assumed.
+
+\subsection{Implemented evidence mechanism}
+Let $H_{t-1}$ contain every earlier fitting/audit observation, decision,
+parameter and optimizer state. Current proposal randomness may be included
+before the next audit. Suppose all current predictors and comparison margins
+are then fixed and the current block $A_t$ is independent and iid. For old
+minus new bounded-loss differences $D_i\in[-1,1]$, define
+\[
+ E_n=\frac15\sum_{\lambda\in\Lambda_\tau}
+       \prod_{i=1}^n\{1+\lambda(D_i-\tau)\},\qquad
+ \Lambda_\tau=\{.05,.1,.2,.5,(1+\tau)^{-1}\},
+\]
+with the implemented margins $\tau\in\{0,.0005\}$.
+Accept the inequality when $E_n\ge 1/\alpha_{t,j}$. This is an established
+bounded-mean betting construction, not a new test; the direct foundation is
+Waudby-Smith and Ramdas, Section~4 and Appendix~A.3 of the inspected
+arXiv version~7 \cite{waudby2024}.
+
+Each product has nonnegative factors and conditional expectation at most one
+under its null. Its fixed average therefore gives the conditional error bound
+needed by the preceding proposition. Every changed prediction pair starts a
+new product. The current experiment uses fixed blocks, with no uncorrected
+multiple inspections within a block.
+
+\subsection{Frozen design and actual execution}
+The protocol and runner hashes were frozen at 03:45:05 UTC on
+15 September 2026, before seeds 750000--750011 were run. Four tasks and
+12 independent seeds per task give 48 paired configurations, seven methods
+per configuration, 336 complete trajectories and 8,064 events. All completed
+the preset 24-event horizon. The main run took 330.7 seconds with two local
+CPU workers. An unchanged-runner recovery of the earlier interaction seed
+63000 matched its full two-method history and controls before this study.
+
+Write $\sigma(u)=1/(1+e^{-u})$. All tasks have $X\sim N(0,I_6)$ and
+$Y\mid X\sim\operatorname{Bernoulli}(.05+.9\sigma(g(X)))$, where
+\begin{align*}
+g_{\rm null}(x)&=0,\\
+g_{\rm additive}(x)&=2.5\tanh(2x_1+.6)-2\tanh(2x_2-.5)
+ +1.7\tanh(2x_3+.3)-1.5\tanh(2x_4),\\
+g_{\rm interaction}(x)&=4\tanh(2x_1)\tanh(2x_2)
+ +2\tanh(2x_3)\tanh(2x_4),\\
+g_{\rm radial}(x)&=3(x_1^2+x_2^2-1.4).
+\end{align*}
+The radial boundary is an additional task with four nuisance coordinates,
+not an instance of a supplied-module theorem. The fitted network is
+$p_\theta(x)=\sigma(c+\sum_{j=1}^k a_j\tanh(w_j^\top x+b_j))$ with Brier
+loss; all its parameters train. There are 2,048 initial fitting labels and
+4,096 fresh audit labels at each event, hence 100,352 unique observed labels
+per method. Conditional label noise is integrated on 32,768 independent
+evaluator inputs per seed; the risk estimate remains Monte Carlo in $X$.
+The evaluator is called only after an entire method's action sequence is
+fixed and is absent from the learner's arguments.
+
+Four adaptive arms cross withheld/released audit data with residual/random
+proposals. The residual score is
+$(\overline{rz})^2/(\overline{z^2}+10^{-3})$, where
+$r=y-p$ and $z=p(1-p)\tanh(w^\top x+b)$. Four incoming-vector candidates
+receive 40 minibatch ascent updates, and one is selected on at most 4,096
+historical fitting points. Random additions use the same initial candidate
+distribution and random selection. Both add a unit with outgoing weight
+zero, preserving the current predictor before branch fitting. Each event
+fits both continuation and growth from the incumbent. Growth is accepted
+only after its gains over both incumbent and continuation exceed .0005;
+otherwise a certified positive continuation is accepted, or the incumbent
+is held exactly.
+
+Three controls receive the same label arrivals and release times: persistent
+online learners at fixed widths two and 26, and a fixed width-26 learner
+using a fresh gate on continuation. Width 26 equals the adaptive maximum
+$2+24$ and is specified before outcomes. The ungated controls make no
+checkpoint-monotonicity claim. The adaptive arms allocate $.05/(3\cdot24)$
+to each comparison and the one-comparison fixed gate $.05/24$, both spending
+the same trajectory error budget. That budget is not a simultaneous
+guarantee across experimental methods and seeds.
+
+All arms receive six million parameter--example updates for warmup and
+eight million per event, including candidate search and rejected branches,
+with small integer remainders recorded. They use persistent Adam
+$(.9,.999)$, learning rate .01, denominator constant $10^{-8}$ and minibatches
+of at most 256. Proposal ascent uses learning rate .04. Branches clone the
+incumbent's optimizer state; only the selected branch commits it. New-unit
+moments start at zero and retain the existing step counter. Random proposals
+allocate saved search work to branch fitting. Fixed learners devote the
+entire event budget to continuation. The 198-million-update horizon and
+32-million-update ungated tail match an operation proxy, not FLOPs, optimizer
+steps, memory or wall time. These shared persistent-minibatch conventions
+differ from the earlier full-batch/reset runner; the new factorial comparison
+isolates release within the new protocol.
+
+\subsection{Observed release effects and negative controls}
+Table~\ref{tab:release-effects} reports primary paired effects. Confidence
+intervals are descriptive 95\% Student-$t$ intervals across the 12 independent
+seeds; there is no multiplicity adjustment. Event time points and proposals
+are not treated as independent replications.
+
+\begin{table}[tb]
+\centering\scriptsize
+\begin{tabular}{lrrr}
+\toprule
+Task & Release: residual & Release: random & Residual minus random\\
+\midrule
+Null & $-1.994\;[-2.813,-1.176]$ & $-2.016\;[-2.846,-1.186]$ & $0.022\;[-0.054,0.097]$\\
+Additive & $-4.576\;[-6.648,-2.505]$ & $-3.943\;[-5.666,-2.221]$ & $0.063\;[-0.237,0.363]$\\
+Interaction & $-3.721\;[-4.557,-2.885]$ & $-4.657\;[-6.277,-3.038]$ & $-0.110\;[-0.744,0.524]$\\
+Radial & $-1.142\;[-2.131,-0.152]$ & $-1.199\;[-2.081,-0.318]$ & $0.554\;[-0.171,1.280]$\\
+\bottomrule
+\end{tabular}
+\caption{Final Brier-risk differences, in units of $10^{-3}$, with descriptive
+95\% paired intervals. ``Release'' means released minus withheld. The last
+column compares proposals under release. Negative values favor the first
+method. All four release-by-proposal interaction intervals also contain zero.}
+\label{tab:release-effects}
+\end{table}
+
+Both proposal mechanisms benefit from release in the four measured means.
+Their released comparison does not resolve a residual-proposal advantage;
+intervals containing zero do not establish equivalence. Mean released
+residual final risks are .250716, .131908, .144304 and .121427 on null,
+additive, interaction and radial, with respective widths two, four, six and
+three. Permanently withheld residual risks are .252710, .136484, .148025 and
+.122568. Improvement therefore need not be accompanied by additional
+growth: mean interaction width remains six under both release policies.
+
+The fixed width-26 online learner has final mean risks .250857, .131491,
+.137553 and .117145. Released residual minus this control is
+$+.006752\;[.006203,.007300]$ on interaction and
+$+.004282\;[.003656,.004907]$ on radial. Even the gated fixed architecture
+outperforms released residual in those comparisons:
+$+.003801\;[.003225,.004378]$ and
+$+.002762\;[.002014,.003509]$, respectively. Thus removal of the gate is not
+the sole explanation for these fixed-capacity results. Fixed width two is
+strong on null (mean .250107) but underfits interaction (.209650) and radial
+(.192170). The larger control is needed for credible attribution.
+
+After the preset ungated tail, released residual risks become .250161,
+.131254, .142542 and .118292. The release-minus-withheld effects remain
+negative, but the interaction/radial gaps to fixed26 online remain
+$+.004743\;[.004021,.005464]$ and
+$+.001445\;[.001061,.001829]$. On additive, this post-training comparison
+instead favors the smaller released residual network by
+$-.000329\;[-.000491,-.000167]$. These tails are diagnostics, not protected
+deployment updates. All adverse and favorable task outcomes are retained.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{\experimentroot/figures/risk_trajectories.pdf}
+\caption{Actual 24-event histories; curves are seed means and bands are
+$\pm1$ standard error. Released labels improve the adaptive arms, while
+fixed-capacity controls expose both underfitting at width two and stronger
+risk performance at width 26. All arms share data arrivals and optimization
+proxy budgets.}
+\label{fig:release-trajectories}
+\end{figure}
+
+\subsection{Resource ledger and verification}
+Only 96,256 labels have been released before fitting the final online
+candidates; the last audit is released after that decision. Withheld arms
+fit on exactly 2,048 distinct labels. Released adaptive arms fit on roughly
+96,061--96,256, while fixed26 fits about 90,625--90,644 within its matched
+parameter--example budget. Repeated fit accesses still differ: released
+residual averages 9.84m, 6.36m, 4.71m and 7.31m across tasks, versus .947m
+for fixed26 and 11.647m for fixed2. Pool availability is not silently
+equated with actual fitting access.
+
+Residual candidate optimization costs 6.881m parameter--example updates over
+the horizon. Rejected branch fits alone average 168.727m--182.226m for
+released residual. Audit prediction work adds 5.800m--14.090m
+parameter--example evaluations, versus 41.091m for fixed26 gated. Adaptive
+gates perform 1,474,560 betting-factor evaluations per trajectory; fixed26
+gated performs 491,520. Prediction and selection work is logged separately.
+The adaptive networks have substantially lower inference capacity than
+fixed26, so lower fixed-model risk is a resource tradeoff rather than a
+universal dominance statement.
+
+Independent reconstruction from the raw data and saved branch parameters
+checks all 8,064 events, 14,976 betting comparisons and evaluator risks;
+maximum log-e discrepancy is $9.95\times10^{-13}$. All 48 run hashes,
+336 access ledgers and four frozen files pass integrity checks. A separate
+full seven-arm interaction replay matches all 168 events at relative
+tolerance $10^{-10}$ and absolute tolerance $10^{-12}$, excluding elapsed
+times. Checks also verify gradients, function-preserving additions, frozen
+candidate hashes, immutable commitments, post-decision release and
+current/future-label perturbations. No gated checkpoint increases the
+evaluator's estimated risk in this sample; that observation is not the
+conditional proof.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{\experimentroot/figures/paired_diagnostics.pdf}
+\caption{Prespecified paired final-risk contrasts. Bars are descriptive
+95\% intervals across independent seeds, without multiplicity correction.
+The scale is $10^{-3}$ Brier-risk units.}
+\label{fig:release-paired}
+\end{figure}
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{\experimentroot/figures/risk_capacity_tail.pdf}
+\caption{Risk and retained capacity. Filled markers show final committed
+mean risks with 95\% intervals; crosses show means after the additional
+ungated tail. The fixed26 risk advantage on harder tasks comes with larger
+inference capacity.}
+\label{fig:release-capacity}
+\end{figure}
+
+\paragraph{Scientific status.}
+The study diagnoses avoidable permanent withholding under a controlled
+learner and supplies same-arrival online controls. It does not demonstrate a
+new information score, retained certification evidence, optimized resource
+allocation or a practical deep-learning advantage. Synthetic scope,
+finite horizons, constant optimizer rates and proxy-compute matching remain
+limitations. Complete event and run summaries, a representative JSON/NPZ trajectory,
+commands, the frozen protocol, and plotting/audit code are in the repository.
+Other raw JSON/NPZ outcomes are listed by hash in the local-archive manifest. It is an
+experimental component of the evidence/learning investigation.
+
+\begin{table}[p]
+\centering\small
+\input{neural_table.tex}
+\caption{Complete mean outcomes of all seven arms. Tail risk follows a separate
+ungated training budget and is outside the checkpoint guarantee. Values are
+generated directly from saved results; uncertainty and paired comparisons are
+reported above and in the raw CSV summaries.}
+\end{table}

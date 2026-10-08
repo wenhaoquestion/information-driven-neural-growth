@@ -1,0 +1,126 @@
+{
+  "status": "pass",
+  "checks_use_saved_results_only": true,
+  "new_quadrature_runs": 0,
+  "source_hashes_unchanged": {
+    "cross_stage_audit_work/reviews/NEXT_QUESTION_RECOMMENDATION.md": true,
+    "phase8_research_work/research/experiments/code/hierarchy_core.py": true,
+    "phase8_research_work/research/experiments/code/run_experiments.py": true,
+    "phase8_research_work/manuscript/curvature_hierarchy.tex": true,
+    "phase8_research_work/manuscript/unequal_weights_endpoint.tex": true
+  },
+  "script_hash_matches_frozen_metadata": true,
+  "first_pass_hash_matches_freeze": true,
+  "rows": [
+    {
+      "candidate_id": "interior_v1_n2048",
+      "partition_count": 15,
+      "hierarchy_count": 39,
+      "cell_count": 15,
+      "maximum_refinement_monotonicity_violation": 0.0,
+      "A_formula_relative_difference": 0.0,
+      "A_formula_note": "interior expression omits negligible truncated needle tails; not an exact identity",
+      "maximum_outcome_amplitude": 1.0,
+      "moment_symmetry_relative_error": 0.0
+    },
+    {
+      "candidate_id": "interior_v1_n4096",
+      "partition_count": 15,
+      "hierarchy_count": 39,
+      "cell_count": 15,
+      "maximum_refinement_monotonicity_violation": 0.0,
+      "A_formula_relative_difference": 0.0,
+      "A_formula_note": "interior expression omits negligible truncated needle tails; not an exact identity",
+      "maximum_outcome_amplitude": 1.0,
+      "moment_symmetry_relative_error": 2.1835636368531471e-16
+    },
+    {
+      "candidate_id": "interior_v1_n8192",
+      "partition_count": 15,
+      "hierarchy_count": 39,
+      "cell_count": 15,
+      "maximum_refinement_monotonicity_violation": 0.0,
+      "A_formula_relative_difference": 0.0,
+      "A_formula_note": "interior expression omits negligible truncated needle tails; not an exact identity",
+      "maximum_outcome_amplitude": 1.0,
+      "moment_symmetry_relative_error": 2.2094961295954608e-16
+    },
+    {
+      "candidate_id": "endpoint_n128",
+      "partition_count": 15,
+      "hierarchy_count": 39,
+      "cell_count": 15,
+      "maximum_refinement_monotonicity_violation": 0.0,
+      "A_formula_relative_difference": 0.0,
+      "A_formula_note": "exact analytic identity",
+      "maximum_outcome_amplitude": 1.0,
+      "moment_symmetry_relative_error": 0.0
+    },
+    {
+      "candidate_id": "endpoint_n256",
+      "partition_count": 15,
+      "hierarchy_count": 39,
+      "cell_count": 15,
+      "maximum_refinement_monotonicity_violation": 0.0,
+      "A_formula_relative_difference": 0.0,
+      "A_formula_note": "exact analytic identity",
+      "maximum_outcome_amplitude": 1.0,
+      "moment_symmetry_relative_error": 0.0
+    },
+    {
+      "candidate_id": "endpoint_n512",
+      "partition_count": 15,
+      "hierarchy_count": 39,
+      "cell_count": 15,
+      "maximum_refinement_monotonicity_violation": 0.0,
+      "A_formula_relative_difference": 2.220446049250313e-16,
+      "A_formula_note": "exact analytic identity",
+      "maximum_outcome_amplitude": 1.0,
+      "moment_symmetry_relative_error": 0.0
+    },
+    {
+      "candidate_id": "endpoint_n1024",
+      "partition_count": 15,
+      "hierarchy_count": 39,
+      "cell_count": 15,
+      "maximum_refinement_monotonicity_violation": 0.0,
+      "A_formula_relative_difference": 2.220446049250313e-16,
+      "A_formula_note": "exact analytic identity",
+      "maximum_outcome_amplitude": 1.0,
+      "moment_symmetry_relative_error": 0.0
+    },
+    {
+      "candidate_id": "endpoint_n2048",
+      "partition_count": 15,
+      "hierarchy_count": 39,
+      "cell_count": 15,
+      "maximum_refinement_monotonicity_violation": 0.0,
+      "A_formula_relative_difference": 0.0,
+      "A_formula_note": "exact analytic identity",
+      "maximum_outcome_amplitude": 1.0,
+      "moment_symmetry_relative_error": 0.0
+    },
+    {
+      "candidate_id": "endpoint_n4096",
+      "partition_count": 15,
+      "hierarchy_count": 39,
+      "cell_count": 15,
+      "maximum_refinement_monotonicity_violation": 2.117582368135751e-22,
+      "A_formula_relative_difference": 2.220446049250313e-16,
+      "A_formula_note": "exact analytic identity",
+      "maximum_outcome_amplitude": 1.0,
+      "moment_symmetry_relative_error": 0.0
+    },
+    {
+      "candidate_id": "endpoint_n8192",
+      "partition_count": 15,
+      "hierarchy_count": 39,
+      "cell_count": 15,
+      "maximum_refinement_monotonicity_violation": 0.0,
+      "A_formula_relative_difference": 0.0,
+      "A_formula_note": "exact analytic identity",
+      "maximum_outcome_amplitude": 1.0,
+      "moment_symmetry_relative_error": 0.0
+    }
+  ]
+}

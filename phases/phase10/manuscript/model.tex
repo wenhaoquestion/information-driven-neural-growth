@@ -1,0 +1,98 @@
+\section{Model and elementary facts}
+
+
+Fix $N\ge3$, locations $x_1<\cdots<x_N$ in an interval $I$, and weights
+$p_i>0$. The weights may sum to any positive number. Let $\varphi$ be
+$C^2$ and strictly convex on $I$, and write $g=\varphi''\ge0$.
+For a nonempty cell $C\subseteq\{1,\ldots,N\}$, set
+\[
+ p_C=\sum_{i\in C}p_i,\qquad
+ m_C=p_C^{-1}\sum_{i\in C}p_ix_i,\qquad
+ D(C)=\sum_{i\in C}p_i\varphi(x_i)-p_C\varphi(m_C).
+\]
+For a partition $P$, set $D(P)=\sum_{C\in P}D(C)$, and let
+$\OPT_k$ be the minimum of $D(P)$ over partitions with at most $k$ cells.
+The deterministic price at the capacities in question is
+\[
+ R_N=\min_{H_{N-1}\succeq H_{N-2}}
+ \max\left\{
+ \frac{D(H_{N-1})}{\OPT_{N-1}},
+ \frac{D(H_{N-2})}{\OPT_{N-2}}\right\},
+ \qquad |H_j|\le j.
+\]
+Write $R_N^{\mathrm{stoch}}$ for the stochastic analogue defined below.
+The notation $\rho_{N,\detp}=R_N$ and
+$\rho_{N,\stp}=R_N^{\stp}$ is used interchangeably in constructions;
+subscripts may instead indicate the generator, and superscripts may
+display the capacity pair. An omitted source count in the inherited
+endpoint construction means four states with capacities $(2,3)$.
+Refinement is denoted by $\succeq$. No contiguity restriction is imposed
+on either hierarchy partition. Strict convexity, positive weights, and
+distinct locations imply $\OPT_k>0$ for $k<N$, so all displayed ratios
+are well defined. Multiplying every weight by one common positive factor
+multiplies every distortion by that factor and leaves every price unchanged.
+
+\begin{lemma}[Contiguous flat optima and deficit forms]
+\label{lem:flat}
+A contiguous flat optimum exists for every $k\le N$, and every flat
+optimum fills its budget when $k<N$. In particular, a contiguous optimum
+at capacity $N-1$ consists of one adjacent pair and all remaining
+singletons. A contiguous optimum at capacity $N-2$ consists of either
+one consecutive triple or two disjoint adjacent pairs, with all remaining
+states singletons. Therefore
+\[
+ q:=\OPT_{N-1}=\min_{1\le i<N}D(\{i,i+1\}).
+\]
+\end{lemma}
+
+\begin{proof}
+The centroid identity for the Bregman divergence
+$B_\varphi(x,a)=\varphi(x)-\varphi(a)-\varphi'(a)(x-a)$ is
+\[
+ \sum_{i\in C}p_iB_\varphi(x_i,a)
+ =D(C)+p_CB_\varphi(m_C,a).
+\]
+Thus a weighted centroid minimizes the reporting cost of its cell. For
+ordered distinct centers $a<b$, the difference
+$B_\varphi(x,a)-B_\varphi(x,b)$ is affine in $x$ with positive slope
+$\varphi'(b)-\varphi'(a)$. Assigning each source point to a nearest center,
+with ordered tie-breaking, consequently gives contiguous cells. Starting
+with centers of a flat optimum, this reassignment and subsequent centroid
+updates cannot increase its distortion, and use at most $k$ cells.
+Duplicate centers, if any, may first be identified. This proves existence
+of a contiguous optimum.
+
+Splitting a nonsingleton cell into its smallest-location singleton and
+the other states strictly decreases its cost: their means are distinct,
+so the corresponding two-group Jensen gap is strictly positive. Any
+partition with fewer than $k<N$ cells can therefore be improved. Finally,
+the deficit identity
+$N-|P|=\sum_{C\in P}(|C|-1)$ gives the two asserted forms. Every adjacent
+pair supplies a feasible $(N-1)$-cell partition, which proves the formula
+for $q$.
+\end{proof}
+
+\begin{lemma}[Two adjacent costs inside a triple]
+\label{lem:triple}
+For three ordered states $A<B<C$, with their original positive weights,
+\[
+ D(ABC)\ge D(AB)+D(BC).
+\]
+\end{lemma}
+
+\begin{proof}
+For any cell, the Jensen kernel is
+\[
+ K_C(t)=\sum_{i\in C}p_i(x_i-t)_+-p_C(m_C-t)_+,
+ \qquad D(C)=\int_I K_C(t)g(t)\dd.
+\]
+The kernel identity follows by integrating $\varphi''$ twice; affine
+terms cancel. For each fixed $t$, the hinge $x\mapsto(x-t)_+$ is convex.
+The Jensen gap of a union equals the sum of the within-group Jensen gaps
+plus the nonnegative Jensen gap of the group centroids. Applying this to
+$AB$ and $C$ gives $K_{ABC}\ge K_{AB}$; applying it to $A$ and $BC$ gives
+$K_{ABC}\ge K_{BC}$. The two pair kernels have disjoint open supports,
+$(A,B)$ and $(B,C)$, and vanish at the common endpoint. Hence pointwise
+$K_{ABC}\ge K_{AB}+K_{BC}$. Integrate against $g\ge0$.
+\end{proof}
+

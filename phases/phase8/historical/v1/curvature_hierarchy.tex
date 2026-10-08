@@ -1,0 +1,862 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array,longtable,enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={Curvature Regularity and Sharp Degree Dependence in Optimal Cardinality Hierarchies},pdfauthor={Wenyu Huang},pdfsubject={Working paper on excess-risk hierarchy bounds},pdfkeywords={Bregman divergence, cardinality hierarchy, polynomial curvature, proper loss}}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Curvature and cardinality hierarchies}
+\fancyhead[R]{\small Working paper v1}
+\fancyfoot[C]{\thepage}
+\setlength{\parskip}{0.25em}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.15}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\ph}{\varphi}
+\newcommand{\B}{B_{\ph}}
+\newcommand{\D}{D_{\ph}}
+\newcommand{\OPT}{\operatorname{OPT}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\rd}{\,\mathrm d}
+\newcommand{\detp}{\mathrm{det}}
+\newcommand{\stp}{\mathrm{stoch}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\title{Curvature Regularity and Sharp Degree Dependence in Optimal Cardinality Hierarchies}
+\author{Wenyu Huang\\\small University of California San Diego}
+\date{Working paper v1\\7 October 2026}
+\begin{document}
+\maketitle
+\begin{center}\begin{minipage}{0.93\textwidth}\small
+\textbf{Status.} Originality has not been established. The proofs have undergone internal independent review, which is not external peer review. Classical tools and prior project results are identified explicitly. This manuscript makes no publication-priority claim.
+\end{minipage}\end{center}
+\begin{abstract}
+We study the excess Jensen risk incurred by requiring optimal finite representations at different output capacities to form a hierarchy. For four equal source masses and nonnegative polynomial curvature of degree at most $r$, we prove that the optimal deterministic and stochastic worst-case two- and three-output hierarchy prices both have sharp order $\Theta(r/\log r)$. The upper bound is uniform over arbitrary distinct posterior locations, including degenerating gaps. Its proof combines the competing hierarchy choices with curvature concentration, classical outer Fej\'er--Riesz factorization, and a spacing-uniform Poisson estimate. A squared-Chebyshev needle family, using a classical localization construction, gives the matching lower order at four fixed interior posteriors: its deterministic and stochastic prices are asymptotic to $r/(128\log r)$ and $r/(256\log r)$, respectively. The generator varies with degree, and the associated smooth strictly proper losses can be bounded. We also give fixed-generator regularity conditions: finite-order curvature zeros yield a source-size- and weight-independent all-capacity bound, covering generators analytic across the closed interval; monotone curvature gives a bound of $32/\alpha$ for source masses at least $\alpha$; and eventual endpoint monotonicity excludes four-equal-mass divergence under positive interior curvature. For arbitrary finite positive weights and source counts, the separate polynomial bounds remain $O(r^2)$ for two capacities and $O(r^4)$ for all capacities. These are excess-risk statements, with no claim of optimal leading constants, historical novelty, large absolute loss, total-risk price, or training guarantees.
+\end{abstract}
+
+\section{The question and the boundaries of the results}
+A flat representation with output capacity $k$ partitions a finite source into at most $k$ cells. Under a strictly proper binary loss, the excess Bayes risk of this representation is a scalar Jensen distortion. Flat minimizers at different capacities need not be compatible: a three-cell optimum need not refine a two-cell optimum. The hierarchy price asks how much distortion is necessary when one representation must be obtained by coarsening another.
+
+The distinction between a \emph{fixed} generator and a \emph{class} of generators is essential. The earlier Phase 7 working paper \cite{huang7}, Section 4, constructs a single smooth generator, with positive interior curvature, bounded curvature, and finite endpoint slopes, whose four-equal-mass price diverges along a sequence of posterior configurations. Its construction places successively weaker curvature gadgets at scales accumulating at the endpoints. That fixed smooth obstruction is prior project work, not a result first established here.
+
+The present paper asks two narrower questions. Which curvature assumptions preclude this fixed-generator obstruction? How large can the price be for polynomial curvature of bounded degree, when the generator itself is allowed to vary? The first question has several sufficient-condition answers. The second has a sharp asymptotic-order answer for four equal source masses: both deterministic and stochastic degree envelopes are $\Theta(r/\log r)$. The upper bound permits arbitrary posterior spacing, whereas one fixed equally spaced quartet witnesses the lower order. The constants are not asserted to be optimal.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.39\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}@{}}
+\toprule
+Curvature assumption & Source and hierarchy scope & Consequence \\
+\midrule
+Finitely many finite-order zeros & One fixed generator; arbitrary finite positive weights; all capacities & Price at most $32C_\ph/c_\ph$ \\
+Adjacent-interval mass comparison & One fixed comparison constant $A$; arbitrary finite positive weights; all capacities & Price at most $4Q(1+Q)$, $Q=4(A+1)^2$ \\
+Monotone curvature & Every source mass at least $\alpha$; all capacities & Price at most $32/\alpha$ \\
+Positive interior curvature and eventual endpoint monotonicity & One fixed $C^2$ generator; four equal masses; capacities two and three & Finite supremum over posterior locations \\
+Polynomial curvature of degree at most $r$ & Generator may vary; arbitrary finite positive weights; any two capacities & Price at most $1+128r^2$ \\
+Polynomial curvature of degree at most $r$ & Four equal masses; arbitrary posterior spacing; capacities two and three & Both degree envelopes $\Theta(r/\log r)$ \\
+Polynomial family of degree $r=4n$ & Varying generators; four fixed interior posteriors; equal masses & Prices $\sim r/(128\log r)$ and $\sim r/(256\log r)$ \\
+\bottomrule
+\end{tabular}
+\caption{Claim domains. Every price refers to excess distortion and positive flat denominators. Deterministic upper bounds also bound stochastic price. Constants for a fixed generator are not uniform over a generator class.}
+\label{tab:scope}
+\end{table}
+
+The proofs combine established hierarchy-transfer machinery with scalar curvature arguments. The nonlinear curvature coordinate, doubling geometry, Markov's inequality, squared-Chebyshev needles, and outer Fej\'er--Riesz factorization all have prior antecedents. Section~\ref{sec:provenance} records their roles. The detailed four-point gadget and its stochastic comparison are reproduced to make the polynomial construction self-contained, while retaining their attribution to \cite{huang7}.
+
+\section{Distortion and hierarchy definitions}
+\label{sec:definitions}
+Let $X$ take values in $\{1,\ldots,N\}$ with $p_i>0$ and $\sum_i p_i=1$. Let $x_i\in[0,1]$ be scalar posteriors, interpreted as $\mathbb P(Y=1\mid X=i)$ when a binary target is supplied. Unless stated otherwise, $\ph:[0,1]\to\R$ is continuously differentiable and strictly convex. For curvature statements it is $C^2$, and $g=\ph''\ge0$.
+
+Define the oriented Bregman divergence
+\begin{equation}
+\B(x,y)=\ph(x)-\ph(y)-\ph'(y)(x-y).
+\label{eq:bregman}
+\end{equation}
+For a partition $P$, put
+\begin{equation}
+\D(P)=\sum_i p_i\ph(x_i)-\sum_{C\in P}p_C\ph(m_C),\qquad
+p_C=\sum_{i\in C}p_i,\quad m_C=\frac{\sum_{i\in C}p_ix_i}{p_C}.
+\label{eq:distortion}
+\end{equation}
+For a single cell, $\D(C)$ means its contribution to this sum, with the original, unnormalized source weights. The flat optimum $\OPT_k$ is the minimum of $\D(P)$ over partitions with at most $k$ cells. Refinement never increases distortion. Exact cell counts can be supplied by splitting cells when $k\le N$.
+
+A deterministic hierarchy $H=(H_k)_{k=1}^N$ has $H_{k+1}$ refining $H_k$ and $|H_k|\le k$. Its price is the smallest $c$ satisfying $\D(H_k)\le c\OPT_k$ at every capacity. This cost-inequality definition also handles zero optima. When ratios are used, only capacities with $\OPT_k>0$ are included, with the additional requirement of zero hierarchical cost at a zero optimum. A two-level hierarchy with capacities $k<\ell$ is defined in the same way using just those levels. For four equal source masses, write
+\begin{equation}
+\rho_{\ph,\detp}=\min_{H_3\succeq H_2}\max\left\{
+\frac{\D(H_2)}{\OPT_2},\frac{\D(H_3)}{\OPT_3}\right\},
+\label{eq:detprice}
+\end{equation}
+where $H_3\succeq H_2$ denotes refinement, and both denominators are positive.
+
+For a channel $X\to Z$, define
+\begin{equation}
+\D(Z)=\E\ph(x_X)-\E\ph\bigl(\E[x_X\mid Z]\bigr).
+\label{eq:channel}
+\end{equation}
+A stochastic two-level hierarchy is a degradation chain $X\to Z_\ell\to Z_k$ with the indicated output budgets. Its price $\rho_{\ph,\stp}$ is the infimum of the corresponding maximum ratio. No public randomization variable is supplied to the predictor. In the binary interpretation, one can append $Y-X$ to the chain. Every deterministic hierarchy is an admissible stochastic hierarchy.
+
+\begin{lemma}[Integral and centroid identities]
+\label{lem:identities}
+For $u<v$,
+\begin{align}
+\B(v,u)&=\int_u^v(v-t)g(t)\rd t,&
+\B(u,v)&=\int_u^v(t-u)g(t)\rd t,\label{eq:integrals}\\
+S_\ph(u,v)&:=\B(u,v)+\B(v,u)=(v-u)\int_u^v g(t)\rd t.\label{eq:symmetric}
+\end{align}
+For every cell $C$ and center $q\in[0,1]$,
+\begin{equation}
+\sum_{i\in C}p_i\B(x_i,q)=\D(C)+p_C\B(m_C,q).
+\label{eq:centroid}
+\end{equation}
+In particular, the ordinary weighted arithmetic mean $m_C$ minimizes the left side.
+\end{lemma}
+\begin{proof}
+Integrating $\ph''$ twice gives \eqref{eq:integrals}, and addition gives \eqref{eq:symmetric}. Expanding \eqref{eq:bregman}, subtracting the expression centered at $m_C$, and using $\sum_{i\in C}p_i(x_i-m_C)=0$ gives \eqref{eq:centroid}. Strict convexity makes its final term nonnegative, with equality precisely when $q=m_C$.
+\end{proof}
+
+\begin{lemma}[Stochastic flat optima]
+\label{lem:flat}
+For every output budget $k$, the infimum of \eqref{eq:channel} over all channels with at most $k$ outputs equals $\OPT_k$.
+\end{lemma}
+\begin{proof}
+Any stochastic encoder can be generated by a random function table $U$, independent of $X$: for each possible input draw its output according to that row of the channel, and reveal only the output corresponding to the realized input. Conditional on $U$, the encoder is deterministic with at most $k$ outputs. Conditional Jensen gives
+\[
+\E\ph(\E[x_X\mid Z])\le \E\ph(\E[x_X\mid Z,U]),
+\]
+so $\D(Z)\ge\E_U\D(Z\mid U)\ge\OPT_k$. Conversely, a deterministic flat minimizer is a channel. Thus randomization does not change the flat denominators used throughout this paper.
+\end{proof}
+
+The Bregman centroid interpretation is classical \cite{banerjee}. Proper-loss interpretations are also classical \cite{gneiting,reid}. Positive rescaling of $\ph$ scales all distortions and leaves every price unchanged; adding an affine function leaves every distortion unchanged.
+
+\section{Transferring flat approximations to a hierarchy}
+\label{sec:transfer}
+We use the following established augmentation principle. It is the framework of Lin, Nagarajan, Rajaraman, and Williamson \cite{lin}, as restated in Gro\ss wendt \cite[Theorem 2.11, p.~29]{grosswendt}. Its parameter names vary between sources; here they are fixed by the displayed inequality.
+
+\begin{theorem}[Classical augmentation principle]
+\label{thm:augmentation}
+Suppose a refinement-monotone clustering cost has the following property: for each partition $P$ and each smaller desired capacity $k$, a coarsening $P'$ with at most $k$ cells satisfies
+\begin{equation}
+D(P')\le\gamma D(P)+\delta\OPT_k,\qquad \gamma,\delta\ge1.
+\label{eq:augment}
+\end{equation}
+Then there exists a hierarchy at all capacities with approximation factor at most $4\gamma\delta$.
+\end{theorem}
+This theorem is invoked as a published ingredient, not proved or claimed as a new result here. Hierarchical location and clustering approximations have an extensive prior literature, including Plaxton \cite{plaxton} and Arutyunova and R\"oglin \cite{arutyunova}. The factor-$32$ squared-Euclidean application is recorded in \cite[Lemma 2.13, pp.~30--31; Theorem 1.2, p.~32]{grosswendt}. We give the short positive-real-weight extension needed below.
+
+\begin{lemma}[Weighted Hilbert-space transfer]
+\label{lem:hilbert}
+For any finite collection of points in a real Hilbert space, with arbitrary positive weights, an all-capacity squared-distance hierarchy exists with factor at most $32$.
+\end{lemma}
+\begin{proof}
+Let $M$ be one cell of a fine partition, with total weight $W$ and centroid $m$. Let $c_1,\ldots,c_k$ be target centers, and assign each point $x_i$ to a closest center $c_{a(i)}$. The elementary inequality $\|u+v\|^2\le2\|u\|^2+2\|v\|^2$ gives
+\begin{align*}
+W\min_j\|m-c_j\|^2
+&\le\sum_{i\in M}p_i\|m-c_{a(i)}\|^2\\
+&\le 2\sum_{i\in M}p_i\|m-x_i\|^2
+ +2\sum_{i\in M}p_i\|x_i-c_{a(i)}\|^2.
+\end{align*}
+Writing $V(M)=\sum_{i\in M}p_i\|x_i-m\|^2$, the squared-distance centroid identity yields
+\[
+\min_j\sum_{i\in M}p_i\|x_i-c_j\|^2
+\le3V(M)+2\sum_{i\in M}p_i\|x_i-c_{a(i)}\|^2.
+\]
+Assign each fine cell to its minimizing target center and merge all cells assigned to the same center. Optimizing the centroid of each merged cell only decreases cost. Summing and weakening $3V(M)$ to $4V(M)$ proves \eqref{eq:augment} with $(\gamma,\delta)=(4,2)$ when the target partition is flat optimal. Theorem~\ref{thm:augmentation} gives $32$. Every calculation occurs in the finite-dimensional affine span of the input points, so the same proof applies in a Hilbert space. No rationality or replication assumption on the weights is used.
+\end{proof}
+
+A second transfer exploits the Bregman centroid identity directly.
+\begin{proposition}[An oriented three-point sufficient condition]
+\label{prop:qt}
+Suppose that, for some $Q\ge1$ and every $x,u,v\in[0,1]$,
+\begin{equation}
+\B(u,v)\le Q\{\B(x,u)+\B(x,v)\}.
+\label{eq:qt}
+\end{equation}
+Then all capacities admit a deterministic hierarchy of factor at most $4Q(1+Q)$. For any two capacities $k<\ell$, a hierarchy exists with price at most $1+2Q$, for arbitrary finite positive source weights. These are also stochastic upper bounds.
+\end{proposition}
+\begin{proof}
+Let $P$ be the fine partition and $O$ a target partition with at most $k$ cells and centroids $q_1,\ldots,q_k$. For each fine cell $C$, choose a target centroid minimizing $\B(m_C,q_j)$. Let $q(i)$ be the centroid assigned to input $i$ by $O$. Then
+\begin{align*}
+p_C\min_j\B(m_C,q_j)
+&\le\sum_{i\in C}p_i\B(m_C,q(i))\\
+&\le Q\sum_{i\in C}p_i\{\B(x_i,m_C)+\B(x_i,q(i))\}.
+\end{align*}
+Merge fine cells assigned to the same target centroid. By \eqref{eq:centroid}, evaluating at that target centroid and then optimizing the merged centroid gives
+\begin{equation}
+\D(P')\le(1+Q)\D(P)+Q\D(O).
+\label{eq:nesting}
+\end{equation}
+Theorem~\ref{thm:augmentation} gives the all-capacity bound. For two capacities, choose $P$ flat optimal at $\ell$ and $O$ flat optimal at $k$. Since $\OPT_\ell\le\OPT_k$, the coarse ratio is at most $1+2Q$, and the fine ratio is one. Deterministic hierarchies are stochastic admissible, and Lemma~\ref{lem:flat} identifies their flat denominators.
+\end{proof}
+
+\section{Finite-order curvature zeros and analytic generators}
+\label{sec:finiteorder}
+A positive lower bound on $g$ immediately compares $\B$ with squared Euclidean distance in the original posterior coordinate. The next result permits curvature to vanish at finitely many points. The relevant coordinate is instead the integral of the square root of curvature.
+
+\begin{theorem}[Finite-order curvature comparison]
+\label{thm:finiteorder}
+Assume $g\ge0$ is continuous on $[0,1]$, is positive except at finitely many points $z$, and at each zero satisfies
+\begin{equation}
+c_z|t-z|^{m_z}\le g(t)\le C_z|t-z|^{m_z}
+\label{eq:finiteorder}
+\end{equation}
+on a sufficiently small available one-sided or two-sided neighborhood, where $0<c_z\le C_z<\infty$ and $m_z\ge0$. Put
+\[
+h(x)=\int_0^x\sqrt{g(t)}\rd t.
+\]
+There are constants $0<c_\ph\le C_\ph<\infty$, depending on this fixed generator, such that
+\begin{equation}
+c_\ph|h(x)-h(y)|^2\le\B(x,y)\le C_\ph|h(x)-h(y)|^2
+\label{eq:hcompare}
+\end{equation}
+for every $x,y\in[0,1]$. Every finite source with arbitrary positive weights admits an all-capacity deterministic hierarchy of factor at most $32C_\ph/c_\ph$. The same bound holds for stochastic price.
+\end{theorem}
+\begin{proof}
+The map $h$ is continuous and strictly increasing. Away from the diagonal $x=y$, the numerator and denominator of $\B(x,y)/|h(x)-h(y)|^2$ are continuous and positive. Their ratio is therefore bounded above and away from zero on compact subsets avoiding the diagonal. Near a point where $g>0$, its uniform continuity and \eqref{eq:integrals} imply that this ratio tends to $1/2$ as both arguments approach that point.
+
+It remains to control both orientations near a zero $z$. Suppose $x<y$ and their interval is contained in the neighborhood in \eqref{eq:finiteorder}. Set $L=y-x$ and $a=(z-x)/L$. The substitution $t=x+Ls$ shows that the model for $\B(y,x)/|h(y)-h(x)|^2$ is
+\begin{equation}
+R_m(a)=\frac{\int_0^1(1-s)|s-a|^m\rd s}
+{\left(\int_0^1|s-a|^{m/2}\rd s\right)^2}.
+\label{eq:modelratio}
+\end{equation}
+The actual ratio $\B(y,x)/|h(y)-h(x)|^2$ lies between $(c_z/C_z)R_{m_z}(a)$ and $(C_z/c_z)R_{m_z}(a)$. For $\B(x,y)$ replace $1-s$ by $s$. Each model ratio is continuous and strictly positive for every finite real $a$. Dividing its numerator and denominator by $|a|^m$ shows that it tends to $1/2$ as $a\to\pm\infty$. It consequently has a positive infimum and a finite supremum over all $a\in\R$. A finite cover of the diagonal by the positive-curvature and zero neighborhoods, combined with the off-diagonal compactness argument, proves \eqref{eq:hcompare}.
+
+For a cell $C$, minimize \eqref{eq:hcompare} after summing with weights $p_i$. Since $h([0,1])$ is an interval containing all transformed data, its weighted arithmetic mean belongs to that interval. Hence
+\[
+\min_q\sum_{i\in C}p_i|h(x_i)-h(q)|^2
+=\sum_{i\in C}p_i|h(x_i)-\overline h_C|^2,
+\quad
+\overline h_C=\frac{\sum_{i\in C}p_ih(x_i)}{p_C}.
+\]
+The centroid identity then gives $c_\ph V_h(P)\le\D(P)\le C_\ph V_h(P)$ for every partition. Notice that this argument minimizes over the center before comparing; it does not assert $h(m_C)=\overline h_C$. Apply Lemma~\ref{lem:hilbert} to the transformed points and compare the flat minima. This gives the claimed hierarchy factor.
+\end{proof}
+
+\begin{corollary}[Analyticity on a neighborhood of the closed interval]
+\label{cor:analytic}
+If $\ph$ is strictly convex on $[0,1]$ and real analytic on an open neighborhood of $[0,1]$, the conclusion of Theorem~\ref{thm:finiteorder} holds.
+\end{corollary}
+\begin{proof}
+The analytic function $g=\ph''$ is nonnegative on $[0,1]$ and not identically zero. Its zeros in this compact interval are finite; otherwise an accumulation point in the analytic neighborhood would force it to vanish identically. The first nonzero Taylor coefficient at each zero supplies the two-sided bounds \eqref{eq:finiteorder} on the available neighborhood. Interior orders are even; an endpoint order need not be even when only the interval side is considered.
+\end{proof}
+
+For example, $\ph(x)=(x-1/2)^4$ has an interior curvature zero and still satisfies the theorem. The corollary is a \emph{fixed-generator} statement. It gives neither a uniform constant over analytic generators nor a conclusion from analyticity only on $(0,1)$.
+
+The Hessian-root coordinate has antecedents in Bregman and geodesic geometry. Gzyl \cite[Section 6]{gzyl} gives related one-sided comparisons under additional sign and nondegeneracy conditions. Original-coordinate $\mu$-similarity and approximate Bregman triangle inequalities appear in Ackermann and Bl\"omer \cite[Definition 2.2 and Lemma 2.2]{ackermann}. Neither antecedent should be read as directly supplying the finite-order two-sided statement above.
+
+\section{Adjacent curvature masses and a direct nesting bound}
+\label{sec:doubling}
+Let $\mu(I)=\int_I g(t)\rd t$. We use an explicit adjacent-interval formulation rather than an unstated convention for a doubling constant.
+\begin{theorem}[Adjacent-interval comparison]
+\label{thm:doubling}
+Suppose adjacent equal-length intervals contained in $[0,1]$ satisfy
+\begin{equation}
+A^{-1}\le\frac{\mu([a,a+s])}{\mu([a+s,a+2s])}\le A
+\label{eq:adjacent}
+\end{equation}
+for some fixed $A\ge1$ and every $s>0$ with $[a,a+2s]\subset[0,1]$. Then \eqref{eq:qt} holds with $Q=4(A+1)^2$. All capacities admit hierarchy price at most $4Q(1+Q)$, independently of the number of source states and their positive weights.
+\end{theorem}
+\begin{proof}
+For an interval $I=[u,v]$ of length $L$, either oriented integral in \eqref{eq:integrals} is at most $L\mu(I)=S_\ph(u,v)$. The half of $I$ on which the relevant linear kernel is at least $L/2$ has mass at least $\mu(I)/(A+1)$. Thus
+\begin{equation}
+\frac{S_\ph(u,v)}{2(A+1)}\le\B(u,v)\le S_\ph(u,v).
+\label{eq:orientation}
+\end{equation}
+If an anchor $x$ is between $u$ and $v$, denote the longer adjacent subinterval by $I$ and the shorter by $J$. The subinterval of $I$ adjacent to $J$ and of length $|J|$ has mass at least $\mu(J)/A$. Hence $\mu(J)\le A\mu(I)$, and
+\begin{align*}
+S_\ph(u,v)&=(|I|+|J|)(\mu(I)+\mu(J))\\
+&\le2(A+1)|I|\mu(I)\\
+&\le2(A+1)\{S_\ph(x,u)+S_\ph(x,v)\}.
+\end{align*}
+An endpoint anchor follows by continuity. For an anchor outside $[u,v]$, interval containment gives the same inequality with constant one. Combining this comparison with \eqref{eq:orientation} proves \eqref{eq:qt} with $Q=4(A+1)^2$. Proposition~\ref{prop:qt} completes the proof.
+\end{proof}
+
+In one dimension, adjacent-interval comparability is a standard doubling or quasisymmetry condition. Connections between doubling curvature measures, convex sections, and Bregman-type quasi-distances appear in the convex-section and Monge--Amp\`ere literature \cite{calogero,maldonado}. The proof above is included to fix the orientations and constants needed for hierarchy transfer. No necessity assertion is being made.
+
+\section{Monotone curvature without doubling}
+\label{sec:monotone}
+The next argument permits arbitrarily flat curvature but uses a lower bound on each individual source mass.
+\begin{theorem}[A minimum-mass bound]
+\label{thm:monotone}
+Suppose $g\ge0$ is continuous and monotone on the posterior interval. If every source mass satisfies $p_i\ge\alpha>0$, there is an all-capacity hierarchy of factor at most $32/\alpha$. The same conclusion holds if $g$ is a sum of a nonnegative increasing continuous function and a nonnegative decreasing continuous function. In particular, it holds when $g$ first decreases to one minimum and then increases.
+\end{theorem}
+\begin{proof}
+It suffices initially to consider increasing curvature on $[0,1]$. Its Stieltjes measure $\nu=\rd g$ is finite and positive. Integrating twice shows that, up to an affine function,
+\begin{equation}
+\ph(x)=\frac{g(0)}2x^2+\frac12\int_0^1(x-s)_+^2\,\nu(\rd s).
+\label{eq:hingerep}
+\end{equation}
+For $\psi_s(x)=(x-s)_+^2/2$, work with the conditional distribution within one cell and write $Y=(X-s)_+$. Its conditional Jensen cost is
+\[
+J_s=\frac12\{\E Y^2-(\E X-s)_+^2\}.
+\]
+Since $(\E X-s)_+\le\E Y$, one has $J_s\ge\Var(Y)/2$. If every cell value is at least $s$, equality holds. Otherwise a source value with $Y=0$ has conditional mass at least $\alpha$: conditioning divides its original mass by a number no greater than one. Cauchy--Schwarz restricted to positive $Y$ gives
+\[
+(\E Y)^2\le(1-\alpha)\E Y^2,
+\qquad
+\Var(Y)\ge\alpha\E Y^2.
+\]
+Consequently $J_s\le\E Y^2/2\le\Var(Y)/(2\alpha)$.
+
+Define the Hilbert-space feature map
+\[
+H(x)=\left(\sqrt{g(0)}x,\,\bigl((x-s)_+\bigr)_{s\in[0,1]}\right)
+\in\R\oplus L^2(\nu).
+\]
+Integrate the preceding inequalities in \eqref{eq:hingerep}, include the exact quadratic term, and multiply each conditional cost by its cell mass. This gives, for every partition,
+\[
+\frac12 V_H(P)\le\D(P)\le\frac{1}{2\alpha}V_H(P).
+\]
+Lemma~\ref{lem:hilbert} therefore gives $32/\alpha$.
+
+For decreasing $g$, reflect the posterior coordinate and use $(s-x)_+$. Nonnegative sums are handled by the direct sum of the two Hilbert feature spaces. If $g$ decreases up to $c$ and increases thereafter, write
+\[
+g(x)=\bigl(g(\min\{x,c\})-g(c)\bigr)+g(\max\{x,c\}).
+\]
+The first summand is nonnegative and decreasing; the second is nonnegative and increasing. This proves the last assertion.
+\end{proof}
+
+\begin{proposition}[An infinitely flat non-doubling example]
+\label{prop:nondoubling}
+Set $g(0)=0$ and $g(x)=e^{-1/x}$ for $x>0$, and obtain $\ph$ by integrating twice. Its curvature is smooth, strictly positive in the interior, increasing, and infinitely flat at zero. Its curvature measure fails \eqref{eq:adjacent}, but its four-equal-mass all-capacity hierarchy price is at most $128$.
+\end{proposition}
+\begin{proof}
+The standard smooth extension of $e^{-1/x}$ at zero has all derivatives zero there, and its derivative is positive for $x>0$. For $r>0$ sufficiently small,
+\[
+\mu([0,r])\le r e^{-1/r},\qquad
+\mu([r,2r])\ge\mu([3r/2,2r])\ge\frac r2e^{-2/(3r)}.
+\]
+Their ratio is at least $\tfrac12e^{1/(3r)}$ and diverges as $r\downarrow0$. Nevertheless Theorem~\ref{thm:monotone} applies with $\alpha=1/4$.
+\end{proof}
+Thus doubling is not necessary for bounded price on four equal masses. This example establishes no bound independent of $\alpha$ and is not asserted to be symmetric.
+
+\section{Endpoint regularity and fixed-generator divergence}
+\label{sec:endpoints}
+The preceding minimum-mass result combines with compactness to localize a possible four-state obstruction.
+\begin{theorem}[Eventual endpoint monotonicity]
+\label{thm:endpoints}
+Let $\ph\in C^2[0,1]$ satisfy $g=\ph''>0$ on $(0,1)$. Suppose $g$ is monotone on a neighborhood of zero and on a neighborhood of one, with either direction allowed at either endpoint. The supremum of the deterministic two- and three-output hierarchy price over four equally weighted posterior locations, with positive flat denominators, is finite. The stochastic supremum is finite as well.
+\end{theorem}
+\begin{proof}
+Suppose there is a sequence of sorted four-tuples with deterministic price tending to infinity. Extract a subsequence whose four coordinates converge. All partition costs are uniformly bounded because $\ph$ is continuous on a compact interval. Choosing a flat-optimal three-cell partition and any two-cell coarsening shows that divergence forces $\OPT_2\to0$.
+
+There are finitely many two-cell partitions, and each cost is continuous in the four coordinates. Strict convexity implies that a zero-cost cell contains only equal posterior values. A limiting zero-cost two-cell partition therefore shows that the limiting tuple has at most two distinct values.
+
+If there are exactly two distinct limiting values, partition the source indices into the two corresponding groups. This is the unique zero-cost two-cell partition at the limit; every other two-cell partition crosses the groups and has positive limiting cost. The separated partition is consequently uniquely flat optimal at capacity two for all sufficiently late terms. At least one group contains a pair, whose cost tends to zero. Every cross-group pair has positive limiting cost. Thus every optimal three-cell partition eventually merges a within-group pair and refines the flat two-cell optimum. The hierarchy price is then one, a contradiction.
+
+If the limiting tuple has a single value in $(0,1)$, curvature is bounded above and below by positive constants on a small neighborhood of that value. The resulting squared-distance comparison and Lemma~\ref{lem:hilbert} bound the hierarchy prices uniformly. If the limiting value is an endpoint, all four points eventually lie in its monotonicity neighborhood, where Theorem~\ref{thm:monotone} gives the bound $128$. These cases exhaust the possible limits, contradicting divergence.
+\end{proof}
+
+\begin{corollary}[A necessary endpoint condition]
+\label{cor:necessary}
+Suppose $\ph\in C^\infty[0,1]$ and $g=\ph''>0$ on $(0,1)$. If its four-equal-mass deterministic hierarchy price is unbounded, then there is an endpoint $e\in\{0,1\}$ such that
+\[
+g(e)=g'(e)=g''(e)=\cdots=0,
+\]
+and $g$ is nonmonotone on every one-sided neighborhood of $e$. The same necessary condition holds if the stochastic price is unbounded.
+\end{corollary}
+\begin{proof}
+Apply the compactness argument in Theorem~\ref{thm:endpoints} to a divergent sequence. Its only possible limiting configuration is one common endpoint. Positive curvature there would give a local quadratic comparison; monotonicity on any one-sided neighborhood would give the minimum-mass bound. Thus $g(e)=0$ and eventual monotonicity fails at this endpoint.
+
+If a derivative of $g$ at $e$ were nonzero, choose the least order $m\ge1$ with this property. Taylor expansion on the interval side gives a nonzero leading term of order $m$ for $g$, and a fixed-sign leading term of order $m-1$ for $g'$. Hence $g$ would be monotone sufficiently near $e$, a contradiction. Finally, stochastic price is no larger than deterministic price, so stochastic divergence implies deterministic divergence.
+\end{proof}
+
+The endpoint features in Corollary~\ref{cor:necessary} are jointly insufficient. For example, set
+\[
+\widetilde g(0)=0,\qquad
+\widetilde g(x)=e^{-1/x}\bigl(2+\sin(x^{-3})\bigr)\quad(x>0).
+\]
+This curvature is smooth and infinitely flat at zero, is positive in the interior, and is nonmonotone on every neighborhood of zero. Its derivative is negative at $x=(2\pi n)^{-1/3}$ and positive at $x=((2n+1)\pi)^{-1/3}$ for large $n$. Nevertheless $g_0\le\widetilde g\le3g_0$, where $g_0=e^{-1/x}$. The integral formula \eqref{eq:integrals}, followed by minimization over centers, compares every partition cost within a factor of three. The $128$ all-capacity bound for $g_0$ therefore transfers to $384$ for $\widetilde g$ on four equal masses.
+
+These conditions are necessary, not sufficient and not a classification. For merely $C^2$ generators, the curvature need not be differentiable; the appropriate conclusion is failure of eventual monotonicity, rather than a count of differentiable turning points. The infinitely flat monotone example in Proposition~\ref{prop:nondoubling} also shows why flatness alone does not establish an obstruction.
+
+\section{Polynomial curvature and general degree bounds}
+\label{sec:polynomialupper}
+Let $r\ge1$ and suppose $g=\ph''$ is a nonnegative nonzero polynomial of degree at most $r$ on $[0,1]$. Such a curvature yields a strictly convex generator because it cannot vanish on any interval. The generator degree is at most $r+2$; throughout, $r$ counts \emph{curvature degree}.
+
+\begin{lemma}[A Markov mass estimate]
+\label{lem:markov}
+Let $I=[u,v]$, $L=v-u>0$, $M=\max_I g$, and $\mu=\int_I g$. Then
+\begin{equation}
+M\le\frac{8r^2\mu}{L},\qquad
+\int_I|t-a|g(t)\rd t\ge\frac{L\mu}{64r^2}\quad(a\in I).
+\label{eq:markovmass}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Classical Markov's inequality \cite{shadrin}, rescaled from $[-1,1]$ to $I$, gives $\|g'\|_\infty\le2r^2M/L$. At a maximizer, at least one direction remains in $I$ for a distance $L/(4r^2)$. On that segment $g\ge M/2$, so integration gives the first bound.
+
+Put $s=L/(32r^2)$. The mass of the set $\{t\in I:|t-a|<s\}$ is at most $2sM\le\mu/2$. At least half the total mass is therefore at distance at least $s$ from $a$. Its contribution to the first moment is at least $s\mu/2$, proving the second bound.
+\end{proof}
+
+\begin{theorem}[A degree-dependent two-level bound]
+\label{thm:polyupper}
+For nonnegative nonzero polynomial curvature of degree at most $r\ge1$, \eqref{eq:qt} holds with $Q=64r^2$. Every finite source with arbitrary positive weights admits a deterministic hierarchy for any two prescribed capacities with price at most $1+128r^2$. All capacities simultaneously admit the factor $4Q(1+Q)=O(r^4)$. These bounds also hold for stochastic hierarchy price.
+\end{theorem}
+\begin{proof}
+For $u<v$ and $a\in[u,v]$, the exact integral identities give
+\[
+\B(a,u)+\B(a,v)=\int_u^v|t-a|g(t)\rd t.
+\]
+Either oriented divergence between $u$ and $v$ is at most $(v-u)\int_u^v g$. Lemma~\ref{lem:markov} proves \eqref{eq:qt} with $Q=64r^2$ for an interior anchor. If $a$ is outside $[u,v]$, projecting it onto this interval decreases both anchor divergences, because
+\[
+\frac{\partial}{\partial a}\B(a,c)=\ph'(a)-\ph'(c),\qquad c\in\{u,v\}.
+\]
+Thus \eqref{eq:qt} holds for every anchor. Proposition~\ref{prop:qt} gives the stated bounds.
+\end{proof}
+Constant curvature, $r=0$, is ordinary quadratic distortion and is handled by Lemma~\ref{lem:hilbert}, rather than by division by $r$ in the preceding estimates.
+
+Define the two- and three-output degree envelopes
+\begin{align}
+C_r^{\detp}&=\sup_{\substack{0\not\equiv\ph''\ge0\\\deg(\ph'')\le r}}
+\ \sup_{\substack{x_1,x_2,x_3,x_4\in[0,1]\\\OPT_2,\OPT_3>0}}
+\rho_{\ph,\detp},\label{eq:envelope}\\
+C_r^{\stp}&=\sup_{\substack{0\not\equiv\ph''\ge0\\\deg(\ph'')\le r}}
+\ \sup_{\substack{x_1,x_2,x_3,x_4\in[0,1]\\\OPT_2,\OPT_3>0}}
+\rho_{\ph,\stp},\nonumber
+\end{align}
+with equal source masses in these definitions. Theorem~\ref{thm:polyupper} applies in the broader setting of arbitrary source counts, weights, and pairs of capacities. For these four-equal-mass envelopes, the next two sections give successively an elementary explicit bound and the sharp asymptotic order:
+\begin{equation}
+C_r^{\stp}\le C_r^{\detp}
+\le \min\left\{384r+1728,\ C\frac{r+1}{\log(r+2)}\right\}
+\label{eq:envelopeupper}
+\end{equation}
+for an absolute constant $C$. The elementary bound is retained as an explicit baseline and to record the compatible-optimizer geometry used in the sharp proof.
+\input{fixed_quartet.tex}
+\input{uniform_log_upper.tex}
+
+\section{A polynomial lower construction at fixed posteriors}
+\label{sec:lower}
+We now construct a varying family of polynomial generators with large hierarchy price. The four posterior locations and all source masses remain fixed. The squared-Chebyshev interior needle is a classical localization device: Kro\'o and Szabados \cite[Proposition 1 and its proof]{krooszabados} use the same algebraic construction, up to scaling and normalization, with width proportional to $\log n/n$. All tail and approximation estimates required here are proved directly below. The reference hinge gadget, its Pareto calculation, and its stochastic comparison come from Phase 7 \cite[Section 4]{huang7}. All required calculations are given below.
+
+\subsection{A polynomial kernel with small tail}
+Let $T_n$ be the Chebyshev polynomial of the first kind. For integer $n\ge1$ and $0<\varepsilon\le1/16$, define
+\begin{align}
+p_{n,\varepsilon}(s)&=T_n\left(1+\frac{\varepsilon^2-s^2}{16}\right)^2,
+&&|s|\le4,\label{eq:chebkernel}\\
+Z_{n,\varepsilon}&=\int_{-4}^4p_{n,\varepsilon}(s)\rd s,
+&\kappa_{n,\varepsilon}(s)&=\frac{p_{n,\varepsilon}(s)}{Z_{n,\varepsilon}}
+\quad(|s|\le4),\nonumber
+\end{align}
+and set $\kappa_{n,\varepsilon}=0$ outside $[-4,4]$. This is an even probability density with mean zero. The cutoff density need not be smooth at $\pm4$; every later evaluation occurs strictly inside its support.
+
+For $\varepsilon\le|s|\le4$, the argument of $T_n$ lies in $[\varepsilon^2/16,1]$, so $p_{n,\varepsilon}(s)\le1$. For $|s|\le\varepsilon/2$, the argument is at least $1+3\varepsilon^2/64$. The standard Chebyshev representation \cite[Eq.~18.5.1]{dlmf} gives
+\[
+T_n(1+u)=\cosh\bigl(n\operatorname{arcosh}(1+u)\bigr).
+\]
+For $0\le u\le1$, the inequality $\cosh(\sqrt u)\le1+u$ implies $\operatorname{arcosh}(1+u)\ge\sqrt u$. One way to verify the former is to compare its power series:
+$\sum_{j\ge1}u^j/(2j)!\le u(\cosh1-1)\le u$.
+Consequently, with $c=\sqrt3/4$,
+\begin{equation}
+p_{n,\varepsilon}(s)\ge\tfrac14e^{cn\varepsilon}
+\quad(|s|\le\varepsilon/2),\qquad
+Z_{n,\varepsilon}\ge\frac\varepsilon4e^{cn\varepsilon}.
+\label{eq:normalizer}
+\end{equation}
+
+Define the smoothed hinge
+\[
+H(t)=\int_{-4}^4(t-s)_+\kappa_{n,\varepsilon}(s)\rd s.
+\]
+Symmetry and mean zero imply $H(-t)=H(t)-t$. For $t\ge\varepsilon$, the difference $H(t)-t$ is a tail integral bounded by $\int_\varepsilon^4s\kappa(s)\rd s$. Reflection gives the same bound for $t\le-\varepsilon$. Hence
+\begin{equation}
+0\le H(t)-t_+\le\frac8{Z_{n,\varepsilon}}
+\le32\varepsilon^{-1}e^{-cn\varepsilon}=:\delta_{n,\varepsilon},
+\qquad |t|\ge\varepsilon.
+\label{eq:hingeerror}
+\end{equation}
+The constant $8$ uses $\int_\varepsilon^4s\rd s\le8$ and the tail bound $p\le1$.
+
+Choose, for all sufficiently large $n$,
+\begin{equation}
+\varepsilon_n=\frac{16\log n}{n}\le\frac1{16}.
+\label{eq:epsilon}
+\end{equation}
+Then
+\begin{equation}
+\delta_n:=32\varepsilon_n^{-1}e^{-cn\varepsilon_n}
+=\frac{2n^{1-4\sqrt3}}{\log n}=o(\varepsilon_n^3).
+\label{eq:deltarate}
+\end{equation}
+Here and below logarithms are natural.
+
+\subsection{Polynomial curvature on the required interval}
+Using the hinge $H$ with parameters $n,\varepsilon_n$, put
+\begin{equation}
+F_n(z)=H(-z-\varepsilon_n)+H(z-1-\varepsilon_n)
+       +4\varepsilon_n^2(z-1/2)^2.
+\label{eq:Fn}
+\end{equation}
+Reflection $z\mapsto1-z$ exchanges the two hinge terms, so $F_n$ is symmetric about $1/2$. For $z\in[-3/2,5/2]$, both shifted arguments lie strictly inside $(-4,4)$. On this interval,
+\begin{equation}
+F_n''(z)=\kappa_{n,\varepsilon_n}(-z-\varepsilon_n)
++\kappa_{n,\varepsilon_n}(z-1-\varepsilon_n)+8\varepsilon_n^2.
+\label{eq:Fncurvature}
+\end{equation}
+Each kernel summand is polynomial there. Each summand has even degree $4n$ and a positive leading coefficient, so the two leading terms do not cancel. Thus $F_n''$ has degree exactly $4n$ and is strictly positive, while $F_n$ restricted to this interval has degree exactly $4n+2$.
+
+For intermediate calculations take the four real locations
+\[
+(z_A,z_C,z_D,z_B)=(-1,0,1,2),\qquad p_A=p_C=p_D=p_B=\tfrac14.
+\]
+They will be affinely transformed to binary posteriors in Section~\ref{sec:normalization}. The comparison generator is the nonsmooth function
+\begin{equation}
+F_\varepsilon^0(z)=(-z-\varepsilon)_++(z-1-\varepsilon)_+
++4\varepsilon^2(z-1/2)^2.
+\label{eq:reference}
+\end{equation}
+Every nonempty deterministic subset mean belongs to
+\begin{equation}
+E=\{-1,-1/2,0,1/3,1/2,2/3,1,3/2,2\}.
+\label{eq:means}
+\end{equation}
+All are at least $\varepsilon$ from both hinge locations $-\varepsilon$ and $1+\varepsilon$ when $\varepsilon\le1/16$. Therefore \eqref{eq:hingeerror} gives
+\[
+|F_n(z)-F_{\varepsilon_n}^0(z)|\le2\delta_n\qquad(z\in E).
+\]
+Every deterministic partition distortion differs from its reference value by at most $4\delta_n$: the input and cell-mean weights each sum to one.
+
+\subsection{Reference cell costs and all deterministic alternatives}
+\label{sec:gadget}
+The following calculation is reproduced from \cite[Lemma 4.2]{huang7}; its role here is to identify which costs survive polynomial approximation.
+
+Write $a,b,s,q,t,u$ for the costs of a near pair $AC$ or $DB$, a far pair $AD$ or $CB$, the middle pair $CD$, the outer pair $AB$, a triple with one outer point, and a triple with both outer points, respectively. These costs include the original source weights $1/4$. Then
+\begin{align}
+a&=\frac\varepsilon4+\frac{\varepsilon^2}2,
+&s&=\frac{\varepsilon^2}2,\label{eq:costs}\\
+b=t&=\frac{1-\varepsilon}4+2\varepsilon^2,
+&q&=\frac{1-\varepsilon}2+\frac92\varepsilon^2,\nonumber\\
+u&=\frac{1-\varepsilon}2+\frac{14}3\varepsilon^2.&&\nonumber
+\end{align}
+To verify the hinge contributions, put $V_\varepsilon(z)=(-z-\varepsilon)_++(z-1-\varepsilon)_+$. Its values at the four inputs are $(1-\varepsilon,0,0,1-\varepsilon)$. A near pair has mean $-1/2$ or $3/2$ and hinge cost
+\[
+\frac{1-\varepsilon}4-\frac12\left(\frac12-\varepsilon\right)=\frac\varepsilon4.
+\]
+The middle-pair mean is $1/2$ and its hinge cost is zero. A far pair or one-outer-point triple has mean zero or one, giving hinge cost $(1-\varepsilon)/4$. The outer pair has mean $1/2$ and a two-outer-point triple has mean $1/3$ or $2/3$; both have hinge cost $(1-\varepsilon)/2$.
+
+The quadratic part contributes $4\varepsilon^2$ times the weighted within-cell variance. For cell types $a,b,s,q,t,u$, these variances are respectively
+\[
+\frac18,\quad\frac12,\quad\frac18,\quad\frac98,\quad\frac12,\quad\frac76.
+\]
+For example, the near pair has two deviations $\pm1/2$, each of weight $1/4$, giving $1/8$; the triple $ACB$ has mean $1/3$ and weighted variance
+$\tfrac14\{(-4/3)^2+(-1/3)^2+(5/3)^2\}=7/6$.
+Combining hinge and quadratic terms proves \eqref{eq:costs}.
+
+There are exactly seven two-cell partitions. Their costs are
+\[
+2a,\quad2b,\quad q+s,\quad t,\quad t,\quad u,\quad u.
+\]
+There are six three-cell partitions, obtained by merging one pair; their costs are $a,a,b,b,s,q$. For $0<\varepsilon\le1/16$,
+\[
+s<a<b,\qquad q>a,\qquad2a<t,\qquad t<q+s,\quad t<u.
+\]
+Thus the unique flat optima are $AC\mid DB$ and $A\mid CD\mid B$, of costs $2a$ and $s$. If the fine partition merges $CD$, the possible compatible coarse costs are $t,t,q+s$, so its best ratio vector is $(\beta,1)$ with $\beta=t/(2a)$. If the fine partition merges a near pair, the coarse optimum is available, giving $(1,\alpha)$ with $\alpha=a/s$. Every other fine pair costs at least $a$, so its vector is coordinatewise at least $(1,\alpha)$. Therefore both Pareto alternatives are attained and
+\begin{equation}
+\rho_{\detp}^0=\min\{\alpha,\beta\},\qquad
+\alpha=\frac1{2\varepsilon}+1,\quad
+\beta=\frac{1-\varepsilon+8\varepsilon^2}{2\varepsilon+4\varepsilon^2}.
+\label{eq:paretoideal}
+\end{equation}
+In fact $\alpha-\beta=(5\varepsilon-4\varepsilon^2)/(2\varepsilon+4\varepsilon^2)>0$.
+
+For the polynomial generator, denote the corresponding costs by $a_n,b_n,s_n,q_n,t_n,u_n$. Symmetry preserves equality of reflected cells. Each cost changes by $O(\delta_n)$, and the strict inequalities above persist for large $n$. Equality $b_n=t_n$ need not persist, and is not used: it suffices that both remain above the near-pair and two-cell optimum thresholds. The flat costs are $2a_n$ and $s_n$, and the cheapest coarse extension of the middle pair has cost $t_n$. Consequently
+\begin{equation}
+\rho_{\detp,n}=\min\{\alpha_n,\beta_n\},\qquad
+\alpha_n=\frac{a_n}{s_n},\quad\beta_n=\frac{t_n}{2a_n}.
+\label{eq:paretopoly}
+\end{equation}
+Since $a_n\sim\varepsilon_n/4$, $s_n\sim\varepsilon_n^2/2$, and $t_n\sim1/4$, both alternatives are asymptotic to $1/(2\varepsilon_n)$. Hence
+\begin{equation}
+\rho_{\detp,n}\sim\frac1{2\varepsilon_n}=\frac{n}{32\log n}.
+\label{eq:detasymptotic}
+\end{equation}
+
+\subsection{Stochastic lower bound without public randomization}
+\label{sec:stochasticlower}
+Consider any stochastic chain with fine output budget three and coarse budget two. Sample independently a function table for the fine encoder and a function table for the coarsener, both independent of the source, and denote the pair of tables by $U$. Conditional on $U$, both representations are deterministic and nested. The same conditional Jensen argument as in Lemma~\ref{lem:flat} gives, for $k=2,3$,
+\begin{equation}
+D_{F_n}(Z_k)\ge\E_U D_{F_n}(Z_k\mid U).
+\label{eq:reveal}
+\end{equation}
+A table that uses fewer than the specified budgets can be refined to exactly three and two cells without increasing either cost. First split its fine cells to three while keeping each inside its original coarse cell. If the coarse partition has one cell, group the three fine cells into two nonempty coarse cells. If it already has two, retain it. Thus some distribution on exact deterministic hierarchies has coordinate costs no larger than the stochastic chain.
+
+The deterministic Pareto alternatives in \eqref{eq:paretopoly} bound the expected ratio vector below by a convex combination of $(1,\alpha_n)$ and $(\beta_n,1)$. If the mixture weight on the first is $\lambda$, its coordinates are
+\[
+\lambda+(1-\lambda)\beta_n,\qquad
+\lambda\alpha_n+1-\lambda.
+\]
+The minimum of their maximum occurs when they are equal, at
+$\lambda=(\beta_n-1)/(\alpha_n+\beta_n-2)$. Therefore
+\begin{equation}
+\rho_{\stp,n}\ge
+1+\frac{(\alpha_n-1)(\beta_n-1)}{\alpha_n+\beta_n-2}
+\sim\frac1{4\varepsilon_n}.
+\label{eq:stochlower}
+\end{equation}
+Revealing the tables is only a device for proving a lower bound; the admissible predictor is not given them. The argument also does not approximate arbitrary stochastic posterior means near the hinge locations. It uses only deterministic conditional-table means in \eqref{eq:means}.
+
+\subsection{An explicit stochastic channel and matching leading term}
+\label{sec:stochasticupper}
+The channel from \cite[Lemma 4.3]{huang7} supplies a matching upper bound. Use fine outputs $0,m,1$ with
+\[
+A\mapsto0,\qquad C\mapsto m,\qquad
+D\mapsto\begin{cases}m&\text{with probability }1/2,\\1&\text{with probability }1/2,\end{cases}
+\qquad B\mapsto1.
+\]
+Coarsen by merging outputs $0,m$. The fine cells have masses $1/4,3/8,3/8$ and means $-1,1/3,5/3$. The coarse cells have masses $5/8,3/8$ and means $-1/5,5/3$. All these means are at least $\varepsilon$ from the hinges for $\varepsilon\le1/16$.
+
+For the reference generator, the fine singleton contributes zero. The middle fine cell has zero hinge contribution, while the right cell has hinge cost
+\[
+\frac{1-\varepsilon}4-\frac38\left(\frac23-\varepsilon\right)=\frac\varepsilon8.
+\]
+Their respective weighted variances are
+\[
+\frac14(0-1/3)^2+\frac18(1-1/3)^2=\frac1{12},\qquad
+\frac18(1-5/3)^2+\frac14(2-5/3)^2=\frac1{12}.
+\]
+At the coarse level, the left hinge cost is
+\[
+\frac{1-\varepsilon}4-\frac58\left(\frac15-\varepsilon\right)
+=\frac18+\frac{3\varepsilon}8,
+\]
+and the right hinge cost is $\varepsilon/8$. The left weighted variance is
+\[
+\frac14(-1+1/5)^2+\frac14(1/5)^2+\frac18(1+1/5)^2=\frac7{20}.
+\]
+Adding the right variance $1/12$ gives $13/30$. Thus direct calculation yields
+\begin{align}
+D_{F_\varepsilon^0}(Z_3)&=\frac\varepsilon8+\frac23\varepsilon^2,
+\label{eq:channelcosts}\\
+D_{F_\varepsilon^0}(Z_2)&=\frac18+\frac\varepsilon2+\frac{26}{15}\varepsilon^2.
+\nonumber
+\end{align}
+The approximation at these finitely many means changes each numerator by at most $4\delta_n$. The flat denominators are $s_n=\varepsilon_n^2/2+O(\delta_n)$ and $2a_n=\varepsilon_n/2+\varepsilon_n^2+O(\delta_n)$. By \eqref{eq:deltarate}, the resulting ratio perturbations are $O(\delta_n/\varepsilon_n^3)=o(1)$. Both ratios in this channel have leading term $1/(4\varepsilon_n)$. With \eqref{eq:stochlower}, this proves
+\begin{equation}
+\rho_{\stp,n}\sim\frac1{4\varepsilon_n}=\frac{n}{64\log n}.
+\label{eq:stochasymptotic}
+\end{equation}
+
+\subsection{Fixed binary posteriors and bounded proper losses}
+\label{sec:normalization}
+Set $z=4x-3/2$. The four source locations become the fixed interior posteriors
+\begin{equation}
+(x_A,x_C,x_D,x_B)=(1/8,3/8,5/8,7/8).
+\label{eq:fixedposteriors}
+\end{equation}
+Let $M_n=\max_{z\in[-3/2,5/2]}F_n''(z)>0$ and define
+\begin{equation}
+\ph_n(x)=\frac{F_n(4x-3/2)}{16M_n},
+\label{eq:normalize}
+\end{equation}
+subtracting a constant if desired so that $\ph_n(1/2)=0$. This is a symmetric polynomial of degree exactly $4n+2$, with $0<\ph_n''\le1$ on $[0,1]$ and finite endpoint slopes. The affine change of posterior coordinate and positive scaling multiply every hierarchy and flat cost by the same positive factor, so the prices are unchanged.
+
+To realize the Jensen distortion as excess Bayes risk, put $h_n(q)=\ph_n(0)-\ph_n(q)$ and define
+\begin{align}
+\ell_n(q,1)&=h_n(q)+(1-q)h_n'(q),\label{eq:properloss}\\
+\ell_n(q,0)&=h_n(q)-qh_n'(q).\nonumber
+\end{align}
+For a Bernoulli parameter $x$, the expected loss at $q$ is
+$h_n(q)+(x-q)h_n'(q)$; subtracting its value $h_n(x)$ at $q=x$ gives $B_{\ph_n}(x,q)$. Strict convexity therefore proves strict propriety. Since symmetry gives $\ph_n(0)=\ph_n(1)$, supporting-line inequalities at zero and one imply that both losses are nonnegative. Their derivatives are
+\[
+\partial_q\ell_n(q,1)=-(1-q)\ph_n''(q),\qquad
+\partial_q\ell_n(q,0)=q\ph_n''(q).
+\]
+Their maximum equals $-\ph_n'(0)=\ph_n'(1)=\int_{1/2}^1\ph_n''(t)\rd t\le1/2$. Hence these are smooth strictly proper losses bounded in $[0,1/2]$. The joint binary-target law has full support because each source mass is positive and every posterior in \eqref{eq:fixedposteriors} lies strictly between zero and one.
+
+\begin{theorem}[Polynomial lower family]
+\label{thm:lower}
+There exists a sequence of symmetric polynomial generators $\ph_n$ with curvature degree exactly $r=4n$, $0<\ph_n''\le1$, and bounded smooth strictly proper binary losses, such that at the four equally weighted fixed posteriors \eqref{eq:fixedposteriors},
+\begin{equation}
+\rho_{\ph_n,\detp}\sim\frac{r}{128\log r},\qquad
+\rho_{\ph_n,\stp}\sim\frac{r}{256\log r}.
+\label{eq:lowerfinal}
+\end{equation}
+Consequently $C_r^{\detp}$ and $C_r^{\stp}$, as well as the corresponding fixed-quartet envelopes, are $\Omega(r/\log r)$ for all sufficiently large degree limits $r$.
+\end{theorem}
+\begin{proof}
+Equations~\eqref{eq:detasymptotic}, \eqref{eq:stochasymptotic}, and \eqref{eq:normalize} prove the asymptotics when $r=4n$, since $\log(r/4)/\log r\to1$. For the degree-at-most-$r$ envelope take $n=\lfloor r/4\rfloor$. This proves the lower order for every sufficiently large $r$, not only a subsequence.
+\end{proof}
+
+The generator changes with $n$. Every individual $\ph_n$ is analytic and satisfies Corollary~\ref{cor:analytic}; there is no contradiction between a finite bound for each fixed polynomial and growth over a degree-indexed class. The construction concerns excess-risk ratios and does not establish a nonvanishing absolute excess loss or a large total-risk hierarchy price.
+
+
+\section{Sharp degree order and remaining questions}
+\label{sec:conclusion}
+Theorems~\ref{thm:logupper} and \ref{thm:lower} give the following combined statement. There exist absolute constants $c,C>0$ and $r_0$ such that, for every integer $r\ge r_0$,
+\begin{equation}
+c\frac{r}{\log r}\le C_r^{\stp}\le C_r^{\detp}
+\le C\frac{r}{\log r}.
+\label{eq:mainbounds}
+\end{equation}
+Thus both degree envelopes have sharp order $\Theta(r/\log r)$. The upper bound permits arbitrary quartet spacing, with no minimum gap assumption. The lower bound already holds at the fixed posteriors $(1/8,3/8,5/8,7/8)$, so the corresponding fixed-quartet envelopes have the same order. The deterministic and stochastic leading constants in the constructed sequence differ by a factor of two; this does not determine the ratio of their separate worst-case envelopes or either envelope's leading constant.
+
+The explicit Fourier bound $384r+1728$, and its equally spaced refinement $192r+864$, remain valid finite-degree estimates. The Poisson proof resolves the previous logarithmic gap in asymptotic order, with deliberately loose absolute constants. It does not give the same order for arbitrary source probabilities or source counts. In that broader setting, the proved bounds remain $O(r^2)$ for a prescribed pair of capacities and $O(r^4)$ for one simultaneous all-capacity hierarchy. Determining their optimal degree dependence, as well as optimal constants in the four-equal-mass case, remains open.
+
+The fixed-generator results answer a different question. Finite-order curvature zeros, and hence analyticity across the closed interval, give a finite hierarchy bound independent of source size and positive weights. Monotone curvature yields a bound depending on the smallest source mass, even with infinite-order endpoint flatness. With positive interior curvature and four equal masses, unbounded price requires an endpoint that is both infinitely flat and persistently nonmonotone in the smooth case. The oscillatory example in Section~\ref{sec:endpoints} shows that even these joint conditions are insufficient. A necessary-and-sufficient regularity characterization remains open.
+
+All conclusions concern optimal excess distortion. The hierarchy guarantees are existence statements; they are not guarantees for arbitrary greedy agglomeration, a fitted neural predictor, or a training procedure. The normalization in Section~\ref{sec:normalization} permits bounded proper losses, but preserves ratios rather than absolute excess loss. Further work connecting these degree bounds to particular statistical loss families would require additional analysis.
+
+\section{Provenance and verification boundaries}
+\label{sec:provenance}
+\paragraph{Established hierarchy and loss tools.}
+The hierarchy-transfer theorem is established work of Lin et al.\ \cite{lin}, checked here through the primary restatement in Gro\ss wendt's thesis \cite[Theorem 2.11]{grosswendt} and the later treatment in Arutyunova and R\"oglin \cite{arutyunova}. The original Lin article's bibliographic record was verified, but its full text was not inspected for this manuscript. The positive-real-weight Euclidean augmentation calculation is given in Lemma~\ref{lem:hilbert}, rather than inferred by integer replication. Bregman centroids and proper-loss representations have the antecedents cited in Section~\ref{sec:definitions}.
+
+\paragraph{Geometric and polynomial antecedents.}
+The coordinate $h=\int\sqrt{\ph''}$ is established in the geometry of separable Bregman divergences \cite{gomes,gzyl}. Original-coordinate similarity \cite{ackermann}, approximate Bregman symmetry for power-type examples \cite{kindermann}, and doubling or engulfing geometry \cite{calogero,maldonado} give related sufficient-condition tools. They do not by themselves supply all the finite-order, endpoint, and hierarchy assertions proved here. Markov's inequality \cite{shadrin}, Chebyshev identities \cite{dlmf}, and positive-polynomial concentration are classical. For example, Levin and Lubinsky \cite[Theorem 1.3]{levin} give interior $L^1$ evaluation estimates through Christoffel functions, while Raikov and Beltukov \cite{raikov} analyze localized positive polynomial kernels. The proof of Theorem~\ref{thm:linearupper} uses an elementary Fourier-coefficient estimate so that the needed concentration bound and its endpoint dependence are explicit. The sharper Theorem~\ref{thm:logupper} uses the classical outer Fej\'er--Riesz factorization as stated by Dritschel and Woerdeman \cite[Introduction]{dritschelwoerdeman}; its radial estimate and Poisson argument, including boundary zeros, are justified in the proof. The squared-Chebyshev kernel in \eqref{eq:chebkernel} has a direct antecedent in Kro\'o and Szabados \cite[Proposition 1]{krooszabados}, who also choose logarithmic-over-degree width. We use this source to credit the needle construction and prove all normalization and tail estimates required here independently.
+
+\paragraph{Prior project construction.}
+The fixed smooth obstruction, the hinge reference costs, the deterministic Pareto alternatives, the random-function-table stochastic lower comparison, and the explicit stochastic channel come from the supplied Phase 7 working paper \cite[Section 4]{huang7}. They are reproduced here where needed. Qualitative unboundedness over the union of polynomial degrees already follows from that obstruction and positive polynomial approximation of curvature: for each fixed smooth instance, sufficiently accurate approximation preserves its positive-denominator hierarchy ratios. The present construction supplies a quantitative relation between degree and price, fixed interior posterior locations, and deterministic and stochastic asymptotics. Combined with the uniform upper theorem, it determines the sharp degree order in the four-equal-mass setting; this mathematical statement does not by itself establish historical novelty.
+
+\paragraph{Related refinement formulations.}
+Successive refinement of the information bottleneck \cite{charvin} and logarithmic-loss source coding \cite{no} concern related compatibility questions. Their mutual-information or asymptotic rate-distortion constraints differ from the finite output-cardinality and multiplicative excess-risk criterion here. Their results are not used as hierarchy-price bounds in this paper.
+
+\paragraph{Status.}
+The manuscript has undergone internal, independent mathematical checking and a bounded primary-literature audit. Neither is external peer review or a certification of novelty. No directly matching theorem for the endpoint statement or the sharp degree-dependent four-state envelopes was identified in the sources examined; this bounded negative search does not establish priority. A publication-level novelty assessment would require further citation-chain review, including inspection of the original Lin article. The four-equal-mass degree order is settled by the proofs here. Optimal leading constants, optimal broader-source degree bounds, and a complete regularity characterization remain unresolved.
+
+\begin{thebibliography}{99}
+\small
+\bibitem{ackermann}
+Marcel R. Ackermann and Johannes Bl\"omer.
+\emph{Coresets and Approximate Clustering for Bregman Divergences}.
+Revised manuscript, 2009; proceedings version in the Twentieth Annual ACM--SIAM Symposium on Discrete Algorithms.
+\url{https://cs.uni-paderborn.de/fileadmin/informatik/fg/cuk/Forschung/Publikationen/CoresetsAndApproximateClusteringForBregmanDivergences.pdf}.
+
+\bibitem{arutyunova}
+Anna Arutyunova and Heiko R\"oglin.
+The price of hierarchical clustering.
+\emph{Algorithmica} 87 (2025), 1420--1452.
+\url{https://doi.org/10.1007/s00453-025-01327-7}.
+
+\bibitem{banerjee}
+Arindam Banerjee, Srujana Merugu, Inderjit S. Dhillon, and Joydeep Ghosh.
+Clustering with Bregman divergences.
+\emph{Journal of Machine Learning Research} 6 (2005), 1705--1749.
+\url{https://www.jmlr.org/papers/volume6/banerjee05b/banerjee05b.pdf}.
+
+\bibitem{calogero}
+A. Calogero and R. Pini.
+The engulfing property for sections of convex functions on the Heisenberg group and the associated quasi-distance.
+\emph{Journal of Geometric Analysis}, online publication, 2021.
+\url{https://doi.org/10.1007/s12220-021-00648-7}.
+
+\bibitem{charvin}
+Hippolyte Charvin, Nicola Catenacci Volpi, and Daniel Polani.
+Exact and soft successive refinement of the information bottleneck.
+\emph{Entropy} 25 (2023), 1355.
+\url{https://doi.org/10.3390/e25091355}.
+
+\bibitem{dritschelwoerdeman}
+Michael A. Dritschel and Hugo J. Woerdeman.
+\emph{Outer Factorizations in One and Several Variables}.
+Preprint, 2004, arXiv:math/0403099; Introduction for the classical scalar theorem.
+\url{https://arxiv.org/abs/math/0403099}.
+
+\bibitem{gneiting}
+Tilmann Gneiting and Adrian E. Raftery.
+Strictly proper scoring rules, prediction, and estimation.
+\emph{Journal of the American Statistical Association} 102(477) (2007), 359--378.
+\url{https://doi.org/10.1198/016214506000001437}.
+
+\bibitem{gomes}
+Erika Gomes-Gon\c calves, Henryk Gzyl, and Frank Nielsen.
+\emph{Geometry and Clustering with Metrics Derived from Separable Bregman Divergences}.
+Preprint, 2018, arXiv:1810.10770.
+\url{https://arxiv.org/abs/1810.10770}.
+
+\bibitem{grosswendt}
+Anna-Klara Gro\ss wendt.
+\emph{Theoretical Analysis of Hierarchical Clustering and the Shadow Vertex Algorithm}.
+Doctoral thesis, University of Bonn, 2020.
+\url{https://d-nb.info/121830152X/34}.
+
+\bibitem{gzyl}
+Henryk Gzyl.
+\emph{From Generalized Arithmetic Means to Bregman Divergences and Back}.
+Preprint, 2020, arXiv:2007.15473.
+\url{https://arxiv.org/abs/2007.15473}.
+
+\bibitem{huang7}
+Wenyu Huang.
+\emph{Exact Residual-Query Memory and Smooth-Loss Hierarchy Limits}.
+Unpublished Phase 7 working paper, University of California San Diego, 2026.
+Supplied project manuscript; Section 4.
+
+\bibitem{kindermann}
+Stefan Kindermann.
+A note on the approximate symmetry of Bregman distances.
+\emph{Journal of Convex Analysis} 26(3) (2019), 991--999.
+\url{https://arxiv.org/abs/1808.06790}.
+
+\bibitem{krooszabados}
+Andr\'as Kro\'o and J\'ozsef Szabados.
+Polynomial inequalities with asymmetric weights.
+\emph{Ja\'en Journal on Approximation} 10 (2018), 81--100.
+Repository manuscript, Proposition 1 and its proof; construction attribution only, with the estimates needed here proved independently.
+\url{https://real.mtak.hu/102404/1/asym.new.pdf}.
+
+\bibitem{levin}
+Eli Levin and Doron S. Lubinsky.
+$L^p$ Christoffel functions, $L^p$ universality, and Paley--Wiener spaces.
+\emph{Journal d'Analyse Math\'ematique} 125 (2015), 243--283.
+\url{https://doi.org/10.1007/s11854-015-0008-2}.
+
+\bibitem{lin}
+Guolong Lin, Chandrashekhar Nagarajan, Rajmohan Rajaraman, and David P. Williamson.
+A general approach for incremental approximation and hierarchical clustering.
+\emph{SIAM Journal on Computing} 39(8) (2010), 3633--3669.
+\url{https://doi.org/10.1137/070698257}.
+
+\bibitem{maldonado}
+Diego Maldonado and Colin Williams.
+\emph{Geometric Characterizations of H\"older-continuous Quasi-distances and Applications}.
+Author-hosted revised manuscript.
+\url{https://www.math.ksu.edu/~dmaldona/papers/Holder_quasi_distances_revised.pdf}.
+
+\bibitem{no}
+Albert No.
+Universality of logarithmic loss in successive refinement.
+\emph{Entropy} 21(2) (2019), 158.
+\url{https://doi.org/10.3390/e21020158}.
+
+\bibitem{dlmf}
+National Institute of Standards and Technology.
+\emph{Digital Library of Mathematical Functions}.
+Section 18.5, explicit representations of classical orthogonal polynomials, especially Eq.~18.5.1.
+\url{https://dlmf.nist.gov/18.5}.
+
+\bibitem{plaxton}
+C. Greg Plaxton.
+Approximation algorithms for hierarchical location problems.
+\emph{Journal of Computer and System Sciences} 72(3) (2006), 425--443.
+\url{https://www.cs.utexas.edu/~plaxton/pubs/2006/jcss.pdf}.
+
+\bibitem{raikov}
+I. O. Raikov and Y. M. Beltukov.
+The kernel polynomial method based on Jacobi polynomials.
+\emph{Applied Mathematics and Computation} 490 (2025), 129207.
+\url{https://arxiv.org/abs/2407.03328}.
+
+\bibitem{reid}
+Mark D. Reid and Robert C. Williamson.
+Information, divergence and risk for binary experiments.
+\emph{Journal of Machine Learning Research} 12 (2011), 731--817.
+\url{https://www.jmlr.org/papers/volume12/reid11a/reid11a.pdf}.
+
+\bibitem{shadrin}
+A. Shadrin.
+\emph{Twelve Proofs of the Markov Inequality}.
+Author-hosted exposition.
+\url{https://www.damtp.cam.ac.uk/user/na/people/Alexei/papers/markov.pdf}.
+\end{thebibliography}
+\end{document}

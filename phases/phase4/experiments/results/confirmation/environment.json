@@ -1,0 +1,23 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "executable": "python",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "cpu_count": 8,
+  "numpy": "2.3.5",
+  "scipy": "1.18.1",
+  "blas_threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "command": [
+    "phase4/experiments/code/recycling.py",
+    "--config",
+    "phase4/experiments/config.json",
+    "--output-dir",
+    "phase4/experiments/results/confirmation",
+    "--workers",
+    "2"
+  ],
+  "runner_sha256": "d7c9b6cc9b4fa3804d9ae43d2e36228a4b54446582513e7e684b763aaf63763d",
+  "config_sha256": "8a5a47687e0272dfae0f2d2bf7bbdabe8c906504223dd254843610f08adccdeb"
+}

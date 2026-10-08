@@ -1,0 +1,329 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{graphicx,booktabs,array,enumitem,longtable}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{xurl}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}
+\newcommand{\KL}{D_{\rm KL}}
+\graphicspath{{../figures/}}
+\setcounter{tocdepth}{1}
+\hypersetup{pdftitle={From Represented Information to Realizable Neural Growth},pdfauthor={Wenyu Huang}}
+\title{From Represented Information to Realizable Neural Growth\\[5pt]
+\large Observation Limits, Singular Positive Splits, and Finite-Sample Tests}
+\author{Wenyu Huang\\University of California San Diego}
+\date{Phase II companion research manuscript \;|\; September 13, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Can information about a learning unit guide its structural adaptation?
+We distinguish information retained by a representation, information observed
+by a controller, and improvement accessible to a specified neural operation.
+An explicit full-support four-input tanh classifier is a population local
+minimum while retaining no task information. Two tasks have identical
+activation--label--residual laws but require different split directions:
+no passive controller restricted to that law can select an immediate split
+with positive expected loss reduction on both tasks, even with unlimited
+samples. Input--residual context permits strict descent, with
+matching sample order in a two-task identification problem. A separate
+noisy-parity construction has positive task information and zero splitting
+matrix. At the same two-child width and positive normalized output weights,
+fixed-proportion centered splits increase log loss at order $t^4$, whereas
+a child proportion of order $t^{d-4}$ yields a strictly decreasing path at
+order $t^{2d-4}$. This is a constrained nonuniform-limit calculation; curvature
+splitting, parity blindness, and boundary-weight escape have prior precedents.
+Actual finite-sample tanh training tests the observation bridge against
+random growth, continued training, fixed-width models, and an explicitly
+privileged oracle. Geometry helps at a designed initial state under short
+training budgets; that benefit erodes with longer training and altered
+initialization. Information-score experiments and holdout gates expose
+additional estimation and optimization failures. The results establish
+specific limits and a restricted trainable bridge, not a universal
+information-driven growth algorithm.
+\end{abstract}
+\tableofcontents
+
+\section{The scientific question after Phase I}
+The motivating question is whether a learning system can use what its units
+represent or process to decide autonomously how its structure should change.
+Activation entropy and neuron splitting are candidate ingredients, not
+scientific commitments. A useful answer must identify both the information
+available to the controller and the operations its learning system can perform.
+
+The preserved Phase I manuscript, \emph{The Price of Irreversible
+Representation Growth: Sharp Four-State Obstructions under Logarithmic Loss},
+studies a different object: finite encoders under hard alphabet budgets.
+It proves a sharp obstruction to simultaneously competitive nested encoders.
+Its four-state construction and reassignment calculation do not identify
+states with neurons or bound neural optimization cost. We use its warning
+about restricted operations as a diagnostic, and move to explicit neural
+parameters. The new theory does not depend on the unreviewed information-
+bottleneck onset draft preserved with that project.
+
+The central advance is a pair of inspectable separations and their learning
+tests. First, a summary can be perfectly estimated yet omit the pairing
+between residuals and inputs that selects a useful operation. Second, even
+with that pairing known, structural accessibility depends on the way output
+weights and incoming perturbations approach a growth event. These claims are
+more specific than saying that entropy is insufficient. They give an exact
+observation model, strict population descent alternatives, and failure tests
+for an actual parameterized learner.
+
+We intentionally separate three questions. Does a representation contain
+information predictive of the target? Can a controller distinguish which
+structural operation helps from its observations? Does the allowed operation,
+followed by the implemented optimizer and data budget, realize the benefit?
+The experiments do not promote a positive answer to one question into a
+positive answer to the others.
+
+\subsection{What was explored and why this direction was selected}
+Independent investigations began with the broad original question. They
+considered finite-state reassignment, information-bottleneck birth geometry,
+conditional-information operation selection, neural splitting, and local
+observational limitations. Extending the Phase I source-mass rate remained
+mathematically interesting but would retain the same rare-state population
+abstraction. An exact conditional-information rule for Bayes-refitted cells
+would have a direct decision-tree interpretation and insufficient neural
+content. Re-deriving negative-curvature growth would duplicate established
+methods. The chosen route instead exposes a missing premise in transferring
+information criteria to neural operations, and supplies actual tests of the
+most direct existing geometric remedy.
+
+The observation example would be undermined by a controller identifying both
+tasks using only the stipulated identical observation laws. The high-order
+result would be undermined by a negative fixed-proportion small-radius path
+under its stated restrictions or a failure of the joint-limit coefficient.
+The empirical hypothesis that task-information scores select useful neural
+operations is undermined when equal-size, equal-training comparisons favor
+random or fixed-width alternatives. Those counterexamples and negative
+comparisons were actively retained.
+
+\section{Starting-point audit and evidence types}
+\label{sec:audit}
+All supplied Phase I sources, results, and the authoritative PDF were
+preserved before modifications in a 63-file ZIP snapshot with per-file
+SHA-256 hashes. The original project has no supplied Git revision; the
+hash manifest is the starting identifier. Original-code evaluations at
+$L=16,64,256,2048$ match eight stored quantities at all 60 saved digits.
+An independent implementation enumerates function tables and computes risk
+from joint probabilities rather than using the original partition recursion
+and entropy-difference routine. It recovers 15 partitions and 18 compatible
+chains; nine compared quantities agree to relative tolerance $10^{-58}$.
+The deterministic total-risk prices are respectively $2.191327$, $4.641185$,
+$9.499428$, and $27.125385$. The audited core proofs revealed no substantive
+mathematical error. This is an audit of the claims used here, not a new
+formal certification of every Phase I result.
+
+There are three distinct kinds of Phase II evidence. Theorems below are
+population statements with full proofs. Exhaustive population calculations
+check finite neural operations and asymptotic coefficients. Finite-sample
+experiments fit neural parameters or estimate controller statistics from
+sampled labels; the evaluator may integrate against the known synthetic law,
+but those population probabilities are withheld from implemented controllers.
+Using such an evaluator does not convert finite-sample fitting into oracle
+learning. Likewise the high-order construction is an oracle existence path,
+not a trained adaptive mechanism.
+
+\section{Nearest results and the bounded novelty claim}
+\label{sec:related}
+Splitting steepest descent already derives a residual-weighted neural
+splitting matrix and negative-eigenvalue binary growth
+\cite[Sections 2.1--2.3, Theorems 2.2--2.4]{ssd2019}. Signed splitting
+optimizes the analogous second-order form with signed normalized coefficients
+\cite[Theorems 2.1--2.3]{signed2021}; Firefly studies broader function-space
+growth neighborhoods and optimized candidate additions
+\cite[Sections 2.1--2.3]{firefly2020}. The controller used in our curvature
+experiment is an explicit implementation of the established splitting
+principle. It is not a new entropy-based algorithm.
+
+The closest boundary result is Ding, Li, and Sun's stationary-plateau
+analysis \cite{ding2026}. Their Theorem 3 and its proof in Section 6.3.1
+cover locally effective neurons with zero inner Hessian under square loss,
+using a dormant child's small outgoing coefficient and nearby input weight.
+Thus neither higher-order effectiveness nor escape through zero output
+weight is first established here. Our additional calculation enforces
+strictly positive normalized weights at every nonzero radius, two children,
+an exactly conserved weighted incoming mean, and logistic loss; it identifies
+the explicit parity-dependent weight and risk orders, against an
+interior-proportion obstruction. We found no equivalent statement with this
+combination in the inspected sources, but do not claim an exhaustive
+historical search.
+
+The need to specify local observations and feedback has long been emphasized
+in local-learning theory \cite[Sections 6.4 and 7.1]{baldi2016}.
+Information-theoretic neuron learning also has concrete precedents:
+infomorphic networks use richer presynaptic and context signals
+\cite{makkeh2025}. Our activation-summary restriction excludes that richer
+input access. It is not an impossibility of local synaptic learning or a
+claim of the first information-theoretic neural implementation.
+
+Parity orthogonality and gradient blindness are established themes
+\cite[Section 2]{failures2017}. More recent work proves hardness for fixed
+parities in specific ReLU/perturbed-gradient settings \cite{shoshani2025},
+while learnability can change under specially structured distributions
+\cite{daniely2020}. Our fixed-dimension Taylor calculation does not claim
+new general parity hardness. The moment identities, testing inequalities,
+and log-loss identities in the proofs are standard tools; the contribution
+is their exact constrained neural witnesses and the accompanying evidence.
+A source-by-source record, versions, inspected locations, and unresolved
+novelty risks are supplied in \texttt{research/prior\_art.md}.
+
+\input{activation_observation}
+\input{high_order}
+
+\section{Population and finite-observation tests of the singular path}
+\label{sec:highcomputations}
+The source law in Section~\ref{sec:highorder} is fixed for each dimension.
+We enumerate it for $d=6,8,10$, $b=1/2$, $\eta=0.15$, and 11 incoming
+radii from $10^{-4}$ to $0.3$. One coordinate of
+$v=(1,\ldots,1)/\sqrt d$ is reversed when necessary to make $B(v)>0$.
+All 66 operation evaluations are saved at 100-digit precision, and six
+smallest-radius cases are checked at 170 digits. The independent checker
+instead enumerates all $2^d$ inputs, evaluates direct Bernoulli log loss,
+and obtains tanh derivatives through integer polynomial recurrence. Its
+40 cases include a second fixed proportion and coefficients below and above
+the descent interval. Twelve shared evaluations agree to better than
+$1.4\cdot10^{-60}$ relative error.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{high_order_limits.pdf}
+\caption{Exact population calculations, not training. Left: absolute loss
+change for balanced positive splitting (increases) and the vanishing-proportion
+path (decreases) at $d=6$. Curves use saved high-precision outputs; dashed
+curves are proved leading terms. Right: the measured change divided by its
+signed leading term for $d=6,8,10$. The right panel restricts to smaller radii
+to show the asymptotic regime. Both operations use two children
+and outgoing absolute sum one. The diminishing gain is shown explicitly.}
+\label{fig:highorder}
+\end{figure}
+
+For $d=6,t=0.1$, balanced splitting changes risk by
+$+4.2255\cdot10^{-6}$ nats; the vanishing proportion
+$p=0.00286119$ changes it by $-3.5902\cdot10^{-11}$ nats.
+At the same radius the latter gains for $d=8,10$ are approximately
+$8.47\cdot10^{-16}$ and $3.68\cdot10^{-20}$ nats.
+The task-information gap is about $0.04570$ nats in every case.
+Strict descent therefore does not constitute a useful trained classifier.
+The asymptotic gain is not uniform over radius: for $d=10,t=0.3$, the
+vanishing-proportion formula actually increases risk by
+$3.46\cdot10^{-12}$ nats, a saved finite-radius failure.
+A coefficient three times the asymptotically minimizing $\kappa$ reverses
+the small-radius improvement in the independent check, demonstrating that
+merely making a child small is insufficient.
+
+We also ran finite-observation tests of Proposition~\ref{prop:snr} for $d=6$.
+For each of four radii and five sample sizes, 1,000 independent repetitions
+estimate the raw score. Sampling uses multinomial counts of the exact iid
+input--label categories; this is ordinary random sampling represented by
+sufficient counts, with no importance weighting or population labels in
+the estimate. A comparator receives the true parity feature and estimates
+its label correlation on the same samples. That feature is privileged
+structural information and is explicitly not an equally informed controller.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=.94\linewidth]{score_sampling.pdf}
+\caption{Finite iid score estimation on the six-bit noisy-parity task.
+Points show the fraction of nonpositive estimated scores across 1,000
+repetitions; bars are pointwise 95\% Wilson binomial intervals. The population
+score is positive. Curves are normal-approximation predictions using exact
+population means and variances, not fitted error rates or guarantees.
+The dashed reference uses a supplied true-parity feature and has zero
+observed failures in these runs; its uncertainty remains nonzero.
+No neural parameters are trained in this figure.}
+\label{fig:sampling}
+\end{figure}
+
+At $t=0.1,n=1{,}048{,}576$, the raw score has the wrong or zero sign in
+507 of 1,000 repetitions. Its unit-signal-to-noise sample proxy is
+$1.3844\cdot10^{10}$ observations. At $t=0.4$ the same sample size has
+18 failures and the proxy is $2.4928\cdot10^5$. The supplied parity feature
+has no observed sign errors across the tested conditions. These measurements
+show the cost of this raw score, not a minimax lower bound on learning
+parity, nor a claim that a known feature is free to discover.
+
+\input{experiments}
+
+\section{What this advances, and what remains unsupported}
+\label{sec:limits}
+Relative to Phase I, this work replaces a purely finite-representation
+obstruction with explicit neural parameters, finite observations, and
+actual learning. It does not identify neural width with the number of
+representation states. The observation theorem explains why a scalar
+information content or an activation summary can fail to determine a useful
+operation even when the relevant information is present in the input.
+The sample theorem gives a realizable context-based decision with a
+matching necessary sample order in that restricted problem. The singular
+positive split theorem shows that width alone also misses a resource:
+how outgoing proportions and incoming movement approach the structural
+change, even without negative weights or extra children.
+
+The trainable step achieved is modest but concrete. A controller computes
+an empirical statistic from a unit's input and residual, selects a real
+neural duplication direction, trains both resulting hidden units, and can
+accept or reject growth using a disjoint holdout set. The evidence establishes
+its short-budget benefit at a constructed stationary point and measures
+where that benefit disappears. It does not establish that activation entropy,
+conditional information, or split curvature is generally the right trigger
+for autonomous structure adaptation. One-event growth and rejection are
+implemented; a stable repeated lifetime controller is not.
+
+Several boundaries carry the conclusions. The activation-only theorem is
+about a passive pre-operation observation channel; ordinary subsequent
+training or active input-dependent probing can break indistinguishability.
+The high-order proof keeps an intercept and a particular operation family
+fixed, and selects its direction and coefficient with population knowledge.
+It is not a guarantee that SGD discovers a vanishing-weight path. Its
+population gains can be many orders smaller than sampling error or numerical
+precision. The neural experiments are small synthetic tanh classifiers,
+not broad deep-learning benchmarks, biological neuron models, or tests of
+nonstationary continual learning. Fixed-width baselines often match or
+outperform the adaptive alternatives. Parameter-update proxies do not
+measure hardware FLOPs, memory, or wall-clock efficiency of a deployable
+controller. Holdout gating consumes another fitted branch and extra data;
+its normal approximation is not a theorem-level certificate.
+
+The nearest-source review substantially limits the novelty claim: known
+curvature growth and known boundary escape provide the foundation. The new
+claims are the exact observation/task witness with quantitative evidence
+requirements and the constrained positive-weight joint-limit separation,
+together with openly adverse implementation evidence. Their equivalence
+to a broader existing formulation remains a question for external review.
+The project supplies complete proofs, independent checks and raw results,
+but does not claim external peer review or publication readiness.
+
+\section{Reproducibility and research record}
+All Phase II materials are under \texttt{phase2/}. The top-level Phase I
+manuscript and outputs remain unchanged. \texttt{README.md} gives exact
+commands; \texttt{code/reproduce.py} regenerates the performed computations,
+figures and paper. Raw outputs distinguish exploratory pilots, the expanded
+probe, the new operation-aligned evaluation, the curvature bridge, population
+calculations and sample-only tests. Saved seeds and deterministic generators
+reconstruct all data. The neural bridge saves event directions, matrices,
+acceptance decisions, post-operation risks and parameters. It does not
+pretend to log every optimizer iterate.
+
+The runtime is local macOS arm64, Python 3.12.14, NumPy 2.3.5,
+SciPy 1.18.1, mpmath 1.3.0 and Matplotlib 3.11.2, with eight reported
+logical CPUs. NumPy CPU training avoids a missing PyTorch dependency.
+No paid API, remote GPU, publishing service, private data upload, or
+system-wide installation was used. LaTeX/Poppler compile and render the
+companion PDF. A concise status file and contribution/evidence ledger
+record completed work, corrections, objections and remaining gaps.
+
+Independent numerical implementations cross-check the proof calculations and
+learning routines. The high-order direction was revised after counterexample
+search, and the information-probe mismatch was corrected by an additional
+operation-aligned evaluation with new seeds. These historical checks do not
+constitute external peer review.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

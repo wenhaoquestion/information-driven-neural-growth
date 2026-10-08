@@ -1,0 +1,217 @@
+% Self-contained section body. The parent document supplies amsmath,
+% amssymb, amsthm, and a proposition environment.
+% Bibliography keys geco and tiny are already present in phase5 references.
+% Primary sources checked: arXiv:1106.1622v1 and arXiv:2405.19816v2.
+\section{Mathematical scope and the budget endpoint}
+\label{sec:p6-theory}
+
+The mathematical ingredients below are classical Gaussian moment
+identities and elementary properties of the chosen evaluation endpoint.
+They are not claimed as novel learning principles. Greedy low-rank
+optimization and growth based on expressivity bottlenecks already have
+established antecedents~\cite{geco,tiny}. Our question is empirical:
+does the information supplied by a historical moment improve the
+training-budget frontier once its computational costs are charged?
+
+\subsection{Exact population risk of the trained predictor}
+
+Let $X\sim N(0,I_d)$, $H(X)=XX^\top-I_d$, and
+$q_A(X)=\langle A,H(X)\rangle$, where matrices are symmetric and
+$\langle A,B\rangle=\operatorname{tr}(AB)$. The teacher and predictor are
+\begin{equation}
+ Y=q_{A_*}(X)+c_*+\xi,
+ \qquad f_{B,c}(X)=q_B(X)+c,
+ \qquad B=\sum_{j=1}^k a_jw_jw_j^\top,
+ \label{eq:p6-model}
+\end{equation}
+where $\xi$ is independent of $X$, with mean zero and variance
+$\sigma^2<\infty$. Our experiments set $c_*=0$ but fit $c$.
+
+\begin{proposition}[Exact risk including the intercept]
+\label{prop:p6-risk}
+For every symmetric $B$ and scalar $c$,
+\begin{equation}
+ R(B,c):=\mathbb E[(Y-f_{B,c}(X))^2]
+ =\sigma^2+2\|B-A_*\|_F^2+(c-c_*)^2.
+ \label{eq:p6-risk}
+\end{equation}
+Consequently, the excess risk used in the experiments is
+$\mathcal E(B,c)=2\|B-A_*\|_F^2+c^2$.
+The same formula holds conditionally on a realized training history and
+teacher, provided the test example is independent of that history.
+\end{proposition}
+\begin{proof}
+The Gaussian second- and fourth-moment identities give
+\[
+ \mathbb E[X_iX_j]=\delta_{ij},\qquad
+ \mathbb E[X_iX_jX_kX_l]
+ =\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}
+  +\delta_{il}\delta_{jk}.
+\]
+Thus $\mathbb E H_{ij}=0$ and
+$\mathbb E[H_{ij}H_{kl}]=\delta_{ik}\delta_{jl}
++\delta_{il}\delta_{jk}$. Multiplying by $D_{ij}D_{kl}$ and summing
+gives $\mathbb E[q_D(X)^2]=2\|D\|_F^2$ for symmetric $D$.
+Take $D=A_*-B$. Since $\mathbb E q_D=0$, the cross term between
+$q_D$ and $c_*-c$ vanishes. Noise independence and zero mean eliminate
+its cross terms with both quantities. Expanding
+$(q_D+c_*-c+\xi)^2$ proves~\eqref{eq:p6-risk}.
+Conditioning on a saved predictor and its training history fixes $B,c$;
+the independent test input retains the same Gaussian moments.
+\end{proof}
+
+The intercept term cannot be omitted: $B=A_*$ and $c=1$, for example,
+have excess risk one when $c_*=0$. For each individual run, a separate
+evaluator applies \eqref{eq:p6-risk} after its training trajectory has
+been fixed. Development and confirmation have distinct roles. Before
+observing any new development results, we froze a common search protocol:
+all four methods are evaluated at learning rates
+$\{0.0075,0.015,0.03\}$ and all five budgets on 16 independent
+development teacher/data seeds. For each method, the mean exact
+population AUC across these development seeds selects one learning
+rate, which is then frozen before the 256-replicate confirmation
+experiment. This is explicitly an oracle-based development selection;
+its computational cost is reported separately. Confirmation teacher
+matrices, population scores and oracle direction coefficients do not
+enter the learner's proposal selection, optimization, stopping, or
+hyperparameter selection. Exact evaluation removes test-input Monte
+Carlo error in this synthetic model; it does not remove variation
+across independently generated training problems.
+
+\subsection{Function-preserving birth and the limits of direction quality}
+
+Appending any finite direction $v$ with output coefficient
+$a_{k+1}=0$ leaves both $B$ and $c$ unchanged, and hence preserves the
+predictor for every input. Initializing the new Adam moment states to
+zero also leaves the function unchanged. The subsequent optimization
+trajectory is a separate matter: at birth the gradient with respect to
+the new hidden vector is zero because it is multiplied by its output
+coefficient, while the new output coefficient can have a nonzero
+gradient.
+
+For a unit direction $v$, set $E=A_*-B$ and hold all other parameters,
+including the intercept, fixed. Proposition~\ref{prop:p6-risk} yields
+\begin{equation}
+ R(B+\alpha vv^\top,c)-R(B,c)
+ =2\alpha^2-4\alpha v^\top Ev.
+ \label{eq:p6-direction-gain}
+\end{equation}
+The oracle scalar coefficient is $\alpha=v^\top Ev$, with improvement
+$2(v^\top Ev)^2$. Maximizing this quantity over unit directions gives
+$2\|E\|_{\mathrm{op}}^2$. This is the improvement available from an
+ideal scalar refit at a fixed predictor, not an improvement guaranteed
+by the implemented factor Adam updates.
+
+In particular, the earlier project's fresh-block quadratic analysis
+concerns a prescribed update of the form
+\[
+ B^+=B+\frac{1}{2n}\sum_{i=1}^n
+       \{Y_i-q_B(X_i)\}H(X_i),
+\]
+under its stated zero-intercept model and conditional independence
+assumptions. Factor Adam instead updates $(w_j,a_j,c)$ using empirical
+gradients, accumulated coordinatewise moments, and clipping. It may
+reuse retained examples and historical summaries. Neither its update
+map nor its sample dependence matches that matrix recurrence, so the
+contraction theorem does not supply a convergence rate or cost bound
+for the present experiment. Even the exact empirical residual matrix,
+when the predictor has an intercept, is
+\begin{align*}
+ G_n(B,c)&=S_n-T_n(B)-\tfrac12c\overline H_n,
+ &S_n&=\frac1{2n}\sum_iY_iH_i,\\
+ T_n(B)&=\frac1{2n}\sum_iq_B(X_i)H_i,
+ &\overline H_n&=\frac1n\sum_iH_i.
+\end{align*}
+The historical proxy $S_n-B$ uses the known population Gaussian
+operator; it is not this exact empirical residual.
+
+\subsection{A fixed log-budget area from five completed runs}
+
+The five preregistered per-arrival budget caps, in the declared work
+units, are
+\[
+ (b_1,b_2,b_3,b_4,b_5)
+ =10^6(3.2,5,6.4,8,10).
+\]
+Every run processes seven arrivals under the same data-availability
+rule. Let $e_{mrj}$ be the final excess risk of method $m$, replicate
+$r$, and budget setting $b_j$, after all seven arrivals. Each entry is
+obtained from its own completed training run. These five entries are
+not checkpoints extracted from one run with the largest budget.
+
+Write $x_j=\log b_j$ and $L=x_5-x_1>0$. Define the normalized
+log-budget trapezoid area
+\begin{equation}
+ \operatorname{AUC}_{mr}
+ =\frac1L\sum_{j=1}^{4}(x_{j+1}-x_j)
+                   \frac{e_{mrj}+e_{mr,j+1}}2
+ =\sum_{j=1}^5\omega_j e_{mrj},
+ \label{eq:p6-auc}
+\end{equation}
+where
+\[
+ \omega_1=\frac{x_2-x_1}{2L},\qquad
+ \omega_5=\frac{x_5-x_4}{2L},\qquad
+ \omega_j=\frac{x_{j+1}-x_{j-1}}{2L}\quad(2\le j\le4).
+\]
+The weights are positive, sum to one, and are fixed independently of
+all outcomes. Only budget is logarithmically transformed; the ordinate
+is excess risk itself. Lower area is better. Replacing $b_j$ by its
+seven-arrival cap $7b_j$ leaves all weights unchanged, as does changing
+the logarithm base.
+
+Equation~\eqref{eq:p6-auc} is an integral of the piecewise-linear
+interpolant in log budget, not an assumption that the unobserved
+performance curve is linear. The budget axis is the assigned cap;
+actual charged work, unused terminal budget and wall time are reported
+separately. The area therefore summarizes the specified allocation
+protocol and cost ledger, and does not by itself establish hardware
+runtime dominance. The primary sample comprises 256 independent
+teacher/data replicates, with pairing across methods and budget
+settings within each replicate. The five budgets do not multiply the
+number of independent inference units by five.
+
+\subsection{Meaning of the three-comparison intersection--union test}
+
+Let $h$ denote historical-moment growth, and let $m_1,m_2,m_3$ denote
+the three preregistered primary comparators. For $\ell=1,2,3$, define
+the paired area difference and its mean over the specified distribution
+of independently generated problems by
+\[
+ D_{r\ell}=\operatorname{AUC}_{hr}
+                -\operatorname{AUC}_{m_\ell r},
+ \qquad \mu_\ell=\mathbb E[D_{r\ell}].
+\]
+The three-comparison intersection--union test (IUT3) addresses
+\begin{equation}
+ H_0:\ \bigcup_{\ell=1}^3\{\mu_\ell\ge0\},
+ \qquad
+ H_1:\ \bigcap_{\ell=1}^3\{\mu_\ell<0\}.
+ \label{eq:p6-iut}
+\end{equation}
+If $p_\ell$ is a valid one-sided $p$-value for the corresponding
+component null, reject~\eqref{eq:p6-iut} at level $\alpha$ only when
+all three $p_\ell\le\alpha$, equivalently when
+$p_{\rm IUT}=\max_\ell p_\ell\le\alpha$.
+Indeed, under the union null at least one component null, say
+$\ell_0$, is true, and
+\[
+ \mathbb P(p_{\rm IUT}\le\alpha)
+ \le\mathbb P(p_{\ell_0}\le\alpha)\le\alpha.
+\]
+This argument requires no independence between the three comparisons
+and no Bonferroni division of $\alpha$ for this single conjunction
+claim. Its calibration still depends on the validity of each chosen
+component test; a finite-sample exact claim cannot be inferred merely
+from having 256 replicates. Additional families of claims or
+outcome-dependent selection of comparators require their own handling.
+
+Rejection supports lower mean area against every one of the three
+specified comparators under this protocol. It does not imply lower
+risk at every budget, success on every seed, superiority to untested
+methods, or optimality among architectures. Failure to reject does
+not establish equivalence, absence of a directional effect, or absence
+of an advantage at some budgets. A superiority test has no prespecified
+equivalence margin. Together, the risk identity, direction diagnostic
+and IUT3 interpretation provide no uniform optimal cost bound for
+factor Adam or autonomous network growth.

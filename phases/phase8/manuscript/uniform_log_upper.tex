@@ -1,0 +1,195 @@
+% Independently audited extension, 7 October 2026.
+% Uses manuscript macros \ph, \stp, \detp, \rd, and theorem environment.
+% Add bibliography key dritschelwoerdeman as recorded below.
+\section{The sharp logarithmic degree bound for four equal masses}
+\label{sec:logupper}
+The linear upper bound can be sharpened by using both competing hierarchy choices. The resulting bound is uniform even when the posterior gaps degenerate.
+
+\begin{theorem}[Sharp degree order for four equal masses]
+\label{thm:logupper}
+There is an absolute constant $C$ such that, for every $r\ge1$, every nonnegative nonzero polynomial curvature $g=\ph''$ of degree at most $r$, and every four distinct equally weighted posterior locations,
+\[
+\rho_{\ph,\stp}\le\rho_{\ph,\detp}
+\le C\frac{r+1}{\log(r+2)}.
+\]
+Consequently, together with the fixed-quartet lower construction in Theorem~\ref{thm:lower},
+\[
+C_r^{\detp}=\Theta(r/\log r),\qquad
+C_r^{\stp}=\Theta(r/\log r)\qquad(r\to\infty).
+\]
+The upper bound allows arbitrary posterior spacing; the lower bound already holds for one fixed equally spaced quartet. This is an asymptotic-order result, with no claim of optimal leading constants or historical novelty.
+\end{theorem}
+\begin{proof}
+Write $R=\rho_{\ph,\detp}$. The compatible-optimizer argument of Theorem~\ref{thm:linearupper} shows that either $R=1$, or the only relevant conflict is the flat fine pair $BC$ against the flat coarse split $AB\mid CD$, with $A<B<C<D$. Put
+\[
+q=P_{BC},\qquad Q=P_{AB}+P_{CD},\qquad T=T_{ABC}.
+\]
+The hierarchy keeping the optimal coarse split and its better outer fine pair has price $\min(P_{AB},P_{CD})/q$. The hierarchy keeping the optimal fine pair and its better adjacent triple has price $\min(T_{ABC},T_{BCD})/Q$. Therefore
+\[
+R\le\frac{\min(P_{AB},P_{CD})}{q},\qquad
+R\le\frac{\min(T_{ABC},T_{BCD})}{Q}.
+\]
+These are merely admissible candidates: no exact Pareto-frontier assertion, or exclusion of a noncontiguous improvement, is needed. In particular,
+\begin{equation}
+q\le \frac{T}{R^2},\qquad
+S:=P_{AB}+P_{BC}\le\frac{2T}{R}.
+\label{eq:logbothratios}
+\end{equation}
+
+Affinely normalize the \emph{triple hull} $[A,C]$ to $[-1,1]$, writing $B=b\in(-1,1)$. The fourth point need not remain in this interval; it is not used in the polynomial estimates below. Set
+\[
+w(t)=1-|t|,\quad w_b=w(b),\quad
+s=\sqrt{1-b^2},\quad \theta_b=\arccos b,\quad
+\mu=\int_{-1}^1w(t)g(t)\rd t.
+\]
+The triple kernel dominates the endpoint-pair kernel $w/4$, and is at most $w/2$ because it vanishes at both endpoints and has piecewise slope of magnitude at most $1/2$. Hence
+\begin{equation}
+\frac{w(t)}4\le K_{ABC}(t)\le\frac{w(t)}2,
+\qquad 2T\le\mu\le4T.
+\label{eq:logtriplekernel}
+\end{equation}
+The two adjacent-pair kernels sum to
+\[
+\frac14\min\{w(t),|t-b|\}.
+\]
+
+\emph{A peak near the inner knot.}
+Assume $R\ge4096$, and put
+\[
+\varepsilon=\frac{64}{R}\le\frac1{64},\qquad
+I=\{t:|t-b|\le\varepsilon w_b\}.
+\]
+Outside $I$, the 1-Lipschitz property of $w$ gives
+$|t-b|\ge\varepsilon w(t)/(1+\varepsilon)$. Thus
+\[
+\int_{[-1,1]\setminus I}wg
+\le\frac{4(1+\varepsilon)}{\varepsilon}S
+\le\frac{8(1+\varepsilon)T}{R\varepsilon}
+\le\frac T4.
+\]
+It follows that $\int_Iwg\ge T$, so some $t_0\in I$ satisfies
+$w(t_0)g(t_0)\ge T/(2\varepsilon w_b)$. Define
+\[
+F(\theta)=g(\cos\theta)\sin^4\theta,\qquad
+n=r+4,\qquad \theta_0=\arccos t_0.
+\]
+This is a nonnegative trigonometric polynomial of degree at most $n$. Since $(1-t^2)^2\ge w(t)^2$,
+\begin{equation}
+F(\theta_0)\ge\frac{T}{4\varepsilon}.
+\label{eq:logpeak}
+\end{equation}
+Put $h=\varepsilon s$ and $a=1-h$. Along the interval between $b$ and $t_0$,
+$|(1-t^2)-s^2|\le2\varepsilon w_b\le2\varepsilon s^2$. Consequently,
+\begin{equation}
+|\theta_0-\theta_b|\le2h,\qquad \sin\theta_0\le2s.
+\label{eq:logangles}
+\end{equation}
+Let $\nu$ be the Poisson probability measure centered at $ae^{i\theta_0}$:
+\[
+\rd\nu(\theta)=P_a(\theta-\theta_0)\frac{\rd\theta}{2\pi},
+\qquad
+P_a(u)=\frac{1-a^2}{1-2a\cos u+a^2}.
+\]
+
+\emph{A spacing-uniform Poisson average.}
+For circular distance $d=\operatorname{dist}(u,2\pi\mathbb Z)\in[0,\pi]$, the facts $a\ge63/64$ and $1-\cos u\ge2d^2/\pi^2$ imply
+\[
+P_a(u)\le\frac{8h}{h^2+d^2}.
+\]
+For $\theta\in[0,\pi]$, either circular distance from $\theta$ to $\theta_0$ or to $-\theta_0$ satisfies
+$\sin\theta\le\sin\theta_0+d\le2s+d$. Therefore
+\[
+P_a(\theta\pm\theta_0)\sin\theta
+\le\frac{16hs}{h^2+d^2}+\frac{8hd}{h^2+d^2}
+\le\frac{20}{\varepsilon}.
+\]
+Using evenness of $F$, changing variables $t=\cos\theta$, and noting
+$(1-t^2)^{3/2}/w(t)\le2\sin\theta$, we obtain
+\begin{align}
+\int F\rd\nu
+&=\frac1{2\pi}\int_{-1}^1
+ [P_a(\theta-\theta_0)+P_a(\theta+\theta_0)]
+ g(t)(1-t^2)^{3/2}\rd t \notag\\
+&\le\frac{80\mu}{2\pi\varepsilon}
+\le\frac{64T}{\varepsilon}.
+\label{eq:logpoissonwhole}
+\end{align}
+Here $\theta=\arccos t$. This estimate avoids any need to compare the unweighted angular mass of $F$ to the mass near $b$ when $b$ approaches an endpoint.
+
+\emph{An inward arc with little curvature.}
+Consider
+\[
+J=[\theta_b-5h,\theta_b-4h].
+\]
+It lies in $(0,\pi)$, since $s\le\theta_b$ and $5\varepsilon<1$. The sine function is 1-Lipschitz, so on $J$, and on the interval joining it to $\theta_b$,
+\[
+(1-5\varepsilon)s\le\sin\theta\le(1+5\varepsilon)s.
+\]
+For $t=\cos\theta$ on this arc, this gives
+\[
+3\varepsilon w_b\le3\varepsilon s^2\le t-b
+\le6\varepsilon s^2\le12\varepsilon w_b,
+\qquad
+1-t\ge(1-12\varepsilon)w_b\ge3\varepsilon w_b.
+\]
+The $BC$ pair kernel is therefore at least $3\varepsilon w_b/4$. Using $s^2/w_b\le2$,
+\[
+\int_JF(\theta)\rd\theta
+\le8s^3\int_{\cos J}g(t)\rd t
+\le\frac{64s}{3\varepsilon}q.
+\]
+Since $P_a\le2/h$, \eqref{eq:logbothratios} yields
+\begin{equation}
+\int_JF\rd\nu
+\le\frac{64q}{3\pi\varepsilon^2}
+\le\frac{T}{192\pi}\le T.
+\label{eq:logleakage}
+\end{equation}
+Write $\alpha=\nu(J)$. By \eqref{eq:logangles},
+$|\theta-\theta_0|\le7h$ on $J$. The denominator of $P_a$ is then at most $50h^2$, whereas its numerator is at least $h$. Because $|J|=h$,
+\begin{equation}
+\alpha\ge\frac1{100\pi}=:\alpha_0.
+\label{eq:logharmonicmass}
+\end{equation}
+
+\emph{Outer factorization forces the logarithm.}
+The classical Fej\'er--Riesz theorem supplies an algebraic polynomial $p$ of degree at most $n$, with no zeros in the open unit disk, such that
+$F(\theta)=|p(e^{i\theta})|^2$; see \cite[Introduction]{dritschelwoerdeman}. Unit-circle zeros are allowed. For $|z|=1$ and any root $\zeta$ with $|\zeta|\ge1$,
+\[
+|az-\zeta|^2-a^2|z-\zeta|^2
+=(1-a)\big[(1+a)|\zeta|^2-2a\operatorname{Re}(z\overline\zeta)\big]\ge0.
+\]
+Multiplication over the roots proves
+$|p(ae^{i\theta_0})|\ge a^n|p(e^{i\theta_0})|$.
+The Poisson formula for $\log|p|$ therefore gives
+\begin{equation}
+\log F(\theta_0)+2n\log a\le\int\log F\rd\nu.
+\label{eq:logouter}
+\end{equation}
+For completeness, the formula can be checked factor by factor. For a root strictly outside the disk, $\log|z-\zeta|$ is harmonic on a neighborhood of the closed disk. For a unit-circle root, replace $\zeta$ by $(1+\eta)\zeta$ and let $\eta\downarrow0$. The boundary logarithms converge in $L^1$: locally they are bounded below by the integrable logarithm of the unit-circle distance and above by a fixed constant. The Poisson kernel at the fixed interior point is bounded, so its integrals converge as well. Thus boundary zeros do not add any correction to the formula.
+
+Apply Jensen's inequality separately on $J$ and its complement. From
+\eqref{eq:logpoissonwhole}--\eqref{eq:logharmonicmass} and the binary entropy bound,
+\begin{align*}
+\int\log F\rd\nu
+&\le\alpha\log\frac{T}{\alpha}
+ +(1-\alpha)\log\frac{64T}{(1-\alpha)\varepsilon}\\
+&\le\log\frac{T}{\varepsilon}+\alpha_0\log\varepsilon+\log128.
+\end{align*}
+Combining with \eqref{eq:logpeak} and \eqref{eq:logouter}, then using
+$-\log(1-h)\le2h\le2\varepsilon$, yields the explicit inequality
+\begin{equation}
+4(r+4)\varepsilon
+\ge\frac1{100\pi}\log\frac1\varepsilon-\log512,
+\qquad \varepsilon=\frac{64}{R},\quad R\ge4096.
+\label{eq:logimplicit}
+\end{equation}
+Equivalently, with absolute constants
+$K=64\cdot512^{100\pi}$ and $A=25600\pi$,
+\[
+R\log(R/K)\le A(r+4).
+\]
+For $R\ge\max(4096,K^2)$ this gives $R\log R\le2A(r+4)$ and hence
+$R=O(r/\log r)$; the remaining fixed thresholds are absorbed into a universal constant. More explicitly, split into $R\le\sqrt{r+4}$ and its complement, on which $\log R\ge\tfrac12\log(r+4)$. The stochastic upper bound follows from deterministic admissibility, and the Chebyshev family in Theorem~\ref{thm:lower} supplies both matching lower orders.
+\end{proof}
+

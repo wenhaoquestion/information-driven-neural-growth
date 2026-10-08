@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "d": 12,
+  "arrivals": 7,
+  "block": 1024,
+  "batch": 128,
+  "lr": 0.015,
+  "gradient_clip": 20.0,
+  "budgets": [
+    3200000,
+    10000000
+  ],
+  "methods": [
+    "historical_moment",
+    "random_growth128",
+    "random_growth138",
+    "fixed7"
+  ],
+  "age_modes": [
+    "global",
+    "local"
+  ],
+  "tasks": [
+    "indefinite_noisy"
+  ],
+  "historical_capacity": 128,
+  "replay_capacity": 138,
+  "randomize_order": true,
+  "hard_wall_seconds": 120,
+  "seeds": [
+    96000000,
+    96000001
+  ]
+}

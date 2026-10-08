@@ -1,0 +1,14 @@
+{
+  "status": "matched",
+  "source": "phase3/results/betting_followup4096.json",
+  "source_sha256": "5f2bbe8719da39be2e9590acf7fd66d9f6eded6cca737832c2583d6a47f1b806",
+  "original_runner_sha256": "dbf1a676bed0ec3e982dc11c22af7ecc291db397ec6daca5c06ee9783dbfbef0",
+  "task": "interaction",
+  "seed": 63000,
+  "methods": [
+    "residual",
+    "random"
+  ],
+  "scope": "One entire original interaction trajectory, all methods, branches, tails and controls; numerical tolerance rtol=1e-9 atol=1e-11, timings excluded.",
+  "wall_seconds": 5.006945417000679
+}

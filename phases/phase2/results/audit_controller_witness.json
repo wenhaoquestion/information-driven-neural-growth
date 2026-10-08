@@ -1,0 +1,315 @@
+{
+  "kind": "finite known-population numerical checks; no fitting or sampling claims",
+  "X": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      -1.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      -1.0
+    ]
+  ],
+  "bias": 0.5,
+  "eta": 0.1,
+  "posterior_plus": [
+    0.4,
+    0.4,
+    0.6,
+    0.6
+  ],
+  "posterior_minus": [
+    0.6,
+    0.6,
+    0.4,
+    0.4
+  ],
+  "S": [
+    [
+      -0.03634309906917935,
+      0.0
+    ],
+    [
+      0.0,
+      0.03634309906917935
+    ]
+  ],
+  "parent_H": [
+    [
+      0.040969405516726475,
+      0.0
+    ],
+    [
+      0.0,
+      0.11365560365508517
+    ]
+  ],
+  "parent_H_finite_difference": [
+    [
+      0.040969411196911665,
+      0.0
+    ],
+    [
+      0.0,
+      0.1136556015968182
+    ]
+  ],
+  "parent_eigenvalues": [
+    0.040969405516726475,
+    0.11365560365508517
+  ],
+  "local_stability_eta_upper": 0.21272953205983036,
+  "angles_tested_per_radius": 721,
+  "radii": [
+    0.001,
+    0.02,
+    0.1,
+    0.4,
+    1.0
+  ],
+  "arbitrary_logits_tested": 10000,
+  "arbitrary_logits_seed": 809241,
+  "rows": [
+    {
+      "r": 0.001,
+      "angle": 0.0,
+      "risk_plus": 0.6931471623884122,
+      "risk_minus": 0.6931471987314949,
+      "gain_plus": 1.817153305605501e-08,
+      "gain_minus": -1.817154959837808e-08,
+      "quadratic_prediction_gain_plus": 1.8171549534589675e-08
+    },
+    {
+      "r": 0.001,
+      "angle": 1.5707963267948966,
+      "risk_plus": 0.6931471987314948,
+      "risk_minus": 0.6931471623884122,
+      "gain_plus": -1.8171549487355776e-08,
+      "gain_minus": 1.817153305605501e-08,
+      "quadratic_prediction_gain_plus": -1.8171549534589675e-08
+    },
+    {
+      "r": 0.001,
+      "angle": 3.141592653589793,
+      "risk_plus": 0.6931471623884122,
+      "risk_minus": 0.6931471987314949,
+      "gain_plus": 1.817153305605501e-08,
+      "gain_minus": -1.817154959837808e-08,
+      "quadratic_prediction_gain_plus": 1.8171549534589675e-08
+    },
+    {
+      "r": 0.001,
+      "angle": 4.71238898038469,
+      "risk_plus": 0.6931471987314948,
+      "risk_minus": 0.6931471623884122,
+      "gain_plus": -1.8171549487355776e-08,
+      "gain_minus": 1.817153305605501e-08,
+      "quadratic_prediction_gain_plus": -1.8171549534589675e-08
+    },
+    {
+      "r": 0.001,
+      "angle": 6.283185307179586,
+      "risk_plus": 0.6931471623884122,
+      "risk_minus": 0.6931471987314949,
+      "gain_plus": 1.817153305605501e-08,
+      "gain_minus": -1.817154959837808e-08,
+      "quadratic_prediction_gain_plus": 1.8171549534589675e-08
+    },
+    {
+      "r": 0.02,
+      "angle": 0.0,
+      "risk_plus": 0.693139914577719,
+      "risk_minus": 0.6931544491828561,
+      "gain_plus": 7.265982226334344e-06,
+      "gain_minus": -7.268622910783229e-06,
+      "quadratic_prediction_gain_plus": 7.268619813835871e-06
+    },
+    {
+      "r": 0.02,
+      "angle": 1.5707963267948966,
+      "risk_plus": 0.6931544491828561,
+      "risk_minus": 0.6931399145777188,
+      "gain_plus": -7.268622910783229e-06,
+      "gain_minus": 7.265982226445367e-06,
+      "quadratic_prediction_gain_plus": -7.268619813835871e-06
+    },
+    {
+      "r": 0.02,
+      "angle": 3.141592653589793,
+      "risk_plus": 0.693139914577719,
+      "risk_minus": 0.6931544491828561,
+      "gain_plus": 7.265982226334344e-06,
+      "gain_minus": -7.268622910783229e-06,
+      "quadratic_prediction_gain_plus": 7.268619813835871e-06
+    },
+    {
+      "r": 0.02,
+      "angle": 4.71238898038469,
+      "risk_plus": 0.6931544491828561,
+      "risk_minus": 0.6931399145777188,
+      "gain_plus": -7.268622910783229e-06,
+      "gain_minus": 7.265982226445367e-06,
+      "quadratic_prediction_gain_plus": -7.268619813835871e-06
+    },
+    {
+      "r": 0.02,
+      "angle": 6.283185307179586,
+      "risk_plus": 0.693139914577719,
+      "risk_minus": 0.6931544491828561,
+      "gain_plus": 7.265982226334344e-06,
+      "gain_minus": -7.268622910783229e-06,
+      "quadratic_prediction_gain_plus": 7.268619813835871e-06
+    },
+    {
+      "r": 0.1,
+      "angle": 0.0,
+      "risk_plus": 0.6929671039995243,
+      "risk_minus": 0.6933288932628623,
+      "gain_plus": 0.00018007656042096087,
+      "gain_minus": -0.00018171270291700292,
+      "quadratic_prediction_gain_plus": 0.0001817154953458968
+    },
+    {
+      "r": 0.1,
+      "angle": 1.5707963267948966,
+      "risk_plus": 0.6933288932628623,
+      "risk_minus": 0.6929671039995243,
+      "gain_plus": -0.00018171270291700292,
+      "gain_minus": 0.00018007656042096087,
+      "quadratic_prediction_gain_plus": -0.0001817154953458968
+    },
+    {
+      "r": 0.1,
+      "angle": 3.141592653589793,
+      "risk_plus": 0.6929671039995243,
+      "risk_minus": 0.6933288932628623,
+      "gain_plus": 0.00018007656042096087,
+      "gain_minus": -0.00018171270291700292,
+      "quadratic_prediction_gain_plus": 0.0001817154953458968
+    },
+    {
+      "r": 0.1,
+      "angle": 4.71238898038469,
+      "risk_plus": 0.6933288932628623,
+      "risk_minus": 0.6929671039995243,
+      "gain_plus": -0.00018171270291700292,
+      "gain_minus": 0.00018007656042096087,
+      "quadratic_prediction_gain_plus": -0.0001817154953458968
+    },
+    {
+      "r": 0.1,
+      "angle": 6.283185307179586,
+      "risk_plus": 0.6929671039995243,
+      "risk_minus": 0.6933288932628623,
+      "gain_plus": 0.00018007656042096087,
+      "gain_minus": -0.00018171270291700292,
+      "quadratic_prediction_gain_plus": 0.0001817154953458968
+    },
+    {
+      "r": 0.4,
+      "angle": 0.0,
+      "risk_plus": 0.6906236041012965,
+      "risk_minus": 0.6960370265860986,
+      "gain_plus": 0.0025235764586487575,
+      "gain_minus": -0.0028898460261532755,
+      "quadratic_prediction_gain_plus": 0.002907447925534349
+    },
+    {
+      "r": 0.4,
+      "angle": 1.5707963267948966,
+      "risk_plus": 0.6960370265860985,
+      "risk_minus": 0.6906236041012965,
+      "gain_plus": -0.0028898460261531644,
+      "gain_minus": 0.0025235764586487575,
+      "quadratic_prediction_gain_plus": -0.002907447925534349
+    },
+    {
+      "r": 0.4,
+      "angle": 3.141592653589793,
+      "risk_plus": 0.6906236041012965,
+      "risk_minus": 0.6960370265860986,
+      "gain_plus": 0.0025235764586487575,
+      "gain_minus": -0.0028898460261532755,
+      "quadratic_prediction_gain_plus": 0.002907447925534349
+    },
+    {
+      "r": 0.4,
+      "angle": 4.71238898038469,
+      "risk_plus": 0.6960370265860985,
+      "risk_minus": 0.6906236041012965,
+      "gain_plus": -0.0028898460261531644,
+      "gain_minus": 0.0025235764586487575,
+      "quadratic_prediction_gain_plus": -0.002907447925534349
+    },
+    {
+      "r": 0.4,
+      "angle": 6.283185307179586,
+      "risk_plus": 0.6906236041012965,
+      "risk_minus": 0.6960370265860986,
+      "gain_plus": 0.0025235764586487575,
+      "gain_minus": -0.0028898460261532755,
+      "quadratic_prediction_gain_plus": 0.002907447925534349
+    },
+    {
+      "r": 1.0,
+      "angle": 0.0,
+      "risk_plus": 0.6847264775739045,
+      "risk_minus": 0.7087866384806626,
+      "gain_plus": 0.008420702986040807,
+      "gain_minus": -0.015639457920717303,
+      "quadratic_prediction_gain_plus": 0.018171549534589677
+    },
+    {
+      "r": 1.0,
+      "angle": 1.5707963267948966,
+      "risk_plus": 0.7087866384806625,
+      "risk_minus": 0.6847264775739044,
+      "gain_plus": -0.015639457920717192,
+      "gain_minus": 0.008420702986040918,
+      "quadratic_prediction_gain_plus": -0.018171549534589677
+    },
+    {
+      "r": 1.0,
+      "angle": 3.141592653589793,
+      "risk_plus": 0.6847264775739045,
+      "risk_minus": 0.7087866384806626,
+      "gain_plus": 0.008420702986040807,
+      "gain_minus": -0.015639457920717303,
+      "quadratic_prediction_gain_plus": 0.018171549534589677
+    },
+    {
+      "r": 1.0,
+      "angle": 4.71238898038469,
+      "risk_plus": 0.7087866384806625,
+      "risk_minus": 0.6847264775739044,
+      "gain_plus": -0.015639457920717192,
+      "gain_minus": 0.008420702986040918,
+      "quadratic_prediction_gain_plus": -0.018171549534589677
+    },
+    {
+      "r": 1.0,
+      "angle": 6.283185307179586,
+      "risk_plus": 0.6847264775739045,
+      "risk_minus": 0.7087866384806626,
+      "gain_plus": 0.008420702986040807,
+      "gain_minus": -0.015639457920717303,
+      "quadratic_prediction_gain_plus": 0.018171549534589677
+    }
+  ],
+  "edge_cases": {
+    "b0": "symmetric split exactly zero for all directions and radii",
+    "eta0.3_parent_eigenvalues": [
+      -0.03171679262163221,
+      0.18634180179344387
+    ]
+  },
+  "assertions": "all passed"
+}

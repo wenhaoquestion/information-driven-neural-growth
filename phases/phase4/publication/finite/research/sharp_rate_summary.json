@@ -1,0 +1,16 @@
+{
+  "status": "all assertions passed",
+  "seed": 20260914,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "mpmath": "1.3.0",
+  "scalar_vector_tests": 4000,
+  "hierarchy_instances": 1204,
+  "high_precision_rechecks": 14,
+  "max_lipschitz_bound_fraction": 0.9288385138080749,
+  "max_gradient_bound_fraction": 0.9366990035218329,
+  "max_regrouping_bound_fraction": 0.48964138621109127,
+  "max_hierarchy_price_over_bound": 0.15119747409480386,
+  "seconds": 0.8656853749998845,
+  "note": "Randomized mathematical diagnostics; not a proof or trained-learning benchmark. Near-zero floating ratios omitted; explicit zero cases retained and checked at high precision."
+}

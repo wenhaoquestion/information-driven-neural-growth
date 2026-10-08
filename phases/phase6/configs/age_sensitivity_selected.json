@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "d": 12,
+  "arrivals": 7,
+  "block": 1024,
+  "batch": 128,
+  "lr": 0.015,
+  "gradient_clip": 20.0,
+  "budgets": [
+    3200000,
+    5000000,
+    6400000,
+    8000000,
+    10000000
+  ],
+  "methods": [
+    "historical_moment",
+    "random_growth128",
+    "random_growth138",
+    "fixed7"
+  ],
+  "age_modes": [
+    "local"
+  ],
+  "tasks": [
+    "indefinite_noisy"
+  ],
+  "historical_capacity": 128,
+  "replay_capacity": 138,
+  "randomize_order": true,
+  "hard_wall_seconds": 240,
+  "seeds": [
+    96100000,
+    96100001,
+    96100002,
+    96100003,
+    96100004,
+    96100005,
+    96100006,
+    96100007,
+    96100008,
+    96100009,
+    96100010,
+    96100011,
+    96100012,
+    96100013,
+    96100014,
+    96100015,
+    96100016,
+    96100017,
+    96100018,
+    96100019,
+    96100020,
+    96100021,
+    96100022,
+    96100023,
+    96100024,
+    96100025,
+    96100026,
+    96100027,
+    96100028,
+    96100029,
+    96100030,
+    96100031
+  ],
+  "method_lrs": {
+    "fixed7": 0.0075,
+    "historical_moment": 0.0075,
+    "random_growth128": 0.0075,
+    "random_growth138": 0.0075
+  }
+}

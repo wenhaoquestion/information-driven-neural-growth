@@ -1,0 +1,11 @@
+# Phase 5 — retained moments and discovered directions
+
+This research report supplies complete scoped proofs, trained quadratic-network experiments, and preserved negative results. A substantial new general structural-learning principle and a robust final-risk advantage of historical moments were **not established**.
+
+Start with the [English paper](output/pdf/retained_moments_and_discovered_directions.pdf), [Chinese explanation](CHINESE_EXPLANATION.md), [scientific status](SCIENTIFIC_STATUS.md), and [claim/evidence ledger](CLAIM_EVIDENCE_LEDGER.md). The full editable paper is [manuscript/main.tex](manuscript/main.tex), including all theorem proofs and appendices. The [novelty matrix](NOVELTY_MATRIX.md) identifies the closest prior results and limits of the source search.
+
+The historical record contains 128 estimator datasets / 1,024 stages and three neural studies totaling 768 trained trajectories, 5,376 events, and 1,440 common-checkpoint refits. The separate full-minibatch follow-up removed an optimizer-tail confound; all 16 targeted final-risk intervals include zero. This is not an equivalence result. The adaptive study learns economical widths with a heuristic gate; it does not supply a population-safety theorem or general advantage over fixed capacity.
+
+The public package retains all configurations and seeds, simulation/audit source, final plots and tables, estimator stage records, per-seed neural endpoints, common-checkpoint branch outcomes, and historical technical audit summaries. Large generated input arrays, complete per-event parameter trajectories, duplicate replay records, downloaded third-party full texts, private workflow records and build caches remain outside Git. [EXCLUDED_ARTIFACTS.csv](EXCLUDED_ARTIFACTS.csv) records every excluded original file's relative name, size, SHA-256 and reason. It does not host the omitted data.
+
+Use [REPRODUCE.md](REPRODUCE.md) for portable commands and the distinction between checking the public record and regenerating omitted raw data. Historical freeze hashes identify original bytes; publication edits to prose, paths or audit summaries are separately described in [PUBLICATION_NOTES.md](PUBLICATION_NOTES.md). Historical technical reviews are internal research checks, not external peer review or a statement that the author personally reviewed every artifact.

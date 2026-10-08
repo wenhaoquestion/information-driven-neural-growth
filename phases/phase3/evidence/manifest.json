@@ -1,0 +1,101 @@
+{
+  "format": 1,
+  "kind": "exact-byte historical scientific evidence; no new run",
+  "files": [
+    {
+      "archive": "evidence/betting_followup4096.json.gz",
+      "target": "results/betting_followup4096.json",
+      "archive_sha256": "0c072101a0e6c5b9884337ae948b1c7e06fb3c30eb45fc64e710e1527920ceec",
+      "uncompressed_sha256": "5f2bbe8719da39be2e9590acf7fd66d9f6eded6cca737832c2583d6a47f1b806",
+      "uncompressed_bytes": 12745373,
+      "purpose": "Complete historical fitted parameters, event decisions, gate statistics, controls and seeds for reported tables",
+      "dependent_scripts": [
+        "code/summarize.py",
+        "code/summarize_betting_followup.py",
+        "code/verify_saved.py",
+        "code/audit_betting.py (optional historical sample reconstruction; uses RNG/training)"
+      ]
+    },
+    {
+      "archive": "evidence/confirm_eb16384.json.gz",
+      "target": "results/confirm_eb16384.json",
+      "archive_sha256": "295a34349206973142ee1280144282730bff9cc54044a2c69a1c1d810abd9908",
+      "uncompressed_sha256": "ee9ede62e3da282cab0cec706b44f962af52bcf98e3942bcdec9e63528344531",
+      "uncompressed_bytes": 25106033,
+      "purpose": "Complete historical fitted parameters, event decisions, gate statistics, controls and seeds for reported tables",
+      "dependent_scripts": [
+        "code/summarize.py",
+        "code/summarize_betting_followup.py",
+        "code/verify_saved.py",
+        "code/audit_results.py (optional original evaluation-sample reconstruction; uses RNG)"
+      ]
+    },
+    {
+      "archive": "evidence/confirm_eb4096.json.gz",
+      "target": "results/confirm_eb4096.json",
+      "archive_sha256": "70adf4e2454766ed3e8673a337d02382cb836cb32809163b7ddbe62c52f8edf5",
+      "uncompressed_sha256": "3f92a78345414211630142f0c4be3519759285a55322b41eca27278cb3a89320",
+      "uncompressed_bytes": 23091075,
+      "purpose": "Complete historical fitted parameters, event decisions, gate statistics, controls and seeds for reported tables",
+      "dependent_scripts": [
+        "code/summarize.py",
+        "code/summarize_betting_followup.py",
+        "code/verify_saved.py",
+        "code/audit_results.py (optional original evaluation-sample reconstruction; uses RNG)"
+      ]
+    },
+    {
+      "archive": "evidence/confirm_mean16384.json.gz",
+      "target": "results/confirm_mean16384.json",
+      "archive_sha256": "440cd67667c528231838c537bd9e59942018307256dd25e27e1a7a764054fc32",
+      "uncompressed_sha256": "116bc2d1b46210127c248d28a5c8445c99af74ef0fc18a67cbd0409feddceb14",
+      "uncompressed_bytes": 16569879,
+      "purpose": "Complete historical fitted parameters, event decisions, gate statistics, controls and seeds for reported tables",
+      "dependent_scripts": [
+        "code/summarize.py",
+        "code/summarize_betting_followup.py",
+        "code/verify_saved.py",
+        "code/audit_results.py (optional original evaluation-sample reconstruction; uses RNG)"
+      ]
+    },
+    {
+      "archive": "evidence/eb_followup4096.json.gz",
+      "target": "results/eb_followup4096.json",
+      "archive_sha256": "4e70065a494cb618efba7199d64c4069387323b81da2091baa3b6d3c2c12ef5d",
+      "uncompressed_sha256": "16403d85e4a3a464cf57834e8136feb73aaf5a081e44e5c0f29d9ee354cac03c",
+      "uncompressed_bytes": 9978200,
+      "purpose": "Complete historical fitted parameters, event decisions, gate statistics, controls and seeds for reported tables",
+      "dependent_scripts": [
+        "code/summarize.py",
+        "code/summarize_betting_followup.py",
+        "code/verify_saved.py"
+      ]
+    },
+    {
+      "archive": "evidence/pilot_16384.json.gz",
+      "target": "results/pilot_16384.json",
+      "archive_sha256": "8184dc6039ede154d5d73a419d30a4bc3b5499a2914482224a72f80a823f6461",
+      "uncompressed_sha256": "3e43caeae756d92e5aa1e53812d042d7a48b55d28084956d82a4371e5c406a63",
+      "uncompressed_bytes": 4670936,
+      "purpose": "Complete historical fitted parameters, event decisions, gate statistics, controls and seeds; exploratory pilot",
+      "dependent_scripts": [
+        "code/summarize.py",
+        "code/summarize_betting_followup.py",
+        "code/verify_saved.py"
+      ]
+    },
+    {
+      "archive": "evidence/pilot_4096.json.gz",
+      "target": "results/pilot_4096.json",
+      "archive_sha256": "130b3f605a64fd7eceffbb1dd6500a66462f1cdb35d307c958b375d37a4e794c",
+      "uncompressed_sha256": "17903ad0b177c279f3b28737ba1376fb2f53ea89928d7e39b759c5503372db58",
+      "uncompressed_bytes": 4156227,
+      "purpose": "Complete historical fitted parameters, event decisions, gate statistics, controls and seeds; exploratory pilot",
+      "dependent_scripts": [
+        "code/summarize.py",
+        "code/summarize_betting_followup.py",
+        "code/verify_saved.py"
+      ]
+    }
+  ]
+}

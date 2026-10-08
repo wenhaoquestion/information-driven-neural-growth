@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-10-07T22:43:48.814032+00:00",
+  "finished_utc": "2026-10-07T22:43:48.950628+00:00",
+  "wall_seconds": 0.13644066699998803,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "bit_generator": "PCG64",
+  "seed": 2026100723,
+  "sample_budget": 1000000,
+  "peak_memory_bytes": 41451520,
+  "peak_memory_scope": "single process ru_maxrss",
+  "single_process": true,
+  "source_sha256": {
+    "statistics/confirm_once.py": "4f16ef912f25a1a878444dc56632665a7439cfcb218e897ba04238723ff872f3",
+    "statistics/CONFIRMATION_REFERENCE.json": "490da167a2cd9ccc5abe370f08e15e34d32e6b3c83386c9a0edaa363a6d8019b",
+    "statistics/infer_confirmation.py": "bf97ae09de154bba5a5f1b9696ec30610d07f405ead7296a473f03eac0066afb",
+    "statistics/honest_delta.py": "5ef373afa13c429509e80f45fe693ae87065ae10ba9727fcc2a15839fe99e9be",
+    "statistics/certify_interior2048.py": "ff33f81fb0262e6cacf0d51d78a0b3251b29ef4675198c26b471106945b442d9",
+    "theory/local_loss_oracle.py": "5da8711422b08cd2823c09010c355fda810f49f7748bd59928c0600f36986768",
+    "statistics/INTERIOR_2048_POWER_CERTIFICATE.json": "11d892d7fd510a570ce557000861ad4dd2f30c12abcc3ad94c2f76ea1637cdee"
+  },
+  "interpretation": "One confirmation realization, not an estimate of power. Power is analytic.",
+  "publication_binding_notice": "Publication copy: source digests bind current public files after documented metadata/path edits; historical event timestamps are retained and are not a new execution attestation."
+}

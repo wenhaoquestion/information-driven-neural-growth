@@ -1,0 +1,70 @@
+{
+  "edition": "Public research edition; original event dates are historical",
+  "scope": "Original-to-public derivative provenance. Refreshed public receipt hashes certify current public-copy consistency only; no historical execution re-attestation. Scientific data and counts were not resampled.",
+  "files": [
+    {
+      "path": "theory/independent_verify.py",
+      "original_sha256": "72506165e7f990dd4390adfa181e53b4f5903b0a6ce1ed3902a6107309e937a8",
+      "publication_sha256": "72d6f35a5abcd824023ec7c5e7126b48cebc1f9891ae4cd76e6e0e1e07f935ef",
+      "original_bytes": 14170,
+      "publication_bytes": 14182,
+      "transformation": "Adapted public input path and new publication receipt output; all arithmetic/assertions unchanged"
+    },
+    {
+      "path": "historical_results/INDEPENDENT_VERIFY.json",
+      "original_sha256": "7524a96e7520deabd04c21945cb0f3d35bd6ff3ac0fd63394bf491398d810ed3",
+      "publication_sha256": "7524a96e7520deabd04c21945cb0f3d35bd6ff3ac0fd63394bf491398d810ed3",
+      "original_bytes": 23107,
+      "publication_bytes": 23107,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "historical_results/INDEPENDENT_CODE_CHECK.json",
+      "original_sha256": "480fc2d66b574a87a76a2709a46b51b43eaddb49b6e7b5c6c06ab83c41858d79",
+      "publication_sha256": "480fc2d66b574a87a76a2709a46b51b43eaddb49b6e7b5c6c06ab83c41858d79",
+      "original_bytes": 105020,
+      "publication_bytes": 105020,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "code/independent_code_check.py",
+      "original_sha256": "f47dc403c7b72076edc2bd654323102592666863ae5e65574d1011fe79e5f862",
+      "publication_sha256": "816f3eb6b7bbf5ab1aba2ce781cbb27de73e9b7ee49aaa6eb6e727bffc3ef916",
+      "original_bytes": 14800,
+      "publication_bytes": 14829,
+      "transformation": "Adapted public input/history paths and new publication receipt output; scientific arithmetic unchanged"
+    },
+    {
+      "path": "README.md",
+      "original_sha256": null,
+      "publication_sha256": "f91f7e752d1ba8b0d0d10ee6d4208618c5f95910e1988307b8ff16fa16804497",
+      "original_bytes": null,
+      "publication_bytes": 546,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "REPRODUCE.md",
+      "original_sha256": null,
+      "publication_sha256": "a0b32e3624f1ec9ea01dba117a2c13fce5f184324cfa1e643636f9b4565f8e09",
+      "original_bytes": null,
+      "publication_bytes": 967,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "SCIENTIFIC_STATUS.md",
+      "original_sha256": null,
+      "publication_sha256": "d6f41c4b4fd22779bd2f8d1ba08bb93e7dfebab46ce200c9b5f040d996f7b826",
+      "original_bytes": null,
+      "publication_bytes": 653,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "TECHNICAL_REVIEW.md",
+      "original_sha256": null,
+      "publication_sha256": "70e5104fdf28591e7361741aeb91f686a65f59361fea2518b8d9079a7889eb0d",
+      "original_bytes": null,
+      "publication_bytes": 7474,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    }
+  ]
+}

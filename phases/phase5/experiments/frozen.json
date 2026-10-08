@@ -1,0 +1,9 @@
+{
+  "timestamp_utc": "2026-09-20T05:40:48.459294+00:00",
+  "status": "frozen_before_any_confirmation_run",
+  "files": {
+    "phase5/code/quadratic_experiment.py": "0ea28d3a245c51534968e6b2d26ae7bd9ce3790693a86ae3bbff01852435c4e2",
+    "phase5/experiments/confirmation.json": "37821cb3f3b89782f856de37853abf001733794941381deaef5fa9ee7b130205",
+    "phase5/experiments/PROTOCOL.md": "580ca7ec4f7ebd540fc114abd3c20376f8e4ba55043bd7250078a665bd4972dc"
+  }
+}

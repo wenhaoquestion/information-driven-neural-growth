@@ -1,0 +1,434 @@
+% Included by main.tex. Requires amsmath, amssymb, amsthm and theorem,
+% proposition, lemma, remark environments. All notation is defined locally.
+\section{Prediction movement, gain, and the evidence needed to grow}
+\label{sec:movement-theory}
+
+The information used here is evidence about a proposed change in task loss.
+It is not the entropy of a neuron. Two candidates can have the same small
+positive gain and very different sampling difficulty, because they move
+predictions by different amounts. We first make this distinction precise,
+then exhibit a whole sequence for which discarding evidence between
+structural decisions imposes a quadratic label cost. The latter cost is a
+property of a specified audit interface; we also prove how it can be avoided.
+The decomposition and statistical ingredients are classical. Our additional
+result is their explicit repeated neural realization and the comparison of
+fresh and shared evidence, with a deliberately bounded novelty claim.
+
+\subsection{The geometry of a paired Brier comparison}
+
+Let $Y\in\{0,1\}$ and $\eta(x)=\mathbb P(Y=1\mid X=x)$.
+Predictions $p,q:\mathcal X\to[0,1]$ are fixed before independent audit data.
+Write
+\begin{equation}
+ D=(Y-p(X))^2-(Y-q(X))^2,\quad h=q-p,\quad
+ \Delta=\mathbb ED,\quad S=\mathbb E h^2.
+ \label{eq:movement-def}
+\end{equation}
+Positive $\Delta$ means that $q$ improves on $p$; $S$ measures prediction
+movement on population inputs.
+
+\begin{proposition}[Movement and paired variance]
+\label{prop:movement}
+One has
+\begin{align}
+ D&=h(2Y-p-q), & \Delta&=2\mathbb E[h(\eta-p)]-S,\label{eq:gain-movement}\\
+ \operatorname{Var}(D)
+ &=4\mathbb E[h^2\eta(1-\eta)]
+   +\operatorname{Var}\{h(2\eta-p-q)\}.\label{eq:variance-movement}
+\end{align}
+In particular, $|D|\le1$ and $\operatorname{Var}(D)\le4S$.
+If $a\le\eta\le1-a$ almost surely, for $0<a\le1/2$, then
+$\operatorname{Var}(D)\ge4a(1-a)S$.
+If $p=\mathbb E[Y\mid\mathcal A]$ and
+$q=\mathbb E[Y\mid\mathcal B]$ for sigma fields
+$\mathcal A\subset\mathcal B$, then $\Delta=S$.
+\end{proposition}
+\begin{proof}
+Expansion of the two squared losses gives \eqref{eq:gain-movement}.
+Conditional on $X$, $h,p,q$ are constants, so
+$\operatorname{Var}(D\mid X)=4h^2\eta(1-\eta)$ and
+$\mathbb E[D\mid X]=h(2\eta-p-q)$.
+The conditional-variance identity proves \eqref{eq:variance-movement}.
+Both squared losses lie in $[0,1]$, giving $|D|\le1$; also
+$|2Y-p-q|\le2$, hence $\operatorname{Var}(D)\le\mathbb ED^2\le4S$.
+The noise lower bound follows from $\eta(1-\eta)\ge a(1-a)$.
+Finally, $q-p$ is $\mathcal B$-measurable and
+$\mathbb E[Y-q\mid\mathcal B]=0$, so
+$\mathbb E[(Y-q)(q-p)]=0$. Substituting
+$Y-p=(Y-q)+(q-p)$ in the difference of squared losses gives $\Delta=S$.
+\end{proof}
+
+The final assertion is the familiar projection identity for nested Bayes
+refits. A trained nonlinear branch need not satisfy it. Its gain can be
+small because two sizable terms in \eqref{eq:gain-movement} nearly cancel.
+The ratio $S/\Delta$, when the population gain is positive, records this
+discrepancy. It is a diagnostic, not a universal control objective.
+
+\begin{proposition}[A movement-dependent sufficient audit size]
+\label{prop:movement-upper}
+Suppose an upper bound $S\le\bar S$ is fixed independently of the audit.
+For $n$ iid paired observations and $u>0$, define
+\[
+ r_n=\sqrt{\frac{8\bar S u}{n}}+\frac{4u}{3n}.
+\]
+Each tail probability
+$\mathbb P(\bar D_n-\Delta>r_n)$ and
+$\mathbb P(\Delta-\bar D_n>r_n)$ is at most $e^{-u}$.
+The test $\bar D_n>r_n$ therefore has false acceptance probability at most
+$e^{-u}$ for $\Delta\le0$. When $\Delta>0$, the condition
+\begin{equation}
+ n>\max\left\{\frac{128\bar S u}{\Delta^2},
+                  \frac{16u}{3\Delta}\right\}
+ \label{eq:power-sample}
+\end{equation}
+gives power at least $1-e^{-u}$.
+\end{proposition}
+\begin{proof}
+Put $Z=D-\Delta$ and $v=\mathbb EZ^2$. Then $|Z|\le2$.
+If $v=0$, $D$ is almost surely constant and both tail bounds hold directly.
+Assume henceforth $v>0$.
+For $0\le\lambda<3/2$, expanding the exponential and using
+$\mathbb E|Z|^k\le2^{k-2}v$ and
+$k!\ge2\,3^{k-2}$ for $k\ge2$ yields
+\[
+ \log\mathbb Ee^{\lambda Z}
+ \le\frac{\lambda^2v}{2(1-2\lambda/3)}.
+\]
+Apply Markov's inequality to the sum of $n$ independent copies and take
+$\lambda=r/(v+2r/3)$ to obtain
+\[
+ \mathbb P(\bar Z_n\ge r)
+ \le\exp\left\{-\frac{nr^2}{2(v+2r/3)}\right\}.
+\]
+For $r=\sqrt{2vu/n}+4u/(3n)$ the exponent has magnitude at least $u$.
+Use $v\le4\bar S$ and repeat for $-Z$. Under
+\eqref{eq:power-sample}, the square-root and linear terms of $r_n$ are
+each smaller than $\Delta/4$, so $2r_n<\Delta$. Except on the lower-tail
+failure event, $\bar D_n\ge\Delta-r_n>r_n$.
+\end{proof}
+
+This is a standard Bernstein argument with an explicit movement bound.
+Replacing $\bar S$ by its same-sample empirical value without a confidence
+bound would not satisfy the proposition. The empirical gate instead uses
+an established empirical Bernstein inequality \cite{maurer2009}.
+For nested Bayes refits $S=\Delta$, so the leading sufficient sample order
+is $1/\Delta$; for unaligned changes it is $S/\Delta^2$.
+
+\subsection{A matching pairwise lower-bound witness}
+
+Write
+$\operatorname{kl}(r,s)=r\log(r/s)+(1-r)\log\{(1-r)/(1-s)\}$.
+For $\alpha,\beta\in(0,1)$ with $\alpha+\beta<1$, let
+$b_{\alpha,\beta}=\operatorname{kl}(1-\beta,\alpha)$.
+
+\begin{lemma}[Sequential testing, established change of measure]
+\label{lem:stopped-kl}
+Let $P,Q$ be finite observation laws with positive probabilities.
+A randomized procedure observes iid draws, stops at a common stopping rule
+$N$, and outputs an event $A$ determined by its stopped transcript.
+There is no initial information whose distribution differs between the laws.
+If $P(A)\ge1-\beta$ and $Q(A)\le\alpha$, then
+\[
+ \mathbb E_PN\,\operatorname{KL}(P,Q)\ge b_{\alpha,\beta}.
+\]
+\end{lemma}
+\begin{proof}
+If $\mathbb E_PN=\infty$ there is nothing to prove. Otherwise the stopped
+log-likelihood ratio is
+$L_N=\sum_{i\ge1}1_{\{N\ge i\}}\log\{P(Z_i)/Q(Z_i)\}$.
+The increments are bounded, and the sum of their absolute expectations
+is finite because $\mathbb E_PN<\infty$. The indicator is determined
+before draw $i$, whose log-likelihood increment has mean
+$\operatorname{KL}(P,Q)$. Thus
+$\mathbb E_PL_N=\mathbb E_PN\operatorname{KL}(P,Q)$.
+The common stopping and randomization rules contribute no extra factor
+to the likelihood ratio of the stopped transcript. Its KL divergence is
+therefore $\mathbb E_PL_N$. Data processing to $1_A$ bounds this below by
+$\operatorname{kl}(P(A),Q(A))$.
+For $r>s$, binary KL increases with $r$ and decreases with $s$, as follows
+by differentiating its displayed formula. Hence this last divergence is
+at least $b_{\alpha,\beta}$.
+\end{proof}
+The lemma is the one-observation-channel case of the established
+change-of-measure result of Kaufmann, Capp\'e, and Garivier
+\cite[Lemma 1 and Appendix A.1]{kaufmann2016}; its proof is included to
+make the information restriction inspectable.
+
+\begin{theorem}[A movement-dependent necessary audit size]
+\label{thm:movement-lower}
+For every $0<d\le1/2$ and $0<\Delta\le d/2$, there are two constant
+predictions with movement $S=d^2$ and two Bernoulli label laws such that
+the proposed change is risk-neutral under the first law and improves
+Brier risk by $\Delta$ under the second. Any audit with false acceptance
+at most $\alpha$ under the first and power at least $1-\beta$ under the
+second, with no initial distinguishing information, satisfies
+\[
+ \mathbb E_1N\ge b_{\alpha,\beta}\frac{S}{\Delta^2}.
+\]
+\end{theorem}
+\begin{proof}
+Use a one-point input space and predictions $p=(1-d)/2$, $q=(1+d)/2$.
+Let $P_0$ have label mean $1/2$ and $P_1$ mean
+$1/2+\Delta/(2d)\le3/4$. Then $D=d(2Y-1)$, so the gains are zero
+and $\Delta$, while $S=d^2$.
+The inequality $\log u\le u-1$ applied to both Bernoulli KL terms gives
+$\operatorname{kl}(r,s)\le(r-s)^2/[s(1-s)]$.
+Consequently $\operatorname{KL}(P_1,P_0)\le\Delta^2/d^2$.
+Lemma~\ref{lem:stopped-kl} proves the claim.
+\end{proof}
+
+This is a worst-case pair construction with fixed predictions. It does not
+assert that every neural pair with the same movement and gain has this
+difficulty. In particular, the gain alone gives no universal sample bound:
+some restricted noiseless comparisons have deterministic positive loss
+differences. Also, a gate that always rejects is safe without any samples;
+the lower bound depends essentially on the stated power requirement.
+
+\section{The cost of resetting evidence across structural decisions}
+\label{sec:reset-theory}
+
+We now give a stationary neural sequence for which the event cost is
+sharp and all gains add to a fixed risk budget. This is an audit theorem
+with supplied modules. It is separate from the experiments that must learn
+their own candidate directions and retrain all parameters.
+
+\subsection{Population, neural actions, and observation interface}
+
+Fix an even $K\ge2$, $0<\varepsilon\le1/4$, and known alternating signs
+$s_t=(-1)^t$. Let $X$ be uniform on $\{1,\ldots,K\}$ and
+\begin{equation}
+ \mathbb P(Y=1\mid X=t)=\tfrac12+s_t\theta_t,
+ \qquad 0\le\theta_t\le\varepsilon.
+ \label{eq:module-law}
+\end{equation}
+With $\rho(z)=\max\{z,0\}$, define a three-ReLU module
+\begin{equation}
+ \phi_t(x)=\rho(x-t+1)-2\rho(x-t)+\rho(x-t-1).
+ \label{eq:relu-module}
+\end{equation}
+At integer inputs $\phi_t(j)=1_{\{j=t\}}$.
+An installed set $A$ predicts
+$f_A=1/2+\varepsilon\sum_{t\in A}s_t\phi_t$, within $[1/4,3/4]$ on the
+population support. The initial predictor is $f_\varnothing=1/2$.
+Each action adds three actual hidden ReLUs. Their knots and amplitude
+are supplied; this construction gives no guarantee that SGD finds them.
+
+At opportunity $t$, module $t$ is proposed, whether or not earlier modules
+were accepted. The controller may retain the existing network. Its paired
+loss observation is
+\begin{equation}
+ D_t=1_{\{X=t\}}\bigl(2s_t\varepsilon(Y-1/2)-\varepsilon^2\bigr),
+ \qquad g_t=\mathbb ED_t
+   =\frac{2\varepsilon\theta_t-\varepsilon^2}{K}.
+ \label{eq:module-difference}
+\end{equation}
+These expressions are independent of earlier acceptance decisions.
+The known signs are part of the supplied candidate specification. When all
+$\theta_t=\varepsilon$, the Bayes prediction alternates across inputs, so
+an intercept alone cannot remove the excess risk. No claim of minimal
+neural width is made: the theorem fixes the local-module action family.
+
+The \emph{fresh paired-audit interface} supplies a new iid population stream
+at each opportunity and reveals only the current $D_t$.
+The controller may retain all previous paired observations, decisions,
+and sampling times. It does not retain labels at inputs on which the
+current action makes no prediction change, nor otherwise acquire data
+outside this interface. Each audit may stop sequentially using the allowed
+history and environment-independent randomness. Its sample count $N_t$
+includes every labelled population example drawn, including zero paired
+differences. Assume the following guarantees conditional on every possible
+earlier allowed transcript:
+\begin{enumerate}
+ \item false acceptance is at most $\alpha$ whenever $g_t\le0$;
+ \item acceptance probability is at least $1-\beta$ if
+ $\theta_t=\varepsilon$;
+ \item the stopping rule is almost surely finite under the tested laws,
+ with finite expectation under the all-positive law (otherwise the
+ lower bound is immediate).
+\end{enumerate}
+Here $\alpha,\beta\in(0,1)$ and $\alpha+\beta<1$.
+These are distribution-uniform audit requirements, not assertions about
+the power of the implemented neural gate.
+
+\begin{theorem}[Serial evidence cost and a matching audit]
+\label{thm:reset-cost}
+Under \eqref{eq:module-law}, take $\theta_t=\varepsilon$ for every $t$.
+Every candidate has gain and movement
+$\Delta_t=S_t=\varepsilon^2/K$. The initial excess Brier risk above the
+Bayes predictor is $D_0=\varepsilon^2$.
+Every fresh paired-audit controller satisfying the preceding requirements
+obeys
+\begin{equation}
+ \mathbb E\sum_{t=1}^K N_t
+ \ge\frac{K^2}{2\varepsilon^2}b_{\alpha,\beta}
+ =\frac{K^2}{2D_0}b_{\alpha,\beta}.
+ \label{eq:quadratic-reset}
+\end{equation}
+The expected number accepted is at least $K(1-\beta)$, and expected risk
+reduction is at least $(1-\beta)D_0$.
+Conversely, the same interface admits an audit satisfying these guarantees
+with
+\begin{equation}
+ \mathbb E\sum_{t=1}^K N_t
+ =K^2\left\lceil\frac8{\varepsilon^2}
+       \log\frac1{\min\{\alpha,\beta\}}\right\rceil.
+ \label{eq:quadratic-upper}
+\end{equation}
+\end{theorem}
+\begin{proof}
+The identity
+$\mathbb E(Y-f)^2=\mathbb E[\eta(1-\eta)]+\mathbb E(\eta-f)^2$
+shows that each module removes exactly $\varepsilon^2/K$ excess risk.
+All $K$ remove $D_0=\varepsilon^2$; prediction movement is also
+$\varepsilon^2/K$.
+
+Fix $t$ and compare the all-positive environment $P$ to $Q_t$, which only
+replaces $\theta_t$ by $\varepsilon/2$. The stage-$t$ move is risk-neutral
+under $Q_t$. Every earlier observation $D_s$, $s<t$, has exactly the same
+law under both environments: it is zero at $X=t$, while its only
+label-dependent value occurs at $X=s$, whose label law did not change.
+Inducting through the common stopping and decision rules shows that the
+entire earlier allowed transcript has the same law. Conditional on almost
+every transcript under this common law, no initial information
+distinguishes $P$ from $Q_t$.
+
+The signed label $\widetilde Y_t=\{1+s_t(2Y-1)\}/2$, conditional on
+$X=t$, has mean $1/2+\theta_t$. Relabelling by this invertible map
+preserves KL. The one-sample full-pair divergence therefore satisfies
+\begin{align*}
+ \operatorname{KL}(P,Q_t)
+ &=\frac1K\operatorname{kl}(1/2+\varepsilon,1/2+\varepsilon/2)\\
+ &\le\frac1K\frac{(\varepsilon/2)^2}
+                    {(1/2+\varepsilon/2)(1/2-\varepsilon/2)}
+ \le\frac{2\varepsilon^2}{K}.
+\end{align*}
+The last denominator is at least $15/64$; the displayed factor two is
+conservative. Mapping full pairs to $D_t$ cannot increase KL.
+Apply Lemma~\ref{lem:stopped-kl} conditionally on the earlier transcript
+to obtain $\mathbb E_P[N_t\mid\text{history}]
+\ge Kb_{\alpha,\beta}/(2\varepsilon^2)$.
+Integration and summation prove \eqref{eq:quadratic-reset}.
+Conditional power and linearity of expectation give the remaining
+lower-bound assertions. The decisions need not be independent.
+
+For the upper bound, let
+$m=\lceil8\varepsilon^{-2}\log(1/\min\{\alpha,\beta\})\rceil$.
+At stage $t$, wait for $m$ nonzero paired observations; these are exactly
+the examples with $X=t$, and either nonzero value identifies $Y$.
+Accept if their mean signed label $\widetilde Y_t$ exceeds
+$1/2+3\varepsilon/4$.
+For $\theta_t\le\varepsilon/2$ and for $\theta_t=\varepsilon$, the mean
+is at least $\varepsilon/4$ from the threshold in the appropriate
+direction. The Bernoulli Hoeffding bound gives either error at most
+$e^{-m\varepsilon^2/8}\le\min\{\alpha,\beta\}$.
+For completeness, Hoeffding's bound follows by bounding the centered
+Bernoulli moment generating function by $e^{\lambda^2/8}$,
+applying Markov's inequality to $m$ independent samples, and optimizing
+at $\lambda=4a$ for a deviation $a$; the result is $e^{-2ma^2}$.
+The waiting time to $m$ occurrences of an event of probability $1/K$ has
+mean $Km$, being the sum of $m$ geometric waiting times of mean $K$.
+Summing over opportunities proves \eqref{eq:quadratic-upper}.
+\end{proof}
+
+For fixed small error probabilities, the cost is quadratic in the number
+of useful proposed modules at fixed total removable risk. If all $K$
+decisions must be simultaneously correct with probability at least
+$1-\delta$, taking $\alpha=\beta=\delta/K$ supplies that guarantee and
+adds the usual logarithmic factor. The lower bound is a change-of-measure
+argument over an entire stationary neural sequence, not a repeated union
+bound. Its limitation is equally central: the observation interface
+discards off-action information, and the modules are prescribed.
+
+\subsection{A constructive escape through shared evidence}
+
+\begin{theorem}[Precommitted reuse removes a factor $K$]
+\label{thm:shared-evidence}
+In the same population, fix all modules before seeing labels and assume
+each $\theta_t$ is either at most $\varepsilon/2$ or exactly $\varepsilon$.
+One common batch of
+\begin{equation}
+ n=\left\lceil\frac{16K}{\varepsilon^2}\log\frac{2K}{\delta}\right\rceil
+ \label{eq:shared-n}
+\end{equation}
+iid labelled pairs is sufficient to accept every positive separated
+alternative and reject every nonpositive proposed change with probability
+at least $1-\delta$. The accepted modules can be installed successively.
+On the subfamily $\theta_t\in\{0,\varepsilon\}$ the resulting network
+contains exactly the needed modules on this event, including no growth
+when all $\theta_t=0$.
+\end{theorem}
+\begin{proof}
+For each coordinate, use its signed labels $\widetilde Y_t$ in the common
+batch and accept if their mean exceeds $1/2+3\varepsilon/4$.
+Let $C_t$ count examples at coordinate
+$t$ and put $m_0=n/(2K)$. A multiplicative binomial bound gives
+$\mathbb P(C_t<m_0)\le e^{-n/(8K)}$.
+It follows directly from Markov's inequality applied to
+$e^{-\lambda C_t}$: the binomial generating function is at most
+$\exp\{(n/K)(e^{-\lambda}-1)\}$; taking $\lambda=\log2$ gives
+an exponent no greater than $-n/(8K)$ at $C_t=n/(2K)$.
+Conditional on counts and $C_t\ge m_0$, Hoeffding's bound makes the
+test error at most
+$e^{-m_0\varepsilon^2/8}\le\delta/(2K)$.
+Also $e^{-n/(8K)}\le\delta/(2K)$ by \eqref{eq:shared-n} and
+$\varepsilon\le1/4$. A union bound over the $K$ count failures and $K$
+test errors proves the claim. Locality makes each comparison independent
+of which other modules were installed, so sequential installation does
+not change the statements being tested.
+\end{proof}
+
+The reuse theorem is valid because the local candidates and tests were
+fixed independently of the labels. It does not validate arbitrary
+holdout reuse after neural fitting or feedback-dependent proposal changes;
+adaptive evaluation is a separate problem with established solutions and
+limitations \cite{blum2015}. Alternatively, screening inputs without
+requesting labels and labelling only $X=t$ reduces the separate tests to
+$Km$ total labels. It still takes $K^2m$ expected input inspections unless
+direct conditional input sampling is available. These resources should
+not be conflated.
+
+The exact sequence also explains why a rejected operation is not an
+adequacy certificate. At $\theta_t=\varepsilon/2$, adding amplitude
+$\varepsilon$ is risk-neutral, while adding amplitude $\varepsilon/2$
+would improve risk. Our no-growth statement concerns a specified action
+family; it certifies complete adequacy only on the subfamily
+$\theta_t\in\{0,\varepsilon\}$ stated in
+Theorem~\ref{thm:shared-evidence}.
+
+\subsection{What transfers to a learned controller}
+
+The elementary implication
+\[
+ \sum_{t=1}^K\Delta_t\le D_0,\quad
+ \mathbb EN_t\ge c/\Delta_t
+ \quad\Longrightarrow\quad
+ \sum_{t=1}^K\mathbb EN_t\ge cK^2/D_0
+\]
+follows from Cauchy--Schwarz. The per-event premise is not automatic;
+Theorem~\ref{thm:reset-cost} supplies an exact realization. For more general
+comparisons, the relevant terms may be $S_t/\Delta_t^2$, and their observed
+values should be reported instead of asserting a universal exponent.
+
+There is an additional information-accounting caveat. If initial history
+$H$ has different laws under the competing environments, the correct
+testing constraint is
+\begin{equation}
+ \operatorname{KL}(P_H,Q_H)+
+ \mathbb E_PN\operatorname{KL}(P,Q)
+ \ge\operatorname{kl}(P(A),Q(A)),
+ \label{eq:history-kl}
+\end{equation}
+when the new iid stream is independent of $H$ under each environment.
+This follows from the KL chain rule and the proof of
+Lemma~\ref{lem:stopped-kl}; history-dependent sampling replaces the second
+term by a sum of conditional divergences. Initial training or retained
+audit data can pay for the decision. Dropping the first term while allowing
+arbitrary historical information would make a fresh-audit lower bound
+false. The same labels cannot then be counted repeatedly as new purchases.
+
+Consequently the neural experiments below test movement, realized gain,
+and audit cost along ordinary trained trajectories; they are not numerical
+proofs that those trajectories satisfy the local-module lower bound.
+The observation distinction survives this limitation: failure to accept
+can mean either an ineffective operation or inadequate evidence for a useful
+one. Recording both terms is necessary to tell these explanations apart.

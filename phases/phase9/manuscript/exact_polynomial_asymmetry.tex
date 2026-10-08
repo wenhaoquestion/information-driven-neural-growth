@@ -1,0 +1,117 @@
+\section{Exact endpoint moments and polynomial Bregman asymmetry}
+\label{sec:p9-exact-asymmetry}
+
+The endpoint first-moment problem can be solved exactly by positive
+quadrature. Its sum-of-squares version is already the linear-objective
+case in de Klerk--Laurent, \emph{Worst-case examples for Lasserre's
+measure--based hierarchy for polynomial optimization on the hypercube},
+\cite[Theorem~3.1 and Corollary~3.2]{deklerk}. The reduction below is a
+classical quadrature consequence, not a new approximation principle.
+It strengthens the constants and identifies extremizers for one ingredient;
+it does not determine a hierarchy price.
+
+For an integer $r\ge0$, define
+\[
+ \lambda_r=\inf_{\substack{g\not\equiv0,\ \deg g\le r\\
+                                      g\ge0\text{ on }[0,1]}}
+       \frac{\int_0^1 t g(t)\,dt}{\int_0^1g(t)\,dt}.
+\]
+For $\alpha,\beta>-1$, write $\xi_j^{(\alpha,\beta)}$ for the
+smallest zero of the degree-$j$ Jacobi polynomial
+$P_j^{(\alpha,\beta)}$ on $[-1,1]$, with weight
+$(1-x)^\alpha(1+x)^\beta$.
+
+\begin{theorem}[Exact endpoint moment]
+For every $m\ge0$,
+\begin{equation}
+ \lambda_{2m}=\frac{1+\xi_{m+1}^{(0,0)}}2,
+ \qquad
+ \lambda_{2m+1}=\frac{1+\xi_{m+1}^{(1,0)}}2.
+ \label{eq:p9-exact-lambda}
+\end{equation}
+The infima are attained. In particular,
+$\lambda_r=\Theta((r+1)^{-2})$.
+\end{theorem}
+\begin{proof}
+For even degree, take the $m+1$-node Gauss--Legendre rule on $[0,1]$
+\cite[Section~3.5(v)]{dlmf}.
+Its nodes $t_1<\cdots<t_{m+1}$ are the shifted Legendre zeros, its
+weights $\omega_j$ are positive, and it integrates polynomials of degree
+at most $2m+1$ exactly. Thus for every admissible $g$,
+\[
+ \int_0^1 t g(t)\,dt-t_1\int_0^1g(t)\,dt
+  =\sum_{j=1}^{m+1}\omega_j(t_j-t_1)g(t_j)\ge0.
+\]
+The polynomial $g(t)=\prod_{j=2}^{m+1}(t-t_j)^2$ has degree $2m$,
+is nonnegative, and makes the right side zero. The empty product for
+$m=0$ is one. This proves the first formula.
+
+For clarity, the requisite odd-degree quadrature rule is constructed here.
+Let $J$ be the degree-$m+1$ polynomial orthogonal for weight $1-t$ on
+$[0,1]$. Its $m+1$ simple interior zeros are $t_1<\cdots<t_{m+1}$;
+add the node $t_{m+2}=1$. Integrate the Lagrange interpolant on these
+$m+2$ nodes to define an interpolatory rule. For a polynomial $f$ of
+degree at most $2m+2$, divide
+\[
+ f(t)=(t-1)J(t)q(t)+s(t),\qquad
+ \deg q\le m,\quad\deg s\le m+1.
+\]
+The first summand integrates to zero by orthogonality and vanishes at all
+nodes. The rule therefore integrates $f$ exactly. If $L_j$ is the
+degree-$m+1$ cardinal Lagrange polynomial, exactness for $L_j^2$ gives
+$\omega_j=\int_0^1L_j(t)^2\,dt>0$.
+Applying this positive rule to $g$ and $tg$ proves that the moment ratio
+is at least $t_1$. Equality is attained by
+\[
+ g(t)=(1-t)\prod_{j=2}^{m+1}(t-t_j)^2,
+\]
+of degree $2m+1$. The orthogonality weight identifies $J$ with the
+shifted $P_{m+1}^{(1,0)}$, proving the second formula.
+
+For both fixed parameter pairs, the smallest Jacobi zero is
+$-1+\Theta((m+1)^{-2})$. This standard extreme-zero estimate is recorded
+in de Klerk--Laurent~\cite[Corollary~2.3]{deklerk}, and gives the stated order.
+\end{proof}
+
+\begin{theorem}[Sharp oriented polynomial asymmetry]
+Let $\varphi''=g$ be a nonnegative nonzero polynomial of degree at most
+$r$ on an interval $[u,v]$, $u<v$. Then
+\begin{equation}
+ \max\left\{\frac{B_\varphi(v,u)}{B_\varphi(u,v)},
+             \frac{B_\varphi(u,v)}{B_\varphi(v,u)}\right\}
+ \le\frac{1-\lambda_r}{\lambda_r}.
+ \label{eq:p9-exact-asymmetry}
+\end{equation}
+The bound is attained within nonnegative polynomial curvature, is the
+supremum if curvature is required to be strictly positive everywhere on
+the interval, and is $\Theta((r+1)^2)$.
+\end{theorem}
+\begin{proof}
+Affine rescaling reduces to $[0,1]$. Writing
+$\mu=\int_0^1g$ and $a=\mu^{-1}\int_0^1tg$ gives
+\[
+ B_\varphi(0,1)=a\mu,
+ \qquad B_\varphi(1,0)=(1-a)\mu.
+\]
+The preceding theorem and its reflected version imply
+$\lambda_r\le a\le1-\lambda_r$. The ratio bound follows, and the
+extremizing curvatures above attain equality. Such curvature still
+induces strict convexity because it vanishes on no nonempty interval.
+For everywhere-positive curvature, add $\varepsilon>0$ and send it to
+zero; all displayed integrals converge and the denominator stays positive.
+The extreme-zero order proves the last assertion.
+\end{proof}
+
+\paragraph{Why oriented asymmetry is not a hierarchy lower bound.}
+After normalizing $\int_0^1g=1$, a first-moment estimate
+$\int_0^1tg=O(r^{-2})$ gives only
+$\int_d^1g\le O((r^2d)^{-1})$. At $d\asymp r^{-2}$ this is a
+constant bound, whereas the existing four-state endpoint proof uses a
+leakage bound much smaller than a power of $d$. The exact moment theorem
+does not supply that stronger assertion. Conversely, sharp oriented
+asymmetry need not generate incompatible optimal partitions at two
+capacities. It cannot be substituted for a hierarchy-price lower bound.
+The general-source $O(r^2)$ two-capacity bound in Phase~8 uses an anchor
+quasi-triangle inequality, a different optimization from the endpoint
+orientation ratio solved here. The sharp four-state result in
+Theorem~\ref{thm:weighted-sharp} instead uses a direct kernel argument.

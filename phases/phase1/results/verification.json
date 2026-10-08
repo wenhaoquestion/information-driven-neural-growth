@@ -1,0 +1,60 @@
+{
+  "partitions": 15,
+  "three_to_two_chains": 18,
+  "scaling_cases": 15,
+  "sensitivity_cases": 10,
+  "precision_checks": [
+    {
+      "L": 16,
+      "relative_differences_of_stored_values": {
+        "price": "0.0",
+        "total_price": "0.0",
+        "randomized_total_price": "0.0",
+        "stochastic_upper": "0.0",
+        "stochastic_r2": "0.0",
+        "stochastic_r3": "0.0"
+      },
+      "stored_digits": 60
+    },
+    {
+      "L": 64,
+      "relative_differences_of_stored_values": {
+        "price": "0.0",
+        "total_price": "0.0",
+        "randomized_total_price": "0.0",
+        "stochastic_upper": "0.0",
+        "stochastic_r2": "0.0",
+        "stochastic_r3": "0.0"
+      },
+      "stored_digits": 60
+    },
+    {
+      "L": 256,
+      "relative_differences_of_stored_values": {
+        "price": "0.0",
+        "total_price": "0.0",
+        "randomized_total_price": "0.0",
+        "stochastic_upper": "0.0",
+        "stochastic_r2": "0.0",
+        "stochastic_r3": "0.0"
+      },
+      "stored_digits": 60
+    },
+    {
+      "L": 2048,
+      "relative_differences_of_stored_values": {
+        "price": "0.0",
+        "total_price": "0.0",
+        "randomized_total_price": "0.0",
+        "stochastic_upper": "0.0",
+        "stochastic_r2": "0.0",
+        "stochastic_r3": "0.0"
+      },
+      "stored_digits": 60
+    }
+  ],
+  "assertions": "All passed",
+  "python": "3.12.14",
+  "mpmath": "1.3.0",
+  "seed": "None: deterministic exhaustive evaluation"
+}

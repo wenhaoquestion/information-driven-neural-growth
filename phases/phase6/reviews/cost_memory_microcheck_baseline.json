@@ -1,0 +1,193 @@
+{
+  "frontier": "experiments/source_snapshots/frontier_before_memory_fix.py",
+  "frontier_sha256": "2a71570ba5c4aac153f986fd2a81a4c655d5367d1baf06d18d7aaeec00a08fcc",
+  "note": "Lower bounds exclude all persistent/model/audit arrays and vendor workspaces.",
+  "pool_transition": [
+    {
+      "event": 1,
+      "known_live_unique_array_bytes": 234432,
+      "components": {
+        "fitx": 98304,
+        "fity": 8192,
+        "fitids": 8192,
+        "ids": 8192,
+        "new_fitx": 111552
+      },
+      "pairwise_disjoint": true,
+      "reported_working_array_estimate": 174512,
+      "difference": 59920
+    },
+    {
+      "event": 2,
+      "known_live_unique_array_bytes": 249888,
+      "components": {
+        "fitx": 111552,
+        "fity": 9296,
+        "fitids": 9296,
+        "ids": 8192,
+        "new_fitx": 111552
+      },
+      "pairwise_disjoint": true,
+      "reported_working_array_estimate": 178704,
+      "difference": 71184
+    },
+    {
+      "event": 3,
+      "known_live_unique_array_bytes": 249888,
+      "components": {
+        "fitx": 111552,
+        "fity": 9296,
+        "fitids": 9296,
+        "ids": 8192,
+        "new_fitx": 111552
+      },
+      "pairwise_disjoint": true,
+      "reported_working_array_estimate": 182896,
+      "difference": 66992
+    },
+    {
+      "event": 4,
+      "known_live_unique_array_bytes": 249888,
+      "components": {
+        "fitx": 111552,
+        "fity": 9296,
+        "fitids": 9296,
+        "ids": 8192,
+        "new_fitx": 111552
+      },
+      "pairwise_disjoint": true,
+      "reported_working_array_estimate": 187088,
+      "difference": 62800
+    },
+    {
+      "event": 5,
+      "known_live_unique_array_bytes": 249888,
+      "components": {
+        "fitx": 111552,
+        "fity": 9296,
+        "fitids": 9296,
+        "ids": 8192,
+        "new_fitx": 111552
+      },
+      "pairwise_disjoint": true,
+      "reported_working_array_estimate": 191280,
+      "difference": 58608
+    },
+    {
+      "event": 6,
+      "known_live_unique_array_bytes": 249888,
+      "components": {
+        "fitx": 111552,
+        "fity": 9296,
+        "fitids": 9296,
+        "ids": 8192,
+        "new_fitx": 111552
+      },
+      "pairwise_disjoint": true,
+      "reported_working_array_estimate": 195472,
+      "difference": 54416
+    }
+  ],
+  "fitx_allocation_lifetimes": [
+    {
+      "event": 0,
+      "previous_fitx_alive_before_allocation": false
+    },
+    {
+      "event": 1,
+      "previous_fitx_alive_before_allocation": true
+    },
+    {
+      "event": 2,
+      "previous_fitx_alive_before_allocation": true
+    },
+    {
+      "event": 3,
+      "previous_fitx_alive_before_allocation": true
+    },
+    {
+      "event": 4,
+      "previous_fitx_alive_before_allocation": true
+    },
+    {
+      "event": 5,
+      "previous_fitx_alive_before_allocation": true
+    },
+    {
+      "event": 6,
+      "previous_fitx_alive_before_allocation": true
+    }
+  ],
+  "cross_epoch_gradient_snapshot": {
+    "known_live_unique_array_bytes": 38048,
+    "buffers": [
+      {
+        "names": [
+          "x"
+        ],
+        "nbytes": 12288
+      },
+      {
+        "names": [
+          "y"
+        ],
+        "nbytes": 1024
+      },
+      {
+        "names": [
+          "z"
+        ],
+        "nbytes": 2048
+      },
+      {
+        "names": [
+          "q"
+        ],
+        "nbytes": 2048
+      },
+      {
+        "names": [
+          "e"
+        ],
+        "nbytes": 1024
+      },
+      {
+        "names": [
+          "order",
+          "piece_1"
+        ],
+        "nbytes": 9296
+      },
+      {
+        "names": [
+          "ix"
+        ],
+        "nbytes": 1024
+      },
+      {
+        "names": [
+          "piece_0"
+        ],
+        "nbytes": 9296
+      }
+    ],
+    "reported_working_fit_array_byte_estimate": 36176,
+    "difference": 1872
+  },
+  "fit_account": {
+    "proxy": 399866,
+    "gradient_adam_proxy": 390570,
+    "permutation_proxy": 9296,
+    "steps": 15,
+    "full_minibatches": 14,
+    "terminal_budget_batch_size": 53,
+    "min_batch_size": 53,
+    "max_batch_size": 128,
+    "total_fit_visits": 1845,
+    "generated_permutations": 2,
+    "clipped_steps": 0,
+    "remainder": 134,
+    "learner_seconds": 0.0022553340531885624,
+    "instrumentation_seconds": 2.2290972992777824e-05
+  }
+}

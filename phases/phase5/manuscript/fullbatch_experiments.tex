@@ -1,0 +1,70 @@
+\section{A targeted response to the minibatch confound}
+\label{sec:fullbatch}
+
+We did not stop at documenting the different tail batches in the original
+replay comparison. A separately frozen follow-up clones the primary runner
+and changes the fitting batch assembly: carry the end of a shuffled pool
+into a new independent permutation until a full 128-example batch is formed.
+Only the final arithmetic-budget remainder can form a smaller batch. All
+models, task laws, proposal rules, optimizer settings, data arrivals and
+resource charges remain unchanged. The original source and outcomes are
+preserved. This is a targeted post-hoc investigation, not a retroactive
+replacement of the main experiment.
+
+Before running seeds 850000--850011, we froze the derived source, four-arm
+configuration and protocol at 05:49:36 UTC on 20 September 2026. The arms are
+historical moments with replay 128, random growth with replay 128 and 138,
+and fixed width seven with replay 138. We omit the separate paired-branch
+diagnostic here, as specified before execution. The 48 new configurations
+produce 192 complete trajectories and 1,344 events in 9.76 seconds. Every
+random-128 and random-138 run now has exactly 975 optimizer updates and
+124,285 fitting-example accesses. Their example counts, update counts and
+minibatch-size sequences are thus matched, while their retained samples can
+still differ. Historical moments spend candidate work and use 892 updates;
+fixed width seven uses 392 updates, reflecting its larger per-example cost.
+
+\begin{table}[tb]
+\centering\small
+\input{fullbatch_table.tex}
+\caption{New-seed, full-minibatch follow-up. These are separate observations,
+not overwritten entries in Table~\ref{tab:quadratic-results}. All means are
+final population MSE, with the same nonlinear Monte Carlo evaluation rule.}
+\label{tab:fullbatch}
+\end{table}
+
+The original adverse indefinite-task comparison between replay sizes does
+not persist. Random-128 minus random-138 is now $+.001498$, with interval
+$[-.001121,.004117]$, compared with the original negative estimate
+$-.005038$ and interval $[-.007834,-.002243]$. Historical moments minus
+random-138 is $-.000616$, with interval $[-.001736,.000504]$; historical
+moments minus random-128 is $-.002114$, with interval
+$[-.004453,.000226]$. Both intervals include zero.
+Thus a general learning benefit from retaining the target moment is not
+established by this follow-up. On the other tasks, all targeted historical
+and replay-size paired intervals likewise include zero. That statement is a
+failure to resolve effects, not an equivalence proof.
+
+The changed update schedule is mechanically verified, and the new empirical
+comparisons fail to support the original strong attribution. Because the
+follow-up uses new seeds, the difference between old and new point estimates
+is not itself a paired causal estimate of the minibatch correction. The
+correct conclusion is narrower: the original comparison was confounded,
+and the proposed moment advantage has not survived the present control with
+matched minibatch schedules. A stronger assessment would randomize or pair
+both batching schedules on an additional untouched seed set, ideally with
+an optimizer-budget definition chosen in advance.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{fullbatch_followup.pdf}
+\caption{Targeted paired risk differences after removing epoch-tail changes
+in update count. Bars are descriptive 95\% Student-$t$ intervals over twelve
+independent new seeds; no multiplicity adjustment is made. None of these
+intervals establishes a resolved final-risk advantage.}
+\end{figure}
+
+Across the primary, adaptive and targeted studies there are 768 complete
+confirmation/follow-up trajectories, plus 1,440 same-checkpoint trained
+branches. This volume is evidence of implementation and investigation,
+not a substitute for a surviving theorem-level novelty claim or a robust
+empirical improvement. The unsuccessful attribution remains part of the
+research result.

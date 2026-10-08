@@ -1,0 +1,237 @@
+% Phase 7 research supplement. Author: Wenyu Huang, UCSD.
+% This is a complete proof candidate, not a claim of a new literature theorem.
+% The original project and Phase 6 have not been modified.
+\section{A smooth bounded-slope generator with unbounded excess hierarchy price}
+\label{sec:smooth-counterexample}
+
+\paragraph{Scope.}
+The divergent-endpoint-slope theorem in \texttt{manuscript/general\_losses.tex}
+is a sufficient condition, not a characterization.  We prove that its
+endpoint-slope hypothesis is not necessary.  The conclusion below concerns
+\emph{excess} Bayes risk.  It supplies neither the optimal universal
+four-state logarithmic-loss coefficient nor a new total-risk obstruction.
+
+Write $\psi(t)=t\log t+(1-t)\log(1-t)$.  For a finite source with positive
+masses $p_x$ and binary posteriors $\eta_x$, put
+\[
+ D_\phi(\mathcal P)=\sum_xp_x\phi(\eta_x)
+ -\sum_{C\in\mathcal P}p_C\phi\left(\sum_{x\in C}p_x\eta_x/p_C\right).
+\]
+The flat benchmark $D_{\phi,k}^*$ minimizes this quantity over all
+$k$-cell partitions.  A deterministic four-state hierarchy has nested
+partitions at budgets two and three, and its price is the minimum over
+hierarchies of $\max_{k=2,3}D_\phi(\mathcal H_k)/D_{\phi,k}^*$.
+For an encoder $X\to Z$ independent of $Y$ conditional on $X$, define
+\[
+ D_\phi(Z)=\mathbb E\phi(\eta_X)
+             -\mathbb E\phi(\mathbb E[\eta_X\mid Z]).
+\]
+For stochastic hierarchies use $Y-X-Z_3-Z_2$ with output budgets three
+and two and the same flat denominators.  Zero-probability encoder outputs
+are omitted from conditional expectations.
+
+\begin{theorem}[Finite endpoint slopes do not characterize bounded price]
+\label{thm:smooth-bounded-slope}
+There exists one fixed function $\phi\in C^\infty([0,1])$ such that:
+\begin{enumerate}
+\item $\phi(t)=\phi(1-t)$, $\phi''(t)>0$ for every $0<t<1$, and
+      $0\leq\phi''(t)\leq1$ on $[0,1]$;
+\item $\phi'(0)$ and $\phi'(1)$ are finite, while
+      $\phi^{(r)}(0)=\phi^{(r)}(1)=0$ for every integer $r\geq2$;
+\item there is a sequence of full-support four-by-two laws, each with
+      four distinct posteriors, whose deterministic excess hierarchy
+      prices obey
+      \[
+       \rho_{\phi,\mathrm{det},j}\sim
+       \frac{\sqrt j}{2\sqrt{\log2}}\longrightarrow\infty.
+      \]
+      Their stochastic excess hierarchy prices likewise obey
+      \[
+       \rho_{\phi,\mathrm{stoch},j}\sim
+       \frac{\sqrt j}{4\sqrt{\log2}}\longrightarrow\infty.
+      \]
+\end{enumerate}
+The generator is strictly convex, but not uniformly strongly convex on
+the closed interval.  Its associated binary strictly proper losses can
+be chosen smooth and valued in $[0,1]$.
+\end{theorem}
+
+\begin{proof}
+We first construct a smooth positive curvature containing disjoint exact
+copies of truncated Shannon curvature.  Fix a smooth function
+$\vartheta:\mathbb R\to[0,1]$ equal to zero on $(-\infty,0]$ and one on
+$[1,\infty)$.  For integers $j\geq2$, set
+\[
+ a_j=2^{-j-2},\quad l_j=2^{-j-3},\quad
+ I_j=(a_j,a_j+l_j),\quad e_j=e^{-2j},\quad \lambda_j=e^{-4^j}.
+\]
+The intervals $I_j$ are disjoint, lie below $1/4$, and accumulate only
+at zero.  Define
+\[
+ \chi_j(t)=\vartheta\left(\frac{t-e_j/2}{e_j/2}\right)
+           \vartheta\left(\frac{1-e_j/2-t}{e_j/2}\right).
+\]
+Thus $\chi_j=1$ on $[e_j,1-e_j]$, it vanishes outside
+$(e_j/2,1-e_j/2)$, and, for every fixed integer $m\geq0$,
+$\|\chi_j^{(m)}\|_\infty\leq C_m e_j^{-m}$.
+
+Use the positive symmetric baseline
+\[
+ b(x)=\exp\{-1/[x(1-x)]\}\quad(0<x<1),\qquad b(0)=b(1)=0.
+\]
+For $x\in I_j$, write $t=(x-a_j)/l_j$ and set
+\[
+ g(x)=(1-\chi_j(t))b(x)
+       +\chi_j(t)\frac{\lambda_j}{l_j^2t(1-t)}.
+ \tag{1}\label{eq:curvature-patch}
+\]
+On $1-I_j$ define $g(x)=g(1-x)$; elsewhere set $g=b$.
+The cutoff has support strictly inside each interval, so this is smooth
+at the endpoints of every individual interval and positive throughout
+$(0,1)$.  The only smoothness issue is the accumulation at zero and one.
+
+Here are explicit estimates for that issue.  On the support of $\chi_j$,
+\[
+ \left|\frac{d^r}{dt^r}\frac1{t(1-t)}\right|
+ \leq C_r e_j^{-r-1}.
+\]
+Leibniz' rule and rescaling therefore bound the $m$th derivative of the
+second summand in (1) by
+\[
+ C_m\lambda_j l_j^{-m-2}e_j^{-m-1}
+ \leq C_m\exp\{-4^j+C_mj\}.
+ \tag{2}\label{eq:target-decay}
+\]
+On $I_j$, derivatives of $b$ are bounded by a polynomial in $2^j$
+times $\exp\{-c2^j\}$ for an absolute $c>0$.  Applying Leibniz'
+rule once more shows that the $m$th derivative of the first summand in
+(1) is at most
+\[
+ C_m\exp\{-c2^j+C_mj\}.
+ \tag{3}\label{eq:baseline-decay}
+\]
+For clarity, differentiating $b$ $r$ times yields $b$ times a rational
+function with poles only at zero and one; on $I_j$ its magnitude is at
+most $C_r2^{C_rj}$, while $x\leq3\cdot2^{-j-3}$ gives the exponential
+factor in (3).  Each cutoff derivative contributes at most
+$C_r l_j^{-r}e_j^{-r}=\exp\{O_r(j)\}$.
+
+The bounds (2)--(3) vanish faster than $a_j^N$ for every fixed $m,N$.
+Outside the intervals the baseline has the same flatness property.
+Consequently all derivatives of $g$ on $(0,1)$ tend to zero faster than
+any power of $x$ at zero.  Extending $g^{(m)}(0)=0$ for all $m$ is
+consistent with differentiation: the difference quotient of the
+extended $g^{(m)}$ tends to zero because $g^{(m)}(x)=o(x)$.
+Induction proves $g\in C^\infty([0,1])$, flat at zero.  Reflection proves
+the same at one.
+
+Let $M=\max_{[0,1]}g>0$ and define $\phi$ by
+\[
+ \phi''=g/M,\qquad \phi(1/2)=\phi'(1/2)=0.
+ \tag{4}\label{eq:integrate-curvature}
+\]
+It is smooth, symmetric, strictly convex, and has $0\leq\phi''\leq1$.
+Strict convexity follows because every nonempty interior interval has
+strictly positive curvature integral.  Its endpoint derivatives are
+finite by (4); its derivatives of order at least two vanish there.
+
+On the closed interval
+$J_j=[a_j+l_je_j,a_j+l_j(1-e_j)]$, (1) and (4) imply
+\[
+ \phi(x)=\frac{\lambda_j}{M}
+          \psi\left(\frac{x-a_j}{l_j}\right)+A_jx+B_j
+ \tag{5}\label{eq:exact-local-copy}
+\]
+for some constants $A_j,B_j$.  This follows by matching second
+derivatives and integrating twice; the constants need not be evaluated.
+
+Now take the already established logarithmic-loss four-state family
+at parameter $L=j$:
+\[
+ w_j=e^{-j},\quad c_j=(1-2w_j)/2,\quad
+ \delta_j=\sqrt{\log2/j},
+\]
+with masses $(c_j,w_j,w_j,c_j)$ and original posteriors
+\[
+ (q_A,q_C,q_D,q_B)=(e_j,\delta_j,1-\delta_j,1-e_j).
+\]
+For all sufficiently large $j$, these are four distinct points in
+$[e_j,1-e_j]$.  Keep the masses and replace each posterior by
+\[
+ \eta_x=a_j+l_jq_x.
+ \tag{6}\label{eq:transformed-posteriors}
+\]
+Every new posterior is strictly between zero and one, so the resulting
+four-by-two joint law has full support.
+
+Every cell posterior, and every conditional posterior of an arbitrary
+stochastic encoder of $X$, is a convex combination of the four values
+in (6).  It therefore belongs to $J_j$.  Equation (5), affinity of the
+posterior transformation, and cancellation of affine terms give the
+\emph{exact} identities
+\[
+ D_\phi(\mathcal P)=\frac{\lambda_j}{M}D_\psi(\mathcal P),\qquad
+ D_\phi(Z)=\frac{\lambda_j}{M}D_\psi(Z)
+ \tag{7}\label{eq:all-encoder-transfer}
+\]
+for every partition and every stochastic encoder.  Hence the flat
+optima and all attainable two-level distortion vectors are scaled by
+the same positive number.  In particular all hierarchy ratios, including
+their minimax values, are unchanged.  The deterministic excess
+asymptotic in the four-state theorem immediately proves the stated
+deterministic conclusion.
+
+For completeness, the existing stochastic theorem is stated for total
+logarithmic risk, but it implies the same excess asymptotic for this
+family.  Write $R_k^*=B_{0,j}+D_{\psi,k}^*$ and
+$b_j=\max_{k=2,3}B_{0,j}/D_{\psi,k}^*$.  The established cost estimates
+give $B_{0,j}=o(w_j)$, $D_{\psi,3}^*\sim2w_j\log2$ and
+$D_{\psi,2}^*\sim2w_j\delta_jj$, so $b_j\to0$.  For every admissible
+chain its excess and total ratios satisfy
+\[
+ \frac1{1+b_j}\max_k\frac{D_\psi(Z_k)}{D_{\psi,k}^*}
+ \leq\max_k\frac{B_{0,j}+D_\psi(Z_k)}{B_{0,j}+D_{\psi,k}^*}
+ \leq\max_k\frac{D_\psi(Z_k)}{D_{\psi,k}^*}.
+\]
+The right inequality uses $D_\psi(Z_k)\geq D_{\psi,k}^*$; flat
+stochastic encoders do not improve a concave Bayes-risk objective,
+by the existing random-function argument.  Infimizing proves equality
+of the stochastic total and excess prices up to $1+o(1)$, and (7)
+transfers the result to $\phi$.
+
+Finally put $h(q)=\phi(0)-\phi(q)$ and define the proper losses
+\[
+ \ell(q,1)=h(q)+(1-q)h'(q),\qquad
+ \ell(q,0)=h(q)-qh'(q).
+\]
+Their expected regret at truth $p$ is
+$\phi(p)-\phi(q)-\phi'(q)(p-q)$, strictly positive for $p\ne q$.
+Convexity at the endpoints makes both losses nonnegative.  Moreover
+$\ell(q,1)'=-(1-q)\phi''(q)\leq0$ and
+$\ell(q,0)'=q\phi''(q)\geq0$.  Their largest endpoint values equal
+$-\phi'(0)=\phi'(1)=\int_0^{1/2}\phi''(t)dt\leq1/2$.
+Thus both smooth losses lie in $[0,1]$ as claimed.
+\end{proof}
+
+\paragraph{Why this does not give a total-risk counterexample.}
+For the displayed proper losses, $h(q)=cq+o(q)$ at zero, with
+$c=-\phi'(0)>0$.  All posteriors in (6) lie in $[a_j,3a_j/2]$.
+The full-information Bayes risk $B_{\phi,j}=\sum_xp_xh(\eta_x)$ is
+therefore at least $ca_j/2$ eventually.  On the other hand (7) and
+the entropy bound imply, for every encoder,
+$0\leq D_\phi(Z)\leq(\lambda_j/M)\log2$.  Hence every ratio of total
+risk to a flat total-risk optimum is bounded above by
+\[
+ 1+\frac{2\lambda_j\log2}{Mca_j}=1+o(1).
+\]
+In this construction all total-risk hierarchy prices tend to one.  The
+unbounded excess ratio occurs at vanishing absolute distortion and is
+not a claim of large absolute loss or practical learning difficulty.
+
+\paragraph{Novelty boundary.}
+The proof imports the existing four-state lower bound and adds a smooth
+local-embedding argument.  Bregman affine invariance, proper-score
+representations, smooth cutoff functions, and bounded-curvature
+comparison are established tools.  The precise fixed-generator
+counterexample is a candidate boundary result; no claim of priority is
+made without the accompanying primary-source audit.

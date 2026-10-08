@@ -1,0 +1,642 @@
+[
+  {
+    "sigma": 0.0,
+    "stage": 1,
+    "method": "raw_risk",
+    "mean": 0.29456156673295886,
+    "se": 0.01861405376323236,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 1,
+    "method": "fresh_risk",
+    "mean": 0.29456156673295886,
+    "se": 0.01861405376323236,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 1,
+    "method": "rank_known_risk",
+    "mean": 0.2219705622228773,
+    "se": 0.017657890197302965,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 1,
+    "method": "least_squares_risk",
+    "mean": 1.9738022077646203e-30,
+    "se": 1.1934088250383454e-31,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 1,
+    "method": "false_birth_risk_increase",
+    "mean": 0.15886661825257023,
+    "se": 0.017003496120620434,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 2,
+    "method": "raw_risk",
+    "mean": 0.15286950367983992,
+    "se": 0.007064414551748204,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 2,
+    "method": "fresh_risk",
+    "mean": 0.04274602786680761,
+    "se": 0.0044644752202252684,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 2,
+    "method": "rank_known_risk",
+    "mean": 0.01896028846763615,
+    "se": 0.002535526974133157,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 2,
+    "method": "least_squares_risk",
+    "mean": 8.822907730884053e-31,
+    "se": 4.824637487853732e-32,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 2,
+    "method": "false_birth_risk_increase",
+    "mean": 0.0810177129098214,
+    "se": 0.006168241254512918,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 3,
+    "method": "raw_risk",
+    "mean": 0.10711360845203739,
+    "se": 0.004838792716327383,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 3,
+    "method": "fresh_risk",
+    "mean": 0.00602878935359152,
+    "se": 0.0006410855863837062,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 3,
+    "method": "rank_known_risk",
+    "mean": 0.0018716035748094465,
+    "se": 0.00028603212521740966,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 3,
+    "method": "least_squares_risk",
+    "mean": 6.007698571300605e-31,
+    "se": 3.5069113134895265e-32,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 3,
+    "method": "false_birth_risk_increase",
+    "mean": 0.05670200171934672,
+    "se": 0.003919037782126198,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 4,
+    "method": "raw_risk",
+    "mean": 0.08003712903876378,
+    "se": 0.0033317108106397505,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 4,
+    "method": "fresh_risk",
+    "mean": 0.000989150515261144,
+    "se": 0.00011804415512583166,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 4,
+    "method": "rank_known_risk",
+    "mean": 0.00016362506442369596,
+    "se": 2.377970097887959e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 4,
+    "method": "least_squares_risk",
+    "mean": 4.862671359532196e-31,
+    "se": 2.7899268230070003e-32,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 4,
+    "method": "false_birth_risk_increase",
+    "mean": 0.042447022854039604,
+    "se": 0.00287522176133973,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 5,
+    "method": "raw_risk",
+    "mean": 0.06347426061095279,
+    "se": 0.0025730644928558455,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 5,
+    "method": "fresh_risk",
+    "mean": 0.00013823714487455933,
+    "se": 2.2251517283979683e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 5,
+    "method": "rank_known_risk",
+    "mean": 1.2458837507165991e-05,
+    "se": 1.7048651614968893e-06,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 5,
+    "method": "least_squares_risk",
+    "mean": 3.8671153752874254e-31,
+    "se": 2.0691275672990533e-32,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 5,
+    "method": "false_birth_risk_increase",
+    "mean": 0.034585626607074774,
+    "se": 0.002208760370888449,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 6,
+    "method": "raw_risk",
+    "mean": 0.05302611013294375,
+    "se": 0.002787141678999528,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 6,
+    "method": "fresh_risk",
+    "mean": 1.982486987537867e-05,
+    "se": 3.602628550785066e-06,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 6,
+    "method": "rank_known_risk",
+    "mean": 1.0941037920625144e-06,
+    "se": 1.7754605719656047e-07,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 6,
+    "method": "least_squares_risk",
+    "mean": 3.439565696965993e-31,
+    "se": 1.8848554784288934e-32,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 6,
+    "method": "false_birth_risk_increase",
+    "mean": 0.02829902924518362,
+    "se": 0.0025505678249775256,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 7,
+    "method": "raw_risk",
+    "mean": 0.04305347695470861,
+    "se": 0.0022826487463760005,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 7,
+    "method": "fresh_risk",
+    "mean": 2.8351324145174162e-06,
+    "se": 5.27653237128654e-07,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 7,
+    "method": "rank_known_risk",
+    "mean": 8.617607096625297e-08,
+    "se": 1.7147481044809405e-08,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 7,
+    "method": "least_squares_risk",
+    "mean": 2.9829538308158457e-31,
+    "se": 1.7573674095399536e-32,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 7,
+    "method": "false_birth_risk_increase",
+    "mean": 0.022777912373172685,
+    "se": 0.002071882270539399,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 8,
+    "method": "raw_risk",
+    "mean": 0.03740475728216604,
+    "se": 0.001657946429028581,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 8,
+    "method": "fresh_risk",
+    "mean": 4.333947609484099e-07,
+    "se": 8.407893262916161e-08,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 8,
+    "method": "rank_known_risk",
+    "mean": 8.725463108526565e-09,
+    "se": 2.7553908646406342e-09,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 8,
+    "method": "least_squares_risk",
+    "mean": 2.732901711596925e-31,
+    "se": 1.4170134266509038e-32,
+    "runs": 64
+  },
+  {
+    "sigma": 0.0,
+    "stage": 8,
+    "method": "false_birth_risk_increase",
+    "mean": 0.019478163501731288,
+    "se": 0.0014315477134153023,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 1,
+    "method": "raw_risk",
+    "mean": 0.294864447849518,
+    "se": 0.01876469391847771,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 1,
+    "method": "fresh_risk",
+    "mean": 0.294864447849518,
+    "se": 0.01876469391847771,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 1,
+    "method": "rank_known_risk",
+    "mean": 0.22239006548668055,
+    "se": 0.017786293597800856,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 1,
+    "method": "least_squares_risk",
+    "mean": 0.0008025765199842366,
+    "se": 2.3799257864276227e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 1,
+    "method": "false_birth_risk_increase",
+    "mean": 0.15903650928433405,
+    "se": 0.017203426380925167,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 2,
+    "method": "raw_risk",
+    "mean": 0.15284340872292837,
+    "se": 0.007139553068053789,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 2,
+    "method": "fresh_risk",
+    "mean": 0.043342535699367385,
+    "se": 0.004485716392042359,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 2,
+    "method": "rank_known_risk",
+    "mean": 0.019353978851759834,
+    "se": 0.0025222330326164014,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 2,
+    "method": "least_squares_risk",
+    "mean": 0.00039260358214925973,
+    "se": 1.1349120157819773e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 2,
+    "method": "false_birth_risk_increase",
+    "mean": 0.08106400692603859,
+    "se": 0.006252977034221931,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 3,
+    "method": "raw_risk",
+    "mean": 0.10755696163519253,
+    "se": 0.004836528275503439,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 3,
+    "method": "fresh_risk",
+    "mean": 0.006793932945403185,
+    "se": 0.0006580434972240961,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 3,
+    "method": "rank_known_risk",
+    "mean": 0.002162839643985336,
+    "se": 0.0002814699735046861,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 3,
+    "method": "least_squares_risk",
+    "mean": 0.00025321915602508326,
+    "se": 7.420969771553795e-06,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 3,
+    "method": "false_birth_risk_increase",
+    "mean": 0.05696895303236592,
+    "se": 0.003928173732575034,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 4,
+    "method": "raw_risk",
+    "mean": 0.08017500987017863,
+    "se": 0.003316664145983893,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 4,
+    "method": "fresh_risk",
+    "mean": 0.0017277662067021154,
+    "se": 0.00010429603119123195,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 4,
+    "method": "rank_known_risk",
+    "mean": 0.0004833945739721113,
+    "se": 3.195113852699496e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 4,
+    "method": "least_squares_risk",
+    "mean": 0.0001848781830546483,
+    "se": 5.443019935198927e-06,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 4,
+    "method": "false_birth_risk_increase",
+    "mean": 0.04254312264386248,
+    "se": 0.002864778610906519,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 5,
+    "method": "raw_risk",
+    "mean": 0.06352178191557872,
+    "se": 0.0025457261934770433,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 5,
+    "method": "fresh_risk",
+    "mean": 0.0009343274903977346,
+    "se": 3.481361532198018e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 5,
+    "method": "rank_known_risk",
+    "mean": 0.0003376640974617329,
+    "se": 1.726395889879367e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 5,
+    "method": "least_squares_risk",
+    "mean": 0.00014803983660692193,
+    "se": 4.004737793864841e-06,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 5,
+    "method": "false_birth_risk_increase",
+    "mean": 0.0345257432335562,
+    "se": 0.00218605782300247,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 6,
+    "method": "raw_risk",
+    "mean": 0.053165945504508746,
+    "se": 0.00277268235319573,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 6,
+    "method": "fresh_risk",
+    "mean": 0.0008419386310949457,
+    "se": 2.5977028380959826e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 6,
+    "method": "rank_known_risk",
+    "mean": 0.0003003726931588348,
+    "se": 1.5861376725554228e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 6,
+    "method": "least_squares_risk",
+    "mean": 0.00012091367534708357,
+    "se": 3.244494761013962e-06,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 6,
+    "method": "false_birth_risk_increase",
+    "mean": 0.028252811281618516,
+    "se": 0.0025269995929801245,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 7,
+    "method": "raw_risk",
+    "mean": 0.04320929411976918,
+    "se": 0.0022771906249809217,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 7,
+    "method": "fresh_risk",
+    "mean": 0.0008148335686948976,
+    "se": 2.7334522724760906e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 7,
+    "method": "rank_known_risk",
+    "mean": 0.0003279348434412672,
+    "se": 1.5567080437223795e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 7,
+    "method": "least_squares_risk",
+    "mean": 0.00010548929123164764,
+    "se": 3.198329593860525e-06,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 7,
+    "method": "false_birth_risk_increase",
+    "mean": 0.022830118758171383,
+    "se": 0.002065646704698635,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 8,
+    "method": "raw_risk",
+    "mean": 0.037582791764348325,
+    "se": 0.001668179335569246,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 8,
+    "method": "fresh_risk",
+    "mean": 0.0008259903875534845,
+    "se": 3.064181562901508e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 8,
+    "method": "rank_known_risk",
+    "mean": 0.00030649536950862134,
+    "se": 1.5016366512629479e-05,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 8,
+    "method": "least_squares_risk",
+    "mean": 9.1634305997587e-05,
+    "se": 2.835420992424702e-06,
+    "runs": 64
+  },
+  {
+    "sigma": 0.1,
+    "stage": 8,
+    "method": "false_birth_risk_increase",
+    "mean": 0.01953686362826323,
+    "se": 0.0014323019046013573,
+    "runs": 64
+  }
+]

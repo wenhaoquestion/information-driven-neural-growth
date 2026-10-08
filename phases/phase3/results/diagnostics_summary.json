@@ -1,0 +1,26 @@
+{
+  "eb4096": {
+    "events": 512,
+    "growth_events": 16,
+    "positive_available": 253,
+    "positive_declined": 237,
+    "retained_increases_over_1e3": 0,
+    "median_additive_fraction_of_radius": 0.6538616688007535
+  },
+  "eb16384": {
+    "events": 512,
+    "growth_events": 78,
+    "positive_available": 168,
+    "positive_declined": 90,
+    "retained_increases_over_1e3": 0,
+    "median_additive_fraction_of_radius": 0.5462354229802422
+  },
+  "mean16384": {
+    "events": 512,
+    "growth_events": 97,
+    "positive_available": 97,
+    "positive_declined": 1,
+    "retained_increases_over_1e3": 0,
+    "median_additive_fraction_of_radius": 0.5763707112520708
+  }
+}

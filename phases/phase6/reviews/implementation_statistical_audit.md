@@ -1,0 +1,11 @@
+# Historical implementation and statistical audit summary
+
+This is a publication summary of the historical internal technical check. It removes private workflow/role descriptions and does not reproduce an internal conversation. It is not external peer review or a claim of personal author review. The publication pass did not rerun the scientific calculations. Original review hashes are retained in the private curation provenance; public numerical evidence and complete manuscript proofs remain available.
+
+The original audits checked risk identities, analytical gradients, optimizer ages, prefix-access isolation, minibatch carry, cost-ledger sums, budget boundaries, result completeness and deliberate corruption rejection. `saved_primary_audit.json`, `saved_secondary_audit.json` and `saved_age_audit.json` cover 7,040 trajectories, 49,280 events and 112,640 saved parameter-risk evaluations. Maximum recorded reconstruction error is about 1.11e-15. Development and smoke audits are separate and do not increase confirmation N.
+
+An earlier live-array memory estimate missed simultaneously retained old/new arrays; the implementation was corrected before confirmation. Earlier and repaired microcheck JSON remain available, together with the pre-fix source snapshot. The old/repaired smoke outcomes matched on 1,344 non-timing checks. Named-array estimates still are not an OS peak-memory guarantee.
+
+The API passes whole synthetic arrays into the harness, but the implementation accesses only arrived prefixes; this is not capability isolation. `../experiments/PROTOCOL_CLARIFICATIONS.md` states the correction. Timing excludes named external blocks and major counter work but contains ordinary allocation/control/measurement overhead. Cost units are declared algorithmic proxies, not measured FLOPs.
+
+The IUT uses the maximum of three one-sided paired-t p-values for one conjunction. The paired seed, not budget or event, is the inference unit. Bootstrap is sensitivity only; t inference is approximate for unbounded loss. Target nonattainers and nonmonotone curves are retained. Read-only saved-state audits require full local/regenerated data and write below `reviews/`; several other audit scripts run RNG or training fixtures and are not publication checks.

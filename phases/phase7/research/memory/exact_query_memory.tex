@@ -1,0 +1,667 @@
+% Standalone research note.
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\title{Exact empirical quadratic residual queries:\\sufficient moments and qualified memory lower bounds}
+\author{Phase7 research note, memory route}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+
+\paragraph{Decision.}
+There is a rigorous, narrow mathematical route: characterize the information
+needed to answer every empirical residual query after history has been
+discarded.  The canonical number of real coordinates is
+\[
+ p=\binom{d+1}{2},\qquad q=\binom{d+3}{4},\qquad
+ D_0=p+q,\qquad D=2p+q.
+\]
+Here $D_0$ counts input moments of orders two and four, and $D$ also counts
+the label--quadratic moment.  For fixed unweighted sample size $n\ge D_0$,
+$D$ is the exact minimum dimension among continuous real-valued summaries
+that work on every dataset. If the label moment is already supplied,
+the exact additional continuous dimension is $D_0$. A local finite-bit
+packing bound is also available, with its accuracy metric and domain
+specified below. These are specializations of classical normal-equation,
+moment-space, linear-algebra and topological arguments. They do not
+establish an information-theoretic advantage of the existing learner,
+an optimal training method, or a Gaussian average-case memory bound.
+
+\begin{center}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.27\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.29\linewidth}}
+\toprule
+Data / guarantee & Memory model & Valid conclusion\\
+\midrule
+Every size-$n$ unweighted dataset; $n\ge D_0$
+& Continuous encoder; arbitrary decoder
+& Exactly $D$ real coordinates; $D_0$ extra given $S_y$.\\[3pt]
+Every weighted finite probability measure
+& Additive real measurements; arbitrary decoder
+& Exactly $D$ independent measurements.\\[3pt]
+Every size-$n$ unweighted dataset, any $n$
+& Additive encoder; affine query decoding
+& At least $D$ measurements.\\[3pt]
+Every size-$n$ unweighted dataset, small $n$
+& Continuous encoder; arbitrary decoder
+& Lower bound $r_n$; raw data give upper bound $n(d+1)$.\\[3pt]
+Every dataset in a specified local compact family; error on (4)
+& At most $2^b$ discrete states
+& Local packing bound (7), with specified $r,\varepsilon$.\\[3pt]
+Equal-weight datasets; no regularity
+& Infinite-precision additive real state
+& One real can encode the full finite multiset.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Definition, query equivalence and a matching summary}
+
+Fix $d,n\ge1$ and a known sample count $n$.  Data are an ordered tuple
+$z=((x_i,y_i))_{i=1}^n\in(\R^d\times\R)^n$.  Permutation invariance is
+not required of a competing summary; allowing order only strengthens the
+lower bound. Set
+\begin{align*}
+ H(x)&=xx^\top-I_d,\qquad q_B(x)=\tr(BH(x)),\\
+ G_z(B,c)&=\frac1{2n}\sum_{i=1}^n
+       (y_i-q_B(x_i)-c)H(x_i),\quad B\in\Sym_d,\ c\in\R.
+\end{align*}
+A summary $S_n:z\mapsto\R^m$ is \emph{universally query-sufficient} if
+there is a decoder $\Gamma_n$ such that
+\[
+ \forall z\ \forall B\in\Sym_d\ \forall c\in\R:
+ \quad \Gamma_n(S_n(z),B,c)=G_z(B,c).
+ \tag{U}
+\]
+No regularity of $\Gamma_n$ is needed for the continuous lower bound.
+The decoder has no additional data-dependent side information unless
+explicitly stated; all retained model/optimizer/replay information that
+it accesses must be counted in the summary. A known sample count is free
+in this fixed-$n$ model. A streaming implementation stores the count too.
+
+Write $\langle a\rangle_z=n^{-1}\sum_i a(x_i,y_i)$ and define
+\[
+ S_y=\tfrac12\langle yH\rangle_z,\qquad
+ M_{2,ij}=\langle x_ix_j\rangle_z,\qquad
+ M_{4,ijkl}=\langle x_ix_jx_kx_l\rangle_z.
+\]
+The subscripts on $M_2,M_4$ are coordinate indices rather than sample
+indices. Store only distinct symmetric coordinates: $i\le j$ for $M_2$
+and $i\le j\le k\le l$ for $M_4$. Let
+\[
+ F_n(z)=M(z)=(S_y,M_2,M_4)\in\R^D.
+\]
+The order-four tensor has $q$ distinct entries, not $p(p+1)/2$ independent
+entries. Products of centered quadratic features have polynomial
+relations, and known total mass is not an additional unknown coordinate.
+
+\begin{theorem}[Canonical query information]
+For any two datasets $z,z'$ of the same known size, the following are
+equivalent:
+\begin{enumerate}
+ \item $G_z(B,c)=G_{z'}(B,c)$ for every symmetric $B$ and every $c$;
+ \item $(S_y,\overline H,T)_z=(S_y,\overline H,T)_{z'}$, where
+ $\overline H=\langle H\rangle$ and
+ $T(B)=\tfrac12\langle\langle B,H\rangle H\rangle$;
+ \item $M(z)=M(z')$.
+\end{enumerate}
+Consequently $M$ answers every query, and every sufficient summary
+permits recovery of $M$. This is minimality for a deterministic
+query family, not a statement of statistical sufficiency for an unknown
+parameter.
+\end{theorem}
+\begin{proof}
+Direct expansion gives
+\[
+ G_z(B,c)=S_y-T(B)-\tfrac12c\overline H. \tag{1}
+\]
+Thus the value at $(0,0)$ determines $S_y$, its difference from $(0,1)$
+determines $\overline H$, and its differences from queries at a basis of
+$\Sym_d$ determine $T$. Conversely these coefficients determine every
+query.
+
+For $k\le l$, put $F^{kk}=e_ke_k^\top$ and
+$F^{kl}=(e_ke_l^\top+e_le_k^\top)/2$ if $k<l$, so that
+$\langle F^{kl},H\rangle=H_{kl}$. Define
+\[
+ K_{ij,kl}=\langle H_{ij}H_{kl}\rangle
+             =2[T(F^{kl})]_{ij}.
+\]
+The reconstruction formulas are
+\begin{align}
+ M_{2,ij}&=\overline H_{ij}+\delta_{ij},\tag{2}\\
+ M_{4,ijkl}&=K_{ij,kl}
+       +\delta_{ij}M_{2,kl}+\delta_{kl}M_{2,ij}
+       -\delta_{ij}\delta_{kl}.\tag{3}
+\end{align}
+Conversely (3) reconstructs $K$ from $M_2,M_4$, and hence reconstructs
+$T$. All index permutations are determined by tensor symmetry.
+If two histories have the same sufficient summary, (U) makes all their
+queries agree, so the reconstructed $M$ agrees too. Therefore a map
+$h$ on the summary image satisfies $M=h\circ S_n$.
+\end{proof}
+
+The $p+2$ fixed queries
+\[
+ \mathcal Q=\{(0,0),(0,1)\}\cup
+              \{(F^{kl},0):1\le k\le l\le d\}\tag{4}
+\]
+already recover all coefficients. This reduces any exact universal
+adaptive-query claim to a finite nonadaptive query family. Once $M$ is
+stored, correctness is pathwise and holds for arbitrarily data-dependent
+choices of $B,c$; independence or generalization assumptions are unnecessary.
+If only one prespecified algorithm trajectory must be supported, (U)
+is a stronger requirement and the lower bound need not apply.
+
+The summary is additive: store sums of $yH/2$, all degree-two input
+monomials, and all degree-four input monomials, then divide by $n$.
+This uses $D$ ideal real coordinates and a count, independently of stream
+length. It is an algebraic exact-arithmetic representation; ordinary
+floating-point accumulation has rounding error. Nothing here identifies
+the real-coordinate count with a physical byte count.
+
+\section{Continuous summaries on fixed unweighted samples}
+
+Let $f(x)\in\R^{D_0}$ list all degree-two and degree-four monomials.
+The functions $1,f_1,\ldots,f_{D_0}$ are linearly independent. The
+additional $p$ functions $yH_{ij}(x)/2$ are independent modulo this
+input-only span. Indeed, the coefficient of $y$ in a linear relation
+would say $x^\top Ax-\tr(A)\equiv0$, forcing $A=0$; independence of
+different input monomials then finishes the argument. Thus the affine
+span of the single-example canonical feature vector is all of $\R^D$.
+
+\begin{lemma}[A full-dimensional unweighted moment image]
+For every fixed $n\ge D_0$, there is a dataset $z_0$ at which the
+polynomial moment map $F_n:(\R^{d+1})^n\to\R^D$ has differential of
+rank $D$. Consequently its image contains a nonempty open subset of
+$\R^D$, and there is a continuous local section $s:U\to(\R^{d+1})^n$
+on some nonempty open $U\subset\R^D$ such that $F_n(s(u))=u$.
+\end{lemma}
+\begin{proof}
+First consider $A_n(x_1,\ldots,x_n)=n^{-1}\sum_i f(x_i)$.
+The vectors $\partial_a f(x)$, over all $x\in\R^d$ and coordinates
+$a$, span $\R^{D_0}$. Otherwise a nonzero $v$ annihilates them all,
+so every partial derivative of the polynomial $v^\top f$ vanishes.
+That polynomial is constant on $\R^d$, contradicting independence
+of $1,f_1,\ldots,f_{D_0}$.
+
+Select $D_0$ such derivative vectors forming a basis, and use their
+locations as $D_0$ sample points. Their selected derivative columns in
+$DA_{D_0}$ are independent. Pad the configuration when $n>D_0$.
+Hence some $D_0$-minor of $DA_n$ is a nonzero polynomial in the sample
+coordinates. The configurations where it is nonzero form an open dense
+set $\mathcal U$.
+
+Independence of the $p$ polynomials $H_{ij}$ implies that there are
+$p$ points for which the $p\times p$ evaluation matrix has rank $p$:
+if their value vectors never spanned $\R^p$, a nontrivial linear
+combination of the functions would vanish everywhere. Since $n\ge
+D_0\ge p$, the $p\times n$ matrix with columns $H(x_i)$ in symmetric
+coordinates has rank $p$ on another open dense set $\mathcal V$.
+Both density assertions follow because a nonzero real polynomial
+cannot vanish on an open set. The finite intersection
+$\mathcal U\cap\mathcal V$ is nonempty.
+
+Choose an input configuration there and set every label to zero.
+At this dataset, the derivative of $S_y$ with respect to input
+coordinates is zero, while its label-derivative columns are
+$H(x_i)/(2n)$, of rank $p$. The derivative of $(M_2,M_4)$ with respect
+to inputs has rank $D_0$ and its label derivatives vanish. Thus the
+full differential has rank $p+D_0=D$. Choose $D$ independent scalar
+input/label coordinate directions and freeze the others. The inverse
+function theorem applied to the resulting square map supplies $U$
+and its smooth, hence continuous, local section.
+\end{proof}
+
+\begin{theorem}[Tight continuous dimension for sufficiently many samples]
+Fix $n\ge D_0$. Any continuous universally query-sufficient summary
+$S_n:(\R^{d+1})^n\to\R^m$ must have $m\ge D$. This bound is attained
+by $M$. If $S_y$ is supplied separately and an additional continuous
+summary $A_n$ has values in $\R^m$, exact universal decoding from
+$(S_y,A_n)$ requires and permits $m\ge D_0$.
+\end{theorem}
+\begin{proof}
+On the local section in the lemma, $S_n\circ s:U\to\R^m$ is
+continuous. It is injective: equal summary values imply equal query
+coefficients by the first theorem, and $F_n(s(u))=u$.
+If $m<D$, compose this injection with the usual coordinate embedding
+$\R^m\hookrightarrow\R^D$. Brouwer's invariance of domain says its
+image is open in $\R^D$, but it lies in an $m$-dimensional coordinate
+subspace with empty interior. This is a contradiction.
+
+For separate $S_y$, the combined map $(S_y,A_n)$ is a continuous
+summary of dimension $p+m$, so $p+m\ge D$. Storing $M_2,M_4$
+attains $m=D_0$. Neither proof assumes continuity of the decoder.
+\end{proof}
+
+\paragraph{Finite sample qualification.}
+The sufficient threshold $n\ge D_0$ is not claimed to be the smallest
+threshold. For general $n$, let
+\[
+ r_n=\max_z\rank DF_n(z).
+\]
+The same independent-minor argument and a local parameter slice imply
+that every continuous universal summary has dimension at least $r_n$.
+Moreover $r_n\le\min\{D,n(d+1)\}$ and storing the ordered raw data
+uses $n(d+1)$ continuous coordinates. Thus a $D$ lower bound cannot
+hold when $n(d+1)<D$. At $n=1$, for example, storing $(x,y)$ uses
+only $d+1$ coordinates. These bounds do not determine the exact
+minimum for every small $n$; a sharper small-$n$ classification can
+involve the geometry of finite-atomic polynomial moment varieties.
+
+\paragraph{Quantifiers and model restrictions.}
+The theorem assumes correctness at every dataset in the stated
+unrestricted domain. It is not automatically a lower bound for data
+on a fixed noiseless teacher manifold, for a discrete alphabet, or
+for almost-sure correctness with an arbitrary discontinuous decoder.
+Even topological full support of a sampling distribution does not turn
+an almost-sure factorization through a discontinuous decoder into a
+pointwise factorization. If both encoder and the finitely many
+decoders in (4) are continuous, equality almost surely under a
+full-support law extends by continuity to every dataset, so the
+theorem then applies. A fixed shared random seed also reduces to this
+deterministic theorem only if that seed's map has universal correctness.
+
+\section{Linear measurements and why additivity alone is insufficient}
+
+The domain in this section is all finitely supported probability
+measures $\mu$ on $\R^{d+1}$, with arbitrary nonnegative real weights,
+not merely equal weights. Let $\phi_1,\ldots,\phi_m$ be any real-valued
+functions and store their linear measurements $L(\mu)=(\int\phi_jd\mu)_j$.
+Here ``linear'' means linear in the measure, not linear in $x$ or $y$.
+
+\begin{proposition}[Exact linear-measurement criterion]
+For a target function $f$, the scalar $\int f\,d\mu$ is determined
+by $L(\mu)$ for every finitely supported probability measure if and
+only if
+\[
+ f\in\operatorname{span}_{\R}\{1,\phi_1,\ldots,\phi_m\}.
+ \tag{5}
+\]
+Therefore universal exact quadratic residual queries require
+$m\ge D$ in this measurement model, regardless of decoder regularity.
+The canonical measurements attain equality.
+\end{proposition}
+\begin{proof}
+The ``if'' implication follows by integrating a linear representation,
+using known total mass one. For the converse, put
+$v(z)=(1,\phi_1(z),\ldots,\phi_m(z))$. If every finite real relation
+$\sum_i a_iv(z_i)=0$ also implied $\sum_i a_if(z_i)=0$, then
+$\ell(\sum_i a_iv(z_i))=\sum_i a_if(z_i)$ would be a well-defined
+linear functional on the span of the $v(z)$. Extend it to $\R^{m+1}$;
+then $f(z)=\ell(v(z))$, establishing (5).
+If (5) fails, there is instead a finite relation with
+$\sum_i a_i=0$ and $\sum_i a_if(z_i)\ne0$. Split the coefficients
+into positive and negative parts. Their common positive mass $a$
+normalizes them into two finitely supported probability measures
+$\mu_+,\mu_-$ with equal $L$ but unequal integrals of $f$.
+No decoder can distinguish them.
+
+Apply this criterion to the $D$ canonical feature functions. Their
+classes modulo constants are linearly independent, as proved above,
+so the span of $m$ measurement classes must have dimension at least
+$D$.
+\end{proof}
+
+An equivalent finite-support kernel statement is
+$\ker L\cap\ker(\text{mass})\subseteq\ker M$: every signed measure
+annihilated by the stored measurements and mass must annihilate all
+query coefficients. This is ordinary linear algebra. It is not a
+separate streaming or information-theoretic principle.
+
+\paragraph{Two models that must not be conflated.}
+For equal-weight samples of a fixed size, arbitrary discontinuous
+additive features do not satisfy the lower bound in the proposition.
+Choose a Hamel basis of $\R$ over $\mathbb Q$ and assign each possible
+record $z\in\R^{d+1}$ to a distinct basis element $b_z$; both sets
+have cardinality continuum. The scalar sum $\sum_i b_{z_i}$ uniquely
+specifies every multiplicity in the finite multiset, by rational
+linear independence. Thus one additive exact real, together with the
+known count, stores all empirical query information. This encoding is
+not a continuous finite-precision algorithm. Its existence shows why
+one cannot infer a lower bound from ``additive'' plus a nonlinear
+decoder alone. Arbitrary-real-weight mixtures defeat this example
+because real, rather than rational, linear relations are then allowed.
+Likewise, without any encoder regularity, the cardinality equality
+$|\R^D|=|\R|$ permits storing the whole moment vector in one ideal
+real. Even measurability alone is not a replacement for continuity:
+standard digit encodings can be made Borel measurable.
+This discontinuous-sum loophole is established prior theory: see
+Wagstaff et al., Theorem 3.2 and Supplement B.2\cite{wagstaff}.
+
+If a decoder is required to be affine in the stored feature averages,
+the span criterion and $D$ lower bound follow already from testing
+single records (or a dataset consisting of $n$ copies of one record).
+This is a different, stronger restriction on decoding.
+
+\section{A finite-bit lower bound with explicit error metric}
+
+Let $\|A\|_{\max}=\max_{ij}|A_{ij}|$. Define simultaneous query error
+on the fixed finite family (4) by
+\[
+ e_z=\max_{(B,c)\in\mathcal Q}
+       \|\widehat G_z(B,c)-G_z(B,c)\|_{\max}.\tag{6}
+\]
+This metric is specified because an unqualified phrase such as
+``$\varepsilon$-accurate residual queries'' does not define a memory
+problem. All matrices $F^{kl}$ have Frobenius norm at most one, so
+the query family uses bounded coefficients.
+
+\begin{lemma}[Stable recovery from the finite query family]
+If $e_z\le\varepsilon$, the formulas in the first theorem reconstruct
+a vector $\widehat M$ satisfying
+$\|\widehat M-M(z)\|_\infty\le12\varepsilon$.
+\end{lemma}
+\begin{proof}
+The errors in $S_y=G(0,0)$, $\overline H=2(G(0,0)-G(0,1))$,
+and $K_{ij,kl}=2(G(0,0)-G(F^{kl},0))_{ij}$ are at most
+$\varepsilon$, $4\varepsilon$, and $4\varepsilon$, respectively.
+Equation (2) has error at most $4\varepsilon$. Equation (3) adds at
+most two such errors to the error of $K$, giving $12\varepsilon$.
+To select one value for each fourth-order coordinate, fix any
+deterministic pair grouping in (3); approximate reconstructions need
+not otherwise respect redundant tensor identities.
+\end{proof}
+
+\begin{theorem}[Local worst-case bit bound]
+Fix $d\ge1$ and $n\ge D_0$. There exist a moment vector $m_0$,
+$r>0$, and a continuous section $s$ on a neighborhood of
+$C=m_0+[-r,r]^D$, with $F_n(s(m))=m$. Fix the compact family of
+size-$n$ unweighted datasets
+\[
+ \mathcal K=s(C).
+\]
+Any summary with at most $2^b$ states and any decoder satisfying
+(6) with $e_z\le\varepsilon$ for every $z\in\mathcal K$ must obey,
+for $\varepsilon>0$,
+\[
+ b\ \ge\ D\log_2\left(1+\left\lfloor
+                   \frac{2r}{25\varepsilon}\right\rfloor\right).
+ \tag{7}
+\]
+If $S_y$ is supplied exactly as uncharged side information, the
+number of additional bits has the same lower bound with $D_0$
+replacing $D$. No finite number of states can be exact on all of
+$\mathcal K$. These claims require correctness only on this compact
+family, not on all real-valued datasets.
+\end{theorem}
+\begin{proof}
+The local section gives an open realizable moment set. Choose a
+closed cube $C$ inside it; its continuous image $\mathcal K=s(C)$
+is compact. In each coordinate place
+$L=1+\lfloor2r/(25\varepsilon)\rfloor$ equally spaced grid values
+with spacing $25\varepsilon$; choose one realizing dataset via the
+section for each of its $N=L^D$ grid points. If two grid datasets
+had the same stored state, the decoder would return the same fixed
+query outputs for both. Recovering $M$ from these outputs would
+approximate both moment vectors within $12\varepsilon$, so their
+distance would be at most $24\varepsilon$, contradicting the grid
+separation. Hence there are at least $N$ states, proving (7).
+
+For side information, fix the first $p$ coordinates of the cube
+(the label moment) at their center, and vary only the remaining
+$D_0$ coordinates. All datasets now have identical side information,
+and the same proof applies. For zero error, even a line segment
+inside either cube has infinitely many distinct exact query vectors,
+so finite-state universal exact recovery is impossible.
+\end{proof}
+
+The compact-family restriction makes a fixed positive absolute error
+meaningful. If one instead required the same guarantee over all
+unbounded real-valued datasets, already $G_z(0,0)=S_y$ has unbounded
+range, so no finite-state code could have a finite uniform absolute
+error. Such a global impossibility would not be a useful quantitative
+precision bound.
+
+This is a packing/pigeonhole theorem, not an invocation of Fano's
+inequality without a probability model. It has an optional precise
+randomized version. Draw the dataset uniformly from the constructed
+$N$-point packing. A randomized $b$-bit encoding/decoding scheme with
+shared randomness independent of the dataset and simultaneous
+success probability at least $1-\delta$ on each dataset satisfies
+\[
+ b\ge\log_2N+\log_2(1-\delta).\tag{8}
+\]
+Condition on all random coins: each state can be successful for at
+most one packed dataset, so at most $2^b$ of the $N$ datasets
+succeed; average this inequality over the coins. This also covers
+private coins by revealing all of them as free shared randomness.
+A per-query success guarantee is different from simultaneous
+success for (4), and requires its own union-bound adjustment.
+
+For fixed $d,n$ and the resulting local scale $r$, (7) gives
+$D\log_2(1/\varepsilon)-O_{d,n,r}(1)$ as $\varepsilon\downarrow0$.
+The proof does not give a dimension-uniform lower bound on $r$, a
+Gaussian-prior rate-distortion function, or a practical fixed-precision
+word count. The same compact family has a matching-order elementary
+upper bound. For $\eta=\varepsilon/3$, use a grid on each canonical
+coordinate interval of length $2r$ with
+$J=1+\lceil2r/\eta\rceil$ values and spacing at most $\eta$.
+Encoding the nearest grid vector has coordinate error at most $\eta$
+and uses no more than
+\[
+ b_{\rm upper}=\left\lceil D\log_2\left(
+                   1+\left\lceil\frac{6r}{\varepsilon}\right\rceil
+                              \right)\right\rceil
+ \tag{9}
+\]
+bits. In (1)--(3), the errors in $S_y$, $\overline H$, and $K$ are
+at most $\eta$, $\eta$, and $3\eta$; hence every query in (4) has
+error at most $3\eta\le\varepsilon$. The grid vector need not
+itself be a realizable empirical moment vector for this decoder to
+work. If $S_y$ is supplied exactly, quantize only the $D_0$ input
+moment coordinates and replace $D$ by $D_0$ in (9). Thus on the
+specified compact family, the lower and upper bounds have matching
+$D\log_2(1/\varepsilon)$ leading order for fixed $d,n,r$.
+
+In particular, neither the continuous exact theorem nor this local
+high-accuracy packing result proves that useful approximate residual
+queries require $\Omega(d^4)$ storage at a fixed practical tolerance.
+Classical covariance sketches such as Frequent Directions explicitly
+trade storage against covariance approximation error\cite{fd}; their
+applicability and bounds for the lifted quadratic features require a
+separate calculation. The local radius $r$ in (7) must not be silently
+treated as dimension independent.
+
+\section{Concrete collisions and the Phase6 boundary}
+
+\paragraph{The missing fourth moment is operational.}
+For $d=1,n=2$ and both labels zero, take dataset A with $x=(-1,1)$
+and dataset B with $x=(0,\sqrt2)$. Both have $S_y=0$ and
+$M_2=1$ (equivalently $\overline H=0$). Dataset A has
+$\langle H^2\rangle=0$, whereas dataset B has
+$\langle H^2\rangle=1$. At $B=1,c=0$, their exact query values
+are $0$ and $-1/2$. Thus even $S_y$ together with the empirical
+second moment cannot answer all residual queries. Replicating each
+record equally gives the same collision at any even sample size.
+
+\paragraph{Implementation inspected.}
+The Phase6 source \texttt{code/frontier.py}, lines 358--365, updates
+\[
+ \texttt{moment}\mathrel{+}=
+ \tfrac12\sum_{\text{new }i}y_i(x_ix_i^\top-I),\qquad
+ \texttt{matrix}=\texttt{moment}/n-B.
+\]
+Thus the proposal uses $S_y-B$. The exact historical empirical
+quantity is (1). For Gaussian inputs, $\E T(B)=B$ for fixed
+sample-independent $B$ and $\E\overline H=0$, but these are
+population identities. They do not turn $S_y-B$ into the realized
+empirical query. The Phase5 and Phase6 theory files already state
+this distinction correctly; this note supplies qualified minimality
+results that those files deliberately did not claim.
+
+With the Phase6 value $d=12$,
+\[
+ p=78,\quad q=1365,\quad D_0=1443,\quad D=1521.
+\]
+The sufficient sample-size threshold in the continuous lower bound
+is therefore $n\ge1443$. With 1024 observations per arrival it
+applies from the second arrival if the query target is the whole
+historical empirical dataset. This observation is conditional on
+(U) and on what information the decoder can access. It is not a
+claim that the implemented approximate controller violates a memory
+constraint. A dense symmetric $p\times p$ Gram matrix plus
+$\overline H$ would use $p(p+1)/2+p=3159$ stored scalar slots,
+whereas the input polynomial moments use only $1443$; adding $S_y$
+gives $3237$ versus $1521$. These compare representations, not bit
+lower bounds or runtime. Known constants and exact identities explain
+the redundancy.
+
+\paragraph{Changing the requested output changes the target dimension.}
+The matrix query $G(B,c)$ does not contain $\langle y\rangle$ or
+$\langle y^2\rangle$. To reproduce the intercept gradient as well,
+store $\langle y\rangle$, one more independent coordinate:
+\[
+ \langle y-q_B-c\rangle
+ =\langle y\rangle-\langle B,\overline H\rangle-c.
+\]
+To reproduce the entire squared empirical loss, add
+$\langle y^2\rangle$ too. The corresponding unrestricted moment
+dimensions are $D+1$ and $D+2$. Exact matrix gradient queries
+therefore do not alone reproduce factor Adam with its chosen
+minibatches, replay selection, coordinatewise states, and clipping.
+
+\paragraph{Removing the intercept is dimension dependent.}
+One must not simply subtract $p$ coordinates when restricting queries
+to $c=0$. For $d\ge3$, the centered Gram moments already determine
+$\overline H$. The pointwise rank-one identities of $H+I$ imply
+\begin{align*}
+ \langle H_{ii}+H_{jj}\rangle
+    &=\langle H_{ij}^2-H_{ii}H_{jj}\rangle-1
+            &&(i\ne j),\\
+ \langle H_{jk}\rangle
+    &=\langle H_{ij}H_{ik}-H_{ii}H_{jk}\rangle
+            &&(i,j,k\text{ distinct}).
+\end{align*}
+Three pairwise diagonal sums recover each diagonal entry, and the
+second identity recovers each off-diagonal entry. Thus for $d\ge3$
+the dimension remains $D$ even without $c$. For $d=1$, the only
+input query coefficient is $\langle H^2\rangle$, so the total affine
+moment dimension is two including $S_y$. For $d=2$, the six distinct
+Gram polynomials are independent modulo constants: their degree-four
+leading terms force all coefficients to vanish except possibly a
+multiple of $H_{11}H_{22}-H_{12}^2$, and its degree-two part is
+nonzero. Hence the total is $6+p=9$, compared with $D=11$ when all
+intercepts are queried. These are affine moment-space counts; the
+finite-$n$ qualifications still apply.
+
+\section{Prior theory and defensible contribution}
+
+\begin{itemize}
+\item \textbf{Classical least squares.} In the feature vector
+$h(x)=\operatorname{vec}_{\Sym}(xx^\top-I)$, equation (1) is the
+normal-equation residual $X^\top y-X^\top X\beta$, with the intercept
+cross term. MIT's official notes give the ordinary normal equations
+and their gradient derivation\cite{mit}. The matrix query identity,
+Gram storage, and regression interpretation are established theory.
+\item \textbf{Statistical sufficiency is a different quantifier.}
+The official Berkeley notes define sufficiency through the
+conditional distribution of data given a statistic, relative to a
+specified statistical model, and minimal sufficiency through recovery
+from any sufficient statistic\cite{berkeley}. This note instead
+fixes a family of deterministic empirical queries. For a fixed design
+Gaussian regression model, the design is conditioned upon and its
+Gram matrix need not be charged as stored unknown information. This
+is another reason not to borrow statistical minimal-sufficiency
+claims as memory bounds here.
+\item \textbf{Polynomial moments and kernel means.}
+Sriperumbudur et al. study mean embeddings of measures and conditions
+for full distributional injectivity\cite{kme}. Taking the finite
+feature map to be our canonical polynomials makes $M$ its empirical
+kernel mean. It distinguishes this query family but does not
+determine the full data distribution. The finite-dimensional feature
+interpretation, and the distinction between query equivalence and
+a characteristic kernel, are established theory.
+\item \textbf{Moment compression is classical.}
+Bayer and Teichmann prove a version of Tchakaloff's theorem: finitely
+many weighted evaluation nodes can reproduce polynomial integrals
+through a fixed degree\cite{tchakaloff}. This concerns existence of
+positive cubature representations, not a lower bound on physical
+memory. It reinforces that finite polynomial moment representations
+are old, and does not remove the coordinate or bit cost of describing
+nodes and weights.
+\item \textbf{Topology is classical.}
+The only topological input is Brouwer's invariance of domain;
+Tao's author-written exposition gives the theorem, its no-injection
+corollary, and a proof\cite{tao}. The dimension lower bound is its
+application to a locally full-rank empirical moment map.
+\item \textbf{Set-summary dimensional obstructions are prior work.}
+Wagstaff et al. make continuity versus discontinuous single-real
+encodings explicit and prove continuous latent-dimension obstructions
+for sum representations of set functions\cite{wagstaff}. Their
+Theorem 4.1 proof uses an injection from an open ordered-set domain
+into the latent space. Our specialization concerns a fixed finite
+quadratic query family, and permits any continuous summary, including
+nonadditive and order-dependent ones. The dimension obstruction and
+the need to exclude pathological encodings are not new principles.
+\end{itemize}
+
+The defensible project contribution is the precise specialization:
+the $q+2p$ count after polynomial dependencies and labels are charged;
+the $q+p$ additional cost given $S_y$; a proof for sufficiently large
+fixed equal-weight samples rather than only arbitrary weighted
+measures; and the finite-query accuracy metric that yields a bit
+packing bound. The current search did not locate a paper stating
+this exact package for $H=xx^\top-I$, but this is not evidence of
+major theoretical novelty. It is best presented as a rigorous
+information boundary for the project's historical summary, with
+classical ingredients credited. A substantial new algorithmic or
+learning-theoretic claim needs a separate result.
+
+\paragraph{Inspection and validation.}
+Read-only inputs were the Phase5 source-counterexample, nonlinear
+projection, and theory manuscripts; the Phase6 theory manuscript,
+\texttt{code/frontier.py}, and its dimension configuration.
+No original project files, training runs,
+or software installations were changed. An independent mathematical
+countercheck verified the continuous proof and its $n\ge D_0$
+refinement. The companion pure-Python check verifies feature-space
+ranks for small dimensions, the explicit collision, and empirical
+query reconstruction using exact rational arithmetic.
+
+\begin{thebibliography}{9}
+\bibitem{mit}
+MIT OpenCourseWare, \emph{18.443 Statistics for Applications,
+Lecture 15: Regression Analysis}, Spring 2015, normal equations
+and normal linear regression slides.
+\href{https://ocw.mit.edu/courses/18-443-statistics-for-applications-spring-2015/986e5778fc7d3a4c2bb4fdf8ceb4c28d_MIT18_443S15_LEC15.pdf}{Official lecture PDF}.
+\bibitem{berkeley}
+UC Berkeley, \emph{Stat 210A Reader: Sufficiency}, Fall 2024.
+\href{https://stat210a.berkeley.edu/fall-2024/reader/sufficiency.html}{Official course reader}.
+\bibitem{kme}
+B. K. Sriperumbudur, A. Gretton, K. Fukumizu, B. Sch\"olkopf,
+G. R. G. Lanckriet, \emph{Hilbert Space Embeddings and Metrics on
+Probability Measures}, JMLR 11(50):1517--1561, 2010.
+\href{https://www.jmlr.org/papers/v11/sriperumbudur10a.html}{JMLR publication page}.
+\bibitem{tchakaloff}
+C. Bayer and J. Teichmann, \emph{The proof of Tchakaloff's theorem},
+Proc. Amer. Math. Soc. 134(10):3035--3040, 2006;
+preprint arXiv:math/0502473v2, 2005.
+\href{https://arxiv.org/abs/math/0502473}{Author preprint}.
+\bibitem{tao}
+T. Tao, \emph{Brouwer's fixed point and invariance of domain theorems,
+and Hilbert's fifth problem}, author exposition, 13 June 2011,
+Theorem 2 and Corollary 3.
+\href{https://terrytao.wordpress.com/2011/06/13/brouwers-fixed-point-and-invariance-of-domain-theorems-and-hilberts-fifth-problem/}{Author exposition and proof}.
+\bibitem{wagstaff}
+E. Wagstaff, F. B. Fuchs, M. Engelcke, I. Posner, M. A. Osborne,
+\emph{On the Limitations of Representing Functions on Sets},
+ICML, PMLR 97:6487--6494, 2019. Theorems 3.2 and 4.1,
+Supplement B.2.
+\href{https://proceedings.mlr.press/v97/wagstaff19a.html}{Official PMLR publication and supplements}.
+\bibitem{fd}
+M. Ghashami, E. Liberty, J. M. Phillips, D. P. Woodruff,
+\emph{Frequent Directions: Simple and Deterministic Matrix Sketching},
+arXiv:1501.01711, 2015.
+\href{https://arxiv.org/abs/1501.01711}{Author preprint}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,238 @@
+{
+  "edition": "Public research edition; original event dates are historical",
+  "scope": "Original-to-public derivative provenance. Refreshed public receipt hashes certify current public-copy consistency only; no historical execution re-attestation. Scientific data and counts were not resampled.",
+  "files": [
+    {
+      "path": "manuscript/model.tex",
+      "original_sha256": "2918c29f6a6735f47d74b26d8f1043a52c3528541475c2864a419613a4b41324",
+      "publication_sha256": "2918c29f6a6735f47d74b26d8f1043a52c3528541475c2864a419613a4b41324",
+      "original_bytes": 4159,
+      "publication_bytes": 4159,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/stochastic_comparison.tex",
+      "original_sha256": "a70b41b3e38261a6f31e8963189cdcd6d7a85815381b45a317d917fdf50d6003",
+      "publication_sha256": "a70b41b3e38261a6f31e8963189cdcd6d7a85815381b45a317d917fdf50d6003",
+      "original_bytes": 2695,
+      "publication_bytes": 2695,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/computational_checks.tex",
+      "original_sha256": "4c335a2c4db52441bab6622886e8ec62fd3b54b8f252180a8efdafc57adeff7a",
+      "publication_sha256": "4c335a2c4db52441bab6622886e8ec62fd3b54b8f252180a8efdafc57adeff7a",
+      "original_bytes": 3788,
+      "publication_bytes": 3788,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/endpoint_lower.tex",
+      "original_sha256": "b5bcc593991a5c0bf8e08d249f5915e8da2aa06103cc31ad81fda844bad7458c",
+      "publication_sha256": "b5bcc593991a5c0bf8e08d249f5915e8da2aa06103cc31ad81fda844bad7458c",
+      "original_bytes": 9083,
+      "publication_bytes": 9083,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/anchor_embedding.tex",
+      "original_sha256": "eb1515d2a9b4f43018ed691288a40a3f4548184cbeced0023f30a59812089f5e",
+      "publication_sha256": "eb1515d2a9b4f43018ed691288a40a3f4548184cbeced0023f30a59812089f5e",
+      "original_bytes": 8214,
+      "publication_bytes": 8214,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/phase10_last_two_capacities.tex",
+      "original_sha256": "6cac0b7b933823076817a76dac92009f7a8fdcc216c9aee8ec3795a6c4ae8217",
+      "publication_sha256": "6cac0b7b933823076817a76dac92009f7a8fdcc216c9aee8ec3795a6c4ae8217",
+      "original_bytes": 7477,
+      "publication_bytes": 7477,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/build.sh",
+      "original_sha256": "999ea77616d459d4a9719070b8bf6eedd05a91a210fc2130cfe2ba0dd90e4d2a",
+      "publication_sha256": "999ea77616d459d4a9719070b8bf6eedd05a91a210fc2130cfe2ba0dd90e4d2a",
+      "original_bytes": 528,
+      "publication_bytes": 528,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/padding_counterexample.tex",
+      "original_sha256": "bbb3b833a0021d2f30e49147a08e89687362964d3c8b80fab9b013ec85162f62",
+      "publication_sha256": "bbb3b833a0021d2f30e49147a08e89687362964d3c8b80fab9b013ec85162f62",
+      "original_bytes": 2718,
+      "publication_bytes": 2718,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/quartet_reduction.tex",
+      "original_sha256": "53f3eeb95297c67e186b34030dd61e895b6cccd0139445b192ee3bb56030e7be",
+      "publication_sha256": "53f3eeb95297c67e186b34030dd61e895b6cccd0139445b192ee3bb56030e7be",
+      "original_bytes": 5704,
+      "publication_bytes": 5704,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/quartet_analytic_upper.tex",
+      "original_sha256": "5b2156a30bf9f7163c71276c61ae5f8a888f976a21cd7df94c5f6b0f441a8194",
+      "publication_sha256": "5b2156a30bf9f7163c71276c61ae5f8a888f976a21cd7df94c5f6b0f441a8194",
+      "original_bytes": 5781,
+      "publication_bytes": 5781,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/degree_upper.tex",
+      "original_sha256": "f1e4db0d8b81b496e5ef1ffa2a718249cdae041ca947f727597d87199514d636",
+      "publication_sha256": "f1e4db0d8b81b496e5ef1ffa2a718249cdae041ca947f727597d87199514d636",
+      "original_bytes": 2400,
+      "publication_bytes": 2400,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/references.tex",
+      "original_sha256": "bb0c702e194720508fe8d2b11a6306a4db98c3f399a1c3d3a887d16b83884771",
+      "publication_sha256": "bb0c702e194720508fe8d2b11a6306a4db98c3f399a1c3d3a887d16b83884771",
+      "original_bytes": 1638,
+      "publication_bytes": 1638,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "manuscript/phase10_last_two_capacities.pdf",
+      "original_sha256": "d870cc80f2f9e1b77cf978a9b6a266b9fbc54b330720a726f9deaf6fe06b306b",
+      "publication_sha256": "d870cc80f2f9e1b77cf978a9b6a266b9fbc54b330720a726f9deaf6fe06b306b",
+      "original_bytes": 397043,
+      "publication_bytes": 397043,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/upper/top_two_quartet_reduction.tex",
+      "original_sha256": "b09b9d92edefda640bf2a07bd90deac15514b4ec20d7f53626e0bd3a46cff470",
+      "publication_sha256": "b09b9d92edefda640bf2a07bd90deac15514b4ec20d7f53626e0bd3a46cff470",
+      "original_bytes": 20432,
+      "publication_bytes": 20432,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/adversarial/adversarial_reduction_and_padding.tex",
+      "original_sha256": "c200cf82086b2785cf3db69b054f8ad39483ff2a9068e5edfcc88d5190412532",
+      "publication_sha256": "c200cf82086b2785cf3db69b054f8ad39483ff2a9068e5edfcc88d5190412532",
+      "original_bytes": 6121,
+      "publication_bytes": 6121,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/adversarial/lower_embedding_subtask/fixed_N_anchor_embedding.tex",
+      "original_sha256": "4a54c389eb69c190ac6c12cbce97f65ac2c18a2bc8fa758b11bf72568a16ba40",
+      "publication_sha256": "4a54c389eb69c190ac6c12cbce97f65ac2c18a2bc8fa758b11bf72568a16ba40",
+      "original_bytes": 10024,
+      "publication_bytes": 10024,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/adversarial/lower_embedding_subtask/uniform_N_far_anchor_embedding.tex",
+      "original_sha256": "80e0830e85c9f110146d44f941ddec3bd9cb60e3eae6857b221ee5e2d90188fb",
+      "publication_sha256": "76c910133086d4a55ce6b375b9b2adc2afc2287dbf19d3e83e95610c10d550c6",
+      "original_bytes": 7654,
+      "publication_bytes": 7526,
+      "transformation": "Removed nontechnical proof-coordination comments"
+    },
+    {
+      "path": "research/experiments/code/check_top_capacity_reduction.py",
+      "original_sha256": "324c549af8c568e20d1d0724c82eca736ce5d53c8443f896831f0c2bc33909c9",
+      "publication_sha256": "324c549af8c568e20d1d0724c82eca736ce5d53c8443f896831f0c2bc33909c9",
+      "original_bytes": 5275,
+      "publication_bytes": 5275,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/experiments/code/check_tiny_mass_padding.py",
+      "original_sha256": "9970001decdda6dc4b593692eff03027619a128dc830acacd118013655af5a8b",
+      "publication_sha256": "9970001decdda6dc4b593692eff03027619a128dc830acacd118013655af5a8b",
+      "original_bytes": 2004,
+      "publication_bytes": 2004,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/experiments/code/find_strict_quartet_relief.py",
+      "original_sha256": "8f23a315b58a6fa7dd19ad66055ca8cbf71d699c0c07d6067a11080be604a9d0",
+      "publication_sha256": "8f23a315b58a6fa7dd19ad66055ca8cbf71d699c0c07d6067a11080be604a9d0",
+      "original_bytes": 3043,
+      "publication_bytes": 3043,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/experiments/results/top_capacity_reduction_exact.json",
+      "original_sha256": "2cc77ded5920aa33a7a6955f32094b54b1a9f819fb4d7fcb3cc21e1608702940",
+      "publication_sha256": "2cc77ded5920aa33a7a6955f32094b54b1a9f819fb4d7fcb3cc21e1608702940",
+      "original_bytes": 134349,
+      "publication_bytes": 134349,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/experiments/results/tiny_mass_padding_exact.json",
+      "original_sha256": "1cdac59d0e163471893a3b0c7d092d9753e8bd1c26e6a409294c812df58bff8b",
+      "publication_sha256": "1cdac59d0e163471893a3b0c7d092d9753e8bd1c26e6a409294c812df58bff8b",
+      "original_bytes": 1552,
+      "publication_bytes": 1552,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/experiments/results/strict_quartet_relief_exact.json",
+      "original_sha256": "1a7adfcba23df86545b20b4df5be1a834e2d66e5141ed886f1b2401ebd0d945f",
+      "publication_sha256": "1a7adfcba23df86545b20b4df5be1a834e2d66e5141ed886f1b2401ebd0d945f",
+      "original_bytes": 1567,
+      "publication_bytes": 1567,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "README.md",
+      "original_sha256": null,
+      "publication_sha256": "7238b49966d123e51c17f3eef65b7bb4088ccc15b76678b193b7e5781c284d98",
+      "original_bytes": null,
+      "publication_bytes": 1059,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "REPRODUCE.md",
+      "original_sha256": null,
+      "publication_sha256": "8de25e608e374f9ea2d8f9d430318fd768ed6d760a5b9a226e08d3e03af220c7",
+      "original_bytes": null,
+      "publication_bytes": 1060,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "SCIENTIFIC_STATUS.md",
+      "original_sha256": null,
+      "publication_sha256": "e76b3a01aa1e2d35813c309275cd505d9c1a70cdc7b30cb17227cbf8dca055fa",
+      "original_bytes": null,
+      "publication_bytes": 1029,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "TECHNICAL_REVIEW.md",
+      "original_sha256": null,
+      "publication_sha256": "b76cf21372f434788e57fe47c276165b22c9471c9b7443e067a609aa62defc80",
+      "original_bytes": null,
+      "publication_bytes": 2283,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "manuscript/BUILD_PROVENANCE.json",
+      "original_sha256": "bdaa9ecb28f313b67ab3697916cbc4ad6f8a5b04d67213d672052fea835b7893",
+      "publication_sha256": "d32bf3cfde8403ff32a8f598db5344381cded4239d03fee5512a97ecdf8e5aba",
+      "original_bytes": 5409,
+      "publication_bytes": 2829,
+      "transformation": "Public source/build provenance derivative; removed machine paths and private review file inventory, retained exact original source/PDF hashes and recorded page count"
+    },
+    {
+      "path": "manuscript/README.md",
+      "original_sha256": null,
+      "publication_sha256": "359b5638fb31d55e0679559cb43c4a4bce675d7d807155f0c4c4d7bb2f27acc7",
+      "original_bytes": null,
+      "publication_bytes": 840,
+      "transformation": "New public technical documentation; no new scientific result"
+    }
+  ]
+}

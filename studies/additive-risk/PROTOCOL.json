@@ -1,0 +1,218 @@
+{
+  "frozen_utc": "2026-10-07T22:26:03.696904+00:00",
+  "status": "Protocol before numerical pilot outputs and any labels; independent analytic work already underway, disclosed.",
+  "objective": "fixed-amplitude additive conflict; deterministic two-level 2/3 all-at-most partitions",
+  "epsilon0": "1/1000",
+  "null_threshold": "1/2000",
+  "per_preselected_candidate_label_budget": 1000000,
+  "alpha": "1/20",
+  "target_power": "4/5",
+  "loss": "ell_g/A(g), A=max(integral t g, integral(1-t)g), each outcome minimum0, maximum outcome oscillation1, fullreportdomain[0,1]",
+  "candidates": [
+    {
+      "family": "interior_v1",
+      "n": 2048,
+      "degree": 8192,
+      "epsilon": "16*log(n)/n",
+      "posterior": [
+        "1/8",
+        "3/8",
+        "5/8",
+        "7/8"
+      ],
+      "masses": [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "map": "z=4q-3/2; raw F cost normalized by2*integral[-3/2,5/2]Fdoubleprime"
+    },
+    {
+      "family": "interior_v1",
+      "n": 4096,
+      "degree": 16384,
+      "epsilon": "16*log(n)/n",
+      "posterior": [
+        "1/8",
+        "3/8",
+        "5/8",
+        "7/8"
+      ],
+      "masses": [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "map": "z=4q-3/2; raw F cost normalized by2*integral[-3/2,5/2]Fdoubleprime"
+    },
+    {
+      "family": "interior_v1",
+      "n": 8192,
+      "degree": 32768,
+      "epsilon": "16*log(n)/n",
+      "posterior": [
+        "1/8",
+        "3/8",
+        "5/8",
+        "7/8"
+      ],
+      "masses": [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      "map": "z=4q-3/2; raw F cost normalized by2*integral[-3/2,5/2]Fdoubleprime"
+    },
+    {
+      "family": "endpoint",
+      "n": 128,
+      "degree": 256,
+      "d": "(4*log(n)/n)^2",
+      "posterior": [
+        "0",
+        "2*d",
+        "1-2*d",
+        "1"
+      ],
+      "masses": [
+        "1/2-d^2",
+        "d^2",
+        "d^2",
+        "1/2-d^2"
+      ],
+      "normalizer": "1+d^2/2"
+    },
+    {
+      "family": "endpoint",
+      "n": 256,
+      "degree": 512,
+      "d": "(4*log(n)/n)^2",
+      "posterior": [
+        "0",
+        "2*d",
+        "1-2*d",
+        "1"
+      ],
+      "masses": [
+        "1/2-d^2",
+        "d^2",
+        "d^2",
+        "1/2-d^2"
+      ],
+      "normalizer": "1+d^2/2"
+    },
+    {
+      "family": "endpoint",
+      "n": 512,
+      "degree": 1024,
+      "d": "(4*log(n)/n)^2",
+      "posterior": [
+        "0",
+        "2*d",
+        "1-2*d",
+        "1"
+      ],
+      "masses": [
+        "1/2-d^2",
+        "d^2",
+        "d^2",
+        "1/2-d^2"
+      ],
+      "normalizer": "1+d^2/2"
+    },
+    {
+      "family": "endpoint",
+      "n": 1024,
+      "degree": 2048,
+      "d": "(4*log(n)/n)^2",
+      "posterior": [
+        "0",
+        "2*d",
+        "1-2*d",
+        "1"
+      ],
+      "masses": [
+        "1/2-d^2",
+        "d^2",
+        "d^2",
+        "1/2-d^2"
+      ],
+      "normalizer": "1+d^2/2"
+    },
+    {
+      "family": "endpoint",
+      "n": 2048,
+      "degree": 4096,
+      "d": "(4*log(n)/n)^2",
+      "posterior": [
+        "0",
+        "2*d",
+        "1-2*d",
+        "1"
+      ],
+      "masses": [
+        "1/2-d^2",
+        "d^2",
+        "d^2",
+        "1/2-d^2"
+      ],
+      "normalizer": "1+d^2/2"
+    },
+    {
+      "family": "endpoint",
+      "n": 4096,
+      "degree": 8192,
+      "d": "(4*log(n)/n)^2",
+      "posterior": [
+        "0",
+        "2*d",
+        "1-2*d",
+        "1"
+      ],
+      "masses": [
+        "1/2-d^2",
+        "d^2",
+        "d^2",
+        "1/2-d^2"
+      ],
+      "normalizer": "1+d^2/2"
+    },
+    {
+      "family": "endpoint",
+      "n": 8192,
+      "degree": 16384,
+      "d": "(4*log(n)/n)^2",
+      "posterior": [
+        "0",
+        "2*d",
+        "1-2*d",
+        "1"
+      ],
+      "masses": [
+        "1/2-d^2",
+        "d^2",
+        "d^2",
+        "1/2-d^2"
+      ],
+      "normalizer": "1+d^2/2"
+    }
+  ],
+  "computation_limits": {
+    "single_process": true,
+    "numeric_threads": 1,
+    "target_seconds": 120,
+    "target_memory_GB": 1,
+    "no_old_science_execution": true,
+    "no_training": true,
+    "no_dependency_install": true
+  },
+  "statistical_information": "Known p and full loss. Samep/loss alltheta in[0,1]^4. No promise that theta follows construction. Reference true theta never inferenceinput.",
+  "possible_confirmation_candidate": "interior_v1,n2048 only; selected before confirmationlabels, based on analytic signal feasibility, not labels. Other candidates remain scale screens.",
+  "possible_confirmation_seed": 2026100723,
+  "sampling_gate": "Only after independent scale certification and valid inference proposal; at most one candidate, m<=1e6, aggregated exactmultinomial/binomial simulation allowed if explicitly executed and logged. No repeated seed selection.",
+  "stopping": "All certified upperbounds<epsilon0 => no sampling. Otherwise assess pointwise power with honest fullclass errorcontrol. WideCI is not impossibility. No candidateexpansion.",
+  "prior_work_note": "Audit and old phases unchanged. Current early independent theory indication does not count as final certification."
+}

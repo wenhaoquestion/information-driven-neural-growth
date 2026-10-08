@@ -1,0 +1,19 @@
+\begin{table}[tb]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Actual finite-sample neural training at $n=1024$. Entries are exact population log loss after fitting; $\Delta$ is the paired spectral-minus-random mean with a 95\% Student-$t$ interval half-width across 64 independent seeds. $T$ is the post-growth update budget. Fixed width uses the approximate parameter-update budget described in the text. Lower is better.}
+\label{tab:neural-results}
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+Regime & $T$ & Spectral & Random & Fixed 2 & Continue 1 & $\Delta\pm$ half-width\\
+\midrule
+Four states & 30 & 0.65606 & 0.66809 & 0.68782 & 0.69323 & $-0.012033 \pm 0.003104$ \\
+Four states & 300 & 0.64928 & 0.64928 & 0.65256 & 0.68002 & $-0.000002 \pm 0.000003$ \\
+Rotated 8D & 30 & 0.69175 & 0.69458 & 0.69526 & 0.69744 & $-0.002827 \pm 0.000588$ \\
+Rotated 8D & 300 & 0.68955 & 0.68971 & 0.69159 & 0.69488 & $-0.000162 \pm 0.000251$ \\
+Random start & 30 & 0.69473 & 0.69450 & 0.69352 & 0.69450 & $+0.000236 \pm 0.000180$ \\
+Random start & 300 & 0.69373 & 0.69371 & 0.69124 & 0.69421 & $+0.000019 \pm 0.000609$ \\
+No signal & 30 & 0.69866 & 0.69797 & 0.69640 & 0.69770 & $+0.000691 \pm 0.000179$ \\
+No signal & 300 & 0.70064 & 0.70068 & 0.70008 & 0.69805 & $-0.000046 \pm 0.000064$ \\
+\bottomrule
+\end{tabular}
+\end{table}

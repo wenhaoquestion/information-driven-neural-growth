@@ -1,0 +1,156 @@
+\section{Inherited weighted quartet analytic estimate}
+\label{sec:quartet-upper}
+
+
+The following proposition, including its constants and proof strategy,
+is the finalized Phase~9 weighted quartet theorem. It is reproduced here
+so the upper-bound argument can be read without another file. It is not
+a new Phase~10 analytic estimate. The source is the weighted-quartet theorem in the Phase~9 working
+paper~\cite{huang9}; the exact source path and reviewed hash are recorded
+in the accompanying build receipt.
+
+\begin{proposition}[Phase 9 weighted quartet estimate]
+\label{prop:inherited}
+For four distinct weighted states and nonnegative nonzero polynomial
+curvature of degree at most $r\ge1$, let $R$ be the unrestricted
+deterministic hierarchy price at capacities $(2,3)$. If $R\ge128$, then
+\[
+ R^2\le16r^2e^{20r/\sqrt R}.
+\]
+If $R\ge256$, then $R(\log R)^2\le1936r^2$. In particular, for $r\ge2$,
+$R\le1936r^2/(\log r)^2$.
+\end{proposition}
+
+\begin{proof}
+We record two classical polynomial estimates. If $f\ge0$ has degree at
+most $r$ on an interval $E$ of length $L$, and $M_E=\max_Ef$, the classical Markov
+inequality~\cite{shadrin} $\|f'\|_\infty\le2r^2M_E/L$ implies
+\begin{equation}
+ \int_E f\ge\frac{LM_E}{8r^2}.
+ \label{eq:markov}
+\end{equation}
+Indeed a one-sided segment of length $L/(4r^2)$ is available from a
+maximizer, and $f\ge M_E/2$ there. If $t_0$ lies at distance $d>0$ to
+the right of $E$, Chebyshev extremality gives
+\begin{equation}
+ |f(t_0)|\le M_E T_r(1+2d/L)
+ \le M_Ee^{2r\sqrt{d/L}}.
+ \label{eq:cheb}
+\end{equation}
+For completeness, after rescaling $E$ to $[-1,1]$, any violation of the
+first inequality would yield $\lambda\in(0,1)$ such that
+$T_r-\lambda f/M_E$ has $r$ roots between the alternating extrema of
+$T_r$ and an additional root at the external point. This contradicts
+its degree. The exponential bound follows from
+$T_r(\cosh s)=\cosh(rs)$ and
+$\operatorname{arcosh}(1+x)\le\sqrt{2x}$.
+
+Since $R>1$, the argument of Theorem~\ref{thm:reduction}, specialized to
+four states, permits the notation
+\[
+ A<B<C<D,\quad q=D(BC)=\OPT_3,\quad
+ Q=D(AB)+D(CD)=\OPT_2.
+\]
+Write $p_L=D(AB)$, $p_R=D(CD)$, $T_L=D(ABC)$, and $T_R=D(BCD)$.
+Three feasible deterministic hierarchies give
+\begin{equation}
+ R\le\frac{\min(p_L,p_R)}q,\qquad
+ R\le\frac{T_L}Q,\qquad R\le\frac{T_R}Q.
+ \label{eq:candidates}
+\end{equation}
+For the first retain $AB\mid CD$ and merge the cheaper outer pair at
+the fine level. For the others retain fine pair $BC$ and merge the
+corresponding adjacent triple at the coarse level. All right sides
+are at least one by the defining flat optimality. No enumeration of
+noncontiguous optimal hierarchies is needed.
+
+Reflect the source if needed so that the source weights satisfy
+$p_B\le p_C$. Normalize only the coordinate of the triple $BCD$ to
+\[
+ B=0,\qquad C=c\in(0,1),\qquad D=1,
+ \qquad (p_B,p_C,p_D)=(u,v,w),\quad 0<u\le v.
+\]
+The transformed curvature is $L_0^2g(B+L_0t)$, where $L_0$ is the
+original triple hull length; its degree and nonnegativity are preserved.
+Weights are unchanged. Denote that curvature again by $g$. The triple,
+adjacent-pair, and outer-pair kernels are
+\begin{align*}
+ K(t)&=\min\{ut+v(t-c)_+,\ w(1-t)+v(c-t)_+\},\\
+ k_q(t)&=\min\{ut,v(c-t)\}\mathbf1_{[0,c]}(t),\\
+ k_p(t)&=\min\{v(t-c),w(1-t)\}\mathbf1_{[c,1]}(t),\\
+ H(t)&=\min\{ut,w(1-t)\}.
+\end{align*}
+Put $T=T_R=\int Kg$ and $S=p_R+q=\int(k_q+k_p)g$. From
+\eqref{eq:candidates},
+\begin{equation}
+ q\le\frac{Q}{2R}\le\frac{T}{2R^2},\qquad
+ S\le Q+q\le\frac{2T}{R}.
+ \label{eq:small}
+\end{equation}
+Two pointwise kernel comparisons control degenerating weights:
+\begin{equation}
+ 0\le K-H\le k_q+k_p,
+ \label{eq:H}
+\end{equation}
+and, in their respective open intervals,
+\begin{equation}
+ \frac{k_q(t)}{K(t)}\ge\min\{1,(c-t)/t\}\quad(t<c),
+ \qquad
+ \frac{k_p(t)}{K(t)}\ge\frac{t-c}{c+2(t-c)}\quad(t>c).
+ \label{eq:ratios}
+\end{equation}
+For $t<c$, subtracting $H$ from $K$ amounts to adding $v(c-t)$ to one
+entry of a minimum, so the increment is between zero and
+$\min\{ut,v(c-t)\}=k_q$. For $t>c$, adding $v(t-c)$ to the other entry
+gives the bound by $k_p$. For the first ratio, use $K\le ut$ and
+$v\ge u$. For the second, write $\Delta=t-c>0$ and use
+\[
+ \frac{\min\{B,C\}}{\min\{A+B,C\}}\ge\frac{B}{A+B},
+ \quad A=ut,\ B=v\Delta,\ C=w(1-t),
+\]
+followed by $v\ge u$. Endpoint claims follow by continuity.
+
+Assume $R\ge128$ and set
+$\varepsilon=16/R\le1/8$ and
+$J=\{t\in[0,1]:|t-c|\le\varepsilon c\}$. Outside $J$,
+\eqref{eq:ratios} yields
+$k_q+k_p\ge\varepsilon K/(1+2\varepsilon)$. Consequently,
+\[
+ \int_{[0,1]\setminus J}Kg
+ \le\frac{1+2\varepsilon}{\varepsilon}S
+ \le\frac{5T}{32},\qquad
+ \int_JHg\ge T-\frac{5T}{32}-S\ge\frac{3T}{4}.
+\]
+Here $S\le2T/R\le T/64$. Since
+$H(t)\le u(1+\varepsilon)c$ on $J$ and $|J|\le2\varepsilon c$,
+there is $t_0\in J$ such that
+\[
+ g(t_0)\ge\frac{T}{4\varepsilon u c^2}.
+\]
+Consider $E=[c/4,c(1-2\varepsilon)]$. It has length at least $c/2$;
+$t_0$ is to its right at distance at most $3\varepsilon c$; and
+$k_q\ge2u\varepsilon c$ on $E$. Using \eqref{eq:cheb},
+\[
+ M_E\ge\frac{T}{4\varepsilon u c^2}
+ e^{-\sqrt{24}\,r\sqrt\varepsilon}
+ \ge\frac{T}{4\varepsilon u c^2}e^{-20r/\sqrt R}.
+\]
+Equation~\eqref{eq:markov} now implies
+\[
+ q\ge2u\varepsilon c\int_Eg
+ \ge\frac{u\varepsilon c^2M_E}{8r^2}
+ \ge\frac{T}{32r^2}e^{-20r/\sqrt R}.
+\]
+Together with \eqref{eq:small}, this proves the implicit inequality.
+
+Set $z=r/\sqrt R$. The inequality implies
+\[
+ \log(R/16)\le20z+2\log z\le22z.
+\]
+For $R\ge256$, the left side is at least $\tfrac12\log R$, yielding
+$\sqrt R\log R\le44r$, hence $R(\log R)^2\le1936r^2$.
+For $r\ge2$ and $R\ge256$ with $R>r$, use $\log R\ge\log r$.
+If $R\le r$, use $(\log r)^2\le r$; if $R<256$, use
+$(\log r)^2\le r^2$ and $256<1936$. These cases give the explicit bound.
+\end{proof}
+

@@ -1,0 +1,194 @@
+\section{Sharp lower bounds at every source count}
+\label{sec:embedding}
+
+The restriction theorem is an upper argument. To obtain a lower witness at
+an arbitrarily prescribed source count, extra states must not create cheap
+merges. The globally positive curvature floor of the inherited endpoint
+construction permits a direct exterior-anchor embedding. Its auxiliary
+coordinates may be arbitrarily far apart; an affine change places every
+posterior in the required interior interval afterward.
+
+\begin{theorem}[Uniform-in-$N$ matching lower witnesses]
+\label{thm:embedding}
+
+There are absolute constants $c>0$ and $r_0$ such that, for every integer
+$N\ge4$ and every integer $r\ge r_0$, there is a source with exactly
+$N$ distinct posteriors in $[1/4,3/4]$, all source weights positive,
+and a polynomial generator with positive curvature of degree at most
+$r$, whose induced smooth strictly proper losses are bounded in
+$[0,1/2]$ on the full report interval $[0,1]$, for which
+\[
+ \rho_{\mathrm{det}}^{(N-2,N-1)}
+ \ge\rho_{\mathrm{stoch}}^{(N-2,N-1)}
+ \ge c\frac{r^2}{(\log r)^2}.
+\]
+For example, $c=1/9216$ suffices with a suitably large absolute $r_0$.
+The masses, generator, and posterior locations may depend on both $N$
+and $r$; no minimum posterior gap is asserted.
+
+
+The construction also preserves the original quartet deterministic price
+exactly; no exact stochastic price equality is asserted.
+\end{theorem}
+\begin{proof}
+\par\medskip\noindent\textit{Construction and anchor penalty.} 
+Use the endpoint quartet of Appendix~\ref{sec:ext-weights}, writing
+\[
+ d=(4\log n/n)^2,\quad b=d^2,\quad a=1/2-b,
+ \quad (x_A,x_B,x_C,x_D)=(0,2d,1-2d,1),
+\]
+and $g_n=\varphi_n''=\kappa_n(t)+\kappa_n(1-t)+b$.
+In particular $g_n(t)\ge b>0$ for every real $t$, and its degree is
+exactly $2n$.
+Let $N\ge5$, $m=N-4$, and $\lambda=1/2$. Give the original four
+states masses $\lambda(a,b,b,a)$ and give $m$ additional anchors equal
+masses $\eta=1/(2m)$. For all sufficiently large $n$, the smallest
+of these masses is
+\[
+ \mu=\min\{\lambda b,\eta\}>0.
+\]
+Set
+\[
+ L=\frac2{\sqrt{b\mu}},\qquad
+ z_j=-jL\quad(1\le j\le m).
+\]
+This is an auxiliary real coordinate; the legal posterior coordinates
+are defined below. Every pair involving an anchor has gap at least $L$.
+The global curvature floor yields the strong-convexity Jensen estimate
+\begin{align*}
+ D(uv)
+ &\ge\frac b2\frac{p_up_v}{p_u+p_v}(u-v)^2\\
+ &\ge\frac{b\min(p_u,p_v)}4(u-v)^2
+ \ge\frac{b\mu L^2}4=1.
+\end{align*}
+The first inequality follows by subtracting the convex quadratic
+$bx^2/2$ from the generator and applying Jensen to the remaining
+convex function. The other inequalities use
+$p_up_v/(p_u+p_v)\ge\min(p_u,p_v)/2$.
+Thus the anchor penalty holds at every sufficiently large $n$ admitted
+by the original quartet, with no additional $N$-dependent threshold.
+
+\par\medskip\noindent\textit{Top-capacity obstruction.} 
+Let $P,q,T,J$ denote the original quartet costs. Equations~\eqref{eq:ext-nearpair}--\eqref{eq:ext-coarse} give
+\[
+ bd/2\le P\le4bd,\qquad0<q\le bd^2,
+ \qquad T\ge b/4,\qquad J\ge b/2,
+\]
+and every core pair other than $BC$ costs at least $P$.
+The augmented flat optima satisfy
+\[
+ 0<\operatorname{OPT}_{N-1}\le\lambda q,
+ \qquad0<\operatorname{OPT}_{N-2}\le2\lambda P\le8\lambda bd,
+\]
+by keeping all anchors singleton and using the quartet's fine or coarse
+candidate. Refine any deterministic hierarchy to use exactly $N-1$
+fine cells and $N-2$ coarse cells; refinement cannot increase costs.
+The fine partition merges one pair. If it is not $BC$, its cost is at
+least $\lambda P$: this holds for every other core pair, and an
+anchor pair costs at least one, exceeding $\lambda P$ for sufficiently
+large $n$. Its fine ratio is then at least $P/q\ge1/(2d)$.
+
+If the fine pair is $BC$, the coarse partition merges two fine blocks.
+A merge among core blocks has cost at least $\lambda b/4$ by the
+three original quartet coarsenings. Any merge involving an anchor
+contains a pair of cost at least one, hence also has cost at least one
+by the Jensen decomposition $D(S)\ge D(U)$ for $U\subset S$.
+Therefore its coarse ratio is at least
+\[
+ \frac{\lambda b/4}{8\lambda bd}=\frac1{32d}.
+\]
+This proves the deterministic lower bound $1/(32d)$ for all $N\ge5$;
+the $N=4$ statement is the original quartet. Lemma~\ref{lem:ext-rounding} gives the stochastic lower bound $1/(64d)$ for every $N$.
+No assertion that optimal cells are contiguous is needed.
+
+\par\medskip\noindent\textit{In fact, the deterministic quartet price is preserved exactly.} 
+Let $q_4,Q_4$ be the actual quartet flat optima at capacities three and
+two, and let $C$ be the cost of merging the entire scaled core into
+one cell. For a cell of total mass $\lambda$ supported on $[0,1]$,
+its Jensen kernel satisfies
+\[
+ K(t)=\min\!\left\{\sum_i p_i(t-x_i)_+,
+                       \sum_i p_i(x_i-t)_+\right\}
+ \le\lambda\min(t,1-t)\le\lambda/2.
+\]
+Since $\int_0^1g_n=2+b$ and $\lambda=1/2$, we have
+$C\le(2+b)/4<1$ for all sufficiently large $n$.
+An augmented flat partition with a nonsingleton cell containing an anchor
+costs at least one,
+whereas a core-only candidate costs at most $C$. Thus
+\[
+ \operatorname{OPT}_{N-1}=\lambda q_4,\qquad
+ \operatorname{OPT}_{N-2}=\lambda Q_4.
+\]
+Choose a core fine optimum and any compatible two-cell core coarsening.
+Its augmented hierarchy price is at most $C/(\lambda Q_4)$, because
+its fine ratio is one and $C\ge\lambda Q_4$. Any hierarchy whose
+coarse level mixes an anchor has ratio at least
+$1/(\lambda Q_4)>C/(\lambda Q_4)$; an anchor merged at the fine level
+is also merged at the coarse level. Therefore every optimal augmented
+deterministic hierarchy leaves every anchor singleton at both levels.
+Its remaining core hierarchy has capacities two and three, proving
+\[
+ \rho_{N,\mathrm{det}}=\rho_{4,\mathrm{det}}
+\]
+for this embedding. This equality is special to the constructed sources;
+the upper restriction theorem for an arbitrary source asserts only
+domination. No corresponding exact stochastic equality is asserted.
+
+\par\medskip\noindent\textit{Interior support and bounded loss.} 
+The auxiliary source hull is $[-mL,1]$. Define
+\[
+ s=2(1+mL),\qquad t=-mL-s/4,
+ \qquad x=sy+t,
+ \qquad M=\max_{x\in[t,t+s]}g_n(x).
+\]
+Then $y=1/4+(x+mL)/[2(1+mL)]$ maps the entire hull onto
+$[1/4,3/4]$. The transformed generator
+\[
+ \widetilde\varphi_n(y)=\frac{\varphi_n(sy+t)}{s^2M}
+\]
+has curvature $\widetilde g(y)=g_n(sy+t)/M\in(0,1]$ throughout
+$[0,1]$, with unchanged degree $2n$. Every augmented-source distortion
+is multiplied by the same positive factor $1/(s^2M)$, so all prices
+are preserved. Symmetry is not needed: define
+\[
+ \ell(q,1)=\int_q^1(1-v)\widetilde g(v)\,dv,
+ \qquad
+ \ell(q,0)=\int_0^q v\widetilde g(v)\,dv.
+\]
+Both losses lie in $[0,1/2]$ on all of $[0,1]$, are smooth, and the
+derivative of conditional risk is $(q-p)\widetilde g(q)$ at posterior
+$p$. Therefore the loss is strictly proper and its excess risk is
+$B_{\widetilde\varphi_n}(p,q)$.
+
+Finally, put $n=\lfloor r/2\rfloor$. For sufficiently large $r$,
+$n\ge r/3$ and $\log n\le\log r$, so
+\[
+ \frac1{64d_n}
+ =\frac{n^2}{1024(\log n)^2}
+ \ge\frac{r^2}{9216(\log r)^2}.
+\]
+All large-degree requirements above come from the original quartet or
+absolute inequalities such as $a\ge b$ and $\lambda P<1$, proving
+that the same $r_0$ works for every finite $N$. There is no claim of
+a uniform positive gap or of nonvanishing absolute excess risk after
+normalization.
+
+For explicit absolute-risk bookkeeping, the normalized flat costs obey
+\[
+ 0<\widetilde{\operatorname{OPT}}_{N-1}
+ \le\frac{\lambda d^4}{s^2M},\qquad
+ 0<\widetilde{\operatorname{OPT}}_{N-2}
+ \le\frac{8\lambda d^3}{s^2M}.
+\]
+The interval $[t,t+s]$ contains $[0,1]$, and
+$\int_0^1g_n=2+b$, so $M\ge2+b$. Also $s\ge2$ and
+$\lambda=1/2$. Thus for $N\ge5$ the respective bounds are at most
+$d^4/16$ and $d^3/2$, and both tend to zero uniformly in $N$.
+The raw anchor penalty of one is multiplied by the same
+$1/(s^2M)$; it is not a positive absolute penalty after normalization.
+For $N=4$, the normalization in Appendix~\ref{sec:ext-weights} gives the
+respective bounds $d^4/8$ and $d^3$. These weaker constants therefore
+give vanishing flat costs uniformly over all $N\ge4$ as well.
+
+\end{proof}

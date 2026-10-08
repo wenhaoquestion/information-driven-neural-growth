@@ -1,0 +1,44 @@
+\subsection{Why a triple must be selected using all four states}
+\label{sec:triple-caution}
+The preceding proof selects its triple according to the middle masses.
+The following constant-curvature example explains why that step cannot
+be discarded. Write $P_{UV}$ for a two-point Jensen distortion and
+$T_{UVW}$ for the three-point distortion, always with the original weights.
+
+\begin{proposition}[The two three-point inequalities alone give no bound]
+Let $q=P_{BC}$, $S=P_{AB}+P_{BC}$, and $T=T_{ABC}$. There is no finite
+degree-only bound on a parameter $R$ from the inequalities
+\[
+ q\leq T/R^2,\qquad S\leq2T/R
+\]
+for arbitrary positive triple weights, even if the curvature is the
+constant polynomial $g\equiv1$ and the locations are fixed.
+\end{proposition}
+\begin{proof}
+Take $\varphi(x)=x^2/2$, $(A,B,C)=(0,1/2,1)$, and original weights
+$(1,\varepsilon^2,\varepsilon)$ for $0<\varepsilon\leq1$.
+Common normalization of all weights is immaterial. The exact weighted
+variance identities give
+\[
+ P_{AB}=\frac{\varepsilon^2}{8(1+\varepsilon^2)},\qquad
+ q=\frac{\varepsilon^2}{8(1+\varepsilon)},\qquad
+ T=\frac{\varepsilon+(\varepsilon^2+\varepsilon^3)/4}
+          {2(1+\varepsilon+\varepsilon^2)}.
+\]
+In particular $q\leq\varepsilon^2/8$, $S\leq\varepsilon^2/4$, and
+$T\geq\varepsilon/6$. Put $R=\varepsilon^{-1/2}$. Then
+\[
+ q\leq\varepsilon^2/8\leq\varepsilon T=T/R^2,
+ \qquad
+ S\leq\varepsilon^2/4\leq\varepsilon^{3/2}/3
+    \leq2\sqrt\varepsilon\,T=2T/R.
+\]
+As $\varepsilon\downarrow0$, $R\to\infty$ while the degree remains
+zero and all locations remain fixed.
+\end{proof}
+
+
+Here $R$ is only a formal parameter, not the price of a four-state
+hierarchy. The example obstructs the isolated three-point inference.
+The proof of Theorem~\ref{thm:weighted-sharp} instead uses both triples
+through the common denominator $Q$ and selects one with $u\le v$.

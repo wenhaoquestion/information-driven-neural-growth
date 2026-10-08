@@ -1,0 +1,9 @@
+# Scientific status — Phase 5
+
+The historical September 2026 work established complete Gaussian quadratic identities, exact finite-sample variance, a fresh-independent-block correction bound, harmful unthresholded stale-moment growth at an oracle-fit checkpoint, and a conditional strict-threshold width/risk inequality. These specialize known Gaussian statistics, spectral approximation, stochastic gradient and low-rank methods. They do not prove factor-Adam convergence or a new general growth principle.
+
+The historical computations comprise 128 estimator datasets / 1,024 stages; 336 main neural trajectories with 1,440 diagnostic refits; 240 adaptive trajectories; and 192 fresh-seed full-minibatch follow-up trajectories. Total neural events: 5,376. Lifted least squares is a stronger estimator control. Improved proposed-direction alignment did not establish improved trained risk; after correcting the random controls' minibatch-boundary mismatch, all 16 targeted final-risk contrast intervals contain zero. The adaptive gate is heuristic and charges rejected work. The nonlinear target has quadratic-family total-risk floor approximately 0.151992221, including noise 0.04.
+
+The external spectral-theorem caveat concerns only the literal preprocessing assumptions of the identified historical version; it is not a rejection of all results in that paper or the central learner contribution. Source searches are bounded historical checks, not a global priority certificate.
+
+The publication pass reads and curates the existing record. It does not rerun training, simulations, stochastic checks, bootstrap, or literature searches. New verification is limited to deterministic file/CSV/JSON consistency, source syntax and document construction. Saved audit outcomes describe the earlier execution, not fresh independent replication. No external peer-review or author-personal-review claim is made.

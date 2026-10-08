@@ -1,0 +1,9 @@
+# Scientific status — Phase 6
+
+Historical execution: 960 development trajectories on 16 paired teacher/data seeds; 5,120 primary trajectories on 256 independent seeds; 1,280 secondary trajectories; 640 local-age sensitivity trajectories reusing 32 primary seeds; and two separate 32-trajectory smoke runs. Primary inference has N=256, not N=5,120. All four methods independently chose learning rate 0.0075 from the frozen development grid.
+
+The prespecified normalized raw-excess-risk/log-budget AUC conjunction passed with IUT p=0.00311735. Mean H AUC was approximately 0.0053573 versus 0.0059388 / 0.0057884 / 0.0149794. This is mean-AUC evidence under one task, cost proxy and optimizer. It is not pointwise budget dominance, most-seed superiority, minimum-cost savings, exact FLOP matching, or hardware-runtime superiority. H beats fixed width on only 118/256 seeds; five favorable paired differences contribute about 68.34% of the net difference. The lowest-budget random controls already attain the risk target for every seed. Eight fixed-width seeds never attain it. Null/rank-two and local-age results limit generalization.
+
+Analytical claims are classical Gaussian quadratic risk, zero-output function preservation, ideal rank-one direction gain and elementary endpoint/test interpretations. They do not supply convergence of clipped factor Adam, valid conditional reuse of historical residual moments, or autonomous growth.
+
+Earlier saved-state audits report 49,280 events and 112,640 parameter-risk reconstructions, with maximum discrepancy about 1.11e-15. The publication pass reads those results and adds only deterministic static/CSV consistency checks and document construction. No training, RNG, bootstrap, stochastic self-test, literature search or new scientific inference was run. Historical audit outputs are not newly rerun or externally peer reviewed.

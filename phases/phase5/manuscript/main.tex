@@ -1,0 +1,248 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,longtable,array,graphicx,xcolor,xurl,enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}
+\newcommand{\PP}{\mathbb P}
+\graphicspath{{../figures/}}
+\hypersetup{pdftitle={Retained Moments and Discovered Neural Directions},pdfauthor={Wenyu Huang}}
+\title{Retained Moments and Discovered Neural Directions\\[5pt]
+\large Exact Failure Diagnostics and Online Learning Experiments}
+\input{author.tex}
+\date{Research report, September 20, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+What information lets a learner discover useful structural changes that were
+not individually specified before the data? We investigate this question by
+first attempting to reduce its natural formulations to existing results.
+Generic retained-moment characterization, adaptive use of a uniformly valid
+coreset, and residual spectral growth fail as substantial originality claims.
+We then study an exact obstruction in centered quadratic neural learning:
+subtracting the current model from a stored estimate of a population moment
+is different from recomputing empirical residual correlations. Without
+refitting, repeated spectral births from a fixed moment are exactly one
+spectral truncation. At a noiseless exact fit, the former construction almost
+surely proposes a harmful unthresholded birth, whereas sample residuals
+vanish. We derive its exact finite-sample variance, a fresh-residual contraction,
+and a conditional width--risk bound, with complete proofs and explicit
+classical dependencies. Reproducible estimator diagnostics and trained,
+ordinary-start online neural comparisons distinguish supplied directions,
+sample-discovered directions, refitting, retention, and fixed capacity.
+Independent reviews and negative controls are retained. These results provide
+an auditable research record and falsification tools; they do not establish
+a substantial new general theorem of structural learning, a universally
+better learner, or publication readiness.
+\end{abstract}
+\tableofcontents
+
+\section{Question, evidence, and scientific status}
+The motivation is information-driven adaptation of neural structure. Neither
+entropy, neuron splitting, nor memory is imposed as the answer. The desired
+contribution must explain a consequence not already supplied by the closest
+external theorem or algorithm. This report records actual progress toward
+that standard, including candidates that did not meet it.
+
+The initial question concerned information a learner should retain to
+\emph{discover} future useful operations, rather than merely validate a supplied
+one. Discovery requires an optimization procedure that returns trainable
+weights, and its search work and information access must be counted. A theorem
+that estimates the supremum of possible gains does not necessarily return a
+maximizing neuron. Conversely, when a guarantee is uniform over a fixed
+function class, the eventual candidate identities may be chosen after the data
+without creating an additional validity problem.
+
+The actual starting workspace matters. It already contains finite-encoder
+obstructions; a restricted activation-observation separation and high-order
+splits; repeated neural growth with fresh audits; exact retained-moment
+ambiguity and residual testing costs; and a 336-trajectory audit-release
+study. The latter finds benefits from releasing old labels, no resolved
+advantage of residual over random proposals, and stronger fixed online
+controls on some tasks. None is claimed again here. The starting
+1,087 non-environment files were hashed and preserved. The requested
+Phase IV brief and handoff were read in full; the later actual artifacts
+superseded incomplete descriptions in the handoff.
+
+Independent investigations considered retained decision information,
+noise-aware rank adaptation, coordinated high-order births, and
+function-preserving changes to trainability. Three reductions explain why
+several appealing central claims were rejected. The subsequent analysis
+changes the scientific target to a concrete finite-sample discrepancy:
+\emph{what does a stored population inverse fail to subtract when the model
+has already learned part of the signal?} This has an exact answer in a
+realizable quadratic neural family. Its interpretation is deliberately
+bounded: the answer specializes matrix regression and stochastic
+approximation. Correctness and usefulness do not establish substantial
+external novelty.
+
+\section{The novelty checkpoint and nearest results}
+\label{sec:prior}
+\subsection{Reductions that defeated initial candidate claims}
+For unknown label means $g$ and retained linear observations $\Lambda g$, a
+best-action value of the form $\sup_\theta\langle h_\theta,g\rangle$ is a
+supremum of linear functionals. Foucart's nonlinear optimal-recovery
+framework covers this object and bounded observation error
+\cite[Theorems 1, 3; Section 2.3]{foucart}. It does not solve the neural
+maximizer problem. Moving from one supplied action to a continuum therefore
+does not by itself establish a new recovery theorem.
+
+Suppose a retained objective obeys
+$\sup_{f\in\mathcal F}|F(f)-\widetilde F(f)|\le\varepsilon$ on one event.
+Then all adaptively chosen $f\in\mathcal F$ are covered on that event. If
+$\widetilde F(\hat f)\le\inf_{f\in\mathcal F}\widetilde F(f)+\eta$, then
+\[
+ F(\hat f)\le\inf_{f\in\mathcal F}F(f)+2\varepsilon+\eta.
+\]
+This follows by inserting the two approximation inequalities around the
+retained-objective optimization inequality. Strong coresets already have
+this simultaneous-query meaning \cite{coresets}. The construction size,
+changing encompassing class, and optimization error remain substantive;
+renaming the final query a structural action does not change the argument.
+
+Similarly, uniform score error $\varepsilon$ and optimization error $\eta$
+produce a feature oracle with error $2\varepsilon+\eta$. Residual feature
+search and approximate conditional-gradient oracles are existing tools
+\cite[Section 2.5]{bach}. Gradient-matching retention already targets models
+away from the current fit \cite{gmc}; its Appendix A.4 discusses the loss of
+exact historical accumulation when embeddings change. Gradient mismatch
+also already enters convergence guarantees \cite{gradmatch}. These sources
+prevent claiming that a replay buffer or retained probe gradients constitute
+the main contribution.
+
+\subsection{Why quadratic neurons do not make rank learning new}
+A signed quadratic network has matrix parameter
+$A=\sum_j a_jw_jw_j^\top$. Thus adding a neuron is adding a symmetric rank-one
+atom. GECO already chooses a leading singular direction and refits
+coefficients \cite{geco}; under directional smoothness it supplies an
+$O(\|A\|_*^2/k)$ approximation comparison. Restricted-curvature greedy
+analysis yields stronger rates \cite[Theorem 4]{khanna}. The nonlinear
+factor optimization used in our experiments is not guaranteed to perform
+GECO's exact corrective minimization.
+
+Rank-one quadratic measurements already admit stable low-rank recovery
+\cite[Theorem 1]{chenchi}. Fixed overparameterized quadratic networks also
+learn directions \cite[Theorem 1.2]{lima}, and incremental-rank trajectories
+of gradient descent are established under matrix-sensing assumptions
+\cite[Theorem 4.1]{jin}. Raw Gaussian outer-product sensing does not satisfy
+ordinary Frobenius $\ell_2/\ell_2$ RIP merely because the covariates are
+Gaussian. This blocks an otherwise tempting incorrect transfer.
+
+The residual matrix update analyzed below is stochastic gradient descent in
+matrix coordinates. With rank projection it has the stochastic iterative
+hard-thresholding form \cite[Algorithm 1, Theorem 1]{stoiht}. Our exact
+Gaussian moment calculation directly handles fresh unbounded Gaussian
+batches, but does not supply a novel optimization principle. Signal-induced
+failure of untrimmed spectral initialization also has explicit prior
+analysis \cite[Section 2.2]{twf}. Empirical residual cross-moments and
+spectral neural additions have a close structural-learning precedent
+\cite[Propositions 3.2--3.3]{tiny}.
+
+\subsection{A theorem-level comparison summary}
+\begin{longtable}{>{\raggedright\arraybackslash}p{.14\linewidth}>{\raggedright\arraybackslash}p{.30\linewidth}>{\raggedright\arraybackslash}p{.45\linewidth}}
+\toprule
+Claim & Closest result / mapping & Disposition and missing step\\\midrule
+\endhead
+Best future gain from moments & Sup-linear optimal recovery \cite{foucart} &
+Inherited value recovery; finding a trainable maximizer within a resource
+budget is additional.\\
+Adaptive retained objective & Strong coresets \cite{coresets} &
+Uniformity already covers data-dependent identities in its fixed class;
+changing-class online construction is not supplied.\\
+Residual neuron discovery & Convex neural oracle and GECO \cite{bach,geco} &
+Rank-one atom search is known; no new direction-search theorem here.\\
+Fixed-summary birth path & Spectral decomposition & Exact diagnostic;
+with no refit the path equals a single hard truncation.\\
+Fresh residual correction & Stochastic gradient / StoIHT \cite{stoiht} &
+Exact Gaussian constants and a noise-free false-growth witness are proved;
+$O(d^2)$ batch bound is not an optimal low-rank rate.\\
+Selected width certificate & Hard threshold / penalized rank &
+Conditional perturbation and oracle inequality; the stated finite-sample
+radius is conservative and requires norm bounds.\\
+Actual trained histories & Present saved runs & Empirical evidence specific
+to observed-data proposals, optimizer, tasks and accounting; no theorem of
+universal structural superiority.\\\bottomrule
+\end{longtable}
+
+The full \texttt{NOVELTY\_MATRIX.md} identifies source versions, observation
+interfaces, resources, guarantees, attempted reductions, and unresolved
+risks. The current representation-certification source was checked at v2,
+not inherited as v1 \cite{huang}; its repair discussion is outside the fixed
+kernel result. A source-level counterexample warning about a different
+current spectral claim is included in Appendix~\ref{app:source}; we do not
+use that claim as a black-box theorem.
+
+\input{theory.tex}
+\input{moment_experiments.tex}
+\input{experiments.tex}
+\IfFileExists{adaptive_experiments.tex}{\input{adaptive_experiments.tex}}{}
+\input{fullbatch_experiments.tex}
+
+\section{What the investigation establishes and leaves unresolved}
+\label{sec:limits}
+The distinction between a population inverse and empirical residual
+subtraction is exact and matters even without label noise. A stored matrix
+can contain genuinely data-discovered directions while repeated processing
+of it adds no new evidence. Updating that matrix by subtracting current
+predictions at the sample level is a different operation, and fresh inputs
+permit a clean conditional calculation. These are useful constraints on the
+original information-driven learning idea: the relevant information must
+support the \emph{current} optimization operator, not only its expectation
+at a fixed independent model.
+
+The current results do not finish the intended contribution. They provide
+no finite-precision lower bound for all learners, no optimal unknown-rank
+sample-and-runtime result, no global guarantee for hidden-weight Adam, and
+no evidence that neuron-local information measures beat strong existing
+search procedures. The Gaussian model is a controlled setting with an exact
+population inverse; unknown or non-Gaussian covariate laws require additional
+estimation. The matrix correction theorem is not the trained factor-Adam
+algorithm, and the main direction experiment has scheduled widths. A
+heuristic gate does not acquire a false-acceptance theorem by sharing a
+fresh-block data schedule.
+
+Storage is accounted for through named arrays and access logs; physical
+peak memory and floating-point roundoff are not bounded theoretically.
+Inference width, persistent learner state, working arrays, saved scientific
+records, and evaluator storage are separate resources. Near-matched replay
+storage does not imply matched total memory, exact FLOPs, or hardware time.
+Uncertainty intervals use independent seeds, not time points or branch
+proposals. They are descriptive and not multiplicity-adjusted. The finite
+synthetic task set supports no universal performance claim.
+
+A substantive next theorem would need a consequence beyond existing
+optimal recovery, coreset approximation, spectral thresholding, and
+stochastic low-rank optimization. One precise target is noisy,
+unknown-rank online discovery with an explicit approximation oracle bound
+and an accountable advantage under a declared memory--work frontier. A
+proof must not silently import an ordinary RIP that the measurements lack,
+and an empirical improvement must survive competent fixed-rank and
+matrix-free alternatives. The present evidence does not establish that
+such an advantage exists. If these comparisons subsume the next candidate,
+it should be rejected rather than renamed.
+
+\section{Reproduction and evidence integrity}
+The companion workspace preserves source versions, raw observations,
+per-run parameters, fitting/proposal accesses, all figure scripts, and
+independent reports. \texttt{README.md} gives a minimal verification command
+and complete re-execution instructions into new destinations. Each
+confirmatory protocol was frozen before its own confirmation seeds ran.
+Development fixes, source-hash differences, accounting corrections and
+post-hoc analytic diagnostics are recorded explicitly. Prior artifacts are
+checked against the baseline manifest. No earlier result is overwritten,
+and no external publication, submission, paid compute or private-data
+upload was performed.
+
+\appendix
+\input{source_counterexample.tex}
+\input{nonlinear_projection.tex}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

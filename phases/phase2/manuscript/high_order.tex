@@ -1,0 +1,171 @@
+\section{Equal width, unequal access: a nonuniform positive split limit}
+\label{sec:highorder}
+The preceding example concerns missing observations. Even full population
+information does not make a fixed structural operation effective. We now
+hold the number of children, positivity and sum of outgoing weights, and
+weighted incoming mean fixed, but change the relation between the child
+weight and the size of the incoming perturbation. This is a restricted
+separation, not a new discovery of parity hardness or boundary-weight
+escape; see Section~\ref{sec:related}.
+
+Let $d\ge6$ be even, $X$ uniform on $\{-1,1\}^d$, and
+$\chi(X)=\prod_{j=1}^d X_j$. For $0<\eta<1/2$, set
+\begin{equation}\label{eq:paritylaw}
+ \Pr(Y=1\mid X=x)=\tfrac12+\eta\chi(x).
+\end{equation}
+This law has full support and $I(X;Y)=\log2-h(1/2+\eta)>0$,
+independently of $d$. No limiting rare source mass is used when $d$ is fixed.
+Fix a smooth activation $\sigma$ near $b$ with
+$\sigma''(b)\ne0$ and $\sigma^{(d)}(b)\ne0$, with bounded derivatives
+through order $d+2$ there. The experiments use $\sigma=\tanh$ and $b=1/2$.
+The parent logit is the constant $\sigma(b)-\sigma(b)=0$.
+For a unit vector $v$ put $V=v^\top X$, and define a positive binary split
+\begin{equation}\label{eq:asymmetric}
+ f_{t,p}(x)=p\sigma(b+tV)+(1-p)\sigma\left(b-\frac{p}{1-p}tV\right)-\sigma(b),
+ \quad 0<p<1.
+\end{equation}
+There are exactly two hidden units. Their outgoing weights sum to one,
+their weighted incoming mean is zero, and their outgoing $\ell_1$ norm is
+one. For $p\le1/2$, both incoming weights have norm at most $t$.
+The intercept stays fixed in this comparison; we do not claim an obstruction
+after arbitrary intercept refitting or subsequent parameter training.
+
+Write $R(f)=\E[\log(1+e^{f(X)})-Yf(X)]$ and
+\begin{equation}\label{eq:KB}
+ K(v)=\frac{\sigma''(b)^2}{32}\E V^4>0,
+ \qquad B(v)=\sigma^{(d)}(b)\prod_{j=1}^d v_j.
+\end{equation}
+A direction with $B(v)>0$ exists by changing the sign of one nonzero
+coordinate. Its selection here is an oracle construction.
+
+\begin{theorem}[A constrained weight--radius separation]\label{thm:boundary}
+Under the preceding conditions:
+\begin{enumerate}[label=(\roman*)]
+\item For every fixed $p\in(0,1)$ and unit $v$,
+\[
+ R(f_{t,p})-\log2
+   =K(v)\left(\frac{p}{1-p}\right)^2t^4+o(t^4)>0
+\]
+for all sufficiently small positive $t$. This positivity is uniform when
+$p$ lies in any compact subinterval of $(0,1)$ and $v$ ranges over the unit sphere.
+\item Choose $B(v)>0$ and let $p(t)=\kappa t^{d-4}$ for fixed $\kappa>0$.
+Then
+\begin{equation}\label{eq:jointlimit}
+ R(f_{t,p(t)})-\log2
+ =\{K(v)\kappa^2-\eta B(v)\kappa\}t^{2d-4}
+    +o(t^{2d-4}).
+\end{equation}
+In particular, the choice
+\[\kappa=\frac{\eta B(v)}{2K(v)}\]
+gives strict descent with leading coefficient
+\[ -\frac{\eta^2B(v)^2}{4K(v)}.\]
+\item At the constant parent, the residual splitting matrix is zero.
+More generally the derivatives in incoming weights of the label-dependent
+part of the population loss agree with the independent-label law through
+every order strictly below $d$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For every integer $j<d$, $\E[\chi(X)V^j]=0$. Indeed expand $V^j$
+into monomials: at least one coordinate has even exponent (possibly zero),
+and multiplication by $\chi$ makes its expectation zero. At degree $d$,
+the only surviving monomials use each coordinate once, so
+\begin{equation}\label{eq:fouriermoment}
+ \E[\chi V^d]=d!\prod_i v_i.
+\end{equation}
+Odd-degree moments with $\chi$ vanish here because $d$ is even and the law
+is invariant under $X\mapsto-X$.
+The exact loss identity is
+\begin{equation}\label{eq:parityrisk}
+ R(f)-\log2=\E\log\cosh(f/2)-\eta\E[\chi f].
+\end{equation}
+For fixed $p$, Taylor expansion of \eqref{eq:asymmetric} cancels the constant
+and linear terms and gives, uniformly on the finite input set,
+\[
+ f_{t,p}=\frac{\sigma''(b)}2\frac{p}{1-p}t^2 V^2+O(t^3).
+\]
+Since $\log\cosh(z/2)=z^2/8+O(z^4)$, its convexity penalty has leading
+term $K(v)[p/(1-p)]^2t^4$. Equations~\eqref{eq:fouriermoment}
+and the Taylor expansion through order $d$ show that $\E[\chi f_{t,p}]=O(t^d)$.
+Thus the signal is $o(t^4)$. Uniformity on compact $p$ intervals follows
+from bounded derivatives and $|V|\le\sqrt d$; $\E V^4\ge(\E V^2)^2=1$
+ensures a uniform positive leading coefficient.
+
+For the joint limit it is important to retain the factor $p$ in the
+remainders. Put $q=p/(1-p)$. For $p\le1/2$, the two Taylor remainders of
+order three are bounded by $C[p+(1-p)q^3]t^3=O(pt^3)$.
+Consequently, as both $p,t\to0$,
+\[
+ f_{t,p}=\tfrac12\sigma''(b)\,p t^2 V^2\{1+O(p)\}+O(pt^3),
+\]
+where the braces apply to the displayed leading term, not to a pointwise
+relative error at $V=0$. It follows that
+\begin{equation}\label{eq:penaltyjoint}
+ \E\log\cosh(f_{t,p}/2)=K(v)p^2t^4\{1+O(p)+O(t)\}.
+\end{equation}
+Expanding through order $d+1$, all lower-degree terms and the degree-$d+1$
+term disappear after multiplying by $\chi$. The remaining Taylor errors
+are $O(pt^{d+2})$. Hence
+\begin{align*}
+ \E[\chi f_{t,p}]
+ &=B(v)t^d\left\{p+(1-p)\left(\frac p{1-p}\right)^d\right\}
+    +O(pt^{d+2})\\
+ &=B(v)pt^d\{1+O(p^{d-1})+O(t^2)\},
+\end{align*}
+where the last line uses $B(v)>0$ fixed. Substitute
+$p=\kappa t^{d-4}$ into this formula and \eqref{eq:penaltyjoint}.
+Both leading terms then have order $t^{2d-4}$, proving
+\eqref{eq:jointlimit}. The optimizing coefficient is obtained by completing
+the square; $p(t)\in(0,1/2]$ eventually.
+
+Finally, the residual splitting matrix is
+$-\eta\sigma''(b)\E[\chi XX^\top]=0$ by the same moment argument.
+The difference of the parity-task risk and the independent-label risk for
+any logit $f$ is exactly $-\eta\E[\chi f]$. For a finite sum of smooth
+neurons with zero incoming weights, any derivative of this difference in
+incoming coordinates of total order less than $d$ is a linear combination
+of moments $\E[\chi X^\alpha]$ with $|\alpha|<d$, and vanishes. This proves
+(iii). It asserts a derivative identity, not an impossibility for arbitrary
+sample-based algorithms, active probing, or optimization away from the parent.
+\end{proof}
+
+The decreasing path approaches an embedding with a zero-output child at
+$t=0$. It is not a small perturbation of the equal-weight duplication in
+the full widened parameter vector: its outgoing proportions differ by order
+one from $(1/2,1/2)$. The matched constraints are width, outgoing absolute
+sum, incoming radius, and weighted incoming mean, not full parameter
+displacement, initialization, or optimization cost.
+
+The theorem compares positive operations at the same width. It does not
+say that a vanishing weight is the unique or practical remedy. A fixed
+nonzero radius, a different activation, a changed intercept, untied
+retraining, signed coefficients, or a different architecture can alter
+the conclusion. In particular, the higher-order descent can be extremely
+small despite a substantial information gap.
+
+\begin{proposition}[Raw score signal-to-noise cost]\label{prop:snr}
+For the same even-parity law, let
+$H_t(X)=\sigma(b+tV)-\sigma(b)-t\sigma'(b)V$ and estimate
+$m_t=\E[(Y-1/2)H_t(X)]$ by an iid sample average. If $B(v)>0$, then
+\[
+ m_t=\eta B(v)t^d+O(t^{d+2}),\qquad
+ \operatorname{Var}((Y-1/2)H_t)=2K(v)t^4+o(t^4).
+\]
+Thus the sample size needed for this estimator's standard error to be at
+most $m_t$ is asymptotic to
+$2K(v)[\eta^2B(v)^2]^{-1}t^{-2d+4}$.
+\end{proposition}
+\begin{proof}
+The mean follows from \eqref{eq:fouriermoment}. Also
+$H_t=\sigma''(b)t^2V^2/2+O(t^3)$, while $(Y-1/2)^2=1/4$
+identically. Its second moment is therefore
+$\sigma''(b)^2\E V^4t^4/16+o(t^4)=2K(v)t^4+o(t^4)$.
+Subtracting the squared mean changes only order $t^{2d}$.
+For $n$ iid observations the variance of the average is this variance
+divided by $n$, which gives the stated standard-error criterion.
+\end{proof}
+This is an exact asymptotic description of a particular naive score estimator,
+not an information-theoretic sample lower bound. If the parity feature is
+known, $\E[(Y-1/2)\chi(X)]=\eta$ is estimable without this $t$ penalty.
+Knowing or discovering that feature is a different information resource.

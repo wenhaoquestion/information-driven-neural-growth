@@ -1,0 +1,420 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{graphicx,booktabs,array,longtable,enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor,xurl}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}
+\graphicspath{{figures/}}
+\setcounter{tocdepth}{1}
+\hypersetup{pdftitle={Evidence Interfaces in Repeated Neural Growth},pdfauthor={Wenyu Huang}}
+\title{Evidence Interfaces in Repeated Neural Growth}
+\input{author.tex}
+\begin{document}
+\maketitle
+\begin{abstract}
+Structural learning requires both useful fitted proposals and reliable decisions
+about committing them. We study these components separately in repeated neural
+growth. Standard paired-loss identities express Brier comparison variance in
+terms of prediction movement; a classical testing argument gives a matching
+worst-case pairwise sample order. A supplied sequence of local ReLU modules
+then exhibits a factor-$K$ difference, up to logarithmic terms, between a
+restricted interface that discards off-action labels and precommitted shared
+inference. The difference is caused by information access, not neural width.
+Fresh independent comparisons protect accepted checkpoints through repeated
+fitting and selection. Experiments train all parameters of shallow networks,
+record rejected branch work, and compare informative and random proposals,
+continued training, fixed capacities, and retrospective full-label-pool controls.
+An established betting test permits more growth than a conservative empirical
+Bernstein gate at the same audit budget, with greater subsequent training work.
+Random proposals remain competitive, and offline controls limit efficiency
+claims. The contribution is a self-contained restricted-interface analysis and
+an empirical attribution study. It does not establish a new general inference
+method, a universal lower bound for neural learning, or a superior information
+score for structural adaptation.
+\end{abstract}
+\tableofcontents
+
+\section{Learning actions and the evidence to commit them}
+A structural learner chooses operations using observations, fits the resulting
+predictors, and decides which predictor to retain. These are different tasks.
+A statistic may describe a representation accurately while omitting information
+needed to choose an operation. A useful operation may fail after finite
+optimization. Conversely, a useful fitted branch may be rejected because its
+evidence is inconclusive. We study the last two distinctions in stationary
+binary prediction with bounded loss.
+
+Our mathematical examples specify the observations supplied to a decision
+rule. Removing those restrictions changes the problem. In particular, historical
+training labels and labels at inputs unaffected by the current candidate can
+already distinguish environments that a current-loss-only interface cannot.
+The main neural experiment retains historical fitting data and therefore is
+not subject to the example's fresh-label lower bound. It tests an implementable
+process, with separately measured proposal, fitting, audit, and capacity costs.
+
+The central question is when an apparent cost of repeated growth is instead a
+cost of the selected evidence interface. We give complete proofs for the
+restricted construction and measure the limitations of the actual controller.
+The paired-risk algebra, concentration inequalities, sequential testing tools,
+and conditional fresh-audit argument are established foundations. The local
+ReLU representation makes the example concrete without making its statistical
+mechanism specifically neural. There is no assumed link between neuron count
+and the alphabet size of a finite encoder.
+
+\section{Nearest results and the scope of novelty}
+Cascade-Correlation already trains candidate units against residual error,
+adds them progressively, and freezes their incoming weights
+\cite{fahlman1990}. AdaNet explicitly compares learned subnetworks using loss
+plus complexity and stops when its objective does not improve
+\cite[Section 5.2, Figure 3]{cortes2017adanet}. Repeated growth and the option
+to decline it are therefore not new in themselves. Our covariance control is
+Cascade-inspired; it is not an exact reproduction of Cascade-Correlation's
+architecture, frozen weights, or optimizer. All parameters in our grown
+network remain trainable.
+
+Splitting steepest descent derives the residual-weighted splitting matrix
+and a minimum-eigenvector operation
+\cite[Section 2.1, Definition 2.1]{ssd2019}. We implement that established
+directional principle for Brier loss, followed by our common finite-radius
+training and gate. Growing Tiny Networks defines expressivity bottlenecks by
+projecting desired activity changes onto attainable directions and derives
+SVD-based neuron initializations
+\cite[Definition 3.1, Propositions 3.1--3.3]{verbockhaven2024growing}.
+Its Appendix E.5 also explicitly accounts for controller computations.
+Accordingly, a residual score or a neural growth-cost ledger cannot alone be
+claimed as our novelty.
+
+Empirical Bernstein concentration and sequential KL change of measure are
+established tools \cite{maurer2009,kaufmann2016}. Adaptive evaluation has
+dedicated solutions, including the Ladder leaderboard procedure
+\cite{blum2015}; repeatedly consulting an ordinary holdout is not validated
+merely by calling it validation. Representation-adequacy certification already has a cost-weighted
+sequential-testing formulation: Huang's version 2 \cite[Theorems 8--9 and 12]{huang2026selfcertification}
+separates fixed-kernel certification from representation repair. We do not
+use its upper theorem as a proof dependency. Amoukou, Mishra, and Veloso
+\cite[Theorem 4.1 and Appendix A.5.4]{amoukou2026} already apply anytime-valid
+comparisons to online structural changes; their Lemma A.13 also evaluates
+current predictions over a confidence region of retained label probabilities.
+Consequently neither valid growth decisions nor historical confidence-region
+reuse is new here. Nakatani and Hashimoto \cite[Proposition 1 and Section 2.10]{nakatani2026}
+give observable paired Brier decompositions and inference; the algebraic
+movement identities below are likewise standard specializations.
+
+The surviving theoretical unit is an explicit sequence contrasting specified
+information interfaces, with full accounting of the data deliberately
+withheld by one interface. Its proof uses classical change of measure and
+simultaneous testing. Repeated residual growth, no-grow stopping, and a
+statistical gate alone are not originality claims. The empirical unit asks
+which component limits a trained process and retains negative proposal and
+fixed-model comparisons. Broader novelty or practical superiority is not
+established by this manuscript.
+
+\input{theory}
+
+\section{A trainable process with repeated commitments}
+\label{sec:method}
+\subsection{Network, observations, and actions}
+The implemented classifier is
+\begin{equation}
+ p_\theta(x)=\operatorname{sigmoid}\!\left(c+\sum_{j=1}^k
+ a_j\tanh(w_j^\top x+b_j)\right),\qquad
+ \ell_\theta(x,y)=(y-p_\theta(x))^2.
+ \label{eq:network}
+\end{equation}
+All incoming weights, biases, outgoing weights, and the intercept are
+trainable. For input dimension $d$ there are $k(d+2)+1$ parameters.
+The sigmoid bounds probabilities and makes the loss lie in $[0,1]$ without
+an artificial boundedness assumption or evaluation clipping. We use Brier
+loss to keep the actual training objective, audit, and movement theory aligned.
+
+The controller is centralized. It sees the fitting inputs and labels,
+current predictions, residuals, and parameters. It also sees a fresh audit
+block after both competing branches have been fitted. It receives no teacher
+probabilities, latent task directions, or evaluator outputs. A learned
+proposal adds one unit with trained incoming parameters and outgoing weight
+zero. This preserves the current predictor exactly. The first gradient step
+can change the new outgoing weight; subsequent steps can train its incoming
+weights. Splitting instead duplicates a selected unit, halves its outgoing
+weight, and perturbs the two incoming weight vectors oppositely. All
+parameters subsequently train without tying. Neither action imposes nested
+partitions or permanent neuron specialization.
+
+\subsection{Proposal generation as a controlled mechanism}
+For a fitting sample of size $n_F$, freeze current predictions $p_i$ and
+residuals $r_i=y_i-p_i$. For a candidate $h_{w,b}(x)=\tanh(w^\top x+b)$,
+define the probability tangent $z_i=p_i(1-p_i)h_{w,b}(x_i)$. The primary
+score is
+\begin{equation}
+ J(w,b)=\frac{(n_F^{-1}\sum_i r_i z_i)^2}
+                   {n_F^{-1}\sum_i z_i^2+10^{-3}}.
+ \label{eq:proposal-score}
+\end{equation}
+It is a regularized one-direction least-squares proxy for a small logit
+addition, not an exact post-training risk improvement and not mutual
+information. Its denominator and the sigmoid derivative matter; the score
+has no asserted scale or reparameterization invariance. Four independent
+candidate units undergo 60 Adam ascent steps. The largest training score
+selects one unit, and only that grown network receives the subsequent full
+branch fit. We charge the optimization of all four candidate units.
+
+The shuffled control permutes the frozen residual vector once per opportunity
+and uses the same score, candidate initializations, ascent steps, and branch
+training. It isolates meaningful input--residual pairing from that proposal
+search workload. Random addition chooses an untrained candidate from the same
+initial pool; it uses the same gate and full branch training but costs less
+proposal optimization. The covariance control maximizes
+$[n_F^{-1}\sum_i r_i(h_i-\bar h)]^2$; it uses the same four-candidate and
+60-step machinery. Squaring the covariance has the same maximizers as its
+absolute value, but our shallow architecture and all-parameter retraining
+differ from full Cascade-Correlation.
+
+The SSD control selects the lowest eigenvalue across matrices
+\begin{equation}
+ \widehat S_j=\frac1{n_F}\sum_i
+ 2(p_i-y_i)p_i(1-p_i)a_j\tanh''(w_j^\top x_i+b_j)x_ix_i^\top.
+\end{equation}
+The associated incoming direction gives a radius-$0.5$ symmetric split.
+Biases are not perturbed initially. The empirical gate, rather than the sign
+of this infinitesimal matrix alone, decides whether the finitely trained
+split is retained. This is a controlled use of SSD, not a claim to reproduce
+every choice in its original training procedure.
+
+\subsection{Growth, continuation, or holding the checkpoint}
+At opportunity $t$, let $I_t$ be the incumbent. Independently of the upcoming
+audit, fit a same-width continuation $C_t$ and one proposed growth $G_t$ from
+the same incumbent, each for 100 Adam steps on the persistent fitting data.
+Optimizer moments reset to zero for both branches. After a decision, only
+the selected parameters become the next incumbent. Holding retains them
+exactly, so an unsuccessful branch cannot silently alter the deployed model.
+
+On $n_A$ fresh iid audit examples compute improvements for the three ordered
+pairs $(I_t,C_t)$, $(I_t,G_t)$, and $(C_t,G_t)$. For paired differences $D_i$
+and sample variance $s_D^2$ with denominator $n_A-1$, define
+\begin{equation}
+ L(D)=\bar D-\sqrt{\frac{2s_D^2\log(2/\alpha_t)}{n_A}}
+             -\frac{14\log(2/\alpha_t)}{3(n_A-1)}.
+ \label{eq:eb-gate}
+\end{equation}
+For eight opportunities and total error $\delta=0.05$, use
+$\alpha_t=\delta/(3\cdot8)$. With $\tau=0.0005$, choose
+\begin{equation}
+ I_{t+1}=\begin{cases}
+ G_t,&L(I_t-G_t)>\tau\ \text{and}\ L(C_t-G_t)>\tau,\\
+ C_t,&\text{otherwise, if }L(I_t-C_t)>0,\\
+ I_t,&\text{otherwise}.
+ \end{cases}
+ \label{eq:decision}
+\end{equation}
+Here $L(A-B)$ means the lower bound applied to loss of $A$ minus loss of $B$.
+The positive growth margin expresses a minimum improvement requirement; it
+is not a fitted biological threshold or a monetary price.
+
+\begin{proposition}[Conditional validity over the deployed history]
+\label{prop:gate}
+At each opportunity, suppose all proposal generation, branch fitting, and
+choice of audit size occur before an independent iid audit block is
+revealed, with each audit size at least two. Losses lie in $[0,1]$. Allocate comparison error probabilities
+predictably with total at most $\delta$, over a finite or countable sequence.
+Then, with probability at least $1-\delta$, every accepted continuation in
+\eqref{eq:decision} has lower population risk than its incumbent, every
+accepted growth improves on both incumbent and fitted continuation by more
+than $\tau$, and every hold leaves population risk unchanged. Therefore the
+deployed incumbent risk never increases and accepted growth improvements
+sum to at most the initial risk. No power or architectural adequacy guarantee
+is implied by a hold.
+\end{proposition}
+\begin{proof}
+Condition on the complete earlier history, fitting sample, and current
+proposal randomness. The three predictors are then fixed, and the new
+audit remains iid. For each pair $D\in[-1,1]$, apply Theorem 4 of
+Maurer and Pontil \cite{maurer2009} to $(1-D)/2\in[0,1]$.
+Scaling the sample variance and mean gives exactly
+$\mathbb P(L(D)>\E D\mid\text{history})\le\alpha_t$ in
+\eqref{eq:eb-gate}. The three pairs may use the same block; a union bound
+does not require independence among them. Conditional failure bounds,
+integration over histories, and the allocated total give simultaneous
+coverage at all opportunities. For a countable sequence use the increasing
+union of finite failure events. On the covered event the inequalities in
+\eqref{eq:decision} imply the stated risk improvements; holding preserves
+the predictor. Summing nonnegative risk decrements proves the budget claim.
+\end{proof}
+
+This guarantee is per specified controller trajectory. It is not a
+simultaneous guarantee across every experimental seed and method without
+further allocation. It protects the accepted checkpoints, not the trial
+branches, warmup, or the later ungated training diagnostic. It compares
+growth with a continuation from the same incumbent, not with an independently
+progressing fixed-width learner. The general fresh-data guarantee applies
+to the actual sigmoid network; the stronger powered-audit lower bound in
+Theorem~\ref{thm:reset-cost} does not. Our controller has historical fitting
+labels and is not constrained to the theorem's paired-loss-only interface.
+
+\section{Experiments on ordinary training histories}
+\label{sec:experiments}
+\subsection{Tasks, samples, and the frozen confirmation protocol}
+Every main task has $X\sim N(0,I_6)$ and sampled binary labels with
+$\eta(x)=0.05+0.90\operatorname{sigmoid}(g(x))$. The four functions are
+\begin{align*}
+ g_{\rm null}(x)&=0, &g_{\rm linear}(x)&=2x_1,\\
+ g_{\rm additive}(x)&=2.5\tanh(2x_1+0.6)-2\tanh(2x_2-0.5)\\
+ &\quad+1.7\tanh(2x_3+0.3)-1.5\tanh(2x_4),\\
+ g_{\rm interaction}(x)&=4\tanh(2x_1)\tanh(2x_2)
+                 +2\tanh(2x_3)\tanh(2x_4).
+\end{align*}
+These are fixed synthetic mechanism tests with nuisance coordinates, not a
+broad benchmark suite. Main fitting uses 2,048 iid examples. Every network
+starts at width two with incoming weights $N(0,0.7^2)$, biases
+$N(0,0.15^2)$, outgoing weights $N(0,0.35^2)$, and intercept zero, followed by
+200 ordinary full-batch Adam updates. All-parameter fitting uses learning
+rate $0.035$; candidate ascent uses $0.04$. Adam coefficients are
+$(0.9,0.999)$ with denominator constant $10^{-8}$. The same rates and steps
+are applied across tasks; no designed stationary checkpoint is supplied.
+
+Exploration used separate seeds 51000--51002 and 52000--52002. After two
+pilots and code review, the method, comparison set, outcomes, and 16 new
+seeds 61000--61015 were recorded before confirmation. The two main
+finite-bound protocols use 4,096 and 16,384 fresh labels per opportunity at
+the same fitting sample size. They share fitting data, evaluation inputs,
+starting parameters, and event-indexed candidate initializations. Their
+audit blocks are separate draws, not nested prefixes. Within a method,
+all eight audit blocks are disjoint. No block is returned to its fitting
+loop. After selection, audit outcome information enters the next incumbent,
+which is why fresh data are needed for the next conditional argument.
+
+An acceptance ablation uses the empirical means in
+\eqref{eq:decision} instead of the lower bounds, with the same $\tau$, data,
+and residual/shuffled/random proposal rules. It is explicitly heuristic
+and has no sequence risk guarantee. It does not replace the primary method
+based on favorable final evaluation. Both protocols and all unfavorable
+trajectories remain in the raw files.
+
+Evaluation averages
+$(p_\theta(X)-\eta(X))^2+\eta(X)(1-\eta(X))$ over 16,384 independent inputs.
+It exactly integrates conditional Bernoulli label noise but is Monte Carlo
+over $X$, not exact population evaluation. These probabilities are accessed
+only by evaluator functions after the action is fixed. Independent runs are
+the replication unit. Reported paired intervals are two-sided 95\% Student
+$t$ intervals over 16 seeds, descriptive and not multiplicity-adjusted.
+Identical intervals containing zero do not establish equivalence.
+
+\subsection{Controls and accounting}
+We distinguish fitting, audit, candidate optimization, final capacity, and
+post-training. The retained model has $8k+1$ parameters; the controller
+holds an incumbent and fits two branches. A decision opportunity costs both
+100-step branch fits even if growth is rejected, plus the candidate pool's
+optimization. We record parameter--example updates as an operation proxy:
+training steps times sample size times parameter count. Candidate incoming
+optimization contributes $4\cdot60\cdot7n_F$ at an addition opportunity.
+SSD matrix formation and eigendecomposition have a separate arithmetic proxy
+$O(n_Fkd^2+kd^3)$. It is not silently combined with parameter updates.
+
+Decision-required audit prediction work is reported separately for the three
+fitted predictors. Additional forwards record prediction movement for
+scientific diagnosis; elapsed controller times include that instrumentation.
+They exclude final evaluation and fixed-model controls. Simultaneously running
+local processes and differing linear algebra costs prevent interpreting these
+times as matched-hardware efficiency. Peak process memory is not measured;
+final predictor parameter count is not a claim about controller memory.
+
+An ungated width-two learner and an ordinary fixed width-ten model receive
+the nominal warmup-plus-one-branch-per-opportunity budget of 1,000 full-batch
+updates. Holds discard the trial training, so this is not the number of
+updates embodied in every retained path. Each also receives a
+separate 600-step continuation. A retrospective fixed-final-capacity model
+starts from scratch at the width reached by each adaptive run and receives
+the adaptive controller's branch-and-probe update proxy. This measures
+alternative optimization at matched final capacity; knowing that width in
+advance is diagnostic information, so this comparator is not a deployable
+automatic-width method. Both it and the grown network are then trained for
+600 additional steps without gates to test whether any advantage survives
+longer optimization. Those tails are outside Proposition~\ref{prop:gate}.
+
+The low- and high-audit controllers have access to 34,816 and 133,120 labelled
+examples in total, despite fitting on only 2,048. A second fixed-width control
+is therefore granted the entire fitting-plus-audit label pool. It cycles
+random minibatches of size 256 through that pool using persistent Adam,
+learning rate $0.015$, at the normalized-residual controller's training/probe
+parameter--example budget. Both width two and width ten are tested, with
+actual unique labels and updates logged. This is an end-of-lifetime offline
+resource-allocation comparison: it receives the full pool at the outset and
+uses a different competent optimizer schedule. It shows what that label
+budget can buy; it does not isolate a data-only causal effect. 
+
+\subsection{Measured outcomes and attribution}
+\input{findings}
+
+\section{Constructive follow-up: improve the gate before blaming the data}
+\input{betting_theory}
+\input{betting_findings}
+
+\section{Interpretation and unresolved scientific questions}
+\label{sec:limits}
+The implemented process can repeatedly grow and then refrain from growth in
+one continuing neural training history. It uses ordinary initialization,
+sampled labels, and trainable hidden units. The experiment does not establish a
+generally superior growth principle, nor does it learn its opportunity
+schedule, action family, or risk threshold. The useful empirical distinction
+is between a score's ability to generate good proposals and a gate's ability
+to identify their benefits at an affordable resource cost.
+
+The theory makes the same distinction more sharply. Brier movement and
+gain bound paired-loss variance and characterize worst-case testing effort. The
+module theorem shows that discarding off-action evidence can create a
+quadratic serial label cost even when all supplied operations are useful.
+Shared precommitted tests and targeted labelling defeat that cost in the
+same population. Thus an important design variable is the evidence the
+learner retains, not only the statistic computed for an individual unit.
+The lower bound is not an unavoidable tax on the actual supervised network:
+its fitting history contains information deliberately absent from the
+theorem's restricted interface.
+
+The implemented finite-sample gate may also be conservative. Its
+range-dependent linear radius does not vanish as rapidly as actual movement
+in every comparison. Observed rejection of evaluator-positive candidates
+therefore does not prove that every valid test would need the same number of
+labels. The theoretical lower bound and the gate's numerical constants are
+different statements. More efficient valid tests, retained-data procedures,
+and jointly evaluated action batches could improve this controller without
+contradicting any result here.
+
+A declined candidate also leaves open a different action, a joint change, or a
+better optimizer. No-growth is relative to the supplied operations and evidence;
+it is not a certificate of architectural optimality.
+
+The broader open question is a learner that
+discovers useful nonlinear operations, shares past evidence legitimately,
+and improves the risk--capacity--data--computation tradeoff across ordinary
+tasks. There is no proof here of learned semantic units, efficient online
+mutual information estimation, optimal stopping over all architectures,
+automatic discovery of the theorem's modules, or benefits on real-world deep
+networks. The constructive progress and the negative attribution evidence
+should both inform that next investigation.
+
+\section{Reproducibility and scope}
+The reproducibility record contains source code, configurations, seed ranges,
+raw fitted parameters, gate values, rejected candidates, and resource ledgers.
+The experiments retain their original protocols. A representative complete
+betting trajectory has been locally replayed against saved values; the wider
+reconstruction results cited above belong to the original archived audit.
+Every plot is generated from preserved numerical outcomes. Neither a saved
+run nor a software check is treated as a substitute for a mathematical proof.
+
+Permanently excluding old audit labels from fitting is a protocol choice.
+The conditional fresh-data proof does not require it: a future candidate may
+use completed labels, provided its current comparison is fixed before a new
+independent audit and the committed predictor changes only through the
+audited decision. Reusing historical labels as evidence for a newly adaptive
+comparison needs an additional uniform-inference or independence argument.
+These distinctions limit the interpretation of both the supplied-module
+lower bound and the implemented trained process.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

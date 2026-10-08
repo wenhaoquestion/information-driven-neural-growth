@@ -1,0 +1,18 @@
+[
+  {
+    "epsilon": 0.1,
+    "pair_minus_single_mse": -1.43960644616027,
+    "descriptive_95_t_interval": [
+      -1.583341751337422,
+      -1.295871140983118
+    ]
+  },
+  {
+    "epsilon": 0.25,
+    "pair_minus_single_mse": -0.1885446766926204,
+    "descriptive_95_t_interval": [
+      -0.22207402429183495,
+      -0.15501532909340585
+    ]
+  }
+]

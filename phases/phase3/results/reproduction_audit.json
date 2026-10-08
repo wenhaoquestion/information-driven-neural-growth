@@ -1,0 +1,20 @@
+{
+  "full": false,
+  "diagnostics": false,
+  "replays": [
+    {
+      "file": "confirm_eb16384.json",
+      "task": "interaction",
+      "seed": 61000,
+      "matched": true
+    },
+    {
+      "file": "betting_followup4096.json",
+      "task": "interaction",
+      "seed": 63000,
+      "matched": true
+    }
+  ],
+  "prior_files_unchanged": 195,
+  "wall_seconds": 32.18071229101042
+}

@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "retention_raw.jsonl": {
+      "source_sha256": "a04a04b49e9410a3b7812ebb21ce2aecb6f56405c44866864bc6c040b5ce2472",
+      "replay_sha256": "a04a04b49e9410a3b7812ebb21ce2aecb6f56405c44866864bc6c040b5ce2472",
+      "identical": true
+    },
+    "retention_summary.json": {
+      "source_sha256": "336789d6f4c9e570aa538cfdd0f210715bc12dc9b27c25d497e5f6059dda3560",
+      "replay_sha256": "336789d6f4c9e570aa538cfdd0f210715bc12dc9b27c25d497e5f6059dda3560",
+      "identical": true
+    },
+    "retention_supplement_raw.jsonl": {
+      "source_sha256": "0281c1fcc3ad0f6620335774ad103a9de6e751d43998aed64a0aa9ec825665a2",
+      "replay_sha256": "0281c1fcc3ad0f6620335774ad103a9de6e751d43998aed64a0aa9ec825665a2",
+      "identical": true
+    },
+    "retention_supplement_summary.json": {
+      "source_sha256": "6ff393d500390c030dd6c2e865f810d47b8b70c2e0da743a90b239843a9c82ed",
+      "replay_sha256": "6ff393d500390c030dd6c2e865f810d47b8b70c2e0da743a90b239843a9c82ed",
+      "identical": true
+    }
+  },
+  "raw_count_arrays_identical": 62,
+  "timing_fields_compared": false,
+  "scope": "Full seeded replay of R1/R2 and post-hoc supplementary methods; scripts copied byte-for-byte."
+}

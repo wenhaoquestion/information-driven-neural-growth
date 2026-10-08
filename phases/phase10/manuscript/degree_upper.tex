@@ -1,0 +1,56 @@
+\section{The uniform polynomial upper bound}
+
+
+\begin{theorem}[Uniform degree bound at the top two capacities]
+\label{thm:degree}
+Let $N\ge3$, let $x_1<\cdots<x_N$ lie in $[0,1]$ with arbitrary positive
+weights, and suppose $g=\varphi''$ is a nonzero polynomial of degree at
+most $r$, nonnegative on $[0,1]$. For the deterministic price $R_N$ at
+capacities $(N-2,N-1)$:
+\begin{align*}
+ R_N\ge128,\ r\ge1
+ &\quad\Longrightarrow\quad
+ R_N^2\le16r^2\exp\left(\frac{20r}{\sqrt{R_N}}\right),\\
+ R_N\ge256,\ r\ge1
+ &\quad\Longrightarrow\quad
+ R_N(\log R_N)^2\le1936r^2.
+\end{align*}
+For every integer $r\ge2$,
+\[
+ \boxed{\displaystyle R_N\le1936\frac{r^2}{(\log r)^2}.}
+\]
+The constant is independent of the source count, all positive weights,
+and all positive posterior gaps. The inherited Phase~9 matching quartet
+lower construction makes the supremum over all $N\ge3$ have sharp order
+$\Theta(r^2/(\log r)^2)$.
+\end{theorem}
+
+\begin{proof}
+A nonzero nonnegative polynomial vanishes on no interval, so its
+twice-antiderivative is strictly convex. Apply
+Theorem~\ref{thm:reduction}. There is nothing to prove if $R_N=1$;
+otherwise $R_N\le R_4(S)$ for the specified quartet. The weighted quartet
+bound, proved in Phase~9 and reproduced in
+Proposition~\ref{prop:inherited}, gives the final displayed estimate.
+For the implicit inequality, the quartet estimate can be written
+\[
+ R_4(S)^2\exp\left(-\frac{20r}{\sqrt{R_4(S)}}\right)\le16r^2.
+\]
+The function $s\mapsto s^2\exp(-20r/\sqrt{s})$ is strictly increasing
+for $s>0$, so this inequality transfers to $R_N$ whenever $R_N\ge128$.
+Likewise $s\mapsto s(\log s)^2$ is increasing for $s\ge1$, which gives
+the second implication. The assertion about the envelope's lower order
+uses the stated, inherited quartet witnesses and the fact that the
+all-size supremum includes $N=4$; no padding argument is used.
+\end{proof}
+
+\begin{remark}[Stochastic consequence of the restriction proof]
+Every deterministic hierarchy is an admissible stochastic hierarchy,
+with the same flat denominators. Thus the same uniform upper bound
+holds for the stochastic hierarchy price. The restriction proof itself
+is a deterministic argument: it does not establish an equality between
+the all-size stochastic envelope and the stochastic quartet envelope.
+The inherited stochastic quartet lower witnesses still establish the
+matching all-size stochastic degree order.
+\end{remark}
+

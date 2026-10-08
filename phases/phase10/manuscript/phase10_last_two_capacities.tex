@@ -1,0 +1,144 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[left=1in,right=1in,top=0.85in,bottom=0.85in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,enumitem,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl,fancyhdr}
+\hypersetup{pdftitle={Quartet Reduction and Sharp Degree Bounds at the Last Two Capacities},pdfauthor={Wenyu Huang},pdfsubject={Phase 10 internal working paper},pdfkeywords={Bregman divergence, hierarchy price, polynomial curvature, last two capacities, weighted source}}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Quartet reduction at the last two capacities}
+\fancyhead[R]{\small Phase 10}
+\fancyfoot[C]{\thepage}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\OPT}{\operatorname{OPT}}
+\newcommand{\ph}{\varphi}
+\newcommand{\dd}{\,\mathrm dt}
+\newcommand{\rd}{\,\mathrm d}
+\newcommand{\detp}{\mathrm{det}}
+\newcommand{\stp}{\mathrm{stoch}}
+\title{Quartet Reduction and Sharp Degree Bounds\\ at the Last Two Capacities}
+\author{Wenyu Huang\\\small University of California San Diego}
+\date{Phase 10 internal working paper\\7 October 2026}
+\begin{document}
+\maketitle
+\begin{center}\begin{minipage}{0.93\textwidth}\small
+\textbf{Status.} The proof sources received independent internal review.
+This is not external peer review or formal verification. Historical
+originality has not been certified, and no priority claim is made.
+\end{minipage}\end{center}
+
+\begin{abstract}
+For $N\ge3$ distinct scalar posterior states with positive masses, we study
+the hierarchy price at capacities $(N-2,N-1)$. For every twice
+continuously differentiable strictly convex generator, either compatible
+flat optima exist, or a restriction to four consecutive original states
+has the same two flat costs and a deterministic hierarchy price at least
+as large. The hierarchy class includes noncontiguous cells. Consequently,
+for each fixed generator, the deterministic envelope over all finite
+source counts equals the weighted quartet envelope. The inherited
+polynomial quartet estimate gives the uniform upper bound
+$1936r^2/(\log r)^2$ for curvature degree at most $r\ge2$.
+An exterior-anchor construction embeds the inherited lower witnesses
+into every prescribed $N\ge4$ and preserves their deterministic prices.
+Both deterministic and stochastic degree envelopes therefore have order
+$\Theta(r^2/(\log r)^2)$, with constants and a degree threshold independent
+of $N$. The witnesses admit interior posterior support and smooth proper
+losses bounded in $[0,1/2]$, while their absolute flat excess risks vanish.
+Exact finite checks cover 300 instances and 67,860 compatible hierarchy
+candidates. The result concerns only the last two capacities; arbitrary
+prescribed capacities and simultaneous all-capacity hierarchies remain
+outside its scope.
+\end{abstract}
+
+\section{Question, contribution, and quantifiers}
+An optimal representation with $k$ outputs need not be obtainable by
+coarsening an optimal representation with $k+1$ outputs. For a scalar
+posterior and a strictly proper binary loss, the excess Bayes risk of a
+representation is a Jensen distortion. The hierarchy price measures the
+smallest simultaneous multiplicative cost of requiring this coarsening.
+We study the two capacities immediately below exact representation.
+
+The preceding weighted four-state analysis~\cite{huang9} proved the sharp
+degree order at capacities $(2,3)$, with no lower bounds on masses or
+posterior gaps. The additional argument here is combinatorial: at
+capacities $(N-2,N-1)$, the possible flat partitions leave only a
+consecutive quartet as an obstruction to compatibility. Singleton
+extension preserves both flat denominators and costs. For the lower
+bound, expensive exterior anchors exclude every new merge, and an affine
+change restores legal posterior coordinates without changing the price.
+
+Let $C_{N,r}^{\detp}$ and $C_{N,r}^{\stp}$ be the suprema of the respective
+prices over $N$ distinct locations in $[0,1]$, positive probabilities, and
+generators whose nonnegative nonzero polynomial curvature has degree at
+most $r$. The generator, weights, and locations may all vary with $N,r$.
+The results below give an absolute $r_0$ such that, for every $N\ge4$
+and every integer $r\ge r_0$,
+\begin{equation}
+ \frac{1}{9216}\frac{r^2}{(\log r)^2}
+ \le C_{N,r}^{\stp}\le C_{N,r}^{\detp}
+ \le1936\frac{r^2}{(\log r)^2}.
+ \label{eq:sharp-envelope}
+\end{equation}
+For $N=3$, both prices are one. All logarithms are natural; $r$ is the
+degree of the curvature, not of the generator.
+
+Three quantifiers must be distinguished. The fixed-generator identity is
+an equality between the supremum over all finite $N$ and the quartet
+supremum. A general individual source is only dominated by a selected
+quartet, and the inequality can be strict. The fixed-$N$ lower witnesses
+are a separate construction in the polynomial degree class; they do not
+give fixed-generator envelope equality for each $N$, or exact stochastic
+price preservation.
+
+\input{model}
+\input{stochastic_comparison}
+\input{quartet_reduction}
+\input{degree_upper}
+\input{anchor_embedding}
+\input{padding_counterexample}
+\input{computational_checks}
+
+\section{Interpretation, provenance, and remaining questions}
+The bound is uniform in source count because the last two capacities
+leave a deficit of only one and two cells. At general capacities a flat
+optimum can have many nonsingleton cells; the exchange classification used
+here no longer exhausts the possibilities. No claim is made about the
+sharp degree order for arbitrary prescribed capacities, or about one
+hierarchy that simultaneously approximates every capacity. For $N=4$
+only, adding the one-output and four-output levels is trivial; this fact
+does not extend the present theorem to general all-capacity hierarchies.
+
+The centroid identity, scalar nearest-center contiguity, and Jensen
+kernels are classical Bregman facts~\cite{banerjee}. The adjacent-triple
+inequality and complete polynomial quartet estimate are inherited from
+Phase~9~\cite{huang9}, while the endpoint lower construction originated in
+the earlier working paper~\cite{huang8}. Appendices~\ref{sec:quartet-upper}
+and~\ref{sec:ext-weights} reproduce the needed arguments, so no lower
+kernel estimate or upper analytic dependency is left implicit. The new
+claims of this stage are the arbitrary-$N$ quartet reduction, its envelope
+consequences, and the uniform exterior-anchor embedding. This description
+of project provenance is not a historical originality determination.
+
+There is no minimum-mass or minimum-gap constraint in
+\eqref{eq:sharp-envelope}; a joint constrained envelope remains a different
+question. The bounded-loss normalization preserves ratios, and the
+explicit absolute-risk bounds tend to zero. Large multiplicative prices
+therefore give no nonvanishing absolute-risk separation. No neural
+training, sample-complexity, optimization-efficiency, or generalization
+claim is made. The internal review records and exact-arithmetic checks
+are supporting evidence, not external peer review or formal verification.
+
+\appendix
+\input{quartet_analytic_upper}
+\input{endpoint_lower}
+\input{references}
+\end{document}

@@ -1,0 +1,61 @@
+{
+  "status": "all exact assertions passed",
+  "partitions": 15,
+  "at_most_hierarchies": 39,
+  "polynomial_cases": 448,
+  "curvature_degree_max": 8,
+  "posterior_gap_min": "1/10^12",
+  "max_polynomial_price": "16400548337852306717018953799321264818159740800036/10334656907372023822170625253908211738093088400585",
+  "weight_vectors_checked_per_polynomial_case": 2,
+  "fixed_channel_rows": [
+    [
+      "1",
+      "0",
+      "0"
+    ],
+    [
+      "1/3",
+      "2/3",
+      "0"
+    ],
+    [
+      "0",
+      "3/5",
+      "2/5"
+    ],
+    [
+      "0",
+      "0",
+      "1"
+    ]
+  ],
+  "large_price_reference_gadgets": [
+    {
+      "epsilon": "1/100",
+      "price": "2477/51",
+      "2_epsilon_price": "2477/2550"
+    },
+    {
+      "epsilon": "1/10000",
+      "price": "24997502/5001",
+      "2_epsilon_price": "12498751/12502500"
+    },
+    {
+      "epsilon": "1/100000000",
+      "price": "2499999975000002/50000001",
+      "2_epsilon_price": "1249999987500001/1250000025000000"
+    },
+    {
+      "epsilon": "1/1000000000000",
+      "price": "249999999999750000000002/500000000001",
+      "2_epsilon_price": "124999999999875000000001/125000000000250000000000"
+    },
+    {
+      "epsilon": "1/10000000000000000",
+      "price": "24999999999999997500000000000002/5000000000000001",
+      "2_epsilon_price": "12499999999999998750000000000001/12500000000000002500000000000000"
+    }
+  ],
+  "limitations": "Finite diagnostic, not an asymptotic proof or stochastic optimization.",
+  "script_sha256": "e68609bef86d2030b38362fdfdc213a262700209ba1bc734dc9e024a634b6276"
+}

@@ -1,0 +1,537 @@
+{
+  "analysis_source_sha256": "1077efa84dc86e7b89ee2a4425578b874f1b9f45c73e12841383ceb3ae010157",
+  "budgets": [
+    3200000,
+    5000000,
+    6400000,
+    8000000,
+    10000000
+  ],
+  "development_invocation_elapsed_seconds_sum": 41.18602437514346,
+  "development_learner_seconds_sum": 75.07536794652697,
+  "development_runs": [
+    {
+      "actual_proxy_work": 14604123872,
+      "allocated_work": 14604800000,
+      "code_sha256": {
+        "frontier.py": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0",
+        "phase5_reference.py": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720"
+      },
+      "complete_seed_seconds_sum": 26.19959566812031,
+      "config_sha256": "e7564f56be48fa71f52dee1a7832a89265f56028984eb0ff4fcc025c6ac9d032",
+      "datasets": 16,
+      "directory": "experiments/development_lr0075",
+      "invocation_elapsed_seconds_sum": 13.760600584093481,
+      "invocation_time_note": "Elapsed invocation wall time; sums can include failed/resumed attempts. Learner sums are stored completed trajectories only.",
+      "invocations": [
+        {
+          "complete": true,
+          "elapsed_seconds": 13.760600584093481,
+          "error_type": null,
+          "path": "experiments/development_lr0075/completion_1791355271951825000.json"
+        }
+      ],
+      "learner_seconds_sum": 25.103000048547983,
+      "manifest_sha256": "830ef7f25fb44cd82a66e81b6ca3f445c61a67d626d876092c4925b582096153",
+      "result_files": [
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010000.json",
+          "seed": 96010000,
+          "sha256": "f59256ff504ee041ad61b2c4ca1e3c71d99f80e6a4c6f6f936d4c61b60fa06d1",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010001.json",
+          "seed": 96010001,
+          "sha256": "9ad6dc256392461a05fab388e8028c2320f352c17b45c34ecc86763c7b2abadb",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010002.json",
+          "seed": 96010002,
+          "sha256": "e8deced41bae005d3351855c94d842e33b2b736c3e81c88aa5049d0a7b8a998c",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010003.json",
+          "seed": 96010003,
+          "sha256": "00b0a098f4dd6c402c0c99f1da2bc6b58426b53f049848e03d3aae1835eb1a7b",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010004.json",
+          "seed": 96010004,
+          "sha256": "87d1d64a34e0641e6a5573dd188ea4184b99f90f2933e5ce1a4f5b13652c566e",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010005.json",
+          "seed": 96010005,
+          "sha256": "e39e047d09ba5eaaa0a031ed29083d9bed85f36c80d46264c612792a817a83b0",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010006.json",
+          "seed": 96010006,
+          "sha256": "e422b1b98d71f8731bbfb28d985ab7e6062fa00827cf4f47fb9c9bcabe3efbff",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010007.json",
+          "seed": 96010007,
+          "sha256": "8ec7c9d8f4a730550c9dd1c3a86d511390192863ae20f2cf8d2b4fe9777f7b76",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010008.json",
+          "seed": 96010008,
+          "sha256": "e9a4d6a6acb0686929a99fa0bf43578202757387f5e6411f0085b924416a6cd6",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010009.json",
+          "seed": 96010009,
+          "sha256": "4946cf8ad9e3b78a4b000ac454d86461fe1f33cdad5c9b1a68add99eca40a656",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010010.json",
+          "seed": 96010010,
+          "sha256": "3f38fc2fa91b8a2b290b04e6bd325ed076be55c6e825610369fbd352d6ba115f",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010011.json",
+          "seed": 96010011,
+          "sha256": "aac0d7ca6c54e2d146b3e2707bfd2468f635573b31087364dd4c6d0d02d84763",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010012.json",
+          "seed": 96010012,
+          "sha256": "319eae4af384de65d6fb41b076bc078b7b7dcb07cf4eb8ffb8282d1428e0a715",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010013.json",
+          "seed": 96010013,
+          "sha256": "9b7071e1d2cdb2fff9e5f2fb5c20874a8458b6bf4f94d32e44a20ec88453b4b8",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010014.json",
+          "seed": 96010014,
+          "sha256": "53bfbac5877552fe7ba4b9b625a2897755a6894eb6aece4f606f87427ca57a74",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr0075/results/indefinite_noisy_96010015.json",
+          "seed": 96010015,
+          "sha256": "805a0b9d29f7cf8b79f6a0e76d32b195663f5bee3d5dfc9cca8034d8959cca0e",
+          "task": "indefinite_noisy"
+        }
+      ],
+      "trajectories": 320
+    },
+    {
+      "actual_proxy_work": 14604123872,
+      "allocated_work": 14604800000,
+      "code_sha256": {
+        "frontier.py": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0",
+        "phase5_reference.py": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720"
+      },
+      "complete_seed_seconds_sum": 25.86116012209095,
+      "config_sha256": "633ab43b348eb52c6b273484c2e7363261b503e6600cca4c655633713e1f11bc",
+      "datasets": 16,
+      "directory": "experiments/development_lr015",
+      "invocation_elapsed_seconds_sum": 13.568870207993314,
+      "invocation_time_note": "Elapsed invocation wall time; sums can include failed/resumed attempts. Learner sums are stored completed trajectories only.",
+      "invocations": [
+        {
+          "complete": true,
+          "elapsed_seconds": 13.568870207993314,
+          "error_type": null,
+          "path": "experiments/development_lr015/completion_1791355319894157000.json"
+        }
+      ],
+      "learner_seconds_sum": 24.796640032320283,
+      "manifest_sha256": "85d166b0f77baf2812d6619e61edc17762dee24b368e2a28310059aaf279c945",
+      "result_files": [
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010000.json",
+          "seed": 96010000,
+          "sha256": "d38c53e53121f457a0b928a786d93ce3e0765550977f0c102be83f880103bf7f",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010001.json",
+          "seed": 96010001,
+          "sha256": "ce7472b3903cfad5ab91ded138a7d12044d69c8cb2592d67a38ced3f5dc386fa",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010002.json",
+          "seed": 96010002,
+          "sha256": "10b89062fa1c355459503d74ab2d975534190bc20cec36c02f685a94bd24ee82",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010003.json",
+          "seed": 96010003,
+          "sha256": "f6690804ab7464987495e1039892a1a1e6b3e07d27cd061facfd20b90813882c",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010004.json",
+          "seed": 96010004,
+          "sha256": "3ae9426038e554013f8010194e3df4d29ae8138d789c9b3c563f7a21624a0035",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010005.json",
+          "seed": 96010005,
+          "sha256": "5b8febd3e38f7c114cfe8da76a074a1dda43665a1723018468b8d404b8e52484",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010006.json",
+          "seed": 96010006,
+          "sha256": "052b9541683b3fc719159f87a61cb85183ec56a18244a98a7fca0ff65833ac4c",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010007.json",
+          "seed": 96010007,
+          "sha256": "a3c9711a793d0edda08cb02de30d8322054bd2c8740bd52809fb2cc8a4297c59",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010008.json",
+          "seed": 96010008,
+          "sha256": "8d68af0a482d341c764df6b456fd52bf764b223a8d3e0b36f176cb0d11e5960d",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010009.json",
+          "seed": 96010009,
+          "sha256": "811cefdb889638cb738442af41dd049fab895a66d09171a04cbf809ff6cb0b4b",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010010.json",
+          "seed": 96010010,
+          "sha256": "8a589f309a71df13e0a35ba6664c9e20259ac9001fd9b50caa66911b5e27b579",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010011.json",
+          "seed": 96010011,
+          "sha256": "a27e9a650eaf70e89edcf7efba12f160cddeccd85ba2fcb1b895b3c56e2c8835",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010012.json",
+          "seed": 96010012,
+          "sha256": "42569efdc1737cdd35b39e67c2cf1d896cd95a34bae0ba03f002d4e6e0254936",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010013.json",
+          "seed": 96010013,
+          "sha256": "767b83415b23da4c37ebdee0213a681a12e2cb8b8c310aaf9e4c2ddbf7e459e2",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010014.json",
+          "seed": 96010014,
+          "sha256": "2738553fd8a23dbe9a1fe4d87ccc176c3d0e915ed7712f110e7e83060013c988",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr015/results/indefinite_noisy_96010015.json",
+          "seed": 96010015,
+          "sha256": "eb859dbc394e216d40c886099666f0fe8ecbc525ac2dcdbf72b9a643fd0a8197",
+          "task": "indefinite_noisy"
+        }
+      ],
+      "trajectories": 320
+    },
+    {
+      "actual_proxy_work": 14604123872,
+      "allocated_work": 14604800000,
+      "code_sha256": {
+        "frontier.py": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0",
+        "phase5_reference.py": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720"
+      },
+      "complete_seed_seconds_sum": 26.280284747015685,
+      "config_sha256": "d24901682f60326f9e51a86c880af32994aacfd920ece4707dd2017319fffd96",
+      "datasets": 16,
+      "directory": "experiments/development_lr03",
+      "invocation_elapsed_seconds_sum": 13.856553583056666,
+      "invocation_time_note": "Elapsed invocation wall time; sums can include failed/resumed attempts. Learner sums are stored completed trajectories only.",
+      "invocations": [
+        {
+          "complete": true,
+          "elapsed_seconds": 13.856553583056666,
+          "error_type": null,
+          "path": "experiments/development_lr03/completion_1791355557335920000.json"
+        }
+      ],
+      "learner_seconds_sum": 25.1757278656587,
+      "manifest_sha256": "583f84e452deca24be6cf199a40298e1a21e3d04f5afb41c4d9f4be80398d0c7",
+      "result_files": [
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010000.json",
+          "seed": 96010000,
+          "sha256": "0ac125cff3529a7abbd628f34035a9f52c61b760c7e4bc8611ca17e8164896a8",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010001.json",
+          "seed": 96010001,
+          "sha256": "f7f86729a05d5d64655629bff837f4fa0bd3e143c7756456dcc4349f2d665e6f",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010002.json",
+          "seed": 96010002,
+          "sha256": "4f56e9c812434b6e6ea4c171b3d71eda42dbd4c1b82be9acb7c0f30f21c39fd6",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010003.json",
+          "seed": 96010003,
+          "sha256": "ba998accba78fbe0336e2473cce4aa351c0bd3adf8ebfea67054e4433f4214b0",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010004.json",
+          "seed": 96010004,
+          "sha256": "64d88178e44753cc2d8caf0d82f5f3c2dc2b57b406f3619a32e1ec3894141b71",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010005.json",
+          "seed": 96010005,
+          "sha256": "553156c7fe08c7d113bd468725cecbce33362e32eb1fa306883c2f9c50ab66bb",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010006.json",
+          "seed": 96010006,
+          "sha256": "46d8ec340e9e8e0970c59b25522aa3eb381bed7911a528e452c1050f3c2f14b1",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010007.json",
+          "seed": 96010007,
+          "sha256": "b86c1505a7e9b525c166cff77b6cc6625b680738a7f4cf289b845e30274f7a12",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010008.json",
+          "seed": 96010008,
+          "sha256": "1b04893ed82116d9ed7aef7a159cb506b453c26f3120959deb705f746067c0de",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010009.json",
+          "seed": 96010009,
+          "sha256": "0339691c8f4f6b77258f93c310f36a55eea223f68587cacd75fc2dabd39cd395",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010010.json",
+          "seed": 96010010,
+          "sha256": "2ecc12e868739f8e8f358e298b11b4ed91d98b1e59dd58a3dfb5232fdd6d8f5c",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010011.json",
+          "seed": 96010011,
+          "sha256": "6ef642fda4368576c8534188c5abeb85b6c3c2e96f7ae8f9fb901314a044dd34",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010012.json",
+          "seed": 96010012,
+          "sha256": "b42fe85ec36d37b13a03ed01ab1f32e6194992e0c1f613173c26035c833dcc2e",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010013.json",
+          "seed": 96010013,
+          "sha256": "4484436bdec2388d1e279f26279ff443ff0556f6edf2f0fac7daa58f7ba7e7b7",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010014.json",
+          "seed": 96010014,
+          "sha256": "0d1532246212890ef0f4aa902ab3c0f7e32790ba5477a0d6b99b80aa631f169b",
+          "task": "indefinite_noisy"
+        },
+        {
+          "path": "experiments/development_lr03/results/indefinite_noisy_96010015.json",
+          "seed": 96010015,
+          "sha256": "80df66b4c4bdb1b99699a3398b664fdf777f52bb4bf4caf39b26abc84a8f9020",
+          "task": "indefinite_noisy"
+        }
+      ],
+      "trajectories": 320
+    }
+  ],
+  "development_seeds": [
+    96010000,
+    96010001,
+    96010002,
+    96010003,
+    96010004,
+    96010005,
+    96010006,
+    96010007,
+    96010008,
+    96010009,
+    96010010,
+    96010011,
+    96010012,
+    96010013,
+    96010014,
+    96010015
+  ],
+  "development_total_allocated_work": 43814400000,
+  "development_total_proxy_work": 43812371616,
+  "eligible_lrs": [
+    0.0075,
+    0.015,
+    0.03
+  ],
+  "method_lrs": {
+    "fixed7": 0.0075,
+    "historical_moment": 0.0075,
+    "random_growth128": 0.0075,
+    "random_growth138": 0.0075
+  },
+  "scores": [
+    {
+      "ci95_high": 0.006237169384725136,
+      "ci95_low": 0.00506612303995865,
+      "lr": 0.0075,
+      "mean": 0.005651646212341893,
+      "method": "historical_moment",
+      "n": 16,
+      "sd": 0.0010988262398291383,
+      "se": 0.0002747065599572846
+    },
+    {
+      "ci95_high": 0.0068509374238280695,
+      "ci95_low": 0.005575781737292522,
+      "lr": 0.0075,
+      "mean": 0.006213359580560296,
+      "method": "random_growth128",
+      "n": 16,
+      "sd": 0.0011965150094140808,
+      "se": 0.0002991287523535202
+    },
+    {
+      "ci95_high": 0.006696705857504703,
+      "ci95_low": 0.005840564760176085,
+      "lr": 0.0075,
+      "mean": 0.006268635308840394,
+      "method": "random_growth138",
+      "n": 16,
+      "sd": 0.0008033416499228217,
+      "se": 0.00020083541248070542
+    },
+    {
+      "ci95_high": 0.02398303013349789,
+      "ci95_low": 0.001525510627941146,
+      "lr": 0.0075,
+      "mean": 0.012754270380719517,
+      "method": "fixed7",
+      "n": 16,
+      "sd": 0.021072532120068356,
+      "se": 0.005268133030017089
+    },
+    {
+      "ci95_high": 0.00833408672327556,
+      "ci95_low": 0.006842654200196069,
+      "lr": 0.015,
+      "mean": 0.007588370461735814,
+      "method": "historical_moment",
+      "n": 16,
+      "sd": 0.0013994537437552156,
+      "se": 0.0003498634359388039
+    },
+    {
+      "ci95_high": 0.008733429674190045,
+      "ci95_low": 0.007264503528502553,
+      "lr": 0.015,
+      "mean": 0.007998966601346299,
+      "method": "random_growth128",
+      "n": 16,
+      "sd": 0.0013783353668845235,
+      "se": 0.00034458384172113087
+    },
+    {
+      "ci95_high": 0.008884980697728775,
+      "ci95_low": 0.007398211935918188,
+      "lr": 0.015,
+      "mean": 0.008141596316823482,
+      "method": "random_growth138",
+      "n": 16,
+      "sd": 0.0013950776033219423,
+      "se": 0.0003487694008304856
+    },
+    {
+      "ci95_high": 0.024989860822506198,
+      "ci95_low": 0.0026039358989134766,
+      "lr": 0.015,
+      "mean": 0.013796898360709837,
+      "method": "fixed7",
+      "n": 16,
+      "sd": 0.02100535287849244,
+      "se": 0.00525133821962311
+    },
+    {
+      "ci95_high": 0.014301481603176647,
+      "ci95_low": 0.011295539499044075,
+      "lr": 0.03,
+      "mean": 0.012798510551110361,
+      "method": "historical_moment",
+      "n": 16,
+      "sd": 0.0028205613502740746,
+      "se": 0.0007051403375685186
+    },
+    {
+      "ci95_high": 0.014826866489910162,
+      "ci95_low": 0.011605538421385175,
+      "lr": 0.03,
+      "mean": 0.013216202455647669,
+      "method": "random_growth128",
+      "n": 16,
+      "sd": 0.0030226641538249302,
+      "se": 0.0007556660384562326
+    },
+    {
+      "ci95_high": 0.013486560347543761,
+      "ci95_low": 0.01179561747361423,
+      "lr": 0.03,
+      "mean": 0.012641088910578996,
+      "method": "random_growth138",
+      "n": 16,
+      "sd": 0.0015866600055836103,
+      "se": 0.0003966650013959026
+    },
+    {
+      "ci95_high": 0.015309985287175384,
+      "ci95_low": 0.012640367337127064,
+      "lr": 0.03,
+      "mean": 0.013975176312151224,
+      "method": "fixed7",
+      "n": 16,
+      "sd": 0.002504978788364616,
+      "se": 0.000626244697091154
+    }
+  ],
+  "selection_rule": "Smallest mean normalized raw-excess-risk/log-allocated-work AUC over all 16 development seeds and all five budgets; exact ties choose smaller LR."
+}

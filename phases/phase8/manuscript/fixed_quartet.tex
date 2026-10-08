@@ -1,0 +1,101 @@
+\section{A linear degree bound for four equal masses}
+\label{sec:linearupper}
+For exactly four source atoms of mass $1/4$, the hierarchy geometry gives a sharper bound than the general three-point estimate. The argument is uniform over the spacing of the posterior locations, including configurations approaching each other or the endpoints.
+
+\begin{theorem}[Four-state linear degree bound]
+\label{thm:linearupper}
+Let $g=\ph''$ be a nonnegative nonzero polynomial of degree at most $r\ge1$ on $[0,1]$. For any four equally weighted posterior locations with positive flat two- and three-cell distortions,
+\begin{equation}
+\rho_{\ph,\stp}\le\rho_{\ph,\detp}\le192(2r+9)=384r+1728.
+\label{eq:linearupper}
+\end{equation}
+Thus the degree envelopes in \eqref{eq:envelope} satisfy the same bound. This theorem does not assert a linear-degree bound for arbitrary source weights or source counts.
+\end{theorem}
+\begin{proof}
+Positive $\OPT_3$ means the four locations are distinct. Affinely normalize their own hull to $[-1,1]$, writing the sorted values as
+\[
+t_1=-1<t_2<t_3<t_4=1.
+\]
+This changes neither curvature degree nor price. Let $g$ now denote the transformed curvature and set
+\[
+w(t)=1-|t|,\qquad \mu_w=\int_{-1}^1w(t)g(t)\rd t>0,\qquad L_r=2r+9.
+\]
+
+\emph{Polynomial concentration.}
+The function $F(\theta)=g(\cos\theta)\sin^4\theta$ is a nonnegative trigonometric polynomial of degree at most $r+4$. Each Fourier coefficient has modulus at most its constant coefficient $c_0$, because $F\ge0$. Summing the at most $2(r+4)+1=L_r$ coefficients gives $F(\theta)\le L_rc_0$. A change of variables and $(1-t^2)^{3/2}\le2w(t)$ give
+\[
+c_0=\frac1\pi\int_0^\pi F(\theta)\rd\theta
+=\frac1\pi\int_{-1}^1g(t)(1-t^2)^{3/2}\rd t
+\le\frac2\pi\mu_w.
+\]
+Since $(1-t^2)^2\ge w(t)^2$, we obtain, for $-1<t<1$,
+\begin{equation}
+w(t)g(t)\le\frac{L_r\mu_w}{w(t)}.
+\label{eq:weightedconcentration}
+\end{equation}
+
+Set $\eta=1/(16L_r)$. Exclude the two neighborhoods
+\[
+I_s=\{t:|t-s|\le\eta w(s)\},\qquad s\in\{t_2,t_3\}.
+\]
+Each lies inside the hull. Since $w$ is 1-Lipschitz, $w(t)\ge(1-\eta)w(s)$ on $I_s$. By \eqref{eq:weightedconcentration}, each neighborhood has weighted curvature mass at most $2\eta L_r\mu_w/(1-\eta)$. Their union therefore has mass at most
+\[
+\frac{4\eta L_r}{1-\eta}\mu_w<\frac12\mu_w.
+\]
+This conclusion remains valid if the neighborhoods overlap. Outside the union, $h=|t-s|\ge\eta w(s)$ and $w(t)\le w(s)+h$ imply
+\begin{equation}
+|t-s|\ge\frac{\eta}{1+\eta}w(t),\qquad s=t_2,t_3.
+\label{eq:knotdistance}
+\end{equation}
+The distances to the outer endpoints are both at least $w(t)$.
+
+\emph{Jensen kernels.}
+For a pair $u<v$ of mass $1/4$ each, its Jensen gap has curvature kernel
+\begin{equation}
+K_{uv}(t)=\frac14\min\{t-u,v-t\}\,\mathbf1_{[u,v]}(t).
+\label{eq:pairkernel}
+\end{equation}
+This follows by evaluating the gap for $(x-t)_+$ and integrating against $g(t)\rd t$. The three adjacent pair kernels have disjoint interiors, and their sum is one fourth of the distance to the nearest quartet node. Denote their costs by $P_{12},P_{23},P_{34}$ and their sum by $S$. Equations~\eqref{eq:knotdistance}--\eqref{eq:pairkernel} and the retained weighted mass give
+\begin{equation}
+S\ge\frac{\eta\mu_w}{8(1+\eta)}\ge\frac{\mu_w}{256L_r}.
+\label{eq:adjacentlower}
+\end{equation}
+
+A triple $J$ of equal-weight source points has kernel
+\[
+K_J(t)=\frac14\sum_{i\in J}(t_i-t)_+-\frac34(\overline t_J-t)_+.
+\]
+It is nonnegative by Jensen, vanishes at both hull endpoints, and has piecewise derivative of magnitude at most $1/2$. Indeed, its derivative away from knots is the difference of the counts of points and mean above $t$, with coefficients $1/4$ and $3/4$; below all three points and above all three it is zero, and between them its magnitude is at most $2/4$. It follows that $K_J(t)\le w(t)/2$. In particular,
+\begin{equation}
+T_{123},T_{234}\le\mu_w/2.
+\label{eq:tripleupper}
+\end{equation}
+Moreover a triple Jensen gap dominates any constituent pair gap: group that pair first, then apply the weighted Jensen decomposition to its mean and the remaining point. Applying this fact to the hinge generator $(x-t)_+$ proves pointwise kernel domination. Since adjacent pair kernels have disjoint interiors,
+\begin{equation}
+T_{123}\ge P_{12}+P_{23},\qquad T_{234}\ge P_{23}+P_{34}.
+\label{eq:tripledomination}
+\end{equation}
+
+\emph{Compatible optimizer choices.}
+Flat-optimal scalar Bregman partitions can be chosen contiguous. For fixed ordered centers $a<b$, the difference $\B(x,a)-\B(x,b)$ is affine in $x$ with positive slope $\ph'(b)-\ph'(a)$. Nearest-center assignments can therefore be chosen in contiguous sorted order, with boundary ties resolved consistently. Updating centers to cell means cannot increase cost. If fewer than the required number of cells remain, splitting a nonconstant cell strictly decreases cost; distinct inputs and strict convexity rule out an underfilled optimum here. This proves existence of contiguous flat optima, without claiming that every optimizer is contiguous.
+
+A three-cell contiguous optimum merges a cheapest adjacent pair. The three contiguous two-cell candidates have costs $T_{234}$, $P_{12}+P_{34}$, and $T_{123}$. If $P_{12}$ is a cheapest pair, its only incompatible candidate is the split $1\mid234$. By \eqref{eq:tripledomination},
+\[
+T_{234}\ge P_{23}+P_{34}\ge P_{12}+P_{34},
+\]
+so a compatible coarse optimum can be chosen. The case of $P_{34}$ is its reflection. If $P_{23}$ is a cheapest pair and either triple split is optimal, it too admits a compatible optimum.
+
+The sole remaining conflict has fine pair $23$ and coarse split $12\mid34$. Since $P_{23}\le\min(P_{12},P_{34})$, its flat coarse denominator satisfies
+\[
+\OPT_2=P_{12}+P_{34}\ge\frac23S\ge\frac{\mu_w}{384L_r}.
+\]
+Keep the flat-optimal middle pair at the fine level and coarsen it to either adjacent triple. By \eqref{eq:tripleupper}, the coarse ratio is at most $192L_r$ and the fine ratio is one. All ties are covered by these choices or permit compatible flat optima. This proves the deterministic bound, and the stochastic bound follows by admissibility.
+\end{proof}
+
+\begin{corollary}[Equal spacing]
+\label{cor:equalspacing}
+If the four equally weighted posteriors are equally spaced, the upper bound in \eqref{eq:linearupper} improves to $96(2r+9)=192r+864$.
+\end{corollary}
+\begin{proof}
+After affine normalization the inner points are $\pm1/3$. The Fourier estimate above implies $g(t)\le4L_r\mu_w$ for $|t|\le1/2$, since $(1-t^2)^2\ge9/16$ there. Exclude ordinary radius $\eta=1/(32L_r)$ neighborhoods of the two inner points. They lie in $[-1/2,1/2]$ and their total weighted curvature mass is at most $4\eta\cdot4L_r\mu_w=\mu_w/2$. Outside them the adjacent-kernel sum is at least $\eta w/4$, which again yields $S\ge\mu_w/(256L_r)$. For equal spacing a one-outer-point triple has mean at its middle point, so its kernel is at most $w/4$. Replace \eqref{eq:tripleupper} by $T_{123},T_{234}\le\mu_w/4$ in the same conflict analysis to obtain $96L_r$.
+\end{proof}

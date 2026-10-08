@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "exact_equal_checks": 1344,
+  "scope": "old and memory-fix smoke same parameters, optimizer, risks, access counts and proxy; memory metadata and timings intentionally differ",
+  "old_source_sha256": "2a71570ba5c4aac153f986fd2a81a4c655d5367d1baf06d18d7aaeec00a08fcc",
+  "new_source_sha256": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0"
+}

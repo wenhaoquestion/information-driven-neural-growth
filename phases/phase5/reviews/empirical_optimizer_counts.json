@@ -1,0 +1,101 @@
+{
+  "constant_across_all_48_main_runs": true,
+  "methods": {
+    "historical_moment": {
+      "fit_label_accesses": 113669,
+      "optimizer_steps": 892,
+      "steps_by_arrival": [
+        335,
+        172,
+        116,
+        88,
+        71,
+        59,
+        51
+      ]
+    },
+    "reservoir_residual": {
+      "fit_label_accesses": 122551,
+      "optimizer_steps": 1018,
+      "steps_by_arrival": [
+        364,
+        203,
+        137,
+        103,
+        83,
+        69,
+        59
+      ]
+    },
+    "fresh_residual": {
+      "fit_label_accesses": 115738,
+      "optimizer_steps": 960,
+      "steps_by_arrival": [
+        364,
+        187,
+        125,
+        94,
+        75,
+        62,
+        53
+      ]
+    },
+    "learned_probe": {
+      "fit_label_accesses": 93338,
+      "optimizer_steps": 768,
+      "steps_by_arrival": [
+        364,
+        131,
+        86,
+        63,
+        49,
+        41,
+        34
+      ]
+    },
+    "random_replay128": {
+      "fit_label_accesses": 124285,
+      "optimizer_steps": 975,
+      "steps_by_arrival": [
+        364,
+        189,
+        128,
+        96,
+        77,
+        65,
+        56
+      ]
+    },
+    "random_matched138": {
+      "fit_label_accesses": 124285,
+      "optimizer_steps": 1034,
+      "steps_by_arrival": [
+        364,
+        207,
+        140,
+        106,
+        85,
+        71,
+        61
+      ]
+    },
+    "fixed7_replay138": {
+      "fit_label_accesses": 49469,
+      "optimizer_steps": 422,
+      "steps_by_arrival": [
+        56,
+        61,
+        61,
+        61,
+        61,
+        61,
+        61
+      ]
+    }
+  },
+  "r128_pool_size": 1152,
+  "r138_pool_size": 1162,
+  "maximum_minibatch": 128,
+  "r138_remainder_minibatch": 10,
+  "warning": "Equal example-access count does not equal optimizer-update count; R128/R138 is not a pure memory-size intervention."
+}

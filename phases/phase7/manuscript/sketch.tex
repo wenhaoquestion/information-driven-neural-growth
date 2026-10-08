@@ -1,0 +1,58 @@
+% Derived from research/sketch/query_approximation.tex; original preserved.
+\section{A classical approximate-query baseline}
+\label{sec:sketch-baseline}
+The exact dimension theorem does not imply that approximate residual queries
+need fourth-order storage. Here is an explicit transfer from an existing
+matrix-sketch guarantee. This is a corollary, not a new sketching algorithm.
+
+Let $\operatorname{svec}:\operatorname{Sym}_d\to\mathbb R^p$ be the
+Frobenius isometry which stores diagonal entries unchanged and off-diagonal
+entries multiplied by $\sqrt2$. Form $A\in\mathbb R^{n\times p}$ with
+row $i$ equal to $\operatorname{svec}(H(x_i))^\top$. Store $S_y$ and
+$\overline H$ exactly, and let $C\in\mathbb R^{\ell\times p}$ satisfy
+\[
+ \|A^\top A-C^\top C\|_2\le\eta.
+\]
+Define
+\[
+ \widehat G(B,c)=S_y-
+ \operatorname{svec}^{-1}\!\left(\frac{C^\top C}{2n}
+                       \operatorname{svec}(B)\right)
+ -\frac c2\overline H.
+\]
+\begin{proposition}[Uniform deterministic query transfer]
+\label{prop:sketch-transfer}
+For every $R\ge0$, simultaneously for every $\|B\|_F\le R$ and
+$c\in\mathbb R$,
+\[
+ \|G(B,c)-\widehat G(B,c)\|_F\le\frac{R\eta}{2n}.
+\]
+The guarantee therefore remains true for queries chosen adaptively from the
+summary or the entire data, without an independence assumption.
+\end{proposition}
+\begin{proof}
+The isometry and the empirical query formula give
+\[
+ \operatorname{svec}(G-\widehat G)
+ =-\frac{A^\top A-C^\top C}{2n}\operatorname{svec}(B).
+\]
+The operator norm inequality proves the result, pointwise and uniformly.
+\end{proof}
+
+Frequent Directions gives, for every integer $0\le k<\ell\le p$,
+$\eta\le\|A-A_k\|_F^2/(\ell-k)$, where $A_k$ is a best rank-$k$
+approximation \cite[Theorem 1.1]{p7ghashami2015}. Thus the query error is
+at most $R\|A-A_k\|_F^2/[2n(\ell-k)]$ using $\ell p+2p$ stored real
+coordinates for $C,S_y,\overline H$, plus a count and implementation
+workspace. This count excludes floating-point rounding and is not a
+claim of optimality for the polynomially constrained feature rows.
+The cited theorem concerns arbitrary matrices; any approximate lower
+bound from that paper cannot automatically be restricted to rows
+$\operatorname{svec}(xx^\top-I)$.
+
+This baseline has no distribution assumption, but its tail bound can be
+large. It neither bounds out-of-sample risk nor proves that the selected
+growth direction is useful. A next research target is a specified
+memory--accuracy tradeoff on these polynomial feature rows, with a
+separate population-error and optimization analysis. No sketching
+implementation or new training experiment was run in Phase 7.

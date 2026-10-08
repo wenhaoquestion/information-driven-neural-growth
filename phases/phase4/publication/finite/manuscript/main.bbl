@@ -1,0 +1,96 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arutyunova and R{\"o}glin(2022)]{arutyunova2022}
+Anna Arutyunova and Heiko R{\"o}glin.
+\newblock The price of hierarchical clustering.
+\newblock In \emph{30th Annual European Symposium on Algorithms (ESA 2022)},
+  volume 244 of \emph{Leibniz International Proceedings in Informatics}, pages
+  10:1--10:14, 2022.
+\newblock \doi{10.4230/LIPIcs.ESA.2022.10}.
+\newblock URL \url{https://doi.org/10.4230/LIPIcs.ESA.2022.10}.
+
+\bibitem[Arutyunova and R{\"o}glin(2025)]{arutyunova2025}
+Anna Arutyunova and Heiko R{\"o}glin.
+\newblock The price of hierarchical clustering.
+\newblock \emph{Algorithmica}, 87:\penalty0 1420--1452, 2025.
+\newblock \doi{10.1007/s00453-025-01327-7}.
+\newblock URL \url{https://doi.org/10.1007/s00453-025-01327-7}.
+
+\bibitem[Banerjee et~al.(2005)Banerjee, Merugu, Dhillon, and
+  Ghosh]{banerjee2005}
+Arindam Banerjee, Srujana Merugu, Inderjit~S. Dhillon, and Joydeep Ghosh.
+\newblock Clustering with {Bregman} divergences.
+\newblock \emph{Journal of Machine Learning Research}, 6:\penalty0 1705--1749,
+  2005.
+\newblock URL
+  \url{https://jmlr.org/papers/volume6/banerjee05b/banerjee05b.pdf}.
+
+\bibitem[Charvin et~al.(2023)Charvin, Catenacci~Volpi, and Polani]{charvin2023}
+Hippolyte Charvin, Nicola Catenacci~Volpi, and Daniel Polani.
+\newblock Exact and soft successive refinement of the information bottleneck.
+\newblock \emph{Entropy}, 25\penalty0 (9):\penalty0 1355, 2023.
+\newblock \doi{10.3390/e25091355}.
+\newblock URL \url{https://doi.org/10.3390/e25091355}.
+
+\bibitem[Chaudhuri and McGregor(2008)]{chaudhuri2008}
+Kamalika Chaudhuri and Andrew McGregor.
+\newblock Finding metric structure in information theoretic clustering.
+\newblock In \emph{21st Annual Conference on Learning Theory (COLT)}, pages
+  391--402, 2008.
+\newblock URL \url{https://cseweb.ucsd.edu/~kamalika/pubs/cm08.pdf}.
+
+\bibitem[Gneiting and Raftery(2007)]{gneiting2007}
+Tilmann Gneiting and Adrian~E. Raftery.
+\newblock Strictly proper scoring rules, prediction, and estimation.
+\newblock \emph{Journal of the American Statistical Association}, 102\penalty0
+  (477):\penalty0 359--378, 2007.
+\newblock \doi{10.1198/016214506000001437}.
+\newblock URL
+  \url{https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf}.
+
+\bibitem[Kartowsky and Tal(2019)]{kartowsky2019}
+Assaf Kartowsky and Ido Tal.
+\newblock Greedy-merge degrading has optimal power-law.
+\newblock \emph{IEEE Transactions on Information Theory}, 65\penalty0
+  (2):\penalty0 917--934, 2019.
+\newblock \doi{10.1109/TIT.2018.2879802}.
+\newblock URL
+  \url{https://webee.technion.ac.il/people/idotal/papers/journal/DegradingUpgrading.pdf}.
+
+\bibitem[No(2019)]{no2019}
+Albert No.
+\newblock Universality of logarithmic loss in successive refinement.
+\newblock \emph{Entropy}, 21\penalty0 (2):\penalty0 158, 2019.
+\newblock \doi{10.3390/e21020158}.
+\newblock URL \url{https://doi.org/10.3390/e21020158}.
+
+\bibitem[Sason and Verd{\'u}(2016)]{sason2016}
+Igal Sason and Sergio Verd{\'u}.
+\newblock $f$-divergence inequalities.
+\newblock \emph{IEEE Transactions on Information Theory}, 62\penalty0
+  (11):\penalty0 5973--6006, 2016.
+\newblock \doi{10.1109/TIT.2016.2603151}.
+\newblock URL \url{https://arxiv.org/abs/1508.00335v7}.
+\newblock Expanded version inspected: arXiv:1508.00335v7, 4 December 2016.
+
+\bibitem[Slonim and Tishby()]{slonimreport}
+Noam Slonim and Naftali Tishby.
+\newblock Agglomerative information bottleneck.
+\newblock URL \url{https://www.cise.ufl.edu/~anand/sp06/ib.pdf}.
+\newblock Undated extended manuscript, Section 3.1; hosted in a University of
+  Florida course archive.
+
+\bibitem[Slonim and Tishby(1999)]{slonim1999}
+Noam Slonim and Naftali Tishby.
+\newblock Agglomerative information bottleneck.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~12, pages 617--623, 1999.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper/1999/hash/be3e9d3f7d70537357c67bb3f4086846-Abstract.html}.
+
+\end{thebibliography}

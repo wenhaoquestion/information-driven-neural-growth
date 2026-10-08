@@ -1,0 +1,211 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,graphicx,array,xcolor,xurl}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdfauthor={Wenyu Huang},pdftitle={Retained Evidence for Changing Predictions}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\E}{\mathbb E}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\ip}[2]{\langle #1,#2\rangle_\mu}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\DeclareMathOperator{\KL}{KL}
+\DeclareMathOperator{\kl}{kl}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\spanop}{span}
+\graphicspath{{figures/}}
+\title{Retained Evidence for Changing Predictions\\[4pt]
+\large Exact Moment Ambiguity and Fresh-Audit Learning Diagnostics}
+\input{author.tex}
+\date{Research report, September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We investigate two distinct ways to use historical labels during structural
+learning: fitting future candidates and certifying their current risks.
+For a known finite input law, we derive the exact worst-case ambiguity of a
+Brier-risk change given approximate label moments. With exact moments,
+prediction movement outside the retained span determines matching upper and
+lower fresh-testing orders for symmetric prediction pairs in a stated
+small-margin regime. The mathematics
+specializes optimal recovery, control variates and sequential testing; it is
+not an established new general inference principle. Finite-state experiments
+show both the value of oracle retained evidence and the loss caused by its
+finite estimation error. A stress test exposes invalid adaptive reuse.
+Separately, 336 trained neural trajectories compare permanent audit withholding
+with post-decision release, informative and random growth, and same-arrival
+fixed-capacity online controls. Release lowers mean final risk for both
+proposal mechanisms. Residual proposals show no resolved advantage over
+random proposals, while larger fixed learners obtain lower risks on two
+nonlinear tasks. These results diagnose a preventable data-use restriction
+without proving that structural adaptation is generally superior. Complete
+proofs, frozen protocols, raw outcomes and explicit resource limits accompany
+the report.
+\end{abstract}
+
+\section*{Research status and relation to the preprint candidates}
+This September 2026 report contains the analysis and experiments from that
+research stage. Repository preparation did not rerun the experiments.
+The existing-results preprint candidate, \emph{Evidence Interfaces in Repeated
+Neural Growth}, is prepared separately. The present report is material for
+scientific study within that line, with its stated assumptions and limits.
+The strongest new mathematical result in the coordinated investigation is
+a separate matching source-mass order for four-state irreversible finite
+representations; it belongs to the finite-representation manuscript.
+
+The motivating distinction is practical. Releasing an old audit into future
+fitting does not give a new candidate independent historical certification
+data. Conversely, retained information need not become useless merely because
+a predictor changes. We quantify the latter point within a fixed moment
+interface and test the former in actual trained networks.
+
+\input{retained_theory.tex}
+
+\section{Releasing completed audits into later fitting}
+\begin{proposition}[Standard conditional-validity corollary]
+Let $\mathcal H_{t-1}$ contain every earlier fitting sample, completed audit,
+decision and optimizer state. Before revealing audit $A_t$, construct the
+incumbent and all candidate predictors measurably from $\mathcal H_{t-1}$ and
+independent proposal randomness. Suppose $A_t$ is iid from the task law,
+independent of the complete pre-audit sigma field, including proposal
+randomness, and the conditional probability of a falsely
+accepted comparison is at most $\alpha_{tj}$, with predictable total
+$\sum_{t,j}\alpha_{tj}\le\delta$. Commit only the chosen frozen candidate,
+or hold the incumbent exactly. Then with probability at least $1-\delta$
+every accepted inequality holds in population. After committing, $A_t$ may
+enter $\mathcal H_t$ and any future fitting pool.
+\end{proposition}
+\begin{proof}
+Condition on the full pre-audit history and proposal randomness. Current
+predictors are fixed and the audit remains independent, so the stipulated
+conditional error bound applies. Integrate over history and sum the error
+bounds. This yields a simultaneous event on which every installed change
+satisfies its audited inequality. Label release changes later history, not
+the conditional argument for a genuinely fresh later block. A hold changes
+neither predictor nor risk. Increasing finite unions cover a countable
+sequence. No candidate-discovery or power statement follows.
+\end{proof}
+This is the same standard fresh-evidence reasoning used by the inherited
+controller; the new item is its implemented diagnostic. A silent refit of the
+installed predictor would break the claimed checkpoint protection. Optimizer
+state may persist, but its resulting fitted parameters must still be audited
+before installation. Ordinary ungated online learners and diagnostic training
+tails pursue a different objective and have no such guarantee.
+
+\paragraph{Why a previous betting product is not a new-pair certificate.}
+Consider a single input and $Y\sim\mathrm{Bernoulli}(3/4)$. The old pair
+$p=1/4,q=3/4$ has difference $D=\tfrac12(2Y-1)$ and positive gain.
+Its product with bet $1/2$ has positive expected log increment
+$\tfrac34\log(5/4)+\tfrac14\log(3/4)>0$ and therefore crosses any fixed
+threshold almost surely. Swapping the pair makes the true gain negative.
+Using the old product as its initial evidence would accept the harmful new
+pair with probability one if no new evidence were required. Even after one
+fresh factor, choosing the old threshold larger by $4/3$ preserves that
+counterexample. This does not contradict a prequential test whose null bounds
+every conditional increment; that is a different hypothesis. The valid
+transfers above retain a confidence region with its uncertainty.
+
+\section{Finite-state experiments on retained evidence}
+\subsection{Frozen design and supplemental controls}
+The R1 protocol fixes a uniform four-state input $(f_1,f_2)\in\{-1,1\}^2$,
+$h=0.2(\sqrt{1-z}f_1+\sqrt z f_2)$, and symmetric predictions
+$p=(1-h)/2,q=(1+h)/2$. The retained span is $V=\mathrm{span}(f_1)$.
+The squared total movement is $0.04$ and residual movement $0.04z$ for
+$z\in\{1,1/4,1/16,1/64\}$. The null has $\eta=1/2$; alternatives have
+$\eta=1/2+0.003f_2/(0.4\sqrt z)$, giving the same gain $0.003$.
+All probabilities lie in $[1/4,3/4]$.
+
+For each condition, 1,000 independent replicates generate nested iid count
+samples at six fixed fresh sizes from 128 to 131,072. Methods use a direct
+paired Bernstein bound, a residual bound with an exact oracle moment, or a
+residual bound with 32,768 independent historical labels and a Hoeffding
+moment interval. The finite-history method divides error $0.05$ equally
+between historical and fresh uncertainty. The oracle's exact moment is
+privileged information, not a free finite dataset. Displayed rejection rates
+are pointwise at fixed sizes; the plotted grid is not a valid repeated-look
+test without additional allocation.
+
+An explicitly post-hoc supplement adds two necessary controls from the
+unchanged archived counts. Because the R1 pair is precommitted, a direct
+comparison can use all old and fresh labels. A second control selects a
+shrunken retained coefficient by minimizing the analytic historical-plus-fresh
+radius using only geometry and sample sizes, before inspecting observed
+values. These controls preserve the frozen results and do not create a new
+confirmatory comparison.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=\linewidth]{retention_geometry.pdf}
+\caption{R1: genuine finite-state sampling, not neural training. Bands are
+pointwise 95\% Wilson intervals over 1,000 independent replicates. Dashed
+methods were added after viewing the frozen results. Full-pool and finite
+history methods both use 32,768 additional historical labels; the oracle
+moment is a separate ideal-information resource.}
+\end{figure}
+
+At $z=1/64$ and 8,192 fresh labels, direct testing accepts in 129 of 1,000
+alternative replicates, exact-moment residual testing in 1,000, and the
+finite-history method in 168. The oracle result verifies the predicted
+mechanism, while the finite-history result prevents claiming the same
+efficiency for a realizable procedure. The full-pool comparator also makes
+clear that compressing history can lose useful evidence. A fixed imperfect
+retained projection leaves historical uncertainty even when residual evidence
+becomes abundant; shrinking toward zero avoids that particular floor.
+
+\subsection{Adaptive reuse stress test}
+R2 has $m\in\{4,16,64\}$ equiprobable inputs and the null law $\eta=1/2$.
+After 4,096 historical observations, it chooses
+$h_j=0.4\,\mathrm{sign}(\widehat{\E}[1_{X=j}(Y-1/2)])$ and symmetric
+predictions. Every selected pair has true gain zero. Across 1,000 new
+replicates, we compare naive fixed-pair Bernstein reuse, a simultaneous
+coordinate moment region, and 4,096 genuinely fresh labels conditional on
+the selected pair. The moment region is deliberately elementary and can be
+conservative; this null stress test makes no power claim for it.
+
+Naive reuse falsely accepts 69, 880 and 1,000 times as $m$ increases; fresh
+audits accept 3, 6 and 2 times, and the simultaneous region accepts zero.
+Zero observed failures do not prove zero error probability. The experiment
+is a designed selection-bias diagnostic, not a claim that typical neural
+training exhibits those false-acceptance rates.
+
+\begin{figure}[tb]
+\centering\includegraphics[width=.88\linewidth]{adaptive_reuse.pdf}
+\caption{R2: the new candidate is chosen using the old labels. Error bars
+are Wilson intervals across independent replicates. Ordinary fixed-pair
+coverage cannot be applied retrospectively to that selected comparison.}
+\end{figure}
+
+\input{neural_experiments.tex}
+
+\section{Verification, contribution and remaining limits}
+The finite-moment arguments have complete proofs. An independent numerical
+check compared primal and dual programs on 100 seeded instances and checked
+the invisible posterior, gain and KL construction. Maximum discrepancies
+were below $5.1\times10^{-16}$. Such computations check consistency and
+counterexample attempts, not general proof validity.
+
+The experiments support two bounded conclusions: permanent audit withholding
+can impede later fitting, and historical certification information must be
+retained with a valid uncertainty argument. Neither result establishes an
+effective entropy-based controller, general neural architecture optimality,
+or a resource advantage over strong fixed learners. Exact population moments,
+known finite input distributions and precommitted dictionaries are substantial
+assumptions. New adaptive dictionary columns need a different uniform-inference
+argument. The matching residual testing result for symmetric pairs in the
+stated small-margin regime prices additional evidence
+after the specified interface, not the cost of acquiring arbitrary training
+history. Novelty of the underlying statistical tools is explicitly excluded.
+
+The repository includes the scientific source, configurations, all reported
+summary outcomes, and a representative complete neural trajectory. Large raw
+files remain in the local archive; their sizes and hashes are listed in the
+repository raw-artifact manifest. Historical execution and replay records are
+distinguished from repository checks. Author verification, external peer
+review, and publication readiness are not asserted.
+
+\clearpage
+\input{references.tex}
+\end{document}

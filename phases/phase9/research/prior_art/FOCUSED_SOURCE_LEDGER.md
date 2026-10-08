@@ -1,0 +1,39 @@
+# Phase 9 focused primary-source ledger
+
+Checked 2026-10-07. This is a bounded continuation of the Phase 8 audit, not an exhaustive originality review. The older audit was read to avoid duplicating its full search. “Inspected” means the specified primary text or theorem was read, not that the entire source was independently proved.
+
+| ID | Primary source and inspected locator | Consequence and limit |
+|---|---|---|
+| P9-1 | E. de Klerk and M. Laurent, *Worst-case examples for Lasserre's measure--based hierarchy for polynomial optimization on the hypercube*, [arXiv:1804.05524 PDF](https://arxiv.org/pdf/1804.05524), Lemma 1.2 printed p.3; Lemma 2.1 p.5; Corollary 2.3 p.7; Theorem 3.1 and Corollary 3.2 p.8. [Author publication list](https://homepages.cwi.nl/~monique/) identifies MOR 45(1):86–98 (2020). | A normalized SOS density minimizing a linear coordinate has value equal to the smallest orthogonal-polynomial zero. Fixed Jacobi weights give endpoint distance Θ(d⁻²). This is a direct antecedent for the first-moment spectral calculation, not a hierarchy-price theorem. |
+| P9-2 | L. Slot and M. Laurent, *Improved convergence analysis of Lasserre's measure-based upper bounds for polynomial minimization on compact sets*, [arXiv:1905.08142 PDF](https://arxiv.org/pdf/1905.08142), §4.1 Definition 5 and Theorem 12 printed pp.18–19; Lemmas 12–13 and Corollary 4 p.19. | Explicit interior and endpoint squared-Chebyshev needles; endpoint tails decay as exp(−c r√h), interior tails as exp(−c rh). The paper attributes the constructions to Kroó and related work. This is a stronger explicit antecedent for Phase 8's endpoint polynomial than a general endpoint survey alone. Constants and polynomial arguments differ, so the project still proves its own normalization and kernel-cost estimates. |
+| P9-3 | L. Slot and M. Laurent, *Near-optimal analysis of Lasserre's univariate measure-based bounds for multivariate polynomial optimization*, [arXiv:2001.11289 PDF](https://arxiv.org/pdf/2001.11289), Introduction, §2 Lemma 1 at PDF p.8, and concluding discussion at PDF p.17. Published-title variation on the author page: *Near-optimal analysis of univariate moment bounds for polynomial optimization*, Mathematical Programming 188:443–460 (2021). | Uses endpoint needles, normalization, and degree-dependent windows to obtain O(log²r/r²) convergence under specified support geometry, with an Ω(r⁻²) obstruction. This is a related density-approximation gap, not the same optimization as incompatible partitions. It does not certify optimality of the project's squared logarithm. |
+| P9-4 | J. B. Lasserre, *Connecting optimization with spectral analysis of tri-diagonal matrices*, [arXiv:1907.09784 PDF](https://arxiv.org/pdf/1907.09784), Theorem 2.3 printed p.8; Proposition 2.5 and Corollary 2.6 pp.10–11; discussion p.12. | Gives the generalized-eigenvalue / smallest-root formulation for pushforward measures, and explicitly credits earlier orthogonal-polynomial formulations. It supplies no new tail-leakage estimate for the endpoint hierarchy obstruction. |
+| P9-5 | NIST DLMF, [§3.5(v), Eqs.3.5.18–3.5.21](https://dlmf.nist.gov/3.5#v), with [§18.16 on zeros](https://dlmf.nist.gov/18.16). | Positive Gaussian weights, polynomial exactness, Legendre/Jacobi nodes. These are classical ingredients. `exact_polynomial_asymmetry.tex` gives a complete positive-quadrature proof of the even and odd first-moment formulas rather than relying on a conjectured Markov–Lukács extension. |
+
+The exact source wording was not copied into the deliverables. No source here asserts the project's four-state weighted price or its all-capacity degree envelope.
+
+## Mathematical routing
+
+The sharp first-moment problem has a classical exact solution. For degree 2m, its value is the smallest shifted Legendre zero of order m+1. For degree 2m+1, it is the smallest shifted Jacobi (1,0) zero of order m+1. Positive Gauss and right-Radau rules prove the formulas for **all** nonnegative polynomials on the interval. The resulting optimal oriented Bregman asymmetry is `(1−λ_r)/λ_r = Θ((r+1)²)`. The companion TeX note gives the proof and explicit extremizers; this is presented as a classical consequence, not a novelty claim.
+
+This classical first-moment calculation does not itself improve a hierarchy order. The separate new four-state proof in `research/degree_gap/weighted_four_state_upper.tex` subsequently closes the arbitrary-weight four-state order; the general-source two-capacity and all-capacity orders remain unresolved. At an endpoint window of width d≈r⁻², a first-moment bound gives only constant-size tail control by Markov's elementary probability inequality. The weighted construction needs much smaller leakage. A tail extremal problem or a direct hierarchy argument remains necessary.
+
+The harmonic polynomial `g_n(t)=(Σ_{j=0}^{n−1}(1−t)^j)²` has a logarithmically growing h-coordinate ratio. The complete comparison-method argument is in the accompanying adversarial proof. This pointwise example alone supplies no all-capacity hierarchy lower bound.
+
+## Actual search and access record
+
+1. Read Phase 8's source ledger and search log, then the current weighted and all-capacity proof sections. Read Phase 6 theory, Phase 7 memory, and Phase 8 experimental interface for the separate bridge.
+2. General web queries for nonnegative polynomial weighted integrals, Jacobi endpoint moments, polynomial Bregman asymmetry, and Lasserre orthogonal-polynomial bounds returned largely irrelevant single-word results. These searches supply no negative evidence.
+3. Directly opened Monique Laurent's author publication page, followed its primary arXiv links, and inspected P9-1 through P9-4. This was the productive retrieval route.
+4. Opened DLMF quadrature and zeros sections; verified positive Gaussian weights and exactness. The odd-degree right-Radau construction is proved directly in the companion note.
+5. Bounded arXiv title/abstract queries included `Lasserre orthogonal polynomials`, `polynomial concentration endpoint`, `nonnegative polynomials integral inequality`, `Bregman approximate symmetry polynomial`, `hierarchical Bregman approximation`, and `hierarchical clustering price`. No source found through those broader queries was imported as a matching hierarchy theorem. Search absence does not establish nonexistence or novelty.
+6. Tried a REAL repository search for Kroó's 2015 *Multivariate needle polynomials with application to norming sets and cubature formulas*. The repository search endpoint was inaccessible. The original 2015 paper and Kroó–Swetits 1992 paper were **not** read; their attribution is reported through the inspected P9-2 and P9-3 reference chains. No claim of first-hand access to those originals is made.
+7. Did not repeat the older Lin access attempts. The Phase 8 original-Lin access limitation remains unchanged. This pass does not claim to have inspected its original proof.
+
+No packages were installed, no training was run, no authors were contacted, and no existing project files were modified. Novelty remains unverified.
+
+## Internal checks
+
+The technical proof checks concern odd-degree division, right-Radau exactness, positivity via squared cardinal polynomials, Jacobi parameter orientation, both extremizers, and the Bregman orientation formulas. These are project technical checks, not external peer review.
+
+`check_exact_asymmetry.py` independently integrates the displayed extremizers with a higher-order Gauss–Legendre rule for degrees 0–33. All 34 checks passed; the largest relative discrepancy from the predicted shifted Jacobi zero was approximately 5.44×10⁻¹⁴. `exact_asymmetry_check.json` records the full rows, environment, and source hashes. Agreement is floating-point evidence, not an interval certificate or a replacement for the proof.

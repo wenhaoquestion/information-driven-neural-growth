@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "tiny_shape": [
+    33,
+    4
+  ],
+  "independent_fixture_seed": 703193,
+  "trajectory_combinations": 16,
+  "repeated_reverse_order": 16,
+  "future_tamper_methods": 4,
+  "exact_quadrature_risk_max_error": 8.881784197001252e-16,
+  "run_one_barrier_calls": [
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "train",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate",
+    "evaluate"
+  ],
+  "code_hashes_before": {
+    "frontier.py": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0",
+    "phase5_reference.py": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720"
+  },
+  "code_hashes_after": {
+    "frontier.py": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0",
+    "phase5_reference.py": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720"
+  },
+  "source_unchanged_during_check": true,
+  "verified": [
+    "budget caps",
+    "cost sums",
+    "full-batch tail carry",
+    "label ledgers",
+    "historical moment and selected eigenvector",
+    "future-data isolation",
+    "named RNG order invariance",
+    "replay and proposal stream pairing",
+    "local/global actual behavior",
+    "exact risk including intercept",
+    "per-seed evaluation barrier",
+    "output no-overwrite",
+    "resume config identity"
+  ]
+}

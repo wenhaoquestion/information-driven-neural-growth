@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "d": 12,
+  "arrivals": 7,
+  "block": 1024,
+  "batch": 128,
+  "lr": 0.015,
+  "gradient_clip": 20.0,
+  "budgets": [
+    3200000,
+    5000000,
+    6400000,
+    8000000,
+    10000000
+  ],
+  "methods": [
+    "historical_moment",
+    "random_growth128",
+    "random_growth138",
+    "fixed7"
+  ],
+  "age_modes": [
+    "global"
+  ],
+  "tasks": [
+    "indefinite_noisy"
+  ],
+  "historical_capacity": 128,
+  "replay_capacity": 138,
+  "randomize_order": true,
+  "hard_wall_seconds": 240,
+  "seeds": [
+    96010000,
+    96010001,
+    96010002,
+    96010003,
+    96010004,
+    96010005,
+    96010006,
+    96010007,
+    96010008,
+    96010009,
+    96010010,
+    96010011,
+    96010012,
+    96010013,
+    96010014,
+    96010015
+  ]
+}

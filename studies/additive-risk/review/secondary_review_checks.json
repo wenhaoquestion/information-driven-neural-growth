@@ -1,0 +1,125 @@
+{
+  "exact_interval_checks": [
+    {
+      "candidate": "interior_v1_n2048",
+      "independent_tighter_interval_contained": true,
+      "threshold_passes_exactly": true
+    },
+    {
+      "candidate": "interior_v1_n4096",
+      "independent_tighter_interval_contained": true,
+      "threshold_passes_exactly": true
+    },
+    {
+      "candidate": "interior_v1_n8192",
+      "independent_tighter_interval_contained": true,
+      "threshold_passes_exactly": true
+    },
+    {
+      "candidate": "endpoint_n128",
+      "independent_tighter_interval_contained": true,
+      "threshold_fails_exactly": true
+    },
+    {
+      "candidate": "endpoint_n256",
+      "independent_tighter_interval_contained": true,
+      "threshold_fails_exactly": true
+    },
+    {
+      "candidate": "endpoint_n512",
+      "independent_tighter_interval_contained": true,
+      "threshold_fails_exactly": true
+    },
+    {
+      "candidate": "endpoint_n1024",
+      "independent_tighter_interval_contained": true,
+      "threshold_fails_exactly": true
+    },
+    {
+      "candidate": "endpoint_n2048",
+      "independent_tighter_interval_contained": true,
+      "threshold_fails_exactly": true
+    },
+    {
+      "candidate": "endpoint_n4096",
+      "independent_tighter_interval_contained": true,
+      "threshold_fails_exactly": true
+    },
+    {
+      "candidate": "endpoint_n8192",
+      "independent_tighter_interval_contained": true,
+      "threshold_fails_exactly": true
+    }
+  ],
+  "enumeration_checks": [
+    {
+      "candidate": "interior_v1_n2048",
+      "all15_and39_match": true,
+      "exact18_same_additive_minimum": true,
+      "floating_delta_inside_exact_certificate": true,
+      "float_minus_certificate_midpoint": -3.827772953152882e-18
+    },
+    {
+      "candidate": "interior_v1_n4096",
+      "all15_and39_match": true,
+      "exact18_same_additive_minimum": true,
+      "floating_delta_inside_exact_certificate": true,
+      "float_minus_certificate_midpoint": 2.0099259144527992e-19
+    },
+    {
+      "candidate": "interior_v1_n8192",
+      "all15_and39_match": true,
+      "exact18_same_additive_minimum": true,
+      "floating_delta_inside_exact_certificate": false,
+      "float_minus_certificate_midpoint": -4.020254680671754e-18
+    },
+    {
+      "candidate": "endpoint_n128",
+      "all15_and39_match": true,
+      "exact18_same_additive_minimum": true
+    },
+    {
+      "candidate": "endpoint_n256",
+      "all15_and39_match": true,
+      "exact18_same_additive_minimum": true
+    },
+    {
+      "candidate": "endpoint_n512",
+      "all15_and39_match": true,
+      "exact18_same_additive_minimum": true
+    },
+    {
+      "candidate": "endpoint_n1024",
+      "all15_and39_match": true,
+      "exact18_same_additive_minimum": true
+    },
+    {
+      "candidate": "endpoint_n2048",
+      "all15_and39_match": true,
+      "exact18_same_additive_minimum": true
+    },
+    {
+      "candidate": "endpoint_n4096",
+      "all15_and39_match": true,
+      "exact18_same_additive_minimum": true
+    },
+    {
+      "candidate": "endpoint_n8192",
+      "all15_and39_match": true,
+      "exact18_same_additive_minimum": true
+    }
+  ],
+  "first_pass_freeze_hash_verified": true,
+  "inputs_sha256": {
+    "PROTOCOL.json": "5aa63316adfbe992577bdac4c0aca428b452bb470b76a801c5a0b795ba00175b",
+    "theory/FIRST_PASS_THEORY.md": "c1ddb8fda2669dfa3af1c773460e5cbc97233f49d7feb8b6bb66ab74e654b72e",
+    "theory/certify_bounds.py": "edefc59345cdcdb0e3faf8c1aa183457ee2059dc914791f78d74fbbdc8f204ff",
+    "theory/rational_certificates.json": "20be4f8ab173557f4bb368f5ebd39b9a1ddb4094d3e053bb15095a44be6978e5",
+    "computation/compute_pilot.py": "9b611f0ce2faf5c7e748d36fcf8741b7080a36702be81a05a734a924544ccebf",
+    "computation/first_pass.json": "fe08dbec16f67141251ea4f34a7c0e7b54a8a66d3854cf48007f1ec8dfc849d7",
+    "computation/first_pass_freeze.json": "acdaec1288685b9b53fd6c213235646baf2e4d5a905cf170c0b91d6580ff4f91"
+  },
+  "numerical_results_are_not_certificates": true,
+  "all_assertions_passed": true,
+  "publication_binding_notice": "Publication derivative: reviewed_hashes/inputs_sha256 bind current public files after documented publication edits. These refreshed digests establish current public-copy consistency only; they do not re-attest the historical review or its execution. Scientific values and assertions are unchanged."
+}

@@ -1,0 +1,4352 @@
+{
+  "reviewed_utc": "2026-10-07T23:00:10.278605+00:00",
+  "scope": "Independent deterministic review; existing counts and certificates only. No RNG, no old main, no integrations, no new experiment.",
+  "check_count": 827,
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "independent_complete_enumeration",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "old_enumerations_equal_independent_sets",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "protocol_frozen_bytes_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "first_pass_frozen_bytes_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/INTERIOR_2048_POWER_CERTIFICATE.json:statistics/honest_delta.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/INTERIOR_2048_POWER_CERTIFICATE.json:statistics/certify_interior2048.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/INTERIOR_2048_POWER_CERTIFICATE.json:theory/local_loss_oracle.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/confirmation/RUNTIME.json:statistics/confirm_once.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/confirmation/RUNTIME.json:statistics/CONFIRMATION_REFERENCE.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/confirmation/RUNTIME.json:statistics/infer_confirmation.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/confirmation/RUNTIME.json:statistics/honest_delta.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/confirmation/RUNTIME.json:statistics/certify_interior2048.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/confirmation/RUNTIME.json:theory/local_loss_oracle.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/confirmation/RUNTIME.json:statistics/INTERIOR_2048_POWER_CERTIFICATE.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/confirmation/INFERENCE.json:statistics/infer_confirmation.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/confirmation/INFERENCE.json:statistics/honest_delta.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_hash:statistics/confirmation/INFERENCE.json:theory/local_loss_oracle.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prevalidation_hash:confirm_once.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prevalidation_hash:infer_confirmation.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "prevalidation_hash:CONFIRMATION_REFERENCE.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "local_oracle_source_and_envelope_hashes_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "theory_script_hash_matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:candidate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:m",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:public_p",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:alpha",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:null_threshold",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:delta_95_interval",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:posterior_simultaneous_95_rectangle",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:reject_null",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:hierarchy_95_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:all_15_partition_report_error_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fixed_count_replay:visible_input_contract",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "counts_hash_matches_both_receipts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "count_budget_and_integer_constraints",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reference_extra_keys_are_rejected_before_inference",
+      "passed": true,
+      "detail": [
+        "reference_posterior",
+        "theta",
+        "true_reports",
+        "optimal_partition"
+      ]
+    },
+    {
+      "name": "rational_power_replay:certified",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rational_power_replay:inference_lower_bound_on_power_event",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rational_power_replay:power_lower_if_certified",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rational_power_replay:hierarchy_lower_bounds",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rational_power_replay:envelope",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rational_power_replay:oracle_entropy_width_assumption",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "rational_power_replay:oracle_slope_width_assumption",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "separate_envelope_exactly_matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all_local_oracle_constants_exactly_match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "local_certificate_has_all_15_distinct_nonempty_blocks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(0,)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(0,)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(1,)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(1,)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(2,)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(2,)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(3,)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(3,)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(0, 1)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(0, 1)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(0, 2)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(0, 2)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(0, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(0, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(1, 2)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(1, 2)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(1, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(1, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(2, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(2, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(0, 1, 2)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(0, 1, 2)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(0, 1, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(0, 1, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(0, 2, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(0, 2, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(1, 2, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(1, 2, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "whole_mean_interval_safe:(0, 1, 2, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stored_mean_interval_and_slope:(0, 1, 2, 3)",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "positive_series_probability_constant:1269/250",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "positive_series_probability_constant:3689/1000",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "positive_series_probability_constant:4383/1000",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "actual_bernstein_outward_brackets:250588",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "actual_bernstein_outward_brackets:250072",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "actual_bernstein_outward_brackets:249277",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "actual_bernstein_outward_brackets:250063",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "independent_60_term_log_enclosed_by_frozen_40_term_bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "interior_population_certificate:2048",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "interior_population_certificate:4096",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "interior_population_certificate:8192",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "endpoint_population_certificate:128",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "endpoint_population_certificate:256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "endpoint_population_certificate:512",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "endpoint_population_certificate:1024",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "endpoint_population_certificate:2048",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "endpoint_population_certificate:4096",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "endpoint_population_certificate:8192",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_source_hash:cross_stage_audit_work/reviews/NEXT_QUESTION_RECOMMENDATION.md",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_source_hash:phase8_research_work/research/experiments/code/hierarchy_core.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_source_hash:phase8_research_work/research/experiments/code/run_experiments.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_source_hash:phase8_research_work/manuscript/curvature_hierarchy.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_source_hash:phase8_research_work/manuscript/unequal_weights_endpoint.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_script_hash_matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_complete_enumeration:interior_v1_n2048",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n2048:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:33",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:34",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:35",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:36",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:37",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n2048:38",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_optimizer:interior_v1_n2048",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "precision_recheck_complete:interior_v1_n2048",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:A",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:C",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:D",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:AB",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:AC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:AD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:BC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:BD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:CD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:ABC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:ABD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:ACD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:BCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n2048:ABCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_complete_enumeration:interior_v1_n4096",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n4096:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:33",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:34",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:35",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:36",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:37",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n4096:38",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_optimizer:interior_v1_n4096",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "precision_recheck_complete:interior_v1_n4096",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:A",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:C",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:D",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:AB",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:AC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:AD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:BC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:BD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:CD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:ABC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:ABD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:ACD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:BCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n4096:ABCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_complete_enumeration:interior_v1_n8192",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:interior_v1_n8192:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:33",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:34",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:35",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:36",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:37",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:interior_v1_n8192:38",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_optimizer:interior_v1_n8192",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "precision_recheck_complete:interior_v1_n8192",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:A",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:C",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:D",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:AB",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:AC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:AD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:BC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:BD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:CD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:ABC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:ABD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:ACD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:BCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:interior_v1_n8192:ABCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_complete_enumeration:endpoint_n128",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n128:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:33",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:34",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:35",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:36",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:37",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n128:38",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_optimizer:endpoint_n128",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "precision_recheck_complete:endpoint_n128",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:A",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:C",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:D",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:AB",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:AC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:AD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:BC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:BD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:CD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:ABC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:ABD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:ACD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:BCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n128:ABCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_complete_enumeration:endpoint_n256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n256:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:33",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:34",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:35",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:36",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:37",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n256:38",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_optimizer:endpoint_n256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "precision_recheck_complete:endpoint_n256",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:A",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:C",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:D",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:AB",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:AC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:AD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:BC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:BD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:CD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:ABC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:ABD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:ACD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:BCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n256:ABCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_complete_enumeration:endpoint_n512",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n512:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:33",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:34",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:35",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:36",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:37",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n512:38",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_optimizer:endpoint_n512",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "precision_recheck_complete:endpoint_n512",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:A",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:C",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:D",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:AB",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:AC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:AD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:BC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:BD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:CD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:ABC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:ABD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:ACD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:BCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n512:ABCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_complete_enumeration:endpoint_n1024",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n1024:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:33",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:34",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:35",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:36",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:37",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n1024:38",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_optimizer:endpoint_n1024",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "precision_recheck_complete:endpoint_n1024",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:A",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:C",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:D",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:AB",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:AC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:AD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:BC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:BD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:CD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:ABC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:ABD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:ACD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:BCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n1024:ABCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_complete_enumeration:endpoint_n2048",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n2048:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:33",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:34",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:35",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:36",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:37",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n2048:38",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_optimizer:endpoint_n2048",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "precision_recheck_complete:endpoint_n2048",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:A",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:C",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:D",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:AB",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:AC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:AD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:BC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:BD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:CD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:ABC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:ABD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:ACD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:BCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n2048:ABCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_complete_enumeration:endpoint_n4096",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n4096:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:33",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:34",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:35",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:36",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:37",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n4096:38",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_optimizer:endpoint_n4096",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "precision_recheck_complete:endpoint_n4096",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:A",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:C",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:D",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:AB",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:AC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:AD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:BC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:BD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:CD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:ABC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:ABD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:ACD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:BCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n4096:ABCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_complete_enumeration:endpoint_n8192",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_partition_sum:endpoint_n8192:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:0",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:6",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:7",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:8",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:9",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:10",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:11",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:12",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:13",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:14",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:15",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:16",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:17",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:18",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:19",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:20",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:21",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:22",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:23",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:24",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:25",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:26",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:27",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:28",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:29",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:30",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:31",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:32",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:33",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:34",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:35",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:36",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:37",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_hierarchy_arithmetic:endpoint_n8192:38",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_optimizer:endpoint_n8192",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "precision_recheck_complete:endpoint_n8192",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:A",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:C",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:D",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:AB",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:AC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:AD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:BC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:BD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:CD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:ABC",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:ABD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:ACD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:BCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_cell_sum:endpoint_n8192:ABCD",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "numeric_ten_candidate_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "recheck_runtime_max_consistent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "runner_rng_sites_only_expected",
+      "passed": true,
+      "detail": [
+        [
+          57,
+          "np.random.default_rng"
+        ],
+        [
+          58,
+          "rng.multinomial"
+        ],
+        [
+          59,
+          "rng.binomial"
+        ]
+      ]
+    },
+    {
+      "name": "lock_creation_textually_precedes_rng",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "no_rng_modules_loaded_in_this_check",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all_frozen_review_inputs_unchanged",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "inputs": {
+    "PROTOCOL.json": {
+      "sha256": "5aa63316adfbe992577bdac4c0aca428b452bb470b76a801c5a0b795ba00175b",
+      "bytes": 5164
+    },
+    "qa/protocol_freeze.json": {
+      "sha256": "4880a98ca470da89a6b2070b80de02d7dc8cac4f7ae98dfea3bbf363f0128a82",
+      "bytes": 100
+    },
+    "statistics/DERIVATION.md": {
+      "sha256": "cac6f4dbf95d664f119b7ff9a4eceda93072d1f79dbb98a7820db5074f93a279",
+      "bytes": 10582
+    },
+    "statistics/honest_delta.py": {
+      "sha256": "5ef373afa13c429509e80f45fe693ae87065ae10ba9727fcc2a15839fe99e9be",
+      "bytes": 16548
+    },
+    "statistics/certify_interior2048.py": {
+      "sha256": "ff33f81fb0262e6cacf0d51d78a0b3251b29ef4675198c26b471106945b442d9",
+      "bytes": 1965
+    },
+    "statistics/infer_confirmation.py": {
+      "sha256": "bf97ae09de154bba5a5f1b9696ec30610d07f405ead7296a473f03eac0066afb",
+      "bytes": 4309
+    },
+    "statistics/confirm_once.py": {
+      "sha256": "649f85362ae35cf14310074e319af6e486037dd6025a4dc63a0c2b097a98fbf7",
+      "bytes": 4481
+    },
+    "statistics/CONFIRMATION_REFERENCE.json": {
+      "sha256": "2c5317d09246222b16ae657e99a73aa2a37d25b00bce9ba2ed411e5cf6d6d661",
+      "bytes": 679
+    },
+    "statistics/INTERIOR_2048_POWER_ENVELOPE.json": {
+      "sha256": "17020cb115b2ae5fdf2967a7ac460ea1aa4eb9dc4b0e87fe8afe6216a841b529",
+      "bytes": 3856
+    },
+    "statistics/INTERIOR_2048_POWER_CERTIFICATE.json": {
+      "sha256": "11d892d7fd510a570ce557000861ad4dd2f30c12abcc3ad94c2f76ea1637cdee",
+      "bytes": 29875
+    },
+    "statistics/PRE_CONFIRMATION_VALIDATION.json": {
+      "sha256": "7949642cfb0d8df80da78166147cffb1687bb28073793db0145deb51fce8e4ef",
+      "bytes": 782
+    },
+    "theory/local_loss_oracle.py": {
+      "sha256": "5da8711422b08cd2823c09010c355fda810f49f7748bd59928c0600f36986768",
+      "bytes": 6280
+    },
+    "theory/LOCAL_GRADIENT_SUPPORT.md": {
+      "sha256": "e3053282ffc6501aaeab20e4542bd6f854fc1d8d62d50f1f2d9381279155685d",
+      "bytes": 5535
+    },
+    "theory/LOCAL_ORACLE_CERTIFICATE.json": {
+      "sha256": "f9704327b9c0aa1bb9a9cec04c0acef5f2aca0d888113c705b0844d706b5a756",
+      "bytes": 18340
+    },
+    "theory/rational_certificates.json": {
+      "sha256": "20be4f8ab173557f4bb368f5ebd39b9a1ddb4094d3e053bb15095a44be6978e5",
+      "bytes": 47050
+    },
+    "theory/FIRST_PASS_THEORY.md": {
+      "sha256": "9c36690be50bad62af9abed2943aa50ccecd7d7952cfacbc436bce701b7bfd4d",
+      "bytes": 9552
+    },
+    "statistics/confirmation_run.log": {
+      "sha256": "dd75b28ff49928186e45409e05f1d4e90e43c2fb4662e3c3dbbc864d958f5738",
+      "bytes": 293
+    },
+    "computation/first_pass_freeze.json": {
+      "sha256": "2f92965fef4820859e4ac224c525297fd1e8b334e06aab61821eee1dd6bbe66b",
+      "bytes": 209
+    },
+    "computation/first_pass.json": {
+      "sha256": "1d88e7eaddae08a09c2f42d962efa5fa5458d501cf30a13920db7c8b426035c4",
+      "bytes": 291164
+    },
+    "computation/precision_recheck.json": {
+      "sha256": "8c4622297880cd20f56036d57b87e3fdad42faa55f478c35cebacbc6b5b0f2a9",
+      "bytes": 45858
+    },
+    "computation/runtime.json": {
+      "sha256": "76239acd4ede4b79dd22899fab4d7a94d3e00dd54ab3b5e8afcd7d35569d8282",
+      "bytes": 581
+    },
+    "computation/CERTIFICATE_COMPARISON.md": {
+      "sha256": "63b3b56f1b7ef4fcf92f522db6a047292f1af0adc8c0758da8e333e241145ac5",
+      "bytes": 2093
+    },
+    "PILOT_RESULT_ZH.md": {
+      "sha256": "d13b54b3b66dad6a7789623c5b71724a6e5aa0244c7cfe06cd8e9f00946c8a5d",
+      "bytes": 16812
+    },
+    "statistics/confirmation/COMPLETED.json": {
+      "sha256": "1bf246270d102a87e58b132790df79cfdc587903512a45ea2959db24a7defcf9",
+      "bytes": 165
+    },
+    "statistics/confirmation/COUNTS_PUBLIC.json": {
+      "sha256": "57979346c6df6d9f2bbe4f9c81ce5c592572d122f640cc658a4b91b5d0901af1",
+      "bytes": 308
+    },
+    "statistics/confirmation/INFERENCE.json": {
+      "sha256": "89012fa712128d525f11ab2041216dd4062a130c05889587fd52eabd9193da2b",
+      "bytes": 63017
+    },
+    "statistics/confirmation/ONE_SHOT_STARTED.lock": {
+      "sha256": "7c2fc32baf524e756208d4e0b570883c052746832c8684abbdcfe63ae8c357ad",
+      "bytes": 91
+    },
+    "statistics/confirmation/RUNTIME.json": {
+      "sha256": "6470f77f55ab667e6edadd7f25ae3da9a78df162bd07e518d52987d25899ea5d",
+      "bytes": 1428
+    }
+  },
+  "numeric_summaries": [
+    {
+      "candidate": "interior_v1_n2048",
+      "delta": 0.003522952446726878,
+      "max_recheck_cell_relative_difference": 1.1459552806633066e-16
+    },
+    {
+      "candidate": "interior_v1_n4096",
+      "delta": 0.0019969738917764816,
+      "max_recheck_cell_relative_difference": 2.0053076671205766e-16
+    },
+    {
+      "candidate": "interior_v1_n8192",
+      "delta": 0.0010945406348229821,
+      "max_recheck_cell_relative_difference": 2.2538292668627e-16
+    },
+    {
+      "candidate": "endpoint_n128",
+      "delta": 2.2951923324683327e-05,
+      "max_recheck_cell_relative_difference": 4.7271357776682444e-15
+    },
+    {
+      "candidate": "endpoint_n256",
+      "delta": 8.317842950429891e-07,
+      "max_recheck_cell_relative_difference": 1.1003548432591764e-14
+    },
+    {
+      "candidate": "endpoint_n512",
+      "delta": 2.651638028853309e-08,
+      "max_recheck_cell_relative_difference": 5.352499445510042e-14
+    },
+    {
+      "candidate": "endpoint_n1024",
+      "delta": 7.809330963750204e-10,
+      "max_recheck_cell_relative_difference": 1.4356927139193694e-13
+    },
+    {
+      "candidate": "endpoint_n2048",
+      "delta": 2.1636564470897686e-11,
+      "max_recheck_cell_relative_difference": 3.882307385600549e-13
+    },
+    {
+      "candidate": "endpoint_n4096",
+      "delta": 5.702170964630299e-13,
+      "max_recheck_cell_relative_difference": 8.97084659839162e-14
+    },
+    {
+      "candidate": "endpoint_n8192",
+      "delta": 1.441057247244625e-14,
+      "max_recheck_cell_relative_difference": 1.435928109686009e-11
+    }
+  ],
+  "delta_95_interval": {
+    "lo": {
+      "rational": "20424291398113888430386422307182468755945602233232406601042575639745243836723759380750577256874589840705354686875269327580760386812782354899361515969659751055351/8180307499747228772852381075695663913336557312004346530971333248463804822449291990184552002321155304592391885386632568802486964453376000000000000000000000000000000",
+      "decimal": 0.0024967632816669787
+    },
+    "hi": {
+      "rational": "3006201791660263003191338107835163969736195289193438302543348219439681457878950664649212050626445748890591483041448471019802518027219730701295198512674211702971/743664318158838979350216461426878537576050664727667866451939386223982256586299271834959272938286845872035625944239324436589724041216000000000000000000000000000000",
+      "decimal": 0.004042417685311304
+    }
+  },
+  "power_output_lower": {
+    "rational": "66968604293541489299987646205202861179145636067188584378019887493255041113429437767339621039181829090288180331133260744961417639960186789712436909041260669/33064430574266321647459375994127191654724889482863639613183069639953592184558188873450990094743506672151384372084878103019520000000000000000000000000000000000",
+    "decimal": 0.002025397175466932
+  },
+  "population_report_error_upper_range": [
+    {
+      "rational": "3159855852509676970618183599970735875549809317143305905362029387524072806113414569553909637291096571831966797677651960411081802463076033351680898561379597941/8180307499747228772852381075695663913336557312004346530971333248463804822449291990184552002321155304592391885386632568802486964453376000000000000000000000000000000",
+      "decimal": 3.8627592576529874e-07
+    },
+    {
+      "rational": "3273467590215158495753279618547839927785454891328426595192660222557053958803326236763769770268597392695089564975607526309529599326622208243379387299398158957/8180307499747228772852381075695663913336557312004346530971333248463804822449291990184552002321155304592391885386632568802486964453376000000000000000000000000000000",
+      "decimal": 4.0016436916537775e-07
+    }
+  ],
+  "known_limitation": "Local receipts and source inspection establish recorded one attempt, not an absolute proof against unrecorded external seed trials. Public input contract is not process isolation or a security sandbox."
+}

@@ -1,0 +1,18 @@
+{
+  "records_checked": 153000,
+  "max_direct_squared_loss_reconstruction_error": 4.5102810375396984e-17,
+  "nested_counts_checked": 48,
+  "all_acceptance_comparisons_reconstructed": true,
+  "scope": "Every saved base record decision; all direct and R2 risk estimates independently reconstructed from squared losses and raw counts; not empirical coverage proof.",
+  "files": {
+    "retention_counts.npz": "d85ca50ac7a8458b00ff938a52558dd32c2ae6b8280e9ddf313be4005ee48391",
+    "retention_run.log": "bebc1da35bda4db4c83960131fa2fd5eac1e901bc9acf7c6f580950b6653e937",
+    "retention_execution.json": "e0c7e4cee6b51ee7d737911cccc8e4d861dd5c3975d44dad8fddc320dda2f678",
+    "retention_supplement_raw.jsonl": "0281c1fcc3ad0f6620335774ad103a9de6e751d43998aed64a0aa9ec825665a2",
+    "retention_audit.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retention_supplement_run.log": "1b363d22b7cc77df9a593613a200c13debe6835bcbf905e0510ee54e349e2beb",
+    "retention_summary.json": "336789d6f4c9e570aa538cfdd0f210715bc12dc9b27c25d497e5f6059dda3560",
+    "retention_supplement_summary.json": "6ff393d500390c030dd6c2e865f810d47b8b70c2e0da743a90b239843a9c82ed",
+    "retention_raw.jsonl": "a04a04b49e9410a3b7812ebb21ce2aecb6f56405c44866864bc6c040b5ce2472"
+  }
+}

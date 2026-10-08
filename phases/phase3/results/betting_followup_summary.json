@@ -1,0 +1,644 @@
+{
+  "evidence_type": "fresh-seed follow-up; paired independent runs; pointwise t intervals, no familywise comparative-performance claim",
+  "rows": [
+    {
+      "task": "null",
+      "method": "residual",
+      "seeds": [
+        63000,
+        63001,
+        63002,
+        63003,
+        63004,
+        63005,
+        63006,
+        63007,
+        63008,
+        63009,
+        63010,
+        63011,
+        63012,
+        63013,
+        63014,
+        63015
+      ],
+      "bet_final_risk": 0.2531162697961445,
+      "eb_final_risk": 0.2531162697961445,
+      "final_risk_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_final_width": 2.0,
+      "eb_final_width": 2.0,
+      "final_width_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_tail_risk": 0.2548271444684378,
+      "eb_tail_risk": 0.2548271444684378,
+      "tail_risk_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_training_parameter_examples": 103301120.0,
+      "eb_training_parameter_examples": 103301120.0,
+      "training_parameter_examples_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "training_cost_ratio_mean": 1.0,
+      "bet_fixed_matched_risk": 0.25562586254151254,
+      "bet_fixed_pool_large_risk": 0.2509157565506791,
+      "bet_fixed_matched_paired": {
+        "mean": -0.002509592745368102,
+        "lower": -0.003414407742545721,
+        "upper": -0.001604777748190483,
+        "n": 16
+      },
+      "bet_actions": {
+        "hold": 128,
+        "continue": 0,
+        "grow": 0
+      },
+      "eb_actions": {
+        "hold": 128,
+        "continue": 0,
+        "grow": 0
+      },
+      "bet_betting_factor_evaluations_per_run": 491520,
+      "audit_labels_per_run": 32768,
+      "bet_evaluator_risk_increase_events": 0
+    },
+    {
+      "task": "null",
+      "method": "random",
+      "seeds": [
+        63000,
+        63001,
+        63002,
+        63003,
+        63004,
+        63005,
+        63006,
+        63007,
+        63008,
+        63009,
+        63010,
+        63011,
+        63012,
+        63013,
+        63014,
+        63015
+      ],
+      "bet_final_risk": 0.2531162697961445,
+      "eb_final_risk": 0.2531162697961445,
+      "final_risk_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_final_width": 2.0,
+      "eb_final_width": 2.0,
+      "final_width_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_tail_risk": 0.2548271444684378,
+      "eb_tail_risk": 0.2548271444684378,
+      "tail_risk_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_training_parameter_examples": 75776000.0,
+      "eb_training_parameter_examples": 75776000.0,
+      "training_parameter_examples_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "training_cost_ratio_mean": 1.0,
+      "bet_fixed_matched_risk": 0.255462992979983,
+      "bet_fixed_pool_large_risk": 0.2509157565506791,
+      "bet_fixed_matched_paired": {
+        "mean": -0.0023467231838385783,
+        "lower": -0.0032459322864824233,
+        "upper": -0.0014475140811947332,
+        "n": 16
+      },
+      "bet_actions": {
+        "hold": 128,
+        "continue": 0,
+        "grow": 0
+      },
+      "eb_actions": {
+        "hold": 128,
+        "continue": 0,
+        "grow": 0
+      },
+      "bet_betting_factor_evaluations_per_run": 491520,
+      "audit_labels_per_run": 32768,
+      "bet_evaluator_risk_increase_events": 0
+    },
+    {
+      "task": "linear",
+      "method": "residual",
+      "seeds": [
+        63000,
+        63001,
+        63002,
+        63003,
+        63004,
+        63005,
+        63006,
+        63007,
+        63008,
+        63009,
+        63010,
+        63011,
+        63012,
+        63013,
+        63014,
+        63015
+      ],
+      "bet_final_risk": 0.17209558557349164,
+      "eb_final_risk": 0.17209558557349164,
+      "final_risk_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_final_width": 2.0,
+      "eb_final_width": 2.0,
+      "final_width_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_tail_risk": 0.17250506593402132,
+      "eb_tail_risk": 0.17250506593402132,
+      "tail_risk_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_training_parameter_examples": 103301120.0,
+      "eb_training_parameter_examples": 103301120.0,
+      "training_parameter_examples_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "training_cost_ratio_mean": 1.0,
+      "bet_fixed_matched_risk": 0.1726021161790689,
+      "bet_fixed_pool_large_risk": 0.17109904628419503,
+      "bet_fixed_matched_paired": {
+        "mean": -0.0005065306055772618,
+        "lower": -0.0009047701783911309,
+        "upper": -0.00010829103276339264,
+        "n": 16
+      },
+      "bet_actions": {
+        "hold": 128,
+        "continue": 0,
+        "grow": 0
+      },
+      "eb_actions": {
+        "hold": 128,
+        "continue": 0,
+        "grow": 0
+      },
+      "bet_betting_factor_evaluations_per_run": 491520,
+      "audit_labels_per_run": 32768,
+      "bet_evaluator_risk_increase_events": 0
+    },
+    {
+      "task": "linear",
+      "method": "random",
+      "seeds": [
+        63000,
+        63001,
+        63002,
+        63003,
+        63004,
+        63005,
+        63006,
+        63007,
+        63008,
+        63009,
+        63010,
+        63011,
+        63012,
+        63013,
+        63014,
+        63015
+      ],
+      "bet_final_risk": 0.17209558557349164,
+      "eb_final_risk": 0.17209558557349164,
+      "final_risk_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_final_width": 2.0,
+      "eb_final_width": 2.0,
+      "final_width_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_tail_risk": 0.17250506593402132,
+      "eb_tail_risk": 0.17250506593402132,
+      "tail_risk_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "bet_training_parameter_examples": 75776000.0,
+      "eb_training_parameter_examples": 75776000.0,
+      "training_parameter_examples_paired_bet_minus_eb": {
+        "mean": 0.0,
+        "lower": 0.0,
+        "upper": 0.0,
+        "n": 16
+      },
+      "training_cost_ratio_mean": 1.0,
+      "bet_fixed_matched_risk": 0.17252320654027742,
+      "bet_fixed_pool_large_risk": 0.17109904628419503,
+      "bet_fixed_matched_paired": {
+        "mean": -0.0004276209667858008,
+        "lower": -0.0008195976065464954,
+        "upper": -3.5644327025106254e-05,
+        "n": 16
+      },
+      "bet_actions": {
+        "hold": 128,
+        "continue": 0,
+        "grow": 0
+      },
+      "eb_actions": {
+        "hold": 128,
+        "continue": 0,
+        "grow": 0
+      },
+      "bet_betting_factor_evaluations_per_run": 491520,
+      "audit_labels_per_run": 32768,
+      "bet_evaluator_risk_increase_events": 0
+    },
+    {
+      "task": "additive",
+      "method": "residual",
+      "seeds": [
+        63000,
+        63001,
+        63002,
+        63003,
+        63004,
+        63005,
+        63006,
+        63007,
+        63008,
+        63009,
+        63010,
+        63011,
+        63012,
+        63013,
+        63014,
+        63015
+      ],
+      "bet_final_risk": 0.1383641585653118,
+      "eb_final_risk": 0.1469756848351133,
+      "final_risk_paired_bet_minus_eb": {
+        "mean": -0.008611526269801502,
+        "lower": -0.010782278282841347,
+        "upper": -0.006440774256761658,
+        "n": 16
+      },
+      "bet_final_width": 3.4375,
+      "eb_final_width": 2.0,
+      "final_width_paired_bet_minus_eb": {
+        "mean": 1.4375,
+        "lower": 1.0498754232545222,
+        "upper": 1.8251245767454778,
+        "n": 16
+      },
+      "bet_tail_risk": 0.1388135282869885,
+      "eb_tail_risk": 0.14691425490153773,
+      "tail_risk_paired_bet_minus_eb": {
+        "mean": -0.008100726614549207,
+        "lower": -0.01035168196913439,
+        "upper": -0.005849771259964024,
+        "n": 16
+      },
+      "bet_training_parameter_examples": 124600320.0,
+      "eb_training_parameter_examples": 103301120.0,
+      "training_parameter_examples_paired_bet_minus_eb": {
+        "mean": 21299200.0,
+        "lower": 14521636.575319909,
+        "upper": 28076763.42468009,
+        "n": 16
+      },
+      "training_cost_ratio_mean": 1.2061855670103094,
+      "bet_fixed_matched_risk": 0.1393993802865774,
+      "bet_fixed_pool_large_risk": 0.13202969595771824,
+      "bet_fixed_matched_paired": {
+        "mean": -0.0010352217212656056,
+        "lower": -0.0025979345163412246,
+        "upper": 0.0005274910738100134,
+        "n": 16
+      },
+      "bet_actions": {
+        "hold": 105,
+        "continue": 0,
+        "grow": 23
+      },
+      "eb_actions": {
+        "hold": 128,
+        "continue": 0,
+        "grow": 0
+      },
+      "bet_betting_factor_evaluations_per_run": 491520,
+      "audit_labels_per_run": 32768,
+      "bet_evaluator_risk_increase_events": 0
+    },
+    {
+      "task": "additive",
+      "method": "random",
+      "seeds": [
+        63000,
+        63001,
+        63002,
+        63003,
+        63004,
+        63005,
+        63006,
+        63007,
+        63008,
+        63009,
+        63010,
+        63011,
+        63012,
+        63013,
+        63014,
+        63015
+      ],
+      "bet_final_risk": 0.139153512699528,
+      "eb_final_risk": 0.1469756848351133,
+      "final_risk_paired_bet_minus_eb": {
+        "mean": -0.007822172135585302,
+        "lower": -0.010684529134973768,
+        "upper": -0.004959815136196836,
+        "n": 16
+      },
+      "bet_final_width": 3.25,
+      "eb_final_width": 2.0,
+      "final_width_paired_bet_minus_eb": {
+        "mean": 1.25,
+        "lower": 0.793683914293243,
+        "upper": 1.706316085706757,
+        "n": 16
+      },
+      "bet_tail_risk": 0.13980842877044747,
+      "eb_tail_risk": 0.14691425490153773,
+      "tail_risk_paired_bet_minus_eb": {
+        "mean": -0.007105826131090244,
+        "lower": -0.00979183795087966,
+        "upper": -0.004419814311300828,
+        "n": 16
+      },
+      "bet_training_parameter_examples": 96665600.0,
+      "eb_training_parameter_examples": 75776000.0,
+      "training_parameter_examples_paired_bet_minus_eb": {
+        "mean": 20889600.0,
+        "lower": 12057915.113515053,
+        "upper": 29721284.886484947,
+        "n": 16
+      },
+      "training_cost_ratio_mean": 1.2756756756756755,
+      "bet_fixed_matched_risk": 0.14108971596183364,
+      "bet_fixed_pool_large_risk": 0.13202969595771824,
+      "bet_fixed_matched_paired": {
+        "mean": -0.0019362032623056677,
+        "lower": -0.0035255499850855307,
+        "upper": -0.00034685653952580466,
+        "n": 16
+      },
+      "bet_actions": {
+        "hold": 108,
+        "continue": 0,
+        "grow": 20
+      },
+      "eb_actions": {
+        "hold": 128,
+        "continue": 0,
+        "grow": 0
+      },
+      "bet_betting_factor_evaluations_per_run": 491520,
+      "audit_labels_per_run": 32768,
+      "bet_evaluator_risk_increase_events": 0
+    },
+    {
+      "task": "interaction",
+      "method": "residual",
+      "seeds": [
+        63000,
+        63001,
+        63002,
+        63003,
+        63004,
+        63005,
+        63006,
+        63007,
+        63008,
+        63009,
+        63010,
+        63011,
+        63012,
+        63013,
+        63014,
+        63015
+      ],
+      "bet_final_risk": 0.15208770335911193,
+      "eb_final_risk": 0.17557756186625867,
+      "final_risk_paired_bet_minus_eb": {
+        "mean": -0.023489858507146785,
+        "lower": -0.026279597166421913,
+        "upper": -0.020700119847871658,
+        "n": 16
+      },
+      "bet_final_width": 5.3125,
+      "eb_final_width": 3.0,
+      "final_width_paired_bet_minus_eb": {
+        "mean": 2.3125,
+        "lower": 1.9372826384576471,
+        "upper": 2.6877173615423526,
+        "n": 16
+      },
+      "bet_tail_risk": 0.14994708489598713,
+      "eb_tail_risk": 0.1649098974785056,
+      "tail_risk_paired_bet_minus_eb": {
+        "mean": -0.014962812582518487,
+        "lower": -0.016915199035688024,
+        "upper": -0.01301042612934895,
+        "n": 16
+      },
+      "bet_training_parameter_examples": 154501120.0,
+      "eb_training_parameter_examples": 126238720.0,
+      "training_parameter_examples_paired_bet_minus_eb": {
+        "mean": 28262400.0,
+        "lower": 21399159.110440217,
+        "upper": 35125640.88955978,
+        "n": 16
+      },
+      "training_cost_ratio_mean": 1.2238805970149254,
+      "bet_fixed_matched_risk": 0.15125622909572473,
+      "bet_fixed_pool_large_risk": 0.1407883898730305,
+      "bet_fixed_matched_paired": {
+        "mean": 0.0008314742633871719,
+        "lower": -0.0016165556296776481,
+        "upper": 0.003279504156451992,
+        "n": 16
+      },
+      "bet_actions": {
+        "hold": 58,
+        "continue": 17,
+        "grow": 53
+      },
+      "eb_actions": {
+        "hold": 112,
+        "continue": 0,
+        "grow": 16
+      },
+      "bet_betting_factor_evaluations_per_run": 491520,
+      "audit_labels_per_run": 32768,
+      "bet_evaluator_risk_increase_events": 0
+    },
+    {
+      "task": "interaction",
+      "method": "random",
+      "seeds": [
+        63000,
+        63001,
+        63002,
+        63003,
+        63004,
+        63005,
+        63006,
+        63007,
+        63008,
+        63009,
+        63010,
+        63011,
+        63012,
+        63013,
+        63014,
+        63015
+      ],
+      "bet_final_risk": 0.14954600929123857,
+      "eb_final_risk": 0.1735723414335425,
+      "final_risk_paired_bet_minus_eb": {
+        "mean": -0.02402633214230393,
+        "lower": -0.026285011110666636,
+        "upper": -0.021767653173941224,
+        "n": 16
+      },
+      "bet_final_width": 5.5625,
+      "eb_final_width": 3.0,
+      "final_width_paired_bet_minus_eb": {
+        "mean": 2.5625,
+        "lower": 2.227248100497721,
+        "upper": 2.897751899502279,
+        "n": 16
+      },
+      "bet_tail_risk": 0.14894190150657866,
+      "eb_tail_risk": 0.16455294695178774,
+      "tail_risk_paired_bet_minus_eb": {
+        "mean": -0.015611045445209066,
+        "lower": -0.01724600410440809,
+        "upper": -0.013976086786010044,
+        "n": 16
+      },
+      "bet_training_parameter_examples": 128409600.0,
+      "eb_training_parameter_examples": 97075200.0,
+      "training_parameter_examples_paired_bet_minus_eb": {
+        "mean": 31334400.0,
+        "lower": 24618028.413788006,
+        "upper": 38050771.586211994,
+        "n": 16
+      },
+      "training_cost_ratio_mean": 1.3209876658061002,
+      "bet_fixed_matched_risk": 0.15148992442545767,
+      "bet_fixed_pool_large_risk": 0.1407883898730305,
+      "bet_fixed_matched_paired": {
+        "mean": -0.001943915134219102,
+        "lower": -0.004640820727660799,
+        "upper": 0.0007529904592225951,
+        "n": 16
+      },
+      "bet_actions": {
+        "hold": 62,
+        "continue": 9,
+        "grow": 57
+      },
+      "eb_actions": {
+        "hold": 112,
+        "continue": 0,
+        "grow": 16
+      },
+      "bet_betting_factor_evaluations_per_run": 491520,
+      "audit_labels_per_run": 32768,
+      "bet_evaluator_risk_increase_events": 0
+    }
+  ],
+  "bet_wall_seconds": 298.8638237499981,
+  "eb_wall_seconds": 281.6690424999979,
+  "betting_residual_minus_random_final_risk": {
+    "null": {
+      "mean": 0.0,
+      "lower": 0.0,
+      "upper": 0.0,
+      "n": 16
+    },
+    "linear": {
+      "mean": 0.0,
+      "lower": 0.0,
+      "upper": 0.0,
+      "n": 16
+    },
+    "additive": {
+      "mean": -0.0007893541342161997,
+      "lower": -0.0032840026276945615,
+      "upper": 0.0017052943592621621,
+      "n": 16
+    },
+    "interaction": {
+      "mean": 0.0025416940678733378,
+      "lower": 0.00024219094069336759,
+      "upper": 0.004841197195053308,
+      "n": 16
+    }
+  },
+  "overlapping_execution": "two processes run concurrently; aggregate runtime is not a per-method hardware comparison",
+  "code_sha256": "dbf1a676bed0ec3e982dc11c22af7ecc291db397ec6daca5c06ee9783dbfbef0",
+  "same_initial_states_verified": true
+}

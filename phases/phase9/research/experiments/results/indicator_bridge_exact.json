@@ -1,0 +1,46 @@
+{
+  "utc": "2026-10-07T20:55:35.393570+00:00",
+  "status": "pass",
+  "arithmetic": "exact fractions.Fraction",
+  "finite_populations": 27,
+  "population_oracle_states_checked": 108,
+  "split_transitions_checked": 81,
+  "unrestricted_one_unit_bayes_fits": 27,
+  "max_observed_oracle_split_gain": "62001/500000",
+  "birth_only_example": {
+    "points": [
+      "1/4",
+      "3/4"
+    ],
+    "weights": [
+      "1/2",
+      "1/2"
+    ],
+    "loss": "squared loss",
+    "old_report": "1/2",
+    "excess_before": "1/16",
+    "excess_after_copied_birth": "1/16",
+    "new_flat_optimum": "0"
+  },
+  "phase6_gradient_counterexample": {
+    "excess_before": "2",
+    "parameters_before": [
+      "a=0",
+      "w=1"
+    ],
+    "learning_rate": "3/4",
+    "population_gradient": [
+      "-4",
+      "0"
+    ],
+    "parameters_after": [
+      "a=3",
+      "w=1"
+    ],
+    "excess_after": "8",
+    "optimizer_scope": "one ordinary simultaneous gradient step; not Adam, not a training benchmark"
+  },
+  "seconds": 0.06918858399876626,
+  "code_sha256": "5f776e5d41427ef936052ebd3f4376ae36e98d96373936b42ec7ad5de450b086",
+  "scope": "Known finite population posteriors, restricted indicator weights and exact oracle reports only; no empirical estimation, SGD training or generalization experiment."
+}

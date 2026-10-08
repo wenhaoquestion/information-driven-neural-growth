@@ -1,0 +1,21 @@
+{
+  "elapsed_seconds": 0.6081989579979563,
+  "peak_rss_bytes": 68894720,
+  "candidate_count": 10,
+  "partitions_per_candidate": 15,
+  "hierarchies_per_candidate": 39,
+  "first_order": 64,
+  "recheck_order": 128,
+  "single_process": true,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1"
+  },
+  "within_time_target": true,
+  "within_memory_target": true,
+  "max_recheck_cell_relative_difference": 1.435928109686009e-11
+}

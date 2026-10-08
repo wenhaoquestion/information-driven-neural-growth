@@ -1,0 +1,11 @@
+# Technical review of the last-capacity result
+
+The upper reduction uses contiguity and full use of capacity only for flat optima. Hierarchical partitions may be noncontiguous. At capacity $N-1$, a flat optimum merges a cheapest adjacent pair. At $N-2$, its deficit is either one triple or two disjoint adjacent pairs. The triple inequality $D(ABC)\ge D(AB)+D(BC)$ follows from Jensen kernels with disjoint open supports; subset monotonicity alone would not prove the sum.
+
+Exchange arguments eliminate all incompatible cases except a consecutive quartet whose coarse flat optimum is $AB|CD$ and fine flat optimum merges $BC$. The quartet retains the original masses. Its two flat denominators equal the full-source denominators, and extending its hierarchy by external singletons proves domination. A seven-state quadratic saved example has global price approximately 1.016729 and quartet price approximately 1.026795, so a sourcewise equality would be false.
+
+The lower embedding needs an explicit cost barrier. Tiny-mass padding fails: the quadratic quartet at $(0,2,3,5)$ has price $7/6$, whereas adding $-1$ with any mass $0<\varepsilon<1$ yields compatible optima and price one. The final far-anchor construction uses a global positive curvature floor, so every cell joining an anchor has cost at least one while the whole core costs less than one. Only after this barrier is established is the full source affinely mapped into valid posterior coordinates and normalized. This preserves the degree and deterministic quartet price, with an $N$-uniform threshold; stochastic lower bounds use the two-level rounding factor, not an unproved stochastic equality.
+
+Two proof variants are retained intentionally. `fixed_N_anchor_embedding.tex` has an $N$-dependent threshold and is supporting history. `uniform_N_far_anchor_embedding.tex` is the final uniform construction. The normalized absolute-risk bounds still vanish, so the ratio theorem cannot establish a nonvanishing practical risk penalty or a learning benefit.
+
+The complete exact results preserve the tiny-mass counterexample, strict domination example and 300-instance reduction check. The study's mathematical and implementation reviews were project technical checks, not external peer review or human-author approval.

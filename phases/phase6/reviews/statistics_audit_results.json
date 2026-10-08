@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "mathematical": {
+    "affine_log_budget_integral": 0.24394342831883647,
+    "independent_units": 256,
+    "comparisons_checked": 3,
+    "one_adverse_comparator_blocks_iut": true,
+    "secondary_cannot_declare_primary_success": true,
+    "nonmonotone_first_grid_target_preserved": true
+  },
+  "integrity": {
+    "rejected_corruptions": [
+      "missing_trajectory",
+      "duplicate_trajectory",
+      "nonfinite_risk",
+      "unplanned_seed",
+      "source_identity",
+      "cap_violation",
+      "risk_parameter_mismatch",
+      "indexed_result_bytes_hash",
+      "actual_manifest_config_hash",
+      "actual_raw_data_hash"
+    ],
+    "complete_fixture_trajectories": 8
+  },
+  "analysis_sha256": "1077efa84dc86e7b89ee2a4425578b874f1b9f45c73e12841383ceb3ae010157",
+  "runner_hashes": {
+    "frontier.py": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0",
+    "phase5_reference.py": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720"
+  }
+}

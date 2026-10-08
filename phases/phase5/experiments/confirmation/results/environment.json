@@ -1,0 +1,20 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "command": [
+    "phase5/code/quadratic_experiment.py",
+    "--config",
+    "phase5/experiments/confirmation.json",
+    "--output-dir",
+    "phase5/experiments/confirmation/results",
+    "--workers",
+    "2"
+  ],
+  "code_sha256": "0ea28d3a245c51534968e6b2d26ae7bd9ce3790693a86ae3bbff01852435c4e2",
+  "config_sha256": "78a80b244c52bc32219135169cb02e024baddf346f6ca3ad8935fcbb1856f58b",
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

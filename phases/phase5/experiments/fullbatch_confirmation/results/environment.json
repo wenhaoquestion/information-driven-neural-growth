@@ -1,0 +1,20 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "command": [
+    "phase5/code/quadratic_fullbatch.py",
+    "--config",
+    "phase5/experiments/fullbatch_confirmation.json",
+    "--output-dir",
+    "phase5/experiments/fullbatch_confirmation/results",
+    "--workers",
+    "2"
+  ],
+  "code_sha256": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720",
+  "config_sha256": "92918c6aa248a892915163b8d150402c391ddbe8a988839773d5bcd1be94f501",
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

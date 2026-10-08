@@ -1,0 +1,19 @@
+{
+  "format": 1,
+  "kind": "exact-byte historical scientific evidence; no new run",
+  "files": [
+    {
+      "archive": "evidence/learning_curvature_bridge64.json.gz",
+      "target": "results/learning_curvature_bridge64.json",
+      "archive_sha256": "37d89de30b420b0733a8e95393981d787d7add7f28e351c55395d94319b02582",
+      "uncompressed_sha256": "36b86f5f00626da4e00dee272e41ac42b96f7a076ee33aedb9800a02f29905c0",
+      "uncompressed_bytes": 16774077,
+      "purpose": "Complete historical fitted parameters, event decisions, gate statistics, controls and seeds for reported tables",
+      "dependent_scripts": [
+        "code/learning_summarize.py",
+        "code/verify_saved.py",
+        "code/audit_learning.py (optional historical replay audit; uses RNG/training)"
+      ]
+    }
+  ]
+}

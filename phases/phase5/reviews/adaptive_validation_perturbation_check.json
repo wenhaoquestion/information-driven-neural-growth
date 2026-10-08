@@ -1,0 +1,50 @@
+{
+  "checks": 65003,
+  "errors": [],
+  "task": "indefinite_noisy",
+  "seed": 840000,
+  "changed_label_indices": [
+    1792,
+    2048
+  ],
+  "new_labels": "10*Normal(seed4371)",
+  "prefix_events_run": 2,
+  "results": [
+    {
+      "method": "fresh_adaptive",
+      "branch_parameters_proposal_optimizer_identical": true,
+      "validation_stats_changed": true,
+      "original_selection": "growth",
+      "perturbed_selection": "continuation"
+    },
+    {
+      "method": "random_adaptive",
+      "branch_parameters_proposal_optimizer_identical": true,
+      "validation_stats_changed": true,
+      "original_selection": "growth",
+      "perturbed_selection": "continuation"
+    },
+    {
+      "method": "fixed2_gated",
+      "branch_parameters_proposal_optimizer_identical": true,
+      "validation_stats_changed": true,
+      "original_selection": "incumbent",
+      "perturbed_selection": "incumbent"
+    },
+    {
+      "method": "fixed7_gated",
+      "branch_parameters_proposal_optimizer_identical": true,
+      "validation_stats_changed": true,
+      "original_selection": "continuation",
+      "perturbed_selection": "incumbent"
+    },
+    {
+      "method": "fixed7_ungated",
+      "branch_parameters_proposal_optimizer_identical": true,
+      "validation_stats_changed": false,
+      "original_selection": "continuation",
+      "perturbed_selection": "continuation"
+    }
+  ],
+  "elapsed_seconds": 21.172338415999548
+}

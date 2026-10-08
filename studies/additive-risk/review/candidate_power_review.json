@@ -1,0 +1,162 @@
+{
+  "candidate": "preselected interior_v1 n2048",
+  "sampled_labels": 0,
+  "power_lower_bound": "4/5",
+  "actual_inference_lower_on_power_event_exact": "66968604293541489299987646205202861179145636067188584378019887493255041113429437767339621039181829090288180331133260744961417639960186789712436909041260669/33064430574266321647459375994127191654724889482863639613183069639953592184558188873450990094743506672151384372084878103019520000000000000000000000000000000000",
+  "actual_inference_lower_on_power_event_decimal": 0.002025397175466932,
+  "saved_power_certificate_exactly_reproduced": true,
+  "saved_source_hashes_verified": true,
+  "all15_whole_mean_interval_checks": [
+    {
+      "block": [
+        0
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        1
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        2
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        3
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        0,
+        1
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        0,
+        2
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        0,
+        3
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        1,
+        2
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        1,
+        3
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        2,
+        3
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        0,
+        1,
+        2
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        0,
+        1,
+        3
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        0,
+        2,
+        3
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        1,
+        2,
+        3
+      ],
+      "whole_mean_interval_safe": true
+    },
+    {
+      "block": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "whole_mean_interval_safe": true
+    }
+  ],
+  "moving_center_count_cases": 16,
+  "minimum_checked_actual_lower": 0.002033676465704368,
+  "fallback_checks": [
+    {
+      "N": 0,
+      "K": 0,
+      "contains_zero_and_does_not_reject": true
+    },
+    {
+      "N": 1000,
+      "K": 0,
+      "contains_zero_and_does_not_reject": true
+    },
+    {
+      "N": 1000,
+      "K": 1000,
+      "contains_zero_and_does_not_reject": true
+    },
+    {
+      "N": 1000,
+      "K": 500,
+      "contains_zero_and_does_not_reject": true
+    },
+    {
+      "N": 1000,
+      "K": 360,
+      "contains_zero_and_does_not_reject": true
+    },
+    {
+      "N": 1000,
+      "K": 640,
+      "contains_zero_and_does_not_reject": true
+    }
+  ],
+  "all_assertions_passed": true,
+  "elapsed_seconds": 0.5160778749996098,
+  "reviewed_hashes": {
+    "statistics/honest_delta.py": "5ef373afa13c429509e80f45fe693ae87065ae10ba9727fcc2a15839fe99e9be",
+    "statistics/DERIVATION.md": "b6de6dfb6ea6b18522dfc9d7af886ecb28bd5e5acdefb424162f8ce4bdee9c64",
+    "statistics/INTERIOR_2048_POWER_CERTIFICATE.json": "11d892d7fd510a570ce557000861ad4dd2f30c12abcc3ad94c2f76ea1637cdee",
+    "theory/local_loss_oracle.py": "5da8711422b08cd2823c09010c355fda810f49f7748bd59928c0600f36986768",
+    "theory/LOCAL_GRADIENT_SUPPORT.md": "ff321fc7641bd79239e002d6351234c4603b56f14d10661c119bff850e3a35c4"
+  },
+  "publication_binding_notice": "Publication derivative: reviewed_hashes/inputs_sha256 bind current public files after documented publication edits. These refreshed digests establish current public-copy consistency only; they do not re-attest the historical review or its execution. Scientific values and assertions are unchanged."
+}

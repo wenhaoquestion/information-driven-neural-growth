@@ -1,0 +1,44 @@
+{
+  "d": 12,
+  "arrivals": 7,
+  "block": 1024,
+  "neval": 32768,
+  "max_width": 7,
+  "base_reservoir": 128,
+  "matched_reservoir": 138,
+  "event_budget": 2000000,
+  "batch": 128,
+  "lr": 0.015,
+  "gradient_clip": 20.0,
+  "probes": 4,
+  "probe_steps": 20,
+  "probe_lr": 0.05,
+  "methods": [
+    "fresh_adaptive",
+    "random_adaptive",
+    "fixed2_gated",
+    "fixed7_gated",
+    "fixed7_ungated"
+  ],
+  "tasks": [
+    "null",
+    "lowrank_noiseless",
+    "indefinite_noisy",
+    "nonlinear"
+  ],
+  "seeds": [
+    840000,
+    840001,
+    840002,
+    840003,
+    840004,
+    840005,
+    840006,
+    840007,
+    840008,
+    840009,
+    840010,
+    840011
+  ],
+  "fit_per_block": 768
+}

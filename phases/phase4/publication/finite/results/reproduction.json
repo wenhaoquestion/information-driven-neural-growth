@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "python": "3.12.14",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "code/quartet_experiment.py"
+      ],
+      "cwd": ".",
+      "returncode": 0,
+      "seconds": 7.206346583989216
+    },
+    {
+      "command": [
+        "python",
+        "code/plot_results.py"
+      ],
+      "cwd": ".",
+      "returncode": 0,
+      "seconds": 1.6031064169947058
+    },
+    {
+      "command": [
+        "python",
+        "research/main_review_checks.py"
+      ],
+      "cwd": ".",
+      "returncode": 0,
+      "seconds": 1.9701712079986464
+    },
+    {
+      "command": [
+        "python",
+        "research/sharp_rate_check.py"
+      ],
+      "cwd": ".",
+      "returncode": 0,
+      "seconds": 0.9708709999977145
+    },
+    {
+      "command": [
+        "python",
+        "research/plot_sharp_rate.py"
+      ],
+      "cwd": ".",
+      "returncode": 0,
+      "seconds": 1.0155499590036925
+    },
+    {
+      "command": [
+        "latexmk",
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "main.tex"
+      ],
+      "cwd": "manuscript",
+      "returncode": 0,
+      "seconds": 3.5063076250080485
+    }
+  ],
+  "latex_errors": [],
+  "pdf_sha256": "f63af6fa4cbe082642cb9dde97e2d8cb95adcc6734fd42998d92085f7f7dd5b5"
+}

@@ -1,0 +1,18 @@
+{
+  "timestamp_utc": "2026-10-07T06:41:11.501572+00:00",
+  "status": "implementation_locked_before_development",
+  "files": {
+    "code/frontier.py": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0",
+    "code/phase5_reference.py": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720",
+    "code/run_stage.py": "bb0c7491a9397d3a194e7186c88ffcbd627214231c5d2c3758cd3b9ac813eec8",
+    "code/test_frontier.py": "e3631e6c72dbce01b0d0584db447cbdaedf2e9f23bed16731797ba3abac7c403",
+    "experiments/PROTOCOL.md": "9da881b65e9c178695edf319b9a7d2ff14c7915713923c5425f8d6a2c8168815",
+    "configs/age_sensitivity.json": "ae0a89df9092eb52448238b0b8292d0e7b8461ca781d3dc24e01a2b77d283f45",
+    "configs/confirmation_primary.json": "98e67a4e7d95591f0c6317b6d1d400eb9cc470620a7aa752dadf8296251bd018",
+    "configs/confirmation_secondary.json": "629f7146fa235ee52685b85b8c0367956b823b73069f13a0043a724d6bb5febf",
+    "configs/development_lr0075.json": "e82555fcc11f3b4d4319587c85530e47b166e294e2f20169f4c4c16f8780e017",
+    "configs/development_lr015.json": "def2c8415139c997f6ca5c3465a765538f5e710faefbe4e6906d21635836379f",
+    "configs/development_lr03.json": "04e3bf13d6eb3d15f83fa9c7180b24d680cb58f47af33a69493fdf9e9043352e",
+    "configs/smoke.json": "3128d9110e106f9773441335421a1246258ca1389a90fe654e2bf338b0c960a6"
+  }
+}

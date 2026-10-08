@@ -1,0 +1,262 @@
+\section{An extension to convex Bayes-risk generators}
+\label{sec:general-losses}
+
+The logarithmic example has a broader counterpart for excess prediction
+loss. This extension concerns the Jensen gap of a convex generator; it
+does not assert the total-risk conclusion proved for logarithmic loss.
+In particular, additive affine terms do not affect its distortion.
+
+Let $\phi:[0,1]\to\mathbb R$ be continuous and strictly convex, and
+differentiable on $(0,1)$. For a finite source with masses $p_x>0$ and
+binary-label posteriors $\eta_x\in(0,1)$, define
+\begin{equation}
+ D_\phi(\mathcal P)
+ =\sum_{C\in\mathcal P}\left\{
+       \sum_{x\in C}p_x\phi(\eta_x)
+       -p_C\phi(\bar\eta_C)\right\},
+ \qquad
+ p_C=\sum_{x\in C}p_x,\quad
+ \bar\eta_C=p_C^{-1}\sum_{x\in C}p_x\eta_x.
+ \label{eq:gen-distortion}
+\end{equation}
+This is the excess Bayes risk when the concave Bayes-risk function is
+$-\phi$, up to an affine term, as in the convex representation of proper
+scoring rules \cite[Theorem 1]{gneiting2007}. The identity follows by subtracting the
+Bayes risk with the full source from that with the partition label.
+Equivalently, putting
+\begin{equation}
+ d_\phi(z\Vert x)
+ =\phi(z)-\phi(x)-\phi'(x)(z-x),
+ \label{eq:gen-bregman}
+\end{equation}
+the distortion in \eqref{eq:gen-distortion} equals
+$\sum_C\sum_{x\in C}p_xd_\phi(\eta_x\Vert\bar\eta_C)$, because the
+linear terms sum to zero within every cell.
+
+Write $D_{\phi,k}^*$ for the minimum of
+\eqref{eq:gen-distortion} over partitions with $k$ nonempty cells.
+For a four-state source, let
+\begin{equation}
+ \rho_\phi
+ =\min_{\mathcal H}
+   \max_{k\in\{2,3\}}
+       \frac{D_\phi(\mathcal H_k)}{D_{\phi,k}^*},
+ \label{eq:gen-price}
+\end{equation}
+where $\mathcal H$ ranges over complete binary-merger hierarchies.
+The constructions below have four distinct posteriors, so both
+denominators are strictly positive.
+
+\begin{theorem}[Divergent endpoint slope]
+\label{thm:gen-endpoint}
+Suppose, in addition, that $\phi(x)=\phi(1-x)$ and
+$\phi'(x)\to-\infty$ as $x\downarrow0$. Put
+\[
+ C=\phi(0)-\phi(1/2)>0,\qquad
+ s_\varepsilon=-\phi'(\varepsilon),\qquad
+ \delta_\varepsilon=\sqrt{C/s_\varepsilon}.
+\]
+There is a choice of positive $w_\varepsilon\le\varepsilon^2$ such
+that the four-state source with masses
+\[
+ (p_A,p_C,p_D,p_B)=(c,w,w,c),\qquad c=(1-2w)/2,
+\]
+and posteriors
+\[
+ (\eta_A,\eta_C,\eta_D,\eta_B)
+  =(\varepsilon,\delta,1-\delta,1-\varepsilon),
+ \qquad w=w_\varepsilon,\quad\delta=\delta_\varepsilon,
+\]
+satisfies
+\begin{equation}
+ \rho_\phi
+  \sim \frac{\sqrt{s_\varepsilon}}{2\sqrt C}
+  \longrightarrow\infty
+  \qquad(\varepsilon\downarrow0).
+ \label{eq:gen-rate}
+\end{equation}
+All source and conditional label probabilities are positive for
+sufficiently small $\varepsilon$.
+\end{theorem}
+
+\begin{proof}
+We first justify a choice of $w$ that makes the required expansions
+valid even when $\phi$ has no uniform second-derivative bound near
+zero. For positive weights $\alpha,\beta$, define the weighted Jensen
+gap
+\[
+ G(\alpha,\beta;x,z)
+ =\alpha\phi(x)+\beta\phi(z)
+  -(\alpha+\beta)\phi\left(
+       \frac{\alpha x+\beta z}{\alpha+\beta}\right).
+\]
+If $m=(\alpha x+\beta z)/(\alpha+\beta)$, direct cancellation gives
+\begin{equation}
+ G(\alpha,\beta;x,z)
+  =\beta d_\phi(z\Vert x)
+       -(\alpha+\beta)d_\phi(m\Vert x).
+ \label{eq:gen-small-weight}
+\end{equation}
+Fix an interior $\varepsilon$. Differentiability at $\varepsilon$
+means
+$d_\phi(\varepsilon+h\Vert\varepsilon)=o(|h|)$ as $h\to0$.
+For $\alpha=c=(1-2w)/2$, $\beta=kw$, $k\in\{1,2\}$, and
+$z\in[0,1]$, one has $|m-\varepsilon|\le4w$ for sufficiently
+small $w$. Thus the remainder in \eqref{eq:gen-small-weight} is
+$o(w)$ uniformly over these $k$ and $z$, with $\varepsilon$ fixed.
+Since $s_\varepsilon\to\infty$, we may choose, separately for each
+sufficiently small $\varepsilon$, a positive
+$w=w_\varepsilon\le\varepsilon^2$ for which
+\begin{equation}
+ 0\le
+ kwd_\phi(z\Vert\varepsilon)
+  -G(c,kw;\varepsilon,z)
+ \le w/s_\varepsilon
+ \quad
+ (k\in\{1,2\},\ z\in[0,1]).
+ \label{eq:gen-remainder-choice}
+\end{equation}
+The uniform statement follows directly from the definition of
+differentiability on the shrinking interval
+$[\varepsilon-4w,\varepsilon+4w]$; $w$ can be reduced further so
+this interval is interior. This is an existence choice of the rare
+mass, rather than an assumption of uniform differentiability as
+$\varepsilon$ changes.
+
+There are two useful preliminary limits. The supporting-line
+inequality at $\varepsilon$ gives
+\[
+ 0\le\varepsilon s_\varepsilon
+ \le2\{\phi(\varepsilon/2)-\phi(\varepsilon)\}
+ \longrightarrow0.
+\]
+It follows that $ws_\varepsilon\to0$ and
+$\varepsilon/\delta\to0$, while
+$\delta\to0$ and $\delta s_\varepsilon=\sqrt{Cs_\varepsilon}
+\to\infty$. Strict convexity and symmetry imply $C>0$.
+
+For clarity, write $s=s_\varepsilon$ and denote the six distinct
+cluster costs by
+\begin{align*}
+ a&=G(c,w;\varepsilon,\delta),
+ &b&=G(c,w;\varepsilon,1-\delta),\\
+ r&=2w\{\phi(\delta)-\phi(1/2)\},
+ &q&=2c\{\phi(\varepsilon)-\phi(1/2)\},\\
+ t&=r+G(c,2w;\varepsilon,1/2),
+ &u&=q+G(2c,w;1/2,\delta).
+\end{align*}
+Here $a,b$ are the near and far rare-anchor pair costs, $r,q$ are
+the rare-pair and anchor-pair costs, and $t,u$ are the triple costs
+with respectively one and two anchors. These expressions follow by
+first merging the pair inside a triple and then merging its
+centroid with the remaining point; expanding both sides proves
+this aggregation identity exactly.
+
+By \eqref{eq:gen-remainder-choice},
+\[
+ a=w\{\phi(\delta)-\phi(\varepsilon)
+                  +s(\delta-\varepsilon)\}+o(w)
+       \sim w\delta s,
+ \qquad b\sim ws.
+\]
+The first equivalence uses boundedness of $\phi$ on $[0,1]$,
+$\varepsilon s\to0$, and $\delta s\to\infty$; the second uses
+the same bounds and $\delta\to0$. Continuity at the endpoints
+gives $r\sim2wC$ and $q\to C$. Also,
+\begin{align*}
+ t
+ &=2w\{\phi(\delta)-\phi(\varepsilon)\}
+          +ws(1-2\varepsilon)+o(w)
+   \sim ws.
+\end{align*}
+Finally, symmetry and differentiability imply $\phi'(1/2)=0$.
+Applying \eqref{eq:gen-small-weight} at $1/2$ and using convexity
+yields
+\[
+ 0\le u-q\le wd_\phi(\delta\Vert1/2)
+       =w\{\phi(\delta)-\phi(1/2)\}\le wC.
+\]
+Consequently $u\to C$.
+
+We now check all possible partitions rather than assuming that a
+particular merger algorithm is optimal. The seven two-cell costs
+are $2a,2b,q+r,t,t,u,u$, and the six three-cell costs are
+$a,a,b,b,r,q$. The limits just proved show that, for sufficiently
+small $\varepsilon$,
+\[
+ D_{\phi,2}^*=2a,\qquad D_{\phi,3}^*=r.
+\]
+They also show $b>a>r$, $q>a$, $t>2a$, and $t<q+r$.
+If a hierarchy merges the rare pair at level three, its possible
+level-two costs are $t,t,q+r$, so its best factor is $t/(2a)$.
+If it merges a near rare-anchor pair, it can attain the optimal
+level-two partition and has best factor $a/r$. Every other
+level-three pair has cost at least $a$, hence cannot improve on
+the latter factor. We have therefore proved the exact eventual
+formula
+\[
+ \rho_\phi=\min\{a/r,t/(2a)\}.
+\]
+Its two entries satisfy
+\[
+ \frac a r\sim\frac{\delta s}{2C}
+            =\frac{\sqrt s}{2\sqrt C},
+ \qquad
+ \frac{t}{2a}\sim\frac1{2\delta}
+            =\frac{\sqrt s}{2\sqrt C}.
+\]
+This proves \eqref{eq:gen-rate}.
+\end{proof}
+
+The choice of $w$ matters. For a general differentiable generator,
+setting $w=\varepsilon^2$ without the further reduction in
+\eqref{eq:gen-remainder-choice} need not justify the Taylor
+remainder. The logarithmic constructions admit explicit estimates
+and therefore do not require this adaptive choice. Moreover,
+Theorem~\ref{thm:gen-endpoint} is a sufficient condition for an
+unbounded hierarchy factor; it is not a characterization of all
+generators with this property.
+
+\begin{proposition}[A comparison on intervals of bounded curvature]
+\label{prop:gen-curvature}
+Let all posteriors lie in a fixed compact interval
+$J\subset(0,1)$, and suppose $\phi$ is twice continuously
+differentiable there with
+$0<m\le\phi''(x)\le M<\infty$. Define weighted squared-error
+distortion by
+\[
+ E(\mathcal P)=\sum_{C\in\mathcal P}
+                  \sum_{x\in C}p_x(\eta_x-\bar\eta_C)^2.
+\]
+Then every partition satisfies
+\begin{equation}
+ \frac m2 E(\mathcal P)\le D_\phi(\mathcal P)
+                         \le\frac M2 E(\mathcal P).
+ \label{eq:gen-curvature-comparison}
+\end{equation}
+For any collection of cardinalities whose optimal distortions
+are positive, the minimum simultaneous hierarchy factors obey
+\[
+ \frac mM\rho_E\le\rho_\phi\le\frac Mm\rho_E.
+\]
+\end{proposition}
+
+\begin{proof}
+The integral form of Taylor's theorem is
+\[
+ d_\phi(z\Vert x)
+ =(z-x)^2\int_0^1(1-t)\phi''(x+t(z-x))\,dt.
+\]
+Both $x,z$ and their intervening segment belong to $J$, so this
+expression lies between $m(z-x)^2/2$ and $M(z-x)^2/2$.
+Summing at the cell centroids proves
+\eqref{eq:gen-curvature-comparison}. Minimizing its two bounds
+over all $k$-cell partitions gives the corresponding bounds on
+optimal distortions. Dividing the partition bounds by these
+optimal bounds, taking the maximum over cardinalities, and then
+the minimum over hierarchies proves the last assertion.
+\end{proof}
+
+This comparison transfers hierarchy guarantees between the two
+losses up to the fixed condition ratio $M/m$. It does not supply
+an independent numerical constant for squared-error hierarchies.

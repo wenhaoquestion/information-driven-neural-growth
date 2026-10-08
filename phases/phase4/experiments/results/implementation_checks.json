@@ -1,0 +1,13 @@
+{
+  "implementation_checks": {
+    "gradient_maximum_absolute_error": 7.674616150921132e-12,
+    "function_preserving_addition": true,
+    "flipping_current_and_future_audit_labels_leaves_current_candidates_identical": true,
+    "flipping_future_audit_labels_leaves_earlier_decision_identical": true,
+    "all_seven_methods_data_access_checked": true
+  },
+  "files": [],
+  "status": "passed",
+  "total_events": 0,
+  "total_comparisons": 0
+}

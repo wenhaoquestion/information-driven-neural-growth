@@ -1,0 +1,13 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "machine": "arm64",
+  "numpy": "2.3.5",
+  "scipy": "1.18.1",
+  "matplotlib": "3.11.2",
+  "mpmath": "1.3.0",
+  "compute": "Existing local CPU environment; no paid remote compute.",
+  "tex": "pdfTeX 3.141592653-2.6-1.40.27 (TeX Live 2025)",
+  "latexmk": "Latexmk, John Collins, 27 Dec. 2024. Version 4.86a",
+  "poppler": "pdfinfo version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC"
+}

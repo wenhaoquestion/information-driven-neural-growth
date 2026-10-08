@@ -1,0 +1,1634 @@
+[
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 128,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "radius": 0.0027234215792559155,
+    "unique_labels": 32896,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 128,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "radius": 0.055701305095400076,
+    "unique_labels": 32896,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 512,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 5,
+    "rate": 0.005,
+    "wilson95": [
+      0.0021375355273244596,
+      0.011650955373375113
+    ],
+    "radius": 0.0027075242488649206,
+    "unique_labels": 33280,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 512,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "radius": 0.025929361165349028,
+    "unique_labels": 33280,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 2048,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "radius": 0.0026466022423758517,
+    "unique_labels": 34816,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 2048,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "radius": 0.012484357737086763,
+    "unique_labels": 34816,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 8192,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "radius": 0.0024383956904507104,
+    "unique_labels": 40960,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 8192,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "radius": 0.006122098157146443,
+    "unique_labels": 40960,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 32768,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 7,
+    "rate": 0.007,
+    "wilson95": [
+      0.0033948684009907646,
+      0.014378315465766588
+    ],
+    "radius": 0.0019244918772960235,
+    "unique_labels": 65536,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 32768,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "radius": 0.003031028900723987,
+    "unique_labels": 65536,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 131072,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "radius": 0.001214321978894701,
+    "unique_labels": 163840,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 1,
+    "n": 131072,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "radius": 0.001508009405899685,
+    "unique_labels": 163840,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 128,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 8,
+    "rate": 0.008,
+    "wilson95": [
+      0.004059195818806103,
+      0.015706334530980144
+    ],
+    "radius": 0.0027323103123546317,
+    "unique_labels": 32896,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 128,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.030683271549643204,
+    "unique_labels": 32896,
+    "coefficient": 0.17320508075688773
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 512,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 8,
+    "rate": 0.008,
+    "wilson95": [
+      0.004059195818806103,
+      0.015706334530980144
+    ],
+    "radius": 0.002716310419658652,
+    "unique_labels": 33280,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 512,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.01577831964885453,
+    "unique_labels": 33280,
+    "coefficient": 0.1675750370941638
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 2048,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 8,
+    "rate": 0.008,
+    "wilson95": [
+      0.004059195818806103,
+      0.015706334530980144
+    ],
+    "radius": 0.0026550007879875067,
+    "unique_labels": 34816,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 2048,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.008910372864995632,
+    "unique_labels": 34816,
+    "coefficient": 0.14930333982990704
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 8192,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 8,
+    "rate": 0.008,
+    "wilson95": [
+      0.004059195818806103,
+      0.015706334530980144
+    ],
+    "radius": 0.0024455344542206174,
+    "unique_labels": 40960,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 8192,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.005446921150273275,
+    "unique_labels": 40960,
+    "coefficient": 0.11152989594326305
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 32768,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 5,
+    "rate": 0.005,
+    "wilson95": [
+      0.0021375355273244596,
+      0.011650955373375113
+    ],
+    "radius": 0.0019289536046522152,
+    "unique_labels": 65536,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 32768,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.003042017048442934,
+    "unique_labels": 65536,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 131072,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 7,
+    "rate": 0.007,
+    "wilson95": [
+      0.0033948684009907646,
+      0.014378315465766588
+    ],
+    "radius": 0.0012161066698371777,
+    "unique_labels": 163840,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.25,
+    "n": 131072,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "radius": 0.0015107564428294216,
+    "unique_labels": 163840,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 128,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 11,
+    "rate": 0.011,
+    "wilson95": [
+      0.006153174098086638,
+      0.019589395700786275
+    ],
+    "radius": 0.0027287215638224457,
+    "unique_labels": 32896,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 128,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.01709229059520127,
+    "unique_labels": 32896,
+    "coefficient": 0.19364916731037085
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 512,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 13,
+    "rate": 0.013,
+    "wilson95": [
+      0.0076128203893510256,
+      0.022114442375579666
+    ],
+    "radius": 0.0027127630797633756,
+    "unique_labels": 33280,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 512,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.00963981464621886,
+    "unique_labels": 33280,
+    "coefficient": 0.19083304229627904
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 2048,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 10,
+    "rate": 0.01,
+    "wilson95": [
+      0.005440754445529249,
+      0.018309468870314774
+    ],
+    "radius": 0.002651609948381728,
+    "unique_labels": 34816,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 2048,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "radius": 0.00620584125283067,
+    "unique_labels": 34816,
+    "coefficient": 0.18169855161135143
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 8192,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 7,
+    "rate": 0.007,
+    "wilson95": [
+      0.0033948684009907646,
+      0.014378315465766588
+    ],
+    "radius": 0.002442652240555705,
+    "unique_labels": 40960,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 8192,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.0044741153954635906,
+    "unique_labels": 40960,
+    "coefficient": 0.16281101230783626
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 32768,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 7,
+    "rate": 0.007,
+    "wilson95": [
+      0.0033948684009907646,
+      0.014378315465766588
+    ],
+    "radius": 0.0019271522211116452,
+    "unique_labels": 65536,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 32768,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.0030375806795521288,
+    "unique_labels": 65536,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 131072,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "radius": 0.0012153861164209496,
+    "unique_labels": 163840,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.0625,
+    "n": 131072,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "radius": 0.0015096473506067203,
+    "unique_labels": 163840,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 128,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "radius": 0.0027262666686854145,
+    "unique_labels": 32896,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 128,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.010207835884768705,
+    "unique_labels": 32896,
+    "coefficient": 0.19843134832984433
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 512,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 5,
+    "rate": 0.005,
+    "wilson95": [
+      0.0021375355273244596,
+      0.011650955373375113
+    ],
+    "radius": 0.002710336510339464,
+    "unique_labels": 33280,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 512,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.006481597914109018,
+    "unique_labels": 33280,
+    "coefficient": 0.1970252074889073
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 2048,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "radius": 0.002649290433491224,
+    "unique_labels": 34816,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 2048,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.00476461121506594,
+    "unique_labels": 34816,
+    "coefficient": 0.1924572187548183
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 8192,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "radius": 0.002440680652898777,
+    "unique_labels": 40960,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 8192,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.003898748285224696,
+    "unique_labels": 40960,
+    "coefficient": 0.18301322183769553
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 32768,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 12,
+    "rate": 0.012,
+    "wilson95": [
+      0.006877647806403522,
+      0.02085726847549828
+    ],
+    "radius": 0.001925919978826065,
+    "unique_labels": 65536,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 32768,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "radius": 0.003034545966944534,
+    "unique_labels": 65536,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 131072,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 10,
+    "rate": 0.01,
+    "wilson95": [
+      0.005440754445529249,
+      0.018309468870314774
+    ],
+    "radius": 0.0012148932195067176,
+    "unique_labels": 163840,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": false,
+    "z": 0.015625,
+    "n": 131072,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 4,
+    "rate": 0.004,
+    "wilson95": [
+      0.0015565881404084308,
+      0.010239556277262253
+    ],
+    "radius": 0.0015088886724548218,
+    "unique_labels": 163840,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 128,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 603,
+    "rate": 0.603,
+    "wilson95": [
+      0.572336273352678,
+      0.6328754143992976
+    ],
+    "radius": 0.0027234215792559155,
+    "unique_labels": 32896,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 128,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "radius": 0.055701305095400076,
+    "unique_labels": 32896,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 512,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 604,
+    "rate": 0.604,
+    "wilson95": [
+      0.5733454840711704,
+      0.6338585501638342
+    ],
+    "radius": 0.0027075242488649206,
+    "unique_labels": 33280,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 512,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 5,
+    "rate": 0.005,
+    "wilson95": [
+      0.0021375355273244596,
+      0.011650955373375113
+    ],
+    "radius": 0.025929361165349028,
+    "unique_labels": 33280,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 2048,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 621,
+    "rate": 0.621,
+    "wilson95": [
+      0.5905223582047959,
+      0.6505515662416997
+    ],
+    "radius": 0.0026466022423758517,
+    "unique_labels": 34816,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 2048,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 14,
+    "rate": 0.014,
+    "wilson95": [
+      0.00835757513042392,
+      0.02336203411753566
+    ],
+    "radius": 0.012484357737086763,
+    "unique_labels": 34816,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 8192,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 711,
+    "rate": 0.711,
+    "wilson95": [
+      0.6821395598954265,
+      0.7382455480236692
+    ],
+    "radius": 0.0024383956904507104,
+    "unique_labels": 40960,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 8192,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 71,
+    "rate": 0.071,
+    "wilson95": [
+      0.056669695350451466,
+      0.08861366343015481
+    ],
+    "radius": 0.006122098157146443,
+    "unique_labels": 40960,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 32768,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 908,
+    "rate": 0.908,
+    "wilson95": [
+      0.8884912646437558,
+      0.9243861004320312
+    ],
+    "radius": 0.0019244918772960235,
+    "unique_labels": 65536,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 32768,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 444,
+    "rate": 0.444,
+    "wilson95": [
+      0.4134777594602898,
+      0.4749508374900924
+    ],
+    "radius": 0.003031028900723987,
+    "unique_labels": 65536,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 131072,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "radius": 0.001214321978894701,
+    "unique_labels": 163840,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 1,
+    "n": 131072,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 995,
+    "rate": 0.995,
+    "wilson95": [
+      0.9883490446266249,
+      0.9978624644726756
+    ],
+    "radius": 0.001508009405899685,
+    "unique_labels": 163840,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 128,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 588,
+    "rate": 0.588,
+    "wilson95": [
+      0.5572138017865,
+      0.6181126887200421
+    ],
+    "radius": 0.0027323103123546317,
+    "unique_labels": 32896,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 128,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 2,
+    "rate": 0.002,
+    "wilson95": [
+      0.000548643588120728,
+      0.007262807863492177
+    ],
+    "radius": 0.030683271549643204,
+    "unique_labels": 32896,
+    "coefficient": 0.17320508075688773
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 512,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 597,
+    "rate": 0.597,
+    "wilson95": [
+      0.5662837646847674,
+      0.6269738441690349
+    ],
+    "radius": 0.002716310419658652,
+    "unique_labels": 33280,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 512,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "radius": 0.01577831964885453,
+    "unique_labels": 33280,
+    "coefficient": 0.1675750370941638
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 2048,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 610,
+    "rate": 0.61,
+    "wilson95": [
+      0.5794035195028067,
+      0.6397545936303712
+    ],
+    "radius": 0.0026550007879875067,
+    "unique_labels": 34816,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 2048,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 6,
+    "rate": 0.006,
+    "wilson95": [
+      0.0027526691418763745,
+      0.01302816824185209
+    ],
+    "radius": 0.008910372864995632,
+    "unique_labels": 34816,
+    "coefficient": 0.14930333982990704
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 8192,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 717,
+    "rate": 0.717,
+    "wilson95": [
+      0.6882916278055017,
+      0.7440475590117673
+    ],
+    "radius": 0.0024455344542206174,
+    "unique_labels": 40960,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 8192,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 40,
+    "rate": 0.04,
+    "wilson95": [
+      0.02951097368545276,
+      0.05400964412125796
+    ],
+    "radius": 0.005446921150273275,
+    "unique_labels": 40960,
+    "coefficient": 0.11152989594326305
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 32768,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 912,
+    "rate": 0.912,
+    "wilson95": [
+      0.8928277489502235,
+      0.9280190020576792
+    ],
+    "radius": 0.0019289536046522152,
+    "unique_labels": 65536,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 32768,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 504,
+    "rate": 0.504,
+    "wilson95": [
+      0.4730552793350446,
+      0.5349141065970708
+    ],
+    "radius": 0.003042017048442934,
+    "unique_labels": 65536,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 131072,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "radius": 0.0012161066698371777,
+    "unique_labels": 163840,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.25,
+    "n": 131072,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 998,
+    "rate": 0.998,
+    "wilson95": [
+      0.9927371921365079,
+      0.9994513564118793
+    ],
+    "radius": 0.0015107564428294216,
+    "unique_labels": 163840,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 128,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 604,
+    "rate": 0.604,
+    "wilson95": [
+      0.5733454840711704,
+      0.6338585501638342
+    ],
+    "radius": 0.0027287215638224457,
+    "unique_labels": 32896,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 128,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 0,
+    "rate": 0.0,
+    "wilson95": [
+      2.168404344971009e-19,
+      0.0038267584855551234
+    ],
+    "radius": 0.01709229059520127,
+    "unique_labels": 32896,
+    "coefficient": 0.19364916731037085
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 512,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 606,
+    "rate": 0.606,
+    "wilson95": [
+      0.5753643006840624,
+      0.6358244265169998
+    ],
+    "radius": 0.0027127630797633756,
+    "unique_labels": 33280,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 512,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 3,
+    "rate": 0.003,
+    "wilson95": [
+      0.0010207838811386186,
+      0.008783014053503173
+    ],
+    "radius": 0.00963981464621886,
+    "unique_labels": 33280,
+    "coefficient": 0.19083304229627904
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 2048,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 631,
+    "rate": 0.631,
+    "wilson95": [
+      0.600644550435556,
+      0.6603528388412285
+    ],
+    "radius": 0.002651609948381728,
+    "unique_labels": 34816,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 2048,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 17,
+    "rate": 0.017,
+    "wilson95": [
+      0.010640689856816328,
+      0.027055958840229925
+    ],
+    "radius": 0.00620584125283067,
+    "unique_labels": 34816,
+    "coefficient": 0.18169855161135143
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 8192,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 715,
+    "rate": 0.715,
+    "wilson95": [
+      0.6862402708362823,
+      0.7421142230149289
+    ],
+    "radius": 0.002442652240555705,
+    "unique_labels": 40960,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 8192,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 83,
+    "rate": 0.083,
+    "wilson95": [
+      0.06745502144289929,
+      0.10173649513405368
+    ],
+    "radius": 0.0044741153954635906,
+    "unique_labels": 40960,
+    "coefficient": 0.16281101230783626
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 32768,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 912,
+    "rate": 0.912,
+    "wilson95": [
+      0.8928277489502235,
+      0.9280190020576792
+    ],
+    "radius": 0.0019271522211116452,
+    "unique_labels": 65536,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 32768,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 492,
+    "rate": 0.492,
+    "wilson95": [
+      0.4611041586281342,
+      0.5229570695076347
+    ],
+    "radius": 0.0030375806795521288,
+    "unique_labels": 65536,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 131072,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "radius": 0.0012153861164209496,
+    "unique_labels": 163840,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.0625,
+    "n": 131072,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 993,
+    "rate": 0.993,
+    "wilson95": [
+      0.9856216845342334,
+      0.9966051315990092
+    ],
+    "radius": 0.0015096473506067203,
+    "unique_labels": 163840,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 128,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 591,
+    "rate": 0.591,
+    "wilson95": [
+      0.560235954911328,
+      0.6210675750443009
+    ],
+    "radius": 0.0027262666686854145,
+    "unique_labels": 32896,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 128,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 1,
+    "rate": 0.001,
+    "wilson95": [
+      0.00017654637062607809,
+      0.0056425585979579355
+    ],
+    "radius": 0.010207835884768705,
+    "unique_labels": 32896,
+    "coefficient": 0.19843134832984433
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 512,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 601,
+    "rate": 0.601,
+    "wilson95": [
+      0.5703182462412869,
+      0.6309087485446309
+    ],
+    "radius": 0.002710336510339464,
+    "unique_labels": 33280,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 512,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 16,
+    "rate": 0.016,
+    "wilson95": [
+      0.009872242002277388,
+      0.02583206021173997
+    ],
+    "radius": 0.006481597914109018,
+    "unique_labels": 33280,
+    "coefficient": 0.1970252074889073
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 2048,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 628,
+    "rate": 0.628,
+    "wilson95": [
+      0.5976064637900358,
+      0.6574138860376622
+    ],
+    "radius": 0.002649290433491224,
+    "unique_labels": 34816,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 2048,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 65,
+    "rate": 0.065,
+    "wilson95": [
+      0.051323770569062045,
+      0.0820055093133709
+    ],
+    "radius": 0.00476461121506594,
+    "unique_labels": 34816,
+    "coefficient": 0.1924572187548183
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 8192,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 726,
+    "rate": 0.726,
+    "wilson95": [
+      0.697531129939966,
+      0.7527391752245631
+    ],
+    "radius": 0.002440680652898777,
+    "unique_labels": 40960,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 8192,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 184,
+    "rate": 0.184,
+    "wilson95": [
+      0.16120869057645773,
+      0.20920982078641312
+    ],
+    "radius": 0.003898748285224696,
+    "unique_labels": 40960,
+    "coefficient": 0.18301322183769553
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 32768,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 908,
+    "rate": 0.908,
+    "wilson95": [
+      0.8884912646437558,
+      0.9243861004320312
+    ],
+    "radius": 0.001925919978826065,
+    "unique_labels": 65536,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 32768,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 510,
+    "rate": 0.51,
+    "wilson95": [
+      0.47903749580454597,
+      0.5408859690257428
+    ],
+    "radius": 0.003034545966944534,
+    "unique_labels": 65536,
+    "coefficient": 0.0
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 131072,
+    "method": "full_pool",
+    "replicates": 1000,
+    "accepted": 1000,
+    "rate": 1.0,
+    "wilson95": [
+      0.996173241514445,
+      1.0
+    ],
+    "radius": 0.0012148932195067176,
+    "unique_labels": 163840,
+    "coefficient": null
+  },
+  {
+    "experiment": "R1",
+    "alternative": true,
+    "z": 0.015625,
+    "n": 131072,
+    "method": "noise_aware_moment",
+    "replicates": 1000,
+    "accepted": 997,
+    "rate": 0.997,
+    "wilson95": [
+      0.9912169859464969,
+      0.9989792161188614
+    ],
+    "radius": 0.0015088886724548218,
+    "unique_labels": 163840,
+    "coefficient": 0.0
+  }
+]

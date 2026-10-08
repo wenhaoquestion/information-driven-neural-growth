@@ -1,0 +1,47 @@
+{
+  "scope": "Public source/build provenance derived from the historical paper receipt; no historical execution re-attestation",
+  "original_build_utc": "2026-10-07T21:46:35.957293+00:00",
+  "paper": "phase10_last_two_capacities.tex",
+  "original_pdf_sha256": "d870cc80f2f9e1b77cf978a9b6a266b9fbc54b330720a726f9deaf6fe06b306b",
+  "pages": 16,
+  "engine": "pdfLaTeX, three passes, -no-shell-escape",
+  "scientific_sources": [
+    {
+      "public_path": "phases/phase10/research/upper/top_two_quartet_reduction.tex",
+      "original_source_sha256": "b09b9d92edefda640bf2a07bd90deac15514b4ec20d7f53626e0bd3a46cff470",
+      "publication_source_sha256": "b09b9d92edefda640bf2a07bd90deac15514b4ec20d7f53626e0bd3a46cff470"
+    },
+    {
+      "public_path": "phases/phase10/research/adversarial/lower_embedding_subtask/uniform_N_far_anchor_embedding.tex",
+      "original_source_sha256": "80e0830e85c9f110146d44f941ddec3bd9cb60e3eae6857b221ee5e2d90188fb",
+      "publication_source_sha256": "76c910133086d4a55ce6b375b9b2adc2afc2287dbf19d3e83e95610c10d550c6"
+    },
+    {
+      "public_path": "phases/phase10/research/adversarial/adversarial_reduction_and_padding.tex",
+      "original_source_sha256": "c200cf82086b2785cf3db69b054f8ad39483ff2a9068e5edfcc88d5190412532",
+      "publication_source_sha256": "c200cf82086b2785cf3db69b054f8ad39483ff2a9068e5edfcc88d5190412532"
+    },
+    {
+      "public_path": "phases/phase9/research/degree_gap/weighted_four_state_upper.tex",
+      "original_source_sha256": "6da98f955a6cbea3c61f9771a6df3005687826bbe56465522a78b8d6aebaf6f8",
+      "publication_source_sha256": "6da98f955a6cbea3c61f9771a6df3005687826bbe56465522a78b8d6aebaf6f8"
+    },
+    {
+      "public_path": "phases/phase9/manuscript/endpoint_lower.tex",
+      "original_source_sha256": "ef280b347a092c7e5f7f3481d406ea519a317bb6f4748ad2da7fe28c97fcca89",
+      "publication_source_sha256": "ef280b347a092c7e5f7f3481d406ea519a317bb6f4748ad2da7fe28c97fcca89"
+    },
+    {
+      "public_path": "phases/phase9/manuscript/random_table_rounding.tex",
+      "original_source_sha256": "f302c128dc827c12f872406327d3e0a106f3302180cb130b69af60c80d985487",
+      "publication_source_sha256": "f302c128dc827c12f872406327d3e0a106f3302180cb130b69af60c80d985487"
+    },
+    {
+      "public_path": "phases/phase9/manuscript/references.tex",
+      "original_source_sha256": "e43a19e8cf5e82ec170c453f17b24f480239c708b774e188931f0c2baa32b015",
+      "publication_source_sha256": "e43a19e8cf5e82ec170c453f17b24f480239c708b774e188931f0c2baa32b015"
+    }
+  ],
+  "publication_build_check": "The public manuscript was built in a separate temporary output directory. Its extracted text matches the original PDF; the distributed PDF retains its original bytes.",
+  "historical_receipt_sha256": "bdaa9ecb28f313b67ab3697916cbc4ad6f8a5b04d67213d672052fea835b7893"
+}

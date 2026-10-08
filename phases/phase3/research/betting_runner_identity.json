@@ -1,0 +1,5 @@
+{
+  "original_sha256": "952def48385a00ae9a6f59500b57dabf922f35ef10bc9703d167d51c6c856f3f",
+  "copy_sha256": "dbf1a676bed0ec3e982dc11c22af7ecc291db397ec6daca5c06ee9783dbfbef0",
+  "change": "Add fixed five-lambda mixture e gate; preserve original EB branch, datasets, training, baselines."
+}

@@ -1,0 +1,83 @@
+{
+  "utc": "2026-10-07T21:33:29.284978+00:00",
+  "status": "pass",
+  "candidate_instances_checked": 32,
+  "example": {
+    "n": 7,
+    "curvature": "1",
+    "generator": "x^2/2",
+    "points": [
+      "0",
+      "1/36",
+      "1/9",
+      "1/4",
+      "4/9",
+      "25/36",
+      "1"
+    ],
+    "original_weights": [
+      "1",
+      "1",
+      "1",
+      "2",
+      "1/100",
+      "1/10000",
+      "1"
+    ],
+    "flat_fine": "1/323200",
+    "flat_coarse": "1004419/5210440992",
+    "cheapest_adjacent_pair": [
+      4,
+      5
+    ],
+    "selected_flat_coarse_pairs": [
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "quartet": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "global_price": "10314341331/10144631900",
+    "quartet_price": "2073082097481/2018982631900",
+    "global_optimal_coarse": [
+      [
+        0,
+        1
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "global_optimal_fine_pair": [
+      4,
+      5
+    ],
+    "quartet_optimal_coarse": [
+      [
+        3,
+        4,
+        5
+      ]
+    ],
+    "quartet_optimal_fine_pair": [
+      4,
+      5
+    ],
+    "ratio": "104159381/103138231",
+    "global_price_float": 1.0167289885599495,
+    "quartet_price_float": 1.0267954090967533
+  },
+  "seconds": 0.03167274999941583,
+  "code_sha256": "8f23a315b58a6fa7dd19ad66055ca8cbf71d699c0c07d6067a11080be604a9d0",
+  "scope": "One exact counterexample to per-instance equality; supports only the inequality reduction. Source masses are original and need not sum to1 because ratios are homogeneous."
+}

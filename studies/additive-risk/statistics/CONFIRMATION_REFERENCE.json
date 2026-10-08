@@ -1,0 +1,20 @@
+{
+  "candidate": "preselected interior_v1 n=2048",
+  "sample_budget": 1000000,
+  "seed": 2026100723,
+  "state_probabilities": [
+    "1/4",
+    "1/4",
+    "1/4",
+    "1/4"
+  ],
+  "reference_posterior": [
+    "1/8",
+    "3/8",
+    "5/8",
+    "7/8"
+  ],
+  "sampling_scheme": "one multinomial state-count draw, then one conditional binomial draw per state; exactly the sufficient statistics of iid (I,Y)",
+  "visibility": "Simulator reference only. Inference receives the separate count file, public p and the full normalized loss. It does not read this file.",
+  "interpretation": "One seed, one confirmation realization. This is not an empirical estimate of 80% power; power is certified analytically before sampling."
+}

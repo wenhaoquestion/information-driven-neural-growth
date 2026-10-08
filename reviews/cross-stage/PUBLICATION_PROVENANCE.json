@@ -1,0 +1,126 @@
+{
+  "edition": "Public research edition; original event dates are historical",
+  "scope": "Original-to-public derivative provenance. Refreshed public receipt hashes certify current public-copy consistency only; no historical execution re-attestation. Scientific data and counts were not resampled.",
+  "files": [
+    {
+      "path": "research/equal_mass/adversarial_diagnostics_results.json",
+      "original_sha256": "a727078b98d7c4755fde6ebfd99fe6255ad5180e8749ad9a217ac51f67a8319c",
+      "publication_sha256": "a727078b98d7c4755fde6ebfd99fe6255ad5180e8749ad9a217ac51f67a8319c",
+      "original_bytes": 1570,
+      "publication_bytes": 1570,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/equal_mass/lower_partition_results.json",
+      "original_sha256": "6e4208a6bf81fa1d95ba208f53bb2791e792044eab8d41eaf3eee94e9de9fadc",
+      "publication_sha256": "6e4208a6bf81fa1d95ba208f53bb2791e792044eab8d41eaf3eee94e9de9fadc",
+      "original_bytes": 53200,
+      "publication_bytes": 53200,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/equal_mass/adversarial_diagnostics.py",
+      "original_sha256": "e68609bef86d2030b38362fdfdc213a262700209ba1bc734dc9e024a634b6276",
+      "publication_sha256": "e68609bef86d2030b38362fdfdc213a262700209ba1bc734dc9e024a634b6276",
+      "original_bytes": 5457,
+      "publication_bytes": 5457,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/equal_mass/lower_partition_check.py",
+      "original_sha256": "cf0346acbf349b34f8ceb8b22720fc9625c9d6680d1c87727dcc6b07b6cea62f",
+      "publication_sha256": "cf0346acbf349b34f8ceb8b22720fc9625c9d6680d1c87727dcc6b07b6cea62f",
+      "original_bytes": 8666,
+      "publication_bytes": 8666,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "research/weighted_top/results.json",
+      "original_sha256": "4f38faee9db74c8e76e8dfa8a4d93abf4c7892e9d9e42bf7a40478607692b634",
+      "publication_sha256": "682d372e04e6f33e657bd5493c8f87c564e93c233b699ea3f6c13f2026546bf8",
+      "original_bytes": 12052,
+      "publication_bytes": 12203,
+      "transformation": "Public relative paths, neutral documentation, or metadata digest rebinding; scientific numeric fields unchanged; removed machine metadata and/or refreshed publication digest bindings as applicable"
+    },
+    {
+      "path": "research/weighted_top/adversarial_exact.py",
+      "original_sha256": "171774a33eb6fd36eb7162df778083868459ab7af45788b9c46de888dd760d4d",
+      "publication_sha256": "580adef9a93e702b02badedcb04a3cabb5db07764564da90b053c126cec11888",
+      "original_bytes": 8285,
+      "publication_bytes": 8236,
+      "transformation": "Public relative paths, neutral documentation, or metadata digest rebinding; scientific numeric fields unchanged"
+    },
+    {
+      "path": "experiments/risk_boundary_checks.py",
+      "original_sha256": "927a993b966bb5fa8d56d9ccca27c258bae890b2c3706892bb14d3ea7a292430",
+      "publication_sha256": "927a993b966bb5fa8d56d9ccca27c258bae890b2c3706892bb14d3ea7a292430",
+      "original_bytes": 5016,
+      "publication_bytes": 5016,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "experiments/risk_boundary_checks.json",
+      "original_sha256": "669116f25d73b656a102328951acf41221c5ca92bbee2e4d65eb72decfc13c3f",
+      "publication_sha256": "669116f25d73b656a102328951acf41221c5ca92bbee2e4d65eb72decfc13c3f",
+      "original_bytes": 661,
+      "publication_bytes": 661,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "CLAIM_MATRIX.csv",
+      "original_sha256": "f89889b2cc339341ff8221623b59c295a7b028e05415046e82351b0f8706da49",
+      "publication_sha256": "75da73b252bee2b32f949f42377fb9552439487aab1176061a2c4ffbf222cb7c",
+      "original_bytes": 3303,
+      "publication_bytes": 3193,
+      "transformation": "Mapped scientific claim sources to public paths"
+    },
+    {
+      "path": "research/equal_mass/lower_family.md",
+      "original_sha256": "c3b587777bbc6a7fdf904bb392d22acbcfc994aea0c7c0a4c698ea542c139010",
+      "publication_sha256": "c3b587777bbc6a7fdf904bb392d22acbcfc994aea0c7c0a4c698ea542c139010",
+      "original_bytes": 7349,
+      "publication_bytes": 7349,
+      "transformation": "Byte-identical copy"
+    },
+    {
+      "path": "ERRATA.md",
+      "original_sha256": null,
+      "publication_sha256": "3aee3703bb6e0733648ab49399054508d61148590e3649a4096e5a911aa55246",
+      "original_bytes": null,
+      "publication_bytes": 1965,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "README.md",
+      "original_sha256": null,
+      "publication_sha256": "e0a00dfc89dc6ce2b754cba5efb9be1f3dfd564ff7a02f57e0fb73e528771161",
+      "original_bytes": null,
+      "publication_bytes": 620,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "REPRODUCE.md",
+      "original_sha256": null,
+      "publication_sha256": "3485d1ab30c5b4c9b8f61bcffec7a6fada15951a0fc0dacb56fe317616bc0c6e",
+      "original_bytes": null,
+      "publication_bytes": 1019,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "SCIENTIFIC_STATUS.md",
+      "original_sha256": null,
+      "publication_sha256": "3f542f8c5258a3eedb8cdc386612d2e80f97b3915a4d0d63d8558c87fcfd480c",
+      "original_bytes": null,
+      "publication_bytes": 960,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    },
+    {
+      "path": "TECHNICAL_REPORT.md",
+      "original_sha256": null,
+      "publication_sha256": "6265101fd89cd80314e6f5575f570ce7dc5cb32010e0d646ee3f841e33f6fcfd",
+      "original_bytes": null,
+      "publication_bytes": 6808,
+      "transformation": "New public technical documentation distilled from the original study; not a new scientific result"
+    }
+  ]
+}

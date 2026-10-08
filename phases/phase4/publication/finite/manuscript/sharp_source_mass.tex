@@ -1,0 +1,197 @@
+\subsection{A sharp source-mass order for four-state sources}
+\label{sec:sharp-source-mass}
+The lower construction makes rare source states increasingly scarce. We now
+show that its square-root-logarithmic order is the worst possible order for
+four inputs. No lower bound on conditional label probabilities is needed.
+The constants in the universal bound are not claimed to be optimal.
+
+\begin{lemma}[A scalar logarithmic moment inequality]
+\label{lem:log-moment}
+Let $M\ge1$ and $0\le z\le M$. With continuous conventions at zero,
+\[
+ z(\log z)^2\le(2+\log M)(z\log z-z+1).
+\]
+\end{lemma}
+\begin{proof}
+For $0<z\le1$, put $t=-\log z\ge0$. The stronger inequality with
+coefficient two is equivalent to
+$t^2\le2(e^t-1-t)$, which follows from the exponential series.
+For $z\ge1$, put $t=\log z\ge0$. The inequality with coefficient $2+t$
+is equivalent to
+\[
+ t-2+(t+2)e^{-t}\ge0.
+\]
+The left side is zero at zero and has derivative
+$1-(t+1)e^{-t}\ge0$. Since $t\le\log M$, the result follows.
+Continuity handles $z=0$.
+\end{proof}
+
+\begin{lemma}[Square-root entropy perturbation]
+\label{lem:entropy-lipschitz}
+Let $\mu=(\mu_1,\ldots,\mu_m)$ be a positive probability vector. For
+$u\in[0,\infty)^m$, define
+\[
+ E_\mu u^2=\sum_i\mu_i u_i^2,\qquad
+ \operatorname{Ent}_\mu(u^2)
+ =\sum_i\mu_i u_i^2\log\frac{u_i^2}{E_\mu u^2},\qquad
+ F_\mu(u)=\sqrt{\operatorname{Ent}_\mu(u^2)},
+\]
+where $F_\mu(0)=0$. Then, for all nonnegative $u,v$,
+\begin{equation}
+ |F_\mu(u)-F_\mu(v)|
+ \le\sqrt{2+\log(1/\min_i\mu_i)}
+       \left(\sum_i\mu_i(u_i-v_i)^2\right)^{1/2}.
+ \label{eq:entropy-lipschitz}
+\end{equation}
+\end{lemma}
+\begin{proof}
+First take strictly positive $u$ with $F_\mu(u)>0$. Put
+$q=E_\mu u^2$ and $z_i=u_i^2/q$. Then
+$z_i\le1/\mu_i\le1/\min_j\mu_j$, and differentiation gives
+\[
+ \partial_iF_\mu(u)=\frac{\mu_i u_i\log z_i}{F_\mu(u)}.
+\]
+Writing $C_\mu=2+\log(1/\min_i\mu_i)$, the squared gradient norm dual
+to the weighted Euclidean norm satisfies
+\begin{align*}
+ \sum_i\frac{(\partial_iF_\mu(u))^2}{\mu_i}
+ &=\frac{q\sum_i\mu_i z_i(\log z_i)^2}
+          {\operatorname{Ent}_\mu(u^2)}\\
+ &\le\frac{q C_\mu\sum_i\mu_i(z_i\log z_i-z_i+1)}
+          {\operatorname{Ent}_\mu(u^2)}=C_\mu,
+\end{align*}
+where Lemma~\ref{lem:log-moment} and $\sum_i\mu_i z_i=1$ give the
+last two steps. Cauchy--Schwarz bounds the derivative along a line segment
+by $\sqrt{C_\mu}$ times its weighted speed.
+
+For strictly positive $u,v$, the segment joining them has zero entropy
+exactly at constant vectors. It either lies entirely in the line of constant
+vectors, where the claim is immediate, or intersects that line at at most
+one point. Integrate the derivative bound on the remaining intervals and
+use continuity at their endpoints. For general nonnegative $u,v$, apply the
+result to $u+\epsilon\boldsymbol{1},v+\epsilon\boldsymbol{1}$ and send
+$\epsilon\downarrow0$. Their difference is unchanged and $F_\mu$ is
+continuous, including at zero.
+\end{proof}
+
+The lemma is an analytic tool; the result below uses its one-sided effect
+on a regrouping operation. It avoids paying a logarithmic comparison
+factor on the distortion already incurred by the old partition.
+
+\begin{theorem}[Four-state source-mass bound]
+\label{thm:mass-bound}
+If $|\mathcal X|=4$ and $p_x\ge\gamma>0$, there is a deterministic
+hierarchy satisfying, simultaneously for $k=2,3$,
+\begin{equation}
+ D(\cH_k)\le K_\gamma D_k^*,\qquad
+ R(\cH_k)\le K_\gamma R_k^*,\qquad
+ K_\gamma=2+2\sqrt{3+\log(1/\gamma)}.
+ \label{eq:mass-bound}
+\end{equation}
+The inequalities include zero-optimum cases without division.
+\end{theorem}
+\begin{proof}
+Put $A=D_2^*$, $r=D_3^*$, and $C_\gamma=2+\log(1/\gamma)$.
+Let $\cP_2$ be an optimal two-cell partition, and let $\{i,j\}$ be a
+pair of minimum merge cost $r$. If $i,j$ belong to the same cell of
+$\cP_2$, the partition merging only this pair refines $\cP_2$, so both
+flat optima are simultaneously attained.
+
+Otherwise let $a=p_i\le p_j=b$, exchanging their names if necessary.
+Let $S,T$ be the cells of $\cP_2$ containing $i,j$, respectively, and
+write $A_S=D(S)$, $A_T=D(T)$; thus $A=A_S+A_T$.
+We move $i$ into $T$. In the new cell $T\cup\{i\}$, normalized source
+weights are at least $\gamma$, since its total mass is at most one.
+For each label $y$, apply Lemma~\ref{lem:entropy-lipschitz} to the vector
+$(\sqrt{P_x(y)})_{x\in T\cup\{i\}}$ and to the vector with its
+$i$th coordinate replaced by $\sqrt{P_j(y)}$. Multiply each resulting
+square-root inequality by the square root of the cell mass, then use the
+Euclidean triangle inequality across label coordinates to obtain
+\begin{equation}
+ \sqrt{D(T\cup\{i\})}
+ \le\sqrt{D_{\rm rep}}+
+      \sqrt{C_\gamma a\,\He^2(P_i,P_j)},
+ \label{eq:one-sided-perturbation}
+\end{equation}
+where $D_{\rm rep}$ is the distortion of the artificial cell in which
+$P_i$ is replaced by $P_j$, and
+$\He^2(P,Q)=\sum_y(\sqrt{P(y)}-\sqrt{Q(y)})^2$.
+The entropy expression equals KL cluster distortion by expanding each
+label coordinate, so no probabilistic encoding claim is made about the
+artificial replacement.
+
+To bound $D_{\rm rep}$, evaluate its KL objective at the original centroid
+$P_T$. The posterior $P_j$ now has weight $a+b\le2b$; every other
+weight is unchanged. Minimizing over centroids can only help. Therefore
+$D_{\rm rep}\le2A_T$.
+Also $\KL(P\Vert Q)\ge\He^2(P,Q)$: writing
+$f(z)=z\log z-z+1$, the scalar difference
+\[
+ f(z)-(\sqrt z-1)^2
+ =2\sqrt z\{\sqrt z\log\sqrt z-\sqrt z+1\}\ge0
+\]
+proves this after multiplication by $Q$ and summation. The mixture
+centroid of a positive-weight pair contains its members' supports.
+The unconstrained weighted Euclidean centroid then gives
+\[
+ r\ge\frac{ab}{a+b}\He^2(P_i,P_j),\qquad
+ a\He^2(P_i,P_j)\le2r.
+\]
+Thus \eqref{eq:one-sided-perturbation} implies
+\[
+ D(T\cup\{i\})\le
+    \left(\sqrt{2A_T}+\sqrt{2C_\gamma r}\right)^2.
+\]
+Removing $i$ from $S$ cannot increase its distortion, by the Jensen
+aggregation identity. The total new distortion $t$ is consequently bounded by
+\begin{align}
+ t&\le A_S+
+        \left(\sqrt{2A_T}+\sqrt{2C_\gamma r}\right)^2\nonumber\\
+  &\le\left(\sqrt{2A}+\sqrt{2C_\gamma r}\right)^2
+   \le4A+4C_\gamma r.
+ \label{eq:regrouping-bound}
+\end{align}
+For the second inequality use $A_S+2A_T\le2A$ and $A_T\le A$.
+The moved cells are unions of the three fine cells
+$\{i,j\},\{\ell\},\{m\}$. If removing $i$ empties $S$, split the
+remaining cell into two nonempty unions of these fine cells. Refinement
+does not increase distortion. This constructs a two-cell partition
+compatible with the minimum-pair three-cell partition.
+
+If $r=0$, the first bound in \eqref{eq:regrouping-bound} gives
+$t\le2A$, and the fine distortion is zero; this also covers $A=0$.
+Suppose $r>0$ and put $u=A/r\ge1$. Retaining $\cP_2$ and refining
+it once yields fine distortion at most $A$, hence a simultaneous factor
+at most $u$. The minimum-pair hierarchy constructed above has factor at
+most $4+4C_\gamma/u$. Choose the better hierarchy. The increasing function
+$u$ and decreasing function $4+4C_\gamma/u$ meet at
+$2+2\sqrt{1+C_\gamma}$, so
+\[
+ \min\{u,4+4C_\gamma/u\}\le2+2\sqrt{1+C_\gamma}=K_\gamma.
+\]
+This proves the excess-loss claim. Adding the common nonnegative baseline
+$B_0$ preserves any multiplicative factor at least one, proving the
+statement for total risk.
+\end{proof}
+
+\begin{corollary}[Sharp worst-case source-mass order]
+\label{cor:sharp-mass-order}
+For $0<\gamma\le1/4$, take the supremum of $\rho_{\rm det}$, or
+of $\rho_{\rm stoch}$, over four-state sources with masses at least
+$\gamma$, arbitrary finite target alphabets, and positive flat total-risk
+benchmarks. Both suprema have order
+$\Theta(\sqrt{\log(1/\gamma)})$ as $\gamma\downarrow0$.
+\end{corollary}
+\begin{proof}
+Theorem~\ref{thm:mass-bound} gives the upper bound; every deterministic
+hierarchy is an admissible stochastic refinement. For the lower bound,
+set $L=\log(1/\gamma)$ in Theorem~\ref{thm:main}. Its rare masses equal
+$\gamma$ and its anchor masses exceed $\gamma$ eventually. Its positive
+full-support total risks give the required lower order in both settings.
+\end{proof}
+
+The order is sharp over all four-state sources; the leading constants
+in Theorem~\ref{thm:main} remain sharp only for the specified family.
+The universal bound does not identify the extremal distribution or the
+optimal worst-case coefficient. Rare source states are necessary for an
+unbounded four-state price; extreme label probabilities alone do not suffice.

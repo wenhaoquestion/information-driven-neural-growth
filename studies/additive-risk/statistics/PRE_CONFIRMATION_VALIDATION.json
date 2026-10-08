@@ -1,0 +1,16 @@
+{
+  "time_utc": "2026-10-07T22:39:54.967244+00:00",
+  "ast_checks_passed": true,
+  "zero_observation_input_passed": true,
+  "reference_posterior_input_rejected": true,
+  "single_process_runner": true,
+  "rng_invoked": false,
+  "confirmation_executed": false,
+  "confirmation_directory_exists": false,
+  "source_sha256": {
+    "confirm_once.py": "4f16ef912f25a1a878444dc56632665a7439cfcb218e897ba04238723ff872f3",
+    "infer_confirmation.py": "bf97ae09de154bba5a5f1b9696ec30610d07f405ead7296a473f03eac0066afb",
+    "CONFIRMATION_REFERENCE.json": "490da167a2cd9ccc5abe370f08e15e34d32e6b3c83386c9a0edaa363a6d8019b"
+  },
+  "publication_binding_notice": "Publication copy: source digests bind current public files after documented metadata/path edits; historical event timestamps are retained and are not a new execution attestation."
+}

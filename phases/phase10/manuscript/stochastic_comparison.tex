@@ -1,0 +1,56 @@
+\subsection{Stochastic hierarchies and exact cardinalities}
+For probability weights, a finite channel $X\to Z$ has distortion
+\[
+ D(Z)=\mathbb E\varphi(x_X)
+       -\mathbb E\varphi\bigl(\mathbb E[x_X\mid Z]\bigr).
+\]
+A stochastic hierarchy is a degradation chain
+$X\to Z_{N-1}\to Z_{N-2}$, with each output alphabet of size at most its
+subscript. Its price $R_N^{\stp}$ uses the same two flat denominators.
+Indeed, sample an independent deterministic encoder table $U$ realizing
+any channel. Revealing the table and applying conditional Jensen gives
+$D(Z)\ge\mathbb E_U D(Z\mid U)\ge\OPT_k$. A deterministic flat minimizer
+attains the reverse inequality. Thus allowing stochastic flat encoders
+does not lower $\OPT_k$. General positive weights are handled by common
+normalization.
+
+\begin{lemma}[Inherited two-level deterministic comparison]
+\label{lem:ext-rounding}
+For this finite-source problem,
+\[
+ \tfrac12 R_N\le R_N^{\stp}\le R_N.
+\]
+\end{lemma}
+\begin{proof}
+Given a stochastic degradation chain, independently sample deterministic
+function tables for its encoder and coarsener, independently of $X$, and
+denote the two tables together by $U$. Conditional on $U$ they define an
+admissible deterministic hierarchy. Revealing $U$ decreases Jensen
+distortion at each level, so $D(Z_k)\ge\mathbb E_U D(Z_k\mid U)$.
+If the stochastic chain has price $R$, the expected sum of the two
+conditional deterministic ratios is at most $2R$. Some table has sum,
+and hence maximum ratio, at most $2R$. Taking the infimum over chains
+gives $R_N\le2R_N^{\stp}$. Deterministic hierarchies are admissible
+stochastic chains, proving the other inequality. The table is a proof
+device, not a public random seed available to the predictor. This is the
+Phase~9 comparison~\cite{huang9}.
+\end{proof}
+
+\begin{lemma}[Filling both hierarchy budgets]
+\label{lem:exact-budgets}
+Any hierarchy with at most $N-1$ fine cells and at most $N-2$ coarse
+cells can be refined to those exact cardinalities without increasing
+either distortion.
+\end{lemma}
+\begin{proof}
+Split fine cells within their current coarse cells until the fine level
+has $N-1$ cells. If the coarse level has fewer than $N-2$ cells, at least
+one coarse cell contains two fine cells; split that coarse cell into
+unions of fine cells. Repeat until its budget is filled. Jensen
+decomposition makes each refinement nonincreasing in cost, and nesting
+is maintained. No contiguous-cell condition is used.
+\end{proof}
+The strict-convexity assumptions make the relevant flat optima positive.
+Repeated locations, zero weights, and identically zero curvature are not
+included in the theorems; such extensions would require a convention for
+zero-optimum ratios.

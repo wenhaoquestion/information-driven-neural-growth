@@ -1,0 +1,45 @@
+{
+  "aligned_probe_max_identity_error": 8.500145032286355e-17,
+  "gradient_max_absolute_errors": {
+    "w": 8.157025055410827e-11,
+    "b": 3.331926553239162e-11,
+    "v": 6.068942570713887e-11,
+    "c": 4.087730154367364e-12
+  },
+  "zero_perturbation_preserves_predictions": true,
+  "population_negative_eigenvector": [
+    0.0,
+    1.0
+  ],
+  "split_matrix": [
+    [
+      0.054514648603769054,
+      0.0
+    ],
+    [
+      0.0,
+      -0.054514648603769054
+    ]
+  ],
+  "Taylor_checks": [
+    {
+      "epsilon": 0.01,
+      "risk_change": -2.7255263832515197e-06,
+      "predicted_quadratic": -2.7257324301884527e-06,
+      "ratio": 0.9999244067632425
+    },
+    {
+      "epsilon": 0.001,
+      "risk_change": -2.725730374741886e-08,
+      "predicted_quadratic": -2.7257324301884526e-08,
+      "ratio": 0.9999992459103675
+    },
+    {
+      "epsilon": 0.0001,
+      "risk_change": -2.7257329726637636e-10,
+      "predicted_quadratic": -2.7257324301884526e-10,
+      "ratio": 1.0000001990200158
+    }
+  ],
+  "status": "passed"
+}

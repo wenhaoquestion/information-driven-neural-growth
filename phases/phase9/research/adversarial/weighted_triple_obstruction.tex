@@ -1,0 +1,79 @@
+% Phase 9 independent adversarial result; self-contained mathematical insert.
+\section{A missing hypothesis in an unequal-weight three-point reduction}
+
+For weighted scalar locations, write $P_{UV}$ for the unnormalized
+two-point Jensen distortion and $T_{UVW}$ for the three-point distortion.
+The three original weights are retained in each expression.
+
+\begin{proposition}[The compatible-optimizer reduction survives weights]
+For four distinct ordered scalar locations with arbitrary positive source
+weights and a differentiable strictly convex generator, there are
+compatible optimal two- and three-cell partitions unless an optimal
+three-cell partition merges the middle pair $BC$ and the only optimal
+contiguous two-cell partition is $AB\mid CD$.
+\end{proposition}
+\begin{proof}
+Flat optima can be chosen contiguous: for fixed ordered centers, the
+difference of two scalar Bregman costs is affine in the data location, so
+assignment to a minimizing center has ordered interval cells; recomputing
+the centers can only improve the objective. Positive point weights do not
+change which center minimizes the cost at a given point.
+
+For every ordered triple, $T_{ABC}\geq P_{AB}+P_{BC}$. One way to see
+this is through curvature kernels. Adding $C$ to the cell $AB$ adds the
+nonnegative Jensen kernel for merging its weighted mean with $C$;
+therefore $K_{ABC}\geq K_{AB}$. Likewise $K_{ABC}\geq K_{BC}$, and the
+two latter kernels have disjoint open supports. Equivalently the same
+argument works by the distributional curvature measure of a convex
+generator. Thus their sum is pointwise dominated by $K_{ABC}$.
+
+If an optimal adjacent fine pair is $AB$, the only incompatible
+contiguous coarse split is $A\mid BCD$. Its cost obeys
+$T_{BCD}\geq P_{BC}+P_{CD}\geq P_{AB}+P_{CD}$, so the compatible split
+$AB\mid CD$ is at least as good. The $CD$ case is symmetric.
+If the optimal pair is $BC$, the coarse splits $A\mid BCD$ and
+$ABC\mid D$ are already compatible; only $AB\mid CD$ can conflict.
+\end{proof}
+
+\begin{proposition}[The two three-point inequalities alone give no bound]
+Let $q=P_{BC}$, $S=P_{AB}+P_{BC}$, and $T=T_{ABC}$. There is no finite
+degree-only bound on a parameter $R$ from the inequalities
+\[
+ q\leq T/R^2,\qquad S\leq2T/R
+\]
+for arbitrary positive triple weights, even if the curvature is the
+constant polynomial $g\equiv1$ and the locations are fixed.
+\end{proposition}
+\begin{proof}
+Take $\varphi(x)=x^2/2$, $(A,B,C)=(0,1/2,1)$, and original weights
+$(1,\varepsilon^2,\varepsilon)$ for $0<\varepsilon\leq1$.
+Common normalization of all weights is immaterial. The exact weighted
+variance identities give
+\[
+ P_{AB}=\frac{\varepsilon^2}{8(1+\varepsilon^2)},\qquad
+ q=\frac{\varepsilon^2}{8(1+\varepsilon)},\qquad
+ T=\frac{\varepsilon+(\varepsilon^2+\varepsilon^3)/4}
+          {2(1+\varepsilon+\varepsilon^2)}.
+\]
+In particular $q\leq\varepsilon^2/8$, $S\leq\varepsilon^2/4$, and
+$T\geq\varepsilon/6$. Put $R=\varepsilon^{-1/2}$. Then
+\[
+ q\leq\varepsilon^2/8\leq\varepsilon T=T/R^2,
+ \qquad
+ S\leq\varepsilon^2/4\leq\varepsilon^{3/2}/3
+    \leq2\sqrt\varepsilon\,T=2T/R.
+\]
+As $\varepsilon\downarrow0$, $R\to\infty$ while the degree remains
+zero and all locations remain fixed.
+\end{proof}
+
+\paragraph{Consequence for a proposed sharp weighted upper bound.}
+The compatible-optimizer reduction does not require equal weights.
+The localization step of the equal-mass proof does require them, or a
+replacement hypothesis: the displayed two inequalities for one triple
+are insufficient. A valid general weighted proof must also exploit
+information from the fourth point, for example simultaneous control of
+both triples relative to the same outer-pair sum, and must check every
+dependence on the ratios of the three source masses. This counterexample
+does not challenge the Phase 8 quadratic upper bound or its established
+weighted lower family.

@@ -1,0 +1,27 @@
+{
+  "timestamp_utc": "2026-10-07T06:47:21.386117+00:00",
+  "status": "prospectively frozen before confirmation invocation",
+  "method_lrs": {
+    "fixed7": 0.0075,
+    "historical_moment": 0.0075,
+    "random_growth128": 0.0075,
+    "random_growth138": 0.0075
+  },
+  "files": {
+    "experiments/PROTOCOL.md": "9da881b65e9c178695edf319b9a7d2ff14c7915713923c5425f8d6a2c8168815",
+    "code/frontier.py": "295aa086521a69ddabc5483e7fcedfb1e5a0159d8813599c4169b8bb41325ce0",
+    "code/phase5_reference.py": "21055e8e31a28dd450bc5727ad7e3a341ae61d2930816457a8bdbdc15d5cb720",
+    "code/run_stage.py": "bb0c7491a9397d3a194e7186c88ffcbd627214231c5d2c3758cd3b9ac813eec8",
+    "code/test_frontier.py": "e3631e6c72dbce01b0d0584db447cbdaedf2e9f23bed16731797ba3abac7c403",
+    "analysis/analyze.py": "1077efa84dc86e7b89ee2a4425578b874f1b9f45c73e12841383ceb3ae010157",
+    "analysis/development_selection/selected_lrs.json": "37f4b3e60f6c129a972620230753ef1f0ef2b478d33dbcb6a99396e66b135111",
+    "configs/confirmation_primary_selected.json": "6b6b3a170e543f0cbefa6a54d717b1ea94334b9060fc3cf8288bd509a42e8e53",
+    "configs/confirmation_secondary_selected.json": "8d1ff8562da809d4a2ce9ecae5ba290569091f9cbbfefe5c64bf039f30fdf238",
+    "configs/age_sensitivity_selected.json": "94085abe95c65b305a86c7e7a46636949f68050dfc1155bd49f6c81531d2bd4a"
+  },
+  "code_review": "reviews/implementation_statistical_audit.md",
+  "development_trajectories": 960,
+  "primary_confirm_trajectories": 5120,
+  "secondary_trajectories": 1280,
+  "age_sensitivity_trajectories": 640
+}

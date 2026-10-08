@@ -1,0 +1,17 @@
+{
+  "quartet_scaling.csv": {
+    "identical_bytes": true,
+    "historical_sha256": "c53ecb24ca84e9f7b792c33dfe7d97713c82bedafc4d9732271045ba759ec6bf",
+    "rerun_sha256": "c53ecb24ca84e9f7b792c33dfe7d97713c82bedafc4d9732271045ba759ec6bf"
+  },
+  "quartet_sensitivity.csv": {
+    "identical_bytes": true,
+    "historical_sha256": "961a7e174131b09e60b28cde4d273e295acc9e3ab3c791a48476117ab5c80d65",
+    "rerun_sha256": "961a7e174131b09e60b28cde4d273e295acc9e3ab3c791a48476117ab5c80d65"
+  },
+  "quartet_all_partitions.json": {
+    "identical_bytes": true,
+    "historical_sha256": "3ea4f2b120267f444d20131c13f2b91e33723d74f9fcc2cc88ecd81b94803d5a",
+    "rerun_sha256": "3ea4f2b120267f444d20131c13f2b91e33723d74f9fcc2cc88ecd81b94803d5a"
+  }
+}

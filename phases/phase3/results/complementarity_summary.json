@@ -1,0 +1,98 @@
+[
+  {
+    "epsilon": 0.1,
+    "signal": false,
+    "max_block": 1,
+    "runs": 32,
+    "risk_mean": 0.25019989698680545,
+    "width_mean": 0.0,
+    "fits_mean": 121.0,
+    "lstsq_proxy_mean": 492544.0,
+    "wall_seconds_mean": 0.005623661411846115,
+    "any_growth": 0
+  },
+  {
+    "epsilon": 0.1,
+    "signal": false,
+    "max_block": 2,
+    "runs": 32,
+    "risk_mean": 0.25019989698680545,
+    "width_mean": 0.0,
+    "fits_mean": 781.0,
+    "lstsq_proxy_mean": 6575104.0,
+    "wall_seconds_mean": 0.0422468228452999,
+    "any_growth": 0
+  },
+  {
+    "epsilon": 0.1,
+    "signal": true,
+    "max_block": 1,
+    "runs": 32,
+    "risk_mean": 1.69157284663109,
+    "width_mean": 1.8125,
+    "fits_mean": 111.09375,
+    "lstsq_proxy_mean": 1059424.0,
+    "wall_seconds_mean": 0.006215088592398388,
+    "any_growth": 27
+  },
+  {
+    "epsilon": 0.1,
+    "signal": true,
+    "max_block": 2,
+    "runs": 32,
+    "risk_mean": 0.2519664004708201,
+    "width_mean": 8.0,
+    "fits_mean": 251.0,
+    "lstsq_proxy_mean": 12229632.0,
+    "wall_seconds_mean": 0.022324851502162346,
+    "any_growth": 32
+  },
+  {
+    "epsilon": 0.25,
+    "signal": false,
+    "max_block": 1,
+    "runs": 32,
+    "risk_mean": 0.25019989698680545,
+    "width_mean": 0.0,
+    "fits_mean": 121.0,
+    "lstsq_proxy_mean": 492544.0,
+    "wall_seconds_mean": 0.0055730559997755336,
+    "any_growth": 0
+  },
+  {
+    "epsilon": 0.25,
+    "signal": false,
+    "max_block": 2,
+    "runs": 32,
+    "risk_mean": 0.25019989698680545,
+    "width_mean": 0.0,
+    "fits_mean": 781.0,
+    "lstsq_proxy_mean": 6575104.0,
+    "wall_seconds_mean": 0.040710184904128255,
+    "any_growth": 0
+  },
+  {
+    "epsilon": 0.25,
+    "signal": true,
+    "max_block": 1,
+    "runs": 32,
+    "risk_mean": 0.4405110771634405,
+    "width_mean": 5.90625,
+    "fits_mean": 84.5625,
+    "lstsq_proxy_mean": 2636352.0,
+    "wall_seconds_mean": 0.006688529939310683,
+    "any_growth": 32
+  },
+  {
+    "epsilon": 0.25,
+    "signal": true,
+    "max_block": 2,
+    "runs": 32,
+    "risk_mean": 0.25196640047082014,
+    "width_mean": 8.0,
+    "fits_mean": 251.0,
+    "lstsq_proxy_mean": 12229632.0,
+    "wall_seconds_mean": 0.02190018346936995,
+    "any_growth": 32
+  }
+]

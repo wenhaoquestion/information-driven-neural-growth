@@ -1,0 +1,197 @@
+{
+  "description": "Hashes identify historical source bytes, not correctness; local-only files are not downloadable from this repository.",
+  "files": [
+    {
+      "path": "results/audit_betting.json",
+      "bytes": 24161,
+      "sha256": "712d9a885ca84c42d862efb0990ef4f53960d869bdeea5d2d0cf34b0fd45f46f",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/audit_eb_betting_pair.json",
+      "bytes": 21278,
+      "sha256": "2dd4937fe90b125eb1a566478011ee9e99374b1d9855ccae8d063c59493ca5ea",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/audit_sequential.json",
+      "bytes": 3845,
+      "sha256": "38139cbab6c5e2813d25b0453860972898d566b210c83446e42f77344ac2d6bb",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/betting_followup4096.json",
+      "bytes": 12745373,
+      "sha256": "5f2bbe8719da39be2e9590acf7fd66d9f6eded6cca737832c2583d6a47f1b806",
+      "disposition": "exact-byte gzip in evidence/"
+    },
+    {
+      "path": "results/betting_followup_summary.json",
+      "bytes": 16762,
+      "sha256": "4b6add66c22fc2fe1f5c470fe18159e29bfee1d578b5918f0720a9272bc143f9",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/betting_gate_checks.json",
+      "bytes": 3076,
+      "sha256": "5233af1bbf462d7d6af64428847673c5c1c91ed3acdb7be0f50d7c1bda1da184",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/complementarity_analytic_checks.json",
+      "bytes": 1172,
+      "sha256": "0ec5674d12907cf7eb4051967adcb8aa29b271f5821deff91683f7643a38ed4f",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/complementarity_candidates.jsonl",
+      "bytes": 17203592,
+      "sha256": "5437175e5d000f3d494ac763664e399d3453a9be3218c81df5404cf09499a4f0",
+      "disposition": "large per-trial data retained locally; summaries and generation code supplied"
+    },
+    {
+      "path": "results/complementarity_paired.json",
+      "bytes": 347,
+      "sha256": "fb05834c9920d8bbfe9661692a8d505ad178f241acf0c290325ff186b00b63e6",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/complementarity_runs.json",
+      "bytes": 999834,
+      "sha256": "c1f88f14461ff74d10eb6a2608e20962b546ec104fcbf6de4f789931fed78dc4",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/complementarity_summary.json",
+      "bytes": 2196,
+      "sha256": "c592c91a2b4157b831c7a4db192e43047766f12f7d90116dcd8776b917416cf1",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/confirm_eb16384.json",
+      "bytes": 25106033,
+      "sha256": "ee9ede62e3da282cab0cec706b44f962af52bcf98e3942bcdec9e63528344531",
+      "disposition": "exact-byte gzip in evidence/"
+    },
+    {
+      "path": "results/confirm_eb4096.json",
+      "bytes": 23091075,
+      "sha256": "3f92a78345414211630142f0c4be3519759285a55322b41eca27278cb3a89320",
+      "disposition": "exact-byte gzip in evidence/"
+    },
+    {
+      "path": "results/confirm_mean16384.json",
+      "bytes": 16569879,
+      "sha256": "116bc2d1b46210127c248d28a5c8445c99af74ef0fc18a67cbd0409feddceb14",
+      "disposition": "exact-byte gzip in evidence/"
+    },
+    {
+      "path": "results/confirmation_audit.json",
+      "bytes": 134348,
+      "sha256": "585ebeb2612c430cf15c85def3c531b9d8a1bcf1d869a72813d5af283c84a545",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/diagnostics_summary.json",
+      "bytes": 671,
+      "sha256": "5f671445b915ea7ef5d2bb2d352b2194e0e9e0bfc7968913f86d2741d4f6e023",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/eb_followup4096.json",
+      "bytes": 9978200,
+      "sha256": "16403d85e4a3a464cf57834e8136feb73aaf5a081e44e5c0f29d9ee354cac03c",
+      "disposition": "exact-byte gzip in evidence/"
+    },
+    {
+      "path": "results/environment.json",
+      "bytes": 231,
+      "sha256": "be9b73b056b6e9889539e257f1334e5956ff1d24cea0011e3340ff95383400a5",
+      "disposition": "historical environment, PDF QA or source-preservation administration omitted; scientific outcomes retained separately"
+    },
+    {
+      "path": "results/events.csv",
+      "bytes": 1779898,
+      "sha256": "8d1151696a90b6aa3b3204529ab41fd147f82cc9d06011e4538f6f533b553565",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/evidence_diagnostic_raw.jsonl",
+      "bytes": 16547113,
+      "sha256": "f0969827c03646bf0f80efe91080daafdf51453c85d1ebe9645d932ff413d9cd",
+      "disposition": "large per-trial data retained locally; summaries and generation code supplied"
+    },
+    {
+      "path": "results/evidence_diagnostic_summary.json",
+      "bytes": 15950,
+      "sha256": "4a2a3264a6cdb999fc78695774de5cdaeb42d2152975d04163893e30fd5c6a59",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/inherited_audit.json",
+      "bytes": 4902,
+      "sha256": "5bb206032a6b92e5e8338375dd17af90acf9ebd804d90d83db8d0918d8fe837b",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/paired_effects.csv",
+      "bytes": 10809,
+      "sha256": "5695c2bd4388dce9345cd425a1fd2dc204225987738d58db12729ab9adb6fbfe",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/pdf_qa.json",
+      "bytes": 371,
+      "sha256": "b9222c7576e479addb379e0001810e5f903d6a43ddfaab6a2252255b810d8920",
+      "disposition": "historical environment, PDF QA or source-preservation administration omitted; scientific outcomes retained separately"
+    },
+    {
+      "path": "results/pilot_16384.json",
+      "bytes": 4670936,
+      "sha256": "3e43caeae756d92e5aa1e53812d042d7a48b55d28084956d82a4371e5c406a63",
+      "disposition": "exact-byte gzip in evidence/"
+    },
+    {
+      "path": "results/pilot_4096.json",
+      "bytes": 4156227,
+      "sha256": "17903ad0b177c279f3b28737ba1376fb2f53ea89928d7e39b759c5503372db58",
+      "disposition": "exact-byte gzip in evidence/"
+    },
+    {
+      "path": "results/pool_capacity_audit.json",
+      "bytes": 292,
+      "sha256": "5aa8934df1c04239eb34f608813ecf8013ab6a0ddc85afb9591b8bd2bf4d8570",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/pool_capacity_diagnostic.json",
+      "bytes": 179006,
+      "sha256": "ea275000fc41e3bf4cc30ede462e09ce1160aba717420a7e531d686b7166d266",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/prior_manifest.json",
+      "bytes": 21016,
+      "sha256": "6001575265c929c76c6a4ffde8ca505ec859c48351fc0fd9169eb0827838f575",
+      "disposition": "historical environment, PDF QA or source-preservation administration omitted; scientific outcomes retained separately"
+    },
+    {
+      "path": "results/reproduction_audit.json",
+      "bytes": 382,
+      "sha256": "fee2ff139e407950e2dd0d5bef7dadd217fd8847b6486cd3d210aa006be2de20",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "results/summary.csv",
+      "bytes": 10088,
+      "sha256": "5827f27a425ed4e5a3f718c18db4afdc72061db22ec1752fefe34980237f0873",
+      "disposition": "public file, possibly portable-metadata cleanup"
+    },
+    {
+      "path": "research/unsigned_diagnostic/results__evidence_diagnostic_raw.jsonl",
+      "bytes": 12843036,
+      "sha256": "521f258599cb71f74d1d2bb3d95b9fac2ea79acca2b25ec6474b85304b453ea6",
+      "disposition": "superseded unsigned per-trial arrays retained locally; original code, theorem and summary supplied"
+    }
+  ]
+}

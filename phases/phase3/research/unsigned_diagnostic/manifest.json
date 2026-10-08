@@ -1,0 +1,37 @@
+[
+  {
+    "original": "manuscript/theory.tex",
+    "snapshot": "manuscript__theory.tex",
+    "sha256": "8702c369e20f4105f76b36c200b921fecd7459dacd633cdbdcf002ce81c5400a"
+  },
+  {
+    "original": "research/independent_theory.md",
+    "snapshot": "research__independent_theory.md",
+    "sha256": "64c26edf8139fe24e7ec22a5468cb82e22f8c3f756f76d38b5d65d70b296a6ce"
+  },
+  {
+    "original": "code/evidence_diagnostic.py",
+    "snapshot": "code__evidence_diagnostic.py",
+    "sha256": "782098fea968b2fb15ddd910205d93d9eaa37b69979a1059a04a787fa732f06d"
+  },
+  {
+    "original": "results/evidence_diagnostic_raw.jsonl",
+    "snapshot": "results__evidence_diagnostic_raw.jsonl",
+    "sha256": "521f258599cb71f74d1d2bb3d95b9fac2ea79acca2b25ec6474b85304b453ea6"
+  },
+  {
+    "original": "results/evidence_diagnostic_summary.json",
+    "snapshot": "results__evidence_diagnostic_summary.json",
+    "sha256": "bec44e536551d4c65424c573eeeefe8be4fe81d9ede1195b20868e5f48f60402"
+  },
+  {
+    "original": "figures/evidence_diagnostic.pdf",
+    "snapshot": "figures__evidence_diagnostic.pdf",
+    "sha256": "606005a6e358c4746fb9f9e6a07fa6c67c5c39fb55c4d1f032f3065badbd320f"
+  },
+  {
+    "original": "figures/evidence_diagnostic.png",
+    "snapshot": "figures__evidence_diagnostic.png",
+    "sha256": "a4efa7b7def7601dc4e697095014ad3dad14d4c9537e681ae6b1e82d51964e06"
+  }
+]

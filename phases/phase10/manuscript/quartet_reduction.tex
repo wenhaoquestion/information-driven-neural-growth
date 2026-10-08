@@ -1,0 +1,121 @@
+\section{The exact restriction theorem}
+
+
+\begin{theorem}[Consecutive quartet domination]
+\label{thm:reduction}
+Choose any cheapest adjacent pair $e$ of cost $q=\OPT_{N-1}$ and any
+contiguous flat optimum $P$ at capacity $N-2$, of cost $F=\OPT_{N-2}$.
+One of the following conclusions holds.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item There is a hierarchy with both levels flat optimal, so $R_N=1$.
+\item The only nonsingleton cells of $P$ are two pairs $AB$ and $CD$ on
+four consecutive original states $A<B<C<D$, and $e=BC$. For the source
+restricted to $S=\{A,B,C,D\}$, keeping its original weights, its flat
+values satisfy
+\[
+ \OPT_3(S)=q,\qquad \OPT_2(S)=F=D(AB)+D(CD),
+\]
+and its unrestricted deterministic $(2,3)$ hierarchy price satisfies
+\[
+ R_N\le R_4(S).
+\]
+\end{enumerate}
+In particular, if $R_N>1$, conclusion \textup{(ii)} holds for every such
+choice of $e$ and $P$. When $N=3$, necessarily $R_N=1$.
+\end{theorem}
+
+\begin{proof}
+The partition whose sole nonsingleton cell is $e$ is flat optimal at the
+fine capacity. We first check all possible forms of $P$.
+
+Suppose the sole nonsingleton cell of $P$ is a triple $T=ABC$ of consecutive
+states. If both endpoints of $e$ belong to $T$, the fine partition just
+described refines $P$, proving (i). If $e$ is disjoint from $T$, take
+$f=AB$ and $h=BC$. Then $e$ and $f$ are disjoint, and
+\[
+ D(e)+D(f)\le D(h)+D(f)\le D(T)=F,
+\]
+because $e$ is globally cheapest among adjacent pairs and
+Lemma~\ref{lem:triple} applies. The partition with nonsingleton cells
+$e,f$ has $N-2$ cells and cost at most $F$, hence exactly $F$. It is a
+flat optimum compatible with the chosen fine partition. If $e$ meets
+$T$ in exactly one state, adjacency of $e$ and consecutivity of $T$
+force that intersection to be an endpoint of $T$. If the endpoint is
+$A$, take $f=BC$ and $h=AB$; if it is $C$, take $f=AB$ and $h=BC$.
+Again $e$ is disjoint from $f$, and the same inequality proves (i).
+These cases exhaust the triple form.
+
+Suppose instead that the only nonsingleton cells of $P$ are disjoint
+adjacent pairs $f$ and $h$, with $F=D(f)+D(h)$. If $e$ equals either of
+them, the chosen fine partition refines $P$. If $e$ is disjoint from at
+least one of them, say $f$, then the partition with nonsingleton cells
+$e,f$ is feasible at capacity $N-2$, and
+\[
+ D(e)+D(f)\le D(h)+D(f)=F.
+\]
+It is therefore a compatible flat optimum. Notice that this argument
+allows $e$ to meet $h$, or to be disjoint from both $f$ and $h$.
+
+The sole case remaining is that $e$ meets both $f$ and $h$. Write the two
+coarse pairs in order as $AB$ and $CD$. An adjacent pair meeting both
+must be $BC$. Thus $A,B,C,D$ are four consecutive original states,
+and $P$ and $e$ have the form in (ii).
+
+It remains to prove the exact flat-value identities and the price
+comparison. The restricted quartet has a three-cell partition with pair
+$BC$, of cost $q$, and the two-cell partition $AB\mid CD$, of cost $F$.
+Conversely, any partition of $S$ with at most three (respectively two)
+cells extends to a partition of the entire source with at most $N-1$
+(respectively $N-2$) cells by making every state outside $S$ a singleton.
+Its distortion is unchanged because every outside singleton has zero
+cost. This rules out restricted values smaller than $q$ or $F$ and proves
+the two identities. This step applies to arbitrary restricted partitions,
+including noncontiguous ones.
+
+Finally, apply the same singleton extension simultaneously to both levels
+of any restricted hierarchy. Refinement is preserved, distortion is
+unchanged, and the denominators are precisely the same. The full-source
+optimum can only be better than this feasible hierarchy, proving
+$R_N\le R_4(S)$. Restricted optimal hierarchies exist because their
+partition set is finite; equivalently one can take the infimum of the
+same comparison over all of them. For $N=3$ the coarse capacity is one,
+whose single cell is compatible with every fine partition.
+\end{proof}
+
+\begin{corollary}[Equality of the all-size and quartet envelopes]
+\label{cor:envelope}
+For a fixed $C^2$ strictly convex generator $\varphi$ on $I$, let
+$\mathcal C_N(\varphi)$ be the supremum of $R_N$ over $N$ distinct
+locations in $I$ and positive weights. Then
+\[
+ \mathcal C_N(\varphi)\le\mathcal C_4(\varphi)\quad(N\ge3),
+ \qquad
+ \sup_{N\ge3}\mathcal C_N(\varphi)=\mathcal C_4(\varphi).
+\]
+The same equality holds after taking a supremum over any class of such
+generators, in particular nonnegative nonzero polynomial curvatures of
+degree at most $r$ on $[0,1]$.
+\end{corollary}
+
+\begin{proof}
+Every hierarchy price is at least one, and the quartet envelope is at
+least one. Apply Theorem~\ref{thm:reduction} pointwise. Taking the
+supremum over $N$ includes $N=4$, so the reverse inequality for the last
+display is automatic. If probabilities summing to one are required,
+divide every weight in the restricted quartet by the same total mass;
+the price is unchanged by this common scaling. No individual cell is
+conditionally renormalized.
+\end{proof}
+
+\begin{remark}[Meaning and limits of ``exact'']
+The reduction has no multiplicative loss and preserves both flat
+denominators exactly before any common weight normalization. It asserts
+domination by a restriction, not equality of an individual source price
+with the selected quartet price. The lifted quartet hierarchies form
+only a subset of the global feasible hierarchies. The corollary asserts
+equality of the supremum over all finite source counts with the quartet
+supremum; it does not prove equality separately for every fixed $N>4$ and fixed
+generator. Section~\ref{sec:embedding} instead constructs special polynomial
+witnesses with exact deterministic price preservation.
+\end{remark}
+

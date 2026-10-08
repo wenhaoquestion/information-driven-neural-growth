@@ -1,0 +1,210 @@
+{
+  "inspected_utc": "2026-09-20",
+  "files": [
+    {
+      "path": "sources/adanet.pdf",
+      "bytes": 465041,
+      "sha256": "05582432762789d51a4ff4e26f45380ebfd6abf7e1e2dea6de5c857015c620f0"
+    },
+    {
+      "path": "sources/adanet.txt",
+      "bytes": 65999,
+      "sha256": "b28c957d77db83af6c9b53ab661a245098701381fba7e937880c7a4049aa33b4"
+    },
+    {
+      "path": "sources/adanet_supp.pdf",
+      "bytes": 313762,
+      "sha256": "9984c33c009faeaa7db3314abf5286094ccef28574d599c643c5ddd877ed4f21"
+    },
+    {
+      "path": "sources/adanet_supp.txt",
+      "bytes": 38398,
+      "sha256": "791cd6aa70e219d2813d887407ca7d16eba441d480068cf09fc5113c1c55b4d1"
+    },
+    {
+      "path": "sources/bach.pdf",
+      "bytes": 522703,
+      "sha256": "47a3118b97a0b339e9bdd9b9cb8a9c802db24f5334675b47197babf51e6e35e8"
+    },
+    {
+      "path": "sources/bach.txt",
+      "bytes": 191609,
+      "sha256": "330179cacbd0983e06cc8f454ab3a94a098ce6d13b73bcd0c7c4f3e5b58018b6"
+    },
+    {
+      "path": "sources/blackwell.pdf",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "sources/cacs.zip",
+      "bytes": 42789,
+      "sha256": "a23b4c5f691b646a09eaac7a176f5d57c8789fbd3f7ec6e537cf1376f8063d04"
+    },
+    {
+      "path": "sources/cacs_README.md",
+      "bytes": 2911,
+      "sha256": "b1d7cf687715867e3bf8086480e5463821630220959700b283f9e2d268a2df2b"
+    },
+    {
+      "path": "sources/cacs_selection.py",
+      "bytes": 35510,
+      "sha256": "19ea44d1fbe2572315de326371427a42ef6f0a1de06995357e8b318ffe13e2c6"
+    },
+    {
+      "path": "sources/chen_elsevier.xml",
+      "bytes": 1998,
+      "sha256": "bc5c2fcf5ecebeea8aa10262bcfed169a2f2b88684c45a6f48f379058c9aea48"
+    },
+    {
+      "path": "sources/coresets.pdf",
+      "bytes": 953174,
+      "sha256": "314f1cf5936f214452c1ac057b198be1ea7a9b87db22cc732091ecc127cc39b1"
+    },
+    {
+      "path": "sources/coresets.txt",
+      "bytes": 111973,
+      "sha256": "82bc6933464bb5ecda4971e2f0387ddf80b7f5f14d6d2ccd638083792d6f4e7b"
+    },
+    {
+      "path": "sources/fdrr.pdf",
+      "bytes": 734626,
+      "sha256": "ef9e61d6a71ef8827aec4182d798fd267d638b3a449d667430bd7bd78c6cd5de"
+    },
+    {
+      "path": "sources/fdrr.txt",
+      "bytes": 542444,
+      "sha256": "6475d9fb3c8a2804c1bc427580394d718238b485b4aaff13c8a3e4d4afd6c5f6"
+    },
+    {
+      "path": "sources/foucart.pdf",
+      "bytes": 384987,
+      "sha256": "5f084dadb69cf401067f3f4d4246b34435840ab6813d4772d9024b85da10ca83"
+    },
+    {
+      "path": "sources/foucart.txt",
+      "bytes": 66220,
+      "sha256": "465116479777f4d482371e367c938c641296bdb599c820b69a217f2a0f2fa746"
+    },
+    {
+      "path": "sources/gmc.clean.txt",
+      "bytes": 66962,
+      "sha256": "023c8ecdaa0cbbedd995ee93c9c7dd284888ee85759ce255802410da71c59372"
+    },
+    {
+      "path": "sources/gmc.html",
+      "bytes": 406650,
+      "sha256": "a4a8223abe211c2dc1b06adb80518d9e0b944c4759070380f49fcb7259036a0f"
+    },
+    {
+      "path": "sources/gmc.txt",
+      "bytes": 76852,
+      "sha256": "f931bd9799e7a1377d7b21959ebc49b7b1aa233fbfb13f6faf03fd31d52aa5db"
+    },
+    {
+      "path": "sources/gradmatch.pdf",
+      "bytes": 918725,
+      "sha256": "945f5aebcdd0a134726e495afe99141738a6241e4efd7a444912fbaa66f56abb"
+    },
+    {
+      "path": "sources/gradmatch.txt",
+      "bytes": 90866,
+      "sha256": "b4f9c21d2af7089aa51414f5d1abe974145881cf6855cdeacb635b32c80dc441"
+    },
+    {
+      "path": "sources/gradmatch_supp.pdf",
+      "bytes": 423293,
+      "sha256": "114bce487443a2d002783eada43aaf392501c266964fab3bde16b609a6f7190e"
+    },
+    {
+      "path": "sources/gradmatch_supp.txt",
+      "bytes": 136826,
+      "sha256": "288ce21714fc7a305faa9efd6d06d5f1193dc1dcb28d53fd2940b387825cef98"
+    },
+    {
+      "path": "sources/growing.clean.txt",
+      "bytes": 204153,
+      "sha256": "be3ef0b58e0e066e93e3ecbc58aabfb7c779a27ecac6a68d5cef841cf90c28b6"
+    },
+    {
+      "path": "sources/growing.html",
+      "bytes": 1442047,
+      "sha256": "4575aee17671e93e87d53be870fb813d8873e8b1febf7d465a60fefca86cb693"
+    },
+    {
+      "path": "sources/growing.txt",
+      "bytes": 255926,
+      "sha256": "303e741e3f458ade235377e58153397ab7464607abda156af522281666685b2e"
+    },
+    {
+      "path": "sources/hardtwoodruff.clean.txt",
+      "bytes": 110016,
+      "sha256": "33b25443600da4ba7a1ab54ab6f6d1a2fde57337e272a8416dc794119d936141"
+    },
+    {
+      "path": "sources/hardtwoodruff.html",
+      "bytes": 890217,
+      "sha256": "145bf4df882aa9ef86e00b8ee76b64bfdfc97e954d3dbf7c77934815e0fa7e5e"
+    },
+    {
+      "path": "sources/hardtwoodruff.txt",
+      "bytes": 141442,
+      "sha256": "3b575a7cb5dd2fef729c23a82c2fa0ea0ec403a9cabd90c752957caed280d805"
+    },
+    {
+      "path": "sources/scaling2026.pdf",
+      "bytes": 799930,
+      "sha256": "be114f62fbfca47df7e09935aa89f11bebd782d623f0d166c7950fddc51bd08b"
+    },
+    {
+      "path": "sources/scaling2026.txt",
+      "bytes": 134603,
+      "sha256": "48c5c5da5e49c7a991616cbba16ffb7811c6c447be9f8089473a52f378387d89"
+    },
+    {
+      "path": "sources/sharan.clean.txt",
+      "bytes": 93359,
+      "sha256": "077f1bdeda583e6444d6498b6d6a861cbd844b8a84329d0c1adda9ae153ef2ba"
+    },
+    {
+      "path": "sources/sharan.html",
+      "bytes": 654151,
+      "sha256": "e6d8aee7cd867edfc15e423c0d610739d13aa2b4efd38005d95a936ed3702b28"
+    },
+    {
+      "path": "sources/sharan.txt",
+      "bytes": 116472,
+      "sha256": "72cbce1162a56b19a541ca5b5a6f7ecaf79af787a370a9f2043325cf51b95a93"
+    },
+    {
+      "path": "sources/stoiht.pdf",
+      "bytes": 684514,
+      "sha256": "6ba8c67569f0fdfa4b446fd381a216497c1c77f43354a67f1bd81fc297473a8d"
+    },
+    {
+      "path": "sources/stoiht.txt",
+      "bytes": 201815,
+      "sha256": "a118a39087e3048f534eed84b6f396c49f90e10a730860c690a652fd9f085f57"
+    },
+    {
+      "path": "sources/twf.pdf",
+      "bytes": 4583661,
+      "sha256": "0f69987cfbcad28df014ed90be800221181bfc220eb3ef8d40830ade464070b9"
+    },
+    {
+      "path": "sources/twf.txt",
+      "bytes": 243179,
+      "sha256": "b10d57799da25c0e486839dfb566e5e47ea781fbbb2204bf895f980d283e909f"
+    }
+  ],
+  "failed_downloads": [
+    "blackwell.pdf: empty direct response (retained as failure evidence)",
+    "huang_v2.html/pdf: HTTP 406; HTML inspected; local full-text download unavailable",
+    "Chen2026 publisher HTML/PDF and UQ record HTTP403; Elsevier FULL API401, PDF API429; full manuscript not inspected. Elsevier metadata XML succeeded."
+  ],
+  "inspection_reports": [
+    "REPORT.md",
+    "QUADRATIC_ATTACK.md"
+  ],
+  "inspection_reports_note": "Historical intermediate reports are not redistributed; see NOVELTY_MATRIX.md and manuscript/references.bib for the public source map."
+}

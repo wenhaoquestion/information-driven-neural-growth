@@ -1,0 +1,48 @@
+{
+  "exact_full_replay": true,
+  "task": "indefinite_noisy",
+  "seed": 820000,
+  "future_cut_exclusive": 3072,
+  "future_change": "x_suffix -> -x_suffix; y_suffix -> 1-y_suffix",
+  "prefix_results": [
+    {
+      "method": "historical_moment",
+      "identical_first_three_events": true,
+      "different_final_parameters": true
+    },
+    {
+      "method": "reservoir_residual",
+      "identical_first_three_events": true,
+      "different_final_parameters": true
+    },
+    {
+      "method": "fresh_residual",
+      "identical_first_three_events": true,
+      "different_final_parameters": true
+    },
+    {
+      "method": "learned_probe",
+      "identical_first_three_events": true,
+      "different_final_parameters": true
+    },
+    {
+      "method": "random_replay128",
+      "identical_first_three_events": true,
+      "different_final_parameters": true
+    },
+    {
+      "method": "random_matched138",
+      "identical_first_three_events": true,
+      "different_final_parameters": true
+    },
+    {
+      "method": "fixed7_replay138",
+      "identical_first_three_events": true,
+      "different_final_parameters": true
+    }
+  ],
+  "errors": [],
+  "checks": 86828,
+  "code_sha256": "0ea28d3a245c51534968e6b2d26ae7bd9ce3790693a86ae3bbff01852435c4e2",
+  "elapsed_seconds": 38.894525916999555
+}

@@ -1,0 +1,19 @@
+{
+  "status": "matched",
+  "task": "interaction",
+  "seed": 750000,
+  "methods": [
+    "withheld_residual",
+    "released_residual",
+    "withheld_random",
+    "released_random",
+    "fixed2_online",
+    "fixed26_online",
+    "fixed26_gated"
+  ],
+  "events": 168,
+  "source_sha256": "05207275ca2b53015552a540a6ac374bc3eb9569903f9c9ed150721cb1fb672b",
+  "runner_sha256": "d7c9b6cc9b4fa3804d9ae43d2e36228a4b54446582513e7e684b763aaf63763d",
+  "tolerance": "rtol=1e-10 atol=1e-12; elapsed time excluded",
+  "wall_seconds": 18.33360654200078
+}
